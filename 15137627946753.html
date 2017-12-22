@@ -50,11 +50,11 @@
         
         <li id="app.css"><a target="_self" href="app.html">APP推荐</a></li>
         
-        <li id="reactnative.css"><a target="_self" href="reactnative.html">React-Native</a></li>
+        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
         
         <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
         
-        <li id="js.css"><a target="_self" href="js.html">JavaScript</a></li>
+        <li id="js.css"><a target="_self" href="js.html">JS</a></li>
         
         </ul>
 
@@ -146,20 +146,22 @@
 <ol>
 <li><p>ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p></li>
 <li><p>变量提升：var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined；为了纠正这种现象，let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。</p></li>
-<li><p>暂时性死区：在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”；</p>
+<li><p>暂时性死区：在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”；</p></li>
+</ol>
 
-<pre><code>var tmp = 123;
+<span id="more"></span><!-- more -->
+
+<pre><code>```
+var tmp = 123;
 
 if (true) {
 tmp = &#39;abc&#39;; // ReferenceError  死区
 let tmp;
 }
-</code></pre>
+```
 
-<blockquote>
-<p>let不允许在相同作用域内，重复声明同一个变量。</p>
-</blockquote></li>
-</ol>
+&gt; let不允许在相同作用域内，重复声明同一个变量。
+</code></pre>
 
 <h3 id="toc_2">块级作用域</h3>
 
@@ -206,12 +208,17 @@ var constantize = (obj) =&gt; {
 </blockquote>
 
 <ul>
-<li><p>顶层对象的属性：<br/>
-ES5中 顶层对象的属性  和 全局变量是一回事儿；全局变量是静态创建，而对象属性是动态创建的；不合理。<br/>
-ES6中 var function 声明的全局变量 依然是顶层对象的属性；但是 let const class声明的全局变量 不属于顶层对象的属性。</p></li>
-<li><p>全局环境中，this会返回顶层对象。但是，Node模块和ES6模块中，this返回的是当前模块。</p></li>
-<li><p>函数里面的this，如果函数不是作为对象的方法运行，而是单纯作为函数运行，this会指向顶层对象。但是，严格模式下，这时this会返回undefined。</p></li>
-<li><p>不管是严格模式，还是普通模式，new Function(&#39;return this&#39;)()，总是会返回全局对象。但是，如果浏览器用了CSP（Content Security Policy，内容安全政策），那么eval、new Function这些方法都可能无法使用。</p></li>
+<li>顶层对象的属性：
+ES5中 顶层对象的属性  和 全局变量是一回事儿；全局变量是静态创建，而对象属性是动态创建的；不合理。
+ES6中 var function 声明的全局变量 依然是顶层对象的属性；但是 let const class声明的全局变量 不属于顶层对象的属性。</li>
+</ul>
+
+<!-- more -->
+
+<ul>
+<li>全局环境中，this会返回顶层对象。但是，Node模块和ES6模块中，this返回的是当前模块。</li>
+<li>函数里面的this，如果函数不是作为对象的方法运行，而是单纯作为函数运行，this会指向顶层对象。但是，严格模式下，这时this会返回undefined。</li>
+<li>不管是严格模式，还是普通模式，new Function(&#39;return this&#39;)()，总是会返回全局对象。但是，如果浏览器用了CSP（Content Security Policy，内容安全政策），那么eval、new Function这些方法都可能无法使用。</li>
 </ul>
 
 <pre><code class="language-JavaScript">// 方法一
@@ -426,8 +433,8 @@ Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
      
     </script>
 
-    
-
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
 
 
   </body>

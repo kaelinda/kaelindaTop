@@ -50,11 +50,11 @@
         
         <li id="app.css"><a target="_self" href="app.html">APP推荐</a></li>
         
-        <li id="reactnative.css"><a target="_self" href="reactnative.html">React-Native</a></li>
+        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
         
         <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
         
-        <li id="js.css"><a target="_self" href="js.html">JavaScript</a></li>
+        <li id="js.css"><a target="_self" href="js.html">JS</a></li>
         
         </ul>
 
@@ -204,224 +204,6 @@
 </ul></li>
 </ul>
 
-<p><em>Xcode9 新标准</em></p>
-
-<blockquote>
-<p><em>产品和美工同学组要注意下了</em><br/>
-@2x 代表2倍图 <br/>
-@3x代表三倍图<br/>
-pt代表的是物理像素（或者自然像素）</p>
-</blockquote>
-
-<ul>
-<li>Xcode9 icon :
-
-<ul>
-<li>iPhone 8张icon
-
-<ul>
-<li><code>20pt  @2x  @3x</code></li>
-<li><code>29pt  @2x  @3x</code></li>
-<li><code>40pt  @2x  @3x</code></li>
-<li><code>60pt  @2x  @3x</code></li>
-</ul></li>
-<li>Xcode9 ipad
-
-<ul>
-<li><code>20pt  @1x  @2x</code></li>
-<li><code>29pt  @1x  @2x</code></li>
-<li><code>40pt  @1x  @2x</code></li>
-<li><code>76pt  @1x  @2x</code></li>
-<li><code>83.5pt @2x</code></li>
-</ul></li>
-<li>AppStore  <code>1024*1024 @1x</code></li>
-<li>Xcode9 LaunchImage：
-
-<ul>
-<li><code>375*812 @3x    1125*2436</code></li>
-<li><code>812*375 @3x    2436*1125</code></li>
-<li><code>414*736 @3x    1242*2208</code></li>
-<li><code>736*414  @3x    2208*1242</code></li>
-<li><code>375*667 @2x    750*1334</code></li>
-<li><code>320*568 @2x    640*1136</code></li>
-<li><code>320*480 @2x    640*960</code></li>
-<li><code>320*480 @1x    320*480</code></li>
-</ul></li>
-</ul></li>
-</ul>
-
-<p><em>Xcode 配置注意事项</em></p>
-
-<ul>
-<li>强制https：如果现版本APP还需要访问http请求那么需要配置info.plist文件</li>
-<li>release模式：开发者都懂得。</li>
-<li>证书配置：确保上架期间证书不要失效即可。</li>
-<li>功能配置：比如推送、支付、蓝牙等</li>
-<li>APPgroup配置 功能新的数据存储共享等需要注意，详情请自行百度。</li>
-<li>Info.plist权限配置：后台声音、网络数据、推送、地理位置、摄像头权限、相册权限等</li>
-</ul>
-
-<h2 id="toc_2">AppStore 上架</h2>
-
-<h3 id="toc_3">APP信息</h3>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fkvh47o1voj31330hx0uf.jpg" alt="APP信息截图"/></p>
-
-<h4 id="toc_4">可本地化的信息</h4>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fkvksptazij30ky04q75q.jpg" alt="AppStore 中APP列表显示"/></p>
-
-<h5 id="toc_5">名称</h5>
-
-<p>App Title（名称）允许255个字节，大概90个字符，原则上充分利用所有字符；例如《趣味牛牛－史上最休闲的游戏，天天QQ微信博易空间飞车坑爹泡泡龙12306狗我多米虾音乐节奏大师，找你妹酷跑保卫萝卜陌陌游览器爱消除yyppstv，炸金花全民英雄NBA快播联盟魔漫相机斗地主风行唱吧》。随着苹果审核愈趋严格的大环境下，单纯的热词堆砌是行不通的，在热词填充APP Title时需要保证语句的通畅以及无矛盾存在（苹果审核人员的汉语理解能力这两年可用突飞猛进形容）</p>
-
-<h5 id="toc_6">副标题</h5>
-
-<p>App 摘要，显示在APP详情中。如果客户的设备运行 iOS 11 或更高版本，在 App Store 中，副标题会显示在您的 App 名称下方。<br/>
-利用副标题的高权重，采用轮换战术，优化各个关核心键词，当已有核心关键词排名优化靠前，选用其他的核心关键词</p>
-
-<h5 id="toc_7">隐私政策网站</h5>
-
-<p>APP涉及隐私权限问题的保护策略声明等。对APP用户信息保密性要求高的比如支付等功能可能需要提供一个隐私声明网页。</p>
-
-<h4 id="toc_8">综合信息</h4>
-
-<h5 id="toc_9">套装ID</h5>
-
-<p>就是APP开发过程中的跟证书保持一致的 boundleID,功能上用来唯一标识APP的字符串.</p>
-
-<h5 id="toc_10">SKU</h5>
-
-<p>一个系列APP的成为套装，如Word、Excel，这个名字有辨识度即可。</p>
-
-<h5 id="toc_11">Apple ID</h5>
-
-<p>APP上架后再APPStore的身份ID，APP创建的时候自动生成，并且不可改变。</p>
-
-<h5 id="toc_12">主要语言</h5>
-
-<p>APP所支持的国际化语言，比如简体中文，繁体中文，英文等。</p>
-
-<h5 id="toc_13">许可协议</h5>
-
-<p>详情请参考: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple标准许可协议</a></p>
-
-<h5 id="toc_14">分级</h5>
-
-<p>根据APP内容 （色情、暴力、赌博、广告等）进行评判的标准来定等级，看适合哪个年龄段的使用者下载。包含AppStore所限制的内容越少，越容易上架。<br/>
-<img src="https://ws2.sinaimg.cn/large/006tNc79ly1fkvl0vs70kj318k1cbaj8.jpg" alt="等级分级"/></p>
-
-<h5 id="toc_15">类别</h5>
-
-<p>主要类别：<br/>
-<img src="https://ws3.sinaimg.cn/large/006tNc79ly1fkvl7yz1tfj30qc0pmgnu.jpg" alt="主要类别分类"/><br/>
-次要类别：<br/>
-<img src="https://ws4.sinaimg.cn/large/006tNc79ly1fkvl9mmsyrj30pk0pgwgo.jpg" alt="次要类别分类"/></p>
-
-<h3 id="toc_16">价格与销售范围</h3>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fkvlbvk29mj312v0gsmyl.jpg" alt="价格与销售范围"/></p>
-
-<h4 id="toc_17">价格时间表</h4>
-
-<p>这里可以选择定价的时间范围。比如 某一个时间段内APP限时免费。就可以规定一个价格，一个起止时间段。</p>
-
-<h4 id="toc_18">销售范围</h4>
-
-<p>比如有些APP只能在国内使用，那就选择中国🇨🇳。</p>
-
-<h4 id="toc_19">批量购买计划</h4>
-
-<p>大型APP的购买的优惠策略，现在通过AppStore的策略比较少了。现在的大型APP大都是免费下载，然后限时体验，体验时间过后在向你收费，如果觉得确实不错，用户就可以选择购买。这样对用户来说更合理。</p>
-
-<h4 id="toc_20">Bitcode 自动重新编译</h4>
-
-<p>这个是针对开发者的，大多数的老项目都不支持bitcode,新项目大都是支持的。<br/>
-<img src="https://ws4.sinaimg.cn/large/006tNc79ly1fkvlm6sjuaj30qy0b576f.jpg" alt="bitcode自动变异详情"/></p>
-
-<h3 id="toc_21">APP版本信息</h3>
-
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fkvlqr205zj31kw0ttgwn.jpg" alt="APP版本信息"/></p>
-
-<h4 id="toc_22">版本信息</h4>
-
-<h4 id="toc_23">APP预览和屏幕快照</h4>
-
-<p>iOS10之前，不同尺寸的手机都需要上传一套APP截图，每一套3-5张。</p>
-
-<p><code>320*480</code><br/>
-<code>320*568</code><br/>
-<code>375*667</code><br/>
-<code>414*736</code></p>
-
-<p>iOS10之后apple放弃了对320*480尺寸的支持，所剩下的机型长宽比都是一致的，所以可以共用一套APP截图的，当然如果不嫌麻烦想不同机型有不同的展示截图可以选择iOS10之前的模式，上传多套看截图。</p>
-
-<p>iOS10之后需要 <code>414*736</code>  @3x 三倍图 即：<code>1242 * 2208</code> 的截图。</p>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fkvm57vwduj31ag0f50ul.jpg" alt="APP截图可以选择公用5.5寸高清版本"/></p>
-
-<h4 id="toc_24">宣传文本</h4>
-
-<p>宣传文本可通知 App Store 访客当前最新的 App 功能，您无需提交更新请求。如果客户的设备运行 iOS 11 或更高版本，在 App Store 中，宣传文本会显示在您的 App 名称下方。</p>
-
-<h4 id="toc_25">描述</h4>
-
-<p>对APP的详细描述，主要模式：<br/>
-哪家公司的什么APP干什么用有什么优点。</p>
-
-<ul>
-<li>描述性的字数控制在300-500，并保证核心关键词8-12的频次出现。</li>
-<li>最好出现公司的联系方式，如公众号/微博账号/服务QQ/QQ群等。</li>
-<li>描述中出现的关键词主要是对Keywords的补充，Keywords的权重和描述的权重是可以叠加的。</li>
-</ul>
-
-<h4 id="toc_26">关键词</h4>
-
-<p>一个或多个关键词，用以描述您的 App。关键词将使 App Store 搜索结果更加准确。关键词之间用英文逗点分隔。</p>
-
-<h4 id="toc_27">技术支持网址</h4>
-
-<h4 id="toc_28">营销网址</h4>
-
-<h4 id="toc_29">构建版本</h4>
-
-<h4 id="toc_30">APP综合信息</h4>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fkvh124ghrj31370h5acw.jpg" alt=""/></p>
-
-<h5 id="toc_31">AppStore图表</h5>
-
-<p>1024*1024 没有开启alpha通道的PNG格式图片。</p>
-
-<h5 id="toc_32">版本</h5>
-
-<p>当前上架APP的版本号</p>
-
-<h5 id="toc_33">分级</h5>
-
-<p>同上</p>
-
-<h5 id="toc_34">版权</h5>
-
-<p>公司申请开发账号的时候就应该知道的，不清楚的吻公司账号申请人。</p>
-
-<h5 id="toc_35">商务代表联系信息</h5>
-
-<p>这个填写公司的上午代表联系人。个人开发账号那就是填写自己信息了。</p>
-
-<h5 id="toc_36">APP审核信息</h5>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fkvgu6xxxlj31jx0phq80.jpg" alt="APP审核信息截图"/></p>
-
-<ul>
-<li>登录信息：如果APP需要登录APP则需要提供相应的测试账号，以便测试人员登录测试。</li>
-<li>备注：请提供用户名和密码，以便Apple测试人员登录 App。apple测试人员需要使用此登录信息才能完成对您App 的审核。  或者APP的操作需要什么特殊的操作指引，也需要在这里进行备注。注：即使登录信息位置填写了账号密码，备注内仍建议再填写一遍，不排除有比较懒的测试人员，看不到你的账号信息。毕竟APP一旦打回，会耽误3-4天的上线时间。</li>
-<li>联系信息：填写公司产品负责人的联系方式</li>
-</ul>
-
-<h2 id="toc_37">ASO优化</h2>
-
-<p><a href="https://www.zhihu.com/question/23027114?rf=27740130">知乎详解ASO优化</a></p>
 
                         
                       </div>
@@ -429,7 +211,7 @@ pt代表的是物理像素（或者自然像素）</p>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="15130872092436.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2017/12/12</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -473,9 +255,6 @@ pt代表的是物理像素（或者自然像素）</p>
 <p>self 改为 (__bridge void *) self<br/>
 用  (__bridge void *)  进行类型的强制转换</p>
 
-<h1 id="toc_5">六、真机测试</h1>
-
-<p>真机运行才可以，不支持模拟器哦</p>
 
                         
                       </div>
@@ -483,7 +262,7 @@ pt代表的是物理像素（或者自然像素）</p>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="15130871866705.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2017/12/12</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -532,278 +311,6 @@ pt代表的是物理像素（或者自然像素）</p>
 <li><p>理解C语言的核心概念有助于写好Objective-C程序，尤其是掌握内存模型与指针。</p></li>
 </ol>
 
-<h2 id="toc_2">第2条 在类的头文件中尽量少引用其他头文件。</h2>
-
-<ol>
-<li>笔记：</li>
-<li>头文件导入时，如非使用者必须知道，尽量将头文件的导入时机延后（头文件的导入反倒.m文件中），这样会大大减少编译时间，减少头文件之间相互依赖的复杂度。</li>
-<li><p>前向声明---<code>@class ClassName</code>这种头文件的声明方式(或者引入方式)叫做<code>前向声明</code>（或者向前声明）--- (forward declaring);前向声明方式引入的头文件，不会在编译期间进行编译，只是向声明我这里有这么各类，你知道有就行了，不需要你编译。这种方式还能解决头文件相互包含的问题。</p></li>
-<li><p>要点：</p></li>
-<li><p>除非有必要条件，否则不要引入头文件。一般来说，应在某各类的头文件中使用前向声明来提及别的类，并在实现文件中引入哪些类的头文件。这样做可以尽量降低类之间的<code>耦合</code>（coupling）</p></li>
-<li><p>有时无法使用前向声明，比如要声明某个类遵循一项协议。这情况下，尽量把“该类遵循某协议”的这条生命移至&quot;class-continuation分类&quot;中。如果不行的话，就把协议单独放在一个头文件中，然后将其引入。</p></li>
-</ol>
-
-<h2 id="toc_3">第3条 多用字面量语法，少用与之等价的方法</h2>
-
-<p>~~ <code><br/>
-~~ //字面量语法<br/>
-~~ NSString *str1 = @&quot;Kael&quot;;<br/>
-~~ <br/>
-~~ //传统方式<br/>
-~~ NSString *str2 = [[NSString alloc] initWithFormat: @&quot;Kael&quot;];<br/>
-~~</code></p>
-
-<ol>
-<li>笔记：</li>
-<li>字面量语法（literal syntax）能极大的缩短代码长度，使其更易读。</li>
-<li><p>字面数值 传统方式：<code>NSNumber *someNumber = [NSNumber numberWithInt:1]</code></p>
-
-<ol>
-<li><code>NSNumber *intNumber = @1</code></li>
-<li><code>NSNumber *floatNumbser = @0.125f</code></li>
-<li><code>NSNumber *doubleNum = @3.14159</code></li>
-<li><code>NSNumber *boolNum = @YES</code></li>
-<li><code>NSNumber *charNum = @&#39;abc&#39;</code></li>
-</ol></li>
-</ol>
-
-<ul>
-<li>字面量数组 传统方式：<code>NSArray *animals = [NSArray arrayWithObjects:@&quot;cat&quot;,@&quot;dog&quot;,@&quot;mouse&quot;,nil];</code>
-
-<ul>
-<li><code>NSArray *animals = @[@&quot;cat&quot;,@&quot;dog&quot;,@&quot;mouse&quot;];</code></li>
-<li><code>NSString *dog = animals[1];</code></li>
-<li><code>replaceObjectAtIndex:index</code> -&gt; <code>mutableArray[1] = @&quot;dog&quot;;</code></li>
-</ul></li>
-<li><p>字面量字典 传统方式：<code>NSDictionary *personData = [NSDictionary dictionaryWithObjectsAndkeys:@&quot;kael&quot;,@&quot;name&quot;,@&quot;age&quot;,@&quot;18&quot;,nil];</code></p>
-
-<ul>
-<li><code>NSDictionary *personData = @{@&quot;name&quot;:@&quot;kael&quot;,@&quot;age&quot;:@&quot;18&quot;}</code></li>
-<li><code>NSString *name = personData[@&quot;name&quot;];</code></li>
-<li><code>setObject:obj forKey:key</code> -&gt; <code>mutableDic[name] = @&quot;kaelinda&quot;;</code></li>
-</ul></li>
-</ul>
-
-<ol>
-<li>要点：
-
-<ol>
-<li>字面量语法创建 字符串、数值、数组、字典 比常规方法更加简明扼要。</li>
-<li>应该通过取下标方式来取 字典、数组 中的值。</li>
-<li>用字面量语法创建数组或者字典时，若值中有nil,则会抛出异常。因此，务必确保值中不含nil。</li>
-</ol></li>
-</ol>
-
-<h2 id="toc_4">第4条 多用类型常量，少用#define 预处理命令</h2>
-
-<ol>
-<li><p>笔记：</p>
-
-<ol>
-<li>宏定义等用于处理命令 是在编译器 编译期间 将定义的 字符替换，所以这样的缺点是 不能很好的从宏定义上读出常量的类型信息。</li>
-<li><code>static const NSTimeInterval kAnimationinDuration = 0.3;</code></li>
-<li><code>extern NSString *const EOCString;</code>比如 通知等需要有一个外部可见的变量作为 <strong>通知名</strong></li>
-</ol></li>
-<li><p>要点：</p>
-
-<ol>
-<li>不要用预处理指令定义常量。这样定义出来的常量不含类型信息，编译器编译期间，已经把这些值写死了，如果有人对常量改动，编译器也不会产生警告信息；</li>
-<li>在实现文件中(.m文件)使用<code>static const</code>来定义只在编译单元可见(只在.m文件中可见，不暴露给外部使用)的常量。因此常量不在全局符号表中，命名上不需要在名称上加前缀。</li>
-<li>在头文件中用<code>extern</code>来声明全局常量，并在相关实现文件中定义其值。</li>
-</ol></li>
-</ol>
-
-<h2 id="toc_5">建议：处理隐藏的返回类型，优先选择实例类型而非id类型</h2>
-
-<ol>
-<li>笔记：
-
-<ol>
-<li><code>instancetype</code>仅仅用作Objective-C方法的返回类型</li>
-<li><code>instancetype</code>有类型检测，更安全
-*</li>
-</ol></li>
-</ol>
-
-<h2 id="toc_6">建议：尽量使用模块方式与多类建立复合关系</h2>
-
-<ul>
-<li><code>#import</code> 和 <code>#include</code> 其根本就是简单的复制、粘贴，将.h文件中的内容一字不落的复制到当前文件中，<code>#import</code>可避免头文件的重复引用。</li>
-<li>以预编译头文件的方式，虽然可以缩短编译时间，但维护棘手，不利于广泛应用。</li>
-<li>模块功能，其应用不仅仅变现与编译的速度加快，同事在链接框架等方面也非常好用。</li>
-<li>启动模块功能后，编译器会隐式的把所有的<code>#import</code>转换成<code>@import</code></li>
-</ul>
-
-<h2 id="toc_7">高度警惕空指针和野指针的袭击</h2>
-
-<ol>
-<li><p>笔记：</p>
-
-<ol>
-<li>nil、Nil、NULL的区别：
-nil：指向oc中对象的空指针，针对对象。
-Nil：指向oc中类的空指针，针对类。
-NULL：指向其他类型的空指针，如一个c类型的内存指针，基本数据类型为空，基本类型。
-NSNull：在集合对象中，表示空值的对象。</li>
-</ol></li>
-<li><p>要点：</p>
-
-<ol>
-<li>空指针（NULL）指的是没有存储任何内存地址的指针；野指针，是指向“垃圾内存”（不可用内存）的指针。</li>
-<li>利用野指针发消息是很危险的，会报错。也就是说，一个对象被回收了，就不要再去操作它，不要尝试给它发消息。</li>
-<li>利用空指针发消息是没有任何问题的，也就是说代码是没有错误的。</li>
-</ol></li>
-</ol>
-
-<h2 id="toc_8">清楚长两字符串和一般字符串的区别</h2>
-
-<p>~~ <code><br/>
-~~ NSString *string1 = @&quot;hello&quot;;<br/>
-~~ NSString *string2 = @&quot;hello&quot;<br/>
-~~ if (strng1 == string2){<br/>
-~~     NSLog(@&quot;They are same address&quot;);<br/>
-~~ };<br/>
-~~ <br/>
-~~ NSString *string3 = [NSString alloc];<br/>
-~~ nsstring *string4 = [string3 initWithString:string1];<br/>
-~~ if (string3!=string4){<br/>
-~~     NSLog(@&quot;string3 is not same to string4&quot;);<br/>
-~~ }<br/>
-~~ <br/>
-~~ if (string1 == string4){<br/>
-~~     NSLog(@&quot;string1 is same to string4&quot;);<br/>
-~~ }<br/>
-~~ <br/>
-~~</code></p>
-
-<ul>
-<li>由于编译器的优化，相同内容的常量字符串的地址是完全相同的。</li>
-<li>如果用常量字符串来初始化一个字符串，那么这两个字符串也将是相同的常量。</li>
-<li>对常量字符串永远不要release,因为多次release都还能访问。</li>
-</ul>
-
-<h2 id="toc_9">第5条 用枚举表示状态、选项、状态码</h2>
-
-<ol>
-<li>笔记：</li>
-<li>想要将多个枚举能同时生效（例如，屏幕的方向），那需要枚举值设置为 2 的n次幂；</li>
-<li><p>还可以通过按位操作</p></li>
-</ol>
-
-<ul>
-<li><p>NS_ENUM与NS_OPTIONS区别：</p>
-
-<ul>
-<li>NS_ENUM枚举项的值为NSInteger，NS_OPTIONS枚举项的值为NSUInteger；</li>
-<li>NS_ENUM定义通用枚举，NS_OPTIONS定义位移枚举</li>
-<li>NS_OPTIONS的枚举项的值需要像这样表示1 &lt;&lt; 0，1 &lt;&lt; 1，2的几次方这样，而NS_ENUM可以直接给像1，2，3这样</li>
-</ul></li>
-</ul>
-
-<ol>
-<li>要点：</li>
-<li>在处理枚举类型的switch语句时，不要使用default分支，这样加入新枚举时编译器会提醒开发者：switch语句并未处理所有枚举。</li>
-</ol>
-
-<hr/>
-
-<h1 id="toc_10">第二章</h1>
-
-<hr/>
-
-<h2 id="toc_11">第6条 理解属性这一概念</h2>
-
-<ol>
-<li><p>笔记：</p>
-
-<ul>
-<li>属性(property) = 成员变量 + getter + setter</li>
-<li>创建属性后，编译器会自动生成setter、getter属性</li>
-</ul>
-
-<p>属性特质：<br/>
-&#39;&#39; 1. 原子性：nonatomic 线程不安全；atomic 原子性，通过线程锁定等保证其原子性；<br/>
-&#39;&#39; 2. 读/写权限：readwrite———可读可写（setter、getter）;readonly———只读。<br/>
-&#39;&#39; 3. 内存管理语义：assign（弱引用）、weak（弱引用）、strong(强引用)、copy(强引用)、unsafe_unretained(针对于对象的 类似于assign)<br/>
-&#39;&#39; 4. 方法名：<br/>
-&#39;&#39;   - <code>getter=&lt;name&gt;</code> --&gt; 指定“获取方法”的方法名  @property （nonatomic,getter=isOn）BOOL on;<br/>
-&#39;&#39;   - <code>seeter=&lt;name&gt;</code> --&gt; 指定设置方法的方法名 @property （nonatomic,getter=isOn,seeter=setBaseModelName）BOOL on;</p></li>
-</ol>
-
-<h2 id="toc_12">第7条 在对象内部尽量直接访问实例变量</h2>
-
-<ul>
-<li>直接访问实例变量，不会走<code>方法派送</code>(method dispatch);直接访问实例变量速度上要快得多。</li>
-<li>直接访问实例变量，不会调用“设置方法”（setter）,ARC下copy修饰的属性，就不会copy该属性，只会保留新值并释放旧值。</li>
-<li>直接访问实例变量，不会触发“键值观察（Key-ValueObserving，KVO）”</li>
-<li>通过属性访问，可以通过setter、getter增加断点监控键值变化。</li>
-</ul>
-
-<p>折中：设置变量时走setter方法；获取变量值时直接访问实例变量；</p>
-
-<p>注意：<br/>
-* 初始化方法(或者 dealloc)中设置属性值的时候，应该直接访问实例变量，因为子类可能会<code>覆写</code>该方法;<br/>
-* 惰性初始化来配置数据，这时候需要通过属性来读取数据。</p>
-
-<h2 id="toc_13">第8条 理解“对象等同性”这一概念</h2>
-
-<ol>
-<li>笔记：
-对象等同性比较：</li>
-<li><code>==</code>比较的是指针本身</li>
-<li><code>isEqual:</code>方法比较的是指针指向的内存地址</li>
-</ol>
-
-<p>NSobject协议中有两个判断等同性的关键方法：<br/>
-~~ <code><br/>
-~~ -(BOOL)isEqual:(id)object;<br/>
-~~ -(NSUInteger)hash;<br/>
-~~</code><br/>
-2. 要点：<br/>
-2. 相同的对象必须具有相同的哈希码；<br/>
-3. 拥有相同哈希码的对象不一定相同；</p>
-
-<h2 id="toc_14">第9条 以“类族模式”隐藏实现细节</h2>
-
-<p>1.笔记：</p>
-
-<ul>
-<li>基类  + 分工的子类</li>
-<li>子类都应当继承自类族中的抽象基类。</li>
-<li>子类应该定义自己的数据存储方式。</li>
-<li><p>子类应当覆写超类文档中指明需要覆写的方法。</p>
-
-<p>2.要点:</p></li>
-<li><p>类族模式可以把实现细节隐藏在一套简单的公共接口后面。</p></li>
-<li><p>系统框架中经常使用类族。</p></li>
-<li><p>从类族的公共抽象基类中集成子类是要当心，若文档有变化，则应当先阅读。</p></li>
-</ul>
-
-<h2 id="toc_15">第10条：在既有类中使用关联对象存放自定义数据</h2>
-
-<h2 id="toc_16">第12条：理解 objc_msgSend 的作用</h2>
-
-<h2 id="toc_17">第13条：</h2>
-
-<h2 id="toc_18">第14条：</h2>
-
-<h2 id="toc_19">第15条：</h2>
-
-<h2 id="toc_20">第16条：</h2>
-
-<h2 id="toc_21">第17条：</h2>
-
-<h2 id="toc_22">第18条：</h2>
-
-<h2 id="toc_23">第19条：</h2>
-
-<h2 id="toc_24">第20条：</h2>
-
-<h2 id="toc_25">第21条：</h2>
-
-<h2 id="toc_26">第22条：</h2>
-
-<h2 id="toc_27">第23条：</h2>
 
                         
                       </div>
@@ -811,7 +318,7 @@ NSNull：在集合对象中，表示空值的对象。</li>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="15130871696781.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2017/12/12</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -844,13 +351,14 @@ NSNull：在集合对象中，表示空值的对象。</li>
 <li>tmp:</li>
 </ul>
 
+
                         
                       </div>
                   </div>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="15129168744096.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2017/12/10</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -891,109 +399,9 @@ NSNull：在集合对象中，表示空值的对象。</li>
 <p><em>具体使用</em></p>
 
 <pre><code>infer -- xcodebuild -target &lt;target name&gt; -configuration &lt;build configuration&gt; -sdk iphonesimulator
-</code></pre>
-
-<p><em>例如：</em><br/>
-```</p>
-
-<h1 id="toc_2">分析之前先把之前的build缓存清理下</h1>
-
-<p>xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0</p>
-
-<h1 id="toc_3">根据自己醒目名字使用infer 命令进行分析</h1>
-
-<p>infer -- xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0<br/>
-```</p>
-
-<p><em>infer的优势</em></p></li>
-<li><p>安装过程简洁，不需要过多的配置（前提是电脑之前安装过Homebrow）</p></li>
-<li><p>使用方便，只需要一行命令</p></li>
-</ul>
-
-<h3 id="toc_4">sonar</h3>
-
-<p>Sonar 是一个用于代码质量管理的开放平台。通过插件机制，Sonar 可以集成不同的测试工具，代码分析工具，以及持续集成工具。相比于Jenkins ，sonar更关注代码的变化，通过量化的方式度量代码变化。</p>
-
-<p>如果不需要持续集成，sonar只需要两个配置文件就可以进行代码的静态检测。</p>
-
-<ul>
-<li>安装： <code>brew install sonar</code></li>
-<li>配置文件修改 <code>run-sonar.sh</code> <code>sonar-project.properties</code></li>
-<li><p>执行run-sonar.sh脚本，检测代码</p>
-
-<p><em>资源下载</em></p>
-
-<ul>
-<li><p><a href="https://raw.githubusercontent.com/octo-technology/sonar-objective-c/master/src/main/shell/run-sonar.sh">run-sonar.sh</a></p></li>
-<li><p><a href="https://raw.githubusercontent.com/octo-technology/sonar-objective-c/master/sample/sonar-project.properties">sonar-project.properties</a></p></li>
-</ul>
-
-<p><em>参考资源</em></p>
-
-<ul>
-<li><p><a href="http://www.jianshu.com/p/f58e89573d33">IOS-Sonar代码质量监控</a></p></li>
-<li><p><a href="https://my.oschina.net/ChenTF/blog/806565">[实践]Sonar Xcode8兼容</a></p></li>
-<li><p><a href="http://www.jianshu.com/p/74bee59fef1c">iOS Sonar集成流程详解</a></p></li>
-<li><p><a href="http://www.jianshu.com/p/6b61783b9a38">基于Sonar的iOS代码质量检测系统</a></p></li>
-<li><p><a href="http://blog.csdn.net/itfootball/article/details/45058591">IOS测试之sonar检查ios代码质量</a></p></li>
-</ul></li>
-</ul>
-
-<h3 id="toc_5">OCLint + xcpretty</h3>
-
-<ul>
-<li><p>安装xcpretty</p>
-
-<pre><code>sudo gem install xcpretty
 </code></pre></li>
-<li><p>安装OCLint<br/>
-```<br/>
-brew tap oclint/formulae</p>
-
-<p>brew install oclint<br/>
-```</p></li>
-<li><p>根目录下 运行脚本：<br/>
-```</p>
-
-<h1 id="toc_6">清理</h1>
-
-<p>xcodebuild clean</p>
-
-<h1 id="toc_7">生成JSON文件 用于分析</h1>
-
-<p>xcodebuild  -workspace demo.xcworkspace -scheme demo -configuration Debug \<br/>
-| tee xcodebuild.log \<br/>
-| xcpretty -r json-compilation-database -o compile_commands.json</p>
-
-<h1 id="toc_8">OCLint 分析（根据一定规则进行分析）</h1>
-
-<p>oclint-json-compilation-database -v \<br/>
--e Pods \<br/>
--e MGLivenessDetection \<br/>
--e MGBaseKit \<br/>
--e MGIDCard \<br/>
-oclint_args -- -report-type html -o oclintReport.html \<br/>
--disable-rule ObjCAssignIvarOutsideAccessors \<br/>
--disable-rule ShortVariableName \<br/>
--rc=MINIMUM_CASES_IN_SWITCH=3 \<br/>
--rc=CYCLOMATIC_COMPLEXITY=10 \<br/>
--rc=LONG_CLASS=700 \<br/>
--rc=LONG_LINE=200 \<br/>
--rc=NCSS_METHOD=40 \<br/>
--rc=NESTED_BLOCK_DEPTH=5 \<br/>
--rc=TOO_MANY_FIELDS=20 \<br/>
--rc=TOO_MANY_METHODS=30 \<br/>
--rc=TOO_MANY_PARAMETERS=6</p>
-
-<h1 id="toc_9">oclint_args -- -report-type xcode \</h1>
-
-<pre><code>
-高级用法，代码检测规则：
-</code></pre></li>
-<li><p><a href="http://www.jianshu.com/p/4f505e92d557">iOS使用OCLint做静态代码分析</a></p></li>
-<li><p><a href="http://www.cocoachina.com/ios/20170928/20669.html">让XCode自动CodeReview你的代码-OCLint使用</a></p></li>
-<li><p><a href="https://blog.yourtion.com/static-code-analysis-ios-using-oclint.html">iOS静态代码扫描</a>  <a href="https://blog.yourtion.com/static-code-analysis-ios-using-oclint.html">原文链接</a></p></li>
 </ul>
+
 
                         
                       </div>
@@ -1001,7 +409,7 @@ oclint_args -- -report-type html -o oclintReport.html \<br/>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="15126628432953.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2017/12/8</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -1045,183 +453,8 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
 <ul>
 <li>1：主要用来加载网络URL<br/></li>
 <li>2：也可以加载本地HTML文件（本文重点）</li>
-</ul></li>
 </ul>
 
-<h3 id="toc_2">loadFileURL</h3>
-
-<ul>
-<li><p>API: URL:文件相对路径 readAccessURL：访问文件需要引用的文件的路径 一般都是比<code>URL</code>大一级或者更高几级</p>
-
-<p><code>- (nullable WKNavigation *)loadFileURL:(NSURL *)URL allowingReadAccessToURL:(NSURL *)readAccessURL API_AVAILABLE(macosx(10.11), ios(9.0));</code></p></li>
-<li><p>用途：主要用于加载本地文件（一般指相对路径）</p></li>
-</ul>
-
-<h3 id="toc_3">loadHTMLString</h3>
-
-<ul>
-<li><p>API:<br/>
-<code>- (nullable WKNavigation *)loadHTMLString:(NSString *)string baseURL:(nullable NSURL *)baseURL;</code></p></li>
-<li><p>用途：主要用于 HTML转换成的字符串（比如：编程APP）</p></li>
-</ul>
-
-<h3 id="toc_4">loadData</h3>
-
-<ul>
-<li><p>API: 值得一提的是MIMETType,text/html、image/jpg、text/plain</p>
-
-<p><code>- (nullable WKNavigation *)loadData:(NSData *)data MIMEType:(NSString *)MIMEType characterEncodingName:(NSString *)characterEncodingName baseURL:(NSURL *)baseURL API_AVAILABLE(macosx(10.11), ios(9.0));</code></p></li>
-<li><p>用途：主要用于加载 二进制状态下的文件，主要包括HTML、Image、Text文本</p></li>
-</ul>
-
-<h2 id="toc_5">开发中的HTML文件位置</h2>
-
-<h3 id="toc_6">HTML位于工程内的黄色文件夹下</h3>
-
-<blockquote>
-<p>这是咱们一般的文件添加方式，这属于绝对路径的添加</p>
-</blockquote>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fmcxnu043cj313w05maan.jpg" alt="绝对路径"/></p>
-
-<h4 id="toc_7"><strong><code>loadRequest</code> 加载方式</strong></h4>
-
-<blockquote>
-<p><strong>Tips:</strong><br/>
- iOS8 的时候只能通过这个<code>loadRequest</code>方法去加载<br/>
-iOS8 WKWebView的加载本地文件的方式本文后面会有 <strong>详细方案</strong></p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot;];
-    
-_feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-    
-[_webview loadRequest:[NSURLRequest requestWithURL:_feedbackUrl]];
-</code></pre>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fmcxsxa56jj30af0j5dgd.jpg" alt="效果"/></p>
-
-<p><strong>warning！！！</strong><br/>
-页面能加载出来，但是效果是很差的，因为CSS、JS、图片资源文件没有得到正确的引用！<br/>
-那我们该通过什么方式来让这些附属的文件得到正确引用呢？<br/>
-iOS9之后新增了 <code>loadFileURL</code> 等一系列加载本地文件的方法</p>
-
-<h4 id="toc_8"><strong><code>loadFileURL</code>加载方式</strong></h4>
-
-<blockquote>
-<p>iOS9之后才出现这个加载方式</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot;];
-_feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-if (@available(iOS 9.0, *)) {
-    [_webview loadFileURL:[NSURL fileURLWithPath:bundleStr] allowingReadAccessToURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
-} else {
-    // Fallback on earlier versions
-}
-</code></pre>
-
-<p>哇塞！加载出来了耶！但是 依旧是没能加载其他资源文件啊 😰<br/>
-客观，稍安勿躁 ~</p>
-
-<h3 id="toc_9">HTML位于工程内的蓝色文件夹下</h3>
-
-<blockquote>
-<p>特殊文件添加方式，尤其是文件之间有相互引用的时候用这种方式</p>
-</blockquote>
-
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fmcxr0jl88j313w05maan.jpg" alt="相对路径添加方式"/></p>
-
-<h4 id="toc_10">loadRequest 方式</h4>
-
-<pre><code class="language-Objectiv-C">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot; inDirectory:@&quot;FeedbackH5/pages&quot;];
-NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-if (@available(iOS 9.0, *)) {
-    [_webview loadRequest:[NSURLRequest requestWithURL:pathURL]];
-}
-</code></pre>
-
-<h4 id="toc_11">loadFileURL 方式加载</h4>
-
-<pre><code class="language-Objectiv-C">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot; inDirectory:@&quot;FeedbackH5/pages&quot;];
-    NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-    if (@available(iOS 9.0, *)) {
-//        [_webview loadRequest:[NSURLRequest requestWithURL:pathURL]];
-        [_webview loadFileURL:[NSURL fileURLWithPath:filePath] allowingReadAccessToURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
-    }
-</code></pre>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fmcyc9pjp0j30af0j5wfp.jpg" alt=""/></p>
-
-<blockquote>
-<p>由此可见：相对路径方式加载 是可以正常引用JS、css等资源文件的<br/>
-但是 iOS 8系统下，依旧加载不出来！！！</p>
-</blockquote>
-
-<h3 id="toc_12">HTML位于APP沙盒下Document文件夹</h3>
-
-<blockquote>
-<p>iOS8既然添加到工程中引用，一直引用不到，我们可以让他从document路径下引用试试！<br/>
-这个方法可以适配 iOS8系统下WKWebView加载本地文件了？<br/>
-你还太天真！！！</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">//项目中的文件夹路径
-NSString *directoryPath = [KFileManger appSourceName:@&quot;FeedbackH5&quot; andType:@&quot;&quot;];
-
-//沙盒中的document路径
-NSString *documentpath = [KFileManger documentPath];
-    
-//copy文件夹到 document 路径下
-[KFileManger copyMissingFile:directoryPath toPath:documentpath];
-
-//document 路径下的HTML文件路径
-NSString *homePath = [[KFileManger documentPath] stringByAppendingString:@&quot;/FeedbackH5/pages/feedback.html&quot;];
-
-//document 路径下的HTML文件 URL
-NSURL *docSourceURL = [NSURL fileURLWithPath:homePath];
-    
-[_webview loadRequest:[NSURLRequest requestWithURL:docSourceURL]];
-</code></pre>
-
-<blockquote>
-<p>果然不出所料(zhe jiu shi wo xiang yao de)，模拟器上能正常加载出界面，图片、CSS但是JS交互是不行的<br/>
-在真机 依旧加载不出任何界面！</p>
-</blockquote>
-
-<h3 id="toc_13">HTML位于APP沙盒下tmp临时缓存文件夹</h3>
-
-<blockquote>
-<p>亲爱的客观们，这才是iOS8系统下加载有相互引用关系的HTML、JS、CSS以及图片资源的正确方法(当前知道的唯一方法如有新的方式私信我哦~)！😊</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">//项目中的文件夹路径
-NSString *directoryPath = [KFileManger appSourceName:@&quot;FeedbackH5&quot; andType:@&quot;&quot;];
-
-//tmp缓存文件夹路径
-NSString *tmpPath = [KFileManger tmpPath];
-
-//新文件夹名字
-NSString *wwwDir =@&quot;www&quot;;
-
-//tmp文件夹下创建www文件夹
-[KFileManger createDirWithPath:tmpPath andDirectoryName: wwwDir];
-
-//tmp中的www文件夹中的路径
-NSString *tmpWWW = [tmpPath stringByAppendingString: wwwDir];
-
-//copy文件夹到 tmp/www 路径下
-[KFileManger copyMissingFile:directoryPath toPath:tmpWWW];
-
-// 字符 tmp/www/FeedbackH5/pages/feedback.html 全路径
-NSString *tmpWWWFeedback = [tmpWWW stringByAppendingString:@&quot;/FeedbackH5/pages/feedback.html&quot;];
-
-//tmp 操作，字符转换成URL
-NSURL *feedbackURL = [NSURL fileURLWithPath:tmpWWWFeedback];
-
-//WKWebView加载
-[_webview loadRequest:[NSURLRequest requestWithURL:feedbackURL]];
-</code></pre>
 
                         
                       </div>
@@ -1229,7 +462,7 @@ NSURL *feedbackURL = [NSURL fileURLWithPath:tmpWWWFeedback];
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="15126415331235.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2017/12/7</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -1456,8 +689,8 @@ Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
      
     </script>
 
-    
-
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
 
 
   </body>

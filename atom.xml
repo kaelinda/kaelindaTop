@@ -4,7 +4,7 @@
   <title><![CDATA[kaelinda]]></title>
   <link href="http://blog.csdn.net/atom.xml" rel="self"/>
   <link href="http://blog.csdn.net/"/>
-  <updated>2017-12-22T14:12:46+08:00</updated>
+  <updated>2017-12-22T14:50:13+08:00</updated>
   <id>http://blog.csdn.net/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -77,9 +77,10 @@
 <p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fhp9dw6vxpj307406ewek.jpg" alt="icon" title="React icon"/></p>
 
 <blockquote>
-<p>所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结<br/>
-果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。</p>
+<p>所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。</p>
 </blockquote>
+
+<span id="more"></span><!-- more -->
 
 <h3 id="toc_1">Promise 状态</h3>
 
@@ -549,6 +550,11 @@ asyncFunc()<br/>
 </ul></li>
 <li><p>Array.of<br/>
 该方法用于将一组值，转换为数组。</p></li>
+</ol>
+
+<span id="more"></span><!-- more -->
+
+<ol>
 <li><p>copyWithin<br/>
 在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员）。</p>
 
@@ -596,20 +602,22 @@ entries()是对键值对的遍历</p></li>
 <ol>
 <li><p>ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p></li>
 <li><p>变量提升：var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined；为了纠正这种现象，let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。</p></li>
-<li><p>暂时性死区：在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”；</p>
+<li><p>暂时性死区：在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”；</p></li>
+</ol>
 
-<pre><code>var tmp = 123;
+<span id="more"></span><!-- more -->
+
+<pre><code>```
+var tmp = 123;
 
 if (true) {
 tmp = &#39;abc&#39;; // ReferenceError  死区
 let tmp;
 }
-</code></pre>
+```
 
-<blockquote>
-<p>let不允许在相同作用域内，重复声明同一个变量。</p>
-</blockquote></li>
-</ol>
+&gt; let不允许在相同作用域内，重复声明同一个变量。
+</code></pre>
 
 <h3 id="toc_2">块级作用域</h3>
 
@@ -656,12 +664,17 @@ var constantize = (obj) =&gt; {
 </blockquote>
 
 <ul>
-<li><p>顶层对象的属性：<br/>
-ES5中 顶层对象的属性  和 全局变量是一回事儿；全局变量是静态创建，而对象属性是动态创建的；不合理。<br/>
-ES6中 var function 声明的全局变量 依然是顶层对象的属性；但是 let const class声明的全局变量 不属于顶层对象的属性。</p></li>
-<li><p>全局环境中，this会返回顶层对象。但是，Node模块和ES6模块中，this返回的是当前模块。</p></li>
-<li><p>函数里面的this，如果函数不是作为对象的方法运行，而是单纯作为函数运行，this会指向顶层对象。但是，严格模式下，这时this会返回undefined。</p></li>
-<li><p>不管是严格模式，还是普通模式，new Function(&#39;return this&#39;)()，总是会返回全局对象。但是，如果浏览器用了CSP（Content Security Policy，内容安全政策），那么eval、new Function这些方法都可能无法使用。</p></li>
+<li>顶层对象的属性：
+ES5中 顶层对象的属性  和 全局变量是一回事儿；全局变量是静态创建，而对象属性是动态创建的；不合理。
+ES6中 var function 声明的全局变量 依然是顶层对象的属性；但是 let const class声明的全局变量 不属于顶层对象的属性。</li>
+</ul>
+
+<!-- more -->
+
+<ul>
+<li>全局环境中，this会返回顶层对象。但是，Node模块和ES6模块中，this返回的是当前模块。</li>
+<li>函数里面的this，如果函数不是作为对象的方法运行，而是单纯作为函数运行，this会指向顶层对象。但是，严格模式下，这时this会返回undefined。</li>
+<li>不管是严格模式，还是普通模式，new Function(&#39;return this&#39;)()，总是会返回全局对象。但是，如果浏览器用了CSP（Content Security Policy，内容安全政策），那么eval、new Function这些方法都可能无法使用。</li>
 </ul>
 
 <pre><code class="language-JavaScript">// 方法一
@@ -708,6 +721,8 @@ const global = getGlobal();</p>
 <pre><code>let [x = 1, y = x] = [];     // x=1; y=1
 let [x = y, y = 1] = [];     // ReferenceError
 </code></pre>
+
+<span id="more"></span><!-- more -->
 
 <h3 id="toc_2">对象的 解构赋值：</h3>
 
@@ -799,6 +814,8 @@ undefined和null无法转为对象，所以对它们进行解构赋值，都会�
 <li><code>320*480 @1x    320*480</code></li>
 </ul></li>
 </ul>
+
+<span id="more"></span><!-- more -->
 
 <p><em>Xcode9 新标准</em></p>
 
@@ -1047,6 +1064,8 @@ pt代表的是物理像素（或者自然像素）</p>
 <p>self 改为 (__bridge void *) self<br/>
 用  (__bridge void *)  进行类型的强制转换</p>
 
+<span id="more"></span><!-- more -->
+
 <h1 id="toc_5">六、真机测试</h1>
 
 <p>真机运行才可以，不支持模拟器哦</p>
@@ -1083,6 +1102,8 @@ pt代表的是物理像素（或者自然像素）</p>
 <li><p>Objective-c为C语言天减了面向对象特性，是其超集。Objective-C是使用动态绑定的消息结构，也就是说，在运行时才会检查对象类型。接收这一消息后，究竟该执行何种代码实现，有运行期环境决定而非编译器。</p></li>
 <li><p>理解C语言的核心概念有助于写好Objective-C程序，尤其是掌握内存模型与指针。</p></li>
 </ol>
+
+<span id="more"></span><!-- more -->
 
 <h2 id="toc_2">第2条 在类的头文件中尽量少引用其他头文件。</h2>
 
@@ -1374,6 +1395,8 @@ NSNull：在集合对象中，表示空值的对象。</li>
 <li>tmp:</li>
 </ul>
 
+<span id="more"></span><!-- more -->
+
 ]]></content>
   </entry>
   
@@ -1399,26 +1422,28 @@ NSNull：在集合对象中，表示空值的对象。</li>
 <p><em>具体使用</em></p>
 
 <pre><code>infer -- xcodebuild -target &lt;target name&gt; -configuration &lt;build configuration&gt; -sdk iphonesimulator
-</code></pre>
-
-<p><em>例如：</em><br/>
-```</p>
-
-<h1 id="toc_2">分析之前先把之前的build缓存清理下</h1>
-
-<p>xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0</p>
-
-<h1 id="toc_3">根据自己醒目名字使用infer 命令进行分析</h1>
-
-<p>infer -- xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0<br/>
-```</p>
-
-<p><em>infer的优势</em></p></li>
-<li><p>安装过程简洁，不需要过多的配置（前提是电脑之前安装过Homebrow）</p></li>
-<li><p>使用方便，只需要一行命令</p></li>
+</code></pre></li>
 </ul>
 
-<h3 id="toc_4">sonar</h3>
+<span id="more"></span><!-- more -->
+
+<p><em>例如：</em><br/>
+  ```<br/>
+  #分析之前先把之前的build缓存清理下<br/>
+  xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0</p>
+
+<p>#根据自己醒目名字使用infer 命令进行分析<br/>
+  infer -- xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0<br/>
+  ```</p>
+
+<p><em>infer的优势</em></p>
+
+<ul>
+<li>安装过程简洁，不需要过多的配置（前提是电脑之前安装过Homebrow）</li>
+<li>使用方便，只需要一行命令</li>
+</ul>
+
+<h3 id="toc_2">sonar</h3>
 
 <p>Sonar 是一个用于代码质量管理的开放平台。通过插件机制，Sonar 可以集成不同的测试工具，代码分析工具，以及持续集成工具。相比于Jenkins ，sonar更关注代码的变化，通过量化的方式度量代码变化。</p>
 
@@ -1447,7 +1472,7 @@ NSNull：在集合对象中，表示空值的对象。</li>
 </ul></li>
 </ul>
 
-<h3 id="toc_5">OCLint + xcpretty</h3>
+<h3 id="toc_3">OCLint + xcpretty</h3>
 
 <ul>
 <li><p>安装xcpretty</p>
@@ -1463,17 +1488,17 @@ brew tap oclint/formulae</p>
 <li><p>根目录下 运行脚本：<br/>
 ```</p>
 
-<h1 id="toc_6">清理</h1>
+<h1 id="toc_4">清理</h1>
 
 <p>xcodebuild clean</p>
 
-<h1 id="toc_7">生成JSON文件 用于分析</h1>
+<h1 id="toc_5">生成JSON文件 用于分析</h1>
 
 <p>xcodebuild  -workspace demo.xcworkspace -scheme demo -configuration Debug \<br/>
 | tee xcodebuild.log \<br/>
 | xcpretty -r json-compilation-database -o compile_commands.json</p>
 
-<h1 id="toc_8">OCLint 分析（根据一定规则进行分析）</h1>
+<h1 id="toc_6">OCLint 分析（根据一定规则进行分析）</h1>
 
 <p>oclint-json-compilation-database -v \<br/>
 -e Pods \<br/>
@@ -1493,7 +1518,7 @@ oclint_args -- -report-type html -o oclintReport.html \<br/>
 -rc=TOO_MANY_METHODS=30 \<br/>
 -rc=TOO_MANY_PARAMETERS=6</p>
 
-<h1 id="toc_9">oclint_args -- -report-type xcode \</h1>
+<h1 id="toc_7">oclint_args -- -report-type xcode \</h1>
 
 <pre><code>
 高级用法，代码检测规则：
@@ -1531,7 +1556,9 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
 <ul>
 <li>1：主要用来加载网络URL<br/></li>
 <li>2：也可以加载本地HTML文件（本文重点）</li>
-</ul></li>
+</ul>
+
+<span id="more"></span><!-- more --></li>
 </ul>
 
 <h3 id="toc_2">loadFileURL</h3>

@@ -50,11 +50,11 @@
         
         <li id="app.css"><a target="_self" href="app.html">APP推荐</a></li>
         
-        <li id="reactnative.css"><a target="_self" href="reactnative.html">React-Native</a></li>
+        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
         
         <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
         
-        <li id="js.css"><a target="_self" href="js.html">JavaScript</a></li>
+        <li id="js.css"><a target="_self" href="js.html">JS</a></li>
         
         </ul>
 
@@ -138,36 +138,8 @@
 </ul></li>
 <li><p>Array.of<br/>
 该方法用于将一组值，转换为数组。</p></li>
-<li><p>copyWithin<br/>
-在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员）。</p>
-
-<ul>
-<li>      target（必需）：从该位置开始替换数据。</li>
-<li>      start（可选）：从该位置开始读取数据，默认为0。如果为负值，表示倒数。</li>
-<li>      end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。</li>
-</ul></li>
-<li><p>数组实例的find()和findIndex()<br/>
-用于找出第一个符合条件的数组成员。<br/>
-用于找出第一个符合条件的数组成员的位置。</p></li>
-<li><p>fill<br/>
-方法使用给定值，填充一个数组。<br/>
-[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;].fill(7, 1, 2)<br/>
-// [&#39;a&#39;, 7, &#39;c&#39;];// 左闭右开</p></li>
-<li><p>数组实例的entries()，keys()和values()<br/>
-keys()是对键名的遍历<br/>
-values()是对键值的遍历<br/>
-entries()是对键值对的遍历</p></li>
-<li><p>Array.prototype.includes方法<br/>
-返回一个布尔值，表示某个数组是否包含给定的值。<br/>
-[1, 2, 3].includes(3, -1); // true<br/>
-3:将要搜索的item<br/>
--1：搜索的起始位置  </p></li>
-<li><p>数组的空位<br/>
-数组的空位指，数组的某一个位置没有任何值。</p></li>
 </ol>
 
-<p>空位不是undefined，undefined是有值的。<br/>
-空位是没有任何值。</p>
 
                         
                       </div>
@@ -175,7 +147,7 @@ entries()是对键值对的遍历</p></li>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="15137645005542.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2017/12/20</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -207,95 +179,9 @@ entries()是对键值对的遍历</p></li>
 <ol>
 <li><p>ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p></li>
 <li><p>变量提升：var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined；为了纠正这种现象，let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。</p></li>
-<li><p>暂时性死区：在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”；</p>
-
-<pre><code>var tmp = 123;
-
-if (true) {
-tmp = &#39;abc&#39;; // ReferenceError  死区
-let tmp;
-}
-</code></pre>
-
-<blockquote>
-<p>let不允许在相同作用域内，重复声明同一个变量。</p>
-</blockquote></li>
+<li><p>暂时性死区：在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”；</p></li>
 </ol>
 
-<h3 id="toc_2">块级作用域</h3>
-
-<ul>
-<li>内层作用域可以定义外层作用域的同名变量。</li>
-<li>内部作用域  重名变量  不会影响，</li>
-<li>ES6 引入了块级作用域，明确允许在块级作用域之中声明函数（ES5不允许）。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。</li>
-<li>函数声明类似于var，即会提升到全局作用域或函数作用域的头部。</li>
-<li>函数声明还会提升到所在的块级作用域的头部。</li>
-</ul>
-
-<blockquote>
-<p>块级作用域是一个语句，将多个操作封装在一起，没有返回值。<br/>
-在块级作用域之前加上do，使它变为do表达式。会得到整个块级作用域的返回值</p>
-</blockquote>
-
-<h3 id="toc_3">const:</h3>
-
-<ul>
-<li>const声明一个只读的常量。一旦声明，常量的值就不能改变。</li>
-<li>const一旦声明变量，就必须立即初始化，不能留到以后赋值。</li>
-<li>const的作用域与let命令相同：只在声明所在的块级作用域内有效。</li>
-<li><p>const命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。</p></li>
-<li><p>const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动</p></li>
-<li><p>对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。</p></li>
-<li><p>如果真的想将对象冻结，应该使用Object.freeze方法</p></li>
-</ul>
-
-<pre><code class="language-JavaScript">//冻结对象属性：
-var constantize = (obj) =&gt; {
-  Object.freeze(obj);
-  Object.keys(obj).forEach( (key, i) =&gt; {
-    if ( typeof obj[key] === &#39;object&#39; ) {
-      constantize( obj[key] );
-    }
-  });
-};
-</code></pre>
-
-<h3 id="toc_4">变量声明：</h3>
-
-<blockquote>
-<p>ES5 只有两种声明变量的方法：var命令和function命令。ES6除了添加let和const命令，后面章节还会提到，另外两种声明变量的方法：import命令和class命令。所以，ES6 一共有6种声明变量的方法</p>
-</blockquote>
-
-<ul>
-<li><p>顶层对象的属性：<br/>
-ES5中 顶层对象的属性  和 全局变量是一回事儿；全局变量是静态创建，而对象属性是动态创建的；不合理。<br/>
-ES6中 var function 声明的全局变量 依然是顶层对象的属性；但是 let const class声明的全局变量 不属于顶层对象的属性。</p></li>
-<li><p>全局环境中，this会返回顶层对象。但是，Node模块和ES6模块中，this返回的是当前模块。</p></li>
-<li><p>函数里面的this，如果函数不是作为对象的方法运行，而是单纯作为函数运行，this会指向顶层对象。但是，严格模式下，这时this会返回undefined。</p></li>
-<li><p>不管是严格模式，还是普通模式，new Function(&#39;return this&#39;)()，总是会返回全局对象。但是，如果浏览器用了CSP（Content Security Policy，内容安全政策），那么eval、new Function这些方法都可能无法使用。</p></li>
-</ul>
-
-<pre><code class="language-JavaScript">// 方法一
-(typeof window !== &#39;undefined&#39;
-   ? window
-   : (typeof process === &#39;object&#39; &amp;&amp;
-      typeof require === &#39;function&#39; &amp;&amp;
-      typeof global === &#39;object&#39;)
-     ? global
-     : this);
-
-// 方法二
-var getGlobal = function () {
-  if (typeof self !== &#39;undefined&#39;) { return self; }
-  if (typeof window !== &#39;undefined&#39;) { return window; }
-  if (typeof global !== &#39;undefined&#39;) { return global; }
-  throw new Error(&#39;unable to locate global object&#39;);
-};
-</code></pre>
-
-<p>// ES6模块的写法<br/>
-import getGlobal from &#39;system.global&#39;;<br/>
-const global = getGlobal();</p>
 
                         
                       </div>
@@ -303,7 +189,7 @@ const global = getGlobal();</p>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="15137627946753.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2017/12/20</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -342,53 +228,6 @@ const global = getGlobal();</p>
 let [x = y, y = 1] = [];     // ReferenceError
 </code></pre>
 
-<h3 id="toc_2">对象的 解构赋值：</h3>
-
-<ul>
-<li>对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；</li>
-<li><p>而对象的属性没有次序，变量必须与属性同名，才能取到正确的值<br/>
-（数据库、序列化）</p></li>
-<li><p>对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。真正被赋值的是后者，而不是前者；前者是key,后者才是变量！</p>
-
-<blockquote>
-<p>注意，采用这种写法时，变量的声明和赋值是一体的。对于let和const来说，变量不能重新声明，所以一旦赋值的变量以前声明过，就会报错。</p>
-</blockquote></li>
-</ul>
-
-<h3 id="toc_3">字符串的解构赋值</h3>
-
-<blockquote>
-<p>字符串也可以解构赋值。<br/>
-这是因为此时，字符串被转换成了一个类似数组的对象<br/>
-类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。</p>
-</blockquote>
-
-<pre><code class="language-JavaScript">let {length : len} = &#39;hello&#39;;
-len // 5
-
-let {toString: s} = 123;
-s === Number.prototype.toString // true
-
-let {toString: s} = true;
-s === Boolean.prototype.toString // true
-
-let { prop: x } = undefined; // TypeError
-let { prop: y } = null; // TypeError
-</code></pre>
-
-<p>解构赋值时，如果等号右边是数值和布尔值，则会先转为对象。<br/>
-undefined和null无法转为对象，所以对它们进行解构赋值，都会报错。</p>
-
-<ul>
-<li>不能使用圆括号的情况
-
-<ul>
-<li>变量声明语句中，不能带有圆括号</li>
-<li>函数参数中，模式不能带有圆括号。</li>
-<li>赋值语句中，不能将整个模式，或嵌套模式中的一层，放在圆括号之中</li>
-</ul></li>
-<li>可以使用圆括号的情况只有一种：赋值语句的<strong>非模式部分</strong>，可以使用圆括号。</li>
-</ul>
 
                         
                       </div>
@@ -396,7 +235,7 @@ undefined和null无法转为对象，所以对它们进行解构赋值，都会�
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="15137621729153.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2017/12/20</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -583,8 +422,8 @@ Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
      
     </script>
 
-    
-
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
 
 
   </body>

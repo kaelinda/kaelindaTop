@@ -50,11 +50,11 @@
         
         <li id="app.css"><a target="_self" href="app.html">APP推荐</a></li>
         
-        <li id="reactnative.css"><a target="_self" href="reactnative.html">React-Native</a></li>
+        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
         
         <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
         
-        <li id="js.css"><a target="_self" href="js.html">JavaScript</a></li>
+        <li id="js.css"><a target="_self" href="js.html">JS</a></li>
         
         </ul>
 
@@ -162,6 +162,8 @@
 <li><p>Objective-c为C语言天减了面向对象特性，是其超集。Objective-C是使用动态绑定的消息结构，也就是说，在运行时才会检查对象类型。接收这一消息后，究竟该执行何种代码实现，有运行期环境决定而非编译器。</p></li>
 <li><p>理解C语言的核心概念有助于写好Objective-C程序，尤其是掌握内存模型与指针。</p></li>
 </ol>
+
+<span id="more"></span><!-- more -->
 
 <h2 id="toc_2">第2条 在类的头文件中尽量少引用其他头文件。</h2>
 
@@ -626,8 +628,8 @@ Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
      
     </script>
 
-    
-
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
 
 
   </body>

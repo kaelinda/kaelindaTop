@@ -50,11 +50,11 @@
         
         <li id="app.css"><a target="_self" href="app.html">APP推荐</a></li>
         
-        <li id="reactnative.css"><a target="_self" href="reactnative.html">React-Native</a></li>
+        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
         
         <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
         
-        <li id="js.css"><a target="_self" href="js.html">JavaScript</a></li>
+        <li id="js.css"><a target="_self" href="js.html">JS</a></li>
         
         </ul>
 
@@ -155,26 +155,28 @@
 <p><em>具体使用</em></p>
 
 <pre><code>infer -- xcodebuild -target &lt;target name&gt; -configuration &lt;build configuration&gt; -sdk iphonesimulator
-</code></pre>
-
-<p><em>例如：</em><br/>
-```</p>
-
-<h1 id="toc_2">分析之前先把之前的build缓存清理下</h1>
-
-<p>xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0</p>
-
-<h1 id="toc_3">根据自己醒目名字使用infer 命令进行分析</h1>
-
-<p>infer -- xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0<br/>
-```</p>
-
-<p><em>infer的优势</em></p></li>
-<li><p>安装过程简洁，不需要过多的配置（前提是电脑之前安装过Homebrow）</p></li>
-<li><p>使用方便，只需要一行命令</p></li>
+</code></pre></li>
 </ul>
 
-<h3 id="toc_4">sonar</h3>
+<span id="more"></span><!-- more -->
+
+<p><em>例如：</em><br/>
+  ```<br/>
+  #分析之前先把之前的build缓存清理下<br/>
+  xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0</p>
+
+<p>#根据自己醒目名字使用infer 命令进行分析<br/>
+  infer -- xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0<br/>
+  ```</p>
+
+<p><em>infer的优势</em></p>
+
+<ul>
+<li>安装过程简洁，不需要过多的配置（前提是电脑之前安装过Homebrow）</li>
+<li>使用方便，只需要一行命令</li>
+</ul>
+
+<h3 id="toc_2">sonar</h3>
 
 <p>Sonar 是一个用于代码质量管理的开放平台。通过插件机制，Sonar 可以集成不同的测试工具，代码分析工具，以及持续集成工具。相比于Jenkins ，sonar更关注代码的变化，通过量化的方式度量代码变化。</p>
 
@@ -203,7 +205,7 @@
 </ul></li>
 </ul>
 
-<h3 id="toc_5">OCLint + xcpretty</h3>
+<h3 id="toc_3">OCLint + xcpretty</h3>
 
 <ul>
 <li><p>安装xcpretty</p>
@@ -219,17 +221,17 @@ brew tap oclint/formulae</p>
 <li><p>根目录下 运行脚本：<br/>
 ```</p>
 
-<h1 id="toc_6">清理</h1>
+<h1 id="toc_4">清理</h1>
 
 <p>xcodebuild clean</p>
 
-<h1 id="toc_7">生成JSON文件 用于分析</h1>
+<h1 id="toc_5">生成JSON文件 用于分析</h1>
 
 <p>xcodebuild  -workspace demo.xcworkspace -scheme demo -configuration Debug \<br/>
 | tee xcodebuild.log \<br/>
 | xcpretty -r json-compilation-database -o compile_commands.json</p>
 
-<h1 id="toc_8">OCLint 分析（根据一定规则进行分析）</h1>
+<h1 id="toc_6">OCLint 分析（根据一定规则进行分析）</h1>
 
 <p>oclint-json-compilation-database -v \<br/>
 -e Pods \<br/>
@@ -249,7 +251,7 @@ oclint_args -- -report-type html -o oclintReport.html \<br/>
 -rc=TOO_MANY_METHODS=30 \<br/>
 -rc=TOO_MANY_PARAMETERS=6</p>
 
-<h1 id="toc_9">oclint_args -- -report-type xcode \</h1>
+<h1 id="toc_7">oclint_args -- -report-type xcode \</h1>
 
 <pre><code>
 高级用法，代码检测规则：
@@ -449,8 +451,8 @@ Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
      
     </script>
 
-    
-
+    <script src="asset/chart/all-min.js"></script><script type="text/javascript">$(function(){    var mwebii=0;    var mwebChartEleId = 'mweb-chart-ele-';    $('pre>code').each(function(){        mwebii++;        var eleiid = mwebChartEleId+mwebii;        if($(this).hasClass('language-sequence')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = Diagram.parse($(this).text());            diagram.drawSVG(eleiid,{theme: 'simple'});        }else if($(this).hasClass('language-flow')){            var ele = $(this).addClass('nohighlight').parent();            $('<div id="'+eleiid+'"></div>').insertAfter(ele);            ele.hide();            var diagram = flowchart.parse($(this).text());            diagram.drawSVG(eleiid);        }    });});</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
 
 
   </body>
