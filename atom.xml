@@ -4,13 +4,1551 @@
   <title><![CDATA[kaelinda]]></title>
   <link href="http://blog.csdn.net/atom.xml" rel="self"/>
   <link href="http://blog.csdn.net/"/>
-  <updated>2017-12-22T15:05:47+08:00</updated>
+  <updated>2018-03-21T23:19:52+08:00</updated>
   <id>http://blog.csdn.net/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[]]></title>
+    <link href="http://blog.csdn.net/15200726964422.html"/>
+    <updated>2018-03-03T18:24:56+08:00</updated>
+    <id>http://blog.csdn.net/15200726964422.html</id>
+    <content type="html"><![CDATA[
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS 离屏渲染]]></title>
+    <link href="http://blog.csdn.net/15200715202464.html"/>
+    <updated>2018-03-03T18:05:20+08:00</updated>
+    <id>http://blog.csdn.net/15200715202464.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">触发方式</h2>
+
+<p>设置以下方式会触发离屏渲染：</p>
+
+<ul>
+<li>shouldRasterize（光栅化）</li>
+<li>masks（遮罩）</li>
+<li>shadows（阴影）</li>
+<li>edge antialiasing（抗锯齿）</li>
+<li>group opacity（不透明）</li>
+<li>复杂形状设置圆角等</li>
+<li>渐变 </li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS 面试题总结]]></title>
+    <link href="http://blog.csdn.net/15198022156700.html"/>
+    <updated>2018-02-28T15:16:55+08:00</updated>
+    <id>http://blog.csdn.net/15198022156700.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">基础篇</h2>
+
+<h3 id="toc_1">内存管理 ：assign copy strong weak...</h3>
+
+<ul>
+<li>简述OC中内存管理机制,与retain配对使用的方法是dealloc还是release，为什么？</li>
+</ul>
+
+<blockquote>
+<p>管理机制：<br/>
+  使用了一种叫做 <strong>引用计数</strong> 的机制来管理内存中的对象。OC中每个对象都对应着他们自己的引用计数，引用计数可以理解为一个整数计数器，当使用alloc方法创建对象的时候，持有计数会自动设置为1。当你向一个对象发送retain消息 时，持有计数数值会增加1。相反，当你像一个对象发送release消息时，持有计数数值会减小1。当对象的持有计数变为0的时候，对象会释放自己所占用的内存</p>
+</blockquote>
+
+<ul>
+<li><p>修饰词的作用</p>
+
+<ul>
+<li>retain(引用计数加1)-&gt;release（引用计数减1）</li>
+<li>alloc（申请内存空间）-&gt;dealloc(释放内存空间)</li>
+<li>readwrite: 表示既有getter，也有setter   (默认)</li>
+<li>readonly: 表示只有getter，没有setter</li>
+<li>nonatomic:不考虑线程安全</li>
+<li>atomic:线程操作安全   （默认）</li>
+<li>retain: release旧的对象，将旧对象的值赋予输入对象，再提高输入对象的索引计数为1</li>
+<li>assign: 简单赋值，不更改索引计数    （默认）</li>
+<li>copy: 其实是建立了一个相同的对象,地址不同（retain：指针拷贝  copy：内容拷贝）</li>
+<li>strong:（ARC下的）和（MRC）retain一样    （默认）</li>
+<li>weak:（ARC下的）和（MRC）assign一样， weak当指向的内存释放掉后自动nil化，防止野指针</li>
+<li>unsafe_unretained 声明一个弱引用，但是不会自动nil化，也就是说，如果所指向的内存区域被释放了，这个指针就是一个野指针了。 autoreleasing 用来修饰一个函数的参数，这个参数会在函数返回的时候被自动释放。
+### .类变量的@protected ,@private,@public,@package，声明各有什么含义？</li>
+</ul></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS 项目组件化]]></title>
+    <link href="http://blog.csdn.net/15193944679783.html"/>
+    <updated>2018-02-23T22:01:07+08:00</updated>
+    <id>http://blog.csdn.net/15193944679783.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">组件化需要解决的问题</h2>
+
+<ul>
+<li>APP 如何跳到任意指定界面（APP外部跳转，APP内部跳转）</li>
+<li>自家APP之间如何相互跳转 </li>
+<li>如何降低APP组件和APP界面之间的耦合度</li>
+<li>如何动态下发配置文件；iOS 安卓共用配置文件</li>
+<li>AOP统计界面跳转</li>
+<li>组件之间通信，组件和界面之间通信</li>
+</ul>
+
+<h2 id="toc_1">组件化步骤</h2>
+
+<ul>
+<li>拆分UI组件</li>
+<li>拆分业务组件</li>
+<li>组件管理</li>
+<li>组件通信</li>
+</ul>
+
+<h2 id="toc_2">组件化架构 &amp;&amp; 思路</h2>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS APP性能优化方向分析]]></title>
+    <link href="http://blog.csdn.net/15193931556096.html"/>
+    <updated>2018-02-23T21:39:15+08:00</updated>
+    <id>http://blog.csdn.net/15193931556096.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">网络性能</h2>
+
+<ul>
+<li>减少不必要的网络请求</li>
+<li>server端数据查询算法优化</li>
+<li>DNS解析</li>
+</ul>
+
+<h2 id="toc_1">内存性能</h2>
+
+<ul>
+<li>各种循环引用 导致内存泄漏</li>
+<li>Core Animation 对象手动释放</li>
+<li>UIWebView 内存泄漏</li>
+</ul>
+
+<h2 id="toc_2">主线程阻塞</h2>
+
+<ul>
+<li>网络同步请求</li>
+<li>I/O操作</li>
+<li>大量运算</li>
+<li>解压、压缩
+...</li>
+</ul>
+
+<h2 id="toc_3">离屏渲染</h2>
+
+<p>离屏渲染：GPU在当前缓存区之外另外的去开辟空间进行渲染，同样的一帧图片 会被渲染两次甚至多次</p>
+
+<p>：uiview.layer.cornerRadius 系统方法切圆角---&gt;&gt;解决方案：Runtime + 画图</p>
+
+<h2 id="toc_4">图片处理</h2>
+
+<ul>
+<li>imageWithName：加载到缓存中可重复使用</li>
+<li>initWithContentsOfFile: 加载一次不会存到缓存中</li>
+</ul>
+
+<h2 id="toc_5">其他</h2>
+
+<ul>
+<li>加速启动</li>
+<li>避免日期格式的转换</li>
+</ul>
+
+<h3 id="toc_6">优化瀑布流中 网络图片 加载导致UI卡顿问题</h3>
+
+<blockquote>
+<p>1、异步下载图片<br/>
+2、异步加载图片成二进制 NSData  （<strong>这一步是关键</strong>） <br/>
+3、UIImageView 加载二进制形式的NSData</p>
+</blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[源码阅读 -- YYModel （一）]]></title>
+    <link href="http://blog.csdn.net/15181411526837.html"/>
+    <updated>2018-02-09T09:52:32+08:00</updated>
+    <id>http://blog.csdn.net/15181411526837.html</id>
+    <content type="html"><![CDATA[
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DLNA DMR]]></title>
+    <link href="http://blog.csdn.net/15174544275720.html"/>
+    <updated>2018-02-01T11:07:07+08:00</updated>
+    <id>http://blog.csdn.net/15174544275720.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">CGUpnpAvRenderer</h2>
+
+<pre><code>#if !defined(_CG_CLINKCAV_MEDIARENDERER_H_)
+typedef void CgUpnpAvRenderer;
+#endif
+
+/**
+ * The CGUpnpAvRenderer class is a UPnP/AV media server class.
+ */
+@interface CGUpnpAvRenderer : CGUpnpDevice
+{
+    CgUpnpAvRenderer *cAvObject;
+}
+@property(readonly) CgUpnpAvRenderer *cAvObject;
+- (id)init;
+- (id)initWithCObject:(CgUpnpDevice *)cobj;
+- (BOOL)setAVTransportURI:(NSString *)aURI;
+- (BOOL)play;
+- (BOOL)stop;
+- (BOOL)pause;
+- (BOOL)next;
+- (BOOL)previous;
+- (BOOL)seek:(float)absTime;
+- (BOOL)isPlaying;
+/*
+- (BOOL)start
+- (BOOL)stop
+*/
+- (CGUpnpAVPositionInfo *)positionInfo;
+</code></pre>
+
+<h2 id="toc_1">CGUpnpDevice</h2>
+
+<pre><code>/**
+ * The CGUpnpDevice class is a wrapper class for CgUpnpDevice of CyberLink for C.
+ */
+// 设备包装类
+@protocol CGUpnpDeviceDelegate &lt;NSObject&gt;
+@optional
+// 收到Action的协议方法
+- (BOOL)device:(CGUpnpDevice *)device service:(CGUpnpService *)service actionReceived:(CGUpnpAction *)action;
+@end
+
+/**
+ * The CGUpnpDevice class is a wrapper class for CgUpnpDevice of CyberLink for C.
+ */
+@interface CGUpnpDevice : NSObject 
+{
+    BOOL isCObjectCreated;
+}
+@property(assign) CgUpnpDevice *cObject;
+@property(assign) id&lt;CGUpnpDeviceDelegate&gt; delegate;
+/**
+ * Create a new UPnP device.
+ * 
+ * @return New instance if successfull; otherwise nil.
+ */
+ // 初始化方法 创建一个新的UPnP设备
+- (id) init;
+/**
+ * Create a new UPnP device with the C instance.
+ * 
+ * @return New instance if successfull; otherwise nil.
+ */
+ // 用一个设备初始化另一设备
+- (id) initWithCObject:(CgUpnpDevice *)cobj;
+/**
+ * Create a new UPnP device with the XML descriptioin.
+ * 
+ * @return New instance if successfull; otherwise nil.
+ */
+ // xml  创建设备
+- (id) initWithXMLDescription:(NSString *)xmlDesc;
+/**
+ * Parse the specified XML description.
+ * 
+ * @return YES if successfull; otherwise nui.
+ */
+- (BOOL) parseXMLDescription:(NSString *)xmlDesc;
+/**
+ * Get the friendly name of the device.
+ * 
+ * @return Friendly name.
+ */
+// 获取友好的名字
+- (NSString *)friendlyName;
+/**
+ * Get the device type of the device.
+ * 
+ * @return Device Type.
+ */
+ // 设备类型
+- (NSString *)deviceType;
+/**
+ * Get the UDN of the device.
+ * 
+ * @return UDN of the specified device.
+ */
+ // 获取设备的UDN
+- (NSString *)udn;
+/**
+ * Return a manufacture.
+ *
+ * @return Manufacture of the device.
+ */
+ // 制造商
+- (NSString *)manufacturer;
+
+/**
+ * Return a model number.
+ *
+ * @return Model number of the device.
+ */
+ // 返回模型数
+- (NSString *)modelNumber;
+
+/**
+ * Return a model name.
+ *
+ * @return Model name of the device.
+ */
+ // 返回模型名
+- (NSString *)modelName;
+
+/**
+ * Return a urlBase
+ *
+ * @return URLBase of the device.
+ */
+ // 返回设备的URLBase
+- (NSString *)urlBase;
+/**
+ * Return a descrition URL
+ *
+ * @return Descripton URL of the device.
+ */
+ // 返回设备URL描述
+- (NSString *)descriptionURL;
+/**
+ * Return a location URL
+ *
+ * @return Location URL of the device.
+ */
+ // 返回一个本地URL
+- (NSString *)locationURL;
+/**
+ * Set a device type of the device.
+ * 
+ * @param aType Device type to set.
+ */
+ // 设置设备类型
+-(void)setDeviceType:(NSString *)aType;
+/**
+ * Set a friendly name of the device.
+ * 
+ * @param aName Friendly name to set.
+ */
+ // 设置友好名称
+-(void)setFriendlyName:(NSString *)aName;
+/**
+ * Set a udn of the device.
+ * 
+ * @param aUdn UDN to set.
+ */
+-(void)setUdn:(NSString *)aUdn;
+/**
+ * Check whether the device type is the specified type.
+ *
+ * @param aType A type string of the device.
+ * 
+ * @return YES if the specified type is same as the device type; otherwise NO.
+ */
+- (BOOL)isDeviceType:(NSString *)aType;
+/**
+ * Check whether the device&#39;s UDN is the specified UDN.
+ *
+ * @param aUDN A UDN string of the device.
+ * 
+ * @return YES if the specified UDN is same as the device&#39; UDN; otherwise NO.
+ */
+- (BOOL)isUDN:(NSString *)aUDN;
+/**
+ * Check whether the device&#39;s friendly name is the specified name.
+ *
+ * @param aFriendlyName A friendly name string of the device.
+ * 
+ * @return YES if the specified friendly name is same as the device&#39; friendly name; otherwise NO.
+ */
+- (BOOL)isFriendlyName:(NSString *)aFriendlyName;
+/**
+ * Return a presentationURL
+ *
+ * @return presentationURL of the device.
+ */
+- (NSString *)presentationURL;
+/**
+ * Get all services in the device as a NSArray object. The array has the services as instances of CGUpnpService.
+ *
+ * @return NSArray of CGUpnpService.
+ */
+ // 返回设备CGUpnpService服务组
+- (NSArray *)services;
+/**
+ * Get a service in the device by the specified service ID.
+ *
+ * @param serviceId A service ID string of the service.
+ *
+ * @return The CGUpnpService if the specified service is found; otherwise nil.
+ */
+ // 根据seviceID 获取服务对象
+- (CGUpnpService *)getServiceForID:(NSString *)serviceId;
+/**
+ * Get a service in the device by the specified service type.
+ *
+ * @param serviceType A service type string of the service.
+ *
+ * @return The CGUpnpService if the specified service is found; otherwise nil.
+ */
+ // 根据类型获取服务对象 service
+- (CGUpnpService *)getServiceForType:(NSString *)serviceType;
+/**
+ * Get all icons in the device as a NSArray object. The array has the services as instances of CGUpnpIconIcon.
+ *
+ * @return NSArray of CGUpnpIcon.
+ */
+ // 获取所有图标
+- (NSArray *)icons;
+/**
+ * Start the device.
+ *
+ * @return YES if the device is started normally, otherwise NO.
+ */
+- (BOOL)start;
+/**
+ * Stop the device.
+ *
+ * @return YES if the device is started normally, otherwise NO.
+ */
+- (BOOL)stop;
+/**
+ * Check if the controll point is running.
+ *
+ * @return YES if the device is started normally, otherwise NO.
+ */
+ //检查控制点 DMC是否在运行
+- (BOOL)isRunning;
+/**
+ * Announce the device.
+ *
+ * @return YES if the device is started normally, otherwise NO.
+ */
+ // 广播这个设备
+- (BOOL)announce;
+/**
+ * Set a user data.
+ *
+ * @param aUserData A user data to set.
+ *
+ * @return The CGUpnpService if the specified service is found; otherwise nil.
+ */
+ // 设置用户数据
+- (void)setUserData:(void *)aUserData;
+/**
+ * Get a stored user data.
+ *
+ * @return A stored user data.
+ */
+ 获取已存储的用户数据
+- (void *)userData;
+/**
+ * Return a IP address.
+ *
+ * @return IP address of the device.
+ */
+ // 获取IP地址
+- (NSString *)ipaddress;
+/**
+ * Return a most smallest icon.
+ *
+ * @return Smallest Icon.
+ */
+ // 获取一个最小的 icon
+- (CGUpnpIcon *)smallestIcon;
+/**
+ * Return a most smallest icon with a specified mime type.
+ *
+ * @return Smallest Icon.
+ */
+ // 获取指定类型的icon
+- (CGUpnpIcon *)smallestIconWithMimeType:(NSString *)mimeType;
+/**
+ * Return a absolute url of the specified icon.
+ *
+ * @param anIcon Icon.
+ *
+ * @return Absolute url of the specified icon.
+ */
+ // 获取icon的绝对路径
+- (NSString *)absoluteIconUrl:(CGUpnpIcon *)anIcon;
+</code></pre>
+
+<h2 id="toc_2">CGUpnpStateVariable</h2>
+
+<pre><code>#if !defined(_CG_UPNP_CSTATEVARIABLE_H_)
+typedef void CgUpnpStateVariable;
+#endif
+
+/**
+ * The CGUpnpStateVariable class is a wrapper class for CgUpnpStateVariable of CyberLink for C.
+ */
+@interface CGUpnpStateVariable : NSObject 
+{
+    CgUpnpStateVariable *cObject;
+}
+@property(readonly) CgUpnpStateVariable *cObject;
+- (id)initWithCObject:(CgUpnpStateVariable *)cobj;
+/**
+ * Get the name of the state variable.
+ * 
+ * @return The name.
+ */
+ // 状态名
+- (NSString *)name;
+/**
+ * Get the value of the state variable.
+ * 
+ * @return The value.
+ */
+ // 状态值
+- (NSString *)value;
+
+/**
+ * Get an array of the allowed values for the state variable
+ * 
+ * @return The array.
+ */
+ // 允许的所有状态值
+- (NSArray *)allowedValues;
+
+/**
+ * Checks whether value is allowed for this state variable
+ *
+ * @param value to be checked
+ *
+ * @return YES if true
+ */
+ // 检测状态值是否是被允许的
+- (BOOL)isAllowedValue:(NSString*)value;
+
+/**
+ * Send query
+ *
+ * @return YES if successfull; otherwise NO
+ */
+- (BOOL)query;
+/**
+ * Get a states code of the last query. 
+ *
+ * @return The status code
+ */
+- (NSInteger)statusCode;
+</code></pre>
+
+<h2 id="toc_3">CGUpnpIcon</h2>
+
+<pre><code>/**
+ * The CGUpnpIcon class is a wrapper class for CgUpnpIcon of CyberLink for C.
+ */
+@interface CGUpnpIcon : NSObject
+{
+    CgUpnpIcon *cObject;
+#if defined(TARGET_OS_IPHONE)
+    NSString *resourceName;
+#endif
+}
+@property(readonly) CgUpnpIcon *cObject;
+#if defined(TARGET_OS_IPHONE)
+@property(readonly) NSString *resourceName;
+#endif
+- (id)initWithCObject:(CgUpnpIcon *)cobj;
+/**
+ * Get the url of the icon.
+ * 
+ * @return The url.
+ */
+- (NSString *)url;
+/**
+ * Get the url of the width.
+ * 
+ * @return The width.
+ */
+- (NSInteger)width;
+/**
+ * Get the height of the icon.
+ * 
+ * @return The height.
+ */
+- (NSInteger)height;
+/**
+ * Get the depth of the icon.
+ * 
+ * @return The depth.
+ */
+- (NSInteger)depth;
+#if defined(TARGET_OS_IPHONE)
+- (void)setResourceName:(NSString *) aResourceName;
+#endif
+</code></pre>
+
+<h2 id="toc_4">CGUpnpAVPositionInfo</h2>
+
+<pre><code>@property(retain) CGUpnpAction *upnpAction;
+-(id)initWithAction:(CGUpnpAction *)aUpnpAction;
+-(float)trackDuration;
+-(float)absTime;
+-(float)relTime;
+@end
+
+@interface NSString(CGUPnPAV)
+// 总时长字符串
++(NSString *)stringWithDurationTime:(float)timeValue;
+// 总时长
+- (float)durationTime;
+</code></pre>
+
+<h2 id="toc_5">CGUpnpAction</h2>
+
+<pre><code>@interface CGUpnpAction : NSObject 
+{
+    CgUpnpAction *cObject;
+}
+@property(readonly) CgUpnpAction *cObject;
+- (id)initWithCObject:(CgUpnpAction *)cobj;
+/**
+ * Get the name of the action.
+ * 行为名称
+ * @return The name.
+ */
+- (NSString *)name;
+/**
+ * Get all arguments in the action as a NSDictionary object.
+ * 获取所有行为对象中的参数
+ * @return NSDictionary of the arguments.
+ */
+- (NSDictionary *)arguments;
+/**
+ * Set a value of the specified argument from the action by the argument&#39;s name directly.
+ * 通过name给指定action设置参数
+ * @param value The value to set
+ * @param name The name of the argument to look for
+ * @return YES if successfull; otherwise NO
+ */
+- (BOOL)setArgumentValue:(NSString *)value forName:(NSString *)name;
+/**
+ * Get a value of the specified argument from the action by the argument&#39;s name directly.
+ * 通过action参数名 获取action参数值
+ * @param name The name of the argument to look for
+ * @return The target value if successfull; otherwise NULL
+ */
+- (NSString *)argumentValueForName:(NSString *)name;
+/**
+ * Send action
+ * 发送Action
+ * @return YES if successfull; otherwise NO
+ */
+- (BOOL)post;
+/**
+ * Send action
+ * 发送action 携带指定参数
+ * @param arguments Arguments to set
+ *
+ * @return YES if successfull; otherwise NO
+ */
+- (BOOL)postWithArguments:(NSDictionary *)arguments;
+/**
+ * Get a states code of the last post. 
+ * 获取最后POST的状态码
+ * @return The status code
+ */
+- (NSInteger)statusCode;
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DLNA DMC]]></title>
+    <link href="http://blog.csdn.net/15173790393385.html"/>
+    <updated>2018-01-31T14:10:39+08:00</updated>
+    <id>http://blog.csdn.net/15173790393385.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">CGUpnpControlPoint</h2>
+
+<pre><code>
+#if !defined(_CG_UPNP_CCONTROLPOINT_H_)
+typedef void CgUpnpControlPoint;
+#endif
+
+@class CGUpnpDevice;
+@class CGUpnpControlPoint;
+
+@protocol CGUpnpControlPointDelegate &lt;NSObject&gt;
+@optional
+// deviceUdn 设备的UDID 设备添加，更新，移除，失效的协议方法
+- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceAdded:(NSString *)deviceUdn;
+- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceUpdated:(NSString *)deviceUdn;
+- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceRemoved:(NSString *)deviceUdn;
+- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceInvalid:(NSString *)deviceUdn;
+@end
+
+/**
+ * The CGUpnpControlPoint class is a wrapper class for CgUpnpControlPoint of CyberLink for C to 
+ * program using only Objective-C directly on MacOSX.
+ * Currently, the only basic methods are wrapped to control UPnP devices.
+ */
+@interface CGUpnpControlPoint : NSObject 
+{
+    CgUpnpControlPoint *cObject;
+}
+// 子控制点
+@property(readonly) CgUpnpControlPoint *cObject;
+// 代理对象
+@property(assign) id&lt;CGUpnpControlPointDelegate&gt; delegate;
+
+// get方法
+- (CgUpnpControlPoint *)cObject;
+/**
+ * Activate some background threads of the control point such as SSDP and 
+ * HTTP servers to listen messages and events of UPnP. You must call this 
+ * method before you can actually use a control point.
+ *
+ * @return TRUE if successful; otherwise FALSE
+ *
+ */
+ // 激活DMC的子线程 SSDP HTTP服务，去监听UPnP信息和时间
+ // 使用控制点之前必须要激活
+- (BOOL)start;
+/**
+ * Stop some background threads of the control point such as SSDP and 
+ * HTTP servers to listen messages and events of UPnP. 
+ *
+ * @return TRUE if successful; otherwise FALSE
+ *
+ */
+ // 停止后台线程 和 SSDP HTTP 服务
+- (BOOL)stop;
+/**
+ * Check if the controll point is running.
+ *
+ * @return YES if the device is started normally, otherwise NO.
+ */
+ // 检测DMC是否正在运行
+- (BOOL)isRunning;
+/**
+ * Send a M-SEARCH request to find for the all UPnP devices of UPnP in the network.
+ * The method waits for the specified MX time. Use setSsdpSearchMX:(NSInteger)aMX to change the time.
+ * The method is same as searchWithST() when the ST parameter is &quot;ssdp:all&quot;.
+ */
+ 
+ // 发送M-SEARCH 请求去发现局域网内所有的UPnP设备
+- (void)search;
+/**
+ * Send a M-SEARCH request to find for the specified UPnP devices by a ST parameter in the network.
+ * The method waits for the specified MX time. Use setSsdpSearchMX:(NSInteger)aMX to change the time.
+ *
+ * @param aST The Search Target parameter (ex. &quot;ssdp:all&quot;)
+ */
+- (void)searchWithST:(NSString *)aST;
+/**
+ * Set a MX parameter used for SSDP searches in seconds.
+ * The parameter is used to wait for M-SEARCH responses in search() and searchWithST:(NSString *)aST.
+ *
+ * @param aMX Time to wait
+ */
+- (void)setSsdpSearchMX:(NSInteger)aMX;
+/**
+ * Get a MX parameter used for SSDP searches in seconds.
+ * The parameter is used to wait for M-SEARCH responses in search() and searchWithST:(NSString *)aST.
+ *
+ * @return Time to wait
+ */
+// 等待时间
+- (NSInteger)ssdpSearchMX;
+/**
+ * Get all UPnP devices which the control point found as a NSArray object. The array has the devices as instances of CGUpnpDevice.
+ * @return NSArray of CGUpnpDevice.
+ */
+ // DMC发现的所有设备
+- (NSArray *)devices;
+/**
+ * Get a specified UPnP devices by the UDN.
+ * @return CGUpnpDevice when the specified device is found, otherwise nil.
+ */
+ // 通过UDN 获取指定的upnp设备
+- (CGUpnpDevice *)deviceForUDN:(NSString *)udn;
+</code></pre>
+
+<h2 id="toc_1">CGUpnpAvContentDirectory</h2>
+
+<pre><code>/**
+ * The CGUpnpAvContentDirectory class has UPnP/AV objects of a media servers.
+ *
+ */
+@interface CGUpnpAvContentDirectory : NSObject
+{
+    CGUpnpAvContentManager *contentMgr;
+}
+- (CGUpnpAvContainer *)rootObject;
+- (CGUpnpAvObject *)objectForId:(NSString *)aObjectId;
+- (CGUpnpAvObject *)objectForTitlePath:(NSString *)aTitlePath;
+@end
+</code></pre>
+
+<h2 id="toc_2">CGUpnpAvContentManager</h2>
+
+<pre><code>/**
+ * The CGUpnpAvContentDirectory class has UPnP/AV objects of a media servers.
+ *
+ */
+@interface CGUpnpAvContentManager : NSObject
+{
+    CGUpnpAvRoot *rootObj;
+}
+- (CGUpnpAvContainer *)rootObject;
+- (CGUpnpAvObject *)objectForId:(NSString *)aObjectId;
+- (CGUpnpAvObject *)objectForTitlePath:(NSString *)aTitlePath;
+</code></pre>
+
+<h2 id="toc_3">CGUpnpAvObject</h2>
+
+<pre><code>
+/**
+ * The CGUpnpAvObject class is a wrapper class for CgUpnpAvObject of CyberLink for C.
+ */
+
+#define CGUPNPAV_OBJECT_MOVIE_FILEEXT @&quot;mov&quot;
+#define CGUPNPAV_OBJECT_SOUND_FILEEXT @&quot;snd&quot;
+#define CGUPNPAV_OBJECT_IMAGE_FILEEXT @&quot;img&quot;
+
+@interface CGUpnpAvObject : CGXmlNode 
+{
+    // 父类对象
+    CGUpnpAvObject *parent;
+}
+@property(retain) id userObject;
+#if defined(TARGET_OS_IPHONE)
+@property(retain) UIImage *thumbnailImage;
+#endif
+
+// xml字符串转成对象
++ (NSArray *)arrayWithXMLString:(NSString *)aXmlString;
+// 初始化方法
+- (id)init;
+#if  !defined(TARGET_OS_IPHONE)
+- (id)initWithXMLNode:(NSXMLElement *)aXmlNode;
+#else
+- (id)initWithXMLNode:(CgXmlNode *)aXmlNode;
+- (id)initWithMediaContent:(CgUpnpAvContent *)aMediaContent;
+#endif
+// 判断方法
+- (BOOL)isEqual:(id)anObject;
+- (BOOL)isContainer;
+- (BOOL)isItem;
+// 设置、获取父亲类
+- (void)setParent:(CGUpnpAvObject *)aParent;
+- (CGUpnpAvObject *)parent;
+// 祖先类对象
+- (CGUpnpAvObject *)ancestor;
+// 对象ID
+- (NSString *)objectId;
+// 子类对象个数
+- (NSUInteger)childCount;
+// 标题（文件名 不带后缀）
+- (NSString *)title;
+// upnp 类型
+- (NSString *)upnpClass;
+// 日期
+- (NSString *)date;
+// 相册URI
+- (NSString *)albumArtURI;
+// 设置对象ID、title等
+- (void)setObjectId:(NSString *)aValue;
+- (void)setTitle:(NSString *)aValue;
+- (void)setUpnpClass:(NSString *)aValue;
+// 是否包含某一资源对象
+- (BOOL)isObjectId:(NSString *)aObjectId;
+- (BOOL)isTitle:(NSString *)aTitle;
+- (BOOL)isUpnpClass:(NSString *)aUpnpClass;
+// 文件全名 （带后缀）
+- (NSString *)toFileNameString;
+// 艺术家 作者
+- (NSString *)artist;
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DLNA DMS]]></title>
+    <link href="http://blog.csdn.net/15173774932057.html"/>
+    <updated>2018-01-31T13:44:53+08:00</updated>
+    <id>http://blog.csdn.net/15173774932057.html</id>
+    <content type="html"><![CDATA[
+<p>上源码：</p>
+
+<pre><code>#if defined(TARGET_OS_IPHONE)
+#import &lt;UIKit/UIKit.h&gt;
+#else
+#import &lt;Foundation/NSArray.h&gt;
+#import &lt;Foundation/NSString.h&gt;
+#endif
+
+#import &lt;CyberLink/UPnP.h&gt;
+
+@class CGUpnpAvContentDirectory;
+@class CGUpnpAvObject;
+@class CGUpnpAvContainer;
+@class CGUpnpAvServer;
+
+#if !defined(_CG_CLINKCAV_SERVER_H_)
+typedef void CgUpnpAvServer;
+#endif
+
+@protocol CGUpnpAvServerDelegate &lt;NSObject&gt;
+@optional
+- (void)upnpAvServer:(CGUpnpAvServer *)upnpAvServer browse:(CGUpnpAction *)browseAction avObject:(CGUpnpAvObject *)avObject;
+- (void)upnpAvServer:(CGUpnpAvServer *)upnpAvServer search:(CGUpnpAction *)searchAction avObject:(CGUpnpAvObject *)avObject;
+@end
+
+/**
+ * The CGUpnpAvServer class is a UPnP/AV media server class.
+ * 这个 CGUpnpAvServer 类是UPnP/AV 谜题资源服务类
+ */
+@interface CGUpnpAvServer : CGUpnpDevice
+{
+}
+
+@property(readonly) CGUpnpAvContentDirectory *contentDirectory;
+// DMS 可以持有子服务作为属性
+@property(readonly) CgUpnpAvServer *cAvObject;
+// 设置代理
+@property(assign) id&lt;CGUpnpAvServerDelegate&gt; delegate;
+
+#if defined(TARGET_OS_IPHONE)
+@property(retain) UIImage *thumbnailImage;
+#endif
+
+/*
+ * Create a new UPnP/AV server.
+ * 
+ * @return New instance if successfull; otherwise nil.
+ */
+- (id)init;
+/**
+ * Create a new UPnP/AV server with the C instance.
+ * 
+ * @return New instance if successfull; otherwise nil.
+ */
+- (id)initWithCObject:(CgUpnpDevice *)cobj;
+- (void)setUserObject:(id)aUserObj;
+- (id)userObject;
+// 浏览某一个CGUpnpAvObject 的ID 是否成功
+- (BOOL)browse:(NSString *)aObjectId browseFlag:(NSString *)aBrowseFlag options:(NSDictionary *)options;
+// 浏览二进制
+- (CGUpnpAvObject *)browseMetadata:(NSString *)aObjectId;
+// 所有子对象个数
+- (NSArray *)browseDirectChildren:(NSString *)aObjectId;
+// 获取指定个数的子对象
+- (NSArray *)browseDirectChildren:(NSString *)aObjectId requestedCount:(NSUInteger) aRequestedCount;
+// 获取指定个数的子对象
+- (NSArray *)browseDirectChildren:(NSString *)aObjectId requestedCount:(NSUInteger)aRequestedCount startingIndex:(NSUInteger)aStartingIndex;
+// 浏览行为
+- (CGUpnpAction *)browseAction;
+// 查找某个东西
+- (NSArray *)search:(NSString *)aSearchCriteria;
+// 同上
+- (NSArray *)searchByBrowse:(NSString *)aSearchCriteria;
+- (NSArray *)searchByBrowse:(NSString *)aSearchCriteria objectId:(NSString *)objectId;
+// 查找UPnPAction
+- (CGUpnpAction *)searchAction;
+// 跟对象 （对象可以持有别的对象作为属性）
+- (CGUpnpAvContainer *)rootObject;
+// 通过ID获取AVObject
+- (CGUpnpAvObject *)objectForId:(NSString *)aObjectId;
+// 通过titlePath 获取AVObject对象
+- (CGUpnpAvObject *)objectForTitlePath:(NSString *)aTitlePath;
+// 开始
+- (BOOL)start;
+// 停止
+- (BOOL)stop;
+// 锁定
+- (void)lock;
+// 解锁
+- (void)unlock;
+@end
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS设备上实现DLNA功能 Platinum 篇]]></title>
+    <link href="http://blog.csdn.net/15172908985351.html"/>
+    <updated>2018-01-30T13:41:38+08:00</updated>
+    <id>http://blog.csdn.net/15172908985351.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">DLNA 相关</h2>
+
+<ul>
+<li>DLNA</li>
+<li>Miracast</li>
+<li>Airplay</li>
+</ul>
+
+<p>网络环境：同一个网关下，即同一个局域网的同一网段</p>
+
+<h3 id="toc_1">基本名词解释</h3>
+
+<ul>
+<li>DLNA全称： DIGITAL LIVING NETWORK ALLIANCE(数字生活网络联盟)</li>
+<li>宗旨： Enjoy your music, photos and videos, anywhere anytime</li>
+<li>协议： DLNA包含若干协议和标准，最重要的也是我们最常用的就是UPnP技术</li>
+<li>通用即插即用 (UPnP) 是一种用于 PC 机和智能设备（或仪器）的常见对等网络连接的体系结构，尤其是在家庭中。UPnP 以 Internet 标准和技术（例如 TCP/IP、HTTP 和 XML）为基础，使这样的设备彼此可自动连接和协同工作，从而使网络（尤其是家庭网络）对更多的人成为可能</li>
+</ul>
+
+<h3 id="toc_2">技术名词解释</h3>
+
+<ul>
+<li>DMC：控制点</li>
+<li>DMS：资源服务器</li>
+<li>DMR：渲染器</li>
+</ul>
+
+<h3 id="toc_3">发现设备</h3>
+
+<p>智能终端设备加入组网，搜索其他设备的基本流程。当一个新的DMC加入局域网，为了获取当前网段里有哪些智能设备，需要遵循<code>SSDP</code>向默认的多播IP和端口发送获取信息的请求。对于<code>DMC</code> 可以使用DLNA定义的 <code>搜索响应方式</code> 来发现设备，这会用到HTTP的扩展协议<code>M-SEARCH</code></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[从零开始学习使用 vuex]]></title>
+    <link href="http://blog.csdn.net/15168925544178.html"/>
+    <updated>2018-01-25T23:02:34+08:00</updated>
+    <id>http://blog.csdn.net/15168925544178.html</id>
+    <content type="html"><![CDATA[
+<blockquote>
+<p>本文是建立在，对vuex理论有一定理解的基础上写的。<br/>
+因为官方文档的写法是 针对 有一定的vue开发经验 和 JavaScript 有一定理解的开发者看的，对于小白级别的我来说，理解起来有一定困难。所以，唯一想我一向的小白想尽快上手vuex....</p>
+</blockquote>
+
+<p><a href="https://vuex.vuejs.org/zh-cn/installation.html">详情请参考vuex官方文档</a></p>
+
+<h2 id="toc_0">安装</h2>
+
+<h3 id="toc_1">直接下载 CDN 安装</h3>
+
+<p>CDN 链接地址：<code>https://unpkg.com/vuex</code><br/>
+指定到固定版本：<code>https://unpkg.com/vuex@2.0.0</code></p>
+
+<pre><code>&lt;script src=&quot;/path/to/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/path/to/vuex.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<h3 id="toc_2">npm 方式安装 （推荐！简单快捷，便于管理）</h3>
+
+<p><code>npm install -save vuex</code></p>
+
+<h3 id="toc_3">yar</h3>
+
+<p><code>yarn add vuex</code></p>
+
+<h3 id="toc_4">自己构建</h3>
+
+<pre><code class="language-bash">git clone https://github.com/vuejs/vuex.git node_modules/vuex
+cd node_modules/vuex
+npm install
+npm run build
+</code></pre>
+
+<h2 id="toc_5">导入vue工程中使用</h2>
+
+<ul>
+<li>main.js 入口文件</li>
+</ul>
+
+<blockquote>
+<p>按照如下方式导入，工程就可以使用vuex的环境了</p>
+</blockquote>
+
+<pre><code class="language-JavaScript">// 导入vuex头文件
+import Vuex from &#39;vuex&#39;
+// 这里表示全局导入vuex
+Vue.use(Vuex)
+// 这里是我自定义的store文件 导出store对象
+import store from &#39;@/study/vuexStudy/store/store.js&#39;
+</code></pre>
+
+<blockquote>
+<p>入口组件<App/>中，绑定store</p>
+</blockquote>
+
+<pre><code>new Vue({
+  el: &#39;#app&#39;,
+  template: &#39;&lt;App/&gt;&#39;,
+  components: { App },
+  store
+})
+</code></pre>
+
+<p>到这里 算是万里长征走了第一步。</p>
+
+<h3 id="toc_6">创建Store对象</h3>
+
+<h4 id="toc_7">store 的结构:</h4>
+
+<pre><code class="language-JavaScript">export const store = new Vuex.Store({
+
+  // ------state:状态值存储,这里可以存储n个状态的值
+  state: {count: &#39;1&#39;},
+  
+  // ------getter:store中定义的getters可以认为是store的计算属性
+  // getters接收state作为其第一个参数
+  getters: {
+    done (state) {
+      return state.count + 5
+    }
+  },
+  
+  // ------mutations:状态值的改变，操作状态值
+  // $store.commit(mutationsName, params)是更改状态值的唯一方法
+  mutations: {
+    increment (state) {
+      // 变更状态
+      state.count++
+    }
+  },
+
+  // ------actions:可以认为是包装了mutations的function 需要用 dispatch(actionName) 的方式去派发
+  actions: {
+    add (context) {
+      context.commit(&#39;increment&#39;)
+    },
+    addAsync (context) {
+      // 延时1秒
+      setTimeout(() =&gt; {
+        context.commit(&#39;increment&#39;)
+      }, 1000)
+    }
+  },
+  // store可以合并几个子store，以此来进行项目的模块化
+  modules: {
+    a: moduleA,
+    b: moduleB
+  }
+})
+</code></pre>
+
+<h4 id="toc_8">编辑定义store实体对象：</h4>
+
+<ul>
+<li>store.js文件中</li>
+</ul>
+
+<blockquote>
+<p>这里为了便于抽离 我们外部声明城对象实体后嵌入绑定到store</p>
+</blockquote>
+
+<ol>
+<li><p>创建一个store对象</p>
+
+<pre><code class="language-JavaScript">export default const store = new Vuex.Store({
+  state,//绑定之前创建的state对象到store中
+  mutations,
+  getters,
+  actions,
+  modules
+})
+</code></pre></li>
+<li><p>定义一个状态对象 <code>state</code>（实体）</p>
+
+<pre><code class="language-JavaScript">const state = {
+  count: 0,
+  state1: 1,
+  state2: 2,
+  state3: 3
+}
+</code></pre></li>
+<li><p>定义getters对象</p>
+
+<pre><code>const getters = {
+  done (state) {
+    return state.count + 5
+  },
+  getState1: function (state) {
+    return state.state3
+  },
+  // ES6简写
+  getState2: state =&gt;  state.state2
+}
+</code></pre></li>
+<li><p>.vue 文件中直接获取state值</p>
+
+<p>首先导入辅助函数：</p>
+
+<pre><code>import { 
+    mapState, 
+    mapGetters, 
+    mapMutations, 
+    mapActions 
+    } from &#39;vuex&#39;
+</code></pre>
+
+<ul>
+<li>第一种方式：绑定到组件属性中，直接获取 （一般不用这个，绑定到computed中是最合适的）<code>$store.state.count</code>并使用</li>
+</ul>
+
+<pre><code class="language-JavaScript">export default {
+    data() {
+        return {
+          testCount: this.$store.state.count
+        }
+    }
+}
+</code></pre>
+
+<ul>
+<li>第二种方式： 绑定到计算属性中（适合对store中的原始状态值进行一定处理的情况）</li>
+</ul>
+
+<pre><code class="language-JavaScript">export default {
+    data() {
+        return {
+          testCount: this.$store.state.count
+        }
+    },
+    computed:{
+        testComputedCount1: function () {
+            return this.$store.state.count + 22
+        }
+    }
+}
+</code></pre>
+
+<ul>
+<li>第三种方式：mapState辅助函数绑定状态state值到组件计算属性中</li>
+</ul>
+
+<pre><code class="language-JavaScript">export default {
+    data() {
+        return {
+          testCount: this.$store.state.count
+        }
+    },
+    computed:{
+        testComputedCount1: function () {
+            return this.$store.state.count + 22
+        },
+        ...mapState({
+            count: state =&gt; state.count,
+            mapState1: state =&gt; state.state1,
+            mapState2: state =&gt; state.state2
+        }),
+    }
+}
+</code></pre>
+
+<ul>
+<li>第四种方式：使用store中绑定的getters进行获取</li>
+</ul>
+
+<pre><code class="language-JavaScript">export default {
+    data() {
+        return {
+          testCount: this.$store.state.count
+        }
+    },
+    computed:{
+        testComputedCount1: function () {
+            return this.$store.state.count + 22
+        },
+        ...mapState({
+            count: state =&gt; state.count,
+            mapState1: state =&gt; state.state1,
+            mapState2: state =&gt; state.state2
+        }),
+        testComputedGettersCount2: funtion () {
+            return this.$store.getters.done
+        }
+    }
+}
+</code></pre>
+
+<ul>
+<li>第五种方式： 借助mapGetters辅助函数绑定getters到vue的计算属性中</li>
+</ul>
+
+<pre><code class="language-JavaScript">export default {
+    data() {
+        return {
+          testCount: this.$store.state.count
+        }
+    },
+    computed:{
+        testComputedCount1: function () {
+            return this.$store.state.count + 22
+        },
+        ...mapState({
+            count: state =&gt; state.count,
+            mapState1: state =&gt; state.state1,
+            mapState2: state =&gt; state.state2
+        }),
+        testComputedGettersCount2: funtion () {
+            return this.$store.getters.done
+        },
+
+        //直接绑定方法数组的方式
+        ...mapGetters([
+            &#39;getState1&#39;,
+            &#39;getState2&#39;,
+            &#39;getState3&#39;
+        ]),
+
+        //重命名对象绑定方式
+        ...mapGetters({
+          mapGetterState1: &#39;getState1&#39;,
+          mapGetterState3: &#39;getState3&#39;
+        }),
+    }
+}
+</code></pre></li>
+<li><p>触发动作行为改变状态值</p>
+
+<blockquote>
+<p>方式一：$store.commit(&#39;mutationsName&#39;)</p>
+
+<p>方式二：$store.dispatch(&#39;actionsName&#39;)    </p>
+</blockquote>
+
+<p>store.js文件中：</p>
+
+<ul>
+<li>初始化 mutations 和 actions (相当于是methods)</li>
+</ul>
+
+<pre><code>const mutations = {
+    increment (state) {
+        // 变更状态
+        state.count = state.count * 5
+    }
+}
+</code></pre>
+
+<pre><code>import {action4} from &#39;@/path/actions.js&#39;
+const actions = {
+    // 同步方法
+    add: function (context) {
+        context.commit(&#39;increment&#39;)
+    },
+    // 延时操作 用于网络请求啊啥的
+    addAsync (context) {
+        // 延时1秒
+        setTimeout(() =&gt; {
+            context.commit(&#39;increment&#39;)
+        }, 1000)
+    },
+    // 简写方式
+    action2 (context) {
+        context.commit(&#39;increment&#39;)
+    },
+    // 抽离到单独文件中，在导进封装好的变量来直接使用即可（导进来的目的是为了接收第一个参数：state），不绑定到store，需要手动传入store对象
+    action4: action4,
+}
+</code></pre></li>
+</ol>
+
+<ul>
+<li><p>绑定action 和 mutations 到 methods，然后 调用就行了</p>
+
+<pre><code>export default {
+    methods: {
+        // 数组形式直接载入
+        ...mapActions([
+            &#39;add&#39;
+        ]),
+        // 重命名形式 
+        ...mapActions({
+            add: &#39;add&#39;,
+            addAsync: &#39;addAsync&#39;,
+            action4: &#39;action4&#39;
+        }),
+        // 同上
+        ...mapMutations([
+            &#39;increment&#39;
+        ]),
+        ...mapMutations({
+            incrementMutation: &#39;increment&#39;
+        })
+    }
+}
+</code></pre></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[react-native-splash-screen 给安卓项目添加启动图]]></title>
+    <link href="http://blog.csdn.net/15151216159291.html"/>
+    <updated>2018-01-05T11:06:55+08:00</updated>
+    <id>http://blog.csdn.net/15151216159291.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">react-native-splash-screen 基本配置</h2>
+
+<ul>
+<li>安装插件：<code>npm install react-native-splash-screen --save</code></li>
+<li>关联项目：<code>react-native link react-native-splash-screen</code> or <code>rnpm link react-native-splash-screen</code></li>
+</ul>
+
+<blockquote>
+<p>link 之后，安卓项目中会自动添加头文件 以及部分代码，为保证项目顺利运行，还请确认下面代码是否已经完善。</p>
+</blockquote>
+
+<ul>
+<li><p>确保 <code>android/settings.gradle</code>文件夹已经有下面代码</p>
+
+<pre><code class="language-JavaScript">include &#39;:react-native-splash-screen&#39;   
+project(&#39;:react-native-splash-screen&#39;).projectDir = new File(rootProject.projectDir, &#39;../node_modules/react-native-splash-screen/android&#39;)
+</code></pre></li>
+<li><p>android/app/build.gradle 文件中 添加依赖 <code>react-native-splash-screen</code></p>
+
+<pre><code>...
+dependencies {
+...
+compile project(&#39;:react-native-splash-screen&#39;)
+}
+</code></pre></li>
+<li><p>更新 <code>MainApplication.java</code> 文件</p></li>
+</ul>
+
+<pre><code>// react-native-splash-screen &gt;= 0.3.1
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
+// react-native-splash-screen &lt; 0.3.1
+import com.cboy.rn.splashscreen.SplashScreenReactPackage;
+
+public class MainApplication extends Application implements ReactApplication {
+
+    private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+        @Override
+        protected boolean getUseDeveloperSupport() {
+            return BuildConfig.DEBUG;
+        }
+
+        @Override
+        protected List&lt;ReactPackage&gt; getPackages() {
+            return Arrays.&lt;ReactPackage&gt;asList(
+                    new MainReactPackage(),
+            new SplashScreenReactPackage()  //here
+            );
+        }
+    };
+
+    @Override
+    public ReactNativeHost getReactNativeHost() {
+        return mReactNativeHost;
+    }
+}
+</code></pre>
+
+<h2 id="toc_1">准备添加代码和文件配置</h2>
+
+<ul>
+<li><code>app/src/main/res/layout</code> 文件夹下 添加 <code>launch_screen.xml</code> 并copy如下代码：</li>
+</ul>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:orientation=&quot;vertical&quot; android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:background=&quot;@drawable/launch_screen&quot;&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+
+<ul>
+<li>创建文件夹 <code>drawable-xhdpi</code>、 <code>drawable-xxhdpi</code>（暂时先创建这两个就够了），将准备好的启动图 命名为 <code>launch_screen.png</code> 分别放入创建好的文件夹</li>
+<li><p>白屏问题，设置透明背景：<code>android/app/src/main/res/values/styles.xml</code> 文件夹下 添加 <code>&lt;item name=&quot;android:windowIsTranslucent&quot;&gt;true&lt;/item&gt;</code></p>
+
+<pre><code>&lt;resources&gt;
+&lt;!-- Base application theme. --&gt;
+&lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.NoActionBar&quot;&gt;
+    &lt;!-- Customize your theme here. --&gt;
+    &lt;!--设置透明背景--&gt;
+    &lt;item name=&quot;android:windowIsTranslucent&quot;&gt;true&lt;/item&gt;
+&lt;/style&gt;
+&lt;/resources&gt;
+</code></pre></li>
+<li><p><code>android/app/src/main/res/values/colors.xml</code> 文件夹下，添加如下：</p>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;resources&gt; &lt;color name=&quot;primary_dark&quot;&gt;#660B0B0B&lt;/color&gt; &lt;/resources&gt;
+</code></pre></li>
+<li><p>适当的时刻 隐藏启动图  可以是在视图挂载完毕，可以是网络请求结束之后</p></li>
+</ul>
+
+<pre><code>import SplashScreen from &#39;react-native-splash-screen&#39;
+componentDidMount() {
+    SplashScreen.hide();
+  }
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[佛祖镇楼 bug辟易]]></title>
+    <link href="http://blog.csdn.net/15145327105445.html"/>
+    <updated>2017-12-29T15:31:50+08:00</updated>
+    <id>http://blog.csdn.net/15145327105445.html</id>
+    <content type="html"><![CDATA[
+<pre><code class="language-Objective-C">//                            _ooOoo_
+//                           o8888888o
+//                           88&quot; . &quot;88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---&#39;\____
+//                      .   &#39; \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| &#39;&#39;\---/&#39;&#39; | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .&#39; /--.--\ `. . __
+//                .&quot;&quot; &#39;&lt; `.___\_&lt;|&gt;_/___.&#39; &gt;&#39;&quot;&quot;.
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-&#39;======
+//                            `=---=&#39;
+//
+//         .............................................
+//                  佛祖镇楼                  BUG辟易
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+</code></pre>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[学习资源网址]]></title>
@@ -1069,1348 +2607,6 @@ pt代表的是物理像素（或者自然像素）</p>
 <h1 id="toc_5">六、真机测试</h1>
 
 <p>真机运行才可以，不支持模拟器哦</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Effective Objective-c 2.0 学习笔记]]></title>
-    <link href="http://blog.csdn.net/15130871696781.html"/>
-    <updated>2017-12-12T21:59:29+08:00</updated>
-    <id>http://blog.csdn.net/15130871696781.html</id>
-    <content type="html"><![CDATA[
-<p>编写高质量iOS与OS X代码的52个有效方法</p>
-
-<h1 id="toc_0">第一章 熟悉Objective-C</h1>
-
-<h2 id="toc_1">第1条 了解Objective-C语言的起源</h2>
-
-<ol>
-<li>笔记：</li>
-<li>OC是动态语言，使用<code>消息结构</code>(messaging structure),而非<code>函数调用</code>(function calling)。OC由消息语言的鼻祖smalltalk演化而来。</li>
-<li>区别：消息结构的语言，其运行时执行的代码由运行环境决定；函数调用的语言，则由编译器决定。</li>
-<li>OC中对象所占内存总是分配在<code>堆空间</code>(heap space)而不会在<code>栈空间</code>(stack)上</li>
-<li><p>OC中不带*的变量，有可能会使用<code>栈空间</code>，比如CGRect 结构体<br/>
-~~ <code><br/>
-~~ struct CGRect{<br/>
-~~     CGPoint point;<br/>
-~~     CGSize size;<br/>
-~~ };<br/>
-~~</code><br/>
-因为创建对象需要额外开销（分配&amp;释放堆内存），从效率上，结构体性能更好。</p></li>
-<li><p>要点</p></li>
-<li><p>Objective-c为C语言天减了面向对象特性，是其超集。Objective-C是使用动态绑定的消息结构，也就是说，在运行时才会检查对象类型。接收这一消息后，究竟该执行何种代码实现，有运行期环境决定而非编译器。</p></li>
-<li><p>理解C语言的核心概念有助于写好Objective-C程序，尤其是掌握内存模型与指针。</p></li>
-</ol>
-
-<span id="more"></span><!-- more -->
-
-<h2 id="toc_2">第2条 在类的头文件中尽量少引用其他头文件。</h2>
-
-<ol>
-<li>笔记：</li>
-<li>头文件导入时，如非使用者必须知道，尽量将头文件的导入时机延后（头文件的导入反倒.m文件中），这样会大大减少编译时间，减少头文件之间相互依赖的复杂度。</li>
-<li><p>前向声明---<code>@class ClassName</code>这种头文件的声明方式(或者引入方式)叫做<code>前向声明</code>（或者向前声明）--- (forward declaring);前向声明方式引入的头文件，不会在编译期间进行编译，只是向声明我这里有这么各类，你知道有就行了，不需要你编译。这种方式还能解决头文件相互包含的问题。</p></li>
-<li><p>要点：</p></li>
-<li><p>除非有必要条件，否则不要引入头文件。一般来说，应在某各类的头文件中使用前向声明来提及别的类，并在实现文件中引入哪些类的头文件。这样做可以尽量降低类之间的<code>耦合</code>（coupling）</p></li>
-<li><p>有时无法使用前向声明，比如要声明某个类遵循一项协议。这情况下，尽量把“该类遵循某协议”的这条生命移至&quot;class-continuation分类&quot;中。如果不行的话，就把协议单独放在一个头文件中，然后将其引入。</p></li>
-</ol>
-
-<h2 id="toc_3">第3条 多用字面量语法，少用与之等价的方法</h2>
-
-<p>~~ <code><br/>
-~~ //字面量语法<br/>
-~~ NSString *str1 = @&quot;Kael&quot;;<br/>
-~~ <br/>
-~~ //传统方式<br/>
-~~ NSString *str2 = [[NSString alloc] initWithFormat: @&quot;Kael&quot;];<br/>
-~~</code></p>
-
-<ol>
-<li>笔记：</li>
-<li>字面量语法（literal syntax）能极大的缩短代码长度，使其更易读。</li>
-<li><p>字面数值 传统方式：<code>NSNumber *someNumber = [NSNumber numberWithInt:1]</code></p>
-
-<ol>
-<li><code>NSNumber *intNumber = @1</code></li>
-<li><code>NSNumber *floatNumbser = @0.125f</code></li>
-<li><code>NSNumber *doubleNum = @3.14159</code></li>
-<li><code>NSNumber *boolNum = @YES</code></li>
-<li><code>NSNumber *charNum = @&#39;abc&#39;</code></li>
-</ol></li>
-</ol>
-
-<ul>
-<li>字面量数组 传统方式：<code>NSArray *animals = [NSArray arrayWithObjects:@&quot;cat&quot;,@&quot;dog&quot;,@&quot;mouse&quot;,nil];</code>
-
-<ul>
-<li><code>NSArray *animals = @[@&quot;cat&quot;,@&quot;dog&quot;,@&quot;mouse&quot;];</code></li>
-<li><code>NSString *dog = animals[1];</code></li>
-<li><code>replaceObjectAtIndex:index</code> -&gt; <code>mutableArray[1] = @&quot;dog&quot;;</code></li>
-</ul></li>
-<li><p>字面量字典 传统方式：<code>NSDictionary *personData = [NSDictionary dictionaryWithObjectsAndkeys:@&quot;kael&quot;,@&quot;name&quot;,@&quot;age&quot;,@&quot;18&quot;,nil];</code></p>
-
-<ul>
-<li><code>NSDictionary *personData = @{@&quot;name&quot;:@&quot;kael&quot;,@&quot;age&quot;:@&quot;18&quot;}</code></li>
-<li><code>NSString *name = personData[@&quot;name&quot;];</code></li>
-<li><code>setObject:obj forKey:key</code> -&gt; <code>mutableDic[name] = @&quot;kaelinda&quot;;</code></li>
-</ul></li>
-</ul>
-
-<ol>
-<li>要点：
-
-<ol>
-<li>字面量语法创建 字符串、数值、数组、字典 比常规方法更加简明扼要。</li>
-<li>应该通过取下标方式来取 字典、数组 中的值。</li>
-<li>用字面量语法创建数组或者字典时，若值中有nil,则会抛出异常。因此，务必确保值中不含nil。</li>
-</ol></li>
-</ol>
-
-<h2 id="toc_4">第4条 多用类型常量，少用#define 预处理命令</h2>
-
-<ol>
-<li><p>笔记：</p>
-
-<ol>
-<li>宏定义等用于处理命令 是在编译器 编译期间 将定义的 字符替换，所以这样的缺点是 不能很好的从宏定义上读出常量的类型信息。</li>
-<li><code>static const NSTimeInterval kAnimationinDuration = 0.3;</code></li>
-<li><code>extern NSString *const EOCString;</code>比如 通知等需要有一个外部可见的变量作为 <strong>通知名</strong></li>
-</ol></li>
-<li><p>要点：</p>
-
-<ol>
-<li>不要用预处理指令定义常量。这样定义出来的常量不含类型信息，编译器编译期间，已经把这些值写死了，如果有人对常量改动，编译器也不会产生警告信息；</li>
-<li>在实现文件中(.m文件)使用<code>static const</code>来定义只在编译单元可见(只在.m文件中可见，不暴露给外部使用)的常量。因此常量不在全局符号表中，命名上不需要在名称上加前缀。</li>
-<li>在头文件中用<code>extern</code>来声明全局常量，并在相关实现文件中定义其值。</li>
-</ol></li>
-</ol>
-
-<h2 id="toc_5">建议：处理隐藏的返回类型，优先选择实例类型而非id类型</h2>
-
-<ol>
-<li>笔记：
-
-<ol>
-<li><code>instancetype</code>仅仅用作Objective-C方法的返回类型</li>
-<li><code>instancetype</code>有类型检测，更安全
-*</li>
-</ol></li>
-</ol>
-
-<h2 id="toc_6">建议：尽量使用模块方式与多类建立复合关系</h2>
-
-<ul>
-<li><code>#import</code> 和 <code>#include</code> 其根本就是简单的复制、粘贴，将.h文件中的内容一字不落的复制到当前文件中，<code>#import</code>可避免头文件的重复引用。</li>
-<li>以预编译头文件的方式，虽然可以缩短编译时间，但维护棘手，不利于广泛应用。</li>
-<li>模块功能，其应用不仅仅变现与编译的速度加快，同事在链接框架等方面也非常好用。</li>
-<li>启动模块功能后，编译器会隐式的把所有的<code>#import</code>转换成<code>@import</code></li>
-</ul>
-
-<h2 id="toc_7">高度警惕空指针和野指针的袭击</h2>
-
-<ol>
-<li><p>笔记：</p>
-
-<ol>
-<li>nil、Nil、NULL的区别：
-nil：指向oc中对象的空指针，针对对象。
-Nil：指向oc中类的空指针，针对类。
-NULL：指向其他类型的空指针，如一个c类型的内存指针，基本数据类型为空，基本类型。
-NSNull：在集合对象中，表示空值的对象。</li>
-</ol></li>
-<li><p>要点：</p>
-
-<ol>
-<li>空指针（NULL）指的是没有存储任何内存地址的指针；野指针，是指向“垃圾内存”（不可用内存）的指针。</li>
-<li>利用野指针发消息是很危险的，会报错。也就是说，一个对象被回收了，就不要再去操作它，不要尝试给它发消息。</li>
-<li>利用空指针发消息是没有任何问题的，也就是说代码是没有错误的。</li>
-</ol></li>
-</ol>
-
-<h2 id="toc_8">清楚长两字符串和一般字符串的区别</h2>
-
-<p>~~ <code><br/>
-~~ NSString *string1 = @&quot;hello&quot;;<br/>
-~~ NSString *string2 = @&quot;hello&quot;<br/>
-~~ if (strng1 == string2){<br/>
-~~     NSLog(@&quot;They are same address&quot;);<br/>
-~~ };<br/>
-~~ <br/>
-~~ NSString *string3 = [NSString alloc];<br/>
-~~ nsstring *string4 = [string3 initWithString:string1];<br/>
-~~ if (string3!=string4){<br/>
-~~     NSLog(@&quot;string3 is not same to string4&quot;);<br/>
-~~ }<br/>
-~~ <br/>
-~~ if (string1 == string4){<br/>
-~~     NSLog(@&quot;string1 is same to string4&quot;);<br/>
-~~ }<br/>
-~~ <br/>
-~~</code></p>
-
-<ul>
-<li>由于编译器的优化，相同内容的常量字符串的地址是完全相同的。</li>
-<li>如果用常量字符串来初始化一个字符串，那么这两个字符串也将是相同的常量。</li>
-<li>对常量字符串永远不要release,因为多次release都还能访问。</li>
-</ul>
-
-<h2 id="toc_9">第5条 用枚举表示状态、选项、状态码</h2>
-
-<ol>
-<li>笔记：</li>
-<li>想要将多个枚举能同时生效（例如，屏幕的方向），那需要枚举值设置为 2 的n次幂；</li>
-<li><p>还可以通过按位操作</p></li>
-</ol>
-
-<ul>
-<li><p>NS_ENUM与NS_OPTIONS区别：</p>
-
-<ul>
-<li>NS_ENUM枚举项的值为NSInteger，NS_OPTIONS枚举项的值为NSUInteger；</li>
-<li>NS_ENUM定义通用枚举，NS_OPTIONS定义位移枚举</li>
-<li>NS_OPTIONS的枚举项的值需要像这样表示1 &lt;&lt; 0，1 &lt;&lt; 1，2的几次方这样，而NS_ENUM可以直接给像1，2，3这样</li>
-</ul></li>
-</ul>
-
-<ol>
-<li>要点：</li>
-<li>在处理枚举类型的switch语句时，不要使用default分支，这样加入新枚举时编译器会提醒开发者：switch语句并未处理所有枚举。</li>
-</ol>
-
-<hr/>
-
-<h1 id="toc_10">第二章</h1>
-
-<hr/>
-
-<h2 id="toc_11">第6条 理解属性这一概念</h2>
-
-<ol>
-<li><p>笔记：</p>
-
-<ul>
-<li>属性(property) = 成员变量 + getter + setter</li>
-<li>创建属性后，编译器会自动生成setter、getter属性</li>
-</ul>
-
-<p>属性特质：<br/>
-&#39;&#39; 1. 原子性：nonatomic 线程不安全；atomic 原子性，通过线程锁定等保证其原子性；<br/>
-&#39;&#39; 2. 读/写权限：readwrite———可读可写（setter、getter）;readonly———只读。<br/>
-&#39;&#39; 3. 内存管理语义：assign（弱引用）、weak（弱引用）、strong(强引用)、copy(强引用)、unsafe_unretained(针对于对象的 类似于assign)<br/>
-&#39;&#39; 4. 方法名：<br/>
-&#39;&#39;   - <code>getter=&lt;name&gt;</code> --&gt; 指定“获取方法”的方法名  @property （nonatomic,getter=isOn）BOOL on;<br/>
-&#39;&#39;   - <code>seeter=&lt;name&gt;</code> --&gt; 指定设置方法的方法名 @property （nonatomic,getter=isOn,seeter=setBaseModelName）BOOL on;</p></li>
-</ol>
-
-<h2 id="toc_12">第7条 在对象内部尽量直接访问实例变量</h2>
-
-<ul>
-<li>直接访问实例变量，不会走<code>方法派送</code>(method dispatch);直接访问实例变量速度上要快得多。</li>
-<li>直接访问实例变量，不会调用“设置方法”（setter）,ARC下copy修饰的属性，就不会copy该属性，只会保留新值并释放旧值。</li>
-<li>直接访问实例变量，不会触发“键值观察（Key-ValueObserving，KVO）”</li>
-<li>通过属性访问，可以通过setter、getter增加断点监控键值变化。</li>
-</ul>
-
-<p>折中：设置变量时走setter方法；获取变量值时直接访问实例变量；</p>
-
-<p>注意：<br/>
-* 初始化方法(或者 dealloc)中设置属性值的时候，应该直接访问实例变量，因为子类可能会<code>覆写</code>该方法;<br/>
-* 惰性初始化来配置数据，这时候需要通过属性来读取数据。</p>
-
-<h2 id="toc_13">第8条 理解“对象等同性”这一概念</h2>
-
-<ol>
-<li>笔记：
-对象等同性比较：</li>
-<li><code>==</code>比较的是指针本身</li>
-<li><code>isEqual:</code>方法比较的是指针指向的内存地址</li>
-</ol>
-
-<p>NSobject协议中有两个判断等同性的关键方法：<br/>
-~~ <code><br/>
-~~ -(BOOL)isEqual:(id)object;<br/>
-~~ -(NSUInteger)hash;<br/>
-~~</code><br/>
-2. 要点：<br/>
-2. 相同的对象必须具有相同的哈希码；<br/>
-3. 拥有相同哈希码的对象不一定相同；</p>
-
-<h2 id="toc_14">第9条 以“类族模式”隐藏实现细节</h2>
-
-<p>1.笔记：</p>
-
-<ul>
-<li>基类  + 分工的子类</li>
-<li>子类都应当继承自类族中的抽象基类。</li>
-<li>子类应该定义自己的数据存储方式。</li>
-<li><p>子类应当覆写超类文档中指明需要覆写的方法。</p>
-
-<p>2.要点:</p></li>
-<li><p>类族模式可以把实现细节隐藏在一套简单的公共接口后面。</p></li>
-<li><p>系统框架中经常使用类族。</p></li>
-<li><p>从类族的公共抽象基类中集成子类是要当心，若文档有变化，则应当先阅读。</p></li>
-</ul>
-
-<h2 id="toc_15">第10条：在既有类中使用关联对象存放自定义数据</h2>
-
-<h2 id="toc_16">第12条：理解 objc_msgSend 的作用</h2>
-
-<h2 id="toc_17">第13条：</h2>
-
-<h2 id="toc_18">第14条：</h2>
-
-<h2 id="toc_19">第15条：</h2>
-
-<h2 id="toc_20">第16条：</h2>
-
-<h2 id="toc_21">第17条：</h2>
-
-<h2 id="toc_22">第18条：</h2>
-
-<h2 id="toc_23">第19条：</h2>
-
-<h2 id="toc_24">第20条：</h2>
-
-<h2 id="toc_25">第21条：</h2>
-
-<h2 id="toc_26">第22条：</h2>
-
-<h2 id="toc_27">第23条：</h2>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[关于iOS沙盒文件的那些事儿]]></title>
-    <link href="http://blog.csdn.net/15129168744096.html"/>
-    <updated>2017-12-10T22:41:14+08:00</updated>
-    <id>http://blog.csdn.net/15129168744096.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">分类</h2>
-
-<ul>
-<li>Document： 除了基于NSUserdefaults的首选项设置之外,应用程序的数据，文件都存在该目录下</li>
-<li>Libary：基于NSUserDefaults的首选项参数保存在Liabry/prefrences目录下</li>
-<li>tmp:</li>
-</ul>
-
-<span id="more"></span><!-- more -->
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[iOS代码检测入坑记事]]></title>
-    <link href="http://blog.csdn.net/15126628432953.html"/>
-    <updated>2017-12-08T00:07:23+08:00</updated>
-    <id>http://blog.csdn.net/15126628432953.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">我接触的代码检测</h2>
-
-<ul>
-<li>OCLint + xcpretty</li>
-<li>sonar</li>
-<li>infer</li>
-</ul>
-
-<h3 id="toc_1">infer</h3>
-
-<ul>
-<li><p><a href="https://infer.liaohuqiu.net">infer官网 传送门</a></p>
-
-<p><em>具体使用</em></p>
-
-<pre><code>infer -- xcodebuild -target &lt;target name&gt; -configuration &lt;build configuration&gt; -sdk iphonesimulator
-</code></pre></li>
-</ul>
-
-<span id="more"></span><!-- more -->
-
-<p><em>例如：</em><br/>
-  ```<br/>
-  #分析之前先把之前的build缓存清理下<br/>
-  xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0</p>
-
-<p>#根据自己醒目名字使用infer 命令进行分析<br/>
-  infer -- xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0<br/>
-  ```</p>
-
-<p><em>infer的优势</em></p>
-
-<ul>
-<li>安装过程简洁，不需要过多的配置（前提是电脑之前安装过Homebrow）</li>
-<li>使用方便，只需要一行命令</li>
-</ul>
-
-<h3 id="toc_2">sonar</h3>
-
-<p>Sonar 是一个用于代码质量管理的开放平台。通过插件机制，Sonar 可以集成不同的测试工具，代码分析工具，以及持续集成工具。相比于Jenkins ，sonar更关注代码的变化，通过量化的方式度量代码变化。</p>
-
-<p>如果不需要持续集成，sonar只需要两个配置文件就可以进行代码的静态检测。</p>
-
-<ul>
-<li>安装： <code>brew install sonar</code></li>
-<li>配置文件修改 <code>run-sonar.sh</code> <code>sonar-project.properties</code></li>
-<li><p>执行run-sonar.sh脚本，检测代码</p>
-
-<p><em>资源下载</em></p>
-
-<ul>
-<li><p><a href="https://raw.githubusercontent.com/octo-technology/sonar-objective-c/master/src/main/shell/run-sonar.sh">run-sonar.sh</a></p></li>
-<li><p><a href="https://raw.githubusercontent.com/octo-technology/sonar-objective-c/master/sample/sonar-project.properties">sonar-project.properties</a></p></li>
-</ul>
-
-<p><em>参考资源</em></p>
-
-<ul>
-<li><p><a href="http://www.jianshu.com/p/f58e89573d33">IOS-Sonar代码质量监控</a></p></li>
-<li><p><a href="https://my.oschina.net/ChenTF/blog/806565">[实践]Sonar Xcode8兼容</a></p></li>
-<li><p><a href="http://www.jianshu.com/p/74bee59fef1c">iOS Sonar集成流程详解</a></p></li>
-<li><p><a href="http://www.jianshu.com/p/6b61783b9a38">基于Sonar的iOS代码质量检测系统</a></p></li>
-<li><p><a href="http://blog.csdn.net/itfootball/article/details/45058591">IOS测试之sonar检查ios代码质量</a></p></li>
-</ul></li>
-</ul>
-
-<h3 id="toc_3">OCLint + xcpretty</h3>
-
-<ul>
-<li><p>安装xcpretty</p>
-
-<pre><code>sudo gem install xcpretty
-</code></pre></li>
-<li><p>安装OCLint<br/>
-```<br/>
-brew tap oclint/formulae</p>
-
-<p>brew install oclint<br/>
-```</p></li>
-<li><p>根目录下 运行脚本：<br/>
-```</p>
-
-<h1 id="toc_4">清理</h1>
-
-<p>xcodebuild clean</p>
-
-<h1 id="toc_5">生成JSON文件 用于分析</h1>
-
-<p>xcodebuild  -workspace demo.xcworkspace -scheme demo -configuration Debug \<br/>
-| tee xcodebuild.log \<br/>
-| xcpretty -r json-compilation-database -o compile_commands.json</p>
-
-<h1 id="toc_6">OCLint 分析（根据一定规则进行分析）</h1>
-
-<p>oclint-json-compilation-database -v \<br/>
--e Pods \<br/>
--e MGLivenessDetection \<br/>
--e MGBaseKit \<br/>
--e MGIDCard \<br/>
-oclint_args -- -report-type html -o oclintReport.html \<br/>
--disable-rule ObjCAssignIvarOutsideAccessors \<br/>
--disable-rule ShortVariableName \<br/>
--rc=MINIMUM_CASES_IN_SWITCH=3 \<br/>
--rc=CYCLOMATIC_COMPLEXITY=10 \<br/>
--rc=LONG_CLASS=700 \<br/>
--rc=LONG_LINE=200 \<br/>
--rc=NCSS_METHOD=40 \<br/>
--rc=NESTED_BLOCK_DEPTH=5 \<br/>
--rc=TOO_MANY_FIELDS=20 \<br/>
--rc=TOO_MANY_METHODS=30 \<br/>
--rc=TOO_MANY_PARAMETERS=6</p>
-
-<h1 id="toc_7">oclint_args -- -report-type xcode \</h1>
-
-<pre><code>
-高级用法，代码检测规则：
-</code></pre></li>
-<li><p><a href="http://www.jianshu.com/p/4f505e92d557">iOS使用OCLint做静态代码分析</a></p></li>
-<li><p><a href="http://www.cocoachina.com/ios/20170928/20669.html">让XCode自动CodeReview你的代码-OCLint使用</a></p></li>
-<li><p><a href="https://blog.yourtion.com/static-code-analysis-ios-using-oclint.html">iOS静态代码扫描</a>  <a href="https://blog.yourtion.com/static-code-analysis-ios-using-oclint.html">原文链接</a></p></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[iOS WKWebView 本地HTML、JS、CSS文件加载详解]]></title>
-    <link href="http://blog.csdn.net/15126415331235.html"/>
-    <updated>2017-12-07T18:12:13+08:00</updated>
-    <id>http://blog.csdn.net/15126415331235.html</id>
-    <content type="html"><![CDATA[
-<blockquote>
-<p><strong>Tips:</strong><br/>
-NSString类型的文件路径转换为URL的时候，一定要用 <br/>
-<code>NSURL *pathURL = [NSURL fileURLWithPath:filePath];</code>方法去转换，否则资源URL不合法，APP会崩溃</p>
-</blockquote>
-
-<h2 id="toc_0">上源码接口：</h2>
-
-<h3 id="toc_1">loadRequest方式加载</h3>
-
-<ul>
-<li><p>API : iOS8即可使用</p>
-
-<p><code>- (nullable WKNavigation *)loadRequest:(NSURLRequest *)request;</code>      </p></li>
-<li><p>用途：</p>
-
-<ul>
-<li>1：主要用来加载网络URL<br/></li>
-<li>2：也可以加载本地HTML文件（本文重点）</li>
-</ul>
-
-<span id="more"></span><!-- more --></li>
-</ul>
-
-<h3 id="toc_2">loadFileURL</h3>
-
-<ul>
-<li><p>API: URL:文件相对路径 readAccessURL：访问文件需要引用的文件的路径 一般都是比<code>URL</code>大一级或者更高几级</p>
-
-<p><code>- (nullable WKNavigation *)loadFileURL:(NSURL *)URL allowingReadAccessToURL:(NSURL *)readAccessURL API_AVAILABLE(macosx(10.11), ios(9.0));</code></p></li>
-<li><p>用途：主要用于加载本地文件（一般指相对路径）</p></li>
-</ul>
-
-<h3 id="toc_3">loadHTMLString</h3>
-
-<ul>
-<li><p>API:<br/>
-<code>- (nullable WKNavigation *)loadHTMLString:(NSString *)string baseURL:(nullable NSURL *)baseURL;</code></p></li>
-<li><p>用途：主要用于 HTML转换成的字符串（比如：编程APP）</p></li>
-</ul>
-
-<h3 id="toc_4">loadData</h3>
-
-<ul>
-<li><p>API: 值得一提的是MIMETType,text/html、image/jpg、text/plain</p>
-
-<p><code>- (nullable WKNavigation *)loadData:(NSData *)data MIMEType:(NSString *)MIMEType characterEncodingName:(NSString *)characterEncodingName baseURL:(NSURL *)baseURL API_AVAILABLE(macosx(10.11), ios(9.0));</code></p></li>
-<li><p>用途：主要用于加载 二进制状态下的文件，主要包括HTML、Image、Text文本</p></li>
-</ul>
-
-<h2 id="toc_5">开发中的HTML文件位置</h2>
-
-<h3 id="toc_6">HTML位于工程内的黄色文件夹下</h3>
-
-<blockquote>
-<p>这是咱们一般的文件添加方式，这属于绝对路径的添加</p>
-</blockquote>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fmcxnu043cj313w05maan.jpg" alt="绝对路径"/></p>
-
-<h4 id="toc_7"><strong><code>loadRequest</code> 加载方式</strong></h4>
-
-<blockquote>
-<p><strong>Tips:</strong><br/>
- iOS8 的时候只能通过这个<code>loadRequest</code>方法去加载<br/>
-iOS8 WKWebView的加载本地文件的方式本文后面会有 <strong>详细方案</strong></p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot;];
-    
-_feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-    
-[_webview loadRequest:[NSURLRequest requestWithURL:_feedbackUrl]];
-</code></pre>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fmcxsxa56jj30af0j5dgd.jpg" alt="效果"/></p>
-
-<p><strong>warning！！！</strong><br/>
-页面能加载出来，但是效果是很差的，因为CSS、JS、图片资源文件没有得到正确的引用！<br/>
-那我们该通过什么方式来让这些附属的文件得到正确引用呢？<br/>
-iOS9之后新增了 <code>loadFileURL</code> 等一系列加载本地文件的方法</p>
-
-<h4 id="toc_8"><strong><code>loadFileURL</code>加载方式</strong></h4>
-
-<blockquote>
-<p>iOS9之后才出现这个加载方式</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot;];
-_feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-if (@available(iOS 9.0, *)) {
-    [_webview loadFileURL:[NSURL fileURLWithPath:bundleStr] allowingReadAccessToURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
-} else {
-    // Fallback on earlier versions
-}
-</code></pre>
-
-<p>哇塞！加载出来了耶！但是 依旧是没能加载其他资源文件啊 😰<br/>
-客观，稍安勿躁 ~</p>
-
-<h3 id="toc_9">HTML位于工程内的蓝色文件夹下</h3>
-
-<blockquote>
-<p>特殊文件添加方式，尤其是文件之间有相互引用的时候用这种方式</p>
-</blockquote>
-
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fmcxr0jl88j313w05maan.jpg" alt="相对路径添加方式"/></p>
-
-<h4 id="toc_10">loadRequest 方式</h4>
-
-<pre><code class="language-Objectiv-C">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot; inDirectory:@&quot;FeedbackH5/pages&quot;];
-NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-if (@available(iOS 9.0, *)) {
-    [_webview loadRequest:[NSURLRequest requestWithURL:pathURL]];
-}
-</code></pre>
-
-<h4 id="toc_11">loadFileURL 方式加载</h4>
-
-<pre><code class="language-Objectiv-C">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot; inDirectory:@&quot;FeedbackH5/pages&quot;];
-    NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-    if (@available(iOS 9.0, *)) {
-//        [_webview loadRequest:[NSURLRequest requestWithURL:pathURL]];
-        [_webview loadFileURL:[NSURL fileURLWithPath:filePath] allowingReadAccessToURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
-    }
-</code></pre>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fmcyc9pjp0j30af0j5wfp.jpg" alt=""/></p>
-
-<blockquote>
-<p>由此可见：相对路径方式加载 是可以正常引用JS、css等资源文件的<br/>
-但是 iOS 8系统下，依旧加载不出来！！！</p>
-</blockquote>
-
-<h3 id="toc_12">HTML位于APP沙盒下Document文件夹</h3>
-
-<blockquote>
-<p>iOS8既然添加到工程中引用，一直引用不到，我们可以让他从document路径下引用试试！<br/>
-这个方法可以适配 iOS8系统下WKWebView加载本地文件了？<br/>
-你还太天真！！！</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">//项目中的文件夹路径
-NSString *directoryPath = [KFileManger appSourceName:@&quot;FeedbackH5&quot; andType:@&quot;&quot;];
-
-//沙盒中的document路径
-NSString *documentpath = [KFileManger documentPath];
-    
-//copy文件夹到 document 路径下
-[KFileManger copyMissingFile:directoryPath toPath:documentpath];
-
-//document 路径下的HTML文件路径
-NSString *homePath = [[KFileManger documentPath] stringByAppendingString:@&quot;/FeedbackH5/pages/feedback.html&quot;];
-
-//document 路径下的HTML文件 URL
-NSURL *docSourceURL = [NSURL fileURLWithPath:homePath];
-    
-[_webview loadRequest:[NSURLRequest requestWithURL:docSourceURL]];
-</code></pre>
-
-<blockquote>
-<p>果然不出所料(zhe jiu shi wo xiang yao de)，模拟器上能正常加载出界面，图片、CSS但是JS交互是不行的<br/>
-在真机 依旧加载不出任何界面！</p>
-</blockquote>
-
-<h3 id="toc_13">HTML位于APP沙盒下tmp临时缓存文件夹</h3>
-
-<blockquote>
-<p>亲爱的客观们，这才是iOS8系统下加载有相互引用关系的HTML、JS、CSS以及图片资源的正确方法(当前知道的唯一方法如有新的方式私信我哦~)！😊</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">//项目中的文件夹路径
-NSString *directoryPath = [KFileManger appSourceName:@&quot;FeedbackH5&quot; andType:@&quot;&quot;];
-
-//tmp缓存文件夹路径
-NSString *tmpPath = [KFileManger tmpPath];
-
-//新文件夹名字
-NSString *wwwDir =@&quot;www&quot;;
-
-//tmp文件夹下创建www文件夹
-[KFileManger createDirWithPath:tmpPath andDirectoryName: wwwDir];
-
-//tmp中的www文件夹中的路径
-NSString *tmpWWW = [tmpPath stringByAppendingString: wwwDir];
-
-//copy文件夹到 tmp/www 路径下
-[KFileManger copyMissingFile:directoryPath toPath:tmpWWW];
-
-// 字符 tmp/www/FeedbackH5/pages/feedback.html 全路径
-NSString *tmpWWWFeedback = [tmpWWW stringByAppendingString:@&quot;/FeedbackH5/pages/feedback.html&quot;];
-
-//tmp 操作，字符转换成URL
-NSURL *feedbackURL = [NSURL fileURLWithPath:tmpWWWFeedback];
-
-//WKWebView加载
-[_webview loadRequest:[NSURLRequest requestWithURL:feedbackURL]];
-</code></pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[可选型 Optional]]></title>
-    <link href="http://blog.csdn.net/15117133773045.html"/>
-    <updated>2017-11-27T00:22:57+08:00</updated>
-    <id>http://blog.csdn.net/15117133773045.html</id>
-    <content type="html"><![CDATA[
-<h3 id="toc_0">定义</h3>
-
-<ul>
-<li>当数据可能接收nil的时候，使用optional是比较合适的</li>
-<li>当非可选型被赋值为nil的时候 系统会崩溃</li>
-<li>当可选型被赋值为nil的时候 系统会首先判断值是否为nil，如果为nil 则会赋值nil;如果不为nil，那就正常操作。</li>
-</ul>
-
-<h3 id="toc_1">Optional 可选型 写法</h3>
-
-<p><code>var sexy : String? = &quot;boy&quot;</code></p>
-
-<h3 id="toc_2">强制解包</h3>
-
-<pre><code>if sexy != nil {
-    print(&quot;i am a \(String(describing: sexy))&quot;)
-}else{
-    print(&quot;none&quot;)
-}
-</code></pre>
-
-<span id="more"></span><!-- more -->
-
-<h3 id="toc_3">官方推荐解包方式</h3>
-
-<pre><code>if let ksex = sexy {
-    print(&quot;i am a \(ksex)&quot;)
-}else{
-    print(&quot;none&quot;)
-}
-</code></pre>
-
-<h3 id="toc_4">隐式解包 定义时候后面跟着！就可以隐式解包</h3>
-
-<pre><code>var sexy2 : String!
-var sexy3 : String = sexy2 ?? &quot;boy&quot;//使用的时候不需要进行解包 并且可以通过 ?? 给变量赋一个默认值
-</code></pre>
-
-<h3 id="toc_5">使用Optional的变量 首先要解包</h3>
-
-<pre><code>if...else
-guard ... else{}
-</code></pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Xcode 代码块]]></title>
-    <link href="http://blog.csdn.net/15115332074317.html"/>
-    <updated>2017-11-24T22:20:07+08:00</updated>
-    <id>http://blog.csdn.net/15115332074317.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">一、创建自定义代码块的好处</h2>
-
-<p>由于项目、所用语言或者编码习惯的差别，不同的程序员习惯用的代码片段也不尽相同，这就有了自定义代码片段的需求，好在Xcode是支持该功能的。他的好处是使程序员以最快的速度输入很常用的代码片段，提高编程效率。</p>
-
-<p>该功能是从Xcode4开始引入的。在Xcode中的位置如下图所示：</p>
-
-<p>如上图，右边系统就定义很对的代码块，包括一些我们很常用的@interface 和@implementation的声明和实现。</p>
-
-<span id="more"></span><!-- more -->
-
-<h2 id="toc_1">二、自定义我们常用的代码块步骤</h2>
-
-<p>Ｅｇ：@property属性的定义是Cocoa程序开发中很常用的一个功能，下面就以此为例说明如何自定义代码片段。</p>
-
-<ol>
-<li>书写代码片段</li>
-</ol>
-
-<p>在声明@property属性的地方写下如下语句：</p>
-
-<p>@property (nonatomic, retain) &lt;#type#&gt; &lt;#name#&gt;;</p>
-
-<p>这里&lt;#type#&gt;和&lt;#name#&gt;起什么作用可以在后面的使用效果中看出来。</p>
-
-<ol>
-<li>新建代码片段</li>
-</ol>
-
-<p>１）点击Code Snippet Library</p>
-
-<p>2)选择User 用户自定义</p>
-
-<p>3）出现如下空白界面</p>
-
-<p>4）把刚编辑好的代码选中，拖到上面的空白处，出现如下的编辑窗口</p>
-
-<p>图中从上到下的含义依次是：</p>
-
-<p>①Title</p>
-
-<p>代码片段的标题</p>
-
-<p>②Summary</p>
-
-<p>代码片段的描述文字</p>
-
-<p>③Platform</p>
-
-<p>可以使用代码片段的平台，有IOS/OS X/All三个选项</p>
-
-<p>④Language</p>
-
-<p>可以在哪些语言中使用该代码片段</p>
-
-<p>⑤Completion Shortcut</p>
-
-<p>代码片段的快捷方式，比如本文开头用到的dowhile，在这里，把属性设置的快捷方式设为property</p>
-
-<p>⑥Completion Scopes</p>
-
-<p>可以在哪些文件中使用当前代码片段，比如全部位置，头文件中等，当然可以添加多个支持的位置。</p>
-
-<p>最后的一个大得空白区域是对代码片段的效果预览。</p>
-
-<p>一切设置完成以后，点击该菜单右下角的Done按钮，新建工作就结束了。</p>
-
-<p>5）验证效果：我在代码里面输入”pro“ 即出现如下提示：（直接点击Enter键，一整条语句就自动补齐了）</p>
-
-<h2 id="toc_2">三、代码片段的备份</h2>
-
-<p>Xcode中的代码片段默认放在下面的目录中：</p>
-
-<p>~/Library/Developer/Xcode/UserData/CodeSnippets</p>
-
-<p>我们可以将目录中的代码片段备份，也可以将其直接拷出来放在不同的电脑上使用，因此多台电脑之间的协作也毫无压力。</p>
-
-<h2 id="toc_3">福利传送门</h2>
-
-<p>常用的：<br/>
-1.strong：<br/><br/>
-<code><br/>
-@property (nonatomic,strong) &lt;#Class#&gt; *&lt;#object#&gt;;<br/>
-</code></p>
-
-<p>2.weak：<br/><br/>
-<code>@property (nonatomic,weak) &lt;#Class#&gt; *&lt;#object#&gt;;</code><br/><br/>
-3.copy：<br/><br/>
-<code>@property (nonatomic,copy) NSString *&lt;#string#&gt;;</code><br/>
-4.assign：<br/><br/>
-<code>@property (nonatomic,assign) &lt;#Class#&gt; &lt;#property#&gt;;</code><br/><br/>
-5.delegate：<br/><br/>
-<code>@property (nonatomic,weak) id&lt;&lt;#protocol#&gt;&gt; &lt;#delegate#&gt;;</code><br/>
-6.block：<br/><br/>
-<code>@property (nonatomic,copy) &lt;#Block#&gt; &lt;#block#&gt;;</code><br/><br/>
-7.mark：<br/><br/>
-<code>#pragma mark &lt;#mark#&gt;</code><br/><br/>
-8.ReUseCell：<br/>
-```static NSString rid=&lt;#rid#&gt;;  <br/>
- &lt;#Class#&gt; *cell=<a href="">tableView dequeueReusableCellWithIdentifier:rid</a>;  <br/>
- if(cell==nil){  </p>
-
-<p> cell=<a href="">[&lt;#Class#&gt; alloc</a> initWithStyle:UITableViewCellStyleDefault      reuseIdentifier:rid];  <br/>
- }  <br/>
- return cell;<br/>
-<code><br/>
-9.MainGCD：<br/>
-</code><br/>
-dispatch_async(dispatch_get_main_queue(), <sup>{  </sup><br/>
-&lt;#code#&gt;  <br/>
-  });<br/>
-<code><br/>
-10.AfterGCD：<br/>
-</code><br/>
- dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(&lt;#delayInSeconds#&gt; * NSEC_PER_SEC)), dispatch_get_main_queue(), <sup>{  </sup><br/>
-&lt;#code to be executed after a specified delay#&gt;  <br/>
-});<br/>
-<code><br/>
-11.OnceGCD：<br/>
-</code><br/>
- static dispatch_once_t onceToken;  <br/>
- dispatch_once(&amp;onceToken, <sup>{  </sup><br/>
-&lt;#code to be executed once#&gt;  <br/>
- });<br/>
-```</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[React Native 集成 Redux]]></title>
-    <link href="http://blog.csdn.net/15115315701641.html"/>
-    <updated>2017-11-24T21:52:50+08:00</updated>
-    <id>http://blog.csdn.net/15115315701641.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">课程介绍</h2>
-
-<ul>
-<li>Flux/reFlux/Redux</li>
-<li><p>简单/单一状态树</p></li>
-<li><p>react 和 redux 数据流的关系</p></li>
-<li><p>JS、CSS、HTML</p></li>
-<li><p>JSX</p></li>
-<li><p>webpack 构建</p></li>
-</ul>
-
-<h2 id="toc_1">数据流</h2>
-
-<ul>
-<li>MVC 状态复杂之后，action会触发事件 并且不可预测</li>
-<li>flux: state Tree will send data to view,but view can&#39;t send data to state-tree.</li>
-<li>Redux :  state 是包含在store中的</li>
-</ul>
-
-<span id="more"></span><!-- more -->
-
-<h2 id="toc_2">安装</h2>
-
-<pre><code>npm install react
-npm install redux react-redux --save
-</code></pre>
-
-<h2 id="toc_3">快速开始（速成版本）：</h2>
-
-<h3 id="toc_4">核心概念</h3>
-
-<ul>
-<li><code>action</code> : React行为/变化的描述 是一个对象</li>
-<li><code>dispatch</code> : 派发用户行为的一个方法 <code>store</code>的一个属性</li>
-<li><code>reducer</code> : 接收<code>action</code>,并进行简单的拼接，其内部是<code>纯函数</code>（到底什么是纯函数请移步百度 ： <a href="https://www.baidu.com/s?wd=%E7%BA%AF%E5%87%BD%E6%95%B0">传送门</a> 、 <a href="http://blog.csdn.net/hongweigg/article/details/44035283">速达传送门</a>）</li>
-<li><code>store</code> :存储数据的地方</li>
-</ul>
-
-<h3 id="toc_5">Get start:</h3>
-
-<ul>
-<li><p>step1 : <strong>安装依赖</strong> </p>
-
-<pre><code>npm install redux react-redux --save
-</code></pre></li>
-<li><p>step2 : 创建一个 AppProvider.js 并导出AppProvider组件 ：  <strong>AppProvider 作为APP的入口组件</strong></p>
-
-<pre><code>export default AppProvider;
-</code></pre></li>
-<li><p>step3 : AppProvider.js 中导入头文件    </p>
-
-<pre><code>    import { Provider } from &#39;react-redux&#39;;    
-    import { createStore } from &#39;redux&#39;;
-</code></pre></li>
-<li><p>step4 : 准备AppProvider的包装数据：</p>
-
-<ul>
-<li><p>创建全局的store用于存储状态,并绑定<strong>reducer</strong></p>
-
-<pre><code>const store = createStore(AppReducer)
-</code></pre></li>
-<li><p>包装APPProvider：</p>
-
-<pre><code>const AppProvider = () =&gt; {
-    return (
-      //KR-1 包裹一层Provider   之后进入被包裹控件内部 进行关联处理
-        &lt;Provider store={store}&gt;
-            &lt;RootStack /&gt;
-        &lt;/Provider&gt;
-    )
-};
-</code></pre></li>
-<li><p>index.ios.js 文件中注册下 AppProvider对象</p>
-
-<pre><code>AppRegistry.registerComponent(&#39;XinLiFM&#39;, () =&gt; AppProvider);
-</code></pre></li>
-</ul></li>
-<li><p>step5 : <strong>数据绑定</strong> 找到打算有 数据流传递 的对象 AppFind</p>
-
-<ul>
-<li><p>导入头文件：</p>
-
-<pre><code>import { connect } from &#39;react-redux&#39;;
-</code></pre></li>
-<li><p>绑定数据：</p>
-
-<pre><code>//用来获取更新后的数据   监听数据更新
-const mapStateToProps = (state,ownProps) =&gt; {
-    console.log(state);
-    return {
-        testShow: state.find.testShow,
-     }
-}
-
-//用来派发消息
-const mapDispatchToProps = (dispatch,ownProps) =&gt; ({
-  changeTabBar: (...args) =&gt; dispatch(showTabBar(...args)),
-});
-
-//用来进行数据流  和  控件的绑定关系
-export default connect(mapStateToProps,mapDispatchToProps)(AppFind)
-
-</code></pre></li>
-<li><p>派发消息：</p>
-
-<pre><code>this.props.changeTabBar(!this.props.testShow)
-</code></pre></li>
-<li><p>消息处理：step4 中绑定的reducer文件中:</p>
-
-<pre><code>//1.导入头文件
-import { combineReducers } from &#39;redux&#39;;
-//2.创建初始化状态
-const initialState = { testShow: true};
-//3.逻辑处理
-const find = (state = initialState, action) =&gt; {
- switch (action.type) {
-        case &#39;findshowTabBar&#39;:{
-          return Object.assign({}, state, {
-                testShow: action.testShow
-            })
-        }
-        default:
-            return state;
-
-    }
-}
-//4.组合所有的逻辑块
-const AppReducer = combineReducers({
-    find,
-    //如果业务繁多这里可能还有别的模块
-});
-//5.导出
-export default AppReducer;
-</code></pre></li>
-<li><p>获取更改状态值：</p>
-
-<pre><code>//因为上一步的绑定数据  就是将state的状态值 绑定到AppFind的props上，
-//所以取值的时候直接从this。props中取即可
-var {testShow,isShowTab,showTabBar} = this.props;
-&lt;Text 
-    style={{fontSize:17,color:testShow?&quot;red&quot;:&#39;rgb(39, 249, 110)&#39;}}&gt;
-    {testShow?&quot;我要显示某个东西&quot;:&quot;我要隐藏某个东西&quot;}
-&lt;/Text&gt;
-</code></pre></li>
-</ul></li>
-</ul>
-
-<blockquote>
-<p>总结：<br/>
-其实这里最重要的就三步：1. 包装   2、数据绑定 3、数据处理</p>
-</blockquote>
-
-<h2 id="toc_6">基础</h2>
-
-<h3 id="toc_7">1. action</h3>
-
-<p>信息的携带者。<br/>
-<strong>派发消息的几种方式：</strong></p>
-
-<ul>
-<li>直接发送：</li>
-</ul>
-
-<pre><code>dispatch({type:&#39;action_name&#39;,index:2});
-
-const myAction = {
-  type:&#39;action_name&#39;,
-  index: 1,
-}
-dispatch(myAction);
-</code></pre>
-
-<ul>
-<li>通过Action的创建函数发送：</li>
-</ul>
-
-<pre><code>//我们可以把所有的Action封装到一个固定文件 就想CSS文件那样 头文件导入的方式 去引用
-const actionFunc = (text) =&gt; {
-  return {
-    type: &#39;action_name&#39;,
-    index: 2,
-  }
-}
-
-//派发消息时候 直接引用创建函数的返回结果即可
-dispatch(actionFunc(&#39;test&#39;));
-</code></pre>
-
-<ul>
-<li>绑定的Action创建函数</li>
-</ul>
-
-<pre><code>//基本action创建函数
-const actionFunc = (text) =&gt; {
-  return {
-    type: &#39;action_name&#39;,
-    index: 2,
-  }
-}
-//绑定派发方法
-const boundAction = (test) =&gt; {
-  dispatch(actionFunc(test));
-}
-
-//使用绑定好的派发函数
-boundAction(&#39;test&#39;);
-</code></pre>
-
-<h3 id="toc_8">2. reducer</h3>
-
-<p>纯函数；</p>
-
-<ul>
-<li><p>方法结构</p>
-
-<pre><code>(previouseState,action) =&gt; newState
-</code></pre>
-
-<p>给一个旧的state 和一个action 生成 一个新的 state。</p></li>
-<li><p>基本方法</p>
-
-<pre><code>const initialState = { testShow: true};
-
-const home = (state = initialState, action) =&gt; {
-  switch (action.type) {
-    case &#39;homeshowTabBar&#39;:{
-
-      console.log(&quot;homeshowTabBar：%s&quot;,action.testShow);
-
-    //合并状态值
-      return Object.assign({}, state, {
-        testShow: action.testShow;
-      })
-    }
-    default:
-    return state;
-
-  }
-}   
-</code></pre>
-
-<p>合并state的时候下面的方法也是能达到相同效果的</p>
-
-<pre><code>{...state, ...newState} 
-</code></pre></li>
-<li><p>拆分合并reducer</p>
-
-<pre><code>const home = (state = initialState, action) =&gt; {
-    switch (action.type) {
-        case &#39;homeshowTabBar&#39;:{
-            console.log(&quot;homeshowTabBar：%s&quot;,action.testShow);
-            return Object.assign({}, state, {
-                testShow: action.testShow
-            })
-        }
-        default:
-        return state;
-    }
-}
-
-const find = (state = initialState, action) =&gt; {
-    switch (action.type) {
-        case &#39;findshowTabBar&#39;:{
-            return Object.assign({}, state, {
-            testShow: action.testShow
-            })
-        }
-        default:
-        return state;
-
-    }
-}
-
-//合并
-const AppReducer = combineReducers({
-    nav,
-    home,
-    find,
-});
-export default AppReducer
-</code></pre>
-
-<p><strong>注意上面的写法和下面完全等价!!!</strong>：</p>
-
-<pre><code>const AppReducer = (state={}, action) =&gt; {
-    return {
-        home: home(state.home,action),
-        find: find(sate.find,action),
-    }
-}
-</code></pre></li>
-<li><p>减少代码量 自动定义 reducerCreator</p>
-
-<pre><code>export const testCreator = myCreatorForReducer([], {
- [ActionTypes.ADD_TODO](state, action) {
- let text = action.text.trim();
- return [...state, text];
- }
-})
-
-const myCreatorForReducer = (initialState,handles) =&gt; {
-
-    return (state=initialState,action) =&gt; {
-        return handles[action.type](state,action);
-    }else {
-     return state;
-    }
-
-}
-</code></pre>
-
-<p>设置不同的Key、调用不同的方法:</p>
-
-<pre><code>const reducer = combineReducers({
-    a: doSomethingWithA,
-    b: processB,
-    c: c
-})
-
-function reducer(state = {}, action) {
-    return {
-        a: doSomethingWithA(state.a, action),
-        b: processB(state.b, action),
-        c: c(state.c, action)
-    }
-}
-</code></pre></li>
-</ul>
-
-<h3 id="toc_9">3. store</h3>
-
-<ul>
-<li>维持应用的 <code>state</code>；</li>
-<li>提供 <code>getState()</code> 方法获取 <code>state</code>；</li>
-<li>提供 <code>dispatch(action)</code> 方法更新 <code>state</code>；</li>
-<li>通过 <code>subscribe(listener)</code> 注册监听器;</li>
-<li>通过 <code>subscribe(listener)</code> 返回的函数注销监听器。</li>
-</ul>
-
-<pre><code>import { createStore } from &#39;redux&#39;
-import todoApp from &#39;./reducers&#39;
-let store = createStore(todoApp)
-</code></pre>
-
-<blockquote>
-<p>后续会更新的................</p>
-</blockquote>
-
-<h2 id="toc_10">高级</h2>
-
-<h3 id="toc_11">异步action</h3>
-
-<h3 id="toc_12">异步数据流</h3>
-
-<h3 id="toc_13">Middleware 中间件</h3>
-
-<h3 id="toc_14">搭配 React Router</h3>
-
-<h2 id="toc_15">技巧</h2>
-
-<h2 id="toc_16">API</h2>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mac app 推荐]]></title>
-    <link href="http://blog.csdn.net/15115206889632.html"/>
-    <updated>2017-11-24T18:51:28+08:00</updated>
-    <id>http://blog.csdn.net/15115206889632.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">开发工具篇</h2>
-
-<h3 id="toc_1">Postman</h3>
-
-<p><img src="media/15115206889632/15115207580615.jpg" alt="Postman_Icon"/><br/>
-这款APP 最初是 谷歌浏览器的插件...</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SectionListView]]></title>
-    <link href="http://blog.csdn.net/14948260667614.html"/>
-    <updated>2017-05-15T13:27:46+08:00</updated>
-    <id>http://blog.csdn.net/14948260667614.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">属性</h2>
-
-<ol>
-<li>ItemSeparatorComponent  <code>{highlighted,leadingItem,leandingSection,section,trailingItem}</code><br/>
-返回一个行与行之间的分割组件，不会出现在第一行之前和最后一行之后。
-
-<ul>
-<li><code>highlighted</code> 当前行（分割线上面👆的Item）是否是高亮状态</li>
-<li><code>leadingItem</code> 当前行分配到的数据源</li>
-<li><code>leandingSection</code> 目前我也没搞明白啥意思 这里是<code>undefined</code></li>
-<li><code>section</code> 当前段分配到的数据源</li>
-<li><code>trailingItem</code> 尾段数据</li>
-</ul></li>
-<li>ListEmptyCompone  <code>没有接收参数</code><br/>
-渲染一个cell为空时的缓冲组件<br/></li>
-<li>ListFooterComponent  <code>没有接收参数</code><br/>
-渲染整个组件的Footer</li>
-<li>ListHeaderComponent   <code>没有接收参数</code><br/>
-渲染整个组件的Header</li>
-</ol>
-
-<span id="more"></span><!-- more -->
-
-<ol>
-<li><p>SectionSeparatorComponent <code>{highlighted,leadingItem,leandingSection,section,trailingItem}</code><br/>
-段分割组件</p>
-
-<ul>
-<li><code>highlighted</code> 当前行（分割线上面👆的Item）是否是高亮状态</li>
-<li><code>leadingItem</code> 当前行分配到的数据源 这里是<code>undefined</code></li>
-<li><code>leandingSection</code> 目前我也没搞明白啥意思 这里是<code>undefined</code></li>
-<li><code>section</code> 当前段分配到的数据源</li>
-<li><code>trailingItem</code> 尾段数据</li>
-</ul></li>
-<li><p>extraData<br/><br/>
-如果有除data以外的数据用在列表中（不论是用在renderItem还是Header或者Footer中），请在此属性中指定。同时此数据在修改时也需要先修改其引用地址（比如先复制到一个新的Object或者数组中），然后再修改其值，否则界面很可能不会刷新。</p></li>
-</ol>
-
-<blockquote>
-<p>文档说的挺乱，总而言之言而总之：sectionList的刷新首先决定于Data，当Data没变化，但是你想强制刷新UI的时候，有个状态控制，那么这个状态控制需要在这里写一下，关联一下，否则你的这个状态不会被关联，UI不会被刷新。</p>
-</blockquote>
-
-<ol>
-<li><p>initialNumToRender<br/><br/>
-指定一开始渲染的item 数量,预加载item 数</p></li>
-<li><p>keyExtractor <code>(item: ItemT, index: number) =&gt; string</code><br/>
-此函数用于为<strong>给定的item</strong>生成一个不重复的key。Key的作用是使React能够区分同类元素的不同个体，以便在刷新时能够确定其变化的位置，减少重新渲染的开销。若不指定此函数，则默认抽取item.key作为key值。若item.key也不存在，则使用数组下标。</p></li>
-<li><p>onEndReachedThreshold  <code>number</code><br/><br/>
-数值。决定当距离内容最底部还有多远时触发onEndReached回调。注意此参数是一个比值而非像素单位。比如，0.5表示距离内容最底部的距离为当前列表可见长度的一半时触发</p></li>
-<li><p>onEndReached  <code>(info: {distanceFromEnd: number}) =&gt; void</code></p>
-
-<p>传入一个对象info，info包含number类型的<code>distanceFromEnd</code>属性。</p></li>
-<li><p>onViewableItemsChanged <code>(info: {viewableItems: Array&lt;ViewToken&gt;, changed: Array&lt;ViewToken&gt;}) =&gt; void</code></p>
-
-<ul>
-<li>viewableItems 可是Item对应的数据</li>
-<li>changed 改变的数据<br/>
-可视元素发生变化时调用<br/></li>
-</ul></li>
-<li><p>refreshing <code>boolean</code><br/><br/>
-等待新数据加载时此属性设置为true，列表会显示出正在加载的符号</p></li>
-<li><p>renderItem  <code>(info: {item: Item, index: number}) =&gt; ?React.Element&lt;any&gt;</code><br/><br/>
-渲染每一个section中的item    </p>
-
-<ul>
-<li>item 每个item渲染所需数据</li>
-<li>index item在其section中的位置索引</li>
-</ul></li>
-<li><p>renderSectionHeader?: <code>{section: SectionT}</code><br/>
-接收一个对象，这个对象包含<code>section</code>属性，<br/>
-返回一个组件，用作段头    </p></li>
-<li><p>sections <code>ReadOnlyArray&lt;SectionT&gt;</code></p>
-
-<p>传入一个sections数组<br/>
-<code><br/>
-[<br/>
-{data:[{name:&#39;nader&#39;},{name:&#39;chris&#39;}],key:&#39;A&#39;},<br/>
-{data:[{name:&#39;nick&#39;},{name:&#39;amanda&#39;}],key:&#39;B&#39;},<br/>
-{data:[{name:&#39;nick&#39;},{name:&#39;amanda&#39;}],key:&#39;C&#39;},<br/>
-{data:[{name:&#39;nick&#39;}],key:&#39;D&#39;},<br/>
-]<br/>
-</code></p></li>
-<li><p>stickySectionHeadersEnabled <code>boolean</code></p></li>
-</ol>
-
-<h2 id="toc_1">方法</h2>
-
-<ul>
-<li><code>scrollToLocation (params: object)</code> -- {sectionIndex,itemIndex}:代码控制 UI交互跳转到指定位置</li>
-<li><code>recordInteraction()</code> 告诉ListView 交互已经发生了</li>
-<li><code>flashScrollIndicators()</code>显示指示滚动</li>
-</ul>
 
 ]]></content>
   </entry>

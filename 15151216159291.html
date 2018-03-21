@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  iOS WKWebView 本地HTML、JS、CSS文件加载详解 - kaelinda
+  react-native-splash-screen 给安卓项目添加启动图 - kaelinda
   
   </title>
   
@@ -121,14 +121,14 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>iOS WKWebView 本地HTML、JS、CSS文件加载详解</h1>
+          <h1>react-native-splash-screen 给安卓项目添加启动图</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2017/12/7</span>
+          <span class="date">2018/1/5</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='ios.html'>iOS</a></span>
+              <span class="posted-in"><a href='reactnative.html'>React-Native</a></span>
            
          
           <span class="comments">
@@ -141,203 +141,101 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <blockquote>
-<p><strong>Tips:</strong><br/>
-NSString类型的文件路径转换为URL的时候，一定要用 <br/>
-<code>NSURL *pathURL = [NSURL fileURLWithPath:filePath];</code>方法去转换，否则资源URL不合法，APP会崩溃</p>
-</blockquote>
-
-<h2 id="toc_0">上源码接口：</h2>
-
-<h3 id="toc_1">loadRequest方式加载</h3>
+      <h2 id="toc_0">react-native-splash-screen 基本配置</h2>
 
 <ul>
-<li><p>API : iOS8即可使用</p>
-
-<p><code>- (nullable WKNavigation *)loadRequest:(NSURLRequest *)request;</code>      </p></li>
-<li><p>用途：</p>
-
-<ul>
-<li>1：主要用来加载网络URL<br/></li>
-<li>2：也可以加载本地HTML文件（本文重点）</li>
+<li>安装插件：<code>npm install react-native-splash-screen --save</code></li>
+<li>关联项目：<code>react-native link react-native-splash-screen</code> or <code>rnpm link react-native-splash-screen</code></li>
 </ul>
-
-<span id="more"></span><!-- more --></li>
-</ul>
-
-<h3 id="toc_2">loadFileURL</h3>
-
-<ul>
-<li><p>API: URL:文件相对路径 readAccessURL：访问文件需要引用的文件的路径 一般都是比<code>URL</code>大一级或者更高几级</p>
-
-<p><code>- (nullable WKNavigation *)loadFileURL:(NSURL *)URL allowingReadAccessToURL:(NSURL *)readAccessURL API_AVAILABLE(macosx(10.11), ios(9.0));</code></p></li>
-<li><p>用途：主要用于加载本地文件（一般指相对路径）</p></li>
-</ul>
-
-<h3 id="toc_3">loadHTMLString</h3>
-
-<ul>
-<li><p>API:<br/>
-<code>- (nullable WKNavigation *)loadHTMLString:(NSString *)string baseURL:(nullable NSURL *)baseURL;</code></p></li>
-<li><p>用途：主要用于 HTML转换成的字符串（比如：编程APP）</p></li>
-</ul>
-
-<h3 id="toc_4">loadData</h3>
-
-<ul>
-<li><p>API: 值得一提的是MIMETType,text/html、image/jpg、text/plain</p>
-
-<p><code>- (nullable WKNavigation *)loadData:(NSData *)data MIMEType:(NSString *)MIMEType characterEncodingName:(NSString *)characterEncodingName baseURL:(NSURL *)baseURL API_AVAILABLE(macosx(10.11), ios(9.0));</code></p></li>
-<li><p>用途：主要用于加载 二进制状态下的文件，主要包括HTML、Image、Text文本</p></li>
-</ul>
-
-<h2 id="toc_5">开发中的HTML文件位置</h2>
-
-<h3 id="toc_6">HTML位于工程内的黄色文件夹下</h3>
 
 <blockquote>
-<p>这是咱们一般的文件添加方式，这属于绝对路径的添加</p>
+<p>link 之后，安卓项目中会自动添加头文件 以及部分代码，为保证项目顺利运行，还请确认下面代码是否已经完善。</p>
 </blockquote>
 
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fmcxnu043cj313w05maan.jpg" alt="绝对路径"/></p>
+<ul>
+<li><p>确保 <code>android/settings.gradle</code>文件夹已经有下面代码</p>
 
-<h4 id="toc_7"><strong><code>loadRequest</code> 加载方式</strong></h4>
+<pre><code class="language-JavaScript">include &#39;:react-native-splash-screen&#39;   
+project(&#39;:react-native-splash-screen&#39;).projectDir = new File(rootProject.projectDir, &#39;../node_modules/react-native-splash-screen/android&#39;)
+</code></pre></li>
+<li><p>android/app/build.gradle 文件中 添加依赖 <code>react-native-splash-screen</code></p>
 
-<blockquote>
-<p><strong>Tips:</strong><br/>
- iOS8 的时候只能通过这个<code>loadRequest</code>方法去加载<br/>
-iOS8 WKWebView的加载本地文件的方式本文后面会有 <strong>详细方案</strong></p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot;];
-    
-_feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-    
-[_webview loadRequest:[NSURLRequest requestWithURL:_feedbackUrl]];
-</code></pre>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fmcxsxa56jj30af0j5dgd.jpg" alt="效果"/></p>
-
-<p><strong>warning！！！</strong><br/>
-页面能加载出来，但是效果是很差的，因为CSS、JS、图片资源文件没有得到正确的引用！<br/>
-那我们该通过什么方式来让这些附属的文件得到正确引用呢？<br/>
-iOS9之后新增了 <code>loadFileURL</code> 等一系列加载本地文件的方法</p>
-
-<h4 id="toc_8"><strong><code>loadFileURL</code>加载方式</strong></h4>
-
-<blockquote>
-<p>iOS9之后才出现这个加载方式</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot;];
-_feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-if (@available(iOS 9.0, *)) {
-    [_webview loadFileURL:[NSURL fileURLWithPath:bundleStr] allowingReadAccessToURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
-} else {
-    // Fallback on earlier versions
+<pre><code>...
+dependencies {
+...
+compile project(&#39;:react-native-splash-screen&#39;)
 }
-</code></pre>
+</code></pre></li>
+<li><p>更新 <code>MainApplication.java</code> 文件</p></li>
+</ul>
 
-<p>哇塞！加载出来了耶！但是 依旧是没能加载其他资源文件啊 😰<br/>
-客观，稍安勿躁 ~</p>
+<pre><code>// react-native-splash-screen &gt;= 0.3.1
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
+// react-native-splash-screen &lt; 0.3.1
+import com.cboy.rn.splashscreen.SplashScreenReactPackage;
 
-<h3 id="toc_9">HTML位于工程内的蓝色文件夹下</h3>
+public class MainApplication extends Application implements ReactApplication {
 
-<blockquote>
-<p>特殊文件添加方式，尤其是文件之间有相互引用的时候用这种方式</p>
-</blockquote>
+    private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+        @Override
+        protected boolean getUseDeveloperSupport() {
+            return BuildConfig.DEBUG;
+        }
 
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fmcxr0jl88j313w05maan.jpg" alt="相对路径添加方式"/></p>
+        @Override
+        protected List&lt;ReactPackage&gt; getPackages() {
+            return Arrays.&lt;ReactPackage&gt;asList(
+                    new MainReactPackage(),
+            new SplashScreenReactPackage()  //here
+            );
+        }
+    };
 
-<h4 id="toc_10">loadRequest 方式</h4>
-
-<pre><code class="language-Objectiv-C">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot; inDirectory:@&quot;FeedbackH5/pages&quot;];
-NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-if (@available(iOS 9.0, *)) {
-    [_webview loadRequest:[NSURLRequest requestWithURL:pathURL]];
-}
-</code></pre>
-
-<h4 id="toc_11">loadFileURL 方式加载</h4>
-
-<pre><code class="language-Objectiv-C">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot; inDirectory:@&quot;FeedbackH5/pages&quot;];
-    NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-    if (@available(iOS 9.0, *)) {
-//        [_webview loadRequest:[NSURLRequest requestWithURL:pathURL]];
-        [_webview loadFileURL:[NSURL fileURLWithPath:filePath] allowingReadAccessToURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
+    @Override
+    public ReactNativeHost getReactNativeHost() {
+        return mReactNativeHost;
     }
+}
 </code></pre>
 
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fmcyc9pjp0j30af0j5wfp.jpg" alt=""/></p>
+<h2 id="toc_1">准备添加代码和文件配置</h2>
 
-<blockquote>
-<p>由此可见：相对路径方式加载 是可以正常引用JS、css等资源文件的<br/>
-但是 iOS 8系统下，依旧加载不出来！！！</p>
-</blockquote>
+<ul>
+<li><code>app/src/main/res/layout</code> 文件夹下 添加 <code>launch_screen.xml</code> 并copy如下代码：</li>
+</ul>
 
-<h3 id="toc_12">HTML位于APP沙盒下Document文件夹</h3>
-
-<blockquote>
-<p>iOS8既然添加到工程中引用，一直引用不到，我们可以让他从document路径下引用试试！<br/>
-这个方法可以适配 iOS8系统下WKWebView加载本地文件了？<br/>
-你还太天真！！！</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">//项目中的文件夹路径
-NSString *directoryPath = [KFileManger appSourceName:@&quot;FeedbackH5&quot; andType:@&quot;&quot;];
-
-//沙盒中的document路径
-NSString *documentpath = [KFileManger documentPath];
-    
-//copy文件夹到 document 路径下
-[KFileManger copyMissingFile:directoryPath toPath:documentpath];
-
-//document 路径下的HTML文件路径
-NSString *homePath = [[KFileManger documentPath] stringByAppendingString:@&quot;/FeedbackH5/pages/feedback.html&quot;];
-
-//document 路径下的HTML文件 URL
-NSURL *docSourceURL = [NSURL fileURLWithPath:homePath];
-    
-[_webview loadRequest:[NSURLRequest requestWithURL:docSourceURL]];
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:orientation=&quot;vertical&quot; android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:background=&quot;@drawable/launch_screen&quot;&gt;
+&lt;/LinearLayout&gt;
 </code></pre>
 
-<blockquote>
-<p>果然不出所料(zhe jiu shi wo xiang yao de)，模拟器上能正常加载出界面，图片、CSS但是JS交互是不行的<br/>
-在真机 依旧加载不出任何界面！</p>
-</blockquote>
+<ul>
+<li>创建文件夹 <code>drawable-xhdpi</code>、 <code>drawable-xxhdpi</code>（暂时先创建这两个就够了），将准备好的启动图 命名为 <code>launch_screen.png</code> 分别放入创建好的文件夹</li>
+<li><p>白屏问题，设置透明背景：<code>android/app/src/main/res/values/styles.xml</code> 文件夹下 添加 <code>&lt;item name=&quot;android:windowIsTranslucent&quot;&gt;true&lt;/item&gt;</code></p>
 
-<h3 id="toc_13">HTML位于APP沙盒下tmp临时缓存文件夹</h3>
+<pre><code>&lt;resources&gt;
+&lt;!-- Base application theme. --&gt;
+&lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.NoActionBar&quot;&gt;
+    &lt;!-- Customize your theme here. --&gt;
+    &lt;!--设置透明背景--&gt;
+    &lt;item name=&quot;android:windowIsTranslucent&quot;&gt;true&lt;/item&gt;
+&lt;/style&gt;
+&lt;/resources&gt;
+</code></pre></li>
+<li><p><code>android/app/src/main/res/values/colors.xml</code> 文件夹下，添加如下：</p>
 
-<blockquote>
-<p>亲爱的客观们，这才是iOS8系统下加载有相互引用关系的HTML、JS、CSS以及图片资源的正确方法(当前知道的唯一方法如有新的方式私信我哦~)！😊</p>
-</blockquote>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;resources&gt; &lt;color name=&quot;primary_dark&quot;&gt;#660B0B0B&lt;/color&gt; &lt;/resources&gt;
+</code></pre></li>
+<li><p>适当的时刻 隐藏启动图  可以是在视图挂载完毕，可以是网络请求结束之后</p></li>
+</ul>
 
-<pre><code class="language-Objectiv-C">//项目中的文件夹路径
-NSString *directoryPath = [KFileManger appSourceName:@&quot;FeedbackH5&quot; andType:@&quot;&quot;];
-
-//tmp缓存文件夹路径
-NSString *tmpPath = [KFileManger tmpPath];
-
-//新文件夹名字
-NSString *wwwDir =@&quot;www&quot;;
-
-//tmp文件夹下创建www文件夹
-[KFileManger createDirWithPath:tmpPath andDirectoryName: wwwDir];
-
-//tmp中的www文件夹中的路径
-NSString *tmpWWW = [tmpPath stringByAppendingString: wwwDir];
-
-//copy文件夹到 tmp/www 路径下
-[KFileManger copyMissingFile:directoryPath toPath:tmpWWW];
-
-// 字符 tmp/www/FeedbackH5/pages/feedback.html 全路径
-NSString *tmpWWWFeedback = [tmpWWW stringByAppendingString:@&quot;/FeedbackH5/pages/feedback.html&quot;];
-
-//tmp 操作，字符转换成URL
-NSURL *feedbackURL = [NSURL fileURLWithPath:tmpWWWFeedback];
-
-//WKWebView加载
-[_webview loadRequest:[NSURLRequest requestWithURL:feedbackURL]];
+<pre><code>import SplashScreen from &#39;react-native-splash-screen&#39;
+componentDidMount() {
+    SplashScreen.hide();
+  }
 </code></pre>
 
 
@@ -349,16 +247,16 @@ NSURL *feedbackURL = [NSURL fileURLWithPath:tmpWWWFeedback];
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="15126628432953.html" 
-          title="Previous Post: iOS代码检测入坑记事">&laquo; iOS代码检测入坑记事</a>
+          <a href="15168925544178.html" 
+          title="Previous Post: 从零开始学习使用 vuex">&laquo; 从零开始学习使用 vuex</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="15117133773045.html" 
-          title="Next Post: 可选型 Optional">可选型 Optional &raquo;</a>
+          <a  href="15145327105445.html" 
+          title="Next Post: 佛祖镇楼 bug辟易">佛祖镇楼 bug辟易 &raquo;</a>
       
       </p>
         </div>

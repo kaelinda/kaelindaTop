@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  iOS WKWebView 本地HTML、JS、CSS文件加载详解 - kaelinda
+  从零开始学习使用 vuex - kaelinda
   
   </title>
   
@@ -121,14 +121,14 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>iOS WKWebView 本地HTML、JS、CSS文件加载详解</h1>
+          <h1>从零开始学习使用 vuex</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2017/12/7</span>
+          <span class="date">2018/1/25</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='ios.html'>iOS</a></span>
+              <span class="posted-in"><a href='Vue.html'>Vue</a></span>
            
          
           <span class="comments">
@@ -142,203 +142,361 @@
 
       <div class="article-content">
       <blockquote>
-<p><strong>Tips:</strong><br/>
-NSString类型的文件路径转换为URL的时候，一定要用 <br/>
-<code>NSURL *pathURL = [NSURL fileURLWithPath:filePath];</code>方法去转换，否则资源URL不合法，APP会崩溃</p>
+<p>本文是建立在，对vuex理论有一定理解的基础上写的。<br/>
+因为官方文档的写法是 针对 有一定的vue开发经验 和 JavaScript 有一定理解的开发者看的，对于小白级别的我来说，理解起来有一定困难。所以，唯一想我一向的小白想尽快上手vuex....</p>
 </blockquote>
 
-<h2 id="toc_0">上源码接口：</h2>
+<p><a href="https://vuex.vuejs.org/zh-cn/installation.html">详情请参考vuex官方文档</a></p>
 
-<h3 id="toc_1">loadRequest方式加载</h3>
+<h2 id="toc_0">安装</h2>
 
-<ul>
-<li><p>API : iOS8即可使用</p>
+<h3 id="toc_1">直接下载 CDN 安装</h3>
 
-<p><code>- (nullable WKNavigation *)loadRequest:(NSURLRequest *)request;</code>      </p></li>
-<li><p>用途：</p>
+<p>CDN 链接地址：<code>https://unpkg.com/vuex</code><br/>
+指定到固定版本：<code>https://unpkg.com/vuex@2.0.0</code></p>
 
-<ul>
-<li>1：主要用来加载网络URL<br/></li>
-<li>2：也可以加载本地HTML文件（本文重点）</li>
-</ul>
-
-<span id="more"></span><!-- more --></li>
-</ul>
-
-<h3 id="toc_2">loadFileURL</h3>
-
-<ul>
-<li><p>API: URL:文件相对路径 readAccessURL：访问文件需要引用的文件的路径 一般都是比<code>URL</code>大一级或者更高几级</p>
-
-<p><code>- (nullable WKNavigation *)loadFileURL:(NSURL *)URL allowingReadAccessToURL:(NSURL *)readAccessURL API_AVAILABLE(macosx(10.11), ios(9.0));</code></p></li>
-<li><p>用途：主要用于加载本地文件（一般指相对路径）</p></li>
-</ul>
-
-<h3 id="toc_3">loadHTMLString</h3>
-
-<ul>
-<li><p>API:<br/>
-<code>- (nullable WKNavigation *)loadHTMLString:(NSString *)string baseURL:(nullable NSURL *)baseURL;</code></p></li>
-<li><p>用途：主要用于 HTML转换成的字符串（比如：编程APP）</p></li>
-</ul>
-
-<h3 id="toc_4">loadData</h3>
-
-<ul>
-<li><p>API: 值得一提的是MIMETType,text/html、image/jpg、text/plain</p>
-
-<p><code>- (nullable WKNavigation *)loadData:(NSData *)data MIMEType:(NSString *)MIMEType characterEncodingName:(NSString *)characterEncodingName baseURL:(NSURL *)baseURL API_AVAILABLE(macosx(10.11), ios(9.0));</code></p></li>
-<li><p>用途：主要用于加载 二进制状态下的文件，主要包括HTML、Image、Text文本</p></li>
-</ul>
-
-<h2 id="toc_5">开发中的HTML文件位置</h2>
-
-<h3 id="toc_6">HTML位于工程内的黄色文件夹下</h3>
-
-<blockquote>
-<p>这是咱们一般的文件添加方式，这属于绝对路径的添加</p>
-</blockquote>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fmcxnu043cj313w05maan.jpg" alt="绝对路径"/></p>
-
-<h4 id="toc_7"><strong><code>loadRequest</code> 加载方式</strong></h4>
-
-<blockquote>
-<p><strong>Tips:</strong><br/>
- iOS8 的时候只能通过这个<code>loadRequest</code>方法去加载<br/>
-iOS8 WKWebView的加载本地文件的方式本文后面会有 <strong>详细方案</strong></p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot;];
-    
-_feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-    
-[_webview loadRequest:[NSURLRequest requestWithURL:_feedbackUrl]];
+<pre><code>&lt;script src=&quot;/path/to/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/path/to/vuex.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fmcxsxa56jj30af0j5dgd.jpg" alt="效果"/></p>
+<h3 id="toc_2">npm 方式安装 （推荐！简单快捷，便于管理）</h3>
 
-<p><strong>warning！！！</strong><br/>
-页面能加载出来，但是效果是很差的，因为CSS、JS、图片资源文件没有得到正确的引用！<br/>
-那我们该通过什么方式来让这些附属的文件得到正确引用呢？<br/>
-iOS9之后新增了 <code>loadFileURL</code> 等一系列加载本地文件的方法</p>
+<p><code>npm install -save vuex</code></p>
 
-<h4 id="toc_8"><strong><code>loadFileURL</code>加载方式</strong></h4>
+<h3 id="toc_3">yar</h3>
 
-<blockquote>
-<p>iOS9之后才出现这个加载方式</p>
-</blockquote>
+<p><code>yarn add vuex</code></p>
 
-<pre><code class="language-Objectiv-C">NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot;];
-_feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-if (@available(iOS 9.0, *)) {
-    [_webview loadFileURL:[NSURL fileURLWithPath:bundleStr] allowingReadAccessToURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
-} else {
-    // Fallback on earlier versions
-}
+<h3 id="toc_4">自己构建</h3>
+
+<pre><code class="language-bash">git clone https://github.com/vuejs/vuex.git node_modules/vuex
+cd node_modules/vuex
+npm install
+npm run build
 </code></pre>
 
-<p>哇塞！加载出来了耶！但是 依旧是没能加载其他资源文件啊 😰<br/>
-客观，稍安勿躁 ~</p>
+<h2 id="toc_5">导入vue工程中使用</h2>
 
-<h3 id="toc_9">HTML位于工程内的蓝色文件夹下</h3>
+<ul>
+<li>main.js 入口文件</li>
+</ul>
 
 <blockquote>
-<p>特殊文件添加方式，尤其是文件之间有相互引用的时候用这种方式</p>
+<p>按照如下方式导入，工程就可以使用vuex的环境了</p>
 </blockquote>
 
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fmcxr0jl88j313w05maan.jpg" alt="相对路径添加方式"/></p>
-
-<h4 id="toc_10">loadRequest 方式</h4>
-
-<pre><code class="language-Objectiv-C">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot; inDirectory:@&quot;FeedbackH5/pages&quot;];
-NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-if (@available(iOS 9.0, *)) {
-    [_webview loadRequest:[NSURLRequest requestWithURL:pathURL]];
-}
+<pre><code class="language-JavaScript">// 导入vuex头文件
+import Vuex from &#39;vuex&#39;
+// 这里表示全局导入vuex
+Vue.use(Vuex)
+// 这里是我自定义的store文件 导出store对象
+import store from &#39;@/study/vuexStudy/store/store.js&#39;
 </code></pre>
 
-<h4 id="toc_11">loadFileURL 方式加载</h4>
+<blockquote>
+<p>入口组件<App/>中，绑定store</p>
+</blockquote>
 
-<pre><code class="language-Objectiv-C">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot; inDirectory:@&quot;FeedbackH5/pages&quot;];
-    NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-    if (@available(iOS 9.0, *)) {
-//        [_webview loadRequest:[NSURLRequest requestWithURL:pathURL]];
-        [_webview loadFileURL:[NSURL fileURLWithPath:filePath] allowingReadAccessToURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
+<pre><code>new Vue({
+  el: &#39;#app&#39;,
+  template: &#39;&lt;App/&gt;&#39;,
+  components: { App },
+  store
+})
+</code></pre>
+
+<p>到这里 算是万里长征走了第一步。</p>
+
+<h3 id="toc_6">创建Store对象</h3>
+
+<h4 id="toc_7">store 的结构:</h4>
+
+<pre><code class="language-JavaScript">export const store = new Vuex.Store({
+
+  // ------state:状态值存储,这里可以存储n个状态的值
+  state: {count: &#39;1&#39;},
+  
+  // ------getter:store中定义的getters可以认为是store的计算属性
+  // getters接收state作为其第一个参数
+  getters: {
+    done (state) {
+      return state.count + 5
     }
+  },
+  
+  // ------mutations:状态值的改变，操作状态值
+  // $store.commit(mutationsName, params)是更改状态值的唯一方法
+  mutations: {
+    increment (state) {
+      // 变更状态
+      state.count++
+    }
+  },
+
+  // ------actions:可以认为是包装了mutations的function 需要用 dispatch(actionName) 的方式去派发
+  actions: {
+    add (context) {
+      context.commit(&#39;increment&#39;)
+    },
+    addAsync (context) {
+      // 延时1秒
+      setTimeout(() =&gt; {
+        context.commit(&#39;increment&#39;)
+      }, 1000)
+    }
+  },
+  // store可以合并几个子store，以此来进行项目的模块化
+  modules: {
+    a: moduleA,
+    b: moduleB
+  }
+})
 </code></pre>
 
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fmcyc9pjp0j30af0j5wfp.jpg" alt=""/></p>
+<h4 id="toc_8">编辑定义store实体对象：</h4>
+
+<ul>
+<li>store.js文件中</li>
+</ul>
 
 <blockquote>
-<p>由此可见：相对路径方式加载 是可以正常引用JS、css等资源文件的<br/>
-但是 iOS 8系统下，依旧加载不出来！！！</p>
+<p>这里为了便于抽离 我们外部声明城对象实体后嵌入绑定到store</p>
 </blockquote>
 
-<h3 id="toc_12">HTML位于APP沙盒下Document文件夹</h3>
+<ol>
+<li><p>创建一个store对象</p>
 
-<blockquote>
-<p>iOS8既然添加到工程中引用，一直引用不到，我们可以让他从document路径下引用试试！<br/>
-这个方法可以适配 iOS8系统下WKWebView加载本地文件了？<br/>
-你还太天真！！！</p>
-</blockquote>
+<pre><code class="language-JavaScript">export default const store = new Vuex.Store({
+  state,//绑定之前创建的state对象到store中
+  mutations,
+  getters,
+  actions,
+  modules
+})
+</code></pre></li>
+<li><p>定义一个状态对象 <code>state</code>（实体）</p>
 
-<pre><code class="language-Objectiv-C">//项目中的文件夹路径
-NSString *directoryPath = [KFileManger appSourceName:@&quot;FeedbackH5&quot; andType:@&quot;&quot;];
+<pre><code class="language-JavaScript">const state = {
+  count: 0,
+  state1: 1,
+  state2: 2,
+  state3: 3
+}
+</code></pre></li>
+<li><p>定义getters对象</p>
 
-//沙盒中的document路径
-NSString *documentpath = [KFileManger documentPath];
-    
-//copy文件夹到 document 路径下
-[KFileManger copyMissingFile:directoryPath toPath:documentpath];
+<pre><code>const getters = {
+  done (state) {
+    return state.count + 5
+  },
+  getState1: function (state) {
+    return state.state3
+  },
+  // ES6简写
+  getState2: state =&gt;  state.state2
+}
+</code></pre></li>
+<li><p>.vue 文件中直接获取state值</p>
 
-//document 路径下的HTML文件路径
-NSString *homePath = [[KFileManger documentPath] stringByAppendingString:@&quot;/FeedbackH5/pages/feedback.html&quot;];
+<p>首先导入辅助函数：</p>
 
-//document 路径下的HTML文件 URL
-NSURL *docSourceURL = [NSURL fileURLWithPath:homePath];
-    
-[_webview loadRequest:[NSURLRequest requestWithURL:docSourceURL]];
+<pre><code>import { 
+    mapState, 
+    mapGetters, 
+    mapMutations, 
+    mapActions 
+    } from &#39;vuex&#39;
 </code></pre>
 
-<blockquote>
-<p>果然不出所料(zhe jiu shi wo xiang yao de)，模拟器上能正常加载出界面，图片、CSS但是JS交互是不行的<br/>
-在真机 依旧加载不出任何界面！</p>
-</blockquote>
+<ul>
+<li>第一种方式：绑定到组件属性中，直接获取 （一般不用这个，绑定到computed中是最合适的）<code>$store.state.count</code>并使用</li>
+</ul>
 
-<h3 id="toc_13">HTML位于APP沙盒下tmp临时缓存文件夹</h3>
-
-<blockquote>
-<p>亲爱的客观们，这才是iOS8系统下加载有相互引用关系的HTML、JS、CSS以及图片资源的正确方法(当前知道的唯一方法如有新的方式私信我哦~)！😊</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">//项目中的文件夹路径
-NSString *directoryPath = [KFileManger appSourceName:@&quot;FeedbackH5&quot; andType:@&quot;&quot;];
-
-//tmp缓存文件夹路径
-NSString *tmpPath = [KFileManger tmpPath];
-
-//新文件夹名字
-NSString *wwwDir =@&quot;www&quot;;
-
-//tmp文件夹下创建www文件夹
-[KFileManger createDirWithPath:tmpPath andDirectoryName: wwwDir];
-
-//tmp中的www文件夹中的路径
-NSString *tmpWWW = [tmpPath stringByAppendingString: wwwDir];
-
-//copy文件夹到 tmp/www 路径下
-[KFileManger copyMissingFile:directoryPath toPath:tmpWWW];
-
-// 字符 tmp/www/FeedbackH5/pages/feedback.html 全路径
-NSString *tmpWWWFeedback = [tmpWWW stringByAppendingString:@&quot;/FeedbackH5/pages/feedback.html&quot;];
-
-//tmp 操作，字符转换成URL
-NSURL *feedbackURL = [NSURL fileURLWithPath:tmpWWWFeedback];
-
-//WKWebView加载
-[_webview loadRequest:[NSURLRequest requestWithURL:feedbackURL]];
+<pre><code class="language-JavaScript">export default {
+    data() {
+        return {
+          testCount: this.$store.state.count
+        }
+    }
+}
 </code></pre>
+
+<ul>
+<li>第二种方式： 绑定到计算属性中（适合对store中的原始状态值进行一定处理的情况）</li>
+</ul>
+
+<pre><code class="language-JavaScript">export default {
+    data() {
+        return {
+          testCount: this.$store.state.count
+        }
+    },
+    computed:{
+        testComputedCount1: function () {
+            return this.$store.state.count + 22
+        }
+    }
+}
+</code></pre>
+
+<ul>
+<li>第三种方式：mapState辅助函数绑定状态state值到组件计算属性中</li>
+</ul>
+
+<pre><code class="language-JavaScript">export default {
+    data() {
+        return {
+          testCount: this.$store.state.count
+        }
+    },
+    computed:{
+        testComputedCount1: function () {
+            return this.$store.state.count + 22
+        },
+        ...mapState({
+            count: state =&gt; state.count,
+            mapState1: state =&gt; state.state1,
+            mapState2: state =&gt; state.state2
+        }),
+    }
+}
+</code></pre>
+
+<ul>
+<li>第四种方式：使用store中绑定的getters进行获取</li>
+</ul>
+
+<pre><code class="language-JavaScript">export default {
+    data() {
+        return {
+          testCount: this.$store.state.count
+        }
+    },
+    computed:{
+        testComputedCount1: function () {
+            return this.$store.state.count + 22
+        },
+        ...mapState({
+            count: state =&gt; state.count,
+            mapState1: state =&gt; state.state1,
+            mapState2: state =&gt; state.state2
+        }),
+        testComputedGettersCount2: funtion () {
+            return this.$store.getters.done
+        }
+    }
+}
+</code></pre>
+
+<ul>
+<li>第五种方式： 借助mapGetters辅助函数绑定getters到vue的计算属性中</li>
+</ul>
+
+<pre><code class="language-JavaScript">export default {
+    data() {
+        return {
+          testCount: this.$store.state.count
+        }
+    },
+    computed:{
+        testComputedCount1: function () {
+            return this.$store.state.count + 22
+        },
+        ...mapState({
+            count: state =&gt; state.count,
+            mapState1: state =&gt; state.state1,
+            mapState2: state =&gt; state.state2
+        }),
+        testComputedGettersCount2: funtion () {
+            return this.$store.getters.done
+        },
+
+        //直接绑定方法数组的方式
+        ...mapGetters([
+            &#39;getState1&#39;,
+            &#39;getState2&#39;,
+            &#39;getState3&#39;
+        ]),
+
+        //重命名对象绑定方式
+        ...mapGetters({
+          mapGetterState1: &#39;getState1&#39;,
+          mapGetterState3: &#39;getState3&#39;
+        }),
+    }
+}
+</code></pre></li>
+<li><p>触发动作行为改变状态值</p>
+
+<blockquote>
+<p>方式一：$store.commit(&#39;mutationsName&#39;)</p>
+
+<p>方式二：$store.dispatch(&#39;actionsName&#39;)    </p>
+</blockquote>
+
+<p>store.js文件中：</p>
+
+<ul>
+<li>初始化 mutations 和 actions (相当于是methods)</li>
+</ul>
+
+<pre><code>const mutations = {
+    increment (state) {
+        // 变更状态
+        state.count = state.count * 5
+    }
+}
+</code></pre>
+
+<pre><code>import {action4} from &#39;@/path/actions.js&#39;
+const actions = {
+    // 同步方法
+    add: function (context) {
+        context.commit(&#39;increment&#39;)
+    },
+    // 延时操作 用于网络请求啊啥的
+    addAsync (context) {
+        // 延时1秒
+        setTimeout(() =&gt; {
+            context.commit(&#39;increment&#39;)
+        }, 1000)
+    },
+    // 简写方式
+    action2 (context) {
+        context.commit(&#39;increment&#39;)
+    },
+    // 抽离到单独文件中，在导进封装好的变量来直接使用即可（导进来的目的是为了接收第一个参数：state），不绑定到store，需要手动传入store对象
+    action4: action4,
+}
+</code></pre></li>
+</ol>
+
+<ul>
+<li><p>绑定action 和 mutations 到 methods，然后 调用就行了</p>
+
+<pre><code>export default {
+    methods: {
+        // 数组形式直接载入
+        ...mapActions([
+            &#39;add&#39;
+        ]),
+        // 重命名形式 
+        ...mapActions({
+            add: &#39;add&#39;,
+            addAsync: &#39;addAsync&#39;,
+            action4: &#39;action4&#39;
+        }),
+        // 同上
+        ...mapMutations([
+            &#39;increment&#39;
+        ]),
+        ...mapMutations({
+            incrementMutation: &#39;increment&#39;
+        })
+    }
+}
+</code></pre></li>
+</ul>
 
 
     
@@ -349,16 +507,16 @@ NSURL *feedbackURL = [NSURL fileURLWithPath:tmpWWWFeedback];
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="15126628432953.html" 
-          title="Previous Post: iOS代码检测入坑记事">&laquo; iOS代码检测入坑记事</a>
+          <a href="15172908985351.html" 
+          title="Previous Post: iOS设备上实现DLNA功能 Platinum 篇">&laquo; iOS设备上实现DLNA功能 Platinum 篇</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="15117133773045.html" 
-          title="Next Post: 可选型 Optional">可选型 Optional &raquo;</a>
+          <a  href="15151216159291.html" 
+          title="Next Post: react-native-splash-screen 给安卓项目添加启动图">react-native-splash-screen 给安卓项目添加启动图 &raquo;</a>
       
       </p>
         </div>

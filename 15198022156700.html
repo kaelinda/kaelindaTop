@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  iOS WKWebView 本地HTML、JS、CSS文件加载详解 - kaelinda
+  iOS 面试题总结 - kaelinda
   
   </title>
   
@@ -121,10 +121,10 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>iOS WKWebView 本地HTML、JS、CSS文件加载详解</h1>
+          <h1>iOS 面试题总结</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2017/12/7</span>
+          <span class="date">2018/2/28</span>
 
           <span>posted in&nbsp;</span> 
           
@@ -141,204 +141,38 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <blockquote>
-<p><strong>Tips:</strong><br/>
-NSString类型的文件路径转换为URL的时候，一定要用 <br/>
-<code>NSURL *pathURL = [NSURL fileURLWithPath:filePath];</code>方法去转换，否则资源URL不合法，APP会崩溃</p>
-</blockquote>
+      <h2 id="toc_0">基础篇</h2>
 
-<h2 id="toc_0">上源码接口：</h2>
-
-<h3 id="toc_1">loadRequest方式加载</h3>
+<h3 id="toc_1">内存管理 ：assign copy strong weak...</h3>
 
 <ul>
-<li><p>API : iOS8即可使用</p>
+<li>简述OC中内存管理机制,与retain配对使用的方法是dealloc还是release，为什么？</li>
+</ul>
 
-<p><code>- (nullable WKNavigation *)loadRequest:(NSURLRequest *)request;</code>      </p></li>
-<li><p>用途：</p>
+<blockquote>
+<p>管理机制：<br/>
+  使用了一种叫做 <strong>引用计数</strong> 的机制来管理内存中的对象。OC中每个对象都对应着他们自己的引用计数，引用计数可以理解为一个整数计数器，当使用alloc方法创建对象的时候，持有计数会自动设置为1。当你向一个对象发送retain消息 时，持有计数数值会增加1。相反，当你像一个对象发送release消息时，持有计数数值会减小1。当对象的持有计数变为0的时候，对象会释放自己所占用的内存</p>
+</blockquote>
 
 <ul>
-<li>1：主要用来加载网络URL<br/></li>
-<li>2：也可以加载本地HTML文件（本文重点）</li>
-</ul>
-
-<span id="more"></span><!-- more --></li>
-</ul>
-
-<h3 id="toc_2">loadFileURL</h3>
+<li><p>修饰词的作用</p>
 
 <ul>
-<li><p>API: URL:文件相对路径 readAccessURL：访问文件需要引用的文件的路径 一般都是比<code>URL</code>大一级或者更高几级</p>
-
-<p><code>- (nullable WKNavigation *)loadFileURL:(NSURL *)URL allowingReadAccessToURL:(NSURL *)readAccessURL API_AVAILABLE(macosx(10.11), ios(9.0));</code></p></li>
-<li><p>用途：主要用于加载本地文件（一般指相对路径）</p></li>
+<li>retain(引用计数加1)-&gt;release（引用计数减1）</li>
+<li>alloc（申请内存空间）-&gt;dealloc(释放内存空间)</li>
+<li>readwrite: 表示既有getter，也有setter   (默认)</li>
+<li>readonly: 表示只有getter，没有setter</li>
+<li>nonatomic:不考虑线程安全</li>
+<li>atomic:线程操作安全   （默认）</li>
+<li>retain: release旧的对象，将旧对象的值赋予输入对象，再提高输入对象的索引计数为1</li>
+<li>assign: 简单赋值，不更改索引计数    （默认）</li>
+<li>copy: 其实是建立了一个相同的对象,地址不同（retain：指针拷贝  copy：内容拷贝）</li>
+<li>strong:（ARC下的）和（MRC）retain一样    （默认）</li>
+<li>weak:（ARC下的）和（MRC）assign一样， weak当指向的内存释放掉后自动nil化，防止野指针</li>
+<li>unsafe_unretained 声明一个弱引用，但是不会自动nil化，也就是说，如果所指向的内存区域被释放了，这个指针就是一个野指针了。 autoreleasing 用来修饰一个函数的参数，这个参数会在函数返回的时候被自动释放。
+### .类变量的@protected ,@private,@public,@package，声明各有什么含义？</li>
+</ul></li>
 </ul>
-
-<h3 id="toc_3">loadHTMLString</h3>
-
-<ul>
-<li><p>API:<br/>
-<code>- (nullable WKNavigation *)loadHTMLString:(NSString *)string baseURL:(nullable NSURL *)baseURL;</code></p></li>
-<li><p>用途：主要用于 HTML转换成的字符串（比如：编程APP）</p></li>
-</ul>
-
-<h3 id="toc_4">loadData</h3>
-
-<ul>
-<li><p>API: 值得一提的是MIMETType,text/html、image/jpg、text/plain</p>
-
-<p><code>- (nullable WKNavigation *)loadData:(NSData *)data MIMEType:(NSString *)MIMEType characterEncodingName:(NSString *)characterEncodingName baseURL:(NSURL *)baseURL API_AVAILABLE(macosx(10.11), ios(9.0));</code></p></li>
-<li><p>用途：主要用于加载 二进制状态下的文件，主要包括HTML、Image、Text文本</p></li>
-</ul>
-
-<h2 id="toc_5">开发中的HTML文件位置</h2>
-
-<h3 id="toc_6">HTML位于工程内的黄色文件夹下</h3>
-
-<blockquote>
-<p>这是咱们一般的文件添加方式，这属于绝对路径的添加</p>
-</blockquote>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fmcxnu043cj313w05maan.jpg" alt="绝对路径"/></p>
-
-<h4 id="toc_7"><strong><code>loadRequest</code> 加载方式</strong></h4>
-
-<blockquote>
-<p><strong>Tips:</strong><br/>
- iOS8 的时候只能通过这个<code>loadRequest</code>方法去加载<br/>
-iOS8 WKWebView的加载本地文件的方式本文后面会有 <strong>详细方案</strong></p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot;];
-    
-_feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-    
-[_webview loadRequest:[NSURLRequest requestWithURL:_feedbackUrl]];
-</code></pre>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fmcxsxa56jj30af0j5dgd.jpg" alt="效果"/></p>
-
-<p><strong>warning！！！</strong><br/>
-页面能加载出来，但是效果是很差的，因为CSS、JS、图片资源文件没有得到正确的引用！<br/>
-那我们该通过什么方式来让这些附属的文件得到正确引用呢？<br/>
-iOS9之后新增了 <code>loadFileURL</code> 等一系列加载本地文件的方法</p>
-
-<h4 id="toc_8"><strong><code>loadFileURL</code>加载方式</strong></h4>
-
-<blockquote>
-<p>iOS9之后才出现这个加载方式</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot;];
-_feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-if (@available(iOS 9.0, *)) {
-    [_webview loadFileURL:[NSURL fileURLWithPath:bundleStr] allowingReadAccessToURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
-} else {
-    // Fallback on earlier versions
-}
-</code></pre>
-
-<p>哇塞！加载出来了耶！但是 依旧是没能加载其他资源文件啊 😰<br/>
-客观，稍安勿躁 ~</p>
-
-<h3 id="toc_9">HTML位于工程内的蓝色文件夹下</h3>
-
-<blockquote>
-<p>特殊文件添加方式，尤其是文件之间有相互引用的时候用这种方式</p>
-</blockquote>
-
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fmcxr0jl88j313w05maan.jpg" alt="相对路径添加方式"/></p>
-
-<h4 id="toc_10">loadRequest 方式</h4>
-
-<pre><code class="language-Objectiv-C">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot; inDirectory:@&quot;FeedbackH5/pages&quot;];
-NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-if (@available(iOS 9.0, *)) {
-    [_webview loadRequest:[NSURLRequest requestWithURL:pathURL]];
-}
-</code></pre>
-
-<h4 id="toc_11">loadFileURL 方式加载</h4>
-
-<pre><code class="language-Objectiv-C">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot; inDirectory:@&quot;FeedbackH5/pages&quot;];
-    NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-    if (@available(iOS 9.0, *)) {
-//        [_webview loadRequest:[NSURLRequest requestWithURL:pathURL]];
-        [_webview loadFileURL:[NSURL fileURLWithPath:filePath] allowingReadAccessToURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
-    }
-</code></pre>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fmcyc9pjp0j30af0j5wfp.jpg" alt=""/></p>
-
-<blockquote>
-<p>由此可见：相对路径方式加载 是可以正常引用JS、css等资源文件的<br/>
-但是 iOS 8系统下，依旧加载不出来！！！</p>
-</blockquote>
-
-<h3 id="toc_12">HTML位于APP沙盒下Document文件夹</h3>
-
-<blockquote>
-<p>iOS8既然添加到工程中引用，一直引用不到，我们可以让他从document路径下引用试试！<br/>
-这个方法可以适配 iOS8系统下WKWebView加载本地文件了？<br/>
-你还太天真！！！</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">//项目中的文件夹路径
-NSString *directoryPath = [KFileManger appSourceName:@&quot;FeedbackH5&quot; andType:@&quot;&quot;];
-
-//沙盒中的document路径
-NSString *documentpath = [KFileManger documentPath];
-    
-//copy文件夹到 document 路径下
-[KFileManger copyMissingFile:directoryPath toPath:documentpath];
-
-//document 路径下的HTML文件路径
-NSString *homePath = [[KFileManger documentPath] stringByAppendingString:@&quot;/FeedbackH5/pages/feedback.html&quot;];
-
-//document 路径下的HTML文件 URL
-NSURL *docSourceURL = [NSURL fileURLWithPath:homePath];
-    
-[_webview loadRequest:[NSURLRequest requestWithURL:docSourceURL]];
-</code></pre>
-
-<blockquote>
-<p>果然不出所料(zhe jiu shi wo xiang yao de)，模拟器上能正常加载出界面，图片、CSS但是JS交互是不行的<br/>
-在真机 依旧加载不出任何界面！</p>
-</blockquote>
-
-<h3 id="toc_13">HTML位于APP沙盒下tmp临时缓存文件夹</h3>
-
-<blockquote>
-<p>亲爱的客观们，这才是iOS8系统下加载有相互引用关系的HTML、JS、CSS以及图片资源的正确方法(当前知道的唯一方法如有新的方式私信我哦~)！😊</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">//项目中的文件夹路径
-NSString *directoryPath = [KFileManger appSourceName:@&quot;FeedbackH5&quot; andType:@&quot;&quot;];
-
-//tmp缓存文件夹路径
-NSString *tmpPath = [KFileManger tmpPath];
-
-//新文件夹名字
-NSString *wwwDir =@&quot;www&quot;;
-
-//tmp文件夹下创建www文件夹
-[KFileManger createDirWithPath:tmpPath andDirectoryName: wwwDir];
-
-//tmp中的www文件夹中的路径
-NSString *tmpWWW = [tmpPath stringByAppendingString: wwwDir];
-
-//copy文件夹到 tmp/www 路径下
-[KFileManger copyMissingFile:directoryPath toPath:tmpWWW];
-
-// 字符 tmp/www/FeedbackH5/pages/feedback.html 全路径
-NSString *tmpWWWFeedback = [tmpWWW stringByAppendingString:@&quot;/FeedbackH5/pages/feedback.html&quot;];
-
-//tmp 操作，字符转换成URL
-NSURL *feedbackURL = [NSURL fileURLWithPath:tmpWWWFeedback];
-
-//WKWebView加载
-[_webview loadRequest:[NSURLRequest requestWithURL:feedbackURL]];
-</code></pre>
 
 
     
@@ -349,16 +183,16 @@ NSURL *feedbackURL = [NSURL fileURLWithPath:tmpWWWFeedback];
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="15126628432953.html" 
-          title="Previous Post: iOS代码检测入坑记事">&laquo; iOS代码检测入坑记事</a>
+          <a href="15200715202464.html" 
+          title="Previous Post: iOS 离屏渲染">&laquo; iOS 离屏渲染</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="15117133773045.html" 
-          title="Next Post: 可选型 Optional">可选型 Optional &raquo;</a>
+          <a  href="15193944679783.html" 
+          title="Next Post: iOS 项目组件化">iOS 项目组件化 &raquo;</a>
       
       </p>
         </div>
