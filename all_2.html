@@ -44,17 +44,21 @@
         
         <li id=""><a target="_self" href="archives.html">归档目录</a></li>
         
+        <li id="ios.css"><a target="_self" href="ios.html">iOS</a></li>
+        
+        <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
+        
+        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
+        
         <li id="coding.css"><a target="_self" href="coding.html">编程</a></li>
         
         <li id="live.css"><a target="_self" href="live.html">随笔</a></li>
         
         <li id="app.css"><a target="_self" href="app.html">APP推荐</a></li>
         
-        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
-        
-        <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
-        
         <li id="js.css"><a target="_self" href="js.html">JS</a></li>
+        
+        <li id="shell.css"><a target="_self" href="shell.html">shell</a></li>
         
         </ul>
 
@@ -80,10 +84,27 @@
 
 <aside class="left-off-canvas-menu">
       <ul class="off-canvas-list">
-       
-       <li><a href="index.html">HOME</a></li>
-    <li><a href="archives.html">Archives</a></li>
-    <li><a href="about.html">ABOUT</a></li>
+        
+        <li><a target="_self" href="index.html">最近更新</a></li>
+        
+        <li><a target="_self" href="archives.html">归档目录</a></li>
+        
+        <li><a target="_self" href="ios.html">iOS</a></li>
+        
+        <li><a target="_self" href="swift.html">Swift</a></li>
+        
+        <li><a target="_self" href="reactnative.html">RN</a></li>
+        
+        <li><a target="_self" href="coding.html">编程</a></li>
+        
+        <li><a target="_self" href="live.html">随笔</a></li>
+        
+        <li><a target="_self" href="app.html">APP推荐</a></li>
+        
+        <li><a target="_self" href="js.html">JS</a></li>
+        
+        <li><a target="_self" href="shell.html">shell</a></li>
+        
 
     <li><label>Categories</label></li>
 
@@ -98,7 +119,9 @@
         
             <li><a href="js.html">JavaScript</a></li>
         
-            <li><a href="Vue.html">Vue</a></li>
+            <li><a href="vue.html">Vue</a></li>
+        
+            <li><a href="shell.html">shell</a></li>
          
 
       </ul>
@@ -120,6 +143,97 @@
 	<div class="large-8 medium-8 columns">
 		<div class="markdown-body home-categories">
 		
+			<div class="article">
+                <a class="clearlink" href="15126628432953.html">
+                
+                  <h1>iOS代码检测入坑记事</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">我接触的代码检测</h2>
+
+<ul>
+<li>OCLint + xcpretty</li>
+<li>sonar</li>
+<li>infer</li>
+</ul>
+
+<h3 id="toc_1">infer</h3>
+
+<ul>
+<li><p><a href="https://infer.liaohuqiu.net">infer官网 传送门</a></p>
+
+<p><em>具体使用</em></p>
+
+<pre><code>infer -- xcodebuild -target &lt;target name&gt; -configuration &lt;build configuration&gt; -sdk iphonesimulator
+</code></pre></li>
+</ul>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15126628432953.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/8</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15129168744096.html">
+                
+                  <h1>关于iOS沙盒文件的那些事儿</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">分类</h2>
+
+<ul>
+<li>Document： 除了基于NSUserdefaults的首选项设置之外,应用程序的数据，文件都存在该目录下</li>
+<li>Libary：基于NSUserDefaults的首选项参数保存在Liabry/prefrences目录下</li>
+<li>tmp:</li>
+</ul>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15129168744096.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/10</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
 			<div class="article">
                 <a class="clearlink" href="15130871696781.html">
                 
@@ -177,20 +291,31 @@
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15129168744096.html">
+                <a class="clearlink" href="15130871866705.html">
                 
-                  <h1>关于iOS沙盒文件的那些事儿</h1>
+                  <h1>当虹云直播SDK植入引导</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">分类</h2>
+                        	<hr/>
 
-<ul>
-<li>Document： 除了基于NSUserdefaults的首选项设置之外,应用程序的数据，文件都存在该目录下</li>
-<li>Libary：基于NSUserDefaults的首选项参数保存在Liabry/prefrences目录下</li>
-<li>tmp:</li>
-</ul>
+<h2 id="toc_0">一、导入静态库 libARCPlayerRecoder.a</h2>
+
+<h2 id="toc_1">二、导入framework</h2>
+
+<p>(img)</p>
+
+<h2 id="toc_2">三、添加info.plist文件的授权选项 麦克风 摄像头权限授权申请</h2>
+
+<p>(img)</p>
+
+<h2 id="toc_3">四、.m文件 中引用 C++方法的时候 需要变为.mm文件</h2>
+
+<h2 id="toc_4">五、变量类型转换</h2>
+
+<p>self 改为 (__bridge void *) self<br/>
+用  (__bridge void *)  进行类型的强制转换</p>
 
 
                         
@@ -199,8 +324,8 @@
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                   <a href="15129168744096.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/12/10</span>
+                   <a href="15130871866705.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/12</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
@@ -217,30 +342,45 @@
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15126628432953.html">
+                <a class="clearlink" href="15130872092436.html">
                 
-                  <h1>iOS代码检测入坑记事</h1>
+                  <h1>iOS打包上架素材准备概要说明</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">我接触的代码检测</h2>
+                        	<h2 id="toc_0">开发者打包</h2>
+
+<h3 id="toc_1">Xcode配置</h3>
+
+<p><em>Xcode8 旧标准</em></p>
 
 <ul>
-<li>OCLint + xcpretty</li>
-<li>sonar</li>
-<li>infer</li>
-</ul>
-
-<h3 id="toc_1">infer</h3>
+<li><p>Xcode8 icon iPhone</p>
 
 <ul>
-<li><p><a href="https://infer.liaohuqiu.net">infer官网 传送门</a></p>
+<li><code>icon-29.png        29*29</code></li>
+<li><code>icon-29@2x.png     58*58</code></li>
+<li><code>icon-29@3x.png     87*87</code></li>
+<li><code>icon-40@2x.png     80*80</code></li>
+<li><code>icon-40@3x.png     120*120</code></li>
+<li><code>icon-57.png        57*57</code></li>
+<li><code>icon-57@2x.png     114*114</code></li>
+<li><code>iocn-60@2x.png     120*120</code></li>
+<li><code>icon-60@3x.png     180*180</code></li>
+<li><code>icon-20@2x.png     40*40</code></li>
+<li><code>icon-20@3x.png     60*60</code><br/></li>
+</ul></li>
+<li><p>Xcode8 LaunchImage：</p>
 
-<p><em>具体使用</em></p>
-
-<pre><code>infer -- xcodebuild -target &lt;target name&gt; -configuration &lt;build configuration&gt; -sdk iphonesimulator
-</code></pre></li>
+<ul>
+<li><code>414*736 @3x    1242*2208</code></li>
+<li><code>736*414  @3x    2208*1242</code></li>
+<li><code>375*667 @2x    750*1334</code></li>
+<li><code>320*568 @2x    640*1136</code></li>
+<li><code>320*480 @2x    640*960</code></li>
+<li><code>320*480 @1x    320*480</code></li>
+</ul></li>
 </ul>
 
 
@@ -250,8 +390,8 @@
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                   <a href="15126628432953.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/12/8</span>
+                   <a href="15130872092436.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/12</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
@@ -268,85 +408,25 @@
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15126415331235.html">
+                <a class="clearlink" href="15137621729153.html">
                 
-                  <h1>iOS WKWebView 本地HTML、JS、CSS文件加载详解</h1>
+                  <h1>ES6笔记（解构赋值）</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<blockquote>
-<p><strong>Tips:</strong><br/>
-NSString类型的文件路径转换为URL的时候，一定要用 <br/>
-<code>NSURL *pathURL = [NSURL fileURLWithPath:filePath];</code>方法去转换，否则资源URL不合法，APP会崩溃</p>
-</blockquote>
+                        	<h2 id="toc_0">解构赋值</h2>
 
-<h2 id="toc_0">上源码接口：</h2>
-
-<h3 id="toc_1">loadRequest方式加载</h3>
+<h3 id="toc_1">变量的解构：</h3>
 
 <ul>
-<li><p>API : iOS8即可使用</p>
-
-<p><code>- (nullable WKNavigation *)loadRequest:(NSURLRequest *)request;</code>      </p></li>
-<li><p>用途：</p>
-
-<ul>
-<li>1：主要用来加载网络URL<br/></li>
-<li>2：也可以加载本地HTML文件（本文重点）</li>
+<li>解构赋值允许指定默认值。</li>
+<li>解构赋值必须保证赋值方  被赋值方类型一直  但Item允许有遗漏或者多出。</li>
+<li>默认值可以引用解构赋值的其他变量，但该变量必须已经声明</li>
 </ul>
 
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15126415331235.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/12/7</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15117133773045.html">
-                
-                  <h1>可选型 Optional</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h3 id="toc_0">定义</h3>
-
-<ul>
-<li>当数据可能接收nil的时候，使用optional是比较合适的</li>
-<li>当非可选型被赋值为nil的时候 系统会崩溃</li>
-<li>当可选型被赋值为nil的时候 系统会首先判断值是否为nil，如果为nil 则会赋值nil;如果不为nil，那就正常操作。</li>
-</ul>
-
-<h3 id="toc_1">Optional 可选型 写法</h3>
-
-<p><code>var sexy : String? = &quot;boy&quot;</code></p>
-
-<h3 id="toc_2">强制解包</h3>
-
-<pre><code>if sexy != nil {
-    print(&quot;i am a \(String(describing: sexy))&quot;)
-}else{
-    print(&quot;none&quot;)
-}
+<pre><code>let [x = 1, y = x] = [];     // x=1; y=1
+let [x = y, y = 1] = [];     // ReferenceError
 </code></pre>
 
 
@@ -356,11 +436,11 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                   <a href="15117133773045.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/11/27</span>
+                   <a href="15137621729153.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/20</span>
                     <span>posted in&nbsp;</span> 
           				  
-          					    <span class="posted-in"><a href='swift.html'>Swift</a></span>
+          					    <span class="posted-in"><a href='js.html'>JavaScript</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -374,20 +454,26 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15115332074317.html">
+                <a class="clearlink" href="15137645005542.html">
                 
-                  <h1>Xcode 代码块</h1>
+                  <h1>ES6 笔记（Array）</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">一、创建自定义代码块的好处</h2>
+                        	<h2 id="toc_0">array</h2>
 
-<p>由于项目、所用语言或者编码习惯的差别，不同的程序员习惯用的代码片段也不尽相同，这就有了自定义代码片段的需求，好在Xcode是支持该功能的。他的好处是使程序员以最快的速度输入很常用的代码片段，提高编程效率。</p>
+<ol>
+<li><p>Array.from<br/>
+将类似数组的对象（array-like object）和可遍历（iterable）的对象 转换为数组。</p>
 
-<p>该功能是从Xcode4开始引入的。在Xcode中的位置如下图所示：</p>
-
-<p>如上图，右边系统就定义很对的代码块，包括一些我们很常用的@interface 和@implementation的声明和实现。</p>
+<ul>
+<li>类数组：有 length属性的对象</li>
+<li>可遍历：包含Set Map.</li>
+</ul></li>
+<li><p>Array.of<br/>
+该方法用于将一组值，转换为数组。</p></li>
+</ol>
 
 
                         
@@ -396,8 +482,92 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                   <a href="15115332074317.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/11/24</span>
+                   <a href="15137645005542.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/20</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='js.html'>JavaScript</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15139057022845.html">
+                
+                  <h1>Rect-Native 之 Promise 深入浅出从入门到精通</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">概念理解</h2>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fhp9dw6vxpj307406ewek.jpg" alt="icon" title="React icon"/></p>
+
+<blockquote>
+<p>所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。</p>
+</blockquote>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15139057022845.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/22</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='reactnative.html'>React-Native</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15139059079620.html">
+                
+                  <h1>学习资源网址</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">技术学习资源</h2>
+
+<h3 id="toc_1">sublime学习资源</h3>
+
+<ul>
+<li><a href="http://www.jianshu.com/p/aa30cc25c91b">Sublime 入门+进阶</a>：<code>http://www.jianshu.com/p/aa30cc25c91b</code></li>
+<li><a href="http://www.jeffjade.com/2015/12/15/2015-04-17-toss-sublime-text/">sublime全解</a>: <code>http://www.jeffjade.com/2015/12/15/2015-04-17-toss-sublime-text/</code></li>
+<li><a href="https://dribbble.com/">Sublime 图标下载</a>: <code>https://dribbble.com/</code></li>
+</ul>
+
+<h3 id="toc_2">MarkDown学习资源</h3>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15139059079620.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/22</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
@@ -464,102 +634,6 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
                 </div>
               </div><!-- article -->
         
-			<div class="article">
-                <a class="clearlink" href="15115206889632.html">
-                
-                  <h1>Mac app 推荐</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">开发工具篇</h2>
-
-<h3 id="toc_1">Postman （Chrome 工具）</h3>
-
-<p><img src="media/15115206889632/15115207580615.jpg" alt="Postman_Icon"/><br/>
-这款APP 最初是 谷歌浏览器的插件...</p>
-
-<h3 id="toc_2">Gif Brewery （AppStore 免费）</h3>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fmpkcy93u9j307206oab2.jpg" alt="Gif Brewery"/><br/>
-这是录制gif文件的APP，有了它再也不用为制作gif发愁了</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/11/24</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='app.html'>MacAPP</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14948260667614.html">
-                
-                  <h1>SectionListView</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">属性</h2>
-
-<ol>
-<li>ItemSeparatorComponent  <code>{highlighted,leadingItem,leandingSection,section,trailingItem}</code><br/>
-返回一个行与行之间的分割组件，不会出现在第一行之前和最后一行之后。
-
-<ul>
-<li><code>highlighted</code> 当前行（分割线上面👆的Item）是否是高亮状态</li>
-<li><code>leadingItem</code> 当前行分配到的数据源</li>
-<li><code>leandingSection</code> 目前我也没搞明白啥意思 这里是<code>undefined</code></li>
-<li><code>section</code> 当前段分配到的数据源</li>
-<li><code>trailingItem</code> 尾段数据</li>
-</ul></li>
-<li>ListEmptyCompone  <code>没有接收参数</code><br/>
-渲染一个cell为空时的缓冲组件<br/></li>
-<li>ListFooterComponent  <code>没有接收参数</code><br/>
-渲染整个组件的Footer</li>
-<li>ListHeaderComponent   <code>没有接收参数</code><br/>
-渲染整个组件的Header</li>
-</ol>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="14948260667614.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/5/15</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='reactnative.html'>React-Native</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
               
 
 
@@ -571,7 +645,7 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
 			  </div>
 			  <div class="large-6 columns">
 			<p class="text-right" style="padding-top:25px;">
-			
+			 <a href="all_3.html">&raquo; Next Page</a> 
 			</p>
 			  </div>
 			</div>
@@ -624,7 +698,9 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
         
             <a href="js.html"><strong>JavaScript</strong></a>
         
-            <a href="Vue.html"><strong>Vue</strong></a>
+            <a href="vue.html"><strong>Vue</strong></a>
+        
+            <a href="shell.html"><strong>shell</strong></a>
          
         </p>
 
@@ -641,25 +717,25 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
 	      
 		      
 			      <li class="post">
+			        <a href="15223210751913.html">每天学习一个shell 技能 （2）</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="15223028228569.html">每天学习一个shell技能 （1）</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="15200726964422.html"></a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15200715202464.html">iOS 离屏渲染</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15198022156700.html">iOS 面试题总结</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15193944679783.html">iOS 项目组件化</a>
+			        <a href="15222179789382.html">iOS GCD&&多线程</a>
 			      </li>
 		     
 		  

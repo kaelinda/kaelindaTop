@@ -44,17 +44,21 @@
         
         <li id=""><a target="_self" href="archives.html">归档目录</a></li>
         
+        <li id="ios.css"><a target="_self" href="ios.html">iOS</a></li>
+        
+        <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
+        
+        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
+        
         <li id="coding.css"><a target="_self" href="coding.html">编程</a></li>
         
         <li id="live.css"><a target="_self" href="live.html">随笔</a></li>
         
         <li id="app.css"><a target="_self" href="app.html">APP推荐</a></li>
         
-        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
-        
-        <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
-        
         <li id="js.css"><a target="_self" href="js.html">JS</a></li>
+        
+        <li id="shell.css"><a target="_self" href="shell.html">shell</a></li>
         
         </ul>
 
@@ -80,10 +84,27 @@
 
 <aside class="left-off-canvas-menu">
       <ul class="off-canvas-list">
-       
-       <li><a href="index.html">HOME</a></li>
-    <li><a href="archives.html">Archives</a></li>
-    <li><a href="about.html">ABOUT</a></li>
+        
+        <li><a target="_self" href="index.html">最近更新</a></li>
+        
+        <li><a target="_self" href="archives.html">归档目录</a></li>
+        
+        <li><a target="_self" href="ios.html">iOS</a></li>
+        
+        <li><a target="_self" href="swift.html">Swift</a></li>
+        
+        <li><a target="_self" href="reactnative.html">RN</a></li>
+        
+        <li><a target="_self" href="coding.html">编程</a></li>
+        
+        <li><a target="_self" href="live.html">随笔</a></li>
+        
+        <li><a target="_self" href="app.html">APP推荐</a></li>
+        
+        <li><a target="_self" href="js.html">JS</a></li>
+        
+        <li><a target="_self" href="shell.html">shell</a></li>
+        
 
     <li><label>Categories</label></li>
 
@@ -98,7 +119,9 @@
         
             <li><a href="js.html">JavaScript</a></li>
         
-            <li><a href="Vue.html">Vue</a></li>
+            <li><a href="vue.html">Vue</a></li>
+        
+            <li><a href="shell.html">shell</a></li>
          
 
       </ul>
@@ -141,7 +164,87 @@
       </div><!-- article -->
 
       <div class="article-content">
-      
+      <h1 id="toc_0">iOS Block 知识点拾遗</h1>
+
+<ol>
+<li><p>Block为什么要用copy</p>
+
+<ul>
+<li>block在创建的时候默认分配的内存是在栈上，而不是在堆上。这样的话其本身的作用域是属于创建时候的作用域，一旦在创建的作用域之外调用就会导致程序的崩溃。所以使用了copy将其拷贝到堆内存上。</li>
+<li>block创建在栈上，而block的代码中可能会用到本地的一些变量，只有将其拷贝到堆上，才能用这些变量</li>
+</ul></li>
+<li><p>Block为什么不用retain</p>
+
+<ul>
+<li>retain只是增加了一次引用计数，block的内存还是在栈上，并没有存在堆上，存在栈上的block可能随时被系统回收</li>
+</ul></li>
+<li><p>为什么进入block中的对象引用计数需要自动加1？</p>
+
+<ul>
+<li>Block执行的是回调，因此block并不知道其中的对象obj创建后会在什么时候被释放，为了不在block使用obj之前，对象已经被释放，block就retain了obj一次</li>
+</ul></li>
+<li><p>block和函数的关系</p>
+
+<ul>
+<li>Block的使用很<strong>像函数指针</strong>，不过与函数最大的不同是Block可以访问函数以外、词法作用域以内的外部变量的值。换句话说，Block不仅 实现函数的功能，还能<strong>携带函数的执行环境</strong>。</li>
+<li>函数指针 <code>void(*fun)(int)</code></li>
+<li>block <code>void(^fun)(int)</code></li>
+</ul></li>
+<li><p>block本质（对于block的理解）<a href="https://www.cnblogs.com/yoon/p/4953618.html">请查阅Block实现原理</a></p>
+
+<ul>
+<li>block实际上是: 指向结构体的指针</li>
+<li>编译器会将block的内部代码生成对应的函数</li>
+</ul></li>
+<li><p>对于基本数据类型，进入到block中会被当做常量处理。对象 retain 会一次</p>
+
+<span id="more"></span><!-- more -->
+
+<pre><code>//如果需要在block中对num进行修改，需要加上关键字__block
+//(我们也可以用static关键字进行修饰)
+int  num1 = 10;
+void(^block1)() = ^{
+   NSLog(@&quot;num1 is %d&quot;,num1);
+};
+num1 = 20;
+block1(); //输出10
+
+//改进:使用block,使进入到block块中的变量不被当做常量来使用
+__block int  num2 = 10;
+void(^block2)() = ^{
+ NSLog(@&quot;num2 is %d&quot;,num2);
+};
+num2 = 20;
+block2(); //输出20
+</code></pre></li>
+<li><p>Block中self的循环引用</p>
+
+<ul>
+<li>block默认创建在栈上，所以对要对其进行执行copy操作，将其拷贝到堆区，便于更好的操作对象。但是执行了copy操作之后，block中使用self，此对象会被retain一次（注意：block在堆区上时才会起到retain作用），会造成循环引用。</li>
+<li>解决方法：
+
+<ul>
+<li>在MRC下，使用__block修饰</li>
+<li>在ARC下，使用__unsafe_unretained\weak修饰</li>
+</ul></li>
+</ul></li>
+<li><p>Block 在内存中的分类</p>
+
+<ul>
+<li>全局block --&gt; GlobalBlock &lt;==&gt; 相当于全局变量, 系统会自动释放</li>
+<li>栈block --&gt; StackBlock &lt;==&gt; 相当于局部变量, 系统会自动释放</li>
+<li>堆block --&gt; MallocBlock &lt;==&gt; (需要手动释放内存)</li>
+</ul></li>
+<li><p>block类型区分方法</p>
+
+<ul>
+<li>如果block实现中没有访问任何&quot;外部&quot;变量(包括局部和全局), 该block为GlobalBlock</li>
+<li>如果block实现中访问了任何&quot;外部&quot;变量(包括局部和全局), 该block为StackBlock</li>
+<li>对StackBlock进行拷贝(copy/Block_copy), 该block为MallocBlock</li>
+</ul></li>
+<li></li>
+</ol>
+
 
     
 
@@ -151,13 +254,16 @@
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
+          <a href="15223028228569.html" 
+          title="Previous Post: 每天学习一个shell技能 （1）">&laquo; 每天学习一个shell技能 （1）</a>
+      
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="15200715202464.html" 
-          title="Next Post: iOS 离屏渲染">iOS 离屏渲染 &raquo;</a>
+          <a  href="15222179789382.html" 
+          title="Next Post: iOS GCD&&多线程">iOS GCD&&多线程 &raquo;</a>
       
       </p>
         </div>
@@ -223,7 +329,9 @@
         
             <a href="js.html"><strong>JavaScript</strong></a>
         
-            <a href="Vue.html"><strong>Vue</strong></a>
+            <a href="vue.html"><strong>Vue</strong></a>
+        
+            <a href="shell.html"><strong>shell</strong></a>
          
         </p>
 
@@ -240,25 +348,25 @@
 	      
 		      
 			      <li class="post">
+			        <a href="15223210751913.html">每天学习一个shell 技能 （2）</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="15223028228569.html">每天学习一个shell技能 （1）</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="15200726964422.html"></a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15200715202464.html">iOS 离屏渲染</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15198022156700.html">iOS 面试题总结</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15193944679783.html">iOS 项目组件化</a>
+			        <a href="15222179789382.html">iOS GCD&&多线程</a>
 			      </li>
 		     
 		  
