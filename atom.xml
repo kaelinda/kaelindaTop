@@ -4,13 +4,92 @@
   <title><![CDATA[kaelinda]]></title>
   <link href="http://blog.csdn.net/atom.xml" rel="self"/>
   <link href="http://blog.csdn.net/"/>
-  <updated>2018-03-29T20:31:28+08:00</updated>
+  <updated>2018-03-30T09:39:46+08:00</updated>
   <id>http://blog.csdn.net/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[每天学习一个shell技能(3)]]></title>
+    <link href="http://blog.csdn.net/15223750607281.html"/>
+    <updated>2018-03-30T09:57:40+08:00</updated>
+    <id>http://blog.csdn.net/15223750607281.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">shell参数传递</h2>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[每天学习一个shell 技能 （2）]]></title>
+    <link href="http://blog.csdn.net/15223210751913.html"/>
+    <updated>2018-03-29T18:57:55+08:00</updated>
+    <id>http://blog.csdn.net/15223210751913.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">Shell 数组</h2>
+
+<h3 id="toc_1">定义数组</h3>
+
+<pre><code class="language-bash">array_name=(value1 value2 value3)
+
+array_name2=(
+value1
+value2
+value3
+)
+
+// 单独定义某个分量的值
+array_name(0)=value0
+</code></pre>
+
+<h3 id="toc_2">读取数组</h3>
+
+<pre><code>// 读取单个元素
+value0=${array_name[0]}
+
+//使用@符号可以获取数组中的所有元素
+echo ${array_name(@)}
+
+</code></pre>
+
+<h3 id="toc_3">获取数组的长度</h3>
+
+<pre><code>// 获取元素个数
+length=${#array_name[@]}
+
+//或者
+length=${#array_name[*]}
+
+// 获取的单个元素的长度
+item_length=${#array_name[n]}
+</code></pre>
+
+<h2 id="toc_4">Shell 注释</h2>
+
+<blockquote>
+<p>以&quot;#&quot;开头的行就是注释，会被解释器忽略。sh里没有多行注释，只能每一行加一个#号。只能像这样</p>
+</blockquote>
+
+<pre><code>#--------------------------------------------
+# 这是一个注释
+# author：菜鸟教程
+# site：www.runoob.com
+# slogan：学的不仅是技术，更是梦想！
+#--------------------------------------------
+##### 用户配置区 开始 #####
+#
+#
+# 这里可以添加脚本描述信息
+# 
+#
+##### 用户配置区 结束  #####
+</code></pre>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[源码阅读 -- YYModel （一）]]></title>
@@ -106,21 +185,6 @@ block2(); //输出20
 </ul></li>
 <li></li>
 </ol>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[每天学习一个shell 技能 （2）]]></title>
-    <link href="http://blog.csdn.net/15223210751913.html"/>
-    <updated>2018-03-29T18:57:55+08:00</updated>
-    <id>http://blog.csdn.net/15223210751913.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">Shell 数组</h2>
-
-<p>测试成功</p>
-
-<h2 id="toc_1">Shell 注释</h2>
 
 ]]></content>
   </entry>
@@ -2314,214 +2378,6 @@ var getGlobal = function () {
 <p>// ES6模块的写法<br/>
 import getGlobal from &#39;system.global&#39;;<br/>
 const global = getGlobal();</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[iOS WKWebView 本地HTML、JS、CSS文件加载详解]]></title>
-    <link href="http://blog.csdn.net/15126415331235.html"/>
-    <updated>2017-12-07T18:12:13+08:00</updated>
-    <id>http://blog.csdn.net/15126415331235.html</id>
-    <content type="html"><![CDATA[
-<blockquote>
-<p><strong>Tips:</strong><br/>
-NSString类型的文件路径转换为URL的时候，一定要用 <br/>
-<code>NSURL *pathURL = [NSURL fileURLWithPath:filePath];</code>方法去转换，否则资源URL不合法，APP会崩溃</p>
-</blockquote>
-
-<h2 id="toc_0">上源码接口：</h2>
-
-<h3 id="toc_1">loadRequest方式加载</h3>
-
-<ul>
-<li><p>API : iOS8即可使用</p>
-
-<p><code>- (nullable WKNavigation *)loadRequest:(NSURLRequest *)request;</code>      </p></li>
-<li><p>用途：</p>
-
-<ul>
-<li>1：主要用来加载网络URL<br/></li>
-<li>2：也可以加载本地HTML文件（本文重点）</li>
-</ul>
-
-<span id="more"></span><!-- more --></li>
-</ul>
-
-<h3 id="toc_2">loadFileURL</h3>
-
-<ul>
-<li><p>API: URL:文件相对路径 readAccessURL：访问文件需要引用的文件的路径 一般都是比<code>URL</code>大一级或者更高几级</p>
-
-<p><code>- (nullable WKNavigation *)loadFileURL:(NSURL *)URL allowingReadAccessToURL:(NSURL *)readAccessURL API_AVAILABLE(macosx(10.11), ios(9.0));</code></p></li>
-<li><p>用途：主要用于加载本地文件（一般指相对路径）</p></li>
-</ul>
-
-<h3 id="toc_3">loadHTMLString</h3>
-
-<ul>
-<li><p>API:<br/>
-<code>- (nullable WKNavigation *)loadHTMLString:(NSString *)string baseURL:(nullable NSURL *)baseURL;</code></p></li>
-<li><p>用途：主要用于 HTML转换成的字符串（比如：编程APP）</p></li>
-</ul>
-
-<h3 id="toc_4">loadData</h3>
-
-<ul>
-<li><p>API: 值得一提的是MIMETType,text/html、image/jpg、text/plain</p>
-
-<p><code>- (nullable WKNavigation *)loadData:(NSData *)data MIMEType:(NSString *)MIMEType characterEncodingName:(NSString *)characterEncodingName baseURL:(NSURL *)baseURL API_AVAILABLE(macosx(10.11), ios(9.0));</code></p></li>
-<li><p>用途：主要用于加载 二进制状态下的文件，主要包括HTML、Image、Text文本</p></li>
-</ul>
-
-<h2 id="toc_5">开发中的HTML文件位置</h2>
-
-<h3 id="toc_6">HTML位于工程内的黄色文件夹下</h3>
-
-<blockquote>
-<p>这是咱们一般的文件添加方式，这属于绝对路径的添加</p>
-</blockquote>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fmcxnu043cj313w05maan.jpg" alt="绝对路径"/></p>
-
-<h4 id="toc_7"><strong><code>loadRequest</code> 加载方式</strong></h4>
-
-<blockquote>
-<p><strong>Tips:</strong><br/>
- iOS8 的时候只能通过这个<code>loadRequest</code>方法去加载<br/>
-iOS8 WKWebView的加载本地文件的方式本文后面会有 <strong>详细方案</strong></p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot;];
-    
-_feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-    
-[_webview loadRequest:[NSURLRequest requestWithURL:_feedbackUrl]];
-</code></pre>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fmcxsxa56jj30af0j5dgd.jpg" alt="效果"/></p>
-
-<p><strong>warning！！！</strong><br/>
-页面能加载出来，但是效果是很差的，因为CSS、JS、图片资源文件没有得到正确的引用！<br/>
-那我们该通过什么方式来让这些附属的文件得到正确引用呢？<br/>
-iOS9之后新增了 <code>loadFileURL</code> 等一系列加载本地文件的方法</p>
-
-<h4 id="toc_8"><strong><code>loadFileURL</code>加载方式</strong></h4>
-
-<blockquote>
-<p>iOS9之后才出现这个加载方式</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot;];
-_feedbackUrl = [NSURL fileURLWithPath:bundleStr];
-if (@available(iOS 9.0, *)) {
-    [_webview loadFileURL:[NSURL fileURLWithPath:bundleStr] allowingReadAccessToURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
-} else {
-    // Fallback on earlier versions
-}
-</code></pre>
-
-<p>哇塞！加载出来了耶！但是 依旧是没能加载其他资源文件啊 😰<br/>
-客观，稍安勿躁 ~</p>
-
-<h3 id="toc_9">HTML位于工程内的蓝色文件夹下</h3>
-
-<blockquote>
-<p>特殊文件添加方式，尤其是文件之间有相互引用的时候用这种方式</p>
-</blockquote>
-
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fmcxr0jl88j313w05maan.jpg" alt="相对路径添加方式"/></p>
-
-<h4 id="toc_10">loadRequest 方式</h4>
-
-<pre><code class="language-Objectiv-C">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot; inDirectory:@&quot;FeedbackH5/pages&quot;];
-NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-if (@available(iOS 9.0, *)) {
-    [_webview loadRequest:[NSURLRequest requestWithURL:pathURL]];
-}
-</code></pre>
-
-<h4 id="toc_11">loadFileURL 方式加载</h4>
-
-<pre><code class="language-Objectiv-C">NSString *filePath = [[NSBundle mainBundle] pathForResource:@&quot;feedback&quot; ofType:@&quot;html&quot; inDirectory:@&quot;FeedbackH5/pages&quot;];
-    NSURL *pathURL = [NSURL fileURLWithPath:filePath];
-    if (@available(iOS 9.0, *)) {
-//        [_webview loadRequest:[NSURLRequest requestWithURL:pathURL]];
-        [_webview loadFileURL:[NSURL fileURLWithPath:filePath] allowingReadAccessToURL:[NSURL fileURLWithPath:[NSBundle mainBundle].bundlePath]];
-    }
-</code></pre>
-
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fmcyc9pjp0j30af0j5wfp.jpg" alt=""/></p>
-
-<blockquote>
-<p>由此可见：相对路径方式加载 是可以正常引用JS、css等资源文件的<br/>
-但是 iOS 8系统下，依旧加载不出来！！！</p>
-</blockquote>
-
-<h3 id="toc_12">HTML位于APP沙盒下Document文件夹</h3>
-
-<blockquote>
-<p>iOS8既然添加到工程中引用，一直引用不到，我们可以让他从document路径下引用试试！<br/>
-这个方法可以适配 iOS8系统下WKWebView加载本地文件了？<br/>
-你还太天真！！！</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">//项目中的文件夹路径
-NSString *directoryPath = [KFileManger appSourceName:@&quot;FeedbackH5&quot; andType:@&quot;&quot;];
-
-//沙盒中的document路径
-NSString *documentpath = [KFileManger documentPath];
-    
-//copy文件夹到 document 路径下
-[KFileManger copyMissingFile:directoryPath toPath:documentpath];
-
-//document 路径下的HTML文件路径
-NSString *homePath = [[KFileManger documentPath] stringByAppendingString:@&quot;/FeedbackH5/pages/feedback.html&quot;];
-
-//document 路径下的HTML文件 URL
-NSURL *docSourceURL = [NSURL fileURLWithPath:homePath];
-    
-[_webview loadRequest:[NSURLRequest requestWithURL:docSourceURL]];
-</code></pre>
-
-<blockquote>
-<p>果然不出所料(zhe jiu shi wo xiang yao de)，模拟器上能正常加载出界面，图片、CSS但是JS交互是不行的<br/>
-在真机 依旧加载不出任何界面！</p>
-</blockquote>
-
-<h3 id="toc_13">HTML位于APP沙盒下tmp临时缓存文件夹</h3>
-
-<blockquote>
-<p>亲爱的客观们，这才是iOS8系统下加载有相互引用关系的HTML、JS、CSS以及图片资源的正确方法(当前知道的唯一方法如有新的方式私信我哦~)！😊</p>
-</blockquote>
-
-<pre><code class="language-Objectiv-C">//项目中的文件夹路径
-NSString *directoryPath = [KFileManger appSourceName:@&quot;FeedbackH5&quot; andType:@&quot;&quot;];
-
-//tmp缓存文件夹路径
-NSString *tmpPath = [KFileManger tmpPath];
-
-//新文件夹名字
-NSString *wwwDir =@&quot;www&quot;;
-
-//tmp文件夹下创建www文件夹
-[KFileManger createDirWithPath:tmpPath andDirectoryName: wwwDir];
-
-//tmp中的www文件夹中的路径
-NSString *tmpWWW = [tmpPath stringByAppendingString: wwwDir];
-
-//copy文件夹到 tmp/www 路径下
-[KFileManger copyMissingFile:directoryPath toPath:tmpWWW];
-
-// 字符 tmp/www/FeedbackH5/pages/feedback.html 全路径
-NSString *tmpWWWFeedback = [tmpWWW stringByAppendingString:@&quot;/FeedbackH5/pages/feedback.html&quot;];
-
-//tmp 操作，字符转换成URL
-NSURL *feedbackURL = [NSURL fileURLWithPath:tmpWWWFeedback];
-
-//WKWebView加载
-[_webview loadRequest:[NSURLRequest requestWithURL:feedbackURL]];
-</code></pre>
 
 ]]></content>
   </entry>

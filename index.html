@@ -144,6 +144,129 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
+                <a class="clearlink" href="15223750607281.html">
+                
+                  <h1>每天学习一个shell技能(3)</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">shell参数传递</h2>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2018/3/30</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15223210751913.html">
+                
+                  <h1>每天学习一个shell 技能 （2）</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">Shell 数组</h2>
+
+<h3 id="toc_1">定义数组</h3>
+
+<pre><code class="language-bash">array_name=(value1 value2 value3)
+
+array_name2=(
+value1
+value2
+value3
+)
+
+// 单独定义某个分量的值
+array_name(0)=value0
+</code></pre>
+
+<h3 id="toc_2">读取数组</h3>
+
+<pre><code>// 读取单个元素
+value0=${array_name[0]}
+
+//使用@符号可以获取数组中的所有元素
+echo ${array_name(@)}
+
+</code></pre>
+
+<h3 id="toc_3">获取数组的长度</h3>
+
+<pre><code>// 获取元素个数
+length=${#array_name[@]}
+
+//或者
+length=${#array_name[*]}
+
+// 获取的单个元素的长度
+item_length=${#array_name[n]}
+</code></pre>
+
+<h2 id="toc_4">Shell 注释</h2>
+
+<blockquote>
+<p>以&quot;#&quot;开头的行就是注释，会被解释器忽略。sh里没有多行注释，只能每一行加一个#号。只能像这样</p>
+</blockquote>
+
+<pre><code>#--------------------------------------------
+# 这是一个注释
+# author：菜鸟教程
+# site：www.runoob.com
+# slogan：学的不仅是技术，更是梦想！
+#--------------------------------------------
+##### 用户配置区 开始 #####
+#
+#
+# 这里可以添加脚本描述信息
+# 
+#
+##### 用户配置区 结束  #####
+</code></pre>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2018/3/29</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
                 <a class="clearlink" href="15181411526837.html">
                 
                   <h1>源码阅读 -- YYModel （一）</h1>
@@ -227,43 +350,6 @@
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15223210751913.html">
-                
-                  <h1>每天学习一个shell 技能 （2）</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">Shell 数组</h2>
-
-<p>测试成功</p>
-
-<h2 id="toc_1">Shell 注释</h2>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2018/3/29</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -611,519 +697,6 @@
                 </div>
               </div><!-- article -->
         
-			<div class="article">
-                <a class="clearlink" href="15174544275720.html">
-                
-                  <h1>DLNA DMR</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">CGUpnpAvRenderer</h2>
-
-<pre><code>#if !defined(_CG_CLINKCAV_MEDIARENDERER_H_)
-typedef void CgUpnpAvRenderer;
-#endif
-
-/**
- * The CGUpnpAvRenderer class is a UPnP/AV media server class.
- */
-@interface CGUpnpAvRenderer : CGUpnpDevice
-{
-    CgUpnpAvRenderer *cAvObject;
-}
-@property(readonly) CgUpnpAvRenderer *cAvObject;
-- (id)init;
-- (id)initWithCObject:(CgUpnpDevice *)cobj;
-- (BOOL)setAVTransportURI:(NSString *)aURI;
-- (BOOL)play;
-- (BOOL)stop;
-- (BOOL)pause;
-- (BOOL)next;
-- (BOOL)previous;
-- (BOOL)seek:(float)absTime;
-- (BOOL)isPlaying;
-/*
-- (BOOL)start
-- (BOOL)stop
-*/
-- (CGUpnpAVPositionInfo *)positionInfo;
-</code></pre>
-
-<h2 id="toc_1">CGUpnpDevice</h2>
-
-<pre><code>/**
- * The CGUpnpDevice class is a wrapper class for CgUpnpDevice of CyberLink for C.
- */
-// 设备包装类
-@protocol CGUpnpDeviceDelegate &lt;NSObject&gt;
-@optional
-// 收到Action的协议方法
-- (BOOL)device:(CGUpnpDevice *)device service:(CGUpnpService *)service actionReceived:(CGUpnpAction *)action;
-@end
-
-/**
- * The CGUpnpDevice class is a wrapper class for CgUpnpDevice of CyberLink for C.
- */
-@interface CGUpnpDevice : NSObject 
-{
-    BOOL isCObjectCreated;
-}
-@property(assign) CgUpnpDevice *cObject;
-@property(assign) id&lt;CGUpnpDeviceDelegate&gt; delegate;
-/**
- * Create a new UPnP device.
- * 
- * @return New instance if successfull; otherwise nil.
- */
- // 初始化方法 创建一个新的UPnP设备
-- (id) init;
-/**
- * Create a new UPnP device with the C instance.
- * 
- * @return New instance if successfull; otherwise nil.
- */
- // 用一个设备初始化另一设备
-- (id) initWithCObject:(CgUpnpDevice *)cobj;
-/**
- * Create a new UPnP device with the XML descriptioin.
- * 
- * @return New instance if successfull; otherwise nil.
- */
- // xml  创建设备
-- (id) initWithXMLDescription:(NSString *)xmlDesc;
-/**
- * Parse the specified XML description.
- * 
- * @return YES if successfull; otherwise nui.
- */
-- (BOOL) parseXMLDescription:(NSString *)xmlDesc;
-/**
- * Get the friendly name of the device.
- * 
- * @return Friendly name.
- */
-// 获取友好的名字
-- (NSString *)friendlyName;
-/**
- * Get the device type of the device.
- * 
- * @return Device Type.
- */
- // 设备类型
-- (NSString *)deviceType;
-/**
- * Get the UDN of the device.
- * 
- * @return UDN of the specified device.
- */
- // 获取设备的UDN
-- (NSString *)udn;
-/**
- * Return a manufacture.
- *
- * @return Manufacture of the device.
- */
- // 制造商
-- (NSString *)manufacturer;
-
-/**
- * Return a model number.
- *
- * @return Model number of the device.
- */
- // 返回模型数
-- (NSString *)modelNumber;
-
-/**
- * Return a model name.
- *
- * @return Model name of the device.
- */
- // 返回模型名
-- (NSString *)modelName;
-
-/**
- * Return a urlBase
- *
- * @return URLBase of the device.
- */
- // 返回设备的URLBase
-- (NSString *)urlBase;
-/**
- * Return a descrition URL
- *
- * @return Descripton URL of the device.
- */
- // 返回设备URL描述
-- (NSString *)descriptionURL;
-/**
- * Return a location URL
- *
- * @return Location URL of the device.
- */
- // 返回一个本地URL
-- (NSString *)locationURL;
-/**
- * Set a device type of the device.
- * 
- * @param aType Device type to set.
- */
- // 设置设备类型
--(void)setDeviceType:(NSString *)aType;
-/**
- * Set a friendly name of the device.
- * 
- * @param aName Friendly name to set.
- */
- // 设置友好名称
--(void)setFriendlyName:(NSString *)aName;
-/**
- * Set a udn of the device.
- * 
- * @param aUdn UDN to set.
- */
--(void)setUdn:(NSString *)aUdn;
-/**
- * Check whether the device type is the specified type.
- *
- * @param aType A type string of the device.
- * 
- * @return YES if the specified type is same as the device type; otherwise NO.
- */
-- (BOOL)isDeviceType:(NSString *)aType;
-/**
- * Check whether the device&#39;s UDN is the specified UDN.
- *
- * @param aUDN A UDN string of the device.
- * 
- * @return YES if the specified UDN is same as the device&#39; UDN; otherwise NO.
- */
-- (BOOL)isUDN:(NSString *)aUDN;
-/**
- * Check whether the device&#39;s friendly name is the specified name.
- *
- * @param aFriendlyName A friendly name string of the device.
- * 
- * @return YES if the specified friendly name is same as the device&#39; friendly name; otherwise NO.
- */
-- (BOOL)isFriendlyName:(NSString *)aFriendlyName;
-/**
- * Return a presentationURL
- *
- * @return presentationURL of the device.
- */
-- (NSString *)presentationURL;
-/**
- * Get all services in the device as a NSArray object. The array has the services as instances of CGUpnpService.
- *
- * @return NSArray of CGUpnpService.
- */
- // 返回设备CGUpnpService服务组
-- (NSArray *)services;
-/**
- * Get a service in the device by the specified service ID.
- *
- * @param serviceId A service ID string of the service.
- *
- * @return The CGUpnpService if the specified service is found; otherwise nil.
- */
- // 根据seviceID 获取服务对象
-- (CGUpnpService *)getServiceForID:(NSString *)serviceId;
-/**
- * Get a service in the device by the specified service type.
- *
- * @param serviceType A service type string of the service.
- *
- * @return The CGUpnpService if the specified service is found; otherwise nil.
- */
- // 根据类型获取服务对象 service
-- (CGUpnpService *)getServiceForType:(NSString *)serviceType;
-/**
- * Get all icons in the device as a NSArray object. The array has the services as instances of CGUpnpIconIcon.
- *
- * @return NSArray of CGUpnpIcon.
- */
- // 获取所有图标
-- (NSArray *)icons;
-/**
- * Start the device.
- *
- * @return YES if the device is started normally, otherwise NO.
- */
-- (BOOL)start;
-/**
- * Stop the device.
- *
- * @return YES if the device is started normally, otherwise NO.
- */
-- (BOOL)stop;
-/**
- * Check if the controll point is running.
- *
- * @return YES if the device is started normally, otherwise NO.
- */
- //检查控制点 DMC是否在运行
-- (BOOL)isRunning;
-/**
- * Announce the device.
- *
- * @return YES if the device is started normally, otherwise NO.
- */
- // 广播这个设备
-- (BOOL)announce;
-/**
- * Set a user data.
- *
- * @param aUserData A user data to set.
- *
- * @return The CGUpnpService if the specified service is found; otherwise nil.
- */
- // 设置用户数据
-- (void)setUserData:(void *)aUserData;
-/**
- * Get a stored user data.
- *
- * @return A stored user data.
- */
- 获取已存储的用户数据
-- (void *)userData;
-/**
- * Return a IP address.
- *
- * @return IP address of the device.
- */
- // 获取IP地址
-- (NSString *)ipaddress;
-/**
- * Return a most smallest icon.
- *
- * @return Smallest Icon.
- */
- // 获取一个最小的 icon
-- (CGUpnpIcon *)smallestIcon;
-/**
- * Return a most smallest icon with a specified mime type.
- *
- * @return Smallest Icon.
- */
- // 获取指定类型的icon
-- (CGUpnpIcon *)smallestIconWithMimeType:(NSString *)mimeType;
-/**
- * Return a absolute url of the specified icon.
- *
- * @param anIcon Icon.
- *
- * @return Absolute url of the specified icon.
- */
- // 获取icon的绝对路径
-- (NSString *)absoluteIconUrl:(CGUpnpIcon *)anIcon;
-</code></pre>
-
-<h2 id="toc_2">CGUpnpStateVariable</h2>
-
-<pre><code>#if !defined(_CG_UPNP_CSTATEVARIABLE_H_)
-typedef void CgUpnpStateVariable;
-#endif
-
-/**
- * The CGUpnpStateVariable class is a wrapper class for CgUpnpStateVariable of CyberLink for C.
- */
-@interface CGUpnpStateVariable : NSObject 
-{
-    CgUpnpStateVariable *cObject;
-}
-@property(readonly) CgUpnpStateVariable *cObject;
-- (id)initWithCObject:(CgUpnpStateVariable *)cobj;
-/**
- * Get the name of the state variable.
- * 
- * @return The name.
- */
- // 状态名
-- (NSString *)name;
-/**
- * Get the value of the state variable.
- * 
- * @return The value.
- */
- // 状态值
-- (NSString *)value;
-
-/**
- * Get an array of the allowed values for the state variable
- * 
- * @return The array.
- */
- // 允许的所有状态值
-- (NSArray *)allowedValues;
-
-/**
- * Checks whether value is allowed for this state variable
- *
- * @param value to be checked
- *
- * @return YES if true
- */
- // 检测状态值是否是被允许的
-- (BOOL)isAllowedValue:(NSString*)value;
-
-/**
- * Send query
- *
- * @return YES if successfull; otherwise NO
- */
-- (BOOL)query;
-/**
- * Get a states code of the last query. 
- *
- * @return The status code
- */
-- (NSInteger)statusCode;
-</code></pre>
-
-<h2 id="toc_3">CGUpnpIcon</h2>
-
-<pre><code>/**
- * The CGUpnpIcon class is a wrapper class for CgUpnpIcon of CyberLink for C.
- */
-@interface CGUpnpIcon : NSObject
-{
-    CgUpnpIcon *cObject;
-#if defined(TARGET_OS_IPHONE)
-    NSString *resourceName;
-#endif
-}
-@property(readonly) CgUpnpIcon *cObject;
-#if defined(TARGET_OS_IPHONE)
-@property(readonly) NSString *resourceName;
-#endif
-- (id)initWithCObject:(CgUpnpIcon *)cobj;
-/**
- * Get the url of the icon.
- * 
- * @return The url.
- */
-- (NSString *)url;
-/**
- * Get the url of the width.
- * 
- * @return The width.
- */
-- (NSInteger)width;
-/**
- * Get the height of the icon.
- * 
- * @return The height.
- */
-- (NSInteger)height;
-/**
- * Get the depth of the icon.
- * 
- * @return The depth.
- */
-- (NSInteger)depth;
-#if defined(TARGET_OS_IPHONE)
-- (void)setResourceName:(NSString *) aResourceName;
-#endif
-</code></pre>
-
-<h2 id="toc_4">CGUpnpAVPositionInfo</h2>
-
-<pre><code>@property(retain) CGUpnpAction *upnpAction;
--(id)initWithAction:(CGUpnpAction *)aUpnpAction;
--(float)trackDuration;
--(float)absTime;
--(float)relTime;
-@end
-
-@interface NSString(CGUPnPAV)
-// 总时长字符串
-+(NSString *)stringWithDurationTime:(float)timeValue;
-// 总时长
-- (float)durationTime;
-</code></pre>
-
-<h2 id="toc_5">CGUpnpAction</h2>
-
-<pre><code>@interface CGUpnpAction : NSObject 
-{
-    CgUpnpAction *cObject;
-}
-@property(readonly) CgUpnpAction *cObject;
-- (id)initWithCObject:(CgUpnpAction *)cobj;
-/**
- * Get the name of the action.
- * 行为名称
- * @return The name.
- */
-- (NSString *)name;
-/**
- * Get all arguments in the action as a NSDictionary object.
- * 获取所有行为对象中的参数
- * @return NSDictionary of the arguments.
- */
-- (NSDictionary *)arguments;
-/**
- * Set a value of the specified argument from the action by the argument&#39;s name directly.
- * 通过name给指定action设置参数
- * @param value The value to set
- * @param name The name of the argument to look for
- * @return YES if successfull; otherwise NO
- */
-- (BOOL)setArgumentValue:(NSString *)value forName:(NSString *)name;
-/**
- * Get a value of the specified argument from the action by the argument&#39;s name directly.
- * 通过action参数名 获取action参数值
- * @param name The name of the argument to look for
- * @return The target value if successfull; otherwise NULL
- */
-- (NSString *)argumentValueForName:(NSString *)name;
-/**
- * Send action
- * 发送Action
- * @return YES if successfull; otherwise NO
- */
-- (BOOL)post;
-/**
- * Send action
- * 发送action 携带指定参数
- * @param arguments Arguments to set
- *
- * @return YES if successfull; otherwise NO
- */
-- (BOOL)postWithArguments:(NSDictionary *)arguments;
-/**
- * Get a states code of the last post. 
- * 获取最后POST的状态码
- * @return The status code
- */
-- (NSInteger)statusCode;
-</code></pre>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2018/2/1</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
               
 
 
@@ -1207,6 +780,18 @@ typedef void CgUpnpStateVariable;
 	      
 		      
 			      <li class="post">
+			        <a href="15223750607281.html">每天学习一个shell技能(3)</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="15223210751913.html">每天学习一个shell 技能 （2）</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="15181411526837.html">源码阅读 -- YYModel （一）</a>
 			      </li>
 		     
@@ -1219,19 +804,7 @@ typedef void CgUpnpStateVariable;
 		  
 		      
 			      <li class="post">
-			        <a href="15223210751913.html">每天学习一个shell 技能 （2）</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
 			        <a href="15223028228569.html">每天学习一个shell技能 （1）</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15222179789382.html">iOS GCD&&多线程</a>
 			      </li>
 		     
 		  

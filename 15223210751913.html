@@ -166,9 +166,62 @@
       <div class="article-content">
       <h2 id="toc_0">Shell 数组</h2>
 
-<p>测试成功</p>
+<h3 id="toc_1">定义数组</h3>
 
-<h2 id="toc_1">Shell 注释</h2>
+<pre><code class="language-bash">array_name=(value1 value2 value3)
+
+array_name2=(
+value1
+value2
+value3
+)
+
+// 单独定义某个分量的值
+array_name(0)=value0
+</code></pre>
+
+<h3 id="toc_2">读取数组</h3>
+
+<pre><code>// 读取单个元素
+value0=${array_name[0]}
+
+//使用@符号可以获取数组中的所有元素
+echo ${array_name(@)}
+
+</code></pre>
+
+<h3 id="toc_3">获取数组的长度</h3>
+
+<pre><code>// 获取元素个数
+length=${#array_name[@]}
+
+//或者
+length=${#array_name[*]}
+
+// 获取的单个元素的长度
+item_length=${#array_name[n]}
+</code></pre>
+
+<h2 id="toc_4">Shell 注释</h2>
+
+<blockquote>
+<p>以&quot;#&quot;开头的行就是注释，会被解释器忽略。sh里没有多行注释，只能每一行加一个#号。只能像这样</p>
+</blockquote>
+
+<pre><code>#--------------------------------------------
+# 这是一个注释
+# author：菜鸟教程
+# site：www.runoob.com
+# slogan：学的不仅是技术，更是梦想！
+#--------------------------------------------
+##### 用户配置区 开始 #####
+#
+#
+# 这里可以添加脚本描述信息
+# 
+#
+##### 用户配置区 结束  #####
+</code></pre>
 
 
     
@@ -179,16 +232,16 @@
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="15200726964422.html" 
-          title="Previous Post: iOS Block 知识点拾遗">&laquo; iOS Block 知识点拾遗</a>
+          <a href="15223750607281.html" 
+          title="Previous Post: 每天学习一个shell技能(3)">&laquo; 每天学习一个shell技能(3)</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="15223028228569.html" 
-          title="Next Post: 每天学习一个shell技能 （1）">每天学习一个shell技能 （1） &raquo;</a>
+          <a  href="15181411526837.html" 
+          title="Next Post: 源码阅读 -- YYModel （一）">源码阅读 -- YYModel （一） &raquo;</a>
       
       </p>
         </div>
@@ -273,6 +326,18 @@
 	      
 		      
 			      <li class="post">
+			        <a href="15223750607281.html">每天学习一个shell技能(3)</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="15223210751913.html">每天学习一个shell 技能 （2）</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="15181411526837.html">源码阅读 -- YYModel （一）</a>
 			      </li>
 		     
@@ -285,19 +350,7 @@
 		  
 		      
 			      <li class="post">
-			        <a href="15223210751913.html">每天学习一个shell 技能 （2）</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
 			        <a href="15223028228569.html">每天学习一个shell技能 （1）</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15222179789382.html">iOS GCD&&多线程</a>
 			      </li>
 		     
 		  
