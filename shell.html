@@ -144,14 +144,39 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="15223750607281.html">
+                <a class="clearlink" href="15226648731246.html">
                 
-                  <h1>每天学习一个shell技能(3)</h1>
+                  <h1>每天学习一个shell技能（7）</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">shell参数传递</h2>
+                        	<h2 id="toc_0">文件包含 导入文件</h2>
+
+<p>测试文件  test1.sh</p>
+
+<pre><code>#!/bin/bash
+# author:菜鸟教程
+# url:www.runoob.com
+
+url=&quot;http://www.runoob.com&quot;
+</code></pre>
+
+<p>测试文件 test2.sh</p>
+
+<pre><code>#!/bin/bash
+# author:菜鸟教程
+# url:www.runoob.com
+
+#使用 . 号来引用test1.sh 文件
+. ./test1.sh
+
+# 或者使用以下包含文件代码
+# source ./test1.sh
+
+echo &quot;菜鸟教程官网地址：$url&quot;
+</code></pre>
+
 
                         
                       </div>
@@ -159,7 +184,218 @@
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="15226648731246.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/4/2</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15226603064743.html">
+                
+                  <h1>每天学习一个shell技能（6）</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">test</h2>
+
+<h3 id="toc_1">test文件</h3>
+
+<pre><code>if test -e ./test.sh
+then
+    echo &#39;文件已存在!&#39;
+else
+    echo &#39;文件不存在!&#39;
+fi
+</code></pre>
+
+<ul>
+<li>-e fileName ： 如果文件存在则为真</li>
+<li>-r  fileName : 如果文件存在且可读则为真</li>
+<li>-w fileName : 如果文件存在且可写则为真</li>
+<li>-x fileName : 如果文件存在且可执行则为真</li>
+<li>-s fileName: 文件存在且至少有一个字符</li>
+<li>-d fileName : 文件存在且为目录</li>
+<li>-f fileName: 文件存在且为文件</li>
+<li>-c fileName:文件存在，且为字符型特殊文件</li>
+<li>-b fileName: 如果文件存在且为块特殊文件则为真</li>
+</ul>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15226603064743.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/4/2</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15224936933861.html">
+                
+                  <h1>每天学习一个shell技能（5）</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">Shell echo命令</h2>
+
+<h3 id="toc_1">打印字符</h3>
+
+<pre><code>// 下面两行代码效果一致
+echo &quot;It is a test&quot;
+echo It is a test
+</code></pre>
+
+<h3 id="toc_2">打印转义字符</h3>
+
+<pre><code>echo &quot;\&quot;It is a test\&quot;&quot;
+// 引号也可以省略
+echo \&quot;It is a test\&quot;
+</code></pre>
+
+<p>打印结果：</p>
+
+<pre><code>&quot;It is a test&quot;
+
+&quot;It is a test&quot;
+</code></pre>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15224936933861.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/3/31</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15224613481161.html">
+                
+                  <h1>每天学习一个shell技能（4）</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">shell基本运算符</h2>
+
+<p>基本使用：</p>
+
+<pre><code>#!/bin/bash
+
+val=`expr 2 + 2`
+echo &quot;两数之和为 : $val&quot;
+</code></pre>
+
+<ul>
+<li>表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样</li>
+<li>完整的表达式要被 ` ` 包含，注意这个字符不是常用的单引号，在 Esc 键下边</li>
+</ul>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15224613481161.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/3/31</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15223750607281.html">
+                
+                  <h1>每天学习一个shell技能  (3)</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">shell参数传递</h2>
+
+<p>我们可以在脚本执行时，向脚本传递参数</p>
+
+<pre><code>// 终端运行 脚本，并传入参数
+sh testBash.sh 0 1 2
+
+echo &quot;Shell 传递参数实例！&quot;
+
+echo &quot;\$0 =&gt; $0&quot;
+
+echo &quot;\$1 =&gt; $1&quot;
+</code></pre>
+
+<p>打印结果：</p>
+
+<pre><code>Shell 传递参数实例！
+$0 =&gt; testBash.sh
+$1 =&gt; 0
+</code></pre>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15223750607281.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2018/3/30</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -200,48 +436,6 @@ value3
 array_name(0)=value0
 </code></pre>
 
-<h3 id="toc_2">读取数组</h3>
-
-<pre><code>// 读取单个元素
-value0=${array_name[0]}
-
-//使用@符号可以获取数组中的所有元素
-echo ${array_name(@)}
-
-</code></pre>
-
-<h3 id="toc_3">获取数组的长度</h3>
-
-<pre><code>// 获取元素个数
-length=${#array_name[@]}
-
-//或者
-length=${#array_name[*]}
-
-// 获取的单个元素的长度
-item_length=${#array_name[n]}
-</code></pre>
-
-<h2 id="toc_4">Shell 注释</h2>
-
-<blockquote>
-<p>以&quot;#&quot;开头的行就是注释，会被解释器忽略。sh里没有多行注释，只能每一行加一个#号。只能像这样</p>
-</blockquote>
-
-<pre><code>#--------------------------------------------
-# 这是一个注释
-# author：菜鸟教程
-# site：www.runoob.com
-# slogan：学的不仅是技术，更是梦想！
-#--------------------------------------------
-##### 用户配置区 开始 #####
-#
-#
-# 这里可以添加脚本描述信息
-# 
-#
-##### 用户配置区 结束  #####
-</code></pre>
 
                         
                       </div>
@@ -249,7 +443,7 @@ item_length=${#array_name[n]}
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="15223210751913.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2018/3/29</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -390,31 +584,31 @@ item_length=${#array_name[n]}
 	      
 		      
 			      <li class="post">
-			        <a href="15223750607281.html">每天学习一个shell技能(3)</a>
+			        <a href="15226648731246.html">每天学习一个shell技能（7）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15223210751913.html">每天学习一个shell 技能 （2）</a>
+			        <a href="15226603064743.html">每天学习一个shell技能（6）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15181411526837.html">源码阅读 -- YYModel （一）</a>
+			        <a href="15224936933861.html">每天学习一个shell技能（5）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15200726964422.html">iOS Block 知识点拾遗</a>
+			        <a href="15224613481161.html">每天学习一个shell技能（4）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15223028228569.html">每天学习一个shell技能 （1）</a>
+			        <a href="15223750607281.html">每天学习一个shell技能  (3)</a>
 			      </li>
 		     
 		  

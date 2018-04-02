@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  DLNA DMC - kaelinda
+  每天学习一个shell技能（5） - kaelinda
   
   </title>
   
@@ -144,14 +144,14 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>DLNA DMC</h1>
+          <h1>每天学习一个shell技能（5）</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2018/1/31</span>
+          <span class="date">2018/3/31</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='ios.html'>iOS</a></span>
+              <span class="posted-in"><a href='shell.html'>shell</a></span>
            
          
           <span class="comments">
@@ -164,208 +164,66 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <h2 id="toc_0">CGUpnpControlPoint</h2>
+      <h2 id="toc_0">Shell echo命令</h2>
 
-<pre><code>
-#if !defined(_CG_UPNP_CCONTROLPOINT_H_)
-typedef void CgUpnpControlPoint;
-#endif
+<h3 id="toc_1">打印字符</h3>
 
-@class CGUpnpDevice;
-@class CGUpnpControlPoint;
-
-@protocol CGUpnpControlPointDelegate &lt;NSObject&gt;
-@optional
-// deviceUdn 设备的UDID 设备添加，更新，移除，失效的协议方法
-- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceAdded:(NSString *)deviceUdn;
-- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceUpdated:(NSString *)deviceUdn;
-- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceRemoved:(NSString *)deviceUdn;
-- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceInvalid:(NSString *)deviceUdn;
-@end
-
-/**
- * The CGUpnpControlPoint class is a wrapper class for CgUpnpControlPoint of CyberLink for C to 
- * program using only Objective-C directly on MacOSX.
- * Currently, the only basic methods are wrapped to control UPnP devices.
- */
-@interface CGUpnpControlPoint : NSObject 
-{
-    CgUpnpControlPoint *cObject;
-}
-// 子控制点
-@property(readonly) CgUpnpControlPoint *cObject;
-// 代理对象
-@property(assign) id&lt;CGUpnpControlPointDelegate&gt; delegate;
-
-// get方法
-- (CgUpnpControlPoint *)cObject;
-/**
- * Activate some background threads of the control point such as SSDP and 
- * HTTP servers to listen messages and events of UPnP. You must call this 
- * method before you can actually use a control point.
- *
- * @return TRUE if successful; otherwise FALSE
- *
- */
- // 激活DMC的子线程 SSDP HTTP服务，去监听UPnP信息和时间
- // 使用控制点之前必须要激活
-- (BOOL)start;
-/**
- * Stop some background threads of the control point such as SSDP and 
- * HTTP servers to listen messages and events of UPnP. 
- *
- * @return TRUE if successful; otherwise FALSE
- *
- */
- // 停止后台线程 和 SSDP HTTP 服务
-- (BOOL)stop;
-/**
- * Check if the controll point is running.
- *
- * @return YES if the device is started normally, otherwise NO.
- */
- // 检测DMC是否正在运行
-- (BOOL)isRunning;
-/**
- * Send a M-SEARCH request to find for the all UPnP devices of UPnP in the network.
- * The method waits for the specified MX time. Use setSsdpSearchMX:(NSInteger)aMX to change the time.
- * The method is same as searchWithST() when the ST parameter is &quot;ssdp:all&quot;.
- */
- 
- // 发送M-SEARCH 请求去发现局域网内所有的UPnP设备
-- (void)search;
-/**
- * Send a M-SEARCH request to find for the specified UPnP devices by a ST parameter in the network.
- * The method waits for the specified MX time. Use setSsdpSearchMX:(NSInteger)aMX to change the time.
- *
- * @param aST The Search Target parameter (ex. &quot;ssdp:all&quot;)
- */
-- (void)searchWithST:(NSString *)aST;
-/**
- * Set a MX parameter used for SSDP searches in seconds.
- * The parameter is used to wait for M-SEARCH responses in search() and searchWithST:(NSString *)aST.
- *
- * @param aMX Time to wait
- */
-- (void)setSsdpSearchMX:(NSInteger)aMX;
-/**
- * Get a MX parameter used for SSDP searches in seconds.
- * The parameter is used to wait for M-SEARCH responses in search() and searchWithST:(NSString *)aST.
- *
- * @return Time to wait
- */
-// 等待时间
-- (NSInteger)ssdpSearchMX;
-/**
- * Get all UPnP devices which the control point found as a NSArray object. The array has the devices as instances of CGUpnpDevice.
- * @return NSArray of CGUpnpDevice.
- */
- // DMC发现的所有设备
-- (NSArray *)devices;
-/**
- * Get a specified UPnP devices by the UDN.
- * @return CGUpnpDevice when the specified device is found, otherwise nil.
- */
- // 通过UDN 获取指定的upnp设备
-- (CGUpnpDevice *)deviceForUDN:(NSString *)udn;
+<pre><code>// 下面两行代码效果一致
+echo &quot;It is a test&quot;
+echo It is a test
 </code></pre>
 
-<h2 id="toc_1">CGUpnpAvContentDirectory</h2>
+<h3 id="toc_2">打印转义字符</h3>
 
-<pre><code>/**
- * The CGUpnpAvContentDirectory class has UPnP/AV objects of a media servers.
- *
- */
-@interface CGUpnpAvContentDirectory : NSObject
-{
-    CGUpnpAvContentManager *contentMgr;
-}
-- (CGUpnpAvContainer *)rootObject;
-- (CGUpnpAvObject *)objectForId:(NSString *)aObjectId;
-- (CGUpnpAvObject *)objectForTitlePath:(NSString *)aTitlePath;
-@end
+<pre><code>echo &quot;\&quot;It is a test\&quot;&quot;
+// 引号也可以省略
+echo \&quot;It is a test\&quot;
 </code></pre>
 
-<h2 id="toc_2">CGUpnpAvContentManager</h2>
+<p>打印结果：</p>
 
-<pre><code>/**
- * The CGUpnpAvContentDirectory class has UPnP/AV objects of a media servers.
- *
- */
-@interface CGUpnpAvContentManager : NSObject
-{
-    CGUpnpAvRoot *rootObj;
-}
-- (CGUpnpAvContainer *)rootObject;
-- (CGUpnpAvObject *)objectForId:(NSString *)aObjectId;
-- (CGUpnpAvObject *)objectForTitlePath:(NSString *)aTitlePath;
+<pre><code>&quot;It is a test&quot;
+
+&quot;It is a test&quot;
 </code></pre>
 
-<h2 id="toc_3">CGUpnpAvObject</h2>
+<span id="more"></span><!-- more -->
 
-<pre><code>
-/**
- * The CGUpnpAvObject class is a wrapper class for CgUpnpAvObject of CyberLink for C.
- */
+<h3 id="toc_3">打印 隐藏 换行</h3>
 
-#define CGUPNPAV_OBJECT_MOVIE_FILEEXT @&quot;mov&quot;
-#define CGUPNPAV_OBJECT_SOUND_FILEEXT @&quot;snd&quot;
-#define CGUPNPAV_OBJECT_IMAGE_FILEEXT @&quot;img&quot;
+<pre><code>// 显示换行
+echo -e &quot;OK! \n&quot; # -e 开启转义
+echo &quot;It it a test&quot;
+// 不显示换行
+echo -e &quot;OK! \c&quot; # -e 开启转义 \c 不换行
+echo &quot;It is a test&quot;
 
-@interface CGUpnpAvObject : CGXmlNode 
-{
-    // 父类对象
-    CGUpnpAvObject *parent;
-}
-@property(retain) id userObject;
-#if defined(TARGET_OS_IPHONE)
-@property(retain) UIImage *thumbnailImage;
-#endif
-
-// xml字符串转成对象
-+ (NSArray *)arrayWithXMLString:(NSString *)aXmlString;
-// 初始化方法
-- (id)init;
-#if  !defined(TARGET_OS_IPHONE)
-- (id)initWithXMLNode:(NSXMLElement *)aXmlNode;
-#else
-- (id)initWithXMLNode:(CgXmlNode *)aXmlNode;
-- (id)initWithMediaContent:(CgUpnpAvContent *)aMediaContent;
-#endif
-// 判断方法
-- (BOOL)isEqual:(id)anObject;
-- (BOOL)isContainer;
-- (BOOL)isItem;
-// 设置、获取父亲类
-- (void)setParent:(CGUpnpAvObject *)aParent;
-- (CGUpnpAvObject *)parent;
-// 祖先类对象
-- (CGUpnpAvObject *)ancestor;
-// 对象ID
-- (NSString *)objectId;
-// 子类对象个数
-- (NSUInteger)childCount;
-// 标题（文件名 不带后缀）
-- (NSString *)title;
-// upnp 类型
-- (NSString *)upnpClass;
-// 日期
-- (NSString *)date;
-// 相册URI
-- (NSString *)albumArtURI;
-// 设置对象ID、title等
-- (void)setObjectId:(NSString *)aValue;
-- (void)setTitle:(NSString *)aValue;
-- (void)setUpnpClass:(NSString *)aValue;
-// 是否包含某一资源对象
-- (BOOL)isObjectId:(NSString *)aObjectId;
-- (BOOL)isTitle:(NSString *)aTitle;
-- (BOOL)isUpnpClass:(NSString *)aUpnpClass;
-// 文件全名 （带后缀）
-- (NSString *)toFileNameString;
-// 艺术家 作者
-- (NSString *)artist;
 </code></pre>
+
+<h3 id="toc_4">显示结果定向至文件</h3>
+
+<pre><code>echo &quot;It is a test&quot; &gt; myfile
+</code></pre>
+
+<h3 id="toc_5">原样显示字符 不进行转义</h3>
+
+<pre><code>echo &#39;$name\&quot;&#39;
+
+// 输出结果：  $name\&quot;
+</code></pre>
+
+<h2 id="toc_6">录入参数</h2>
+
+<pre><code>read -p &quot;请输入一段文字:&quot; -n 6 -t 5 -s password
+echo &quot;\npassword is $password&quot;
+</code></pre>
+
+<ul>
+<li> -p 输入提示文字</li>
+<li>-n 输入字符长度限制(达到6位，自动结束)</li>
+<li>-t 输入限时</li>
+<li>-s 隐藏输入内容</li>
+</ul>
 
 
     
@@ -376,16 +234,16 @@ typedef void CgUpnpControlPoint;
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="15173774932057.html" 
-          title="Previous Post: DLNA DMS">&laquo; DLNA DMS</a>
+          <a href="15226603064743.html" 
+          title="Previous Post: 每天学习一个shell技能（6）">&laquo; 每天学习一个shell技能（6）</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="15172908985351.html" 
-          title="Next Post: iOS设备上实现DLNA功能 Platinum 篇">iOS设备上实现DLNA功能 Platinum 篇 &raquo;</a>
+          <a  href="15224613481161.html" 
+          title="Next Post: 每天学习一个shell技能（4）">每天学习一个shell技能（4） &raquo;</a>
       
       </p>
         </div>

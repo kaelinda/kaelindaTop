@@ -4,7 +4,7 @@
   <title><![CDATA[kaelinda]]></title>
   <link href="http://blog.csdn.net/atom.xml" rel="self"/>
   <link href="http://blog.csdn.net/"/>
-  <updated>2018-03-30T09:39:46+08:00</updated>
+  <updated>2018-04-02T18:32:21+08:00</updated>
   <id>http://blog.csdn.net/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -13,12 +13,679 @@
   <generator uri="http://www.mweb.im/">MWeb</generator>
   
   <entry>
-    <title type="html"><![CDATA[每天学习一个shell技能(3)]]></title>
+    <title type="html"><![CDATA[每天学习一个shell技能（7）]]></title>
+    <link href="http://blog.csdn.net/15226648731246.html"/>
+    <updated>2018-04-02T18:27:53+08:00</updated>
+    <id>http://blog.csdn.net/15226648731246.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">文件包含 导入文件</h2>
+
+<p>测试文件  test1.sh</p>
+
+<pre><code>#!/bin/bash
+# author:菜鸟教程
+# url:www.runoob.com
+
+url=&quot;http://www.runoob.com&quot;
+</code></pre>
+
+<p>测试文件 test2.sh</p>
+
+<pre><code>#!/bin/bash
+# author:菜鸟教程
+# url:www.runoob.com
+
+#使用 . 号来引用test1.sh 文件
+. ./test1.sh
+
+# 或者使用以下包含文件代码
+# source ./test1.sh
+
+echo &quot;菜鸟教程官网地址：$url&quot;
+</code></pre>
+
+<span id="more"></span><!-- more -->
+
+<pre><code>$ chmod +x test2.sh 
+$ ./test2.sh 
+菜鸟教程官网地址：http://www.runoob.com
+</code></pre>
+
+<h2 id="toc_1">输入/输出  重定向</h2>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[每天学习一个shell技能（6）]]></title>
+    <link href="http://blog.csdn.net/15226603064743.html"/>
+    <updated>2018-04-02T17:11:46+08:00</updated>
+    <id>http://blog.csdn.net/15226603064743.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">test</h2>
+
+<h3 id="toc_1">test文件</h3>
+
+<pre><code>if test -e ./test.sh
+then
+    echo &#39;文件已存在!&#39;
+else
+    echo &#39;文件不存在!&#39;
+fi
+</code></pre>
+
+<ul>
+<li>-e fileName ： 如果文件存在则为真</li>
+<li>-r  fileName : 如果文件存在且可读则为真</li>
+<li>-w fileName : 如果文件存在且可写则为真</li>
+<li>-x fileName : 如果文件存在且可执行则为真</li>
+<li>-s fileName: 文件存在且至少有一个字符</li>
+<li>-d fileName : 文件存在且为目录</li>
+<li>-f fileName: 文件存在且为文件</li>
+<li>-c fileName:文件存在，且为字符型特殊文件</li>
+<li>-b fileName: 如果文件存在且为块特殊文件则为真</li>
+</ul>
+
+<span id="more"></span><!-- more -->
+
+<h3 id="toc_2">test字符串</h3>
+
+<ul>
+<li>= ：等于则为真</li>
+<li>!= :不等于则为真</li>
+<li>-z : 字符串长度为零则为真</li>
+<li>-n : 字符串长度不为零则为真</li>
+</ul>
+
+<h3 id="toc_3">数值测试</h3>
+
+<ul>
+<li>-eq :等于</li>
+<li>-ne : 不等于</li>
+<li>-gt:大于</li>
+<li>-lt:小于</li>
+<li>-ge:大于等于</li>
+<li>-le: 小于等于</li>
+</ul>
+
+<h2 id="toc_4">流程控制(条件)</h2>
+
+<h3 id="toc_5">if</h3>
+
+<pre><code>if condition
+then
+    command1 
+    command2
+    ...
+    commandN 
+fi
+</code></pre>
+
+<h3 id="toc_6">if else</h3>
+
+<pre><code>if condition
+then
+    command1 
+    command2
+    ...
+    commandN
+else
+    command
+fi
+</code></pre>
+
+<h3 id="toc_7">if else-if else</h3>
+
+<pre><code>if condition1
+then
+    command1
+elif condition2 
+then 
+    command2
+else
+    commandN
+fi
+</code></pre>
+
+<p>实例 用法：</p>
+
+<pre><code>a=10
+b=20
+if [ $a == $b ]
+then
+   echo &quot;a 等于 b&quot;
+elif [ $a -gt $b ]
+then
+   echo &quot;a 大于 b&quot;
+elif [ $a -lt $b ]
+then
+   echo &quot;a 小于 b&quot;
+else
+   echo &quot;没有符合的条件&quot;
+fi
+</code></pre>
+
+<h2 id="toc_8">控制流（for 循环）</h2>
+
+<pre><code>for var in item1 item2 ... itemN
+do
+    command1
+    command2
+    ...
+    commandN
+done
+</code></pre>
+
+<p>改成一行：</p>
+
+<pre><code>for var in item1 item2 ... itemN; do command1; command2… done;
+</code></pre>
+
+<h2 id="toc_9">while</h2>
+
+<pre><code>while condition
+do
+    command
+done
+</code></pre>
+
+<pre><code>int=1
+while(( $int&lt;=5 ))
+do
+    echo $int
+    let &quot;int++&quot;
+done
+</code></pre>
+
+<p>无限循环：</p>
+
+<pre><code>while :
+do
+    command
+done
+
+// 或者
+while true
+do
+    command
+done
+
+// 或者
+for (( ; ; ))
+
+</code></pre>
+
+<h2 id="toc_10">until 循环</h2>
+
+<pre><code>until condition
+do
+    command
+done
+</code></pre>
+
+<h2 id="toc_11">case in</h2>
+
+<pre><code>case 值 in
+模式1)
+    command1
+    command2
+    ...
+    commandN
+    ;;
+模式2）
+    command1
+    command2
+    ...
+    commandN
+    ;;
+esac
+</code></pre>
+
+<h2 id="toc_12">跳出循环</h2>
+
+<h3 id="toc_13">break</h3>
+
+<blockquote>
+<p>break命令允许跳出所有循环（终止执行后面的所有循环）</p>
+</blockquote>
+
+<h3 id="toc_14">continue</h3>
+
+<blockquote>
+<p>continue命令与break命令类似，只有一点差别，它不会跳出所有循环，仅仅跳出当前循环</p>
+</blockquote>
+
+<pre><code>while :
+do
+    echo -n &quot;输入 1 到 5 之间的数字: &quot;
+    read aNum
+    case $aNum in
+        1|2|3|4|5) echo &quot;你输入的数字为 $aNum!&quot;
+        ;;
+        *) echo &quot;你输入的数字不是 1 到 5 之间的!&quot;
+            continue
+            echo &quot;游戏结束&quot;
+        ;;
+    esac
+done
+</code></pre>
+
+<h3 id="toc_15">esac</h3>
+
+<blockquote>
+<p>case的语法和C family语言差别很大，它需要一个esac（就是case反过来）作为结束标记，每个case分支用右圆括号，用两个分号表示break。</p>
+</blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[每天学习一个shell技能（5）]]></title>
+    <link href="http://blog.csdn.net/15224936933861.html"/>
+    <updated>2018-03-31T18:54:53+08:00</updated>
+    <id>http://blog.csdn.net/15224936933861.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">Shell echo命令</h2>
+
+<h3 id="toc_1">打印字符</h3>
+
+<pre><code>// 下面两行代码效果一致
+echo &quot;It is a test&quot;
+echo It is a test
+</code></pre>
+
+<h3 id="toc_2">打印转义字符</h3>
+
+<pre><code>echo &quot;\&quot;It is a test\&quot;&quot;
+// 引号也可以省略
+echo \&quot;It is a test\&quot;
+</code></pre>
+
+<p>打印结果：</p>
+
+<pre><code>&quot;It is a test&quot;
+
+&quot;It is a test&quot;
+</code></pre>
+
+<span id="more"></span><!-- more -->
+
+<h3 id="toc_3">打印 隐藏 换行</h3>
+
+<pre><code>// 显示换行
+echo -e &quot;OK! \n&quot; # -e 开启转义
+echo &quot;It it a test&quot;
+// 不显示换行
+echo -e &quot;OK! \c&quot; # -e 开启转义 \c 不换行
+echo &quot;It is a test&quot;
+
+</code></pre>
+
+<h3 id="toc_4">显示结果定向至文件</h3>
+
+<pre><code>echo &quot;It is a test&quot; &gt; myfile
+</code></pre>
+
+<h3 id="toc_5">原样显示字符 不进行转义</h3>
+
+<pre><code>echo &#39;$name\&quot;&#39;
+
+// 输出结果：  $name\&quot;
+</code></pre>
+
+<h2 id="toc_6">录入参数</h2>
+
+<pre><code>read -p &quot;请输入一段文字:&quot; -n 6 -t 5 -s password
+echo &quot;\npassword is $password&quot;
+</code></pre>
+
+<ul>
+<li> -p 输入提示文字</li>
+<li>-n 输入字符长度限制(达到6位，自动结束)</li>
+<li>-t 输入限时</li>
+<li>-s 隐藏输入内容</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[每天学习一个shell技能（4）]]></title>
+    <link href="http://blog.csdn.net/15224613481161.html"/>
+    <updated>2018-03-31T09:55:48+08:00</updated>
+    <id>http://blog.csdn.net/15224613481161.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">shell基本运算符</h2>
+
+<p>基本使用：</p>
+
+<pre><code>#!/bin/bash
+
+val=`expr 2 + 2`
+echo &quot;两数之和为 : $val&quot;
+</code></pre>
+
+<ul>
+<li>表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样</li>
+<li>完整的表达式要被 ` ` 包含，注意这个字符不是常用的单引号，在 Esc 键下边</li>
+</ul>
+
+<span id="more"></span><!-- more -->
+
+<h3 id="toc_1">算术运算符</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">运算符</th>
+<th style="text-align: center">说明</th>
+<th style="text-align: center">举例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">+</td>
+<td style="text-align: center">加法</td>
+<td style="text-align: center">`expr $a + $b` 结果为 30。</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+<td style="text-align: center">减法</td>
+<td style="text-align: center">`expr $a - $b` 结果为 -10。</td>
+</tr>
+<tr>
+<td style="text-align: center">*</td>
+<td style="text-align: center">乘法</td>
+<td style="text-align: center">`expr $a * $b` 结果为  200。</td>
+</tr>
+<tr>
+<td style="text-align: center">/</td>
+<td style="text-align: center">除法</td>
+<td style="text-align: center">`expr $b / $a` 结果为 2。</td>
+</tr>
+<tr>
+<td style="text-align: center">%</td>
+<td style="text-align: center">取余</td>
+<td style="text-align: center">`expr $b % $a` 结果为 0。</td>
+</tr>
+<tr>
+<td style="text-align: center">=</td>
+<td style="text-align: center">赋值</td>
+<td style="text-align: center">a=$b 将把变量 b 的值赋给 a。</td>
+</tr>
+<tr>
+<td style="text-align: center">==</td>
+<td style="text-align: center">相等</td>
+<td style="text-align: center">[ \(a == \)b ] 返回 false。</td>
+</tr>
+<tr>
+<td style="text-align: center">!=</td>
+<td style="text-align: center">不相等</td>
+<td style="text-align: center">[ \(a != \)b ] 返回 true。</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>条件表达式要放在方括号之间，并且要有空格，例如: [\(a==\)b] 是错误的，必须写成 [ \(a == \)b ]</p>
+</blockquote>
+
+<pre><code>a=10
+b=20
+
+val=`expr $a + $b`
+echo &quot;a + b : $val&quot;
+
+val=`expr $a - $b`
+echo &quot;a - b : $val&quot;
+
+val=`expr $a \* $b`
+echo &quot;a * b : $val&quot;
+
+val=`expr $b / $a`
+echo &quot;b / a : $val&quot;
+
+val=`expr $b % $a`
+echo &quot;b % a : $val&quot;
+
+if [ $a == $b ]
+then
+   echo &quot;a 等于 b&quot;
+fi
+if [ $a != $b ]
+then
+   echo &quot;a 不等于 b&quot;
+fi
+</code></pre>
+
+<h3 id="toc_2">关系运算符</h3>
+
+<ul>
+<li>-eq: 是否等于</li>
+<li>-ne: 是否不等于</li>
+<li>-gt: 是否大于</li>
+<li>-lt: 是否小于</li>
+<li>-ge: 是否大于等于</li>
+<li>-le: 是否小于等于</li>
+</ul>
+
+<hr/>
+
+<blockquote>
+<p>EQ 就是 EQUAL等于<br/>
+NE 就是 NOT EQUAL不等于 <br/>
+GT 就是 GREATER THAN大于　 <br/>
+LT 就是 LESS THAN小于 <br/>
+GE 就是 GREATER THAN OR EQUAL 大于等于 <br/>
+LE 就是 LESS THAN OR EQUAL 小于等于</p>
+</blockquote>
+
+<hr/>
+
+<pre><code>a=10
+b=20
+
+if [ $a -eq $b ]
+then
+   echo &quot;$a -eq $b : a 等于 b&quot;
+else
+   echo &quot;$a -eq $b: a 不等于 b&quot;
+fi
+if [ $a -ne $b ]
+then
+   echo &quot;$a -ne $b: a 不等于 b&quot;
+else
+   echo &quot;$a -ne $b : a 等于 b&quot;
+fi
+if [ $a -gt $b ]
+then
+   echo &quot;$a -gt $b: a 大于 b&quot;
+else
+   echo &quot;$a -gt $b: a 不大于 b&quot;
+fi
+if [ $a -lt $b ]
+then
+   echo &quot;$a -lt $b: a 小于 b&quot;
+else
+   echo &quot;$a -lt $b: a 不小于 b&quot;
+fi
+if [ $a -ge $b ]
+then
+   echo &quot;$a -ge $b: a 大于或等于 b&quot;
+else
+   echo &quot;$a -ge $b: a 小于 b&quot;
+fi
+if [ $a -le $b ]
+then
+   echo &quot;$a -le $b: a 小于或等于 b&quot;
+else
+   echo &quot;$a -le $b: a 大于 b&quot;
+fi
+</code></pre>
+
+<h3 id="toc_3">布尔运算符</h3>
+
+<ul>
+<li>!: 非运算</li>
+<li>-o: 或运算</li>
+<li>-a: 与运算</li>
+</ul>
+
+<h3 id="toc_4">逻辑运算符</h3>
+
+<ul>
+<li>&amp;&amp;：与</li>
+<li>||：或</li>
+</ul>
+
+<h3 id="toc_5">字符串运算</h3>
+
+<pre><code>a=&quot;abc&quot;
+b=&quot;efg&quot;
+
+if [ $a = $b ]
+then
+   echo &quot;$a = $b : a 等于 b&quot;
+else
+   echo &quot;$a = $b: a 不等于 b&quot;
+fi
+if [ $a != $b ]
+then
+   echo &quot;$a != $b : a 不等于 b&quot;
+else
+   echo &quot;$a != $b: a 等于 b&quot;
+fi
+if [ -z $a ]
+then
+   echo &quot;-z $a : 字符串长度为 0&quot;
+else
+   echo &quot;-z $a : 字符串长度不为 0&quot;
+fi
+if [ -n $a ]
+then
+   echo &quot;-n $a : 字符串长度不为 0&quot;
+else
+   echo &quot;-n $a : 字符串长度为 0&quot;
+fi
+if [ $a ]
+then
+   echo &quot;$a : 字符串不为空&quot;
+else
+   echo &quot;$a : 字符串为空&quot;
+fi
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[每天学习一个shell技能  (3)]]></title>
     <link href="http://blog.csdn.net/15223750607281.html"/>
     <updated>2018-03-30T09:57:40+08:00</updated>
     <id>http://blog.csdn.net/15223750607281.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">shell参数传递</h2>
+
+<p>我们可以在脚本执行时，向脚本传递参数</p>
+
+<pre><code>// 终端运行 脚本，并传入参数
+sh testBash.sh 0 1 2
+
+echo &quot;Shell 传递参数实例！&quot;
+
+echo &quot;\$0 =&gt; $0&quot;
+
+echo &quot;\$1 =&gt; $1&quot;
+</code></pre>
+
+<p>打印结果：</p>
+
+<pre><code>Shell 传递参数实例！
+$0 =&gt; testBash.sh
+$1 =&gt; 0
+</code></pre>
+
+<span id="more"></span><!-- more -->
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">参数处理</th>
+<th style="text-align: center">参数说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">$#</td>
+<td style="text-align: center">传递到脚本的参数个数</td>
+</tr>
+<tr>
+<td style="text-align: center">$*</td>
+<td style="text-align: center">以一个单字符串显示所有向脚本传递的参数</td>
+</tr>
+<tr>
+<td style="text-align: center">$$</td>
+<td style="text-align: center">脚本运行的当前进程ID号</td>
+</tr>
+<tr>
+<td style="text-align: center">$!</td>
+<td style="text-align: center">后台运行的最后一个进程的ID号</td>
+</tr>
+<tr>
+<td style="text-align: center">$@</td>
+<td style="text-align: center">与$*相同，但是使用时加引号，并在引号中返回每个参数</td>
+</tr>
+<tr>
+<td style="text-align: center">$-</td>
+<td style="text-align: center">显示Shell使用的当前选项</td>
+</tr>
+<tr>
+<td style="text-align: center">$?</td>
+<td style="text-align: center">显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>// 运行脚本
+sh testBash.sh 0 1 2
+</code></pre>
+
+<pre><code>echo &quot;\$0 =&gt; $0&quot;
+
+echo &quot;\$1 =&gt; $1&quot;
+
+echo &quot;\$@ =&gt; $@&quot;
+
+echo &quot;\$* =&gt; $*&quot;
+
+echo &quot;\$\$ =&gt; $$&quot;
+
+echo &quot;\$! =&gt; $!&quot;
+
+echo &quot;\$- =&gt; $-&quot;
+
+echo &quot;\$? =&gt; $?&quot;
+
+echo &quot;\$*传递的参数作为一个字符串显示：$*&quot;
+
+echo &quot;\$@是作为一个数组返回 =&gt; $@&quot;
+</code></pre>
+
+<p>打印结果：</p>
+
+<pre><code>$0 =&gt; testBash.sh
+$1 =&gt; 0
+$@ =&gt; 0 1 2
+$* =&gt; 0 1 2
+$$ =&gt; 18859
+$! =&gt; 
+$- =&gt; hB
+$? =&gt; 0
+$*传递的参数作为一个字符串显示：0 1 2
+$@是作为一个数组返回 =&gt; 0 1 2
+</code></pre>
 
 ]]></content>
   </entry>
@@ -44,6 +711,8 @@ value3
 // 单独定义某个分量的值
 array_name(0)=value0
 </code></pre>
+
+<span id="more"></span><!-- more -->
 
 <h3 id="toc_2">读取数组</h3>
 
@@ -2069,315 +2738,6 @@ const actions = {
 }
 </code></pre></li>
 </ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[佛祖镇楼 bug辟易]]></title>
-    <link href="http://blog.csdn.net/15145327105445.html"/>
-    <updated>2017-12-29T15:31:50+08:00</updated>
-    <id>http://blog.csdn.net/15145327105445.html</id>
-    <content type="html"><![CDATA[
-<pre><code class="language-Objective-C">//                            _ooOoo_
-//                           o8888888o
-//                           88&quot; . &quot;88
-//                           (| -_- |)
-//                            O\ = /O
-//                        ____/`---&#39;\____
-//                      .   &#39; \\| |// `.
-//                       / \\||| : |||// \
-//                     / _||||| -:- |||||- \
-//                       | | \\\ - /// | |
-//                     | \_| &#39;&#39;\---/&#39;&#39; | |
-//                      \ .-\__ `-` ___/-. /
-//                   ___`. .&#39; /--.--\ `. . __
-//                .&quot;&quot; &#39;&lt; `.___\_&lt;|&gt;_/___.&#39; &gt;&#39;&quot;&quot;.
-//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
-//                 \ \ `-. \_ __\ /__ _/ .-` / /
-//         ======`-.____`-.___\_____/___.-`____.-&#39;======
-//                            `=---=&#39;
-//
-//         .............................................
-//                  佛祖镇楼                  BUG辟易
-//          佛曰:
-//                  写字楼里写字间，写字间里程序员；
-//                  程序人员写程序，又拿程序换酒钱。
-//                  酒醒只在网上坐，酒醉还来网下眠；
-//                  酒醉酒醒日复日，网上网下年复年。
-//                  但愿老死电脑间，不愿鞠躬老板前；
-//                  奔驰宝马贵者趣，公交自行程序员。
-//                  别人笑我忒疯癫，我笑自己命太贱；
-//                  不见满街漂亮妹，哪个归得程序员？
-</code></pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mac app 推荐]]></title>
-    <link href="http://blog.csdn.net/15115206889632.html"/>
-    <updated>2017-11-24T18:51:28+08:00</updated>
-    <id>http://blog.csdn.net/15115206889632.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">开发工具篇</h2>
-
-<h3 id="toc_1">Postman （Chrome 工具）</h3>
-
-<p><img src="media/15115206889632/15115207580615.jpg" alt="Postman_Icon"/><br/>
-这款APP 最初是 谷歌浏览器的插件...</p>
-
-<h3 id="toc_2">Gif Brewery （AppStore 免费）</h3>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fmpkcy93u9j307206oab2.jpg" alt="Gif Brewery"/><br/>
-这是录制gif文件的APP，有了它再也不用为制作gif发愁了</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Xcode 代码块]]></title>
-    <link href="http://blog.csdn.net/15115332074317.html"/>
-    <updated>2017-11-24T22:20:07+08:00</updated>
-    <id>http://blog.csdn.net/15115332074317.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">一、创建自定义代码块的好处</h2>
-
-<p>由于项目、所用语言或者编码习惯的差别，不同的程序员习惯用的代码片段也不尽相同，这就有了自定义代码片段的需求，好在Xcode是支持该功能的。他的好处是使程序员以最快的速度输入很常用的代码片段，提高编程效率。</p>
-
-<p>该功能是从Xcode4开始引入的。在Xcode中的位置如下图所示：</p>
-
-<p>如上图，右边系统就定义很对的代码块，包括一些我们很常用的@interface 和@implementation的声明和实现。</p>
-
-<span id="more"></span><!-- more -->
-
-<h2 id="toc_1">二、自定义我们常用的代码块步骤</h2>
-
-<p>Ｅｇ：@property属性的定义是Cocoa程序开发中很常用的一个功能，下面就以此为例说明如何自定义代码片段。</p>
-
-<ol>
-<li>书写代码片段</li>
-</ol>
-
-<p>在声明@property属性的地方写下如下语句：</p>
-
-<p>@property (nonatomic, retain) &lt;#type#&gt; &lt;#name#&gt;;</p>
-
-<p>这里&lt;#type#&gt;和&lt;#name#&gt;起什么作用可以在后面的使用效果中看出来。</p>
-
-<ol>
-<li>新建代码片段</li>
-</ol>
-
-<p>１）点击Code Snippet Library</p>
-
-<p>2)选择User 用户自定义</p>
-
-<p>3）出现如下空白界面</p>
-
-<p>4）把刚编辑好的代码选中，拖到上面的空白处，出现如下的编辑窗口</p>
-
-<p>图中从上到下的含义依次是：</p>
-
-<p>①Title</p>
-
-<p>代码片段的标题</p>
-
-<p>②Summary</p>
-
-<p>代码片段的描述文字</p>
-
-<p>③Platform</p>
-
-<p>可以使用代码片段的平台，有IOS/OS X/All三个选项</p>
-
-<p>④Language</p>
-
-<p>可以在哪些语言中使用该代码片段</p>
-
-<p>⑤Completion Shortcut</p>
-
-<p>代码片段的快捷方式，比如本文开头用到的dowhile，在这里，把属性设置的快捷方式设为property</p>
-
-<p>⑥Completion Scopes</p>
-
-<p>可以在哪些文件中使用当前代码片段，比如全部位置，头文件中等，当然可以添加多个支持的位置。</p>
-
-<p>最后的一个大得空白区域是对代码片段的效果预览。</p>
-
-<p>一切设置完成以后，点击该菜单右下角的Done按钮，新建工作就结束了。</p>
-
-<p>5）验证效果：我在代码里面输入”pro“ 即出现如下提示：（直接点击Enter键，一整条语句就自动补齐了）</p>
-
-<h2 id="toc_2">三、代码片段的备份</h2>
-
-<p>Xcode中的代码片段默认放在下面的目录中：</p>
-
-<p>~/Library/Developer/Xcode/UserData/CodeSnippets</p>
-
-<p>我们可以将目录中的代码片段备份，也可以将其直接拷出来放在不同的电脑上使用，因此多台电脑之间的协作也毫无压力。</p>
-
-<h2 id="toc_3">福利传送门</h2>
-
-<p>常用的：<br/>
-1.strong：<br/><br/>
-<code><br/>
-@property (nonatomic,strong) &lt;#Class#&gt; *&lt;#object#&gt;;<br/>
-</code></p>
-
-<p>2.weak：<br/><br/>
-<code>@property (nonatomic,weak) &lt;#Class#&gt; *&lt;#object#&gt;;</code><br/><br/>
-3.copy：<br/><br/>
-<code>@property (nonatomic,copy) NSString *&lt;#string#&gt;;</code><br/>
-4.assign：<br/><br/>
-<code>@property (nonatomic,assign) &lt;#Class#&gt; &lt;#property#&gt;;</code><br/><br/>
-5.delegate：<br/><br/>
-<code>@property (nonatomic,weak) id&lt;&lt;#protocol#&gt;&gt; &lt;#delegate#&gt;;</code><br/>
-6.block：<br/><br/>
-<code>@property (nonatomic,copy) &lt;#Block#&gt; &lt;#block#&gt;;</code><br/><br/>
-7.mark：<br/><br/>
-<code>#pragma mark &lt;#mark#&gt;</code><br/><br/>
-8.ReUseCell：<br/>
-```static NSString rid=&lt;#rid#&gt;;  <br/>
- &lt;#Class#&gt; *cell=<a href="">tableView dequeueReusableCellWithIdentifier:rid</a>;  <br/>
- if(cell==nil){  </p>
-
-<p> cell=<a href="">[&lt;#Class#&gt; alloc</a> initWithStyle:UITableViewCellStyleDefault      reuseIdentifier:rid];  <br/>
- }  <br/>
- return cell;<br/>
-<code><br/>
-9.MainGCD：<br/>
-</code><br/>
-dispatch_async(dispatch_get_main_queue(), <sup>{  </sup><br/>
-&lt;#code#&gt;  <br/>
-  });<br/>
-<code><br/>
-10.AfterGCD：<br/>
-</code><br/>
- dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(&lt;#delayInSeconds#&gt; * NSEC_PER_SEC)), dispatch_get_main_queue(), <sup>{  </sup><br/>
-&lt;#code to be executed after a specified delay#&gt;  <br/>
-});<br/>
-<code><br/>
-11.OnceGCD：<br/>
-</code><br/>
- static dispatch_once_t onceToken;  <br/>
- dispatch_once(&amp;onceToken, <sup>{  </sup><br/>
-&lt;#code to be executed once#&gt;  <br/>
- });<br/>
-```</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ES6 笔记（常量&&变量）]]></title>
-    <link href="http://blog.csdn.net/15137627946753.html"/>
-    <updated>2017-12-20T17:39:54+08:00</updated>
-    <id>http://blog.csdn.net/15137627946753.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">变量&amp;&amp;常量</h2>
-
-<h3 id="toc_1">新特性</h3>
-
-<ol>
-<li><p>ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p></li>
-<li><p>变量提升：var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined；为了纠正这种现象，let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。</p></li>
-<li><p>暂时性死区：在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”；</p></li>
-</ol>
-
-<span id="more"></span><!-- more -->
-
-<pre><code>```
-var tmp = 123;
-
-if (true) {
-tmp = &#39;abc&#39;; // ReferenceError  死区
-let tmp;
-}
-```
-
-&gt; let不允许在相同作用域内，重复声明同一个变量。
-</code></pre>
-
-<h3 id="toc_2">块级作用域</h3>
-
-<ul>
-<li>内层作用域可以定义外层作用域的同名变量。</li>
-<li>内部作用域  重名变量  不会影响，</li>
-<li>ES6 引入了块级作用域，明确允许在块级作用域之中声明函数（ES5不允许）。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。</li>
-<li>函数声明类似于var，即会提升到全局作用域或函数作用域的头部。</li>
-<li>函数声明还会提升到所在的块级作用域的头部。</li>
-</ul>
-
-<blockquote>
-<p>块级作用域是一个语句，将多个操作封装在一起，没有返回值。<br/>
-在块级作用域之前加上do，使它变为do表达式。会得到整个块级作用域的返回值</p>
-</blockquote>
-
-<h3 id="toc_3">const:</h3>
-
-<ul>
-<li>const声明一个只读的常量。一旦声明，常量的值就不能改变。</li>
-<li>const一旦声明变量，就必须立即初始化，不能留到以后赋值。</li>
-<li>const的作用域与let命令相同：只在声明所在的块级作用域内有效。</li>
-<li><p>const命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。</p></li>
-<li><p>const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动</p></li>
-<li><p>对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。</p></li>
-<li><p>如果真的想将对象冻结，应该使用Object.freeze方法</p></li>
-</ul>
-
-<pre><code class="language-JavaScript">//冻结对象属性：
-var constantize = (obj) =&gt; {
-  Object.freeze(obj);
-  Object.keys(obj).forEach( (key, i) =&gt; {
-    if ( typeof obj[key] === &#39;object&#39; ) {
-      constantize( obj[key] );
-    }
-  });
-};
-</code></pre>
-
-<h3 id="toc_4">变量声明：</h3>
-
-<blockquote>
-<p>ES5 只有两种声明变量的方法：var命令和function命令。ES6除了添加let和const命令，后面章节还会提到，另外两种声明变量的方法：import命令和class命令。所以，ES6 一共有6种声明变量的方法</p>
-</blockquote>
-
-<ul>
-<li>顶层对象的属性：
-ES5中 顶层对象的属性  和 全局变量是一回事儿；全局变量是静态创建，而对象属性是动态创建的；不合理。
-ES6中 var function 声明的全局变量 依然是顶层对象的属性；但是 let const class声明的全局变量 不属于顶层对象的属性。</li>
-</ul>
-
-<!-- more -->
-
-<ul>
-<li>全局环境中，this会返回顶层对象。但是，Node模块和ES6模块中，this返回的是当前模块。</li>
-<li>函数里面的this，如果函数不是作为对象的方法运行，而是单纯作为函数运行，this会指向顶层对象。但是，严格模式下，这时this会返回undefined。</li>
-<li>不管是严格模式，还是普通模式，new Function(&#39;return this&#39;)()，总是会返回全局对象。但是，如果浏览器用了CSP（Content Security Policy，内容安全政策），那么eval、new Function这些方法都可能无法使用。</li>
-</ul>
-
-<pre><code class="language-JavaScript">// 方法一
-(typeof window !== &#39;undefined&#39;
-   ? window
-   : (typeof process === &#39;object&#39; &amp;&amp;
-      typeof require === &#39;function&#39; &amp;&amp;
-      typeof global === &#39;object&#39;)
-     ? global
-     : this);
-
-// 方法二
-var getGlobal = function () {
-  if (typeof self !== &#39;undefined&#39;) { return self; }
-  if (typeof window !== &#39;undefined&#39;) { return window; }
-  if (typeof global !== &#39;undefined&#39;) { return global; }
-  throw new Error(&#39;unable to locate global object&#39;);
-};
-</code></pre>
-
-<p>// ES6模块的写法<br/>
-import getGlobal from &#39;system.global&#39;;<br/>
-const global = getGlobal();</p>
 
 ]]></content>
   </entry>

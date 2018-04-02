@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  每天学习一个shell技能(3) - kaelinda
+  每天学习一个shell技能  (3) - kaelinda
   
   </title>
   
@@ -144,7 +144,7 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>每天学习一个shell技能(3)</h1>
+          <h1>每天学习一个shell技能  (3)</h1>
      
         <div class="read-more clearfix">
           <span class="date">2018/3/30</span>
@@ -166,6 +166,106 @@
       <div class="article-content">
       <h2 id="toc_0">shell参数传递</h2>
 
+<p>我们可以在脚本执行时，向脚本传递参数</p>
+
+<pre><code>// 终端运行 脚本，并传入参数
+sh testBash.sh 0 1 2
+
+echo &quot;Shell 传递参数实例！&quot;
+
+echo &quot;\$0 =&gt; $0&quot;
+
+echo &quot;\$1 =&gt; $1&quot;
+</code></pre>
+
+<p>打印结果：</p>
+
+<pre><code>Shell 传递参数实例！
+$0 =&gt; testBash.sh
+$1 =&gt; 0
+</code></pre>
+
+<span id="more"></span><!-- more -->
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">参数处理</th>
+<th style="text-align: center">参数说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">$#</td>
+<td style="text-align: center">传递到脚本的参数个数</td>
+</tr>
+<tr>
+<td style="text-align: center">$*</td>
+<td style="text-align: center">以一个单字符串显示所有向脚本传递的参数</td>
+</tr>
+<tr>
+<td style="text-align: center">$$</td>
+<td style="text-align: center">脚本运行的当前进程ID号</td>
+</tr>
+<tr>
+<td style="text-align: center">$!</td>
+<td style="text-align: center">后台运行的最后一个进程的ID号</td>
+</tr>
+<tr>
+<td style="text-align: center">$@</td>
+<td style="text-align: center">与$*相同，但是使用时加引号，并在引号中返回每个参数</td>
+</tr>
+<tr>
+<td style="text-align: center">$-</td>
+<td style="text-align: center">显示Shell使用的当前选项</td>
+</tr>
+<tr>
+<td style="text-align: center">$?</td>
+<td style="text-align: center">显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>// 运行脚本
+sh testBash.sh 0 1 2
+</code></pre>
+
+<pre><code>echo &quot;\$0 =&gt; $0&quot;
+
+echo &quot;\$1 =&gt; $1&quot;
+
+echo &quot;\$@ =&gt; $@&quot;
+
+echo &quot;\$* =&gt; $*&quot;
+
+echo &quot;\$\$ =&gt; $$&quot;
+
+echo &quot;\$! =&gt; $!&quot;
+
+echo &quot;\$- =&gt; $-&quot;
+
+echo &quot;\$? =&gt; $?&quot;
+
+echo &quot;\$*传递的参数作为一个字符串显示：$*&quot;
+
+echo &quot;\$@是作为一个数组返回 =&gt; $@&quot;
+</code></pre>
+
+<p>打印结果：</p>
+
+<pre><code>$0 =&gt; testBash.sh
+$1 =&gt; 0
+$@ =&gt; 0 1 2
+$* =&gt; 0 1 2
+$$ =&gt; 18859
+$! =&gt; 
+$- =&gt; hB
+$? =&gt; 0
+$*传递的参数作为一个字符串显示：0 1 2
+$@是作为一个数组返回 =&gt; 0 1 2
+</code></pre>
+
 
     
 
@@ -174,6 +274,9 @@
       <div class="row">
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
+      
+          <a href="15224613481161.html" 
+          title="Previous Post: 每天学习一个shell技能（4）">&laquo; 每天学习一个shell技能（4）</a>
       
         </p>
         </div>
@@ -266,31 +369,31 @@
 	      
 		      
 			      <li class="post">
-			        <a href="15223750607281.html">每天学习一个shell技能(3)</a>
+			        <a href="15226648731246.html">每天学习一个shell技能（7）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15223210751913.html">每天学习一个shell 技能 （2）</a>
+			        <a href="15226603064743.html">每天学习一个shell技能（6）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15181411526837.html">源码阅读 -- YYModel （一）</a>
+			        <a href="15224936933861.html">每天学习一个shell技能（5）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15200726964422.html">iOS Block 知识点拾遗</a>
+			        <a href="15224613481161.html">每天学习一个shell技能（4）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15223028228569.html">每天学习一个shell技能 （1）</a>
+			        <a href="15223750607281.html">每天学习一个shell技能  (3)</a>
 			      </li>
 		     
 		  

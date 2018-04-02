@@ -144,6 +144,253 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
+                <a class="clearlink" href="15193931556096.html">
+                
+                  <h1>iOS APP性能优化方向分析</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">网络性能</h2>
+
+<ul>
+<li>减少不必要的网络请求</li>
+<li>server端数据查询算法优化</li>
+<li>DNS解析</li>
+</ul>
+
+<h2 id="toc_1">内存性能</h2>
+
+<ul>
+<li>各种循环引用 导致内存泄漏</li>
+<li>Core Animation 对象手动释放</li>
+<li>UIWebView 内存泄漏</li>
+</ul>
+
+<h2 id="toc_2">主线程阻塞</h2>
+
+<ul>
+<li>网络同步请求</li>
+<li>I/O操作</li>
+<li>大量运算</li>
+<li>解压、压缩
+...</li>
+</ul>
+
+<h2 id="toc_3">离屏渲染</h2>
+
+<p>离屏渲染：GPU在当前缓存区之外另外的去开辟空间进行渲染，同样的一帧图片 会被渲染两次甚至多次</p>
+
+<p>：uiview.layer.cornerRadius 系统方法切圆角---&gt;&gt;解决方案：Runtime + 画图</p>
+
+<h2 id="toc_4">图片处理</h2>
+
+<ul>
+<li>imageWithName：加载到缓存中可重复使用</li>
+<li>initWithContentsOfFile: 加载一次不会存到缓存中</li>
+</ul>
+
+<h2 id="toc_5">其他</h2>
+
+<ul>
+<li>加速启动</li>
+<li>避免日期格式的转换</li>
+</ul>
+
+<h3 id="toc_6">优化瀑布流中 网络图片 加载导致UI卡顿问题</h3>
+
+<blockquote>
+<p>1、异步下载图片<br/>
+2、异步加载图片成二进制 NSData  （<strong>这一步是关键</strong>） <br/>
+3、UIImageView 加载二进制形式的NSData</p>
+</blockquote>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2018/2/23</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15200715202464.html">
+                
+                  <h1>iOS 离屏渲染</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">触发方式</h2>
+
+<p>设置以下方式会触发离屏渲染：</p>
+
+<ul>
+<li>shouldRasterize（光栅化）</li>
+<li>masks（遮罩）</li>
+<li>shadows（阴影）</li>
+<li>edge antialiasing（抗锯齿）</li>
+<li>group opacity（不透明）</li>
+<li>复杂形状设置圆角等</li>
+<li>渐变 </li>
+</ul>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2018/3/3</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15198022156700.html">
+                
+                  <h1>iOS 面试题总结</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">基础篇</h2>
+
+<h3 id="toc_1">内存管理 ：assign copy strong weak...</h3>
+
+<ul>
+<li>简述OC中内存管理机制,与retain配对使用的方法是dealloc还是release，为什么？</li>
+</ul>
+
+<blockquote>
+<p>管理机制：<br/>
+  使用了一种叫做 <strong>引用计数</strong> 的机制来管理内存中的对象。OC中每个对象都对应着他们自己的引用计数，引用计数可以理解为一个整数计数器，当使用alloc方法创建对象的时候，持有计数会自动设置为1。当你向一个对象发送retain消息 时，持有计数数值会增加1。相反，当你像一个对象发送release消息时，持有计数数值会减小1。当对象的持有计数变为0的时候，对象会释放自己所占用的内存</p>
+</blockquote>
+
+<ul>
+<li><p>修饰词的作用</p>
+
+<ul>
+<li>retain(引用计数加1)-&gt;release（引用计数减1）</li>
+<li>alloc（申请内存空间）-&gt;dealloc(释放内存空间)</li>
+<li>readwrite: 表示既有getter，也有setter   (默认)</li>
+<li>readonly: 表示只有getter，没有setter</li>
+<li>nonatomic:不考虑线程安全</li>
+<li>atomic:线程操作安全   （默认）</li>
+<li>retain: release旧的对象，将旧对象的值赋予输入对象，再提高输入对象的索引计数为1</li>
+<li>assign: 简单赋值，不更改索引计数    （默认）</li>
+<li>copy: 其实是建立了一个相同的对象,地址不同（retain：指针拷贝  copy：内容拷贝）</li>
+<li>strong:（ARC下的）和（MRC）retain一样    （默认）</li>
+<li>weak:（ARC下的）和（MRC）assign一样， weak当指向的内存释放掉后自动nil化，防止野指针</li>
+<li>unsafe_unretained 声明一个弱引用，但是不会自动nil化，也就是说，如果所指向的内存区域被释放了，这个指针就是一个野指针了。 autoreleasing 用来修饰一个函数的参数，这个参数会在函数返回的时候被自动释放。
+### .类变量的@protected ,@private,@public,@package，声明各有什么含义？</li>
+</ul></li>
+</ul>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2018/2/28</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15193944679783.html">
+                
+                  <h1>iOS 项目组件化</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">组件化需要解决的问题</h2>
+
+<ul>
+<li>APP 如何跳到任意指定界面（APP外部跳转，APP内部跳转）</li>
+<li>自家APP之间如何相互跳转 </li>
+<li>如何降低APP组件和APP界面之间的耦合度</li>
+<li>如何动态下发配置文件；iOS 安卓共用配置文件</li>
+<li>AOP统计界面跳转</li>
+<li>组件之间通信，组件和界面之间通信</li>
+</ul>
+
+<h2 id="toc_1">组件化步骤</h2>
+
+<ul>
+<li>拆分UI组件</li>
+<li>拆分业务组件</li>
+<li>组件管理</li>
+<li>组件通信</li>
+</ul>
+
+<h2 id="toc_2">组件化架构 &amp;&amp; 思路</h2>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2018/2/23</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
                 <a class="clearlink" href="15174544275720.html">
                 
                   <h1>DLNA DMR</h1>
@@ -1593,194 +1840,6 @@ const actions = {
                 </div>
               </div><!-- article -->
         
-			<div class="article">
-                <a class="clearlink" href="15145327105445.html">
-                
-                  <h1>佛祖镇楼 bug辟易</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<pre><code class="language-Objective-C">//                            _ooOoo_
-//                           o8888888o
-//                           88&quot; . &quot;88
-//                           (| -_- |)
-//                            O\ = /O
-//                        ____/`---&#39;\____
-//                      .   &#39; \\| |// `.
-//                       / \\||| : |||// \
-//                     / _||||| -:- |||||- \
-//                       | | \\\ - /// | |
-//                     | \_| &#39;&#39;\---/&#39;&#39; | |
-//                      \ .-\__ `-` ___/-. /
-//                   ___`. .&#39; /--.--\ `. . __
-//                .&quot;&quot; &#39;&lt; `.___\_&lt;|&gt;_/___.&#39; &gt;&#39;&quot;&quot;.
-//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
-//                 \ \ `-. \_ __\ /__ _/ .-` / /
-//         ======`-.____`-.___\_____/___.-`____.-&#39;======
-//                            `=---=&#39;
-//
-//         .............................................
-//                  佛祖镇楼                  BUG辟易
-//          佛曰:
-//                  写字楼里写字间，写字间里程序员；
-//                  程序人员写程序，又拿程序换酒钱。
-//                  酒醒只在网上坐，酒醉还来网下眠；
-//                  酒醉酒醒日复日，网上网下年复年。
-//                  但愿老死电脑间，不愿鞠躬老板前；
-//                  奔驰宝马贵者趣，公交自行程序员。
-//                  别人笑我忒疯癫，我笑自己命太贱；
-//                  不见满街漂亮妹，哪个归得程序员？
-</code></pre>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/12/29</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15115206889632.html">
-                
-                  <h1>Mac app 推荐</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">开发工具篇</h2>
-
-<h3 id="toc_1">Postman （Chrome 工具）</h3>
-
-<p><img src="media/15115206889632/15115207580615.jpg" alt="Postman_Icon"/><br/>
-这款APP 最初是 谷歌浏览器的插件...</p>
-
-<h3 id="toc_2">Gif Brewery （AppStore 免费）</h3>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fmpkcy93u9j307206oab2.jpg" alt="Gif Brewery"/><br/>
-这是录制gif文件的APP，有了它再也不用为制作gif发愁了</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2017/11/24</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='app.html'>MacAPP</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15115332074317.html">
-                
-                  <h1>Xcode 代码块</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">一、创建自定义代码块的好处</h2>
-
-<p>由于项目、所用语言或者编码习惯的差别，不同的程序员习惯用的代码片段也不尽相同，这就有了自定义代码片段的需求，好在Xcode是支持该功能的。他的好处是使程序员以最快的速度输入很常用的代码片段，提高编程效率。</p>
-
-<p>该功能是从Xcode4开始引入的。在Xcode中的位置如下图所示：</p>
-
-<p>如上图，右边系统就定义很对的代码块，包括一些我们很常用的@interface 和@implementation的声明和实现。</p>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15115332074317.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/11/24</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15137627946753.html">
-                
-                  <h1>ES6 笔记（常量&&变量）</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">变量&amp;&amp;常量</h2>
-
-<h3 id="toc_1">新特性</h3>
-
-<ol>
-<li><p>ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。</p></li>
-<li><p>变量提升：var命令会发生”变量提升“现象，即变量可以在声明之前使用，值为undefined；为了纠正这种现象，let命令改变了语法行为，它所声明的变量一定要在声明后使用，否则报错。</p></li>
-<li><p>暂时性死区：在代码块内，使用let命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”；</p></li>
-</ol>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15137627946753.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/12/20</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='js.html'>JavaScript</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
               
 
 
@@ -1864,31 +1923,31 @@ const actions = {
 	      
 		      
 			      <li class="post">
-			        <a href="15223750607281.html">每天学习一个shell技能(3)</a>
+			        <a href="15226648731246.html">每天学习一个shell技能（7）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15223210751913.html">每天学习一个shell 技能 （2）</a>
+			        <a href="15226603064743.html">每天学习一个shell技能（6）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15181411526837.html">源码阅读 -- YYModel （一）</a>
+			        <a href="15224936933861.html">每天学习一个shell技能（5）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15200726964422.html">iOS Block 知识点拾遗</a>
+			        <a href="15224613481161.html">每天学习一个shell技能（4）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15223028228569.html">每天学习一个shell技能 （1）</a>
+			        <a href="15223750607281.html">每天学习一个shell技能  (3)</a>
 			      </li>
 		     
 		  

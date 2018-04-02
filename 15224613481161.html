@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  DLNA DMC - kaelinda
+  每天学习一个shell技能（4） - kaelinda
   
   </title>
   
@@ -144,14 +144,14 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>DLNA DMC</h1>
+          <h1>每天学习一个shell技能（4）</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2018/1/31</span>
+          <span class="date">2018/3/31</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='ios.html'>iOS</a></span>
+              <span class="posted-in"><a href='shell.html'>shell</a></span>
            
          
           <span class="comments">
@@ -164,207 +164,225 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <h2 id="toc_0">CGUpnpControlPoint</h2>
+      <h2 id="toc_0">shell基本运算符</h2>
 
-<pre><code>
-#if !defined(_CG_UPNP_CCONTROLPOINT_H_)
-typedef void CgUpnpControlPoint;
-#endif
+<p>基本使用：</p>
 
-@class CGUpnpDevice;
-@class CGUpnpControlPoint;
+<pre><code>#!/bin/bash
 
-@protocol CGUpnpControlPointDelegate &lt;NSObject&gt;
-@optional
-// deviceUdn 设备的UDID 设备添加，更新，移除，失效的协议方法
-- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceAdded:(NSString *)deviceUdn;
-- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceUpdated:(NSString *)deviceUdn;
-- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceRemoved:(NSString *)deviceUdn;
-- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceInvalid:(NSString *)deviceUdn;
-@end
-
-/**
- * The CGUpnpControlPoint class is a wrapper class for CgUpnpControlPoint of CyberLink for C to 
- * program using only Objective-C directly on MacOSX.
- * Currently, the only basic methods are wrapped to control UPnP devices.
- */
-@interface CGUpnpControlPoint : NSObject 
-{
-    CgUpnpControlPoint *cObject;
-}
-// 子控制点
-@property(readonly) CgUpnpControlPoint *cObject;
-// 代理对象
-@property(assign) id&lt;CGUpnpControlPointDelegate&gt; delegate;
-
-// get方法
-- (CgUpnpControlPoint *)cObject;
-/**
- * Activate some background threads of the control point such as SSDP and 
- * HTTP servers to listen messages and events of UPnP. You must call this 
- * method before you can actually use a control point.
- *
- * @return TRUE if successful; otherwise FALSE
- *
- */
- // 激活DMC的子线程 SSDP HTTP服务，去监听UPnP信息和时间
- // 使用控制点之前必须要激活
-- (BOOL)start;
-/**
- * Stop some background threads of the control point such as SSDP and 
- * HTTP servers to listen messages and events of UPnP. 
- *
- * @return TRUE if successful; otherwise FALSE
- *
- */
- // 停止后台线程 和 SSDP HTTP 服务
-- (BOOL)stop;
-/**
- * Check if the controll point is running.
- *
- * @return YES if the device is started normally, otherwise NO.
- */
- // 检测DMC是否正在运行
-- (BOOL)isRunning;
-/**
- * Send a M-SEARCH request to find for the all UPnP devices of UPnP in the network.
- * The method waits for the specified MX time. Use setSsdpSearchMX:(NSInteger)aMX to change the time.
- * The method is same as searchWithST() when the ST parameter is &quot;ssdp:all&quot;.
- */
- 
- // 发送M-SEARCH 请求去发现局域网内所有的UPnP设备
-- (void)search;
-/**
- * Send a M-SEARCH request to find for the specified UPnP devices by a ST parameter in the network.
- * The method waits for the specified MX time. Use setSsdpSearchMX:(NSInteger)aMX to change the time.
- *
- * @param aST The Search Target parameter (ex. &quot;ssdp:all&quot;)
- */
-- (void)searchWithST:(NSString *)aST;
-/**
- * Set a MX parameter used for SSDP searches in seconds.
- * The parameter is used to wait for M-SEARCH responses in search() and searchWithST:(NSString *)aST.
- *
- * @param aMX Time to wait
- */
-- (void)setSsdpSearchMX:(NSInteger)aMX;
-/**
- * Get a MX parameter used for SSDP searches in seconds.
- * The parameter is used to wait for M-SEARCH responses in search() and searchWithST:(NSString *)aST.
- *
- * @return Time to wait
- */
-// 等待时间
-- (NSInteger)ssdpSearchMX;
-/**
- * Get all UPnP devices which the control point found as a NSArray object. The array has the devices as instances of CGUpnpDevice.
- * @return NSArray of CGUpnpDevice.
- */
- // DMC发现的所有设备
-- (NSArray *)devices;
-/**
- * Get a specified UPnP devices by the UDN.
- * @return CGUpnpDevice when the specified device is found, otherwise nil.
- */
- // 通过UDN 获取指定的upnp设备
-- (CGUpnpDevice *)deviceForUDN:(NSString *)udn;
+val=`expr 2 + 2`
+echo &quot;两数之和为 : $val&quot;
 </code></pre>
 
-<h2 id="toc_1">CGUpnpAvContentDirectory</h2>
+<ul>
+<li>表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样</li>
+<li>完整的表达式要被 ` ` 包含，注意这个字符不是常用的单引号，在 Esc 键下边</li>
+</ul>
 
-<pre><code>/**
- * The CGUpnpAvContentDirectory class has UPnP/AV objects of a media servers.
- *
- */
-@interface CGUpnpAvContentDirectory : NSObject
-{
-    CGUpnpAvContentManager *contentMgr;
-}
-- (CGUpnpAvContainer *)rootObject;
-- (CGUpnpAvObject *)objectForId:(NSString *)aObjectId;
-- (CGUpnpAvObject *)objectForTitlePath:(NSString *)aTitlePath;
-@end
+<span id="more"></span><!-- more -->
+
+<h3 id="toc_1">算术运算符</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">运算符</th>
+<th style="text-align: center">说明</th>
+<th style="text-align: center">举例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">+</td>
+<td style="text-align: center">加法</td>
+<td style="text-align: center">`expr $a + $b` 结果为 30。</td>
+</tr>
+<tr>
+<td style="text-align: center">-</td>
+<td style="text-align: center">减法</td>
+<td style="text-align: center">`expr $a - $b` 结果为 -10。</td>
+</tr>
+<tr>
+<td style="text-align: center">*</td>
+<td style="text-align: center">乘法</td>
+<td style="text-align: center">`expr $a * $b` 结果为  200。</td>
+</tr>
+<tr>
+<td style="text-align: center">/</td>
+<td style="text-align: center">除法</td>
+<td style="text-align: center">`expr $b / $a` 结果为 2。</td>
+</tr>
+<tr>
+<td style="text-align: center">%</td>
+<td style="text-align: center">取余</td>
+<td style="text-align: center">`expr $b % $a` 结果为 0。</td>
+</tr>
+<tr>
+<td style="text-align: center">=</td>
+<td style="text-align: center">赋值</td>
+<td style="text-align: center">a=$b 将把变量 b 的值赋给 a。</td>
+</tr>
+<tr>
+<td style="text-align: center">==</td>
+<td style="text-align: center">相等</td>
+<td style="text-align: center">[ \(a == \)b ] 返回 false。</td>
+</tr>
+<tr>
+<td style="text-align: center">!=</td>
+<td style="text-align: center">不相等</td>
+<td style="text-align: center">[ \(a != \)b ] 返回 true。</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>条件表达式要放在方括号之间，并且要有空格，例如: [\(a==\)b] 是错误的，必须写成 [ \(a == \)b ]</p>
+</blockquote>
+
+<pre><code>a=10
+b=20
+
+val=`expr $a + $b`
+echo &quot;a + b : $val&quot;
+
+val=`expr $a - $b`
+echo &quot;a - b : $val&quot;
+
+val=`expr $a \* $b`
+echo &quot;a * b : $val&quot;
+
+val=`expr $b / $a`
+echo &quot;b / a : $val&quot;
+
+val=`expr $b % $a`
+echo &quot;b % a : $val&quot;
+
+if [ $a == $b ]
+then
+   echo &quot;a 等于 b&quot;
+fi
+if [ $a != $b ]
+then
+   echo &quot;a 不等于 b&quot;
+fi
 </code></pre>
 
-<h2 id="toc_2">CGUpnpAvContentManager</h2>
+<h3 id="toc_2">关系运算符</h3>
 
-<pre><code>/**
- * The CGUpnpAvContentDirectory class has UPnP/AV objects of a media servers.
- *
- */
-@interface CGUpnpAvContentManager : NSObject
-{
-    CGUpnpAvRoot *rootObj;
-}
-- (CGUpnpAvContainer *)rootObject;
-- (CGUpnpAvObject *)objectForId:(NSString *)aObjectId;
-- (CGUpnpAvObject *)objectForTitlePath:(NSString *)aTitlePath;
+<ul>
+<li>-eq: 是否等于</li>
+<li>-ne: 是否不等于</li>
+<li>-gt: 是否大于</li>
+<li>-lt: 是否小于</li>
+<li>-ge: 是否大于等于</li>
+<li>-le: 是否小于等于</li>
+</ul>
+
+<hr/>
+
+<blockquote>
+<p>EQ 就是 EQUAL等于<br/>
+NE 就是 NOT EQUAL不等于 <br/>
+GT 就是 GREATER THAN大于　 <br/>
+LT 就是 LESS THAN小于 <br/>
+GE 就是 GREATER THAN OR EQUAL 大于等于 <br/>
+LE 就是 LESS THAN OR EQUAL 小于等于</p>
+</blockquote>
+
+<hr/>
+
+<pre><code>a=10
+b=20
+
+if [ $a -eq $b ]
+then
+   echo &quot;$a -eq $b : a 等于 b&quot;
+else
+   echo &quot;$a -eq $b: a 不等于 b&quot;
+fi
+if [ $a -ne $b ]
+then
+   echo &quot;$a -ne $b: a 不等于 b&quot;
+else
+   echo &quot;$a -ne $b : a 等于 b&quot;
+fi
+if [ $a -gt $b ]
+then
+   echo &quot;$a -gt $b: a 大于 b&quot;
+else
+   echo &quot;$a -gt $b: a 不大于 b&quot;
+fi
+if [ $a -lt $b ]
+then
+   echo &quot;$a -lt $b: a 小于 b&quot;
+else
+   echo &quot;$a -lt $b: a 不小于 b&quot;
+fi
+if [ $a -ge $b ]
+then
+   echo &quot;$a -ge $b: a 大于或等于 b&quot;
+else
+   echo &quot;$a -ge $b: a 小于 b&quot;
+fi
+if [ $a -le $b ]
+then
+   echo &quot;$a -le $b: a 小于或等于 b&quot;
+else
+   echo &quot;$a -le $b: a 大于 b&quot;
+fi
 </code></pre>
 
-<h2 id="toc_3">CGUpnpAvObject</h2>
+<h3 id="toc_3">布尔运算符</h3>
 
-<pre><code>
-/**
- * The CGUpnpAvObject class is a wrapper class for CgUpnpAvObject of CyberLink for C.
- */
+<ul>
+<li>!: 非运算</li>
+<li>-o: 或运算</li>
+<li>-a: 与运算</li>
+</ul>
 
-#define CGUPNPAV_OBJECT_MOVIE_FILEEXT @&quot;mov&quot;
-#define CGUPNPAV_OBJECT_SOUND_FILEEXT @&quot;snd&quot;
-#define CGUPNPAV_OBJECT_IMAGE_FILEEXT @&quot;img&quot;
+<h3 id="toc_4">逻辑运算符</h3>
 
-@interface CGUpnpAvObject : CGXmlNode 
-{
-    // 父类对象
-    CGUpnpAvObject *parent;
-}
-@property(retain) id userObject;
-#if defined(TARGET_OS_IPHONE)
-@property(retain) UIImage *thumbnailImage;
-#endif
+<ul>
+<li>&amp;&amp;：与</li>
+<li>||：或</li>
+</ul>
 
-// xml字符串转成对象
-+ (NSArray *)arrayWithXMLString:(NSString *)aXmlString;
-// 初始化方法
-- (id)init;
-#if  !defined(TARGET_OS_IPHONE)
-- (id)initWithXMLNode:(NSXMLElement *)aXmlNode;
-#else
-- (id)initWithXMLNode:(CgXmlNode *)aXmlNode;
-- (id)initWithMediaContent:(CgUpnpAvContent *)aMediaContent;
-#endif
-// 判断方法
-- (BOOL)isEqual:(id)anObject;
-- (BOOL)isContainer;
-- (BOOL)isItem;
-// 设置、获取父亲类
-- (void)setParent:(CGUpnpAvObject *)aParent;
-- (CGUpnpAvObject *)parent;
-// 祖先类对象
-- (CGUpnpAvObject *)ancestor;
-// 对象ID
-- (NSString *)objectId;
-// 子类对象个数
-- (NSUInteger)childCount;
-// 标题（文件名 不带后缀）
-- (NSString *)title;
-// upnp 类型
-- (NSString *)upnpClass;
-// 日期
-- (NSString *)date;
-// 相册URI
-- (NSString *)albumArtURI;
-// 设置对象ID、title等
-- (void)setObjectId:(NSString *)aValue;
-- (void)setTitle:(NSString *)aValue;
-- (void)setUpnpClass:(NSString *)aValue;
-// 是否包含某一资源对象
-- (BOOL)isObjectId:(NSString *)aObjectId;
-- (BOOL)isTitle:(NSString *)aTitle;
-- (BOOL)isUpnpClass:(NSString *)aUpnpClass;
-// 文件全名 （带后缀）
-- (NSString *)toFileNameString;
-// 艺术家 作者
-- (NSString *)artist;
+<h3 id="toc_5">字符串运算</h3>
+
+<pre><code>a=&quot;abc&quot;
+b=&quot;efg&quot;
+
+if [ $a = $b ]
+then
+   echo &quot;$a = $b : a 等于 b&quot;
+else
+   echo &quot;$a = $b: a 不等于 b&quot;
+fi
+if [ $a != $b ]
+then
+   echo &quot;$a != $b : a 不等于 b&quot;
+else
+   echo &quot;$a != $b: a 等于 b&quot;
+fi
+if [ -z $a ]
+then
+   echo &quot;-z $a : 字符串长度为 0&quot;
+else
+   echo &quot;-z $a : 字符串长度不为 0&quot;
+fi
+if [ -n $a ]
+then
+   echo &quot;-n $a : 字符串长度不为 0&quot;
+else
+   echo &quot;-n $a : 字符串长度为 0&quot;
+fi
+if [ $a ]
+then
+   echo &quot;$a : 字符串不为空&quot;
+else
+   echo &quot;$a : 字符串为空&quot;
+fi
 </code></pre>
 
 
@@ -376,16 +394,16 @@ typedef void CgUpnpControlPoint;
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="15173774932057.html" 
-          title="Previous Post: DLNA DMS">&laquo; DLNA DMS</a>
+          <a href="15224936933861.html" 
+          title="Previous Post: 每天学习一个shell技能（5）">&laquo; 每天学习一个shell技能（5）</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="15172908985351.html" 
-          title="Next Post: iOS设备上实现DLNA功能 Platinum 篇">iOS设备上实现DLNA功能 Platinum 篇 &raquo;</a>
+          <a  href="15223750607281.html" 
+          title="Next Post: 每天学习一个shell技能  (3)">每天学习一个shell技能  (3) &raquo;</a>
       
       </p>
         </div>
