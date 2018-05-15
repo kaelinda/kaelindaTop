@@ -4,13 +4,910 @@
   <title><![CDATA[kaelinda]]></title>
   <link href="http://blog.csdn.net/atom.xml" rel="self"/>
   <link href="http://blog.csdn.net/"/>
-  <updated>2018-04-02T18:32:21+08:00</updated>
+  <updated>2018-05-15T17:32:00+08:00</updated>
   <id>http://blog.csdn.net/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
   <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[OC 多线程之 GCD知识从基础到进阶 （1）]]></title>
+    <link href="http://blog.csdn.net/15261167596297.html"/>
+    <updated>2018-05-12T17:19:19+08:00</updated>
+    <id>http://blog.csdn.net/15261167596297.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">概念认知</h2>
+
+<p>基本概念：</p>
+
+<ul>
+<li><p>GCD 全称 (Grand Center Dispatch),翻译成通俗中文“牛逼的中心调度机制”</p></li>
+<li><p>线程：执行任务调度的最小单位</p></li>
+<li><p>任务：就是一段代码，GCD中就是block中的内容。执行任务有两种方式：同步执行（sync）和异步执行（async）。两者的主要区别是：是否等待队列的任务执行结束，以及是否具备开启新线程的能力</p></li>
+<li><p>队列：用来存放任务的线性结构，采用 FIFO（先进先出）的原则。</p></li>
+</ul>
+
+<p>进阶概念：</p>
+
+<ul>
+<li>同步:
+
+<ul>
+<li>同步添加任务到指定的队列中，在添加的任务执行结束之前，会一直等待，直到队列里面的任务完成之后再继续执行后续任务。</li>
+<li>只能在当前线程中执行任务，不具备开启新线程的能力。<br/></li>
+</ul></li>
+<li><p>异步:</p>
+
+<ul>
+<li>异步添加任务到指定的队列中，它不会做任何等待，可以继续执行任务。</li>
+<li>可以在新的线程中执行任务，具备开启新线程的能力。</li>
+</ul></li>
+<li><p>串行队列： 队列中的任务 按添加顺序开始执行</p></li>
+<li><p>并发队列： 队列中的任务可同时开始执行，可以开辟多个线程</p></li>
+<li><p>主队列（等待主线程内的任务完成之后再利用主线程执行任务）</p></li>
+<li><p>全局并发队列</p></li>
+</ul>
+
+<h2 id="toc_1">GCD 使用步骤</h2>
+
+<ul>
+<li><p>创建队列：</p>
+
+<pre><code>// 串行队列的创建方法
+dispatch_queue_t queue = dispatch_queue_create(&quot;net.bujige.testQueue&quot;, DISPATCH_QUEUE_SERIAL);
+// 并发队列的创建方法
+dispatch_queue_t queue = dispatch_queue_create(&quot;net.bujige.testQueue&quot;, DISPATCH_QUEUE_CONCURRENT);
+// 主队列的获取方法
+dispatch_queue_t queue = dispatch_get_main_queue();
+// 全局并发队列的获取方法
+dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+</code></pre></li>
+<li><p>创建任务：</p>
+
+<pre><code>// 同步执行任务创建方法
+dispatch_sync(queue, ^{
+    // 这里放同步执行任务代码
+});
+// 异步执行任务创建方法
+dispatch_async(queue, ^{
+    // 这里放异步执行任务代码
+});
+</code></pre></li>
+</ul>
+
+<h2 id="toc_2">串行并发队列 + 同步异步组合</h2>
+
+<blockquote>
+<p>1.同步执行 + 并发队列<br/>
+2.异步执行 + 并发队列<br/>
+3.同步执行 + 串行队列<br/>
+4.异步执行 + 串行队列<br/>
+5.同步执行 + 主队列<br/>
+6.异步执行 + 主队列</p>
+</blockquote>
+
+<p>各种组合：<br/>
+<img src="http://cc.cocimg.com/api/uploads/20161030/1477828129712413.png" alt="串行并发队列+同步异步组合"/></p>
+
+<p>问题：</p>
+
+<ul>
+<li><p>死锁：在<code>主线程</code>用<code>主队列</code>执行<code>同步任务</code>就会造成线程死锁。</p></li>
+<li><p>主队列中的任务一定是在主线程中执行的</p></li>
+<li><p>全局并发队列中的任务可以开辟新线程，但不一定会开辟</p></li>
+</ul>
+
+<h2 id="toc_3">GCD 线程间通信</h2>
+
+<pre><code>// GCD的线程间的通信 : 常用代码
+- (void)GCDDemo
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+
+        NSLog(@&quot;正在努力下载... %@&quot;,[NSThread currentThread]);
+
+        // 如果下载结束回到主线程更新UI
+        dispatch_async(dispatch_get_main_queue(), ^{
+
+            NSLog(@&quot;下载完成,正在更新UI... %@&quot;,[NSThread currentThread]);
+        });
+    });
+}
+</code></pre>
+
+<h2 id="toc_4">GCD 的其他方法</h2>
+
+<h3 id="toc_5">GCD 栅栏方法：dispatch_barrier_async</h3>
+
+<p>对于栅栏方法的理解，我觉得下面的图片很形象：<br/>
+<img src="https://upload-images.jianshu.io/upload_images/1877784-4d6d77fafd3ad007.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt=""/></p>
+
+<pre><code>dispatch_queue_t queue = dispatch_queue_create(&quot;net.bujige.testQueue&quot;, DISPATCH_QUEUE_CONCURRENT);
+    
+dispatch_async(queue, ^{
+    // 追加任务1
+    for (int i = 0; i &lt; 2; ++i) {
+        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+        NSLog(@&quot;1---%@&quot;,[NSThread currentThread]);      // 打印当前线程
+    }
+});
+    
+dispatch_barrier_async(queue, ^{
+        // 追加任务 barrier
+        for (int i = 0; i &lt; 2; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&quot;barrier---%@&quot;,[NSThread currentThread]);// 打印当前线程
+        }
+    });
+    
+dispatch_async(queue, ^{
+    // 追加任务2
+    for (int i = 0; i &lt; 2; ++i) {
+        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+        NSLog(@&quot;3---%@&quot;,[NSThread currentThread]);      // 打印当前线程
+    }
+});
+
+</code></pre>
+
+<h3 id="toc_6">GCD 延时执行方法：dispatch_after</h3>
+
+<blockquote>
+<p>这里需要注意的是，延迟的时间是指的 延迟将任务添加到队列中。所以这个时间并不是特别准确的</p>
+</blockquote>
+
+<pre><code>/**
+ * 延时执行方法 dispatch_after
+ */
+- (void)after {
+    NSLog(@&quot;currentThread---%@&quot;,[NSThread currentThread]);  // 打印当前线程
+    NSLog(@&quot;asyncMain---begin&quot;);
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 2.0秒后异步追加任务代码到主队列，并开始执行
+        NSLog(@&quot;after---%@&quot;,[NSThread currentThread]);  // 打印当前线程
+    });
+}
+</code></pre>
+
+<h3 id="toc_7">GCD 一次性代码（只执行一次）：dispatch_once</h3>
+
+<pre><code> static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        // 只执行1次的代码(这里面默认是线程安全的)
+    });
+</code></pre>
+
+<h3 id="toc_8">GCD 快速迭代方法：dispatch_apply</h3>
+
+<pre><code>dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    NSLog(@&quot;apply---begin&quot;);
+    dispatch_apply(6, queue, ^(size_t index) {
+        NSLog(@&quot;%zd---%@&quot;,index, [NSThread currentThread]);
+    });
+    NSLog(@&quot;apply---end&quot;);
+</code></pre>
+
+<h3 id="toc_9">GCD 队列组：dispatch_group</h3>
+
+<pre><code>NSLog(@&quot;currentThread---%@&quot;,[NSThread currentThread]);  // 打印当前线程
+    NSLog(@&quot;group---begin&quot;);
+    
+    dispatch_group_t group =  dispatch_group_create();
+    
+    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // 追加任务1
+        for (int i = 0; i &lt; 2; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&quot;1---%@&quot;,[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+    
+    dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // 追加任务2
+        for (int i = 0; i &lt; 2; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&quot;2---%@&quot;,[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        // 等前面的异步任务1、任务2都执行完毕后，回到主线程执行下边任务
+        for (int i = 0; i &lt; 2; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            NSLog(@&quot;3---%@&quot;,[NSThread currentThread]);      // 打印当前线程
+        }
+        NSLog(@&quot;group---end&quot;);
+    });
+</code></pre>
+
+<h3 id="toc_10">GCD队列组监听：dispatch_group_notify</h3>
+
+<pre><code>    /*
+     * 业务异步串行执行，用GCD实现的四种方式
+     * 1、dispatch_group_notify(group, queue, ^{ });
+     * 2、dispatch_group_async(group, backQueue, ^{ });
+     * 3、dispatch_group_wait(group, DISPATCH_TIME_FOREVER); 会有线程等待阻塞当前线程
+     * 4、信号量 = 0  实现；会有线程等待阻塞当前线程
+     */
+    
+    // 被监听的group
+    dispatch_group_t group = dispatch_group_create();
+    // 将要执行后续block代码的队列
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    
+    
+    // ----------------- 监听group执行完毕 后，在queue队列执行block代码
+    dispatch_group_notify(group, queue, ^{
+        // 任务代码
+    });
+    
+    
+    // ---------------- 全局并发队列
+    dispatch_queue_t backQueue = dispatch_get_global_queue(0, 0);
+    // 向group中添加 在某个队列中执行的任务
+    dispatch_group_async(group, backQueue, ^{
+        // 追加的任务
+    });
+
+    /*
+     * 监听group执行完毕 之后在某个队列中执行某个任务
+     * 跟 向group中追加某个队列中执行的任务 也有类似作用，但是group不会有线程等待，只是会造成先后执行的效果，但是不会有线程等待
+     */
+
+    // ------------ 在此处等待group中的任务执行完毕 然后 执行wait后面的代码,线程等待会阻塞当前线程
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    
+    
+    // 创建信号量 初始信号量0 线程等待
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    // 主队列中执行异步任务
+    dispatch_async(queue, ^{
+        // 信号量+1
+        dispatch_semaphore_signal(semaphore);
+    });
+    // 信号量不为0时候-1，信号量=0时候线程等待
+    // 异步任务异步执行后 直接带了wait,信号量=0 ，线程等待，等异步任务完毕时 信号量+1 不为零，此时线程不再等待，开始执行下面代码，会阻塞当前线程；
+    dispatch_semaphore_wait(semaphore, 1);
+    
+    /*
+     * semaphore = 0 时候 dispatch_semaphore_wait 等待信号量！=0，
+     * 跟 dispatch_group_wait 等待group执行完毕 有一点相似。
+     */
+</code></pre>
+
+<h3 id="toc_11">GCD中任务增删：dispatch_group_enter、dispatch_group_leave</h3>
+
+<pre><code>// 向任务组添加任务
+dispatch_group_enter(group);
+// 将要添加的任务
+dispatch_async(queue, ^{
+    // 追加任务1
+    [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+    NSLog(@&quot;1---%@&quot;,[NSThread currentThread]);      // 打印当前线程
+    // 成对出现 任务组任务执行完毕 撤销任务
+    dispatch_group_leave(group);
+});
+// 等待group五秒钟
+dispatch_group_wait(group, dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5*NSEC_PER_SEC)));
+// 要么五秒内执行完毕走到这里；要么五秒后超时，group还未执行完 就走到了这里
+NSLog(@&quot;等待之后&quot;);
+    
+// 如果只有enter 没有leave那么线程会一直存在 等待group执行完毕
+</code></pre>
+
+<h3 id="toc_12">GCD信号量：dispatch_semaphore_t</h3>
+
+<pre><code>
+-(void)semaphoreLockTest{
+    
+    dispatch_semaphore_t semaphoreLock = dispatch_semaphore_create(1);
+    
+    // 创建两个购票的串行队列
+    dispatch_queue_t queue1 = dispatch_queue_create(&quot;queue1&quot;, DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t queue2 = dispatch_queue_create(&quot;queue2&quot;, DISPATCH_QUEUE_SERIAL);
+    
+    __weak typeof(&amp;*self)weakSelf = self;
+    // 第一个购票队列
+    dispatch_async(queue1, ^{
+        [weakSelf semaphoreGetTicket:semaphoreLock];
+    });
+    // 第二个购票队列
+    dispatch_async(queue2, ^{
+        [weakSelf semaphoreGetTicket:semaphoreLock];
+    });
+
+}
+
+-(void)semaphoreGetTicket:(dispatch_semaphore_t)semaphore{
+    while (1) {
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        if (YES) {
+            // 有票
+            // 模拟购票延时
+            [NSThread sleepForTimeInterval:0.2];
+            // 相当于解锁
+            dispatch_semaphore_signal(semaphore);
+        }else{
+            // 无票
+            // 相当于解锁
+            dispatch_semaphore_signal(semaphore);
+            break;
+        }
+        
+    }
+}
+</code></pre>
+
+<p>参考文章：</p>
+
+<ul>
+<li><a href="https://www.jianshu.com/p/2d57c72016c6">iOS多线程：『GCD』详尽总结</a></li>
+<li><a href="http://www.cocoachina.com/ios/20161031/17887.html">iOS-图文表并茂，手把手教你GCD</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OC中的各种遍历]]></title>
+    <link href="http://blog.csdn.net/15257437237715.html"/>
+    <updated>2018-05-08T09:42:03+08:00</updated>
+    <id>http://blog.csdn.net/15257437237715.html</id>
+    <content type="html"><![CDATA[
+<blockquote>
+<p>iOS开发中我们经常遇到各种的数据处理，所以就会经常遇到数组遍历 和 字典遍历。但是不同的遍历方式，效率不同，并且还有不同的限制。</p>
+</blockquote>
+
+<p>首先把数据源准备好：</p>
+
+<pre><code>_dataSource = [NSMutableArray array];
+_dataDic = [NSMutableDictionary dictionary];
+for (int i=0; i&lt;5; i++) {
+    [_dataSource addObject:@(i)];
+    [_dataDic setObject:@(i) forKey:[NSString stringWithFormat:@&quot;我是第%d个Item&quot;,i]];
+}
+</code></pre>
+
+<span id="more"></span><!-- more -->
+
+<h2 id="toc_0">for循环遍历</h2>
+
+<h3 id="toc_1">遍历数组</h3>
+
+<pre><code>for (int i = 0; i&lt;_dataSource.count; i++) {
+    NSLog(@&quot;%@ --- thread:%@&quot;,[_dataSource objectAtIndex:i],[NSThread currentThread]);
+}
+</code></pre>
+
+<h3 id="toc_2">遍历字典</h3>
+
+<pre><code>// 取出字典中所有的key （无序的）
+NSArray *keys = [_dataDic allKeys];
+
+for (int i = 0; i&lt;keys.count; i++) {
+    // 根据key值索引Value即可
+    NSString *key = [keys objectAtIndex:i];
+    NSString *value = [_dataDic objectForKey:key];
+    NSLog(@&quot;%@ --- thread:%@&quot;,value,[NSThread currentThread]);
+}
+</code></pre>
+
+<p>这是打印结果</p>
+
+<pre><code>2018-05-09 15:01:23.119707+0800 OCProject[78848:4457173] 0 --- thread:&lt;NSThread: 0x604000263b40&gt;{number = 1, name = main}
+2018-05-09 15:01:23.120003+0800 OCProject[78848:4457173] 1 --- thread:&lt;NSThread: 0x604000263b40&gt;{number = 1, name = main}
+2018-05-09 15:01:23.120262+0800 OCProject[78848:4457173] 2 --- thread:&lt;NSThread: 0x604000263b40&gt;{number = 1, name = main}
+2018-05-09 15:01:23.120473+0800 OCProject[78848:4457173] 3 --- thread:&lt;NSThread: 0x604000263b40&gt;{number = 1, name = main}
+2018-05-09 15:01:23.120754+0800 OCProject[78848:4457173] 4 --- thread:&lt;NSThread: 0x604000263b40&gt;{number = 1, name = main}
+2018-05-09 15:01:23.120951+0800 OCProject[78848:4457173] 我是第3个Item --- thread:&lt;NSThread: 0x604000263b40&gt;{number = 1, name = main}
+2018-05-09 15:01:23.121111+0800 OCProject[78848:4457173] 我是第1个Item --- thread:&lt;NSThread: 0x604000263b40&gt;{number = 1, name = main}
+2018-05-09 15:01:23.121231+0800 OCProject[78848:4457173] 我是第4个Item --- thread:&lt;NSThread: 0x604000263b40&gt;{number = 1, name = main}
+2018-05-09 15:01:23.121377+0800 OCProject[78848:4457173] 我是第2个Item --- thread:&lt;NSThread: 0x604000263b40&gt;{number = 1, name = main}
+2018-05-09 15:01:23.121539+0800 OCProject[78848:4457173] 我是第0个Item --- thread:&lt;NSThread: 0x604000263b40&gt;{number = 1, name = main}
+</code></pre>
+
+<h3 id="toc_3">【分析】</h3>
+
+<ul>
+<li>优点：简单</li>
+<li>缺点：遍历字典有太多中间变量，会有一部分开销</li>
+</ul>
+
+<h2 id="toc_4">for-in遍历</h2>
+
+<h3 id="toc_5">遍历数组</h3>
+
+<pre><code>// 遍历数组
+for (NSNumber *obj in _dataSource) {
+    NSLog(@&quot;%@ --- thread:%@&quot;,obj,[NSThread currentThread]);
+
+}
+</code></pre>
+
+<h3 id="toc_6">遍历字典</h3>
+
+<pre><code>// 遍历字典
+NSArray *keys = [_dataDic allKeys];
+for (NSString *key in keys) {
+    NSString *value = [_dataDic objectForKey:key];
+    NSLog(@&quot;%@ --- thread:%@&quot;,value,[NSThread currentThread]);
+
+}
+</code></pre>
+
+<p>打印结果：</p>
+
+<pre><code>2018-05-09 15:17:28.993429+0800 OCProject[79116:4479093] 0 --- thread:&lt;NSThread: 0x60400006c0c0&gt;{number = 1, name = main}
+2018-05-09 15:17:28.993769+0800 OCProject[79116:4479093] 1 --- thread:&lt;NSThread: 0x60400006c0c0&gt;{number = 1, name = main}
+2018-05-09 15:17:28.993980+0800 OCProject[79116:4479093] 2 --- thread:&lt;NSThread: 0x60400006c0c0&gt;{number = 1, name = main}
+2018-05-09 15:17:28.994204+0800 OCProject[79116:4479093] 3 --- thread:&lt;NSThread: 0x60400006c0c0&gt;{number = 1, name = main}
+2018-05-09 15:17:28.994375+0800 OCProject[79116:4479093] 4 --- thread:&lt;NSThread: 0x60400006c0c0&gt;{number = 1, name = main}
+2018-05-09 15:17:28.994505+0800 OCProject[79116:4479093] 我是第3个Item --- thread:&lt;NSThread: 0x60400006c0c0&gt;{number = 1, name = main}
+2018-05-09 15:17:28.994693+0800 OCProject[79116:4479093] 我是第1个Item --- thread:&lt;NSThread: 0x60400006c0c0&gt;{number = 1, name = main}
+2018-05-09 15:17:28.994861+0800 OCProject[79116:4479093] 我是第4个Item --- thread:&lt;NSThread: 0x60400006c0c0&gt;{number = 1, name = main}
+2018-05-09 15:17:28.995037+0800 OCProject[79116:4479093] 我是第2个Item --- thread:&lt;NSThread: 0x60400006c0c0&gt;{number = 1, name = main}
+2018-05-09 15:17:28.995253+0800 OCProject[79116:4479093] 我是第0个Item --- thread:&lt;NSThread: 0x60400006c0c0&gt;{number = 1, name = main}
+</code></pre>
+
+<blockquote>
+<p>这里需要注意的是的  for-in 遍历时如果对数组进行增删操作会导致程序crash。</p>
+</blockquote>
+
+<h3 id="toc_7">【分析】</h3>
+
+<ul>
+<li>优点：
+
+<ul>
+<li>语法简洁</li>
+<li>效率高</li>
+</ul></li>
+<li>缺点：无法获得当前遍历操作所针对的下标。</li>
+</ul>
+
+<h2 id="toc_8">枚举器</h2>
+
+<h3 id="toc_9">遍历数组</h3>
+
+<pre><code>/*
+ * 正向枚举：objectEnumerator
+ * 反向枚举：reverseObjectEnumerator
+ */
+NSEnumerator *enumetorArr = [_dataSource objectEnumerator];
+id obj ;
+while (obj=[enumetorArr nextObject]) {
+    NSLog(@&quot;%@ --- thread:%@&quot;,obj,[NSThread currentThread]);
+}
+</code></pre>
+
+<h3 id="toc_10">遍历字典</h3>
+
+<pre><code>  NSEnumerator *enumtorValue = [_dataDic objectEnumerator];// Value枚举器 reverseObjectEnumerator反向顺序
+  NSEnumerator *enumtorKey = [_dataDic keyEnumerator];// key 枚举器
+  id value;
+  while (value=[enumtorDic nextObject]) {
+       NSLog(@&quot;%@ --- thread:%@&quot;,value,[NSThread currentThread]);
+   }
+</code></pre>
+
+<p>打印结果：</p>
+
+<pre><code>2018-05-09 15:35:49.961318+0800 OCProject[79558:4515099] 0 --- thread:&lt;NSThread: 0x604000065300&gt;{number = 1, name = main}
+2018-05-09 15:35:49.961554+0800 OCProject[79558:4515099] 1 --- thread:&lt;NSThread: 0x604000065300&gt;{number = 1, name = main}
+2018-05-09 15:35:49.961666+0800 OCProject[79558:4515099] 2 --- thread:&lt;NSThread: 0x604000065300&gt;{number = 1, name = main}
+2018-05-09 15:35:49.961788+0800 OCProject[79558:4515099] 3 --- thread:&lt;NSThread: 0x604000065300&gt;{number = 1, name = main}
+2018-05-09 15:35:49.961909+0800 OCProject[79558:4515099] 4 --- thread:&lt;NSThread: 0x604000065300&gt;{number = 1, name = main}
+2018-05-09 15:35:49.962030+0800 OCProject[79558:4515099] 我是第3个Item --- thread:&lt;NSThread: 0x604000065300&gt;{number = 1, name = main}
+2018-05-09 15:35:49.962130+0800 OCProject[79558:4515099] 我是第1个Item --- thread:&lt;NSThread: 0x604000065300&gt;{number = 1, name = main}
+2018-05-09 15:35:49.962257+0800 OCProject[79558:4515099] 我是第4个Item --- thread:&lt;NSThread: 0x604000065300&gt;{number = 1, name = main}
+2018-05-09 15:35:49.962369+0800 OCProject[79558:4515099] 我是第2个Item --- thread:&lt;NSThread: 0x604000065300&gt;{number = 1, name = main}
+2018-05-09 15:35:49.962485+0800 OCProject[79558:4515099] 我是第0个Item --- thread:&lt;NSThread: 0x604000065300&gt;{number = 1, name = main}
+</code></pre>
+
+<h3 id="toc_11">【分析】</h3>
+
+<ul>
+<li><p>优点：对于不同的数据类型，遍历的语法相似；内部可以简单的通过reverseObjectEnumerator设置进行反向遍历。</p></li>
+<li><p>缺点：代码量稍大。</p></li>
+</ul>
+
+<h2 id="toc_12">快速枚举遍历</h2>
+
+<h3 id="toc_13">遍历数组</h3>
+
+<pre><code>// 按照顺序来的
+[_dataSource enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    NSLog(@&quot;sort:0 %@ -- %lu --- %@ --- %@&quot;,obj,(unsigned long)idx,stop?@&quot;YES&quot;:@&quot;NO&quot;,[NSThread currentThread]);
+}];
+
+// 随机的顺序遍历,开启了多个子线程  NSEnumerationReverse反向遍历，并发遍历 NSEnumerationConcurrent 开启了多个子线程
+[_dataSource enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    NSLog(@&quot;sort:1 %@ -- %lu --- %@ --- %@&quot;,obj,(unsigned long)idx,stop?@&quot;YES&quot;:@&quot;NO&quot;,[NSThread currentThread]);
+}];
+
+ // 指定循环范围 ，循环次数多可以开辟子线程
+[_dataSource enumerateObjectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, _dataSource.count)] options:NSEnumerationConcurrent usingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    NSLog(@&quot;sort:2 %@ -- %lu --- %@ --- %@&quot;,obj,(unsigned long)idx,stop?@&quot;YES&quot;:@&quot;NO&quot;,[NSThread currentThread]);
+}];
+</code></pre>
+
+<p>打印结果：</p>
+
+<pre><code>2018-05-09 18:31:25.808197+0800 OCProject[923:284717] sort:0 0 -- 0 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.808692+0800 OCProject[923:284717] sort:0 1 -- 1 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.808975+0800 OCProject[923:284717] sort:0 2 -- 2 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.809250+0800 OCProject[923:284717] sort:0 3 -- 3 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.809499+0800 OCProject[923:284717] sort:0 4 -- 4 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.809890+0800 OCProject[923:284717] sort:1 0 -- 0 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.810140+0800 OCProject[923:284717] sort:1 1 -- 1 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.810388+0800 OCProject[923:284717] sort:1 2 -- 2 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.810635+0800 OCProject[923:284717] sort:1 3 -- 3 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.810883+0800 OCProject[923:284717] sort:1 4 -- 4 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.813959+0800 OCProject[923:284717] sort:2 0 -- 0 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.814289+0800 OCProject[923:284717] sort:2 1 -- 1 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.814552+0800 OCProject[923:284717] sort:2 2 -- 2 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.814806+0800 OCProject[923:284717] sort:2 3 -- 3 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:31:25.815054+0800 OCProject[923:284717] sort:2 4 -- 4 --- YES --- &lt;NSThread: 0x137e0bb50&gt;{number = 1, name = main}
+</code></pre>
+
+<p>当我把数组内的元素个数增加到 10，请看前缀是<code>sort:1</code> 的打印结果如下：</p>
+
+<pre><code>2018-05-09 18:34:41.806499+0800 OCProject[928:286028] sort:1 0 -- 0 --- YES --- &lt;NSThread: 0x145e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:34:41.806982+0800 OCProject[928:286068] sort:1 1 -- 1 --- YES --- &lt;NSThread: 0x145eb08d0&gt;{number = 3, name = (null)}
+2018-05-09 18:34:41.809488+0800 OCProject[928:286068] sort:1 3 -- 3 --- YES --- &lt;NSThread: 0x145eb08d0&gt;{number = 3, name = (null)}
+2018-05-09 18:34:41.809518+0800 OCProject[928:286028] sort:1 2 -- 2 --- YES --- &lt;NSThread: 0x145e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:34:41.809788+0800 OCProject[928:286068] sort:1 4 -- 4 --- YES --- &lt;NSThread: 0x145eb08d0&gt;{number = 3, name = (null)}
+2018-05-09 18:34:41.809840+0800 OCProject[928:286028] sort:1 5 -- 5 --- YES --- &lt;NSThread: 0x145e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:34:41.810045+0800 OCProject[928:286068] sort:1 6 -- 6 --- YES --- &lt;NSThread: 0x145eb08d0&gt;{number = 3, name = (null)}
+2018-05-09 18:34:41.810462+0800 OCProject[928:286028] sort:1 7 -- 7 --- YES --- &lt;NSThread: 0x145e0bb50&gt;{number = 1, name = main}
+2018-05-09 18:34:41.810989+0800 OCProject[928:286068] sort:1 8 -- 8 --- YES --- &lt;NSThread: 0x145eb08d0&gt;{number = 3, name = (null)}
+2018-05-09 18:34:41.811034+0800 OCProject[928:286028] sort:1 9 -- 9 --- YES --- &lt;NSThread: 0x145e0bb50&gt;{number = 1, name = main}
+</code></pre>
+
+<h3 id="toc_14">遍历字典</h3>
+
+<pre><code>// 主线程 无序
+[_dataDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+    NSLog(@&quot;key:%@ -- value:%@  --- %@&quot;,key,obj,[NSThread currentThread]);
+}];
+    
+// 无序； NSEnumerationReverse反向遍历，并发遍历 NSEnumerationConcurrent
+
+[_dataDic enumerateKeysAndObjectsWithOptions:NSEnumerationReverse usingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+    NSLog(@&quot;key:%@ -- value:%@  --- %@&quot;,key,obj,[NSThread currentThread]);
+}];
+</code></pre>
+
+<p>打印结果：</p>
+
+<pre><code>2018-05-09 18:33:48.223268+0800 OCProject[926:285509] key:3 -- value:我是第3个Item  --- &lt;NSThread: 0x107e0b250&gt;{number = 1, name = main}
+2018-05-09 18:33:48.224066+0800 OCProject[926:285509] key:1 -- value:我是第1个Item  --- &lt;NSThread: 0x107e0b250&gt;{number = 1, name = main}
+2018-05-09 18:33:48.225122+0800 OCProject[926:285509] key:4 -- value:我是第4个Item  --- &lt;NSThread: 0x107e0b250&gt;{number = 1, name = main}
+2018-05-09 18:33:48.226368+0800 OCProject[926:285509] key:2 -- value:我是第2个Item  --- &lt;NSThread: 0x107e0b250&gt;{number = 1, name = main}
+2018-05-09 18:33:48.226915+0800 OCProject[926:285509] key:0 -- value:我是第0个Item  --- &lt;NSThread: 0x107e0b250&gt;{number = 1, name = main}
+2018-05-09 18:33:48.227419+0800 OCProject[926:285509] key:3 -- value:我是第3个Item  --- &lt;NSThread: 0x107e0b250&gt;{number = 1, name = main}
+2018-05-09 18:33:48.228593+0800 OCProject[926:285509] key:1 -- value:我是第1个Item  --- &lt;NSThread: 0x107e0b250&gt;{number = 1, name = main}
+2018-05-09 18:33:48.229978+0800 OCProject[926:285509] key:4 -- value:我是第4个Item  --- &lt;NSThread: 0x107e0b250&gt;{number = 1, name = main}
+2018-05-09 18:33:48.231440+0800 OCProject[926:285509] key:2 -- value:我是第2个Item  --- &lt;NSThread: 0x107e0b250&gt;{number = 1, name = main}
+2018-05-09 18:33:48.231977+0800 OCProject[926:285509] key:0 -- value:我是第0个Item  --- &lt;NSThread: 0x107e0b250&gt;{number = 1, name = main}
+</code></pre>
+
+<h3 id="toc_15">【分析】</h3>
+
+<ul>
+<li>优点：
+
+<ul>
+<li>遍历时可以直接从block中获得需要的所有信息，包括下标、值等。特别相对于字典而言，不需要做多余的编码即可同时获得key和value的值。</li>
+<li>能够直接修改block中key或者obj的类型为真实类型，可以省去类型转换的工作。</li>
+<li>可以通过NSEnumerationConcurrent枚举值开启并发迭代功能。</li>
+</ul></li>
+<li> 缺点：暂无
+&gt; 说明：基于Block的遍历方式在实现反向遍历的时候也非常简单，使用enumerateObjectsWithOptions方法，传递NSEnumerationReverse作为参数即可，在处理遍历操作的时候推荐基于Block的遍历方式。</li>
+</ul>
+
+<h2 id="toc_16">迭代</h2>
+
+<h3 id="toc_17">遍历数组</h3>
+
+<pre><code>dispatch_queue_t queue =dispatch_queue_create(&quot;apply并行队列&quot;, DISPATCH_QUEUE_CONCURRENT);
+dispatch_apply(_dataSource.count, queue, ^(size_t index) {
+    NSLog(@&quot;%@----%@&quot;,self-&gt;_dataSource[index],[NSThread currentThread]);
+});
+NSLog(@&quot;end1&quot;);
+</code></pre>
+
+<h3 id="toc_18">遍历字典</h3>
+
+<pre><code>NSArray *allkeys = [_dataDic allKeys];
+NSArray *allValue = [_dataDic allValues];
+dispatch_apply(_dataDic.count, queue, ^(size_t index) {
+    NSString *key = [allkeys objectAtIndex:index];
+    NSLog(@&quot;dic: %@----%@&quot;,[self-&gt;_dataDic objectForKey:key],[NSThread currentThread]);
+});
+</code></pre>
+
+<p>打印结果：</p>
+
+<pre><code>2018-05-09 19:24:03.875390+0800 OCProject[975:301673] 0----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.875913+0800 OCProject[975:301673] 2----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.876194+0800 OCProject[975:301673] 3----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.876445+0800 OCProject[975:301673] 4----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.876688+0800 OCProject[975:301673] 5----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.876926+0800 OCProject[975:301673] 6----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.877162+0800 OCProject[975:301673] 7----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.877398+0800 OCProject[975:301673] 8----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.877669+0800 OCProject[975:301673] 9----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.878021+0800 OCProject[975:301852] 1----&lt;NSThread: 0x1231b4750&gt;{number = 3, name = (null)}
+2018-05-09 19:24:03.878310+0800 OCProject[975:301673] end1
+2018-05-09 19:24:03.878752+0800 OCProject[975:301673] dic: 我是第7个Item----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.879072+0800 OCProject[975:301673] dic: 我是第3个Item----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.879372+0800 OCProject[975:301673] dic: 我是第8个Item----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.879672+0800 OCProject[975:301673] dic: 我是第4个Item----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.879971+0800 OCProject[975:301673] dic: 我是第0个Item----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.880271+0800 OCProject[975:301673] dic: 我是第9个Item----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.880568+0800 OCProject[975:301673] dic: 我是第5个Item----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.883701+0800 OCProject[975:301673] dic: 我是第6个Item----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.883947+0800 OCProject[975:301673] dic: 我是第2个Item----&lt;NSThread: 0x121e0ba50&gt;{number = 1, name = main}
+2018-05-09 19:24:03.880890+0800 OCProject[975:301852] dic: 我是第1个Item----&lt;NSThread: 0x1231b4750&gt;{number = 3, name = (null)}
+</code></pre>
+
+<h3 id="toc_19">【分析】</h3>
+
+<ul>
+<li>优点：开启多条线程并发处理遍历任务，执行效率高。</li>
+<li>缺点：
+
+<ul>
+<li>对于字典和集合的处理需借助数组 </li>
+<li>无法实现反向遍历。</li>
+</ul></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[多线程 之 NSThread]]></title>
+    <link href="http://blog.csdn.net/15253400374602.html"/>
+    <updated>2018-05-03T17:33:57+08:00</updated>
+    <id>http://blog.csdn.net/15253400374602.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">基本使用</h2>
+
+<h2 id="toc_1">基本知识点学习笔记</h2>
+
+<ul>
+<li>新创建的线程放到了内存的<code>可调度线程池内</code></li>
+<li>线程关系：
+<img src="https://ws1.sinaimg.cn/large/006tKfTcly1fqyaf1gkuvj31gm0nmx2b.jpg" alt=""/></li>
+<li></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS Block 知识点拾遗]]></title>
+    <link href="http://blog.csdn.net/15200726964422.html"/>
+    <updated>2018-03-03T18:24:56+08:00</updated>
+    <id>http://blog.csdn.net/15200726964422.html</id>
+    <content type="html"><![CDATA[
+<ol>
+<li><p>Block为什么要用copy</p>
+
+<ul>
+<li>block在创建的时候默认分配的内存是在栈上，而不是在堆上。这样的话其本身的作用域是属于创建时候的作用域，一旦在创建的作用域之外调用就会导致程序的崩溃。所以使用了copy将其拷贝到堆内存上。</li>
+<li>block创建在栈上，而block的代码中可能会用到本地的一些变量，只有将其拷贝到堆上，才能用这些变量</li>
+</ul></li>
+<li><p>Block为什么不用retain</p>
+
+<ul>
+<li>retain只是增加了一次引用计数，block的内存还是在栈上，并没有存在堆上，存在栈上的block可能随时被系统回收</li>
+</ul></li>
+<li><p>为什么进入block中的对象引用计数需要自动加1？</p>
+
+<ul>
+<li>Block执行的是回调，因此block并不知道其中的对象obj创建后会在什么时候被释放，为了不在block使用obj之前，对象已经被释放，block就retain了obj一次</li>
+</ul></li>
+<li><p>block和函数的关系</p>
+
+<ul>
+<li>Block的使用很<strong>像函数指针</strong>，不过与函数最大的不同是Block可以访问函数以外、词法作用域以内的外部变量的值。换句话说，Block不仅 实现函数的功能，还能<strong>携带函数的执行环境</strong>。</li>
+<li>函数指针 <code>void(*fun)(int)</code></li>
+<li>block <code>void(^fun)(int)</code></li>
+</ul></li>
+<li><p>block本质（对于block的理解）<a href="https://www.cnblogs.com/yoon/p/4953618.html">请查阅Block实现原理</a></p>
+
+<ul>
+<li>block实际上是: 指向结构体的指针</li>
+<li>编译器会将block的内部代码生成对应的函数</li>
+</ul></li>
+<li><p>对于基本数据类型，进入到block中会被当做常量处理。对象 retain 会一次</p>
+
+<span id="more"></span><!-- more -->
+
+<pre><code>//如果需要在block中对num进行修改，需要加上关键字__block
+//(我们也可以用static关键字进行修饰)
+int  num1 = 10;
+void(^block1)() = ^{
+   NSLog(@&quot;num1 is %d&quot;,num1);
+};
+num1 = 20;
+block1(); //输出10
+
+//改进:使用block,使进入到block块中的变量不被当做常量来使用
+__block int  num2 = 10;
+void(^block2)() = ^{
+ NSLog(@&quot;num2 is %d&quot;,num2);
+};
+num2 = 20;
+block2(); //输出20
+</code></pre></li>
+<li><p>Block中self的循环引用</p>
+
+<ul>
+<li>block默认创建在栈上，所以对要对其进行执行copy操作，将其拷贝到堆区，便于更好的操作对象。但是执行了copy操作之后，block中使用self，此对象会被retain一次（注意：block在堆区上时才会起到retain作用），会造成循环引用。</li>
+<li>解决方法：
+
+<ul>
+<li>在MRC下，使用__block修饰</li>
+<li>在ARC下，使用__unsafe_unretained\weak修饰</li>
+</ul></li>
+</ul></li>
+<li><p>Block 在内存中的分类</p>
+
+<ul>
+<li>全局block --&gt; GlobalBlock &lt;==&gt; 相当于全局变量, 系统会自动释放</li>
+<li>栈block --&gt; StackBlock &lt;==&gt; 相当于局部变量, 系统会自动释放</li>
+<li>堆block --&gt; MallocBlock &lt;==&gt; (需要手动释放内存)</li>
+</ul></li>
+<li><p>block类型区分方法</p>
+
+<ul>
+<li>如果block实现中没有访问任何&quot;外部&quot;变量(包括局部和全局), 该block为GlobalBlock</li>
+<li>如果block实现中访问了任何&quot;外部&quot;变量(包括局部和全局), 该block为StackBlock</li>
+<li>对StackBlock进行拷贝(copy/Block_copy), 该block为MallocBlock</li>
+</ul></li>
+<li><p>block内如何修改block外 的变量?</p>
+
+<pre><code> __block int a = 0;
+   void (^foo)(void) = ^{ 
+       a = 1; 
+   };
+   foo(); 
+   //这里，a的值被修改为1
+</code></pre>
+
+<p>默认情况下，block内访问的变量是 copy  该变量到堆后的变量，而非变量本身。<br/>
+所以：<strong>读写操作对原变量不生效</strong></p>
+
+<blockquote>
+<p>我们知道：Block不允许修改外部变量的值，这里所说的外部变量的值，指的是栈中指针的内存地址。__block 所起到的作用就是只要观察到该变量被 block 所持有，就将“外部变量”在栈中的内存地址放到了堆中。进而在block内部也可以修改外部变量的值</p>
+</blockquote>
+
+<pre><code>__block int a = 0;
+   NSLog(@&quot;定义前：%p&quot;, &amp;a);         //栈区
+   void (^foo)(void) = ^{
+       a = 1;
+       NSLog(@&quot;block内部：%p&quot;, &amp;a);    //堆区
+   };
+   NSLog(@&quot;定义后：%p&quot;, &amp;a);         //堆区
+   foo();
+</code></pre>
+
+<p>打印输出：</p>
+
+<pre><code>2016-05-17 02:03:33.559 LeanCloudChatKit-iOS[1505:713679] 定义前：0x16fda86f8
+2016-05-17 02:03:33.559 LeanCloudChatKit-iOS[1505:713679] 定义后：0x155b22fc8
+2016-05-17 02:03:33.559 LeanCloudChatKit-iOS[1505:713679] block内部： 0x155b22fc8
+</code></pre></li>
+<li><p>block个人理解</p>
+
+<pre><code>NSMutableString *kName = [NSMutableString stringWithString:@&quot;kael&quot;];
+__block NSMutableString *myname = kName;
+NSLog(@&quot;block 前%p&quot;,&amp;myname);
+
+void (^foo)(void) = ^(){
+    NSLog(@&quot;block 中1：%p&quot;,&amp;myname);
+    myname = [NSMutableString stringWithString:@&quot;kaelinda&quot;];
+    NSLog(@&quot;block 中2：%p&quot;,&amp;myname);
+};
+
+foo();
+NSLog(@&quot;block 后%p&quot;,&amp;myname);
+
+/**
+ * __block 修饰之前
+ * 外部变量的内存地址是存到了栈
+ * block 是在堆内，不清楚栈内的变量是否已经被释放，所以连引用的准确性都是问题，更谈不上是修改了
+ * 所以，block 不允许修改栈中的变量（或者栈中指针的内存地址）
+ */
+
+/**
+ * __block 修饰之后
+ * 初始化的时候，内存地址在栈内（因为并不确定block内是否会用到），
+ * 当检测到block内引用到了该对象，不管block有没有被调用，都会 从栈内 copy 内存地址到 堆内，
+ * 再操作的时候 操作的是堆内的内存地址
+ */
+</code></pre></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[音视频学习笔记 1]]></title>
+    <link href="http://blog.csdn.net/15235286649865.html"/>
+    <updated>2018-04-12T18:24:24+08:00</updated>
+    <id>http://blog.csdn.net/15235286649865.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">音视频概念</h2>
+
+<h3 id="toc_1">声音的物理性质</h3>
+
+<ul>
+<li>声波三要素：频率、振幅、波形</li>
+<li>人耳听到的频率范围 20Hz-20KHz</li>
+<li><p>声音在空气中的传播速度 340m/s、蒸馏水中1497m/s、铁棒5200m/s</p></li>
+<li><p>一般声音的采样频率为 44.1KHz---&gt; 一秒钟采样44100次，这样 20KHz的频率也能被数字化</p></li>
+<li><p>音频的裸数据格式 脉冲编码调制  PCM （Pluse Code Modulation）</p></li>
+<li><p>PCM 相关概念：量化格式、采样频率、声道数</p></li>
+</ul>
+
+<h3 id="toc_2">音频编码</h3>
+
+<p>音频压缩编码算法有：PCM、WAV、AAC、MP3、Ogg。</p>
+
+<ul>
+<li>WAV：音频质量好，大多数软件都支持，但是占用空间大；适合当做多媒体开发的中间文件，保存音乐、音效素材</li>
+<li>MP3：不错的压缩比，LAME编码中高码率文件。音质在128Kbit/s 以上表现不错，压缩比高，大多数软件都支持。适合高比特率下对兼容性有要求的音乐欣赏。</li>
+<li>AAC：包括LC-AAC、HE-AAC、HE-AAC v2,小于128Kbit/s表现优异。</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">LC-AAC</th>
+<th style="text-align: center">HE-AAC</th>
+<th style="text-align: center">HE-AAC v2</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">中高码率&gt;80Kbit/s</td>
+<td style="text-align: center">中低码率&lt;=80Kbit/s</td>
+<td style="text-align: center">低码率&lt;48Kbit/s</td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[疯狂iOS讲义笔记 1]]></title>
+    <link href="http://blog.csdn.net/15233259445112.html"/>
+    <updated>2018-04-10T10:05:44+08:00</updated>
+    <id>http://blog.csdn.net/15233259445112.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">多点触摸与 手势检测</h2>
+
+<h3 id="toc_1">响应者链</h3>
+
+<ul>
+<li>响应者链：第一响应者 ---&gt; 第一响应者的视图控制器 ---&gt; 父控制器（如果有的话）---&gt; UIWindow ---&gt; UIApplication ---&gt; 应用程序委托对象</li>
+<li>手势交互触发事件的过程，iOS系统遍历视图的时候 是 深度遍历 还是 广度遍历？</li>
+<li></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能（7）]]></title>
@@ -52,6 +949,84 @@ $ ./test2.sh
 </code></pre>
 
 <h2 id="toc_1">输入/输出  重定向</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">命令</th>
+<th style="text-align: center">说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">command &gt; file</td>
+<td style="text-align: center">先清空文件中内容，将输出重定向到文件</td>
+</tr>
+<tr>
+<td style="text-align: center">command &lt; file</td>
+<td style="text-align: center">将输入重定向到文件</td>
+</tr>
+<tr>
+<td style="text-align: center">command &gt;&gt; file</td>
+<td style="text-align: center">将输出以追加的形式重定向到file</td>
+</tr>
+<tr>
+<td style="text-align: center">N &gt; file</td>
+<td style="text-align: center">将描述符为N的文件，重定向到文件file</td>
+</tr>
+<tr>
+<td style="text-align: center">N &gt;&gt; file</td>
+<td style="text-align: center">将描述符为N的文件，追加到file</td>
+</tr>
+<tr>
+<td style="text-align: center">n&gt;&amp;m</td>
+<td style="text-align: center">将输出文件m 和  n合并</td>
+</tr>
+<tr>
+<td style="text-align: center">n&lt;&amp;m</td>
+<td style="text-align: center">将输入文件m 和 n合并</td>
+</tr>
+<tr>
+<td style="text-align: center">&lt;&lt;tag</td>
+<td style="text-align: center">将开始标记为tag何结尾标记为tag 之间的内容作为输入</td>
+</tr>
+</tbody>
+</table>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[每天学习一个shell技能（8）]]></title>
+    <link href="http://blog.csdn.net/15232599795686.html"/>
+    <updated>2018-04-09T15:46:19+08:00</updated>
+    <id>http://blog.csdn.net/15232599795686.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">shell 终端打印</h2>
+
+<pre><code>```
+printf &quot;%-5s %-10s %-4s \n&quot; NO Name Mark
+printf &quot;%-5s %-10s %-4s \n&quot; 1 kael 100
+printf &quot;%-5s %-10s %-4s \n&quot; 2 linda 99
+printf &quot;%-5s %-10s %-4s \n&quot; 3 rouse 98
+
+// 打印结果
+NO    Name       Mark 
+1     kael       100  
+2     linda      99   
+3     rouse      98  
+```
+</code></pre>
+
+<blockquote>
+<p>printf 行尾 默认自带换行 \n</p>
+</blockquote>
+
+<ul>
+<li>%-5s : 左对齐，宽度为5的字符串替换；默认右对齐</li>
+<li>%-4.2f:指定保留2位小数</li>
+</ul>
 
 ]]></content>
   </entry>
@@ -756,104 +1731,6 @@ item_length=${#array_name[n]}
 #
 ##### 用户配置区 结束  #####
 </code></pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[源码阅读 -- YYModel （一）]]></title>
-    <link href="http://blog.csdn.net/15181411526837.html"/>
-    <updated>2018-02-09T09:52:32+08:00</updated>
-    <id>http://blog.csdn.net/15181411526837.html</id>
-    <content type="html"><![CDATA[
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[iOS Block 知识点拾遗]]></title>
-    <link href="http://blog.csdn.net/15200726964422.html"/>
-    <updated>2018-03-03T18:24:56+08:00</updated>
-    <id>http://blog.csdn.net/15200726964422.html</id>
-    <content type="html"><![CDATA[
-<ol>
-<li><p>Block为什么要用copy</p>
-
-<ul>
-<li>block在创建的时候默认分配的内存是在栈上，而不是在堆上。这样的话其本身的作用域是属于创建时候的作用域，一旦在创建的作用域之外调用就会导致程序的崩溃。所以使用了copy将其拷贝到堆内存上。</li>
-<li>block创建在栈上，而block的代码中可能会用到本地的一些变量，只有将其拷贝到堆上，才能用这些变量</li>
-</ul></li>
-<li><p>Block为什么不用retain</p>
-
-<ul>
-<li>retain只是增加了一次引用计数，block的内存还是在栈上，并没有存在堆上，存在栈上的block可能随时被系统回收</li>
-</ul></li>
-<li><p>为什么进入block中的对象引用计数需要自动加1？</p>
-
-<ul>
-<li>Block执行的是回调，因此block并不知道其中的对象obj创建后会在什么时候被释放，为了不在block使用obj之前，对象已经被释放，block就retain了obj一次</li>
-</ul></li>
-<li><p>block和函数的关系</p>
-
-<ul>
-<li>Block的使用很<strong>像函数指针</strong>，不过与函数最大的不同是Block可以访问函数以外、词法作用域以内的外部变量的值。换句话说，Block不仅 实现函数的功能，还能<strong>携带函数的执行环境</strong>。</li>
-<li>函数指针 <code>void(*fun)(int)</code></li>
-<li>block <code>void(^fun)(int)</code></li>
-</ul></li>
-<li><p>block本质（对于block的理解）<a href="https://www.cnblogs.com/yoon/p/4953618.html">请查阅Block实现原理</a></p>
-
-<ul>
-<li>block实际上是: 指向结构体的指针</li>
-<li>编译器会将block的内部代码生成对应的函数</li>
-</ul></li>
-<li><p>对于基本数据类型，进入到block中会被当做常量处理。对象 retain 会一次</p>
-
-<span id="more"></span><!-- more -->
-
-<pre><code>//如果需要在block中对num进行修改，需要加上关键字__block
-//(我们也可以用static关键字进行修饰)
-int  num1 = 10;
-void(^block1)() = ^{
-   NSLog(@&quot;num1 is %d&quot;,num1);
-};
-num1 = 20;
-block1(); //输出10
-
-//改进:使用block,使进入到block块中的变量不被当做常量来使用
-__block int  num2 = 10;
-void(^block2)() = ^{
- NSLog(@&quot;num2 is %d&quot;,num2);
-};
-num2 = 20;
-block2(); //输出20
-</code></pre></li>
-<li><p>Block中self的循环引用</p>
-
-<ul>
-<li>block默认创建在栈上，所以对要对其进行执行copy操作，将其拷贝到堆区，便于更好的操作对象。但是执行了copy操作之后，block中使用self，此对象会被retain一次（注意：block在堆区上时才会起到retain作用），会造成循环引用。</li>
-<li>解决方法：
-
-<ul>
-<li>在MRC下，使用__block修饰</li>
-<li>在ARC下，使用__unsafe_unretained\weak修饰</li>
-</ul></li>
-</ul></li>
-<li><p>Block 在内存中的分类</p>
-
-<ul>
-<li>全局block --&gt; GlobalBlock &lt;==&gt; 相当于全局变量, 系统会自动释放</li>
-<li>栈block --&gt; StackBlock &lt;==&gt; 相当于局部变量, 系统会自动释放</li>
-<li>堆block --&gt; MallocBlock &lt;==&gt; (需要手动释放内存)</li>
-</ul></li>
-<li><p>block类型区分方法</p>
-
-<ul>
-<li>如果block实现中没有访问任何&quot;外部&quot;变量(包括局部和全局), 该block为GlobalBlock</li>
-<li>如果block实现中访问了任何&quot;外部&quot;变量(包括局部和全局), 该block为StackBlock</li>
-<li>对StackBlock进行拷贝(copy/Block_copy), 该block为MallocBlock</li>
-</ul></li>
-<li></li>
-</ol>
 
 ]]></content>
   </entry>
@@ -1911,833 +2788,6 @@ typedef void CgUpnpStateVariable;
  */
 - (NSInteger)statusCode;
 </code></pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[DLNA DMS]]></title>
-    <link href="http://blog.csdn.net/15173774932057.html"/>
-    <updated>2018-01-31T13:44:53+08:00</updated>
-    <id>http://blog.csdn.net/15173774932057.html</id>
-    <content type="html"><![CDATA[
-<p>上源码：</p>
-
-<pre><code>#if defined(TARGET_OS_IPHONE)
-#import &lt;UIKit/UIKit.h&gt;
-#else
-#import &lt;Foundation/NSArray.h&gt;
-#import &lt;Foundation/NSString.h&gt;
-#endif
-
-#import &lt;CyberLink/UPnP.h&gt;
-
-@class CGUpnpAvContentDirectory;
-@class CGUpnpAvObject;
-@class CGUpnpAvContainer;
-@class CGUpnpAvServer;
-
-#if !defined(_CG_CLINKCAV_SERVER_H_)
-typedef void CgUpnpAvServer;
-#endif
-
-@protocol CGUpnpAvServerDelegate &lt;NSObject&gt;
-@optional
-- (void)upnpAvServer:(CGUpnpAvServer *)upnpAvServer browse:(CGUpnpAction *)browseAction avObject:(CGUpnpAvObject *)avObject;
-- (void)upnpAvServer:(CGUpnpAvServer *)upnpAvServer search:(CGUpnpAction *)searchAction avObject:(CGUpnpAvObject *)avObject;
-@end
-
-/**
- * The CGUpnpAvServer class is a UPnP/AV media server class.
- * 这个 CGUpnpAvServer 类是UPnP/AV 谜题资源服务类
- */
-@interface CGUpnpAvServer : CGUpnpDevice
-{
-}
-
-@property(readonly) CGUpnpAvContentDirectory *contentDirectory;
-// DMS 可以持有子服务作为属性
-@property(readonly) CgUpnpAvServer *cAvObject;
-// 设置代理
-@property(assign) id&lt;CGUpnpAvServerDelegate&gt; delegate;
-
-#if defined(TARGET_OS_IPHONE)
-@property(retain) UIImage *thumbnailImage;
-#endif
-
-/*
- * Create a new UPnP/AV server.
- * 
- * @return New instance if successfull; otherwise nil.
- */
-- (id)init;
-/**
- * Create a new UPnP/AV server with the C instance.
- * 
- * @return New instance if successfull; otherwise nil.
- */
-- (id)initWithCObject:(CgUpnpDevice *)cobj;
-- (void)setUserObject:(id)aUserObj;
-- (id)userObject;
-// 浏览某一个CGUpnpAvObject 的ID 是否成功
-- (BOOL)browse:(NSString *)aObjectId browseFlag:(NSString *)aBrowseFlag options:(NSDictionary *)options;
-// 浏览二进制
-- (CGUpnpAvObject *)browseMetadata:(NSString *)aObjectId;
-// 所有子对象个数
-- (NSArray *)browseDirectChildren:(NSString *)aObjectId;
-// 获取指定个数的子对象
-- (NSArray *)browseDirectChildren:(NSString *)aObjectId requestedCount:(NSUInteger) aRequestedCount;
-// 获取指定个数的子对象
-- (NSArray *)browseDirectChildren:(NSString *)aObjectId requestedCount:(NSUInteger)aRequestedCount startingIndex:(NSUInteger)aStartingIndex;
-// 浏览行为
-- (CGUpnpAction *)browseAction;
-// 查找某个东西
-- (NSArray *)search:(NSString *)aSearchCriteria;
-// 同上
-- (NSArray *)searchByBrowse:(NSString *)aSearchCriteria;
-- (NSArray *)searchByBrowse:(NSString *)aSearchCriteria objectId:(NSString *)objectId;
-// 查找UPnPAction
-- (CGUpnpAction *)searchAction;
-// 跟对象 （对象可以持有别的对象作为属性）
-- (CGUpnpAvContainer *)rootObject;
-// 通过ID获取AVObject
-- (CGUpnpAvObject *)objectForId:(NSString *)aObjectId;
-// 通过titlePath 获取AVObject对象
-- (CGUpnpAvObject *)objectForTitlePath:(NSString *)aTitlePath;
-// 开始
-- (BOOL)start;
-// 停止
-- (BOOL)stop;
-// 锁定
-- (void)lock;
-// 解锁
-- (void)unlock;
-@end
-</code></pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[DLNA DMC]]></title>
-    <link href="http://blog.csdn.net/15173790393385.html"/>
-    <updated>2018-01-31T14:10:39+08:00</updated>
-    <id>http://blog.csdn.net/15173790393385.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">CGUpnpControlPoint</h2>
-
-<pre><code>
-#if !defined(_CG_UPNP_CCONTROLPOINT_H_)
-typedef void CgUpnpControlPoint;
-#endif
-
-@class CGUpnpDevice;
-@class CGUpnpControlPoint;
-
-@protocol CGUpnpControlPointDelegate &lt;NSObject&gt;
-@optional
-// deviceUdn 设备的UDID 设备添加，更新，移除，失效的协议方法
-- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceAdded:(NSString *)deviceUdn;
-- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceUpdated:(NSString *)deviceUdn;
-- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceRemoved:(NSString *)deviceUdn;
-- (void)controlPoint:(CGUpnpControlPoint *)controlPoint deviceInvalid:(NSString *)deviceUdn;
-@end
-
-/**
- * The CGUpnpControlPoint class is a wrapper class for CgUpnpControlPoint of CyberLink for C to 
- * program using only Objective-C directly on MacOSX.
- * Currently, the only basic methods are wrapped to control UPnP devices.
- */
-@interface CGUpnpControlPoint : NSObject 
-{
-    CgUpnpControlPoint *cObject;
-}
-// 子控制点
-@property(readonly) CgUpnpControlPoint *cObject;
-// 代理对象
-@property(assign) id&lt;CGUpnpControlPointDelegate&gt; delegate;
-
-// get方法
-- (CgUpnpControlPoint *)cObject;
-/**
- * Activate some background threads of the control point such as SSDP and 
- * HTTP servers to listen messages and events of UPnP. You must call this 
- * method before you can actually use a control point.
- *
- * @return TRUE if successful; otherwise FALSE
- *
- */
- // 激活DMC的子线程 SSDP HTTP服务，去监听UPnP信息和时间
- // 使用控制点之前必须要激活
-- (BOOL)start;
-/**
- * Stop some background threads of the control point such as SSDP and 
- * HTTP servers to listen messages and events of UPnP. 
- *
- * @return TRUE if successful; otherwise FALSE
- *
- */
- // 停止后台线程 和 SSDP HTTP 服务
-- (BOOL)stop;
-/**
- * Check if the controll point is running.
- *
- * @return YES if the device is started normally, otherwise NO.
- */
- // 检测DMC是否正在运行
-- (BOOL)isRunning;
-/**
- * Send a M-SEARCH request to find for the all UPnP devices of UPnP in the network.
- * The method waits for the specified MX time. Use setSsdpSearchMX:(NSInteger)aMX to change the time.
- * The method is same as searchWithST() when the ST parameter is &quot;ssdp:all&quot;.
- */
- 
- // 发送M-SEARCH 请求去发现局域网内所有的UPnP设备
-- (void)search;
-/**
- * Send a M-SEARCH request to find for the specified UPnP devices by a ST parameter in the network.
- * The method waits for the specified MX time. Use setSsdpSearchMX:(NSInteger)aMX to change the time.
- *
- * @param aST The Search Target parameter (ex. &quot;ssdp:all&quot;)
- */
-- (void)searchWithST:(NSString *)aST;
-/**
- * Set a MX parameter used for SSDP searches in seconds.
- * The parameter is used to wait for M-SEARCH responses in search() and searchWithST:(NSString *)aST.
- *
- * @param aMX Time to wait
- */
-- (void)setSsdpSearchMX:(NSInteger)aMX;
-/**
- * Get a MX parameter used for SSDP searches in seconds.
- * The parameter is used to wait for M-SEARCH responses in search() and searchWithST:(NSString *)aST.
- *
- * @return Time to wait
- */
-// 等待时间
-- (NSInteger)ssdpSearchMX;
-/**
- * Get all UPnP devices which the control point found as a NSArray object. The array has the devices as instances of CGUpnpDevice.
- * @return NSArray of CGUpnpDevice.
- */
- // DMC发现的所有设备
-- (NSArray *)devices;
-/**
- * Get a specified UPnP devices by the UDN.
- * @return CGUpnpDevice when the specified device is found, otherwise nil.
- */
- // 通过UDN 获取指定的upnp设备
-- (CGUpnpDevice *)deviceForUDN:(NSString *)udn;
-</code></pre>
-
-<h2 id="toc_1">CGUpnpAvContentDirectory</h2>
-
-<pre><code>/**
- * The CGUpnpAvContentDirectory class has UPnP/AV objects of a media servers.
- *
- */
-@interface CGUpnpAvContentDirectory : NSObject
-{
-    CGUpnpAvContentManager *contentMgr;
-}
-- (CGUpnpAvContainer *)rootObject;
-- (CGUpnpAvObject *)objectForId:(NSString *)aObjectId;
-- (CGUpnpAvObject *)objectForTitlePath:(NSString *)aTitlePath;
-@end
-</code></pre>
-
-<h2 id="toc_2">CGUpnpAvContentManager</h2>
-
-<pre><code>/**
- * The CGUpnpAvContentDirectory class has UPnP/AV objects of a media servers.
- *
- */
-@interface CGUpnpAvContentManager : NSObject
-{
-    CGUpnpAvRoot *rootObj;
-}
-- (CGUpnpAvContainer *)rootObject;
-- (CGUpnpAvObject *)objectForId:(NSString *)aObjectId;
-- (CGUpnpAvObject *)objectForTitlePath:(NSString *)aTitlePath;
-</code></pre>
-
-<h2 id="toc_3">CGUpnpAvObject</h2>
-
-<pre><code>
-/**
- * The CGUpnpAvObject class is a wrapper class for CgUpnpAvObject of CyberLink for C.
- */
-
-#define CGUPNPAV_OBJECT_MOVIE_FILEEXT @&quot;mov&quot;
-#define CGUPNPAV_OBJECT_SOUND_FILEEXT @&quot;snd&quot;
-#define CGUPNPAV_OBJECT_IMAGE_FILEEXT @&quot;img&quot;
-
-@interface CGUpnpAvObject : CGXmlNode 
-{
-    // 父类对象
-    CGUpnpAvObject *parent;
-}
-@property(retain) id userObject;
-#if defined(TARGET_OS_IPHONE)
-@property(retain) UIImage *thumbnailImage;
-#endif
-
-// xml字符串转成对象
-+ (NSArray *)arrayWithXMLString:(NSString *)aXmlString;
-// 初始化方法
-- (id)init;
-#if  !defined(TARGET_OS_IPHONE)
-- (id)initWithXMLNode:(NSXMLElement *)aXmlNode;
-#else
-- (id)initWithXMLNode:(CgXmlNode *)aXmlNode;
-- (id)initWithMediaContent:(CgUpnpAvContent *)aMediaContent;
-#endif
-// 判断方法
-- (BOOL)isEqual:(id)anObject;
-- (BOOL)isContainer;
-- (BOOL)isItem;
-// 设置、获取父亲类
-- (void)setParent:(CGUpnpAvObject *)aParent;
-- (CGUpnpAvObject *)parent;
-// 祖先类对象
-- (CGUpnpAvObject *)ancestor;
-// 对象ID
-- (NSString *)objectId;
-// 子类对象个数
-- (NSUInteger)childCount;
-// 标题（文件名 不带后缀）
-- (NSString *)title;
-// upnp 类型
-- (NSString *)upnpClass;
-// 日期
-- (NSString *)date;
-// 相册URI
-- (NSString *)albumArtURI;
-// 设置对象ID、title等
-- (void)setObjectId:(NSString *)aValue;
-- (void)setTitle:(NSString *)aValue;
-- (void)setUpnpClass:(NSString *)aValue;
-// 是否包含某一资源对象
-- (BOOL)isObjectId:(NSString *)aObjectId;
-- (BOOL)isTitle:(NSString *)aTitle;
-- (BOOL)isUpnpClass:(NSString *)aUpnpClass;
-// 文件全名 （带后缀）
-- (NSString *)toFileNameString;
-// 艺术家 作者
-- (NSString *)artist;
-</code></pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[iOS设备上实现DLNA功能 Platinum 篇]]></title>
-    <link href="http://blog.csdn.net/15172908985351.html"/>
-    <updated>2018-01-30T13:41:38+08:00</updated>
-    <id>http://blog.csdn.net/15172908985351.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">DLNA 相关</h2>
-
-<ul>
-<li>DLNA</li>
-<li>Miracast</li>
-<li>Airplay</li>
-</ul>
-
-<p>网络环境：同一个网关下，即同一个局域网的同一网段</p>
-
-<h3 id="toc_1">基本名词解释</h3>
-
-<ul>
-<li>DLNA全称： DIGITAL LIVING NETWORK ALLIANCE(数字生活网络联盟)</li>
-<li>宗旨： Enjoy your music, photos and videos, anywhere anytime</li>
-<li>协议： DLNA包含若干协议和标准，最重要的也是我们最常用的就是UPnP技术</li>
-<li>通用即插即用 (UPnP) 是一种用于 PC 机和智能设备（或仪器）的常见对等网络连接的体系结构，尤其是在家庭中。UPnP 以 Internet 标准和技术（例如 TCP/IP、HTTP 和 XML）为基础，使这样的设备彼此可自动连接和协同工作，从而使网络（尤其是家庭网络）对更多的人成为可能</li>
-</ul>
-
-<h3 id="toc_2">技术名词解释</h3>
-
-<ul>
-<li>DMC：控制点</li>
-<li>DMS：资源服务器</li>
-<li>DMR：渲染器</li>
-</ul>
-
-<h3 id="toc_3">发现设备</h3>
-
-<p>智能终端设备加入组网，搜索其他设备的基本流程。当一个新的DMC加入局域网，为了获取当前网段里有哪些智能设备，需要遵循<code>SSDP</code>向默认的多播IP和端口发送获取信息的请求。对于<code>DMC</code> 可以使用DLNA定义的 <code>搜索响应方式</code> 来发现设备，这会用到HTTP的扩展协议<code>M-SEARCH</code></p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[react-native-splash-screen 给安卓项目添加启动图]]></title>
-    <link href="http://blog.csdn.net/15151216159291.html"/>
-    <updated>2018-01-05T11:06:55+08:00</updated>
-    <id>http://blog.csdn.net/15151216159291.html</id>
-    <content type="html"><![CDATA[
-<h2 id="toc_0">react-native-splash-screen 基本配置</h2>
-
-<ul>
-<li>安装插件：<code>npm install react-native-splash-screen --save</code></li>
-<li>关联项目：<code>react-native link react-native-splash-screen</code> or <code>rnpm link react-native-splash-screen</code></li>
-</ul>
-
-<blockquote>
-<p>link 之后，安卓项目中会自动添加头文件 以及部分代码，为保证项目顺利运行，还请确认下面代码是否已经完善。</p>
-</blockquote>
-
-<ul>
-<li><p>确保 <code>android/settings.gradle</code>文件夹已经有下面代码</p>
-
-<pre><code class="language-JavaScript">include &#39;:react-native-splash-screen&#39;   
-project(&#39;:react-native-splash-screen&#39;).projectDir = new File(rootProject.projectDir, &#39;../node_modules/react-native-splash-screen/android&#39;)
-</code></pre></li>
-<li><p>android/app/build.gradle 文件中 添加依赖 <code>react-native-splash-screen</code></p>
-
-<pre><code>...
-dependencies {
-...
-compile project(&#39;:react-native-splash-screen&#39;)
-}
-</code></pre></li>
-<li><p>更新 <code>MainApplication.java</code> 文件</p></li>
-</ul>
-
-<pre><code>// react-native-splash-screen &gt;= 0.3.1
-import org.devio.rn.splashscreen.SplashScreenReactPackage;
-// react-native-splash-screen &lt; 0.3.1
-import com.cboy.rn.splashscreen.SplashScreenReactPackage;
-
-public class MainApplication extends Application implements ReactApplication {
-
-    private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
-        @Override
-        protected boolean getUseDeveloperSupport() {
-            return BuildConfig.DEBUG;
-        }
-
-        @Override
-        protected List&lt;ReactPackage&gt; getPackages() {
-            return Arrays.&lt;ReactPackage&gt;asList(
-                    new MainReactPackage(),
-            new SplashScreenReactPackage()  //here
-            );
-        }
-    };
-
-    @Override
-    public ReactNativeHost getReactNativeHost() {
-        return mReactNativeHost;
-    }
-}
-</code></pre>
-
-<h2 id="toc_1">准备添加代码和文件配置</h2>
-
-<ul>
-<li><code>app/src/main/res/layout</code> 文件夹下 添加 <code>launch_screen.xml</code> 并copy如下代码：</li>
-</ul>
-
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:orientation=&quot;vertical&quot; android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-    android:background=&quot;@drawable/launch_screen&quot;&gt;
-&lt;/LinearLayout&gt;
-</code></pre>
-
-<ul>
-<li>创建文件夹 <code>drawable-xhdpi</code>、 <code>drawable-xxhdpi</code>（暂时先创建这两个就够了），将准备好的启动图 命名为 <code>launch_screen.png</code> 分别放入创建好的文件夹</li>
-<li><p>白屏问题，设置透明背景：<code>android/app/src/main/res/values/styles.xml</code> 文件夹下 添加 <code>&lt;item name=&quot;android:windowIsTranslucent&quot;&gt;true&lt;/item&gt;</code></p>
-
-<pre><code>&lt;resources&gt;
-&lt;!-- Base application theme. --&gt;
-&lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.NoActionBar&quot;&gt;
-    &lt;!-- Customize your theme here. --&gt;
-    &lt;!--设置透明背景--&gt;
-    &lt;item name=&quot;android:windowIsTranslucent&quot;&gt;true&lt;/item&gt;
-&lt;/style&gt;
-&lt;/resources&gt;
-</code></pre></li>
-<li><p><code>android/app/src/main/res/values/colors.xml</code> 文件夹下，添加如下：</p>
-
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; &lt;resources&gt; &lt;color name=&quot;primary_dark&quot;&gt;#660B0B0B&lt;/color&gt; &lt;/resources&gt;
-</code></pre></li>
-<li><p>适当的时刻 隐藏启动图  可以是在视图挂载完毕，可以是网络请求结束之后</p></li>
-</ul>
-
-<pre><code>import SplashScreen from &#39;react-native-splash-screen&#39;
-componentDidMount() {
-    SplashScreen.hide();
-  }
-</code></pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[从零开始学习使用 vuex]]></title>
-    <link href="http://blog.csdn.net/15168925544178.html"/>
-    <updated>2018-01-25T23:02:34+08:00</updated>
-    <id>http://blog.csdn.net/15168925544178.html</id>
-    <content type="html"><![CDATA[
-<blockquote>
-<p>本文是建立在，对vuex理论有一定理解的基础上写的。<br/>
-因为官方文档的写法是 针对 有一定的vue开发经验 和 JavaScript 有一定理解的开发者看的，对于小白级别的我来说，理解起来有一定困难。所以，唯一想我一向的小白想尽快上手vuex....</p>
-</blockquote>
-
-<p><a href="https://vuex.vuejs.org/zh-cn/installation.html">详情请参考vuex官方文档</a></p>
-
-<h2 id="toc_0">安装</h2>
-
-<h3 id="toc_1">直接下载 CDN 安装</h3>
-
-<p>CDN 链接地址：<code>https://unpkg.com/vuex</code><br/>
-指定到固定版本：<code>https://unpkg.com/vuex@2.0.0</code></p>
-
-<pre><code>&lt;script src=&quot;/path/to/vue.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;/path/to/vuex.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-<h3 id="toc_2">npm 方式安装 （推荐！简单快捷，便于管理）</h3>
-
-<p><code>npm install -save vuex</code></p>
-
-<h3 id="toc_3">yar</h3>
-
-<p><code>yarn add vuex</code></p>
-
-<h3 id="toc_4">自己构建</h3>
-
-<pre><code class="language-bash">git clone https://github.com/vuejs/vuex.git node_modules/vuex
-cd node_modules/vuex
-npm install
-npm run build
-</code></pre>
-
-<h2 id="toc_5">导入vue工程中使用</h2>
-
-<ul>
-<li>main.js 入口文件</li>
-</ul>
-
-<blockquote>
-<p>按照如下方式导入，工程就可以使用vuex的环境了</p>
-</blockquote>
-
-<pre><code class="language-JavaScript">// 导入vuex头文件
-import Vuex from &#39;vuex&#39;
-// 这里表示全局导入vuex
-Vue.use(Vuex)
-// 这里是我自定义的store文件 导出store对象
-import store from &#39;@/study/vuexStudy/store/store.js&#39;
-</code></pre>
-
-<blockquote>
-<p>入口组件<App/>中，绑定store</p>
-</blockquote>
-
-<pre><code>new Vue({
-  el: &#39;#app&#39;,
-  template: &#39;&lt;App/&gt;&#39;,
-  components: { App },
-  store
-})
-</code></pre>
-
-<p>到这里 算是万里长征走了第一步。</p>
-
-<h3 id="toc_6">创建Store对象</h3>
-
-<h4 id="toc_7">store 的结构:</h4>
-
-<pre><code class="language-JavaScript">export const store = new Vuex.Store({
-
-  // ------state:状态值存储,这里可以存储n个状态的值
-  state: {count: &#39;1&#39;},
-  
-  // ------getter:store中定义的getters可以认为是store的计算属性
-  // getters接收state作为其第一个参数
-  getters: {
-    done (state) {
-      return state.count + 5
-    }
-  },
-  
-  // ------mutations:状态值的改变，操作状态值
-  // $store.commit(mutationsName, params)是更改状态值的唯一方法
-  mutations: {
-    increment (state) {
-      // 变更状态
-      state.count++
-    }
-  },
-
-  // ------actions:可以认为是包装了mutations的function 需要用 dispatch(actionName) 的方式去派发
-  actions: {
-    add (context) {
-      context.commit(&#39;increment&#39;)
-    },
-    addAsync (context) {
-      // 延时1秒
-      setTimeout(() =&gt; {
-        context.commit(&#39;increment&#39;)
-      }, 1000)
-    }
-  },
-  // store可以合并几个子store，以此来进行项目的模块化
-  modules: {
-    a: moduleA,
-    b: moduleB
-  }
-})
-</code></pre>
-
-<h4 id="toc_8">编辑定义store实体对象：</h4>
-
-<ul>
-<li>store.js文件中</li>
-</ul>
-
-<blockquote>
-<p>这里为了便于抽离 我们外部声明城对象实体后嵌入绑定到store</p>
-</blockquote>
-
-<ol>
-<li><p>创建一个store对象</p>
-
-<pre><code class="language-JavaScript">export default const store = new Vuex.Store({
-  state,//绑定之前创建的state对象到store中
-  mutations,
-  getters,
-  actions,
-  modules
-})
-</code></pre></li>
-<li><p>定义一个状态对象 <code>state</code>（实体）</p>
-
-<pre><code class="language-JavaScript">const state = {
-  count: 0,
-  state1: 1,
-  state2: 2,
-  state3: 3
-}
-</code></pre></li>
-<li><p>定义getters对象</p>
-
-<pre><code>const getters = {
-  done (state) {
-    return state.count + 5
-  },
-  getState1: function (state) {
-    return state.state3
-  },
-  // ES6简写
-  getState2: state =&gt;  state.state2
-}
-</code></pre></li>
-<li><p>.vue 文件中直接获取state值</p>
-
-<p>首先导入辅助函数：</p>
-
-<pre><code>import { 
-    mapState, 
-    mapGetters, 
-    mapMutations, 
-    mapActions 
-    } from &#39;vuex&#39;
-</code></pre>
-
-<ul>
-<li>第一种方式：绑定到组件属性中，直接获取 （一般不用这个，绑定到computed中是最合适的）<code>$store.state.count</code>并使用</li>
-</ul>
-
-<pre><code class="language-JavaScript">export default {
-    data() {
-        return {
-          testCount: this.$store.state.count
-        }
-    }
-}
-</code></pre>
-
-<ul>
-<li>第二种方式： 绑定到计算属性中（适合对store中的原始状态值进行一定处理的情况）</li>
-</ul>
-
-<pre><code class="language-JavaScript">export default {
-    data() {
-        return {
-          testCount: this.$store.state.count
-        }
-    },
-    computed:{
-        testComputedCount1: function () {
-            return this.$store.state.count + 22
-        }
-    }
-}
-</code></pre>
-
-<ul>
-<li>第三种方式：mapState辅助函数绑定状态state值到组件计算属性中</li>
-</ul>
-
-<pre><code class="language-JavaScript">export default {
-    data() {
-        return {
-          testCount: this.$store.state.count
-        }
-    },
-    computed:{
-        testComputedCount1: function () {
-            return this.$store.state.count + 22
-        },
-        ...mapState({
-            count: state =&gt; state.count,
-            mapState1: state =&gt; state.state1,
-            mapState2: state =&gt; state.state2
-        }),
-    }
-}
-</code></pre>
-
-<ul>
-<li>第四种方式：使用store中绑定的getters进行获取</li>
-</ul>
-
-<pre><code class="language-JavaScript">export default {
-    data() {
-        return {
-          testCount: this.$store.state.count
-        }
-    },
-    computed:{
-        testComputedCount1: function () {
-            return this.$store.state.count + 22
-        },
-        ...mapState({
-            count: state =&gt; state.count,
-            mapState1: state =&gt; state.state1,
-            mapState2: state =&gt; state.state2
-        }),
-        testComputedGettersCount2: funtion () {
-            return this.$store.getters.done
-        }
-    }
-}
-</code></pre>
-
-<ul>
-<li>第五种方式： 借助mapGetters辅助函数绑定getters到vue的计算属性中</li>
-</ul>
-
-<pre><code class="language-JavaScript">export default {
-    data() {
-        return {
-          testCount: this.$store.state.count
-        }
-    },
-    computed:{
-        testComputedCount1: function () {
-            return this.$store.state.count + 22
-        },
-        ...mapState({
-            count: state =&gt; state.count,
-            mapState1: state =&gt; state.state1,
-            mapState2: state =&gt; state.state2
-        }),
-        testComputedGettersCount2: funtion () {
-            return this.$store.getters.done
-        },
-
-        //直接绑定方法数组的方式
-        ...mapGetters([
-            &#39;getState1&#39;,
-            &#39;getState2&#39;,
-            &#39;getState3&#39;
-        ]),
-
-        //重命名对象绑定方式
-        ...mapGetters({
-          mapGetterState1: &#39;getState1&#39;,
-          mapGetterState3: &#39;getState3&#39;
-        }),
-    }
-}
-</code></pre></li>
-<li><p>触发动作行为改变状态值</p>
-
-<blockquote>
-<p>方式一：$store.commit(&#39;mutationsName&#39;)</p>
-
-<p>方式二：$store.dispatch(&#39;actionsName&#39;)    </p>
-</blockquote>
-
-<p>store.js文件中：</p>
-
-<ul>
-<li>初始化 mutations 和 actions (相当于是methods)</li>
-</ul>
-
-<pre><code>const mutations = {
-    increment (state) {
-        // 变更状态
-        state.count = state.count * 5
-    }
-}
-</code></pre>
-
-<pre><code>import {action4} from &#39;@/path/actions.js&#39;
-const actions = {
-    // 同步方法
-    add: function (context) {
-        context.commit(&#39;increment&#39;)
-    },
-    // 延时操作 用于网络请求啊啥的
-    addAsync (context) {
-        // 延时1秒
-        setTimeout(() =&gt; {
-            context.commit(&#39;increment&#39;)
-        }, 1000)
-    },
-    // 简写方式
-    action2 (context) {
-        context.commit(&#39;increment&#39;)
-    },
-    // 抽离到单独文件中，在导进封装好的变量来直接使用即可（导进来的目的是为了接收第一个参数：state），不绑定到store，需要手动传入store对象
-    action4: action4,
-}
-</code></pre></li>
-</ol>
-
-<ul>
-<li><p>绑定action 和 mutations 到 methods，然后 调用就行了</p>
-
-<pre><code>export default {
-    methods: {
-        // 数组形式直接载入
-        ...mapActions([
-            &#39;add&#39;
-        ]),
-        // 重命名形式 
-        ...mapActions({
-            add: &#39;add&#39;,
-            addAsync: &#39;addAsync&#39;,
-            action4: &#39;action4&#39;
-        }),
-        // 同上
-        ...mapMutations([
-            &#39;increment&#39;
-        ]),
-        ...mapMutations({
-            incrementMutation: &#39;increment&#39;
-        })
-    }
-}
-</code></pre></li>
-</ul>
 
 ]]></content>
   </entry>

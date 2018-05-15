@@ -58,7 +58,7 @@
         
         <li id="live.css"><a target="_self" href="live.html">随笔</a></li>
         
-        <li id="app.css"><a target="_self" href="app.html">APP推荐</a></li>
+        <li id="app.css"><a target="_blank" href="app.html">APP推荐</a></li>
         
         </ul>
 
@@ -103,7 +103,7 @@
         
         <li><a target="_self" href="live.html">随笔</a></li>
         
-        <li><a target="_self" href="app.html">APP推荐</a></li>
+        <li><a target="_blank" href="app.html">APP推荐</a></li>
         
 
     <li><label>Categories</label></li>
@@ -240,7 +240,68 @@ block2(); //输出20
 <li>如果block实现中访问了任何&quot;外部&quot;变量(包括局部和全局), 该block为StackBlock</li>
 <li>对StackBlock进行拷贝(copy/Block_copy), 该block为MallocBlock</li>
 </ul></li>
-<li></li>
+<li><p>block内如何修改block外 的变量?</p>
+
+<pre><code> __block int a = 0;
+   void (^foo)(void) = ^{ 
+       a = 1; 
+   };
+   foo(); 
+   //这里，a的值被修改为1
+</code></pre>
+
+<p>默认情况下，block内访问的变量是 copy  该变量到堆后的变量，而非变量本身。<br/>
+所以：<strong>读写操作对原变量不生效</strong></p>
+
+<blockquote>
+<p>我们知道：Block不允许修改外部变量的值，这里所说的外部变量的值，指的是栈中指针的内存地址。__block 所起到的作用就是只要观察到该变量被 block 所持有，就将“外部变量”在栈中的内存地址放到了堆中。进而在block内部也可以修改外部变量的值</p>
+</blockquote>
+
+<pre><code>__block int a = 0;
+   NSLog(@&quot;定义前：%p&quot;, &amp;a);         //栈区
+   void (^foo)(void) = ^{
+       a = 1;
+       NSLog(@&quot;block内部：%p&quot;, &amp;a);    //堆区
+   };
+   NSLog(@&quot;定义后：%p&quot;, &amp;a);         //堆区
+   foo();
+</code></pre>
+
+<p>打印输出：</p>
+
+<pre><code>2016-05-17 02:03:33.559 LeanCloudChatKit-iOS[1505:713679] 定义前：0x16fda86f8
+2016-05-17 02:03:33.559 LeanCloudChatKit-iOS[1505:713679] 定义后：0x155b22fc8
+2016-05-17 02:03:33.559 LeanCloudChatKit-iOS[1505:713679] block内部： 0x155b22fc8
+</code></pre></li>
+<li><p>block个人理解</p>
+
+<pre><code>NSMutableString *kName = [NSMutableString stringWithString:@&quot;kael&quot;];
+__block NSMutableString *myname = kName;
+NSLog(@&quot;block 前%p&quot;,&amp;myname);
+
+void (^foo)(void) = ^(){
+    NSLog(@&quot;block 中1：%p&quot;,&amp;myname);
+    myname = [NSMutableString stringWithString:@&quot;kaelinda&quot;];
+    NSLog(@&quot;block 中2：%p&quot;,&amp;myname);
+};
+
+foo();
+NSLog(@&quot;block 后%p&quot;,&amp;myname);
+
+/**
+ * __block 修饰之前
+ * 外部变量的内存地址是存到了栈
+ * block 是在堆内，不清楚栈内的变量是否已经被释放，所以连引用的准确性都是问题，更谈不上是修改了
+ * 所以，block 不允许修改栈中的变量（或者栈中指针的内存地址）
+ */
+
+/**
+ * __block 修饰之后
+ * 初始化的时候，内存地址在栈内（因为并不确定block内是否会用到），
+ * 当检测到block内引用到了该对象，不管block有没有被调用，都会 从栈内 copy 内存地址到 堆内，
+ * 再操作的时候 操作的是堆内的内存地址
+ */
+</code></pre></li>
 </ol>
 
 
@@ -252,16 +313,16 @@ block2(); //输出20
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="15181411526837.html" 
-          title="Previous Post: 源码阅读 -- YYModel （一）">&laquo; 源码阅读 -- YYModel （一）</a>
+          <a href="15253400374602.html" 
+          title="Previous Post: 多线程 之 NSThread">&laquo; 多线程 之 NSThread</a>
       
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="15223028228569.html" 
-          title="Next Post: 每天学习一个shell技能 （1）">每天学习一个shell技能 （1） &raquo;</a>
+          <a  href="15235286649865.html" 
+          title="Next Post: 音视频学习笔记 1">音视频学习笔记 1 &raquo;</a>
       
       </p>
         </div>
@@ -346,31 +407,31 @@ block2(); //输出20
 	      
 		      
 			      <li class="post">
-			        <a href="15226648731246.html">每天学习一个shell技能（7）</a>
+			        <a href="15261167596297.html">OC 多线程之 GCD知识从基础到进阶 （1）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15226603064743.html">每天学习一个shell技能（6）</a>
+			        <a href="15257437237715.html">OC中的各种遍历</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15224936933861.html">每天学习一个shell技能（5）</a>
+			        <a href="15253400374602.html">多线程 之 NSThread</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15224613481161.html">每天学习一个shell技能（4）</a>
+			        <a href="15200726964422.html">iOS Block 知识点拾遗</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15223750607281.html">每天学习一个shell技能  (3)</a>
+			        <a href="15235286649865.html">音视频学习笔记 1</a>
 			      </li>
 		     
 		  
