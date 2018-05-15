@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[kaelinda]]></title>
-  <link href="http://blog.csdn.net/atom.xml" rel="self"/>
-  <link href="http://blog.csdn.net/"/>
-  <updated>2018-05-15T17:32:00+08:00</updated>
-  <id>http://blog.csdn.net/</id>
+  <link href="http://kaelinda.top/atom.xml" rel="self"/>
+  <link href="http://kaelinda.top/"/>
+  <updated>2018-05-15T19:15:01+08:00</updated>
+  <id>http://kaelinda.top/</id>
   <author>
     <name><![CDATA[]]></name>
     
@@ -14,9 +14,9 @@
   
   <entry>
     <title type="html"><![CDATA[OC 多线程之 GCD知识从基础到进阶 （1）]]></title>
-    <link href="http://blog.csdn.net/15261167596297.html"/>
+    <link href="http://kaelinda.top/15261167596297.html"/>
     <updated>2018-05-12T17:19:19+08:00</updated>
-    <id>http://blog.csdn.net/15261167596297.html</id>
+    <id>http://kaelinda.top/15261167596297.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">概念认知</h2>
 
@@ -28,6 +28,8 @@
 <li><p>任务：就是一段代码，GCD中就是block中的内容。执行任务有两种方式：同步执行（sync）和异步执行（async）。两者的主要区别是：是否等待队列的任务执行结束，以及是否具备开启新线程的能力</p></li>
 <li><p>队列：用来存放任务的线性结构，采用 FIFO（先进先出）的原则。</p></li>
 </ul>
+
+<span id="more"></span><!-- more -->
 
 <p>进阶概念：</p>
 
@@ -354,9 +356,9 @@ NSLog(@&quot;等待之后&quot;);
   
   <entry>
     <title type="html"><![CDATA[OC中的各种遍历]]></title>
-    <link href="http://blog.csdn.net/15257437237715.html"/>
+    <link href="http://kaelinda.top/15257437237715.html"/>
     <updated>2018-05-08T09:42:03+08:00</updated>
-    <id>http://blog.csdn.net/15257437237715.html</id>
+    <id>http://kaelinda.top/15257437237715.html</id>
     <content type="html"><![CDATA[
 <blockquote>
 <p>iOS开发中我们经常遇到各种的数据处理，所以就会经常遇到数组遍历 和 字典遍历。但是不同的遍历方式，效率不同，并且还有不同的限制。</p>
@@ -673,9 +675,9 @@ dispatch_apply(_dataDic.count, queue, ^(size_t index) {
   
   <entry>
     <title type="html"><![CDATA[多线程 之 NSThread]]></title>
-    <link href="http://blog.csdn.net/15253400374602.html"/>
+    <link href="http://kaelinda.top/15253400374602.html"/>
     <updated>2018-05-03T17:33:57+08:00</updated>
-    <id>http://blog.csdn.net/15253400374602.html</id>
+    <id>http://kaelinda.top/15253400374602.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">基本使用</h2>
 
@@ -693,9 +695,9 @@ dispatch_apply(_dataDic.count, queue, ^(size_t index) {
   
   <entry>
     <title type="html"><![CDATA[iOS Block 知识点拾遗]]></title>
-    <link href="http://blog.csdn.net/15200726964422.html"/>
+    <link href="http://kaelinda.top/15200726964422.html"/>
     <updated>2018-03-03T18:24:56+08:00</updated>
-    <id>http://blog.csdn.net/15200726964422.html</id>
+    <id>http://kaelinda.top/15200726964422.html</id>
     <content type="html"><![CDATA[
 <ol>
 <li><p>Block为什么要用copy</p>
@@ -842,9 +844,9 @@ NSLog(@&quot;block 后%p&quot;,&amp;myname);
   
   <entry>
     <title type="html"><![CDATA[音视频学习笔记 1]]></title>
-    <link href="http://blog.csdn.net/15235286649865.html"/>
+    <link href="http://kaelinda.top/15235286649865.html"/>
     <updated>2018-04-12T18:24:24+08:00</updated>
-    <id>http://blog.csdn.net/15235286649865.html</id>
+    <id>http://kaelinda.top/15235286649865.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">音视频概念</h2>
 
@@ -892,9 +894,9 @@ NSLog(@&quot;block 后%p&quot;,&amp;myname);
   
   <entry>
     <title type="html"><![CDATA[疯狂iOS讲义笔记 1]]></title>
-    <link href="http://blog.csdn.net/15233259445112.html"/>
+    <link href="http://kaelinda.top/15233259445112.html"/>
     <updated>2018-04-10T10:05:44+08:00</updated>
-    <id>http://blog.csdn.net/15233259445112.html</id>
+    <id>http://kaelinda.top/15233259445112.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">多点触摸与 手势检测</h2>
 
@@ -911,9 +913,9 @@ NSLog(@&quot;block 后%p&quot;,&amp;myname);
   
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能（7）]]></title>
-    <link href="http://blog.csdn.net/15226648731246.html"/>
+    <link href="http://kaelinda.top/15226648731246.html"/>
     <updated>2018-04-02T18:27:53+08:00</updated>
-    <id>http://blog.csdn.net/15226648731246.html</id>
+    <id>http://kaelinda.top/15226648731246.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">文件包含 导入文件</h2>
 
@@ -999,9 +1001,9 @@ $ ./test2.sh
   
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能（8）]]></title>
-    <link href="http://blog.csdn.net/15232599795686.html"/>
+    <link href="http://kaelinda.top/15232599795686.html"/>
     <updated>2018-04-09T15:46:19+08:00</updated>
-    <id>http://blog.csdn.net/15232599795686.html</id>
+    <id>http://kaelinda.top/15232599795686.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">shell 终端打印</h2>
 
@@ -1033,9 +1035,9 @@ NO    Name       Mark
   
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能（6）]]></title>
-    <link href="http://blog.csdn.net/15226603064743.html"/>
+    <link href="http://kaelinda.top/15226603064743.html"/>
     <updated>2018-04-02T17:11:46+08:00</updated>
-    <id>http://blog.csdn.net/15226603064743.html</id>
+    <id>http://kaelinda.top/15226603064743.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">test</h2>
 
@@ -1256,9 +1258,9 @@ done
   
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能（5）]]></title>
-    <link href="http://blog.csdn.net/15224936933861.html"/>
+    <link href="http://kaelinda.top/15224936933861.html"/>
     <updated>2018-03-31T18:54:53+08:00</updated>
-    <id>http://blog.csdn.net/15224936933861.html</id>
+    <id>http://kaelinda.top/15224936933861.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">Shell echo命令</h2>
 
@@ -1326,9 +1328,9 @@ echo &quot;\npassword is $password&quot;
   
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能（4）]]></title>
-    <link href="http://blog.csdn.net/15224613481161.html"/>
+    <link href="http://kaelinda.top/15224613481161.html"/>
     <updated>2018-03-31T09:55:48+08:00</updated>
-    <id>http://blog.csdn.net/15224613481161.html</id>
+    <id>http://kaelinda.top/15224613481161.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">shell基本运算符</h2>
 
@@ -1556,9 +1558,9 @@ fi
   
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能  (3)]]></title>
-    <link href="http://blog.csdn.net/15223750607281.html"/>
+    <link href="http://kaelinda.top/15223750607281.html"/>
     <updated>2018-03-30T09:57:40+08:00</updated>
-    <id>http://blog.csdn.net/15223750607281.html</id>
+    <id>http://kaelinda.top/15223750607281.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">shell参数传递</h2>
 
@@ -1667,9 +1669,9 @@ $@是作为一个数组返回 =&gt; 0 1 2
   
   <entry>
     <title type="html"><![CDATA[每天学习一个shell 技能 （2）]]></title>
-    <link href="http://blog.csdn.net/15223210751913.html"/>
+    <link href="http://kaelinda.top/15223210751913.html"/>
     <updated>2018-03-29T18:57:55+08:00</updated>
-    <id>http://blog.csdn.net/15223210751913.html</id>
+    <id>http://kaelinda.top/15223210751913.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">Shell 数组</h2>
 
@@ -1737,9 +1739,9 @@ item_length=${#array_name[n]}
   
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能 （1）]]></title>
-    <link href="http://blog.csdn.net/15223028228569.html"/>
+    <link href="http://kaelinda.top/15223028228569.html"/>
     <updated>2018-03-29T13:53:42+08:00</updated>
-    <id>http://blog.csdn.net/15223028228569.html</id>
+    <id>http://kaelinda.top/15223028228569.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">准备</h2>
 
@@ -1898,9 +1900,9 @@ echo `expr index &quot;$string&quot; is`  # 输出 8
   
   <entry>
     <title type="html"><![CDATA[iOS GCD&&多线程]]></title>
-    <link href="http://blog.csdn.net/15222179789382.html"/>
+    <link href="http://kaelinda.top/15222179789382.html"/>
     <updated>2018-03-28T14:19:38+08:00</updated>
-    <id>http://blog.csdn.net/15222179789382.html</id>
+    <id>http://kaelinda.top/15222179789382.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">基础篇</h2>
 
@@ -2144,9 +2146,9 @@ dispatch_once(&amp;onceToken, ^{
   
   <entry>
     <title type="html"><![CDATA[iOS APP性能优化方向分析]]></title>
-    <link href="http://blog.csdn.net/15193931556096.html"/>
+    <link href="http://kaelinda.top/15193931556096.html"/>
     <updated>2018-02-23T21:39:15+08:00</updated>
-    <id>http://blog.csdn.net/15193931556096.html</id>
+    <id>http://kaelinda.top/15193931556096.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">网络性能</h2>
 
@@ -2207,9 +2209,9 @@ dispatch_once(&amp;onceToken, ^{
   
   <entry>
     <title type="html"><![CDATA[iOS 离屏渲染]]></title>
-    <link href="http://blog.csdn.net/15200715202464.html"/>
+    <link href="http://kaelinda.top/15200715202464.html"/>
     <updated>2018-03-03T18:05:20+08:00</updated>
-    <id>http://blog.csdn.net/15200715202464.html</id>
+    <id>http://kaelinda.top/15200715202464.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">触发方式</h2>
 
@@ -2230,9 +2232,9 @@ dispatch_once(&amp;onceToken, ^{
   
   <entry>
     <title type="html"><![CDATA[iOS 面试题总结]]></title>
-    <link href="http://blog.csdn.net/15198022156700.html"/>
+    <link href="http://kaelinda.top/15198022156700.html"/>
     <updated>2018-02-28T15:16:55+08:00</updated>
-    <id>http://blog.csdn.net/15198022156700.html</id>
+    <id>http://kaelinda.top/15198022156700.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">基础篇</h2>
 
@@ -2272,9 +2274,9 @@ dispatch_once(&amp;onceToken, ^{
   
   <entry>
     <title type="html"><![CDATA[iOS 项目组件化]]></title>
-    <link href="http://blog.csdn.net/15193944679783.html"/>
+    <link href="http://kaelinda.top/15193944679783.html"/>
     <updated>2018-02-23T22:01:07+08:00</updated>
-    <id>http://blog.csdn.net/15193944679783.html</id>
+    <id>http://kaelinda.top/15193944679783.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">组件化需要解决的问题</h2>
 
@@ -2303,9 +2305,9 @@ dispatch_once(&amp;onceToken, ^{
   
   <entry>
     <title type="html"><![CDATA[DLNA DMR]]></title>
-    <link href="http://blog.csdn.net/15174544275720.html"/>
+    <link href="http://kaelinda.top/15174544275720.html"/>
     <updated>2018-02-01T11:07:07+08:00</updated>
-    <id>http://blog.csdn.net/15174544275720.html</id>
+    <id>http://kaelinda.top/15174544275720.html</id>
     <content type="html"><![CDATA[
 <h2 id="toc_0">CGUpnpAvRenderer</h2>
 

@@ -20,7 +20,7 @@
   <script>hljs.initHighlightingOnLoad();</script>
 <script type="text/javascript">
   function before_search(){
-    var searchVal = 'site:blog.csdn.net ' + document.getElementById('search_input').value;
+    var searchVal = 'site:kaelinda.top ' + document.getElementById('search_input').value;
     document.getElementById('search_q').value = searchVal;
     return true;
   }
@@ -58,7 +58,7 @@
         
         <li id="live.css"><a target="_self" href="live.html">随笔</a></li>
         
-        <li id="app.css"><a target="_self" href="app.html">APP推荐</a></li>
+        <li id="app.css"><a target="_blank" href="app.html">APP推荐</a></li>
         
         </ul>
 
@@ -103,7 +103,7 @@
         
         <li><a target="_self" href="live.html">随笔</a></li>
         
-        <li><a target="_self" href="app.html">APP推荐</a></li>
+        <li><a target="_blank" href="app.html">APP推荐</a></li>
         
 
     <li><label>Categories</label></li>
@@ -143,6 +143,270 @@
 	<div class="large-8 medium-8 columns">
 		<div class="markdown-body home-categories">
 		
+			<div class="article">
+                <a class="clearlink" href="15126628432953.html">
+                
+                  <h1>iOS代码检测入坑记事</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">我接触的代码检测</h2>
+
+<ul>
+<li>OCLint + xcpretty</li>
+<li>sonar</li>
+<li>infer</li>
+</ul>
+
+<h3 id="toc_1">infer</h3>
+
+<ul>
+<li><p><a href="https://infer.liaohuqiu.net">infer官网 传送门</a></p>
+
+<p><em>具体使用</em></p>
+
+<pre><code>infer -- xcodebuild -target &lt;target name&gt; -configuration &lt;build configuration&gt; -sdk iphonesimulator
+</code></pre></li>
+</ul>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15126628432953.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/8</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15129168744096.html">
+                
+                  <h1>关于iOS沙盒文件的那些事儿</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">分类</h2>
+
+<ul>
+<li>Document： 除了基于NSUserdefaults的首选项设置之外,应用程序的数据，文件都存在该目录下</li>
+<li>Libary：基于NSUserDefaults的首选项参数保存在Liabry/prefrences目录下</li>
+<li>tmp:</li>
+</ul>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15129168744096.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/10</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15130871696781.html">
+                
+                  <h1>Effective Objective-c 2.0 学习笔记</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>编写高质量iOS与OS X代码的52个有效方法</p>
+
+<h1 id="toc_0">第一章 熟悉Objective-C</h1>
+
+<h2 id="toc_1">第1条 了解Objective-C语言的起源</h2>
+
+<ol>
+<li>笔记：</li>
+<li>OC是动态语言，使用<code>消息结构</code>(messaging structure),而非<code>函数调用</code>(function calling)。OC由消息语言的鼻祖smalltalk演化而来。</li>
+<li>区别：消息结构的语言，其运行时执行的代码由运行环境决定；函数调用的语言，则由编译器决定。</li>
+<li>OC中对象所占内存总是分配在<code>堆空间</code>(heap space)而不会在<code>栈空间</code>(stack)上</li>
+<li><p>OC中不带*的变量，有可能会使用<code>栈空间</code>，比如CGRect 结构体<br/>
+~~ <code><br/>
+~~ struct CGRect{<br/>
+~~     CGPoint point;<br/>
+~~     CGSize size;<br/>
+~~ };<br/>
+~~</code><br/>
+因为创建对象需要额外开销（分配&amp;释放堆内存），从效率上，结构体性能更好。</p></li>
+<li><p>要点</p></li>
+<li><p>Objective-c为C语言天减了面向对象特性，是其超集。Objective-C是使用动态绑定的消息结构，也就是说，在运行时才会检查对象类型。接收这一消息后，究竟该执行何种代码实现，有运行期环境决定而非编译器。</p></li>
+<li><p>理解C语言的核心概念有助于写好Objective-C程序，尤其是掌握内存模型与指针。</p></li>
+</ol>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15130871696781.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/12</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15130871866705.html">
+                
+                  <h1>当虹云直播SDK植入引导</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<hr/>
+
+<h2 id="toc_0">一、导入静态库 libARCPlayerRecoder.a</h2>
+
+<h2 id="toc_1">二、导入framework</h2>
+
+<p>(img)</p>
+
+<h2 id="toc_2">三、添加info.plist文件的授权选项 麦克风 摄像头权限授权申请</h2>
+
+<p>(img)</p>
+
+<h2 id="toc_3">四、.m文件 中引用 C++方法的时候 需要变为.mm文件</h2>
+
+<h2 id="toc_4">五、变量类型转换</h2>
+
+<p>self 改为 (__bridge void *) self<br/>
+用  (__bridge void *)  进行类型的强制转换</p>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15130871866705.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/12</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15130872092436.html">
+                
+                  <h1>iOS打包上架素材准备概要说明</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">开发者打包</h2>
+
+<h3 id="toc_1">Xcode配置</h3>
+
+<p><em>Xcode8 旧标准</em></p>
+
+<ul>
+<li><p>Xcode8 icon iPhone</p>
+
+<ul>
+<li><code>icon-29.png        29*29</code></li>
+<li><code>icon-29@2x.png     58*58</code></li>
+<li><code>icon-29@3x.png     87*87</code></li>
+<li><code>icon-40@2x.png     80*80</code></li>
+<li><code>icon-40@3x.png     120*120</code></li>
+<li><code>icon-57.png        57*57</code></li>
+<li><code>icon-57@2x.png     114*114</code></li>
+<li><code>iocn-60@2x.png     120*120</code></li>
+<li><code>icon-60@3x.png     180*180</code></li>
+<li><code>icon-20@2x.png     40*40</code></li>
+<li><code>icon-20@3x.png     60*60</code><br/></li>
+</ul></li>
+<li><p>Xcode8 LaunchImage：</p>
+
+<ul>
+<li><code>414*736 @3x    1242*2208</code></li>
+<li><code>736*414  @3x    2208*1242</code></li>
+<li><code>375*667 @2x    750*1334</code></li>
+<li><code>320*568 @2x    640*1136</code></li>
+<li><code>320*480 @2x    640*960</code></li>
+<li><code>320*480 @1x    320*480</code></li>
+</ul></li>
+</ul>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15130872092436.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/12</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
 			<div class="article">
                 <a class="clearlink" href="15137621729153.html">
                 
@@ -370,112 +634,6 @@ let [x = y, y = 1] = [];     // ReferenceError
                 </div>
               </div><!-- article -->
         
-			<div class="article">
-                <a class="clearlink" href="15117133773045.html">
-                
-                  <h1>可选型 Optional</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h3 id="toc_0">定义</h3>
-
-<ul>
-<li>当数据可能接收nil的时候，使用optional是比较合适的</li>
-<li>当非可选型被赋值为nil的时候 系统会崩溃</li>
-<li>当可选型被赋值为nil的时候 系统会首先判断值是否为nil，如果为nil 则会赋值nil;如果不为nil，那就正常操作。</li>
-</ul>
-
-<h3 id="toc_1">Optional 可选型 写法</h3>
-
-<p><code>var sexy : String? = &quot;boy&quot;</code></p>
-
-<h3 id="toc_2">强制解包</h3>
-
-<pre><code>if sexy != nil {
-    print(&quot;i am a \(String(describing: sexy))&quot;)
-}else{
-    print(&quot;none&quot;)
-}
-</code></pre>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15117133773045.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/11/27</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='swift.html'>Swift</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="14948260667614.html">
-                
-                  <h1>SectionListView</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">属性</h2>
-
-<ol>
-<li>ItemSeparatorComponent  <code>{highlighted,leadingItem,leandingSection,section,trailingItem}</code><br/>
-返回一个行与行之间的分割组件，不会出现在第一行之前和最后一行之后。
-
-<ul>
-<li><code>highlighted</code> 当前行（分割线上面👆的Item）是否是高亮状态</li>
-<li><code>leadingItem</code> 当前行分配到的数据源</li>
-<li><code>leandingSection</code> 目前我也没搞明白啥意思 这里是<code>undefined</code></li>
-<li><code>section</code> 当前段分配到的数据源</li>
-<li><code>trailingItem</code> 尾段数据</li>
-</ul></li>
-<li>ListEmptyCompone  <code>没有接收参数</code><br/>
-渲染一个cell为空时的缓冲组件<br/></li>
-<li>ListFooterComponent  <code>没有接收参数</code><br/>
-渲染整个组件的Footer</li>
-<li>ListHeaderComponent   <code>没有接收参数</code><br/>
-渲染整个组件的Header</li>
-</ol>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="14948260667614.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/5/15</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='reactnative.html'>React-Native</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
               
 
 
@@ -487,7 +645,7 @@ let [x = y, y = 1] = [];     // ReferenceError
 			  </div>
 			  <div class="large-6 columns">
 			<p class="text-right" style="padding-top:25px;">
-			
+			 <a href="all_4.html">&raquo; Next Page</a> 
 			</p>
 			  </div>
 			</div>
@@ -559,31 +717,31 @@ let [x = y, y = 1] = [];     // ReferenceError
 	      
 		      
 			      <li class="post">
-			        <a href="15226648731246.html">每天学习一个shell技能（7）</a>
+			        <a href="15261167596297.html">OC 多线程之 GCD知识从基础到进阶 （1）</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15226603064743.html">每天学习一个shell技能（6）</a>
+			        <a href="15257437237715.html">OC中的各种遍历</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15224936933861.html">每天学习一个shell技能（5）</a>
+			        <a href="15253400374602.html">多线程 之 NSThread</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15224613481161.html">每天学习一个shell技能（4）</a>
+			        <a href="15200726964422.html">iOS Block 知识点拾遗</a>
 			      </li>
 		     
 		  
 		      
 			      <li class="post">
-			        <a href="15223750607281.html">每天学习一个shell技能  (3)</a>
+			        <a href="15235286649865.html">音视频学习笔记 1</a>
 			      </li>
 		     
 		  

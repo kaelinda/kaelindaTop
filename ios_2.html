@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  iOS代码检测入坑记事 - kaelinda
+  iOS - kaelinda
   
   </title>
   
@@ -135,194 +135,248 @@
        
 
  <script type="text/javascript">
-  $(function(){
-    $('#menu_item_index').addClass('is_active');
-  });
+	$(function(){
+		$('#menu_item_index').addClass('is_active');
+	});
 </script>
 <div class="row">
-  <div class="large-8 medium-8 columns">
-      <div class="markdown-body article-wrap">
-       <div class="article">
-          
-          <h1>iOS代码检测入坑记事</h1>
-     
-        <div class="read-more clearfix">
-          <span class="date">2017/12/8</span>
+	<div class="large-8 medium-8 columns">
+		<div class="markdown-body home-categories">
+		
+			<div class="article">
+                <a class="clearlink" href="15130871696781.html">
+                
+                  <h1>Effective Objective-c 2.0 学习笔记</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p>编写高质量iOS与OS X代码的52个有效方法</p>
 
-          <span>posted in&nbsp;</span> 
-          
-              <span class="posted-in"><a href='ios.html'>iOS</a></span>
-           
-         
-          <span class="comments">
-            
+<h1 id="toc_0">第一章 熟悉Objective-C</h1>
 
-            
-          </span>
+<h2 id="toc_1">第1条 了解Objective-C语言的起源</h2>
 
-        </div>
-      </div><!-- article -->
+<ol>
+<li>笔记：</li>
+<li>OC是动态语言，使用<code>消息结构</code>(messaging structure),而非<code>函数调用</code>(function calling)。OC由消息语言的鼻祖smalltalk演化而来。</li>
+<li>区别：消息结构的语言，其运行时执行的代码由运行环境决定；函数调用的语言，则由编译器决定。</li>
+<li>OC中对象所占内存总是分配在<code>堆空间</code>(heap space)而不会在<code>栈空间</code>(stack)上</li>
+<li><p>OC中不带*的变量，有可能会使用<code>栈空间</code>，比如CGRect 结构体<br/>
+~~ <code><br/>
+~~ struct CGRect{<br/>
+~~     CGPoint point;<br/>
+~~     CGSize size;<br/>
+~~ };<br/>
+~~</code><br/>
+因为创建对象需要额外开销（分配&amp;释放堆内存），从效率上，结构体性能更好。</p></li>
+<li><p>要点</p></li>
+<li><p>Objective-c为C语言天减了面向对象特性，是其超集。Objective-C是使用动态绑定的消息结构，也就是说，在运行时才会检查对象类型。接收这一消息后，究竟该执行何种代码实现，有运行期环境决定而非编译器。</p></li>
+<li><p>理解C语言的核心概念有助于写好Objective-C程序，尤其是掌握内存模型与指针。</p></li>
+</ol>
 
-      <div class="article-content">
-      <h2 id="toc_0">我接触的代码检测</h2>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15130871696781.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/12</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15130871866705.html">
+                
+                  <h1>当虹云直播SDK植入引导</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<hr/>
+
+<h2 id="toc_0">一、导入静态库 libARCPlayerRecoder.a</h2>
+
+<h2 id="toc_1">二、导入framework</h2>
+
+<p>(img)</p>
+
+<h2 id="toc_2">三、添加info.plist文件的授权选项 麦克风 摄像头权限授权申请</h2>
+
+<p>(img)</p>
+
+<h2 id="toc_3">四、.m文件 中引用 C++方法的时候 需要变为.mm文件</h2>
+
+<h2 id="toc_4">五、变量类型转换</h2>
+
+<p>self 改为 (__bridge void *) self<br/>
+用  (__bridge void *)  进行类型的强制转换</p>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15130871866705.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/12</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15130872092436.html">
+                
+                  <h1>iOS打包上架素材准备概要说明</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">开发者打包</h2>
+
+<h3 id="toc_1">Xcode配置</h3>
+
+<p><em>Xcode8 旧标准</em></p>
 
 <ul>
-<li>OCLint + xcpretty</li>
-<li>sonar</li>
-<li>infer</li>
-</ul>
-
-<h3 id="toc_1">infer</h3>
+<li><p>Xcode8 icon iPhone</p>
 
 <ul>
-<li><p><a href="https://infer.liaohuqiu.net">infer官网 传送门</a></p>
-
-<p><em>具体使用</em></p>
-
-<pre><code>infer -- xcodebuild -target &lt;target name&gt; -configuration &lt;build configuration&gt; -sdk iphonesimulator
-</code></pre></li>
-</ul>
-
-<span id="more"></span><!-- more -->
-
-<p><em>例如：</em><br/>
-  ```<br/>
-  #分析之前先把之前的build缓存清理下<br/>
-  xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0</p>
-
-<p>#根据自己醒目名字使用infer 命令进行分析<br/>
-  infer -- xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0<br/>
-  ```</p>
-
-<p><em>infer的优势</em></p>
+<li><code>icon-29.png        29*29</code></li>
+<li><code>icon-29@2x.png     58*58</code></li>
+<li><code>icon-29@3x.png     87*87</code></li>
+<li><code>icon-40@2x.png     80*80</code></li>
+<li><code>icon-40@3x.png     120*120</code></li>
+<li><code>icon-57.png        57*57</code></li>
+<li><code>icon-57@2x.png     114*114</code></li>
+<li><code>iocn-60@2x.png     120*120</code></li>
+<li><code>icon-60@3x.png     180*180</code></li>
+<li><code>icon-20@2x.png     40*40</code></li>
+<li><code>icon-20@3x.png     60*60</code><br/></li>
+</ul></li>
+<li><p>Xcode8 LaunchImage：</p>
 
 <ul>
-<li>安装过程简洁，不需要过多的配置（前提是电脑之前安装过Homebrow）</li>
-<li>使用方便，只需要一行命令</li>
-</ul>
-
-<h3 id="toc_2">sonar</h3>
-
-<p>Sonar 是一个用于代码质量管理的开放平台。通过插件机制，Sonar 可以集成不同的测试工具，代码分析工具，以及持续集成工具。相比于Jenkins ，sonar更关注代码的变化，通过量化的方式度量代码变化。</p>
-
-<p>如果不需要持续集成，sonar只需要两个配置文件就可以进行代码的静态检测。</p>
-
-<ul>
-<li>安装： <code>brew install sonar</code></li>
-<li>配置文件修改 <code>run-sonar.sh</code> <code>sonar-project.properties</code></li>
-<li><p>执行run-sonar.sh脚本，检测代码</p>
-
-<p><em>资源下载</em></p>
-
-<ul>
-<li><p><a href="https://raw.githubusercontent.com/octo-technology/sonar-objective-c/master/src/main/shell/run-sonar.sh">run-sonar.sh</a></p></li>
-<li><p><a href="https://raw.githubusercontent.com/octo-technology/sonar-objective-c/master/sample/sonar-project.properties">sonar-project.properties</a></p></li>
-</ul>
-
-<p><em>参考资源</em></p>
-
-<ul>
-<li><p><a href="http://www.jianshu.com/p/f58e89573d33">IOS-Sonar代码质量监控</a></p></li>
-<li><p><a href="https://my.oschina.net/ChenTF/blog/806565">[实践]Sonar Xcode8兼容</a></p></li>
-<li><p><a href="http://www.jianshu.com/p/74bee59fef1c">iOS Sonar集成流程详解</a></p></li>
-<li><p><a href="http://www.jianshu.com/p/6b61783b9a38">基于Sonar的iOS代码质量检测系统</a></p></li>
-<li><p><a href="http://blog.csdn.net/itfootball/article/details/45058591">IOS测试之sonar检查ios代码质量</a></p></li>
+<li><code>414*736 @3x    1242*2208</code></li>
+<li><code>736*414  @3x    2208*1242</code></li>
+<li><code>375*667 @2x    750*1334</code></li>
+<li><code>320*568 @2x    640*1136</code></li>
+<li><code>320*480 @2x    640*960</code></li>
+<li><code>320*480 @1x    320*480</code></li>
 </ul></li>
 </ul>
 
-<h3 id="toc_3">OCLint + xcpretty</h3>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15130872092436.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/12</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15139059079620.html">
+                
+                  <h1>学习资源网址</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">技术学习资源</h2>
+
+<h3 id="toc_1">sublime学习资源</h3>
 
 <ul>
-<li><p>安装xcpretty</p>
-
-<pre><code>sudo gem install xcpretty
-</code></pre></li>
-<li><p>安装OCLint<br/>
-```<br/>
-brew tap oclint/formulae</p>
-
-<p>brew install oclint<br/>
-```</p></li>
-<li><p>根目录下 运行脚本：<br/>
-```</p>
-
-<h1 id="toc_4">清理</h1>
-
-<p>xcodebuild clean</p>
-
-<h1 id="toc_5">生成JSON文件 用于分析</h1>
-
-<p>xcodebuild  -workspace demo.xcworkspace -scheme demo -configuration Debug \<br/>
-| tee xcodebuild.log \<br/>
-| xcpretty -r json-compilation-database -o compile_commands.json</p>
-
-<h1 id="toc_6">OCLint 分析（根据一定规则进行分析）</h1>
-
-<p>oclint-json-compilation-database -v \<br/>
--e Pods \<br/>
--e MGLivenessDetection \<br/>
--e MGBaseKit \<br/>
--e MGIDCard \<br/>
-oclint_args -- -report-type html -o oclintReport.html \<br/>
--disable-rule ObjCAssignIvarOutsideAccessors \<br/>
--disable-rule ShortVariableName \<br/>
--rc=MINIMUM_CASES_IN_SWITCH=3 \<br/>
--rc=CYCLOMATIC_COMPLEXITY=10 \<br/>
--rc=LONG_CLASS=700 \<br/>
--rc=LONG_LINE=200 \<br/>
--rc=NCSS_METHOD=40 \<br/>
--rc=NESTED_BLOCK_DEPTH=5 \<br/>
--rc=TOO_MANY_FIELDS=20 \<br/>
--rc=TOO_MANY_METHODS=30 \<br/>
--rc=TOO_MANY_PARAMETERS=6</p>
-
-<h1 id="toc_7">oclint_args -- -report-type xcode \</h1>
-
-<pre><code>
-高级用法，代码检测规则：
-</code></pre></li>
-<li><p><a href="http://www.jianshu.com/p/4f505e92d557">iOS使用OCLint做静态代码分析</a></p></li>
-<li><p><a href="http://www.cocoachina.com/ios/20170928/20669.html">让XCode自动CodeReview你的代码-OCLint使用</a></p></li>
-<li><p><a href="https://blog.yourtion.com/static-code-analysis-ios-using-oclint.html">iOS静态代码扫描</a>  <a href="https://blog.yourtion.com/static-code-analysis-ios-using-oclint.html">原文链接</a></p></li>
+<li><a href="http://www.jianshu.com/p/aa30cc25c91b">Sublime 入门+进阶</a>：<code>http://www.jianshu.com/p/aa30cc25c91b</code></li>
+<li><a href="http://www.jeffjade.com/2015/12/15/2015-04-17-toss-sublime-text/">sublime全解</a>: <code>http://www.jeffjade.com/2015/12/15/2015-04-17-toss-sublime-text/</code></li>
+<li><a href="https://dribbble.com/">Sublime 图标下载</a>: <code>https://dribbble.com/</code></li>
 </ul>
 
-
-    
-
-      </div>
-
-      <div class="row">
-        <div class="large-6 columns">
-        <p class="text-left" style="padding:15px 0px;">
-      
-          <a href="15126415331235.html" 
-          title="Previous Post: iOS WKWebView 本地HTML、JS、CSS文件加载详解">&laquo; iOS WKWebView 本地HTML、JS、CSS文件加载详解</a>
-      
-        </p>
-        </div>
-        <div class="large-6 columns">
-      <p class="text-right" style="padding:15px 0px;">
-      
-          <a  href="15129168744096.html" 
-          title="Next Post: 关于iOS沙盒文件的那些事儿">关于iOS沙盒文件的那些事儿 &raquo;</a>
-      
-      </p>
-        </div>
-      </div>
-      <div class="comments-wrap">
-        <div class="share-comments">
-          
-
-          
-
-          
-        </div>
-      </div>
-    </div><!-- article-wrap -->
-  </div><!-- large 8 -->
+<h3 id="toc_2">MarkDown学习资源</h3>
 
 
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15139059079620.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/12/22</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
 
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+              
+
+
+			<div class="row">
+			  <div class="large-6 columns">
+			  <p class="text-left" style="padding-top:25px;">
+			   <a href="ios_1.html">&laquo; Prev Page</a>  
+			  </p>
+			  </div>
+			  <div class="large-6 columns">
+			<p class="text-right" style="padding-top:25px;">
+			
+			</p>
+			  </div>
+			</div>
+		</div>
+	</div><!-- large 8 -->
 
  <div class="large-4 medium-4 columns">
   <div class="hide-for-small">

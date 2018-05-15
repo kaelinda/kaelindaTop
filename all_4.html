@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  iOS代码检测入坑记事 - kaelinda
+  kaelinda
   
   </title>
   
@@ -135,194 +135,137 @@
        
 
  <script type="text/javascript">
-  $(function(){
-    $('#menu_item_index').addClass('is_active');
-  });
+	$(function(){
+		$('#menu_item_index').addClass('is_active');
+	});
 </script>
 <div class="row">
-  <div class="large-8 medium-8 columns">
-      <div class="markdown-body article-wrap">
-       <div class="article">
-          
-          <h1>iOS代码检测入坑记事</h1>
-     
-        <div class="read-more clearfix">
-          <span class="date">2017/12/8</span>
-
-          <span>posted in&nbsp;</span> 
-          
-              <span class="posted-in"><a href='ios.html'>iOS</a></span>
-           
-         
-          <span class="comments">
-            
-
-            
-          </span>
-
-        </div>
-      </div><!-- article -->
-
-      <div class="article-content">
-      <h2 id="toc_0">我接触的代码检测</h2>
+	<div class="large-8 medium-8 columns">
+		<div class="markdown-body home-categories">
+		
+			<div class="article">
+                <a class="clearlink" href="15117133773045.html">
+                
+                  <h1>可选型 Optional</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h3 id="toc_0">定义</h3>
 
 <ul>
-<li>OCLint + xcpretty</li>
-<li>sonar</li>
-<li>infer</li>
+<li>当数据可能接收nil的时候，使用optional是比较合适的</li>
+<li>当非可选型被赋值为nil的时候 系统会崩溃</li>
+<li>当可选型被赋值为nil的时候 系统会首先判断值是否为nil，如果为nil 则会赋值nil;如果不为nil，那就正常操作。</li>
 </ul>
 
-<h3 id="toc_1">infer</h3>
+<h3 id="toc_1">Optional 可选型 写法</h3>
+
+<p><code>var sexy : String? = &quot;boy&quot;</code></p>
+
+<h3 id="toc_2">强制解包</h3>
+
+<pre><code>if sexy != nil {
+    print(&quot;i am a \(String(describing: sexy))&quot;)
+}else{
+    print(&quot;none&quot;)
+}
+</code></pre>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15117133773045.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/11/27</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='swift.html'>Swift</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14948260667614.html">
+                
+                  <h1>SectionListView</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">属性</h2>
+
+<ol>
+<li>ItemSeparatorComponent  <code>{highlighted,leadingItem,leandingSection,section,trailingItem}</code><br/>
+返回一个行与行之间的分割组件，不会出现在第一行之前和最后一行之后。
 
 <ul>
-<li><p><a href="https://infer.liaohuqiu.net">infer官网 传送门</a></p>
-
-<p><em>具体使用</em></p>
-
-<pre><code>infer -- xcodebuild -target &lt;target name&gt; -configuration &lt;build configuration&gt; -sdk iphonesimulator
-</code></pre></li>
-</ul>
-
-<span id="more"></span><!-- more -->
-
-<p><em>例如：</em><br/>
-  ```<br/>
-  #分析之前先把之前的build缓存清理下<br/>
-  xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0</p>
-
-<p>#根据自己醒目名字使用infer 命令进行分析<br/>
-  infer -- xcodebuild -workspace HIGHTONG_Public.xcworkspace -scheme HIGHTONG_Jktv -configuration Debug -sdk iphoneos11.0<br/>
-  ```</p>
-
-<p><em>infer的优势</em></p>
-
-<ul>
-<li>安装过程简洁，不需要过多的配置（前提是电脑之前安装过Homebrow）</li>
-<li>使用方便，只需要一行命令</li>
-</ul>
-
-<h3 id="toc_2">sonar</h3>
-
-<p>Sonar 是一个用于代码质量管理的开放平台。通过插件机制，Sonar 可以集成不同的测试工具，代码分析工具，以及持续集成工具。相比于Jenkins ，sonar更关注代码的变化，通过量化的方式度量代码变化。</p>
-
-<p>如果不需要持续集成，sonar只需要两个配置文件就可以进行代码的静态检测。</p>
-
-<ul>
-<li>安装： <code>brew install sonar</code></li>
-<li>配置文件修改 <code>run-sonar.sh</code> <code>sonar-project.properties</code></li>
-<li><p>执行run-sonar.sh脚本，检测代码</p>
-
-<p><em>资源下载</em></p>
-
-<ul>
-<li><p><a href="https://raw.githubusercontent.com/octo-technology/sonar-objective-c/master/src/main/shell/run-sonar.sh">run-sonar.sh</a></p></li>
-<li><p><a href="https://raw.githubusercontent.com/octo-technology/sonar-objective-c/master/sample/sonar-project.properties">sonar-project.properties</a></p></li>
-</ul>
-
-<p><em>参考资源</em></p>
-
-<ul>
-<li><p><a href="http://www.jianshu.com/p/f58e89573d33">IOS-Sonar代码质量监控</a></p></li>
-<li><p><a href="https://my.oschina.net/ChenTF/blog/806565">[实践]Sonar Xcode8兼容</a></p></li>
-<li><p><a href="http://www.jianshu.com/p/74bee59fef1c">iOS Sonar集成流程详解</a></p></li>
-<li><p><a href="http://www.jianshu.com/p/6b61783b9a38">基于Sonar的iOS代码质量检测系统</a></p></li>
-<li><p><a href="http://blog.csdn.net/itfootball/article/details/45058591">IOS测试之sonar检查ios代码质量</a></p></li>
+<li><code>highlighted</code> 当前行（分割线上面👆的Item）是否是高亮状态</li>
+<li><code>leadingItem</code> 当前行分配到的数据源</li>
+<li><code>leandingSection</code> 目前我也没搞明白啥意思 这里是<code>undefined</code></li>
+<li><code>section</code> 当前段分配到的数据源</li>
+<li><code>trailingItem</code> 尾段数据</li>
 </ul></li>
-</ul>
-
-<h3 id="toc_3">OCLint + xcpretty</h3>
-
-<ul>
-<li><p>安装xcpretty</p>
-
-<pre><code>sudo gem install xcpretty
-</code></pre></li>
-<li><p>安装OCLint<br/>
-```<br/>
-brew tap oclint/formulae</p>
-
-<p>brew install oclint<br/>
-```</p></li>
-<li><p>根目录下 运行脚本：<br/>
-```</p>
-
-<h1 id="toc_4">清理</h1>
-
-<p>xcodebuild clean</p>
-
-<h1 id="toc_5">生成JSON文件 用于分析</h1>
-
-<p>xcodebuild  -workspace demo.xcworkspace -scheme demo -configuration Debug \<br/>
-| tee xcodebuild.log \<br/>
-| xcpretty -r json-compilation-database -o compile_commands.json</p>
-
-<h1 id="toc_6">OCLint 分析（根据一定规则进行分析）</h1>
-
-<p>oclint-json-compilation-database -v \<br/>
--e Pods \<br/>
--e MGLivenessDetection \<br/>
--e MGBaseKit \<br/>
--e MGIDCard \<br/>
-oclint_args -- -report-type html -o oclintReport.html \<br/>
--disable-rule ObjCAssignIvarOutsideAccessors \<br/>
--disable-rule ShortVariableName \<br/>
--rc=MINIMUM_CASES_IN_SWITCH=3 \<br/>
--rc=CYCLOMATIC_COMPLEXITY=10 \<br/>
--rc=LONG_CLASS=700 \<br/>
--rc=LONG_LINE=200 \<br/>
--rc=NCSS_METHOD=40 \<br/>
--rc=NESTED_BLOCK_DEPTH=5 \<br/>
--rc=TOO_MANY_FIELDS=20 \<br/>
--rc=TOO_MANY_METHODS=30 \<br/>
--rc=TOO_MANY_PARAMETERS=6</p>
-
-<h1 id="toc_7">oclint_args -- -report-type xcode \</h1>
-
-<pre><code>
-高级用法，代码检测规则：
-</code></pre></li>
-<li><p><a href="http://www.jianshu.com/p/4f505e92d557">iOS使用OCLint做静态代码分析</a></p></li>
-<li><p><a href="http://www.cocoachina.com/ios/20170928/20669.html">让XCode自动CodeReview你的代码-OCLint使用</a></p></li>
-<li><p><a href="https://blog.yourtion.com/static-code-analysis-ios-using-oclint.html">iOS静态代码扫描</a>  <a href="https://blog.yourtion.com/static-code-analysis-ios-using-oclint.html">原文链接</a></p></li>
-</ul>
+<li>ListEmptyCompone  <code>没有接收参数</code><br/>
+渲染一个cell为空时的缓冲组件<br/></li>
+<li>ListFooterComponent  <code>没有接收参数</code><br/>
+渲染整个组件的Footer</li>
+<li>ListHeaderComponent   <code>没有接收参数</code><br/>
+渲染整个组件的Header</li>
+</ol>
 
 
-    
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="14948260667614.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/5/15</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='reactnative.html'>React-Native</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
 
-      </div>
-
-      <div class="row">
-        <div class="large-6 columns">
-        <p class="text-left" style="padding:15px 0px;">
-      
-          <a href="15126415331235.html" 
-          title="Previous Post: iOS WKWebView 本地HTML、JS、CSS文件加载详解">&laquo; iOS WKWebView 本地HTML、JS、CSS文件加载详解</a>
-      
-        </p>
-        </div>
-        <div class="large-6 columns">
-      <p class="text-right" style="padding:15px 0px;">
-      
-          <a  href="15129168744096.html" 
-          title="Next Post: 关于iOS沙盒文件的那些事儿">关于iOS沙盒文件的那些事儿 &raquo;</a>
-      
-      </p>
-        </div>
-      </div>
-      <div class="comments-wrap">
-        <div class="share-comments">
-          
-
-          
-
-          
-        </div>
-      </div>
-    </div><!-- article-wrap -->
-  </div><!-- large 8 -->
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+              
 
 
-
+			<div class="row">
+			  <div class="large-6 columns">
+			  <p class="text-left" style="padding-top:25px;">
+			   <a href="all_3.html">&laquo; Prev Page</a>  
+			  </p>
+			  </div>
+			  <div class="large-6 columns">
+			<p class="text-right" style="padding-top:25px;">
+			
+			</p>
+			  </div>
+			</div>
+		</div>
+	</div><!-- large 8 -->
 
  <div class="large-4 medium-4 columns">
   <div class="hide-for-small">
