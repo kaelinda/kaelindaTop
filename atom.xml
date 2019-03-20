@@ -4,7 +4,7 @@
   <title><![CDATA[kaelinda]]></title>
   <link href="http://kaelinda.top/atom.xml" rel="self"/>
   <link href="http://kaelinda.top/"/>
-  <updated>2019-03-20T13:51:50+08:00</updated>
+  <updated>2019-03-20T14:43:12+08:00</updated>
   <id>http://kaelinda.top/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -38,6 +38,8 @@
 
 <p><strong>S 和 J 最多含有50个字母。<br/>
  J 中的字符不重复。</strong></p>
+
+<span id="more"></span><!-- more -->
 
 <h2 id="toc_0">常规操作</h2>
 
