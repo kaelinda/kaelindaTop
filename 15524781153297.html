@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  Objective-C中的字符串类型枚举 探索 - kaelinda
+  LeetCode【算法】宝石与石头 - kaelinda
   
   </title>
   
@@ -146,14 +146,14 @@
       <div class="markdown-body article-wrap">
        <div class="article">
           
-          <h1>Objective-C中的字符串类型枚举 探索</h1>
+          <h1>LeetCode【算法】宝石与石头</h1>
      
         <div class="read-more clearfix">
-          <span class="date">2019/1/30</span>
+          <span class="date">2019/3/13</span>
 
           <span>posted in&nbsp;</span> 
           
-              <span class="posted-in"><a href='ios.html'>iOS</a></span>
+              <span class="posted-in"><a href='swift.html'>Swift</a></span>
            
          
           <span class="comments">
@@ -166,7 +166,181 @@
       </div><!-- article -->
 
       <div class="article-content">
-      <p>实际开发中的iOSer会发现，有些情况我们需要字符串类型的枚举值。但是OC偏偏没有提供这种类型。Swift语言或者Java这些语言都有，于是我就有些不甘心了。经过一番探索，尝试了以下几种情况。</p>
+      <blockquote>
+<p>给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。</p>
+
+<p>J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写，因此&quot;a&quot;和&quot;A&quot;是不同类型的石头。</p>
+</blockquote>
+
+<p><strong>示例 1:</strong></p>
+
+<blockquote>
+<p>输入: J = &quot;aA&quot;, S = &quot;aAAbbbb&quot;<br/>
+输出: 3<br/>
+示例 2:<br/>
+输入: J = &quot;z&quot;, S = &quot;ZZ&quot;<br/>
+输出: 0</p>
+</blockquote>
+
+<p><strong>注意:</strong></p>
+
+<p><strong>S 和 J 最多含有50个字母。<br/>
+ J 中的字符不重复。</strong></p>
+
+<h2 id="toc_0">常规操作</h2>
+
+<pre><code class="language-text"> func numJewelsInStones(_ J: String, _ S: String) -&gt; Int {
+    var gemNum:Int = 0
+
+    for jew in J.characters {
+        for stone in S.characters {
+            if stone == jew {
+                gemNum = gemNum + 1
+            }
+        }
+    }
+    return gemNum
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>执行时间</th>
+<th>内存消耗</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>28ms</td>
+<td>19.1M</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_1">优化后</h2>
+
+<pre><code class="language-text"> func numJewelsInStones(_ J: String, _ S: String) -&gt; Int {
+    var gemNum:Int = 0
+    for jew in J {
+        for stone in S {
+            if stone == jew {
+                gemNum = gemNum + 1
+            }
+        }
+    }
+    return gemNum
+
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>执行时间</th>
+<th>内存消耗</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>16ms</td>
+<td>19.5MB</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_2">考虑尽量减少中间变量</h2>
+
+<pre><code class="language-text">func numJewelsInStones(_ J: String, _ S: String) -&gt; Int {
+
+    var newS = S
+    for jew in J.characters {
+       newS = newS.replacingOccurrences(of: &quot;\(jew)&quot;, with: &quot;&quot;)
+    }
+
+    return S.count - newS.count
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>执行时间</th>
+<th>内存消耗</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>52ms</td>
+<td>20.5M</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_3">减少字符串操作</h2>
+
+<pre><code class="language-text">func numJewelsInStones(_ J: String, _ S: String) -&gt; Int {
+    var jewNum:Int = 0;
+    for stone in S {
+        if J.contains(stone) {
+            jewNum = jewNum + 1;
+        }
+    }
+    return jewNum;
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>执行时间</th>
+<th>内存消耗</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>40ms</td>
+<td>18.9MB</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_4">考虑少用字符串比较的Function</h2>
+
+<pre><code class="language-text">func numJewelsInStones(_ J: String, _ S: String) -&gt; Int {
+    var jewNum:Int = 0;
+    var jSet = Set&lt;Character&gt;();
+    for jew in J {
+        jSet.insert(jew)
+    }
+    for stone in S {
+        if jSet.contains(stone) {
+            jewNum = jewNum + 1;
+        }
+    }
+    return jewNum;
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>执行时间</th>
+<th>内存消耗</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>16ms</td>
+<td>19.3M</td>
+</tr>
+</tbody>
+</table>
 
 
     
@@ -177,16 +351,13 @@
         <div class="large-6 columns">
         <p class="text-left" style="padding:15px 0px;">
       
-          <a href="15501356584731.html" 
-          title="Previous Post: UITableView顶部空白的几种解决办法">&laquo; UITableView顶部空白的几种解决办法</a>
-      
         </p>
         </div>
         <div class="large-6 columns">
       <p class="text-right" style="padding:15px 0px;">
       
-          <a  href="15409691048860.html" 
-          title="Next Post: 【Swift笔记】引用计数">【Swift笔记】引用计数 &raquo;</a>
+          <a  href="15523077857608.html" 
+          title="Next Post: OC中枚举写法  以及 字符串枚举探索">OC中枚举写法  以及 字符串枚举探索 &raquo;</a>
       
       </p>
         </div>
@@ -225,7 +396,7 @@
 
 
 <a target="_blank" class="twitter" target="_blank" href="https://twitter.com/KaelLVLinda" title="Twitter">Twitter</a>
-<a target="_blank" class="github" target="_blank" href="https://github.com/Kaelzzs" title="GitHub">GitHub</a>
+<a target="_blank" class="github" target="_blank" href="https://github.com/kaelinda" title="GitHub">GitHub</a>
 <a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
   <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
                 
@@ -273,6 +444,12 @@
 	      
 		      
 			      <li class="post">
+			        <a href="15524781153297.html">LeetCode【算法】宝石与石头</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="15523077857608.html">OC中枚举写法  以及 字符串枚举探索</a>
 			      </li>
 		     
@@ -291,13 +468,7 @@
 		  
 		      
 			      <li class="post">
-			        <a href="15488351784332.html">Objective-C中的字符串类型枚举 探索</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15409691048860.html">【Swift笔记】引用计数</a>
+			        <a href="15477923365213.html">iOS 获取汉字【简体中文】笔画数</a>
 			      </li>
 		     
 		  

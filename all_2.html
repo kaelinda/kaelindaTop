@@ -146,193 +146,288 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="15137621729153.html">
+                <a class="clearlink" href="15282021908171.html">
                 
-                  <h1>ES6笔记（解构赋值）</h1>
+                  <h1>Alfred workflow 教程</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">解构赋值</h2>
+                        	<h2 id="toc_0">简介</h2>
 
-<h3 id="toc_1">变量的解构：</h3>
-
-<ul>
-<li>解构赋值允许指定默认值。</li>
-<li>解构赋值必须保证赋值方  被赋值方类型一直  但Item允许有遗漏或者多出。</li>
-<li>默认值可以引用解构赋值的其他变量，但该变量必须已经声明</li>
-</ul>
-
-<pre><code class="language-text">let [x = 1, y = x] = [];     // x=1; y=1
-let [x = y, y = 1] = [];     // ReferenceError
-</code></pre>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15137621729153.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/12/20</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='js.html'>JavaScript</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15117133773045.html">
-                
-                  <h1>可选型 Optional</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h3 id="toc_0">定义</h3>
+<blockquote>
+<p>新创建一个空白的workflow<br/>
+<img src="https://ws1.sinaimg.cn/large/006tKfTcly1fs193q68k7j30we0kawh2.jpg" alt=""/><br/>
+<img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs194xjqm9j30k804g0t0.jpg" alt=""/></p>
 
 <ul>
-<li>当数据可能接收nil的时候，使用optional是比较合适的</li>
-<li>当非可选型被赋值为nil的时候 系统会崩溃</li>
-<li>当可选型被赋值为nil的时候 系统会首先判断值是否为nil，如果为nil 则会赋值nil;如果不为nil，那就正常操作。</li>
+<li>1.workflow 名字</li>
+<li>2.workflow功能描述</li>
+<li>3.Category：workflow的类别 工具  网络 或者别的分类</li>
+<li>4.唯一标识</li>
+<li>5.作者</li>
+<li>6.网站</li>
 </ul>
 
-<h3 id="toc_1">Optional 可选型 写法</h3>
+<p>空白区，点击鼠标右键<br/>
+<img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs0l0zl2crj307e0bydgg.jpg" alt=""/></p>
 
-<p><code>var sexy : String? = &quot;boy&quot;</code></p>
+<p>知识点：{query}   可以接收上个模块的输出参数<br/>
+如果是输出多个参数，那就是{var:var1,var:var2}</p>
+</blockquote>
 
-<h3 id="toc_2">强制解包</h3>
+<h2 id="toc_1">Triggers 触发器</h2>
 
-<pre><code class="language-text">if sexy != nil {
-    print(&quot;i am a \(String(describing: sexy))&quot;)
-}else{
-    print(&quot;none&quot;)
-}
-</code></pre>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fs0ljq33rnj30g20c20ua.jpg" alt=""/></p>
 
+<h3 id="toc_2">Hotkey 热键触发</h3>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15117133773045.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/11/27</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='swift.html'>Swift</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15115315701641.html">
-                
-                  <h1>React Native 集成 Redux</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">课程介绍</h2>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fs16vk8gidj30to0n4tc1.jpg" alt=""/><br/>
+<img src="https://ws2.sinaimg.cn/large/006tKfTcly1fs16yvki0ej30jy04qdgs.jpg" alt=""/><br/>
+<img src="https://ws1.sinaimg.cn/large/006tKfTcly1fs16zp561fj30my05yt9m.jpg" alt=""/></p>
 
 <ul>
-<li>Flux/reFlux/Redux</li>
-<li><p>简单/单一状态树</p></li>
-<li><p>react 和 redux 数据流的关系</p></li>
-<li><p>JS、CSS、HTML</p></li>
-<li><p>JSX</p></li>
-<li><p>webpack 构建</p></li>
+<li>Hotkey: 热键设置触发   选中后可以设置激活热键组合</li>
+<li><p>Action: 行为  </p>
+<ul>
+<li>Pass through to workflow</li>
+<li>Show Alfred</li>
+</ul>
+<blockquote>
+<p>当热键被按下时该怎么做。注意，如果你选择“show alfred”。即使连接成功，则不会从该处理器的输出中输出任何内容。</p>
+</blockquote></li>
+<li><p>Argument：</p>
+<ul>
+<li>none：什么都没有</li>
+<li>selection in macOS: 电脑中选中的内容</li>
+<li>MacOS Clipboard Content：电脑粘贴板内容</li>
+<li>Text： 输入文本</li>
+</ul></li>
+<li><p>prefix    ：前缀</p>
+<blockquote>
+<p>Argument是一个可选参数，如果输入的是文本那么会动态的添加prefix配置的前缀。</p>
+</blockquote></li>
 </ul>
 
-<h2 id="toc_1">数据流</h2>
+<h3 id="toc_3">Remote 远程触发</h3>
+
+<blockquote>
+<p>注意，这个触发器对象与远程对象是分离的。这里提供的图像和名称是建议默认的，并在使用中复制到Remote中。只要保持标识符的一致性，就可以删除和替换对象。</p>
+</blockquote>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fs17yod1hlj30vq0k20wk.jpg" alt=""/></p>
 
 <ul>
-<li>MVC 状态复杂之后，action会触发事件 并且不可预测</li>
-<li>flux: state Tree will send data to view,but view can&#39;t send data to state-tree.</li>
-<li>Redux :  state 是包含在store中的</li>
+<li>1.这是自定制的要触发的workflow 的 icon</li>
+<li>2.这是按钮上的button上的文字</li>
+<li>3.这个触发器内部使用的唯一标识符，通过远程标识要运行哪个触发器。</li>
+<li>4.触发器携带参数</li>
+<li>5.触发器携带参数前缀</li>
+<li>6.此触发器仅可用于添加到此工作流中的远程页面，而不能用于一般的远程页面。</li>
 </ul>
 
+<h3 id="toc_4">Snippet  片段触发</h3>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15115315701641.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/11/24</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='reactnative.html'>React-Native</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15115206889632.html">
-                
-                  <h1>Mac app 推荐</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">开发工具篇</h2>
-
-<h3 id="toc_1">Postman （Chrome 工具）</h3>
-
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1ftrz0axodgj306g05yaa5.jpg" alt=""/></p>
-
-<p>这款APP 最初是 谷歌浏览器的插件...</p>
-
-<h3 id="toc_2">Gif Brewery （AppStore 免费）</h3>
-
-<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fmpkcy93u9j307206oab2.jpg" alt="Gif Brewery"/><br/>
-这是录制gif文件的APP，有了它再也不用为制作gif发愁了</p>
-
-<h2 id="toc_3">效率篇</h2>
-
-<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fs4sjq44lvj31kw0e97im.jpg" alt=""/></p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fs3mx57k39j30qa0j4wh3.jpg" alt=""/></p>
 
 <ul>
-<li>Magnet:分屏工具</li>
-<li>Manico:快捷键启动APP工具</li>
-<li>Sip：非常好用的取色工具</li>
-<li>Alfred：排名第一的效率工具</li>
-<li>Go3Shell: 终端内cd到选中文件目录下</li>
-<li>iterm2: 可自定制主题 支持多tab横屏竖屏新建tab的替代terminal的工具</li>
-<li>截图：腾讯出品的良心免费截图工具</li>
+<li>1.关键字：</li>
+<li>关注APP的变量</li>
+<li></li>
 </ul>
 
-<h2 id="toc_4">办公</h2>
+<h3 id="toc_5">External  扩展触发</h3>
 
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1ftrwgam12sj309u086myk.jpg" alt=""/></p>
+<p>触发该触发器后会执行一段Applescript 脚本</p>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fs3pxvlwyvj30ui0futb2.jpg" alt=""/></p>
+
+<ul>
+<li>1.identifier : 触发ID</li>
+<li>2.简单脚本</li>
+</ul>
+
+<h3 id="toc_6">Connect Action</h3>
+
+<p>联系人Action，这个具体干什么笔者也没搞清楚。</p>
+
+<h3 id="toc_7">Fallback search</h3>
+
+<blockquote>
+<p>select the title and subtext you would like to use for this keyword based input.<br/>
+these represent the text you see in Alfred’s results when using the keyword.</p>
+</blockquote>
+
+<p>选择您希望用于这个基于关键字的输入的标题和字幕。这些代表在使用关键字时在Alfred的结果中看到的文本。</p>
+
+<h2 id="toc_8">Inputs 输入</h2>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs0ll364vbj30f80bymye.jpg" alt=""/></p>
+
+<h3 id="toc_9">关键字</h3>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fs3qapb1rnj30qw0f277f.jpg" alt=""/></p>
+
+<ul>
+<li>1.keyword：激活改Action的关键字</li>
+<li>2.是否需要参数：require-必须传入参数  optional-可选  NO argument-不需要参数</li>
+<li>3.action 标题</li>
+<li>4.action的副标题</li>
+<li>5.可以自定制的icon</li>
+</ul>
+
+<h3 id="toc_10">文件过滤器</h3>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fs3qecoaf0j31060ogtc1.jpg" alt=""/></p>
+
+<ul>
+<li>1.keyword：激活改Action的关键字</li>
+<li>2.默认提示字符标题</li>
+<li>3.默认提示字符副标题</li>
+<li>4.文件类型 右下角+号可以添加文件类型</li>
+</ul>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fs3qykwxjqj31060ogdis.jpg" alt=""/></p>
+
+<p>Search Scope 设置的是可搜索范围。需要手动将文件夹拖入条目范围中，即可。</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fs3qzl6u7nj31060o6te8.jpg" alt=""/></p>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fs3wm2d3mfj316u0ocjzc.jpg" alt=""/></p>
+
+<ul>
+<li>1.日期搜索范围设置  任意日期，今天，三天内，七天内，30天内，超过30天</li>
+<li>2.文件排序方式设置 名字</li>
+</ul>
+
+<h3 id="toc_11">语言过滤器</h3>
+
+<p>预言过滤  具体也不知道能干啥。</p>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fs3r25at3ij30v00h8tbm.jpg" alt=""/></p>
+
+<h3 id="toc_12">List过滤器</h3>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fs3r5fichuj31bs0u6gsx.jpg" alt=""/></p>
+
+<p>这就相当于 编程预言里面的 <code>switch case</code></p>
+
+<ul>
+<li>1.关键字</li>
+<li>2.模块标题</li>
+<li>3.模块的subtitle</li>
+<li>4.参数配置：require-必须传参 optional-可选   No argument-不需要参数</li>
+<li>5.该模块的icon设置</li>
+<li>6.list：输入关键字后会出现这个list </li>
+<li>7.list子模块title</li>
+<li>8.子模块的subtitle</li>
+<li>9.选中子模块后输出的参数</li>
+<li>10.list中的子模块排序方式   一种是一直保持固定排序；另一种是Alfred自己学习根据使用频率 进行排序</li>
+</ul>
+
+<h3 id="toc_13">Script filter 脚本过滤器</h3>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fs3zcesy1gj317e0zmjwi.jpg" alt=""/></p>
+
+<h2 id="toc_14">Action 行为</h2>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1fs0llhujngj30go0g840r.jpg" alt=""/></p>
+
+<h3 id="toc_15">打开文件</h3>
+
+<p>用某个APP打开指定文件。</p>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fs3zldzgjzj30yw0rw778.jpg" alt=""/></p>
+
+<h3 id="toc_16">Reveal file in the finder 打开文件所在位置</h3>
+
+<h3 id="toc_17">browse in Alfred</h3>
+
+<h3 id="toc_18">Launch APPs</h3>
+
+<h3 id="toc_19">Default web search</h3>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fs3zrfdl12j30ma0aidha.jpg" alt=""/></p>
+
+<h3 id="toc_20">open URL</h3>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fs3zvl5nuwj30zk0didj1.jpg" alt=""/></p>
+
+<h3 id="toc_21">System Command</h3>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fs3zz6vwjxj30q00judkl.jpg" alt=""/></p>
+
+<h3 id="toc_22">iTunes Command</h3>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fs3zzs0mrnj30no0ig42v.jpg" alt=""/></p>
+
+<h3 id="toc_23">Terminal Command</h3>
+
+<p>通过终端APP 运行终端命令组件</p>
+
+<h3 id="toc_24">Run Script</h3>
+
+<p>运行脚本</p>
+
+<h3 id="toc_25">Run NSAppleScript</h3>
+
+<p>运行apple 脚本</p>
+
+<h2 id="toc_26">Utilities 实用工具</h2>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fs16kjx74kj30e60fojsx.jpg" alt=""/></p>
+
+<h3 id="toc_27">Arg and Vars</h3>
+
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fs403j1t5aj30ws0nqmzg.jpg" alt=""/></p>
+
+<h3 id="toc_28">JSON Config</h3>
+
+<p>通过输入的参数 自行组合成自己想要的json文本</p>
+
+<h3 id="toc_29">Junction  结点</h3>
+
+<p>这个只是处理复杂逻辑的节点。如果线条逻辑过多 错综复杂的时候 可以通过节点来处理。</p>
+
+<h3 id="toc_30">Filter</h3>
+
+<h3 id="toc_31">Delay</h3>
+
+<h3 id="toc_32">Transform</h3>
+
+<h3 id="toc_33">Replace</h3>
+
+<h3 id="toc_34">Hide Alfred</h3>
+
+<h3 id="toc_35">Debug</h3>
+
+<h2 id="toc_36">Outputs 输出</h2>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fs16lacns8j30h60eqtai.jpg" alt=""/></p>
+
+<h3 id="toc_37">Post Notification 发送本地通知</h3>
+
+<p>发送本地通知。Alfred 3 的本地推送不好用，一直没成功。</p>
+
+<h3 id="toc_38">Large Type 大文字显示</h3>
+
+<p>大文字显示 一些文本。</p>
+
+<h3 id="toc_39">Copy to Clipboard  copy文本到粘贴板</h3>
+
+<p>复制结果到粘贴板</p>
+
+<h3 id="toc_40">Write Text File 把text写入文件</h3>
+
+<p>将text文本写入文件</p>
+
+<h3 id="toc_41">Play Sound 播放声音</h3>
+
+<p>播放声音</p>
+
+<h3 id="toc_42">Dispath Key Combo 按键连击</h3>
+
+<h3 id="toc_43">Call External trigger 触发别的触发器</h3>
 
                         
                       </div>
@@ -341,7 +436,7 @@ let [x = y, y = 1] = [];     // ReferenceError
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2017/11/24</span>
+                    <span class="date">2018/6/5</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='app.html'>MacAPP</a></span>
@@ -358,83 +453,16 @@ let [x = y, y = 1] = [];     // ReferenceError
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="14948260667614.html">
+                <a class="clearlink" href="15268827199184.html">
                 
-                  <h1>SectionListView</h1>
+                  <h1>NSURLRequest</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">属性</h2>
-
-<ol>
-<li>ItemSeparatorComponent  <code>{highlighted,leadingItem,leandingSection,section,trailingItem}</code><br/>
-返回一个行与行之间的分割组件，不会出现在第一行之前和最后一行之后。
-<ul>
-<li><code>highlighted</code> 当前行（分割线上面👆的Item）是否是高亮状态</li>
-<li><code>leadingItem</code> 当前行分配到的数据源</li>
-<li><code>leandingSection</code> 目前我也没搞明白啥意思 这里是<code>undefined</code></li>
-<li><code>section</code> 当前段分配到的数据源</li>
-<li><code>trailingItem</code> 尾段数据</li>
-</ul></li>
-<li>ListEmptyCompone  <code>没有接收参数</code><br/>
-渲染一个cell为空时的缓冲组件<br/></li>
-<li>ListFooterComponent  <code>没有接收参数</code><br/>
-渲染整个组件的Footer</li>
-<li>ListHeaderComponent   <code>没有接收参数</code><br/>
-渲染整个组件的Header</li>
-</ol>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="14948260667614.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/5/15</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='reactnative.html'>React-Native</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15468313301172.html">
-                
-                  <h1>内存区域</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">1、介绍下内存区域</h2>
-
-<ul>
-<li><p>栈(Stack)</p>
-<ul>
-<li>【特点】：先进先出</li>
-<li>【分配和释放】：编译器自动分配、自动释放；</li>
-<li>存放函数的参数值、局部变量，方法调用的实参也是保存在栈区的。</li>
-<li>栈是系统数据结构，对应线程/进程是唯一的</li>
-<li>优点是快速高效，缺点是有限制，数据不灵活</li>
-</ul></li>
-<li><p>堆(Heap)</p></li>
-<li><p>全局区(静态区)</p></li>
-<li><p>常量区/数据段</p></li>
-<li><p>代码区/代码段</p></li>
-</ul>
-
-<p>【面试】 阿里p6面试题</p>
+                        	<pre><code class="language-text">NSURL * url = [NSURL URLWithString:@&quot;http://127.0.0.1/demo.json&quot;];
+NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:0 timeoutInterval:15.0];
+</code></pre>
 
                         
                       </div>
@@ -443,7 +471,7 @@ let [x = y, y = 1] = [];     // ReferenceError
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2019/1/7</span>
+                    <span class="date">2018/5/21</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
@@ -460,114 +488,22 @@ let [x = y, y = 1] = [];     // ReferenceError
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15422507660830.html">
+                <a class="clearlink" href="15261167596297.html">
                 
-                  <h1>使用Masonry，布局UIScrollViewView</h1>
+                  <h1>OC 多线程之 GCD知识从基础到进阶 （1）</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<p><code>UIScrollView</code>比较特殊，frame布局时我们需要设置<code>contentSize</code>属性</p>
+                        	<h2 id="toc_0">概念认知</h2>
 
-<ol>
-<li><p>初始化ScrollView并添加到父视图 并 进行约束</p>
-<pre><code class="language-text">// ------ 初始化ScrollView
-UIScrollView *scrollView = UIScrollView.new;<br/>
-self.scrollView = scrollView;<br/>
-scrollView.backgroundColor = [UIColor grayColor];<br/>
-// ------ 添加到父视图<br/>
-[self addSubview:scrollView];<br/>
-// ------ 对ScrollView进行约束<br/>
-[self.scrollView makeConstraints:^(MASConstraintMaker *make) {<br/>
-    make.edges.equalTo(self);<br/>
-}];
-</code></pre></li>
-<li><p>初始化ContentView 并进行约束</p>
-<pre><code class="language-text">UIView* contentView = UIView.new;
-// 添加contentView 到ScrollView上<br/>
-[self.scrollView addSubview:contentView];<br/>
-// 约束contentView<br/>
-[contentView makeConstraints:^(MASConstraintMaker *make) {<br/>
-    make.edges.equalTo(self.scrollView);<br/>
-    make.width.equalTo(self.scrollView);<br/>
-}];
-</code></pre></li>
-<li><p>添加子视图到contentView上 并再次对contentView进行约束</p>
-<pre><code class="language-text">UIView *lastView;
-CGFloat height = 25;<br/>
-for (int i = 0; i &lt; 10; i++) {<br/>
-    UIView *view = UIView.new;<br/>
-    view.backgroundColor = [self randomColor];<br/>
-    // 注意！！！ 这里是添加视图到 contentView上<br/>
-    [contentView addSubview:view];<br/>
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];<br/>
-    [view addGestureRecognizer:singleTap];<br/>
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {<br/>
-        make.top.equalTo(lastView ? lastView.bottom : @0);<br/>
-        make.left.equalTo(@0);<br/>
-        make.width.equalTo(contentView.width);<br/>
-        make.height.equalTo(@(height));<br/>
-    }];<br/>
-    height += 25;<br/>
-    lastView = view;<br/>
-}<br/>
-// ------&gt;&gt;&gt;&gt;&gt;&gt;: 这里 很关键！！！！<br/>
-[contentView makeConstraints:^(MASConstraintMaker *make) {<br/>
-    make.bottom.equalTo(lastView.bottom);<br/>
-}];
-</code></pre></li>
-</ol>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15422507660830.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/11/15</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15477923365213.html">
-                
-                  <h1>iOS 获取汉字【简体中文】笔画数</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">思路</h2>
+<p>基本概念：</p>
 
 <ul>
-<li><p>汉字字典库匹配笔画数</p>
-<ul>
-<li>优点： 实现逻辑简单，字典库好扩展</li>
-<li>缺点： 内存消耗较大（不过也能承担）</li>
-</ul>
-<p><strong>思路：</strong> 这种实现思路是比较简单的，具体思路是将简体汉字所有字都穷举出来，然后分别匹配上指定的笔画数，当做一个大的数据库，每次都去查询一下。</p></li>
-<li><p>汉字GBK编码匹配笔画数</p>
-<ul>
-<li>优点：相比字典库匹配，效率高，速度快</li>
-<li>缺点：添加编码库不好添加，不好扩展</li>
-</ul>
-<p><strong>思路：</strong> 这种实现方案是需要获取GBK编码分别对应的笔画数，放到指定数组（数据库）中，每次通过输入的汉字 转码为二进制，通过二进制的值 匹配数据库中的笔画数。</p>
-<p>-**************************<br/>
-废话少说，盘它！<br/>
--**************************</p></li>
+<li><p>GCD 全称 (Grand Center Dispatch),翻译成通俗中文“牛B的中心调度机制”</p></li>
+<li><p>线程：执行任务调度的最小单位</p></li>
+<li><p>任务：就是一段代码，GCD中就是block中的内容。执行任务有两种方式：同步执行（sync）和异步执行（async）。两者的主要区别是：是否等待队列的任务执行结束，以及是否具备开启新线程的能力</p></li>
+<li><p>队列：用来存放任务的线性结构，采用 FIFO（先进先出）的原则。</p></li>
 </ul>
 
 
@@ -577,8 +513,8 @@ for (int i = 0; i &lt; 10; i++) {<br/>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                   <a href="15477923365213.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2019/1/18</span>
+                   <a href="15261167596297.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/5/12</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
@@ -595,24 +531,26 @@ for (int i = 0; i &lt; 10; i++) {<br/>
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15450161964215.html">
+                <a class="clearlink" href="15257437237715.html">
                 
-                  <h1>【精选】Mac 手动内存清理教程</h1>
+                  <h1>OC中的各种遍历</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">一、查看内存占用情况</h2>
+                        	<blockquote>
+<p>iOS开发中我们经常遇到各种的数据处理，所以就会经常遇到数组遍历 和 字典遍历。但是不同的遍历方式，效率不同，并且还有不同的限制。</p>
+</blockquote>
 
-<p><img src="http://upload-images.jianshu.io/upload_images/412206-4734b7ee4a571010.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"/></p>
+<p>首先把数据源准备好：</p>
 
-<h2 id="toc_1">二、管理内存</h2>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/412206-fe84152bd070aca0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"/></p>
-
-<h3 id="toc_2">1、废纸篓</h3>
-
-<p>清理非废纸篓的道理我就不废话了吧。</p>
+<pre><code class="language-text">_dataSource = [NSMutableArray array];
+_dataDic = [NSMutableDictionary dictionary];
+for (int i=0; i&lt;5; i++) {
+    [_dataSource addObject:@(i)];
+    [_dataDic setObject:@(i) forKey:[NSString stringWithFormat:@&quot;我是第%d个Item&quot;,i]];
+}
+</code></pre>
 
 
                         
@@ -621,8 +559,8 @@ for (int i = 0; i &lt; 10; i++) {<br/>
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                   <a href="15450161964215.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/12/17</span>
+                   <a href="15257437237715.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/5/8</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
@@ -639,20 +577,22 @@ for (int i = 0; i &lt; 10; i++) {<br/>
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15397592871272.html">
+                <a class="clearlink" href="15253400374602.html">
                 
-                  <h1>iOS 竖屏NavigationController present 到只支持横屏的界面 版本解析</h1>
+                  <h1>多线程 之 NSThread</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">各版本对比</h2>
+                        	<h2 id="toc_0">基本使用</h2>
+
+<h2 id="toc_1">基本知识点学习笔记</h2>
 
 <ul>
-<li><p>iOS9 和 iOS10 差别就是返回时 导航会有自己动画<br/>
-<img src="https://ws1.sinaimg.cn/large/006tNbRwly1fwb87gvzoxg30890gob2f.gif" alt="iOS9"/> <img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwb88tdp6hg30860gnx6t.gif" alt="iOS10"/> </p></li>
-<li><p>iOS11 和 iOS12 两者没什么区别， 但是跟之前版本变化很大 会有 20像素的导航条空白区域（真机上的现象是，vc.view上移20像素（iPhone X系列可能会是44像素非常明显））<br/>
-<img src="https://ws1.sinaimg.cn/large/006tNbRwly1fwb89abhgbg30890gnnpk.gif" alt="iOS11"/> <img src="https://ws1.sinaimg.cn/large/006tNbRwly1fwb8d01n7pg30840goe87.gif" alt="iOS12"/></p></li>
+<li>新创建的线程放到了内存的<code>可调度线程池内</code></li>
+<li>线程关系：
+<img src="https://ws1.sinaimg.cn/large/006tKfTcly1fqyaf1gkuvj31gm0nmx2b.jpg" alt=""/></li>
+<li></li>
 </ul>
 
                         
@@ -662,10 +602,295 @@ for (int i = 0; i &lt; 10; i++) {<br/>
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2018/10/17</span>
+                    <span class="date">2018/5/3</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15235286649865.html">
+                
+                  <h1>音视频学习笔记 1</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">音视频概念</h2>
+
+<h3 id="toc_1">声音的物理性质</h3>
+
+<ul>
+<li>声波三要素：频率、振幅、波形</li>
+<li>人耳听到的频率范围 20Hz-20KHz</li>
+<li><p>声音在空气中的传播速度 340m/s、蒸馏水中1497m/s、铁棒5200m/s</p></li>
+<li><p>一般声音的采样频率为 44.1KHz---&gt; 一秒钟采样44100次，这样 20KHz的频率也能被数字化</p></li>
+<li><p>音频的裸数据格式 脉冲编码调制  PCM （Pluse Code Modulation）</p></li>
+<li><p>PCM 相关概念：量化格式、采样频率、声道数</p></li>
+</ul>
+
+<h3 id="toc_2">音频编码</h3>
+
+<p>音频压缩编码算法有：PCM、WAV、AAC、MP3、Ogg。</p>
+
+<ul>
+<li>WAV：音频质量好，大多数软件都支持，但是占用空间大；适合当做多媒体开发的中间文件，保存音乐、音效素材</li>
+<li>MP3：不错的压缩比，LAME编码中高码率文件。音质在128Kbit/s 以上表现不错，压缩比高，大多数软件都支持。适合高比特率下对兼容性有要求的音乐欣赏。</li>
+<li>AAC：包括LC-AAC、HE-AAC、HE-AAC v2,小于128Kbit/s表现优异。</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">LC-AAC</th>
+<th style="text-align: center">HE-AAC</th>
+<th style="text-align: center">HE-AAC v2</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">中高码率&gt;80Kbit/s</td>
+<td style="text-align: center">中低码率&lt;=80Kbit/s</td>
+<td style="text-align: center">低码率&lt;48Kbit/s</td>
+</tr>
+</tbody>
+</table>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2018/4/12</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15233259445112.html">
+                
+                  <h1>疯狂iOS讲义笔记 1</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">多点触摸与 手势检测</h2>
+
+<h3 id="toc_1">响应者链</h3>
+
+<ul>
+<li>响应者链：第一响应者 ---&gt; 第一响应者的视图控制器 ---&gt; 父控制器（如果有的话）---&gt; UIWindow ---&gt; UIApplication ---&gt; 应用程序委托对象</li>
+<li>手势交互触发事件的过程，iOS系统遍历视图的时候 是 深度遍历 还是 广度遍历？</li>
+</ul>
+
+<p>事件的传递：是广度遍历<br/>
+事件的响应：深度遍历</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2018/4/10</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15232599795686.html">
+                
+                  <h1>每天学习一个shell技能（8）</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">shell 终端打印</h2>
+
+<pre><code class="language-text">```
+printf &quot;%-5s %-10s %-4s \n&quot; NO Name Mark
+printf &quot;%-5s %-10s %-4s \n&quot; 1 kael 100
+printf &quot;%-5s %-10s %-4s \n&quot; 2 linda 99
+printf &quot;%-5s %-10s %-4s \n&quot; 3 rouse 98
+
+// 打印结果
+NO    Name       Mark 
+1     kael       100  
+2     linda      99   
+3     rouse      98  
+```
+</code></pre>
+
+<blockquote>
+<p>printf 行尾 默认自带换行 \n</p>
+</blockquote>
+
+<ul>
+<li>%-5s : 左对齐，宽度为5的字符串替换；默认右对齐</li>
+<li>%-4.2f:指定保留2位小数</li>
+</ul>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2018/4/9</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15226648731246.html">
+                
+                  <h1>每天学习一个shell技能（7）</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">文件包含 导入文件</h2>
+
+<p>测试文件  test1.sh</p>
+
+<pre><code class="language-text">#!/bin/bash
+# author:菜鸟教程
+# url:www.runoob.com
+
+url=&quot;http://www.runoob.com&quot;
+</code></pre>
+
+<p>测试文件 test2.sh</p>
+
+<pre><code class="language-text">#!/bin/bash
+# author:菜鸟教程
+# url:www.runoob.com
+
+#使用 . 号来引用test1.sh 文件
+. ./test1.sh
+
+# 或者使用以下包含文件代码
+# source ./test1.sh
+
+echo &quot;菜鸟教程官网地址：$url&quot;
+</code></pre>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15226648731246.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/4/2</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15226603064743.html">
+                
+                  <h1>每天学习一个shell技能（6）</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">test</h2>
+
+<h3 id="toc_1">test文件</h3>
+
+<pre><code class="language-text">if test -e ./test.sh
+then
+    echo &#39;文件已存在!&#39;
+else
+    echo &#39;文件不存在!&#39;
+fi
+</code></pre>
+
+<ul>
+<li>-e fileName ： 如果文件存在则为真</li>
+<li>-r  fileName : 如果文件存在且可读则为真</li>
+<li>-w fileName : 如果文件存在且可写则为真</li>
+<li>-x fileName : 如果文件存在且可执行则为真</li>
+<li>-s fileName: 文件存在且至少有一个字符</li>
+<li>-d fileName : 文件存在且为目录</li>
+<li>-f fileName: 文件存在且为文件</li>
+<li>-c fileName:文件存在，且为字符型特殊文件</li>
+<li>-b fileName: 如果文件存在且为块特殊文件则为真</li>
+</ul>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15226603064743.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/4/2</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -715,7 +940,7 @@ for (int i = 0; i &lt; 10; i++) {<br/>
 
 
 <a target="_blank" class="twitter" target="_blank" href="https://twitter.com/KaelLVLinda" title="Twitter">Twitter</a>
-<a target="_blank" class="github" target="_blank" href="https://github.com/Kaelzzs" title="GitHub">GitHub</a>
+<a target="_blank" class="github" target="_blank" href="https://github.com/kaelinda" title="GitHub">GitHub</a>
 <a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
   <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
                 
@@ -763,6 +988,12 @@ for (int i = 0; i &lt; 10; i++) {<br/>
 	      
 		      
 			      <li class="post">
+			        <a href="15524781153297.html">LeetCode【算法】宝石与石头</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="15523077857608.html">OC中枚举写法  以及 字符串枚举探索</a>
 			      </li>
 		     
@@ -781,13 +1012,7 @@ for (int i = 0; i &lt; 10; i++) {<br/>
 		  
 		      
 			      <li class="post">
-			        <a href="15409691048860.html">【Swift笔记】引用计数</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15402889434646.html">Swift中类（Class）和 结构体（Struct）</a>
+			        <a href="15477923365213.html">iOS 获取汉字【简体中文】笔画数</a>
 			      </li>
 		     
 		  

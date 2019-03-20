@@ -146,105 +146,6 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="15126628432953.html">
-                
-                  <h1>iOS代码检测入坑记事</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">我接触的代码检测</h2>
-
-<ul>
-<li>OCLint + xcpretty</li>
-<li>sonar</li>
-<li>infer</li>
-</ul>
-
-<h3 id="toc_1">infer</h3>
-
-<ul>
-<li><p><a href="https://infer.liaohuqiu.net">infer官网 传送门</a></p>
-<p><em>具体使用</em></p>
-<pre><code class="language-text">infer -- xcodebuild -target &lt;target name&gt; -configuration &lt;build configuration&gt; -sdk iphonesimulator
-</code></pre></li>
-</ul>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15126628432953.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/12/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15126415331235.html">
-                
-                  <h1>iOS WKWebView 本地HTML、JS、CSS文件加载详解</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<blockquote>
-<p><strong>Tips:</strong><br/>
-NSString类型的文件路径转换为URL的时候，一定要用 <br/>
-<code>NSURL *pathURL = [NSURL fileURLWithPath:filePath];</code>方法去转换，否则资源URL不合法，APP会崩溃</p>
-</blockquote>
-
-<h2 id="toc_0">上源码接口：</h2>
-
-<h3 id="toc_1">loadRequest方式加载</h3>
-
-<ul>
-<li><p>API : iOS8即可使用</p>
-<p><code>- (nullable WKNavigation *)loadRequest:(NSURLRequest *)request;</code>      </p></li>
-<li><p>用途：</p>
-<ul>
-<li>1：主要用来加载网络URL<br/></li>
-<li>2：也可以加载本地HTML文件（本文重点）</li>
-</ul>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15126415331235.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/12/7</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
                 <a class="clearlink" href="15115332074317.html">
                 
                   <h1>Xcode 代码块</h1>
@@ -272,6 +173,171 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15115315701641.html">
+                
+                  <h1>React Native 集成 Redux</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">课程介绍</h2>
+
+<ul>
+<li>Flux/reFlux/Redux</li>
+<li><p>简单/单一状态树</p></li>
+<li><p>react 和 redux 数据流的关系</p></li>
+<li><p>JS、CSS、HTML</p></li>
+<li><p>JSX</p></li>
+<li><p>webpack 构建</p></li>
+</ul>
+
+<h2 id="toc_1">数据流</h2>
+
+<ul>
+<li>MVC 状态复杂之后，action会触发事件 并且不可预测</li>
+<li>flux: state Tree will send data to view,but view can&#39;t send data to state-tree.</li>
+<li>Redux :  state 是包含在store中的</li>
+</ul>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15115315701641.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/11/24</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='reactnative.html'>React-Native</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15115206889632.html">
+                
+                  <h1>Mac app 推荐</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">开发工具篇</h2>
+
+<h3 id="toc_1">Postman （Chrome 工具）</h3>
+
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1ftrz0axodgj306g05yaa5.jpg" alt=""/></p>
+
+<p>这款APP 最初是 谷歌浏览器的插件...</p>
+
+<h3 id="toc_2">Gif Brewery （AppStore 免费）</h3>
+
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79ly1fmpkcy93u9j307206oab2.jpg" alt="Gif Brewery"/><br/>
+这是录制gif文件的APP，有了它再也不用为制作gif发愁了</p>
+
+<h2 id="toc_3">效率篇</h2>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fs4sjq44lvj31kw0e97im.jpg" alt=""/></p>
+
+<ul>
+<li>Magnet:分屏工具</li>
+<li>Manico:快捷键启动APP工具</li>
+<li>Sip：非常好用的取色工具</li>
+<li>Alfred：排名第一的效率工具</li>
+<li>Go3Shell: 终端内cd到选中文件目录下</li>
+<li>iterm2: 可自定制主题 支持多tab横屏竖屏新建tab的替代terminal的工具</li>
+<li>截图：腾讯出品的良心免费截图工具</li>
+</ul>
+
+<h2 id="toc_4">办公</h2>
+
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1ftrwgam12sj309u086myk.jpg" alt=""/></p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2017/11/24</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='app.html'>MacAPP</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="14948260667614.html">
+                
+                  <h1>SectionListView</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">属性</h2>
+
+<ol>
+<li>ItemSeparatorComponent  <code>{highlighted,leadingItem,leandingSection,section,trailingItem}</code><br/>
+返回一个行与行之间的分割组件，不会出现在第一行之前和最后一行之后。
+<ul>
+<li><code>highlighted</code> 当前行（分割线上面👆的Item）是否是高亮状态</li>
+<li><code>leadingItem</code> 当前行分配到的数据源</li>
+<li><code>leandingSection</code> 目前我也没搞明白啥意思 这里是<code>undefined</code></li>
+<li><code>section</code> 当前段分配到的数据源</li>
+<li><code>trailingItem</code> 尾段数据</li>
+</ul></li>
+<li>ListEmptyCompone  <code>没有接收参数</code><br/>
+渲染一个cell为空时的缓冲组件<br/></li>
+<li>ListFooterComponent  <code>没有接收参数</code><br/>
+渲染整个组件的Footer</li>
+<li>ListHeaderComponent   <code>没有接收参数</code><br/>
+渲染整个组件的Header</li>
+</ol>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="14948260667614.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2017/5/15</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='reactnative.html'>React-Native</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -321,7 +387,7 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
 
 
 <a target="_blank" class="twitter" target="_blank" href="https://twitter.com/KaelLVLinda" title="Twitter">Twitter</a>
-<a target="_blank" class="github" target="_blank" href="https://github.com/Kaelzzs" title="GitHub">GitHub</a>
+<a target="_blank" class="github" target="_blank" href="https://github.com/kaelinda" title="GitHub">GitHub</a>
 <a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
   <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
                 
@@ -369,6 +435,12 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
 	      
 		      
 			      <li class="post">
+			        <a href="15524781153297.html">LeetCode【算法】宝石与石头</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="15523077857608.html">OC中枚举写法  以及 字符串枚举探索</a>
 			      </li>
 		     
@@ -387,13 +459,7 @@ NSString类型的文件路径转换为URL的时候，一定要用 <br/>
 		  
 		      
 			      <li class="post">
-			        <a href="15409691048860.html">【Swift笔记】引用计数</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15402889434646.html">Swift中类（Class）和 结构体（Struct）</a>
+			        <a href="15477923365213.html">iOS 获取汉字【简体中文】笔画数</a>
 			      </li>
 		     
 		  

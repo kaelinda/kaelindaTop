@@ -146,35 +146,36 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
-                <a class="clearlink" href="15395963175730.html">
+                <a class="clearlink" href="15224936933861.html">
                 
-                  <h1>iOS 转场动画 全解析</h1>
+                  <h1>每天学习一个shell技能（5）</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">转场代理(Transition Delegate)：</h2>
+                        	<h2 id="toc_0">Shell echo命令</h2>
 
-<pre><code class="language-text">&lt;UINavigationControllerDelegate&gt; //UINavigationController 的 delegate 属性遵守该协议。
-&lt;UITabBarControllerDelegate&gt; //UITabBarController 的 delegate 属性遵守该协议。
-&lt;UIViewControllerTransitioningDelegate&gt; //UIViewController 的 transitioningDelegate 属性遵守该协议。
+<h3 id="toc_1">打印字符</h3>
+
+<pre><code class="language-text">// 下面两行代码效果一致
+echo &quot;It is a test&quot;
+echo It is a test
 </code></pre>
 
-<h2 id="toc_1">动画控制器</h2>
+<h3 id="toc_2">打印转义字符</h3>
 
-<p>负责添加视图以及执行动画；遵守<code>&lt;UIViewControllerAnimatedTransitioning&gt;</code>协议；</p>
+<pre><code class="language-text">echo &quot;\&quot;It is a test\&quot;&quot;
+// 引号也可以省略
+echo \&quot;It is a test\&quot;
+</code></pre>
 
-<h2 id="toc_2">交互控制</h2>
+<p>打印结果：</p>
 
-<p>通过交互手段，通常是手势来驱动动画控制器实现的动画，使得用户能够控制整个过程；遵守<code>&lt;UIViewControllerInteractiveTransitioning&gt;</code>协议；系统已经打包好现成的类供我们使用。</p>
+<pre><code class="language-text">&quot;It is a test&quot;
 
-<h2 id="toc_3">转场环境(Transition Context):</h2>
+&quot;It is a test&quot;
+</code></pre>
 
-<p>提供转场中需要的数据；遵守<code>&lt;UIViewControllerContextTransitioning&gt;</code>协议；由 UIKit 在转场开始前生成并提供给我们提交的动画控制器和交互控制器使用。</p>
-
-<h2 id="toc_4">转场协调器(Transition Coordinator)：</h2>
-
-<p>可在转场动画发生的同时并行执行其他的动画，其作用与其说协调不如说辅助，主要在 Modal 转场和交互转场取消时使用，其他时候很少用到；遵守<code>&lt;UIViewControllerTransitionCoordinator&gt;</code>协议；由 UIKit 在转场时生成，UIViewController 在 iOS 7 中新增了方法transitionCoordinator()返回一个遵守该协议的对象，且该方法只在该控制器处于转场过程中才返回一个此类对象，不参与转场时返回 nil。</p>
 
                         
                       </div>
@@ -182,11 +183,11 @@
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
-                    <span class="date">2018/10/15</span>
+                   <a href="15224936933861.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/3/31</span>
                     <span>posted in&nbsp;</span> 
           				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -200,36 +201,28 @@
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15374957318613.html">
+                <a class="clearlink" href="15224613481161.html">
                 
-                  <h1>iOS开发之 【奇巧淫技篇】</h1>
+                  <h1>每天学习一个shell技能（4）</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">调试</h2>
+                        	<h2 id="toc_0">shell基本运算符</h2>
+
+<p>基本使用：</p>
+
+<pre><code class="language-text">#!/bin/bash
+
+val=`expr 2 + 2`
+echo &quot;两数之和为 : $val&quot;
+</code></pre>
 
 <ul>
-<li><a href="http://www.cocoachina.com/ios/20170609/19482.html">Xcode 9 以后可以无线调试</a></li>
+<li>表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样</li>
+<li>完整的表达式要被 ` ` 包含，注意这个字符不是常用的单引号，在 Esc 键下边</li>
 </ul>
 
-<h2 id="toc_1">Charlse篇</h2>
-
-<ul>
-<li><a href="https://blog.csdn.net/lea__dongyang/article/details/73294751">Charles抓包HTTPS网络请求</a></li>
-<li><a href="https://www.cnblogs.com/dsxniubility/p/4621314.html">Charlse截取网络请求，搭建自己的数据服务</a></li>
-</ul>
-
-<h2 id="toc_2">iOS 系统NavigationBar StatusBar</h2>
-
-<ul>
-<li><p><a href="https://note.altair21.org/2016/12/22/iOS%E4%B8%AD%E9%9A%90%E8%97%8FStatus%20Bar%E8%80%8C%E4%B8%8D%E6%94%B9%E5%8F%98Navigation%20Bar%E9%AB%98%E5%BA%A6%E7%9A%84%E5%81%9A%E6%B3%95/">显示隐藏 statusBar 不改变NavigationBar高度</a></p>
-<pre><code class="language-text">// 隐藏 状态条
-[UIApplication sharedApplication].keyWindow.windowLevel = UIWindowLevelStatusBar + 1;<br/>
-// 显示 状态条<br/>
-[UIApplication sharedApplication].keyWindow.windowLevel = UIWindowLevelNormal;
-</code></pre></li>
-</ul>
 
                         
                       </div>
@@ -237,11 +230,11 @@
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
-                    <span class="date">2018/9/21</span>
+                   <a href="15224613481161.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/3/31</span>
                     <span>posted in&nbsp;</span> 
           				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -255,157 +248,34 @@
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15359519661802.html">
+                <a class="clearlink" href="15223750607281.html">
                 
-                  <h1>iOS CALayer动画</h1>
+                  <h1>每天学习一个shell技能  (3)</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">keyPath</h2>
+                        	<h2 id="toc_0">shell参数传递</h2>
 
-<pre><code class="language-text">transform.scale = 比例轉換
-transform.scale.x = 宽的比例轉換
-transform.scale.y = 高的比例轉換
-transform.rotation.z = 平面圖的旋轉
-opacity = 透明度
-margin=边框间隔?
-zPosition = 平面图的位置
-backgroundColor = 背景色
-cornerRadius = layer的角度
-borderWidth = 边框宽度
-contents = 内容?
-bounds = 大小?
-contentsRect = 内容矩形
-frame = 位置
-hidden = 隐藏
-mask = 标记
-maskToBounds
-position = 位置
-shadowOffset = 阴影偏移?
-shadowColor = 阴影颜色
-shadowRadius = 阴影角度
+<p>我们可以在脚本执行时，向脚本传递参数</p>
+
+<pre><code class="language-text">// 终端运行 脚本，并传入参数
+sh testBash.sh 0 1 2
+
+echo &quot;Shell 传递参数实例！&quot;
+
+echo &quot;\$0 =&gt; $0&quot;
+
+echo &quot;\$1 =&gt; $1&quot;
 </code></pre>
 
-<h2 id="toc_1">CALayer</h2>
+<p>打印结果：</p>
 
-<h2 id="toc_2">CoreAnimation</h2>
-
-<h2 id="toc_3">CAAnimation</h2>
-
-<h3 id="toc_4">基本属性说明</h3>
-
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>说明</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>duration</td>
-<td>动画持续时间</td>
-</tr>
-<tr>
-<td>repeatCount</td>
-<td>重复次数，无限循环可以设置INFINITY(HUGE_VALF)或者MAXFLOAT</td>
-</tr>
-<tr>
-<td>repeatDuration</td>
-<td>重复时间</td>
-</tr>
-<tr>
-<td>removeOnCompletion</td>
-<td>默认为YES，代表动画执行完毕，从Layer上移除，图形会恢复到动画执行之前的状态。如果想要保持动画最终状态，那就设置为NO，并且fillMode = kCAFillModeForwards；</td>
-</tr>
-<tr>
-<td>fillMode</td>
-<td>当前视图在非active时段的状态比如 动画开始前 动画结束后</td>
-</tr>
-<tr>
-<td>beginTime</td>
-<td>可以用来延迟动画开始时间，让多个动画顺序执行</td>
-</tr>
-<tr>
-<td>timingFuction</td>
-<td>速度控制函数，控制动画运行的节奏</td>
-</tr>
-<tr>
-<td>deleget</td>
-<td>代理</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="toc_5">fillMode 说明</h3>
-
-<ul>
-<li><p><code>kCAFillModeRemoved</code> 这个是默认值，也就是说当动画开始前和动画结束后，动画对layer都没有影响，动画结束后，layer会恢复到之前的状态</p></li>
-<li><p><code>kCAFillModeForwards</code> 当动画结束后，layer会一直保持着动画最后的状态</p></li>
-<li><p><code>kCAFillModeBackwards</code> 在动画开始前，只需要将动画加入了一个layer，layer便立即进入动画的初始状态并等待动画开始。</p></li>
-<li><p><code>kCAFillModeBoth</code> 这个其实就是上面两个的合成.动画加入后开始之前，layer便处于动画初始状态，动画结束后layer保持动画最后的状态</p></li>
-</ul>
-
-<h3 id="toc_6">动画的暂停 和 恢复</h3>
-
-<pre><code class="language-text">#pragma - mark 暂停CALayer的动画
--(void)pauseLayer:(CALayer*)layer
-{
-    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
-
-    // 让CALayer的时间停止走动
-      layer.speed = 0.0;
-    // 让CALayer的时间停留在pausedTime这个时刻
-    layer.timeOffset = pausedTime;
-}
-
-#pragma - mark 恢复CALayer的动画
--(void)resumeLayer:(CALayer*)layer
-{
-    CFTimeInterval pausedTime = layer.timeOffset;
-    // 1. 让CALayer的时间继续行走
-      layer.speed = 1.0;
-    // 2. 取消上次记录的停留时刻
-      layer.timeOffset = 0.0;
-    // 3. 取消上次设置的时间
-      layer.beginTime = 0.0;
-    // 4. 计算暂停的时间(这里也可以用CACurrentMediaTime()-pausedTime)
-    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
-    // 5. 设置相对于父坐标系的开始时间(往后退timeSincePause)
-      layer.beginTime = timeSincePause;
-}
+<pre><code class="language-text">Shell 传递参数实例！
+$0 =&gt; testBash.sh
+$1 =&gt; 0
 </code></pre>
 
-<h2 id="toc_7">CABasicAnimation</h2>
-
-<h2 id="toc_8">CAKeyframeAnimation 关键帧动画</h2>
-
-<h2 id="toc_9">CAAnimationGroup 动画组</h2>
-
-<h2 id="toc_10">贝塞尔曲线</h2>
-
-<h2 id="toc_11">弹性动画 CASpringAnimation</h2>
-
-<pre><code class="language-text">CASpringAnimation *springAnimation = [CASpringAnimation animationWithKeyPath:@&quot;transform.scale&quot;];
-springAnimation.damping = 7;// 阻尼系数(学过物理的都知道)
-springAnimation.stiffness = 100;// 刚度系数（形变后产生弹力的大小的系数。刚度系数越大，弹力越大）
-springAnimation.mass = 1;// 惯性系数 代表物体质量
-springAnimation.initialVelocity = 2.0;// 初始速度 0 初始速度与运动方向一致 负数，初始速度与运动方向不一致
-springAnimation.fromValue = @0;// 初始动画改变属性的值
-springAnimation.toValue = @1;// 最终动画改变属性的值
-springAnimation.duration = 2.0;// 动画时长「敲黑板，划重点！这个很重要」
-[self.layer addAnimation:springAnimation forKey:@&quot;springScale&quot;];
-</code></pre>
-
-<h2 id="toc_12">特殊的Layer实现特殊动画</h2>
-
-<h3 id="toc_13">CATransition</h3>
-
-<h3 id="toc_14">CAReplicatorLayer</h3>
-
-<h3 id="toc_15">CAEmitterLayer 粒子引擎</h3>
 
                         
                       </div>
@@ -413,11 +283,11 @@ springAnimation.duration = 2.0;// 动画时长「敲黑板，划重点！这个�
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
-                    <span class="date">2018/9/3</span>
+                   <a href="15223750607281.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/3/30</span>
                     <span>posted in&nbsp;</span> 
           				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
           				   
                   </div>
                   <div class="more-right right">
@@ -431,132 +301,115 @@ springAnimation.duration = 2.0;// 动画时长「敲黑板，划重点！这个�
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15344051783893.html">
+                <a class="clearlink" href="15223210751913.html">
                 
-                  <h1>iOS Category 和 Extention 的本质区别【面试必备】</h1>
+                  <h1>每天学习一个shell 技能 （2）</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<p><a href="https://blog.csdn.net/lwq718691587/article/details/60964392">感谢这位博主的博客:由category为什么不能添加属性所想到的</a></p>
+                        	<h2 id="toc_0">Shell 数组</h2>
 
-<h2 id="toc_0">为什么category 不能添加属性，而Extention能添加？</h2>
+<h3 id="toc_1">定义数组</h3>
 
-<p>这个问题从几个方面来解释下：</p>
+<pre><code class="language-bash">array_name=(value1 value2 value3)
 
-<ul>
-<li><p>什么是OC中的属性？</p>
-<p>属性，是某个对象持有的特性。一般（注意这里的一般）都是在编译期编译的时候，对象持有的属性会决定对象的内存布局，编译期过后，在运行期，一般很少更改这个布局，因为运行期更改已经定好的布局，不仅会带来一系列的内存问题，而且内存开销会很大。</p>
-<p><strong>打个比方</strong>:就像是买房摇号有几千人排队呢，你后来的去插队，那么就会导致后面的人的位置发生变化，并且还会激起民愤！</p></li>
-<li><p>作用时期</p>
-<p>Extension 是在编译期决议（起作用）<br/>
-Category 是在 运行期决议（起作用）</p></li>
-<li><p>作用原理</p>
-<p>Extention是类的一部分，能决定类的内存布局，跟对象的生命周期一致，对象生成Extention添加的属性有效，对象释放，属性释放；<br/>
-Category并不是真正的类，他的作用是动态的给类添加方法，不改变类的内存布局。</p></li>
-</ul>
+array_name2=(
+value1
+value2
+value3
+)
 
-<h3 id="toc_1">那么，现在再来看这个问题，是不是很好解释了呢</h3>
+// 单独定义某个分量的值
+array_name(0)=value0
+</code></pre>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15223210751913.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/3/29</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15223028228569.html">
+                
+                  <h1>每天学习一个shell技能 （1）</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">准备</h2>
+
+<p>bash 环境位置</p>
+
+<pre><code class="language-text">#!/bin/bash
+</code></pre>
+
+<p><code>#!</code> 一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell</p>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15223028228569.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/3/29</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15222179789382.html">
+                
+                  <h1>iOS GCD&&多线程</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">基础篇</h2>
+
+<h3 id="toc_1">GCD用途</h3>
 
 <blockquote>
-<p>因为Extention是在编译期期决议，那么他就能决定类对象的内存布局，就能正常的给类添加属性。<br/>
-而Category是在运行期决议的，动态的更改类，如果添加了属性，那就会更改内存布局；而内存布局是在编译期就定好了的，运行期更改内存布局会引发不必要的内存风险并且会有很大的内存开销。所以，苹果为了避免这种情况，禁止类别动态添加属性更改内存布局。</p>
-</blockquote>
-
-<h3 id="toc_2">但是，为什么 runtime 动态添加属性呢？</h3>
-
-<p>那是因为 runtime关联的属性，并不是在真正的属性的位置添加的，而是在 AssociationsManager 管理的一个静态区内存 AssociationsHashMap 来存储关联对象的。所有用runtime 动态关联的属性都存在这个全局的map里面。map的key就是关联的对象的内存地址，而这个map的value又是另外一个AssociationsHashMap，里面保存了关联对象的键值对。</p>
-
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fucjrrjsgvj312w0suq5z.jpg" alt="内存示意图"/></p>
-
-<h3 id="toc_3">那如何销毁RunTime关联的属性呢？</h3>
-
-<p>runtime的销毁对象函数objc_destructInstance里面会判断这个对象有没有关联对象，如果有，会调用_object_remove_assocations做关联对象的清理工作。</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2018/8/16</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15336319970231.html">
-                
-                  <h1>iOS开发必备 之 UITableView  优化</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<ul>
-<li>cell复用</li>
-<li>图片缓存</li>
-<li>图片圆角（离屏渲染）</li>
-<li>cell 高度计算（缓存）</li>
-<li>NSDateFormatter 优化</li>
-<li>reload方法按需加载（单独加载某个cell 某个section）</li>
-</ul>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2018/8/7</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15329136223185.html">
-                
-                  <h1>iOS 奇怪问题搜集栈</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">更改值的问题</h2>
-
-<h3 id="toc_1">问题1</h3>
-
-<blockquote>
-<p><strong>问题描述</strong>：某个类中用一个属性，或者成员变量去标记某个功能的开关，可当修改该属性时，setter方法里面值改过来了，但是使用的地方取值判断的时候，却是未修改时的值。</p>
+<p>GCD 是 Grand Central Dispatch 的缩写。</p>
 </blockquote>
 
 <ul>
-<li>原因1：block引用了基本类型，引用之前__block可解决</li>
-<li>原因2：可能是某各类持有当前对象未释放，然后又重新创建了新对象导致。解决方法：要么先释放再创建，要不重用旧的对象，不去重新创建。</li>
-<li>原因3：多处同时修改这个值，导致值被覆盖。</li>
-<li>原因4：低级错误！那很有可能是，还没传值的时候，先get这个值去使用，后传入的这个值！！！！！(有人经常犯这个错)</li>
+<li>GCD 可用于多核的并行运算</li>
+<li>GCD 会自动利用更多的 CPU 内核（比如双核、四核）</li>
+<li>GCD 会自动管理线程的生命周期（创建线程、调度任务、销毁线程）</li>
+<li>程序员只需要告诉 GCD 想要执行什么任务，不需要编写任何线程管理代码</li>
 </ul>
 
 
@@ -566,8 +419,8 @@ Category并不是真正的类，他的作用是动态的给类添加方法，不
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                   <a href="15329136223185.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/7/30</span>
+                   <a href="15222179789382.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/3/28</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
@@ -584,120 +437,84 @@ Category并不是真正的类，他的作用是动态的给类添加方法，不
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15324187632197.html">
+                <a class="clearlink" href="15200726964422.html">
                 
-                  <h1>iOS 架构模式学习笔记</h1>
+                  <h1>iOS Block 知识点拾遗</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">设计模式</h2>
+                        	<ol>
+<li><p>Block为什么要用copy</p>
+<ul>
+<li>block在创建的时候默认分配的内存是在栈上，而不是在堆上。这样的话其本身的作用域是属于创建时候的作用域，一旦在创建的作用域之外调用就会导致程序的崩溃。所以使用了copy将其拷贝到堆内存上。</li>
+<li>block创建在栈上，而block的代码中可能会用到本地的一些变量，在栈上可能随时会被系统释放掉，只有将其拷贝到堆上，才能一直保持Block的存在，并用这些外部变量</li>
+</ul></li>
+<li><p>Block为什么不用retain</p>
+<ul>
+<li>retain只是增加了一次引用计数，block的内存还是在栈上，并没有存在堆上，存在栈上的block可能随时被系统回收</li>
+</ul></li>
+<li><p>为什么进入block中的对象引用计数需要自动加1？</p>
+<ul>
+<li>Block执行的是回调，因此block并不知道其中的对象obj创建后会在什么时候被释放，为了不在block使用obj之前，对象已经被释放，block就retain了obj一次</li>
+</ul></li>
+<li><p>block和函数的关系</p>
+<ul>
+<li>Block的使用很<strong>像函数指针</strong>，不过与函数最大的不同是Block可以访问函数以外、词法作用域以内的外部变量的值。换句话说，Block不仅 实现函数的功能，还能<strong>携带函数的执行环境</strong>。</li>
+<li>函数指针 <code>void(*fun)(int)</code></li>
+<li>block <code>void(^fun)(int)</code></li>
+</ul></li>
+<li><p>block本质（对于block的理解）<a href="https://www.cnblogs.com/yoon/p/4953618.html">请查阅Block实现原理</a></p>
+<ul>
+<li>block实际上是: 指向结构体的指针</li>
+<li>编译器会将block的内部代码生成对应的函数</li>
+</ul></li>
+<li><p>对于基本数据类型，进入到block中会被当做常量处理。对象 retain 会一次</p>
 
-<p>设计模式 和 编码技巧 、架构模式的区别：</p>
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15200726964422.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/3/3</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15200715202464.html">
+                
+                  <h1>iOS 离屏渲染</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">触发方式</h2>
+
+<p>设置以下方式会触发离屏渲染：</p>
 
 <ul>
-<li><p>设计模式：特定场景下的最佳实践 如： MVC MVVM MVP。</p></li>
-<li><p>编码技巧：单例模式、工厂模式等</p></li>
-<li><p>架构模式：包括网络模块实现、数据存储模块实现、业务逻辑模块实现分离复用等</p></li>
+<li>shouldRasterize（光栅化）</li>
+<li>masks（遮罩）</li>
+<li>shadows（阴影）</li>
+<li>edge antialiasing（抗锯齿）</li>
+<li>group opacity（不透明）</li>
+<li>复杂形状设置圆角等</li>
+<li>渐变 </li>
 </ul>
-
-<blockquote>
-<p><strong>架构模式  &gt; 设计模式 &gt; 编码技巧</strong></p>
-</blockquote>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15324187632197.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/7/24</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15311162986405.html">
-                
-                  <h1>iOS tableView 滚动到指定行/段  以及遇到的bug 指南</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">滚动方式</h2>
-
-<blockquote>
-<p>本篇中的bug会不定期更新的，有更好解决办法或者 有 新的Bug探讨的请加QQ:1290281526 私聊</p>
-</blockquote>
-
-<h3 id="toc_1">选中cell滚动到指定位置</h3>
-
-<p>很简单，一句话完事儿：</p>
-
-<pre><code class="language-text">/* 
-    最近选中的cell 滚动到  指定位置 ：
-    UITableViewScrollPositionNone, 
-    UITableViewScrollPositionTop, // 顶部
-    UITableViewScrollPositionMiddle, // 中间
-    UITableViewScrollPositionBottom// 底部
-*/
-[self.tableView scrollToNearestSelectedRowAtScrollPosition:UITableViewScrollPositionTop animated:YES];
-
-/** 滚动到顶部 */
-[self.tableView setScrollsToTop:YES];
-    
-/** 让指定区域滚动到可视区域，如果已经在可视区域 则该方法无效 */
-[self.tableView scrollRectToVisible:CGRectMake(0, 0, 100, 100) animated:YES];
-</code></pre>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15311162986405.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/7/9</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15268827199184.html">
-                
-                  <h1>NSURLRequest</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<pre><code class="language-text">NSURL * url = [NSURL URLWithString:@&quot;http://127.0.0.1/demo.json&quot;];
-NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:0 timeoutInterval:15.0];
-</code></pre>
 
                         
                       </div>
@@ -706,7 +523,7 @@ NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:0 timeoutI
                 <div class="read-more clearfix">
                   <div class="more-left left">
                   
-                    <span class="date">2018/5/21</span>
+                    <span class="date">2018/3/3</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
@@ -723,24 +540,44 @@ NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:0 timeoutI
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15261167596297.html">
+                <a class="clearlink" href="15198022156700.html">
                 
-                  <h1>OC 多线程之 GCD知识从基础到进阶 （1）</h1>
+                  <h1>iOS 面试题总结</h1>
                   <div class="a-content">
                       
                       <div class="a-content-text">
                         
-                        	<h2 id="toc_0">概念认知</h2>
+                        	<h2 id="toc_0">基础篇</h2>
 
-<p>基本概念：</p>
+<h3 id="toc_1">内存管理 ：assign copy strong weak...</h3>
 
 <ul>
-<li><p>GCD 全称 (Grand Center Dispatch),翻译成通俗中文“牛B的中心调度机制”</p></li>
-<li><p>线程：执行任务调度的最小单位</p></li>
-<li><p>任务：就是一段代码，GCD中就是block中的内容。执行任务有两种方式：同步执行（sync）和异步执行（async）。两者的主要区别是：是否等待队列的任务执行结束，以及是否具备开启新线程的能力</p></li>
-<li><p>队列：用来存放任务的线性结构，采用 FIFO（先进先出）的原则。</p></li>
+<li>简述OC中内存管理机制,与retain配对使用的方法是dealloc还是release，为什么？</li>
 </ul>
 
+<blockquote>
+<p>管理机制：<br/>
+  使用了一种叫做 <strong>引用计数</strong> 的机制来管理内存中的对象。OC中每个对象都对应着他们自己的引用计数，引用计数可以理解为一个整数计数器，当使用alloc方法创建对象的时候，持有计数会自动设置为1。当你向一个对象发送retain消息 时，持有计数数值会增加1。相反，当你像一个对象发送release消息时，持有计数数值会减小1。当对象的持有计数变为0的时候，对象会释放自己所占用的内存</p>
+</blockquote>
+
+<ul>
+<li><p>修饰词的作用</p>
+<ul>
+<li>retain(引用计数加1)-&gt;release（引用计数减1）</li>
+<li>alloc（申请内存空间）-&gt;dealloc(释放内存空间)</li>
+<li>readwrite: 表示既有getter，也有setter   (默认)</li>
+<li>readonly: 表示只有getter，没有setter</li>
+<li>nonatomic:不考虑线程安全</li>
+<li>atomic:线程操作安全   （默认）</li>
+<li>retain: release旧的对象，将旧对象的值赋予输入对象，再提高输入对象的索引计数为1</li>
+<li>assign: 简单赋值，不更改索引计数    （默认）</li>
+<li>copy: 其实是建立了一个相同的对象,地址不同（retain：指针拷贝  copy：内容拷贝）</li>
+<li>strong:（ARC下的）和（MRC）retain一样    （默认）</li>
+<li>weak:（ARC下的）和（MRC）assign一样， weak当指向的内存释放掉后自动nil化，防止野指针</li>
+<li>unsafe_unretained 声明一个弱引用，但是不会自动nil化，也就是说，如果所指向的内存区域被释放了，这个指针就是一个野指针了。 autoreleasing 用来修饰一个函数的参数，这个参数会在函数返回的时候被自动释放。<br/>
+### .类变量的@protected ,@private,@public,@package，声明各有什么含义？</li>
+</ul></li>
+</ul>
 
                         
                       </div>
@@ -748,8 +585,61 @@ NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:0 timeoutI
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                   <a href="15261167596297.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/5/12</span>
+                  
+                    <span class="date">2018/2/28</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15193944679783.html">
+                
+                  <h1>iOS 项目组件化</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">组件化需要解决的问题</h2>
+
+<ul>
+<li>APP 如何跳到任意指定界面（APP外部跳转，APP内部跳转）</li>
+<li>自家APP之间如何相互跳转 </li>
+<li>如何降低APP组件和APP界面之间的耦合度</li>
+<li>如何动态下发配置文件；iOS 安卓共用配置文件</li>
+<li>AOP统计界面跳转</li>
+<li>组件之间通信，组件和界面之间通信</li>
+</ul>
+
+<h2 id="toc_1">组件化步骤</h2>
+
+<ul>
+<li>拆分UI组件</li>
+<li>拆分业务组件</li>
+<li>组件管理</li>
+<li>组件通信</li>
+</ul>
+
+<h2 id="toc_2">组件化架构 &amp;&amp; 思路</h2>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2018/2/23</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
@@ -802,7 +692,7 @@ NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:0 timeoutI
 
 
 <a target="_blank" class="twitter" target="_blank" href="https://twitter.com/KaelLVLinda" title="Twitter">Twitter</a>
-<a target="_blank" class="github" target="_blank" href="https://github.com/Kaelzzs" title="GitHub">GitHub</a>
+<a target="_blank" class="github" target="_blank" href="https://github.com/kaelinda" title="GitHub">GitHub</a>
 <a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
   <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
                 
@@ -850,6 +740,12 @@ NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:0 timeoutI
 	      
 		      
 			      <li class="post">
+			        <a href="15524781153297.html">LeetCode【算法】宝石与石头</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="15523077857608.html">OC中枚举写法  以及 字符串枚举探索</a>
 			      </li>
 		     
@@ -868,13 +764,7 @@ NSURLRequest * request = [NSURLRequest requestWithURL:url cachePolicy:0 timeoutI
 		  
 		      
 			      <li class="post">
-			        <a href="15409691048860.html">【Swift笔记】引用计数</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15402889434646.html">Swift中类（Class）和 结构体（Struct）</a>
+			        <a href="15477923365213.html">iOS 获取汉字【简体中文】笔画数</a>
 			      </li>
 		     
 		  

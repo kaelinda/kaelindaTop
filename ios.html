@@ -295,139 +295,6 @@ if (@available(iOS 11.0, *)) {        <br/>
               </div><!-- article -->
         
 			<div class="article">
-                <a class="clearlink" href="15468313301172.html">
-                
-                  <h1>内存区域</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">1、介绍下内存区域</h2>
-
-<ul>
-<li><p>栈(Stack)</p>
-<ul>
-<li>【特点】：先进先出</li>
-<li>【分配和释放】：编译器自动分配、自动释放；</li>
-<li>存放函数的参数值、局部变量，方法调用的实参也是保存在栈区的。</li>
-<li>栈是系统数据结构，对应线程/进程是唯一的</li>
-<li>优点是快速高效，缺点是有限制，数据不灵活</li>
-</ul></li>
-<li><p>堆(Heap)</p></li>
-<li><p>全局区(静态区)</p></li>
-<li><p>常量区/数据段</p></li>
-<li><p>代码区/代码段</p></li>
-</ul>
-
-<p>【面试】 阿里p6面试题</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2019/1/7</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15422507660830.html">
-                
-                  <h1>使用Masonry，布局UIScrollViewView</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p><code>UIScrollView</code>比较特殊，frame布局时我们需要设置<code>contentSize</code>属性</p>
-
-<ol>
-<li><p>初始化ScrollView并添加到父视图 并 进行约束</p>
-<pre><code class="language-text">// ------ 初始化ScrollView
-UIScrollView *scrollView = UIScrollView.new;<br/>
-self.scrollView = scrollView;<br/>
-scrollView.backgroundColor = [UIColor grayColor];<br/>
-// ------ 添加到父视图<br/>
-[self addSubview:scrollView];<br/>
-// ------ 对ScrollView进行约束<br/>
-[self.scrollView makeConstraints:^(MASConstraintMaker *make) {<br/>
-    make.edges.equalTo(self);<br/>
-}];
-</code></pre></li>
-<li><p>初始化ContentView 并进行约束</p>
-<pre><code class="language-text">UIView* contentView = UIView.new;
-// 添加contentView 到ScrollView上<br/>
-[self.scrollView addSubview:contentView];<br/>
-// 约束contentView<br/>
-[contentView makeConstraints:^(MASConstraintMaker *make) {<br/>
-    make.edges.equalTo(self.scrollView);<br/>
-    make.width.equalTo(self.scrollView);<br/>
-}];
-</code></pre></li>
-<li><p>添加子视图到contentView上 并再次对contentView进行约束</p>
-<pre><code class="language-text">UIView *lastView;
-CGFloat height = 25;<br/>
-for (int i = 0; i &lt; 10; i++) {<br/>
-    UIView *view = UIView.new;<br/>
-    view.backgroundColor = [self randomColor];<br/>
-    // 注意！！！ 这里是添加视图到 contentView上<br/>
-    [contentView addSubview:view];<br/>
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];<br/>
-    [view addGestureRecognizer:singleTap];<br/>
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {<br/>
-        make.top.equalTo(lastView ? lastView.bottom : @0);<br/>
-        make.left.equalTo(@0);<br/>
-        make.width.equalTo(contentView.width);<br/>
-        make.height.equalTo(@(height));<br/>
-    }];<br/>
-    height += 25;<br/>
-    lastView = view;<br/>
-}<br/>
-// ------&gt;&gt;&gt;&gt;&gt;&gt;: 这里 很关键！！！！<br/>
-[contentView makeConstraints:^(MASConstraintMaker *make) {<br/>
-    make.bottom.equalTo(lastView.bottom);<br/>
-}];
-</code></pre></li>
-</ol>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15422507660830.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/11/15</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
                 <a class="clearlink" href="15477923365213.html">
                 
                   <h1>iOS 获取汉字【简体中文】笔画数</h1>
@@ -480,6 +347,56 @@ for (int i = 0; i &lt; 10; i++) {<br/>
               </div><!-- article -->
         
 			<div class="article">
+                <a class="clearlink" href="15468313301172.html">
+                
+                  <h1>内存区域</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<h2 id="toc_0">1、介绍下内存区域</h2>
+
+<ul>
+<li><p>栈(Stack)</p>
+<ul>
+<li>【特点】：先进先出</li>
+<li>【分配和释放】：编译器自动分配、自动释放；</li>
+<li>存放函数的参数值、局部变量，方法调用的实参也是保存在栈区的。</li>
+<li>栈是系统数据结构，对应线程/进程是唯一的</li>
+<li>优点是快速高效，缺点是有限制，数据不灵活</li>
+</ul></li>
+<li><p>堆(Heap)</p></li>
+<li><p>全局区(静态区)</p></li>
+<li><p>常量区/数据段</p></li>
+<li><p>代码区/代码段</p></li>
+</ul>
+
+<p>【面试】 阿里p6面试题</p>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2019/1/7</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
                 <a class="clearlink" href="15450161964215.html">
                 
                   <h1>【精选】Mac 手动内存清理教程</h1>
@@ -508,6 +425,89 @@ for (int i = 0; i &lt; 10; i++) {<br/>
                   <div class="more-left left">
                    <a href="15450161964215.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2018/12/17</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
+                <a class="clearlink" href="15422507660830.html">
+                
+                  <h1>使用Masonry，布局UIScrollViewView</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<p><code>UIScrollView</code>比较特殊，frame布局时我们需要设置<code>contentSize</code>属性</p>
+
+<ol>
+<li><p>初始化ScrollView并添加到父视图 并 进行约束</p>
+<pre><code class="language-text">// ------ 初始化ScrollView
+UIScrollView *scrollView = UIScrollView.new;<br/>
+self.scrollView = scrollView;<br/>
+scrollView.backgroundColor = [UIColor grayColor];<br/>
+// ------ 添加到父视图<br/>
+[self addSubview:scrollView];<br/>
+// ------ 对ScrollView进行约束<br/>
+[self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {<br/>
+    make.edges.equalTo(self);<br/>
+}];
+</code></pre></li>
+<li><p>初始化ContentView 并进行约束</p>
+<pre><code class="language-text">UIView* contentView = UIView.new;
+// 添加contentView 到ScrollView上<br/>
+[self.scrollView addSubview:contentView];<br/>
+// 约束contentView<br/>
+[contentView makeConstraints:^(MASConstraintMaker *make) {<br/>
+    make.edges.equalTo(self.scrollView);<br/>
+    make.width.equalTo(self.scrollView);<br/>
+}];
+</code></pre></li>
+<li><p>添加子视图到contentView上 并再次对contentView进行约束</p>
+<pre><code class="language-text">UIView *lastView;
+CGFloat height = 25;<br/>
+for (int i = 0; i &lt; 10; i++) {<br/>
+    UIView *view = UIView.new;<br/>
+    view.backgroundColor = [self randomColor];<br/>
+    // 注意！！！ 这里是添加视图到 contentView上<br/>
+    [contentView addSubview:view];<br/>
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];<br/>
+    [view addGestureRecognizer:singleTap];<br/>
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {<br/>
+        make.top.equalTo(lastView ? lastView.bottom : @0);<br/>
+        make.left.equalTo(@0);<br/>
+        make.width.equalTo(contentView.width);<br/>
+        make.height.equalTo(@(height));<br/>
+    }];<br/>
+    height += 25;<br/>
+    lastView = view;<br/>
+}<br/>
+// ------&gt;&gt;&gt;&gt;&gt;&gt;: 这里 很关键！！！！<br/>
+[contentView makeConstraints:^(MASConstraintMaker *make) {<br/>
+    make.bottom.equalTo(lastView.bottom);<br/>
+}];
+</code></pre></li>
+</ol>
+
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                   <a href="15422507660830.html">Read more</a>&nbsp;&nbsp; 
+                    <span class="date">2018/11/15</span>
                     <span>posted in&nbsp;</span> 
           				  
           					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
@@ -709,7 +709,7 @@ for (int i = 0; i &lt; 10; i++) {<br/>
 
 
 <a target="_blank" class="twitter" target="_blank" href="https://twitter.com/KaelLVLinda" title="Twitter">Twitter</a>
-<a target="_blank" class="github" target="_blank" href="https://github.com/Kaelzzs" title="GitHub">GitHub</a>
+<a target="_blank" class="github" target="_blank" href="https://github.com/kaelinda" title="GitHub">GitHub</a>
 <a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
   <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
                 
@@ -757,6 +757,12 @@ for (int i = 0; i &lt; 10; i++) {<br/>
 	      
 		      
 			      <li class="post">
+			        <a href="15524781153297.html">LeetCode【算法】宝石与石头</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="15523077857608.html">OC中枚举写法  以及 字符串枚举探索</a>
 			      </li>
 		     
@@ -775,13 +781,7 @@ for (int i = 0; i &lt; 10; i++) {<br/>
 		  
 		      
 			      <li class="post">
-			        <a href="15409691048860.html">【Swift笔记】引用计数</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15402889434646.html">Swift中类（Class）和 结构体（Struct）</a>
+			        <a href="15477923365213.html">iOS 获取汉字【简体中文】笔画数</a>
 			      </li>
 		     
 		  

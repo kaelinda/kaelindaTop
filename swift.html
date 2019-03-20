@@ -146,6 +146,213 @@
 		<div class="markdown-body home-categories">
 		
 			<div class="article">
+                <a class="clearlink" href="15524781153297.html">
+                
+                  <h1>LeetCode【算法】宝石与石头</h1>
+                  <div class="a-content">
+                      
+                      <div class="a-content-text">
+                        
+                        	<blockquote>
+<p>给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。</p>
+
+<p>J 中的字母不重复，J 和 S中的所有字符都是字母。字母区分大小写，因此&quot;a&quot;和&quot;A&quot;是不同类型的石头。</p>
+</blockquote>
+
+<p><strong>示例 1:</strong></p>
+
+<blockquote>
+<p>输入: J = &quot;aA&quot;, S = &quot;aAAbbbb&quot;<br/>
+输出: 3<br/>
+示例 2:<br/>
+输入: J = &quot;z&quot;, S = &quot;ZZ&quot;<br/>
+输出: 0</p>
+</blockquote>
+
+<p><strong>注意:</strong></p>
+
+<p><strong>S 和 J 最多含有50个字母。<br/>
+ J 中的字符不重复。</strong></p>
+
+<h2 id="toc_0">常规操作</h2>
+
+<pre><code class="language-text"> func numJewelsInStones(_ J: String, _ S: String) -&gt; Int {
+    var gemNum:Int = 0
+
+    for jew in J.characters {
+        for stone in S.characters {
+            if stone == jew {
+                gemNum = gemNum + 1
+            }
+        }
+    }
+    return gemNum
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>执行时间</th>
+<th>内存消耗</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>28ms</td>
+<td>19.1M</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_1">优化后</h2>
+
+<pre><code class="language-text"> func numJewelsInStones(_ J: String, _ S: String) -&gt; Int {
+    var gemNum:Int = 0
+    for jew in J {
+        for stone in S {
+            if stone == jew {
+                gemNum = gemNum + 1
+            }
+        }
+    }
+    return gemNum
+
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>执行时间</th>
+<th>内存消耗</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>16ms</td>
+<td>19.5MB</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_2">考虑尽量减少中间变量</h2>
+
+<pre><code class="language-text">func numJewelsInStones(_ J: String, _ S: String) -&gt; Int {
+
+    var newS = S
+    for jew in J.characters {
+       newS = newS.replacingOccurrences(of: &quot;\(jew)&quot;, with: &quot;&quot;)
+    }
+
+    return S.count - newS.count
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>执行时间</th>
+<th>内存消耗</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>52ms</td>
+<td>20.5M</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_3">减少字符串操作</h2>
+
+<pre><code class="language-text">func numJewelsInStones(_ J: String, _ S: String) -&gt; Int {
+    var jewNum:Int = 0;
+    for stone in S {
+        if J.contains(stone) {
+            jewNum = jewNum + 1;
+        }
+    }
+    return jewNum;
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>执行时间</th>
+<th>内存消耗</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>40ms</td>
+<td>18.9MB</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="toc_4">考虑少用字符串比较的Function</h2>
+
+<pre><code class="language-text">func numJewelsInStones(_ J: String, _ S: String) -&gt; Int {
+    var jewNum:Int = 0;
+    var jSet = Set&lt;Character&gt;();
+    for jew in J {
+        jSet.insert(jew)
+    }
+    for stone in S {
+        if jSet.contains(stone) {
+            jewNum = jewNum + 1;
+        }
+    }
+    return jewNum;
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>执行时间</th>
+<th>内存消耗</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>16ms</td>
+<td>19.3M</td>
+</tr>
+</tbody>
+</table>
+
+                        
+                      </div>
+                  </div>
+                </a>
+                <div class="read-more clearfix">
+                  <div class="more-left left">
+                  
+                    <span class="date">2019/3/13</span>
+                    <span>posted in&nbsp;</span> 
+          				  
+          					    <span class="posted-in"><a href='swift.html'>Swift</a></span>
+          				   
+                  </div>
+                  <div class="more-right right">
+                  <span class="comments">
+                      
+
+                       
+                  </span>
+                  </div>
+                </div>
+              </div><!-- article -->
+        
+			<div class="article">
                 <a class="clearlink" href="15409691048860.html">
                 
                   <h1>【Swift笔记】引用计数</h1>
@@ -214,392 +421,6 @@
 
 <h2 id="toc_1">逐一对比</h2>
 
-<h3 id="toc_2">定义</h3>
-
-<pre><code class="language-text">//: ### 定义
-class StudentClass{ }
-struct StudebtStruct{ }
-</code></pre>
-
-<h3 id="toc_3">定义存储属性</h3>
-
-<pre><code class="language-text">//: &gt; 类中定义的存储属性，如果不是可选类型，需要进行初始化；结构体则默认带有初始化方法
-class StudentC01{
-    var name: String!
-}
-struct StudebtS01{
-    var name: String!
-}
-</code></pre>
-
-<h3 id="toc_4">定义属性函数function</h3>
-
-<p>关于@objc 请参考 <a href="https://blog.csdn.net/qq_35612929/article/details/79563110">Swift 4.0学习之：@objc的使用</a></p>
-
-<pre><code class="language-text">//: ### 定义属性函数function
-//: &gt; 类中可以使用 static 和 class两种修饰符；但是结构体中只能使用static修饰
-class StudentC02{
-    static var des:String = &quot;学生的类&quot;
-    var name:String!
-    @objc class func objc_describe()-&gt;String{
-        return des
-    }
-    class func class_describe()-&gt;String{
-        return des
-    }
-    static func static_describe()-&gt;String{
-        return des
-    }
-}
-struct StudentS02{
-    static var des:String = &quot;学生的结构体&quot;
-    var name:String!
-    static func describe()-&gt;String{
-        return &quot;这是一个定义学生的类&quot;
-    }
-}
-</code></pre>
-
-<h3 id="toc_5">扩展下标</h3>
-
-<pre><code class="language-text">//: ### 扩展下标
-//: &gt; *subscript*
-class StudentC003{
-    var names:[String] = [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;]
-    subscript (index:Int)-&gt;String?{
-        get{
-            if names.count &lt;= index{
-                return nil
-            }
-            return names[index]
-        }
-    }
-}
-struct StudentS003{
-    var names:[String] = [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;]
-    subscript (index:Int)-&gt;String?{
-        get{
-            if names.count &lt;= index{
-                return nil
-            }
-            return names[index]
-        }
-    }
-}
-let sc003 = StudentC003()
-sc003[1]// 2
-let ss003 = StudentS003()
-ss003[1]// 2
-</code></pre>
-
-<h3 id="toc_6">初始化</h3>
-
-<pre><code class="language-text">//: ### 初始化
-//: &gt; 结构体自带初始化方法（可以不写初始化方法）;
-//: &gt; 类必须手写init方法，否则报错；
-class StudentC004{
-    var name:String
-    init(name:String) {
-        self.name = name
-    }
-}
-struct StudentS004 {
-    var name:String
-    
-}
-let studentc004 = StudentC004(name: &quot;行走在北方&quot;)
-let students004 = StudentS004(name: &quot;行走在北方&quot;)
-</code></pre>
-
-<h3 id="toc_7">扩展功能 Extention</h3>
-
-<pre><code class="language-text">//: ### 扩展功能 Extention
-extension StudentC004{
-    func discribe() -&gt; String {
-        return &quot;student class:&quot;+self.name
-    }
-}
-extension StudentS004{
-    func discribe() -&gt; String {
-        return &quot;student struct:&quot; + self.name
-    }
-}
-</code></pre>
-
-<h3 id="toc_8">实现协议 protocol</h3>
-
-<pre><code class="language-text">//: ### 实现协议 protocol
-//: * 定义协议
-protocol Capacity {
-    func draw()//协议方法
-}
-//: * 实现协议方法
-class StudentC05:Capacity{
-    internal func draw() {
-        
-    }
-    var name:String
-    init(name:String) {
-        self.name = name
-    }
-}
-struct StudentS05:Capacity{
-    internal func draw() {
-        
-    }
-    var name:String
-}
-</code></pre>
-
-<h3 id="toc_9">mutating 关键字的使用</h3>
-
-<p>科普下:</p>
-
-<ul>
-<li><p>枚举和结构体都是值类型，Swift默认值类型的对象方法不能修改属性值,但是如果一定要修改 那就在函数前面添加mutating关键字</p></li>
-<li><p>计算属性setter方法中不需要更改属性值的时候，不需要添加mutating关键字;</p></li>
-<li><p>计算属性setter方法中更改属性值的时候，必须要添加mutating关键字</p></li>
-</ul>
-
-<pre><code class="language-text">protocol Action{
-    var myY:Int{
-        mutating get
-    }
-}
-struct Point {
-    var x:Int
-    var y:Int
-    mutating func modifyX(x: Int){
-        self.x = x
-    }
-    var myY:Int{
-        mutating get {//getter方法前面添加mutating关键字
-            self.y = self.y*2
-            return y
-        }
-    }
-}
-class ActionClass {
-    var name:String?
-    init(name:String) {
-        self.name = name
-    }
-    var myName:String? {
-        get {// class 是对象类型 可以直接修改
-            self.name = &quot;666 -&gt; :&quot; + self.name!
-            return self.name
-        }
-    }
-    
-}
-let actionclass = ActionClass(name: &quot;NB&quot;)
-</code></pre>
-
-<h2 id="toc_10">判断两个对象地址是否相同（验证 引用类型 和 值类型）</h2>
-
-<pre><code class="language-text">//: ### 判断两个对象地址是否相同
-//: &gt; 类是引用类型；结构体是值类型；结构体不能通过=== 、！==类判断比较
-//: &gt;
-class StudentC07{
-    var name: String
-    init(name:String) {
-        self.name = name
-    }
-}
-
-let studentc071 = StudentC07(name: &quot;原始名字&quot;)
-var studentc072 = studentc071
-studentc071.name = &quot;新名字&quot;
-print(&quot;student071:\(studentc071.name)\nstudent072:\(studentc072.name)&quot;)
-if studentc071 === studentc072 {
-    print(&quot;类是引用类型，最终指向同一块内存&quot;)
-}
-struct StudentS07{
-    var name: String
-    init(name:String) {
-        self.name = name
-    }
-}
-let students071 = StudentS07(name: &quot;结构体：原始名字&quot;)
-var students072 = students071
-students072.name = &quot;结构体：新名字&quot;
-print(&quot;students071:\(students071.name)\nstudents072\(students072.name)&quot;)
-</code></pre>
-
-<h3 id="toc_11">deinit 释放资源</h3>
-
-<p><a href="https://www.jianshu.com/p/9e725362eeb1">Swift中的deinit方法</a></p>
-
-<pre><code class="language-text">//: ### deinit 释放资源
-//: &gt; 类有deinit方法；结构体中没有deinit方法。
-class StudentC08{
-    var name: String
-    init(name:String) {
-        self.name = name
-    }
-    deinit {
-        //这里释放资源
-    }
-}
-</code></pre>
-
-<h3 id="toc_12">lazy：延迟属性（懒加载）</h3>
-
-<p>class 有延迟属性；struct没有延迟属性</p>
-
-<pre><code class="language-text">//: &gt; 延迟存储属性是指当第一次被调用的时候才会计算其初始值的属性。在属性声明前使用 lazy 来标示一个延迟存储属性
-class Importor{
-    var fileName = &quot;data.txt&quot;
-}
-class DataManager{
-    lazy var importor = Importor()
-    var Data = [String]()
-}
-</code></pre>
-
-<h3 id="toc_13">继承</h3>
-
-<pre><code class="language-text">//: ### 继承
-//: &gt; 类能继承；结构体不能继承。
-class Person{
-    var name:String
-    init(name:String) {
-        self.name = name
-    }
-}
-class Student06: Person {
-    var score : Float
-    init(name: String, score: Float){
-        self.score = score//先给父类中没有的属性赋值，再调用父类init方法
-        super.init(name: name)
-    }
-}   
-</code></pre>
-
-<ul>
-<li><p>继承之后 可重写父类方法/属性</p>
-<ol>
-<li><p>重写计算属性：只能增加功能不能减少功能——&gt;父类中有setter getter,那么子类重写计算属性 setter getter都必须要有。父类中只有setter  子类中可以在重写setter的同时增加getter</p></li>
-<li><p>final 关键字可以让属性不被重写 或者 继承</p></li>
-</ol></li>
-</ul>
-
-<pre><code class="language-text">//: * 重写计算属性
-//: * 重写对象方法
-//: * 重写类方法
-//: * 重写初始化方法
-//: * 重写存储属性
-
-//: _父类_
-class Person{
-    //存储属性
-    var name:String = &quot;person&quot;
-    //计算属性
-    var rename:String{
-        return self.name
-    }
-    //初始化方法
-    init(_ name:String) {
-        self.name = name
-    }
-    //对象方法
-    func describe() -&gt; String {
-        return self.name
-    }
-    //类方法
-    class func describeClass()-&gt;String{
-        return &quot;这是一个描述人的类&quot;
-    }
-}
-//: _子类_
-class Man: Person {
-    //重写存储属性
-    override var name: String{
-        didSet{
-            print(&quot;man 对象中 name 的原始值：\(self.name)&quot;)
-            self.name = &quot;man:&quot;+self.name
-        }
-    }
-    var score : Double
-    //重写setter getter
-    override var rename: String{
-        set{
-            self.name = &quot;man:&quot;+newValue
-        }
-        get{
-            return &quot;_&quot;+self.name
-        }
-    }
-    //重写初始化方法
-    override init(_ name: String) {
-        self.score = 0.0
-        super.init(name)
-    }
-    //重写对象方法
-    override func describe() -&gt; String {
-        return self.name + &quot;_score:\(self.score)&quot;
-    }
-    // 重写类方法
-    override class func describeClass() -&gt; String {
-        return &quot;我是描述男人的类&quot;
-    }
-}
-var man00 = Man(&quot;kael&quot;)
-print(man00.name)
-</code></pre>
-
-<h3 id="toc_14">class 的类型检测</h3>
-
-<ol>
-<li>首先在自己的初始化方法中先给自己的属性初始化</li>
-<li>然后调用父类的初始化</li>
-<li>最后修改父类的属性</li>
-</ol>
-
-<pre><code class="language-text">//: ### 类型检测  is  as?
-var person01 = Person(&quot;person01&quot;)
-var man01 = Man(&quot;man01&quot;)
-
-if person01 is Person {
-    print(&quot;person01：我是Person&quot;)
-}else{
-    print(&quot;person01：我不是Person&quot;)
-}
-if person01 is Man {
-    print(&quot;person01：我是Man&quot;)
-}else{
-    print(&quot;person01：我不是Man&quot;)
-}
-if man01 is Person {
-    print(&quot;man01：我是Person&quot;)
-}else{
-    print(&quot;man01：我不是Person&quot;)
-}
-if man01 is Man {
-    print(&quot;man01：我是Man&quot;)
-}else{
-    print(&quot;man01：我不是Man&quot;)
-}
-
-if let p = person01 as? Person {
-    print(&quot;person01 是 Person&quot;)
-}
-if let p = person01 as? Man{
-    print(&quot;person01 是Man&quot;)
-}else{
-    print(&quot;person01 不是Man&quot;)
-}
-if let p = man01 as? Person {
-    print(&quot;man01 是 Person&quot;)
-}
-if let p = man01 as? Man{
-    print(&quot;man01 是Man&quot;)
-}else{
-    print(&quot;man01 不是Man&quot;)
-}
-
-
-</code></pre>
 
                         
                       </div>
@@ -607,7 +428,7 @@ if let p = man01 as? Man{
                 </a>
                 <div class="read-more clearfix">
                   <div class="more-left left">
-                  
+                   <a href="15402889434646.html">Read more</a>&nbsp;&nbsp; 
                     <span class="date">2018/10/23</span>
                     <span>posted in&nbsp;</span> 
           				  
@@ -714,7 +535,7 @@ if let p = man01 as? Man{
 
 
 <a target="_blank" class="twitter" target="_blank" href="https://twitter.com/KaelLVLinda" title="Twitter">Twitter</a>
-<a target="_blank" class="github" target="_blank" href="https://github.com/Kaelzzs" title="GitHub">GitHub</a>
+<a target="_blank" class="github" target="_blank" href="https://github.com/kaelinda" title="GitHub">GitHub</a>
 <a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
   <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
                 
@@ -762,6 +583,12 @@ if let p = man01 as? Man{
 	      
 		      
 			      <li class="post">
+			        <a href="15524781153297.html">LeetCode【算法】宝石与石头</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
 			        <a href="15523077857608.html">OC中枚举写法  以及 字符串枚举探索</a>
 			      </li>
 		     
@@ -780,13 +607,7 @@ if let p = man01 as? Man{
 		  
 		      
 			      <li class="post">
-			        <a href="15409691048860.html">【Swift笔记】引用计数</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15402889434646.html">Swift中类（Class）和 结构体（Struct）</a>
+			        <a href="15477923365213.html">iOS 获取汉字【简体中文】笔画数</a>
 			      </li>
 		     
 		  
