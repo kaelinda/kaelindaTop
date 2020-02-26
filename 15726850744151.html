@@ -1,0 +1,564 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  ios 之 自动打包 脚本 【bash 版本】 - kaelinda
+  
+  </title>
+  
+  
+  <link href="atom.xml" rel="alternate" title="kaelinda" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+  <script src="asset/highlightjs/highlight.pack.js"></script>
+  <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script>hljs.initHighlightingOnLoad();</script>
+<script type="text/javascript">
+  function before_search(){
+    var searchVal = 'site:kaelinda.top ' + document.getElementById('search_input').value;
+    document.getElementById('search_q').value = searchVal;
+    return true;
+  }
+</script>
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+
+  <section class="top-bar-section">
+  <div class="row">
+      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
+        <ul id="main-menu" class="left">
+        
+        <li id=""><a target="_self" href="index.html">最近更新</a></li>
+        
+        <li id=""><a target="_self" href="archives.html">归档目录</a></li>
+        
+        <li id="ios.css"><a target="_self" href="ios.html">iOS</a></li>
+        
+        <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
+        
+        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
+        
+        <li id="js.css"><a target="_self" href="js.html">JS</a></li>
+        
+        <li id="shell.css"><a target="_self" href="shell.html">shell</a></li>
+        
+        <li id="coding.css"><a target="_self" href="coding.html">编程</a></li>
+        
+        <li id="live.css"><a target="_self" href="live.html">随笔</a></li>
+        
+        <li id="app.css"><a target="_blank" href="app.html">APP推荐</a></li>
+        
+        </ul>
+
+        <ul class="right" id="search-wrap">
+          <li>
+<form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
+    <input type="hidden" id="search_q" name="q" value="" />
+    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
+</form>
+</li>
+          </ul>
+      </div></div>
+  </div>
+  </section>
+
+</nav>
+
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; kaelinda</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+        
+        <li><a target="_self" href="index.html">最近更新</a></li>
+        
+        <li><a target="_self" href="archives.html">归档目录</a></li>
+        
+        <li><a target="_self" href="ios.html">iOS</a></li>
+        
+        <li><a target="_self" href="swift.html">Swift</a></li>
+        
+        <li><a target="_self" href="reactnative.html">RN</a></li>
+        
+        <li><a target="_self" href="js.html">JS</a></li>
+        
+        <li><a target="_self" href="shell.html">shell</a></li>
+        
+        <li><a target="_self" href="coding.html">编程</a></li>
+        
+        <li><a target="_self" href="live.html">随笔</a></li>
+        
+        <li><a target="_blank" href="app.html">APP推荐</a></li>
+        
+
+    <li><label>Categories</label></li>
+
+        
+            <li><a href="reactnative.html">React-Native</a></li>
+        
+            <li><a href="ios.html">iOS</a></li>
+        
+            <li><a href="app.html">MacAPP</a></li>
+        
+            <li><a href="swift.html">Swift</a></li>
+        
+            <li><a href="js.html">JavaScript</a></li>
+        
+            <li><a href="vue.html">Vue</a></li>
+        
+            <li><a href="shell.html">shell</a></li>
+        
+            <li><a href="%E7%BD%91%E7%BB%9C.html">网络</a></li>
+         
+
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+
+        <section id="main-content" role="main" class="scroll-container">
+        
+       
+
+ <script type="text/javascript">
+  $(function(){
+    $('#menu_item_index').addClass('is_active');
+  });
+</script>
+<div class="row">
+  <div class="large-8 medium-8 columns">
+      <div class="markdown-body article-wrap">
+       <div class="article">
+          
+          <h1>ios 之 自动打包 脚本 【bash 版本】</h1>
+     
+        <div class="read-more clearfix">
+          <span class="date">2019/11/2</span>
+
+          <span>posted in&nbsp;</span> 
+          
+              <span class="posted-in"><a href='ios.html'>iOS</a></span>
+           
+         
+          <span class="comments">
+            
+
+            
+          </span>
+
+        </div>
+      </div><!-- article -->
+
+      <div class="article-content">
+      <h2 id="toc_0">配置打包信息</h2>
+
+<pre><code class="language-bash"># 工程名称
+kProjectName=&quot;ipa.xcodeproj&quot;
+
+# workspace 名称 如果使用了cocopods等可能需要用工作空间方式打包
+# workspaceName=“ipa.workspace”
+
+# scheme名称
+kSchemeName=&quot;ipa&quot;
+
+# target 这里scheme只对应了一个target运行；如果有多个target需要指定target
+kTargetName=&quot;ipa&quot;
+
+# APP环境配置 Configuration
+kConfiguration=&quot;Release&quot;
+
+# archive导出路径
+kArchivePath=&quot;./ipaOutput/${kSchemeName}.xcarchive&quot;
+
+# ipa导出路径
+kExport_ipa_Path=&quot;./ipaOutput/${kSchemeName}&quot;
+
+# 不同的打包方式这个导出文件不同 [这个文件很重要，他决定了你的包是否能够正常导出] 
+# 用Xcode自带的archive方式导出ipa的时候，这个文件会随之导出
+kExportOptionsPlist=&quot;./ipaOutput/ExportOptions.plist&quot;
+
+kAppChangelog=&quot;Tips:我是版本更新信息&quot;
+</code></pre>
+
+<h2 id="toc_1">打包 &amp;&amp; 导出</h2>
+
+<pre><code class="language-bash"># clean
+xcodebuild  clean -configuration &quot;$configuration&quot; -alltargets
+
+# archive project
+xcodebuild archive -project &quot;$kProjectName&quot; -scheme &quot;$kSchemeName&quot; -configuration &quot;$kConfiguration&quot; -archivePath &quot;$kArchivePath&quot;
+
+# archive workspace
+# #xcodebuild  archive  -workspace &quot;$workspaceName&quot; -scheme &quot;$scheme&quot; -configuration  &quot;$kConfiguration&quot;  -archivePath &quot;$kArchivePath&quot;  
+
+# 导出ipa
+xcodebuild -exportArchive -archivePath &quot;$kArchivePath&quot; -exportOptionsPlist &quot;$kExportOptionsPlist&quot; -exportPath &quot;$kExport_ipa_Path&quot;
+</code></pre>
+
+<h2 id="toc_2">上传ipa到分发平台</h2>
+
+<pre><code class="language-bash"># --------------&gt; 检测IPA存在否
+ipa_path=&quot;${kExport_ipa_Path}/${kSchemeName}.ipa&quot;
+
+if [ -f &quot;$ipa_path&quot; ]
+    then
+        echo &quot;------------ipa存在😁......&quot;
+    else
+        echo &quot;------------ipa不存在😭......&quot;
+        exit 1
+fi
+</code></pre>
+
+<h3 id="toc_3">上传到fir</h3>
+
+<pre><code class="language-bash"># --------- firm 上传配置
+
+echo &quot;请选择登录账户名：\n 1）kael 自己的fir账户（默认） \n 2）公司的fir账户&quot;
+
+read fir_token
+
+if [[ $fir_token == 2 ]]; then
+  #公司账号
+  fir_token=&quot;*********&quot;
+else
+  # 自己的账号
+  fir_token=&quot;*********&quot;
+fi
+
+fir publish ${ipa_path} -T $fir_token -c $kAppChangelog
+</code></pre>
+
+<h3 id="toc_4">上传到pgy</h3>
+
+<pre><code class="language-bash"># -------- pgy 上传
+
+echo &quot;------------准备发布蒲公英------------&quot;
+#&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;蒲公英账号信息配置
+#蒲公英账号
+pgy_API_Key=&quot;*********&quot;
+pgy_User_Key=&quot;*********&quot;
+
+
+# ------&gt; 蒲公英发布
+curl -F &quot;file=@$ipa_path&quot; \
+-F &quot;uKey=$pgy_User_Key&quot; \
+-F &quot;_api_key=$pgy_API_Key&quot; \
+-F &quot;updateDescription=$kAppChangelog&quot; \
+https://www.pgyer.com/apiv1/app/upload
+</code></pre>
+
+<h2 id="toc_5">脚本</h2>
+
+<pre><code class="language-bash">#!/bin/sh
+
+# 工程名称
+kProjectName=&quot;ipa.xcodeproj&quot;
+
+# workspace 名称 如果使用了cocopods等可能需要用工作空间方式打包
+# workspaceName=“ipa.workspace”
+
+# scheme名称
+kSchemeName=&quot;ipa&quot;
+
+# target 这里scheme只对应了一个target运行；如果有多个target需要指定target
+kTargetName=&quot;ipa&quot;
+
+# APP环境配置
+kConfiguration=&quot;Release&quot;
+
+# archive导出路径
+kArchivePath=&quot;./ipaOutput/${kSchemeName}.xcarchive&quot;
+
+# ipa导出路径
+kExport_ipa_Path=&quot;./ipaOutput/${kSchemeName}&quot;
+
+# 不同的打包方式这个导出文件不同
+kExportOptionsPlist=&quot;./ipaOutput/ExportOptions.plist&quot;
+
+kAppChangelog=&quot;Tips:我是版本更新信息&quot;
+
+
+# ------------------&gt; 打包区
+# clean
+xcodebuild  clean -configuration &quot;$configuration&quot; -alltargets
+
+# archive project
+xcodebuild archive -project &quot;$kProjectName&quot; -scheme &quot;$kSchemeName&quot; -configuration &quot;$kConfiguration&quot; -archivePath &quot;$kArchivePath&quot;
+
+# archive workspace
+# #xcodebuild  archive  -workspace &quot;$workspaceName&quot; -scheme &quot;$scheme&quot; -configuration  &quot;$kConfiguration&quot;  -archivePath &quot;$kArchivePath&quot;  
+
+# 导出ipa
+xcodebuild -exportArchive -archivePath &quot;$kArchivePath&quot; -exportOptionsPlist &quot;$kExportOptionsPlist&quot; -exportPath &quot;$kExport_ipa_Path&quot;
+
+
+# --------------&gt; 检测IPA存在否
+ipa_path=&quot;${kExport_ipa_Path}/${kSchemeName}.ipa&quot;
+
+if [ -f &quot;$ipa_path&quot; ]
+    then
+        echo &quot;------------ipa存在😁......&quot;
+    else
+        echo &quot;------------ipa不存在😭......&quot;
+        exit 1
+fi
+
+# --------- firm 上传配置
+
+echo &quot;请选择登录账户名：\n 1）kael 自己的fir账户（默认） \n 2）公司的fir账户&quot;
+
+read fir_token
+
+if [[ $fir_token == 2 ]]; then
+  #公司账号
+  fir_token=&quot;*********&quot;
+else
+  # 自己的账号
+  fir_token=&quot;*********&quot;
+fi
+
+fir publish ${ipa_path} -T $fir_token -c $kAppChangelog
+
+# -------- pgy 上传
+
+echo &quot;------------准备发布蒲公英------------&quot;
+#&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;蒲公英账号信息配置
+#蒲公英账号
+pgy_API_Key=&quot;*********&quot;
+pgy_User_Key=&quot;*********&quot;
+
+
+# ------&gt; 蒲公英发布
+curl -F &quot;file=@$ipa_path&quot; \
+-F &quot;uKey=$pgy_User_Key&quot; \
+-F &quot;_api_key=$pgy_API_Key&quot; \
+-F &quot;updateDescription=$kAppChangelog&quot; \
+https://www.pgyer.com/apiv1/app/upload
+</code></pre>
+
+
+    
+
+      </div>
+
+      <div class="row">
+        <div class="large-6 columns">
+        <p class="text-left" style="padding:15px 0px;">
+      
+          <a href="15725720549251.html" 
+          title="Previous Post: iOS 之 自动打包 fastlane + fir + pgy 【进阶使用】">&laquo; iOS 之 自动打包 fastlane + fir + pgy 【进阶使用】</a>
+      
+        </p>
+        </div>
+        <div class="large-6 columns">
+      <p class="text-right" style="padding:15px 0px;">
+      
+          <a  href="15748600468386.html" 
+          title="Next Post: SwiftUI 第一天">SwiftUI 第一天 &raquo;</a>
+      
+      </p>
+        </div>
+      </div>
+      <div class="comments-wrap">
+        <div class="share-comments">
+          
+
+          
+
+          
+        </div>
+      </div>
+    </div><!-- article-wrap -->
+  </div><!-- large 8 -->
+
+
+
+
+ <div class="large-4 medium-4 columns">
+  <div class="hide-for-small">
+    <div id="sidebar" class="sidebar">
+          <div id="site-info" class="site-info">
+            
+                <div class="site-a-logo"><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fmpk9088gsj30sg0sgn33.jpg" /></div>
+            
+                <h1>kaelinda</h1>
+                <div class="site-des">倘若我心中的山水，你眼中能看到，我便一步一莲花祈祷</div>
+                <div class="social">
+
+
+
+
+
+
+
+
+<a target="_blank" class="twitter" target="_blank" href="https://twitter.com/KaelLVLinda" title="Twitter">Twitter</a>
+<a target="_blank" class="github" target="_blank" href="https://github.com/kaelinda" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
+  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
+                
+              	 </div>
+          	</div>
+
+             
+
+              <div id="site-categories" class="side-item ">
+                <div class="side-header">
+                  <h2>Categories</h2>
+                </div>
+                <div class="side-content">
+
+      	<p class="cat-list">
+        
+            <a href="reactnative.html"><strong>React-Native</strong></a>
+        
+            <a href="ios.html"><strong>iOS</strong></a>
+        
+            <a href="app.html"><strong>MacAPP</strong></a>
+        
+            <a href="swift.html"><strong>Swift</strong></a>
+        
+            <a href="js.html"><strong>JavaScript</strong></a>
+        
+            <a href="vue.html"><strong>Vue</strong></a>
+        
+            <a href="shell.html"><strong>shell</strong></a>
+        
+            <a href="%E7%BD%91%E7%BB%9C.html"><strong>网络</strong></a>
+         
+        </p>
+
+
+                </div>
+              </div>
+
+              <div id="site-categories" class="side-item">
+                <div class="side-header">
+                  <h2>Recent Posts</h2>
+                </div>
+                <div class="side-content">
+                <ul class="posts-list">
+	      
+		      
+			      <li class="post">
+			        <a href="15820796939326.html">事件传递 && 响应链</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="15813277247140.html">搭建SSR</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="15821643064568.html">编译 && 链接</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="15808664810026.html">RunLoop攻坚</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="15783926794655.html">ios 之 自动打包 一键打包脚本 【bash优化版本】</a>
+			      </li>
+		     
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		   
+		  		</ul>
+                </div>
+              </div>
+        </div><!-- sidebar -->
+      </div><!-- hide for small -->
+</div><!-- large 4 -->
+
+</div><!-- row -->
+
+ <div class="page-bottom clearfix">
+  <div class="row">
+   <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+
+  
+    
+
+    <script src="asset/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+      function fixSidebarHeight(){
+        var w1 = $('.markdown-body').height();
+          var w2 = $('#sidebar').height();
+          if (w1 > w2) { $('#sidebar').height(w1); };
+      }
+      $(function(){
+        fixSidebarHeight();
+      })
+      $(window).load(function(){
+          fixSidebarHeight();
+      });
+     
+    </script>
+
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
+
+
+  </body>
+</html>

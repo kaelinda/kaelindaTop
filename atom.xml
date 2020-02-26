@@ -1,0 +1,2156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[kaelinda]]></title>
+  <link href="http://kaelinda.top/atom.xml" rel="self"/>
+  <link href="http://kaelinda.top/"/>
+  <updated>2019-03-20T15:12:25+08:00</updated>
+  <id>http://kaelinda.top/</id>
+  <author>
+    <name><![CDATA[]]></name>
+    
+  </author>
+  <generator uri="http://www.mweb.im/">MWeb</generator>
+  
+  <entry>
+    <title type="html"><![CDATA[事件传递 && 响应链]]></title>
+    <link href="http://kaelinda.top/15820796939326.html"/>
+    <updated>2020-02-19T10:34:53+08:00</updated>
+    <id>http://kaelinda.top/15820796939326.html</id>
+    <content type="html"><![CDATA[
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc1i90sum6j31h80u0aui.jpg" alt="事件传递 &amp;&amp; 响应链"/><br/>
+1</p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc1idyxvcej30v80u0k0y.jpg" alt="hitText:event:方法实现逻辑"/></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[搭建SSR]]></title>
+    <link href="http://kaelinda.top/15813277247140.html"/>
+    <updated>2020-02-10T17:42:04+08:00</updated>
+    <id>http://kaelinda.top/15813277247140.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">ssh 远程登录 自己的服务器</h2>
+
+<pre><code class="language-text">ssh root@192.168.22.11
+</code></pre>
+
+<p>访问公钥<br/>
+输入yes即可<br/>
+输入 远程登录 密码</p>
+
+<h2 id="toc_1">安装Git</h2>
+
+<pre><code class="language-text">yum -y install git
+</code></pre>
+
+<h2 id="toc_2">安装SSR</h2>
+
+<ul>
+<li>方案 1</li>
+</ul>
+
+<pre><code class="language-bash">ss-fly/ss-fly.sh -i **** 55555
+</code></pre>
+
+<ul>
+<li>方案 2</li>
+</ul>
+
+<pre><code class="language-text">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
+chmod +x shadowsocksR.sh
+./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log
+</code></pre>
+
+<h2 id="toc_3">状态查看 &amp;&amp; 状态操作</h2>
+
+<pre><code class="language-text">启动：/etc/init.d/shadowsocks start 
+停止：/etc/init.d/shadowsocks stop 
+重启：/etc/init.d/shadowsocks restart 
+状态：/etc/init.d/shadowsocks status
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[编译 && 链接]]></title>
+    <link href="http://kaelinda.top/15821643064568.html"/>
+    <updated>2020-02-20T10:05:06+08:00</updated>
+    <id>http://kaelinda.top/15821643064568.html</id>
+    <content type="html"><![CDATA[
+<p>iOS开发中编译链接过程：</p>
+
+<ul>
+<li>预处理 （Prepressing）</li>
+<li>静态语法检测 生成AST(Analyze Static)</li>
+<li>编译 （Compilation）</li>
+<li>汇编 （Assembly）</li>
+<li>链接 （Linking）</li>
+</ul>
+
+<p>写好代码后， LLVM 会预处理代码，比如把宏嵌入到对应的位置；<br/>
+预处理完成后， LLVM 会对代码进行词法分析和语法分析，生成 AST , AST 是抽象语法树，结构上比代码更精简，遍历起来更快，所以使用 AST 能够快速的进行静态检查，同时还能更快地生成生成 IR (中间表示)<br/>
+最后 AST 会生成 IR, IR 是一种更近机器码的语言区别在于和平台无关，通过 IR 可以生成多分适合不同平台的机器码。对于iOS系统，IR 生成的可执行文件就是 Mach-O.</p>
+
+<p>预处理  ------ 静态语法检测 ------ AST抽象语法树 ------ IR ----- </p>
+
+<h2 id="toc_0">链接器</h2>
+
+<p>链接器最主要的作用，就是将符号绑定到地址上。</p>
+
+<h2 id="toc_1">编译器</h2>
+
+<p>为什么 iOS代码快？</p>
+
+<p>iOS 编写的代码是先使用编译器把代码编译成机器码（OC --&gt; C/C++ --&gt; 机器码），然后直接在 CPU 上执行机器码的。</p>
+
+<p>Python 编写的代码，是程序在CPU运行时，用解释器获取源码 直接生成指令，中间不会产生另一种代码。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[RunLoop攻坚]]></title>
+    <link href="http://kaelinda.top/15808664810026.html"/>
+    <updated>2020-02-05T09:34:41+08:00</updated>
+    <id>http://kaelinda.top/15808664810026.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">什么是RunLoop</h2>
+
+<p>顾名思义，RunLoop就是一个保证程序或者线程持续运行的循环。</p>
+
+<h2 id="toc_1">runloop 作用</h2>
+
+<ul>
+<li><strong>保持程序持续运行</strong>。</li>
+<li><strong>处理各种事件</strong> ：触摸事件、定时器时间、selector事件、网络请求等</li>
+<li><strong>节省CPU资源，提高程序性能</strong>：该干活儿时干活儿，该休息时休息</li>
+</ul>
+
+<p><strong>每一个线程，只对应唯一一个Runloop</strong><br/>
+iOS开发中，UIApplicationMain 函数启动了主线程的 <code>主RunLoop</code>，保证程序的主线程的运行状态，这样UI就不会卡顿。主线程中的runloop是系统主动开启的，开发者手动开启的子线程内的runloop如果不手动开启，子线程执行完就结束了，线程就销毁了。所以，要想手动开启的主线程执行完任务后不被销毁，就需要手动启动<code>RunLoop</code>.</p>
+
+<pre><code class="language-c">int main(int argc, char * argv[]) {
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
+}
+</code></pre>
+
+<h2 id="toc_2">RunLoop的五个模式</h2>
+
+<ul>
+<li><code>kCFRunLoopDefaultMode</code>：APP默认的模式，通常主线程就是在这个模式下运行</li>
+<li><code>UITrackingRunLoopMode</code>: 界面跟踪模式，用于scrollView跟踪触摸滚动，保证滚动时候 不受其他线程影响</li>
+<li><code>kCFRunLoopCommonModes</code> : 占位用的mode，不是一个真正的mode</li>
+<li><code>NSRunLoopCommonModes</code>: 相当于 <code>NSDefaultRunLoopMode</code> + <code>UITrackingRunLoopMode</code></li>
+<li><code>UIInitializationRunLoopMode</code>: 刚启动APP时，进入的第一个mode启动完后不再使用</li>
+<li><code>GSEventReceiveRunLoopMode</code>:接受系统事件的内部mode，通常用不到</li>
+</ul>
+
+<p><strong>模式使用总结：</strong></p>
+
+<blockquote>
+<ol>
+<li>一个RunLoop包含多个mode，每个mode包含若干source0、source1、observer、timer</li>
+<li>RunLoop 只能选择一个mode作为currentRunLoop的mode。</li>
+<li>如果想要切换mode，需要先退出当前mode，再重新选择一个mode进入</li>
+<li>不同组的Source、timer、observer 互不影响</li>
+<li>如果Mode里面没有任何的source、timer、observer， RunLoop会立马退出，</li>
+</ol>
+</blockquote>
+
+<h2 id="toc_3">RunLoop 对象</h2>
+
+<blockquote>
+<p>iOS开发中有两套API来访问和使用RunLoop</p>
+</blockquote>
+
+<ul>
+<li><strong>Foundation</strong>：<code>NSRunLoop</code></li>
+<li><strong>Core Foundation</strong>：<code>CFRunLoopRef</code></li>
+</ul>
+
+<p>NSRunLoop 和 CFRunLoopRef 都代表RunLoop对象。<br/>
+NSRunLoop 是基于CFRunLoopRef的一层OC封装。</p>
+
+<h2 id="toc_4">获取RunLoop 的 API 使用：</h2>
+
+<pre><code class="language-c">Foundation
+[NSRunLoop currentRunLoop]; // 获得当前线程的RunLoop对象
+[NSRunLoop mainRunLoop]; // 获得主线程的RunLoop对象
+
+Core Foundation
+CFRunLoopGetCurrent(); // 获得当前线程的RunLoop对象
+CFRunLoopGetMain(); // 获得主线程的RunLoop对象
+</code></pre>
+
+<h2 id="toc_5">RunLoop 和 线程之间的关系</h2>
+
+<ul>
+<li>每个线程都有对应一个唯一的RunLoop对象</li>
+<li>RunLoop保存在一个全局键值对里，线程作为key,RunLoop作为value</li>
+<li>主线程的RunLoop系统创建并启动好了，子线程的RunLoop需要手动创建</li>
+<li>RunLoop在第一次获取时创建，在线程结束时销毁</li>
+<li>线程创建时候，并没有RunLoop对象，所以，执行完代码线程就销毁了。第一次获取线程对象时候创建RunLoop对象，这时候才会循环等待，保证线程不结束，不被销毁。</li>
+<li>RunLoop会在线程结束时销毁</li>
+<li></li>
+</ul>
+
+<h2 id="toc_6">RunLoop源码</h2>
+
+<h3 id="toc_7">RunLoop 结构体</h3>
+
+<pre><code class="language-objectivec">struct __CFRunLoop {
+    CFRuntimeBase _base;
+    pthread_mutex_t _lock;          /* locked for accessing mode list */
+    __CFPort _wakeUpPort;           // used for CFRunLoopWakeUp 
+    Boolean _unused;
+    volatile _per_run_data *_perRunData;              // reset for runs of the run loop
+    pthread_t _pthread;
+    uint32_t _winthread;
+    CFMutableSetRef _commonModes;
+    CFMutableSetRef _commonModeItems;
+    CFRunLoopModeRef _currentMode;
+    CFMutableSetRef _modes;
+    struct _block_item *_blocks_head;
+    struct _block_item *_blocks_tail;
+    CFAbsoluteTime _runTime;
+    CFAbsoluteTime _sleepTime;
+    CFTypeRef _counterpart;
+};
+</code></pre>
+
+<h3 id="toc_8">runloop 内部实现源码</h3>
+
+<pre><code class="language-c">// 拿到当前Runloop 调用_CFRunLoopGet0
+CFRunLoopRef CFRunLoopGetCurrent(void) {
+    CHECK_FOR_FORK();
+    CFRunLoopRef rl = (CFRunLoopRef)_CFGetTSD(__CFTSDKeyRunLoop);
+    if (rl) return rl;
+    return _CFRunLoopGet0(pthread_self());
+}
+
+// 查看_CFRunLoopGet0方法内部
+CF_EXPORT CFRunLoopRef _CFRunLoopGet0(pthread_t t) {
+    if (pthread_equal(t, kNilPthreadT)) {
+    t = pthread_main_thread_np();
+    }
+    __CFLock(&amp;loopsLock);
+    if (!__CFRunLoops) {
+        __CFUnlock(&amp;loopsLock);
+    CFMutableDictionaryRef dict = CFDictionaryCreateMutable(kCFAllocatorSystemDefault, 0, NULL, &amp;kCFTypeDictionaryValueCallBacks);
+    // 根据传入的主线程获取主线程对应的RunLoop
+    CFRunLoopRef mainLoop = __CFRunLoopCreate(pthread_main_thread_np());
+    // 保存主线程 将主线程-key和RunLoop-Value保存到字典中
+    CFDictionarySetValue(dict, pthreadPointer(pthread_main_thread_np()), mainLoop);
+    if (!OSAtomicCompareAndSwapPtrBarrier(NULL, dict, (void * volatile *)&amp;__CFRunLoops)) {
+        CFRelease(dict);
+    }
+    CFRelease(mainLoop);
+        __CFLock(&amp;loopsLock);
+    }
+    
+    // 从字典里面拿，将线程作为key从字典里获取一个loop
+    CFRunLoopRef loop = (CFRunLoopRef)CFDictionaryGetValue(__CFRunLoops, pthreadPointer(t));
+    __CFUnlock(&amp;loopsLock);
+    
+    // 如果loop为空，则创建一个新的loop，所以runloop会在第一次获取的时候创建
+    if (!loop) {  
+    CFRunLoopRef newLoop = __CFRunLoopCreate(t);
+        __CFLock(&amp;loopsLock);
+    loop = (CFRunLoopRef)CFDictionaryGetValue(__CFRunLoops, pthreadPointer(t));
+    
+    // 创建好之后，以线程为key runloop为value，一对一存储在键值对中，下次获取的时候，则直接返回字典内的runloop
+    if (!loop) { 
+        CFDictionarySetValue(__CFRunLoops, pthreadPointer(t), newLoop);
+        loop = newLoop;
+    }
+        // don&#39;t release run loops inside the loopsLock, because CFRunLoopDeallocate may end up taking it
+        __CFUnlock(&amp;loopsLock);
+    CFRelease(newLoop);
+    }
+    if (pthread_equal(t, pthread_self())) {
+        _CFSetTSD(__CFTSDKeyRunLoop, (void *)loop, NULL);
+        if (0 == _CFGetTSD(__CFTSDKeyRunLoopCntr)) {
+            _CFSetTSD(__CFTSDKeyRunLoopCntr, (void *)(PTHREAD_DESTRUCTOR_ITERATIONS-1), (void (*)(void *))__CFFinalizeRunLoop);
+        }
+    }
+    return loop;
+}
+</code></pre>
+
+<h3 id="toc_9">RunLoop 中的五个类</h3>
+
+<ul>
+<li>CFRunLoopRef</li>
+<li>CFRunLoopModeRef</li>
+<li>CFRunLoopSourceRef</li>
+<li>CFRunLoopTimerRef</li>
+<li>CFRunLoopObserverRef</li>
+</ul>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbnw55ovroj30bc04v74q.jpg" alt="CFRunLoopRef"/></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbnwqpdabdj30dw054t99.jpg" alt="CFRunLoopModeRef"/></p>
+
+<h3 id="toc_10">CFRunLoopActivity</h3>
+
+<pre><code class="language-c">/* Run Loop Observer Activities */
+typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) {
+    kCFRunLoopEntry = (1UL &lt;&lt; 0),           // 即将进入RunLoop
+    kCFRunLoopBeforeTimers = (1UL &lt;&lt; 1),    // 即将处理Timer
+    kCFRunLoopBeforeSources = (1UL &lt;&lt; 2),   // 即将处理source
+    kCFRunLoopBeforeWaiting = (1UL &lt;&lt; 5),   // 即将进入休眠
+    kCFRunLoopAfterWaiting = (1UL &lt;&lt; 6),    // 刚刚进入休眠
+    kCFRunLoopExit = (1UL &lt;&lt; 7),            // 即将推出RunLoop
+    kCFRunLoopAllActivities = 0x0FFFFFFFU   
+};
+</code></pre>
+
+<h3 id="toc_11">监听RunLoop的所有状态</h3>
+
+<pre><code class="language-c">CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+        switch (activity) {
+            case kCFRunLoopEntry:
+            {// 刚进入RunLoop
+            }
+                break;
+            case kCFRunLoopBeforeTimers:
+            {// 即将处理timer
+            }
+                break;
+            case kCFRunLoopBeforeSources:
+            {// 即将处理source
+            }
+                break;
+            case kCFRunLoopBeforeWaiting:
+            {// 即将进入休眠
+            }
+                break;
+            case kCFRunLoopAfterWaiting:
+            {// 刚刚进入休眠
+            }
+                break;
+            case kCFRunLoopExit:
+            {// 即将退出RunLoop
+            }
+                break;
+            default:
+                break;
+        }
+    });
+
+CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopCommonModes);
+
+CFRelease(observer);
+</code></pre>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc2mtkcfafj30xc0pon2x.jpg" alt=""/></p>
+
+<h3 id="toc_12">RunLoop运行逻辑</h3>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc2msdkn6xj30pa0jutb3.jpg" alt=""/></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbnw30rmhij30zk0igqan.jpg" alt="RunLoop运行逻辑"/></p>
+
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbnz5lvpqtj319s0mqagn.jpg" alt=""/></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ios 之 自动打包 一键打包脚本 【bash优化版本】]]></title>
+    <link href="http://kaelinda.top/15783926794655.html"/>
+    <updated>2020-01-07T18:24:39+08:00</updated>
+    <id>http://kaelinda.top/15783926794655.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">选择打包scheme</h2>
+
+<pre><code class="language-bash"># 选择打包环境
+function selectedScheme() {
+  #statements
+  echo &quot;请选择打包对象: \n 1) GaoKao(**高考) \n 2) Zhongkao(**中考)&quot;
+  read app_scheme
+
+  if [[ $app_scheme == 1 ]]; then
+    echo &quot;您选择的是：GaoKao(**高考)&quot;
+    app_scheme=&quot;GaoKao&quot;
+  elif [[ $app_scheme == 2 ]]; then
+    echo &quot;您选择的是：Zhongkao(**中考)&quot;
+    app_scheme=&quot;Zhongkao&quot;
+  else
+    selectedScheme
+  fi
+}
+</code></pre>
+
+<h2 id="toc_1">选择打包环境</h2>
+
+<pre><code class="language-bash">function selectedConfiguration() {
+  #statements
+  echo &quot;-- 😁 --\n&quot;
+  echo &quot;--\n&quot;
+  echo &quot;请选择打包环境:\n 1)Release \n 2)LXRelease_dev \n 3)LXRelease_kfc \n 4)LXRelease_tsl&quot;
+
+  read configuration
+
+  if [[ $configuration == 1 ]]; then
+    echo &quot;您选择的是Release环境&quot;
+    configuration=&quot;Release&quot;
+  elif [[ $configuration == 2 ]]; then
+    echo &quot;您选择的是LXRelease_dev环境&quot;
+    configuration=&quot;LXRelease_dev&quot;
+  elif [[ $configuration == 3 ]]; then
+    echo &quot;您选择的是LXRelease_kfc环境&quot;
+    configuration=&quot;LXRelease_kfc&quot;
+  elif [[ $configuration == 4 ]]; then
+    echo &quot;您选择的是LXRelease_tsl环境&quot;
+    configuration=&quot;LXRelease_tsl&quot;
+  else
+    selectedConfiguration
+  fi
+}
+</code></pre>
+
+<h2 id="toc_2">读取更新信息</h2>
+
+<pre><code class="language-bash">function readUpdateInfo() {
+  echo &quot;-\n&quot;
+  echo &quot;--\n&quot;
+  echo &quot;请输入您当前版本更新信息:&quot;
+
+  read update_info
+}
+</code></pre>
+
+<h2 id="toc_3">打印打包信息</h2>
+
+<pre><code class="language-bash">function logPackageInfo() {
+  echo &quot;打包信息----------&gt;:\n&quot;
+  echo &quot;打包scheme是   --&gt;: ${app_scheme}&quot;
+  echo &quot;您选择的是     --&gt;: ${configuration}&quot;
+  echo &quot;版本更新信息   --&gt;: ${update_info}&quot;
+}
+</code></pre>
+
+<h2 id="toc_4">上传dSYM到bugly进行分析</h2>
+
+<pre><code class="language-bash"># --------------------&gt;&gt; 上传 dSYM 文件
+function uploaddSYMFile() {
+  #statements
+  echo &quot;bugly --- start......&quot;
+
+  output_file_name=&quot;&quot;
+  bugly_appName=&quot;&quot;
+  bugly_configName=&quot;&quot;
+
+  if [[ ${app_scheme} = &quot;GaoKao&quot; ]]; then
+    bugly_appName=&quot;**高考&quot;
+  elif [[ ${app_scheme} == &quot;Zhongkao&quot; ]]; then
+    bugly_appName=&quot;**中考&quot;
+  fi
+
+  if [[ ${configuration} = &quot;LXRelease&quot; ]]; then
+    bugly_configName=&quot;&quot;
+  elif [[ ${configuration} = &quot;LXRelease_dev&quot; ]]; then
+    bugly_configName=&quot;dev&quot;
+  elif [[ ${configuration} = &quot;LXRelease_tsl&quot; ]]; then
+    bugly_configName=&quot;tsl&quot;
+  elif [[ ${configuration} = &quot;LXRelease_kfc&quot; ]]; then
+    bugly_configName=&quot;kfc&quot;
+  fi
+
+  output_file_name=&quot;${app_scheme}_${configuration}&quot;
+
+  bugly_dsym_zip_path=&quot;./AppOutput/${output_file_name}.app.dSYM.zip&quot;
+
+  echo &quot;kael ------rm&quot;
+  # rm &quot;./AppOutput/dsym_upload/&quot;
+  find &quot;./AppOutput/dsym_upload/&quot; -name &quot;*.dSYM&quot; | xargs rm -rf
+  find &quot;./AppOutput/&quot; -name &quot;dsym_upload.zip&quot; | xargs rm -rf
+  echo &quot;kael ------rm -- end&quot;
+
+  # 解压文件
+  echo &quot;kael ------unzip&quot;
+  echo &quot;path -- $bugly_dsym_zip_path&quot;
+  unzip ${bugly_dsym_zip_path} -d &quot;./AppOutput/dsym_upload/&quot;
+
+  bugly_java_path=&quot;./buglySymboliOS/buglySymboliOS.jar&quot;
+  bugly_dsym_path=&quot;./AppOutput/dsym_upload/&quot;
+  echo &quot;${bugly_dsym_path}&quot;
+
+  echo &quot;kael ------upload start&quot;
+  java -jar $bugly_java_path -i $bugly_dsym_path -dsym -u -id 900058462 -key f8V5dgJO5em0CPPk -package com.lexue.lexuegaokao -version 3.3.3
+
+}
+</code></pre>
+
+<h2 id="toc_5">普通打包</h2>
+
+<pre><code class="language-bash"># --------------------&gt;&gt;  普通打包任务
+function normal_archive() {
+  #statements
+  selectedScheme
+  # # 等待 沉睡
+  # sleep 0.5s
+  # 选择打包环境
+  selectedConfiguration
+  # 等待 沉睡
+  sleep 0.5s
+  # 读取版本更新信息
+  readUpdateInfo
+  # 等待 沉睡
+  sleep 0.5s
+  # 打印更新信息
+  logPackageInfo
+
+  fastlane ipa_release scheme:$app_scheme configuration:$configuration update_info:$update_info
+
+  logPackageInfo
+
+  uploaddSYMFile
+
+}
+</code></pre>
+
+<h2 id="toc_6">多环境 多scheme 打包</h2>
+
+<pre><code class="language-bash"># --------------------&gt;&gt; 单个打包任务
+function one_serial_archive() {
+  app_scheme=$1
+  configuration=$2
+  update_info=$3
+  #打印信息
+  logPackageInfo
+  # 打包导出
+  fastlane ipa_release scheme:$app_scheme configuration:$configuration update_info:$update_info
+  # 打印信息
+  logPackageInfo
+  # 上传dSYM
+  uploaddSYMFile
+}
+# --------------------&gt;&gt; 多个打包任务
+function serial_archive() {
+  readUpdateInfo
+
+  # 中考
+  one_serial_archive &quot;Zhongkao&quot; &quot;Release&quot; $update_info
+  one_serial_archive &quot;Zhongkao&quot; &quot;LXRelease_dev&quot; $update_info
+  one_serial_archive &quot;Zhongkao&quot; &quot;LXRelease_kfc&quot; $update_info
+  one_serial_archive &quot;Zhongkao&quot; &quot;LXRelease_tsl&quot; $update_info
+  # 高考
+  one_serial_archive &quot;GaoKao&quot; &quot;Release&quot; $update_info
+  one_serial_archive &quot;GaoKao&quot; &quot;LXRelease_dev&quot; $update_info
+  one_serial_archive &quot;GaoKao&quot; &quot;LXRelease_kfc&quot; $update_info
+  one_serial_archive &quot;GaoKao&quot; &quot;LXRelease_tsl&quot; $update_info
+}
+</code></pre>
+
+<h2 id="toc_7">脚本使用</h2>
+
+<pre><code class="language-bash"># 打包一系列环境的包
+serial_archive
+</code></pre>
+
+<p>命令行工具中输入<code>sh ipa.sh</code>即可</p>
+
+<h2 id="toc_8">文件共享</h2>
+
+<p>buly文件链接:<a href="https://pan.baidu.com/s/13jaP6Jggp6DcDwqXYeEjHg">https://pan.baidu.com/s/13jaP6Jggp6DcDwqXYeEjHg</a>  密码:lowx<br/>
+JDK(java环境安装文件)链接:<a href="https://pan.baidu.com/s/1NtGdP0cANQz7TtyYU2mycg">https://pan.baidu.com/s/1NtGdP0cANQz7TtyYU2mycg</a>  密码:f6af</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2019 iOS面试题收纳]]></title>
+    <link href="http://kaelinda.top/15555910678984.html"/>
+    <updated>2019-04-18T20:37:47+08:00</updated>
+    <id>http://kaelinda.top/15555910678984.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">C基础</h2>
+
+<h2 id="toc_1">OC基础</h2>
+
+<ul>
+<li><a href="https://www.jianshu.com/p/de0d30047e82">UIResponder究竟是个什么东西</a></li>
+<li><a href="https://www.jianshu.com/p/6425307380f9">对iOS响应链和事件传递的总结</a></li>
+</ul>
+
+<h3 id="toc_2">Category、Protocol、Extention</h3>
+
+<ul>
+<li><a href="https://tech.meituan.com/2015/03/03/diveintocategory.html">深入理解Objective-C：Category</a></li>
+<li><a href="https://www.jianshu.com/p/a4af101f6cec">Category 和 Extention 的本质区别</a></li>
+</ul>
+
+<h3 id="toc_3">多线程 &amp;&amp; GCD</h3>
+
+<ul>
+<li><a href="https://www.cnblogs.com/ioshe/p/5937933.html">iOS多线程GCD详解</a></li>
+<li><a href="https://www.jianshu.com/p/31b810b7986b">OC 多线程之 GCD知识从基础到进阶 </a></li>
+</ul>
+
+<h3 id="toc_4">runtime</h3>
+
+<ul>
+<li><a href="">runtime 详解</a></li>
+<li><a href="https://www.jianshu.com/p/291754a90d2b">深入浅出Runtime 一 概念</a></li>
+<li><a href="https://www.jianshu.com/p/28c742fb8bb3">深入浅出Runtime (二) Runtime的消息机制</a></li>
+<li><a href="https://www.jianshu.com/p/2b61270cd038">深入浅出Runtime (三) Runtime的消息转发</a></li>
+<li><a href="https://www.jianshu.com/p/ecdb5fa307f8">深入浅出Runtime (四) Runtime的实际应用之一，字典转模型</a></li>
+</ul>
+
+<h3 id="toc_5">runloop</h3>
+
+<ul>
+<li><a href="https://www.cnblogs.com/ioshe/p/5489112.html">RunLoop详解</a></li>
+<li><a href="https://blog.ibireme.com/2015/05/18/runloop/">深入理解RunLoop</a></li>
+<li><a href="https://segmentfault.com/a/1190000004938638">Runloop知识树</a></li>
+</ul>
+
+<h3 id="toc_6">数据加密</h3>
+
+<ul>
+<li><a href="https://www.jianshu.com/p/70d81a05446b?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">iOS中常见的几种加密方式总结！</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS Block 知识点拾遗]]></title>
+    <link href="http://kaelinda.top/15200726964422.html"/>
+    <updated>2018-03-03T18:24:56+08:00</updated>
+    <id>http://kaelinda.top/15200726964422.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">定义</h2>
+
+<h3 id="toc_1">内存五大区</h3>
+
+<p><a href="https://www.jianshu.com/p/0b6e15b9a550">五大区详解</a></p>
+
+<ul>
+<li><p>栈区：</p>
+<ul>
+<li>存放内容：在函数体中定义的变量通常是在栈上</li>
+<li>释放时间：由编译器自动分配释放</li>
+</ul></li>
+<li><p>堆区：</p>
+<ul>
+<li>存放内容：C中 用malloc， calloc， realloc等分配内存的函数分配得到的就是在堆上</li>
+<li>释放时间：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收</li>
+</ul></li>
+<li><p>静态区（全局区）:</p>
+<ul>
+<li>存放内容：全局变量和静态变量的存储是放在一块的，初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域。</li>
+<li>释放时间：程序结束释放</li>
+</ul></li>
+<li><p>常量区：</p>
+<ul>
+<li>存放内容：函数中的&quot;adgfdf&quot;这样的字符串存放在常量区</li>
+<li>释放时间：程序结束释放</li>
+</ul></li>
+<li><p>代码区：</p>
+<ul>
+<li>存放内容：存放二进制代码</li>
+<li>释放时间：程序被删除时</li>
+</ul></li>
+</ul>
+
+<h3 id="toc_2">Block 分类</h3>
+
+<p><a href="https://www.jianshu.com/p/f0870fa95aac"><strong>这篇文章：Block的三种类型</strong></a>：<br/>
+总结很到位，感谢作者！</p>
+
+<ul>
+<li><p>NSGlobalBlock：没有访问任何的外部变量</p>
+<pre><code class="language-objectivec">void (^kBlock)(void) = ^ {
+    NSLog(@&quot;123&quot;);<br/>
+};<br/>
+kBlock();
+</code></pre></li>
+<li><p>NSStackBlock: MRC环境下访问了外部变量</p>
+<pre><code class="language-objectivec">int a = 23;
+void (^kBlock)(void) = ^ {<br/>
+    NSLog(@&quot;123--&gt;%d&quot;,a);<br/>
+};<br/>
+kBlock();
+</code></pre></li>
+<li><p>NSMallocBlock：</p>
+<ul>
+<li>ARC 环境下访问了外部变量的NSStackBlock，系统自动copy到堆，变为NSMallocBlock</li>
+<li>MRC 环境下NSStackBlock手动copy操作也会变为NSMallocBlock</li>
+<li>作为函数返回值时 的NSStackBlock</li>
+<li><code>cocoa API</code>、<code>GCD API</code>中的block</li>
+</ul>
+<pre><code class="language-objectivec">int a = 23;
+void (^kBlock)(void) = ^ {<br/>
+    NSLog(@&quot;123--&gt;%d&quot;,a);<br/>
+};<br/>
+kBlock();<br/>
+[kBlock copy];
+</code></pre></li>
+</ul>
+
+<h2 id="toc_3">Block 思考</h2>
+
+<ol>
+<li><p>Block为什么要用copy</p>
+<ul>
+<li>block在创建的时候默认分配的内存是在栈上，而不是在堆上。这样的话其本身的作用域是属于创建时候的作用域，一旦在创建的作用域之外调用就会导致程序的崩溃。所以使用了copy将其拷贝到堆内存上。</li>
+<li>block创建在栈上，而block的代码中可能会用到本地的一些变量，在栈上可能随时会被系统释放掉，只有将其拷贝到堆上，才能一直保持Block的存在，并用这些外部变量</li>
+</ul></li>
+<li><p>Block为什么不用retain</p>
+<ul>
+<li>retain只是增加了一次引用计数，block的内存还是在栈上，并没有存在堆上，存在栈上的block可能随时被系统回收</li>
+</ul></li>
+<li><p>为什么进入block中的对象引用计数需要自动加1？</p>
+<ul>
+<li>Block执行的是回调，因此block并不知道其中的对象obj创建后会在什么时候被释放，为了不在block使用obj之前，对象已经被释放，block就retain了obj一次</li>
+</ul></li>
+<li><p>block和函数的关系</p>
+<ul>
+<li>Block的使用很<strong>像函数指针</strong>，不过与函数最大的不同是Block可以访问函数以外、词法作用域以内的外部变量的值。换句话说，Block不仅 实现函数的功能，还能<strong>携带函数的执行环境</strong>。</li>
+<li>函数指针 <code>void(*fun)(int)</code></li>
+<li>block <code>void(^fun)(int)</code></li>
+</ul></li>
+<li><p>block本质（对于block的理解）<a href="https://www.cnblogs.com/yoon/p/4953618.html">请查阅Block实现原理</a></p>
+<ul>
+<li>block实际上是: 指向结构体的指针</li>
+<li>编译器会将block的内部代码生成对应的函数</li>
+</ul></li>
+<li><p>对于基本数据类型，进入到block中会被当做常量处理。对象 retain 会一次</p>
+<span id="more"></span><!-- more -->
+<pre><code class="language-text">//如果需要在block中对num进行修改，需要加上关键字__block
+//(我们也可以用static关键字进行修饰)<br/>
+int  num1 = 10;<br/>
+void(^block1)() = ^{<br/>
+   NSLog(@&quot;num1 is %d&quot;,num1);<br/>
+};<br/>
+num1 = 20;<br/>
+block1(); //输出10<br/>
+//改进:使用block,使进入到block块中的变量不被当做常量来使用<br/>
+__block int  num2 = 10;<br/>
+void(^block2)() = ^{<br/>
+ NSLog(@&quot;num2 is %d&quot;,num2);<br/>
+};<br/>
+num2 = 20;<br/>
+block2(); //输出20
+</code></pre></li>
+<li><p>Block中self的循环引用</p>
+<ul>
+<li>block默认创建在栈上，所以对要对其进行执行copy操作，将其拷贝到堆区，便于更好的操作对象。但是执行了copy操作之后，block中使用self，此对象会被retain一次（注意：block在堆区上时才会起到retain作用），会造成循环引用。</li>
+<li>解决方法：
+<ul>
+<li>在MRC下，使用__block修饰</li>
+<li>在ARC下，使用__unsafe_unretained\weak修饰</li>
+</ul></li>
+</ul></li>
+<li><p>Block 在内存中的分类</p>
+<ul>
+<li>全局block --&gt; GlobalBlock &lt;==&gt; 相当于全局变量, 系统会自动释放</li>
+<li>栈block --&gt; StackBlock &lt;==&gt; 相当于局部变量, 系统会自动释放</li>
+<li>堆block --&gt; MallocBlock &lt;==&gt; (需要手动释放内存)</li>
+</ul></li>
+<li><p>block类型区分方法</p>
+<ul>
+<li>如果block实现中没有访问任何&quot;外部&quot;变量(包括局部和全局), 该block为GlobalBlock</li>
+<li>如果block实现中访问了任何&quot;外部&quot;变量(包括局部和全局), 该block为StackBlock</li>
+<li>对StackBlock进行拷贝(copy/Block_copy), 该block为MallocBlock</li>
+</ul></li>
+<li><p>block内如何修改block外 的变量?</p>
+<pre><code class="language-text"> __block int a = 0;
+   void (^foo)(void) = ^{ <br/>
+       a = 1; <br/>
+   };<br/>
+   foo(); <br/>
+   //这里，a的值被修改为1
+</code></pre>
+<p>默认情况下，block内访问的变量是 copy  该变量到堆后的变量，而非变量本身。<br/>
+所以：<strong>读写操作对原变量不生效</strong></p>
+<blockquote>
+<p>我们知道：Block不允许修改外部变量的值，这里所说的外部变量的值，指的是栈中指针的内存地址。__block 所起到的作用就是只要观察到该变量被 block 所持有，就将“外部变量”在栈中的内存地址放到了堆中。进而在block内部也可以修改外部变量的值</p>
+</blockquote>
+<pre><code class="language-text">__block int a = 0;
+   NSLog(@&quot;定义前：%p&quot;, &amp;a);         //栈区<br/>
+   void (^foo)(void) = ^{<br/>
+       a = 1;<br/>
+       NSLog(@&quot;block内部：%p&quot;, &amp;a);    //堆区<br/>
+   };<br/>
+   NSLog(@&quot;定义后：%p&quot;, &amp;a);         //堆区<br/>
+   foo();
+</code></pre>
+<p>打印输出：</p>
+<pre><code class="language-text">2016-05-17 02:03:33.559 LeanCloudChatKit-iOS[1505:713679] 定义前：0x16fda86f8
+2016-05-17 02:03:33.559 LeanCloudChatKit-iOS[1505:713679] 定义后：0x155b22fc8<br/>
+2016-05-17 02:03:33.559 LeanCloudChatKit-iOS[1505:713679] block内部： 0x155b22fc8
+</code></pre></li>
+<li><p>block个人理解</p>
+<pre><code class="language-text">NSMutableString *kName = [NSMutableString stringWithString:@&quot;kael&quot;];
+__block NSMutableString *myname = kName;<br/>
+NSLog(@&quot;block 前%p&quot;,&amp;myname);<br/>
+void (^foo)(void) = ^(){<br/>
+    NSLog(@&quot;block 中1：%p&quot;,&amp;myname);<br/>
+    myname = [NSMutableString stringWithString:@&quot;kaelinda&quot;];<br/>
+    NSLog(@&quot;block 中2：%p&quot;,&amp;myname);<br/>
+};<br/>
+foo();<br/>
+NSLog(@&quot;block 后%p&quot;,&amp;myname);<br/>
+/**<br/>
+ * __block 修饰之前<br/>
+ * 外部变量的内存地址是存到了栈<br/>
+ * block 是在堆内，不清楚栈内的变量是否已经被释放，所以连引用的准确性都是问题，更谈不上是修改了<br/>
+ * 所以，block 不允许修改栈中的变量（或者栈中指针的内存地址）<br/>
+ */<br/>
+/**<br/>
+ * __block 修饰之后<br/>
+ * 初始化的时候，内存地址在栈内（因为并不确定block内是否会用到），<br/>
+ * 当检测到block内引用到了该对象，不管block有没有被调用，都会 从栈内 copy 内存地址到 堆内，<br/>
+ * 再操作的时候 操作的是堆内的内存地址<br/>
+ */
+</code></pre></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[五大内存分区]]></title>
+    <link href="http://kaelinda.top/15790084508104.html"/>
+    <updated>2020-01-14T21:27:30+08:00</updated>
+    <id>http://kaelinda.top/15790084508104.html</id>
+    <content type="html"><![CDATA[
+<ul>
+<li><p>栈区：</p>
+<ul>
+<li>存放内容：在函数体中定义的变量通常是在栈上</li>
+<li>释放时间：由编译器自动分配释放</li>
+</ul></li>
+<li><p>堆区：</p>
+<ul>
+<li>存放内容：C中 用malloc， calloc， realloc等分配内存的函数分配得到的就是在堆上</li>
+<li>释放时间：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收</li>
+</ul></li>
+<li><p>静态区（全局区）:</p>
+<ul>
+<li>存放内容：全局变量和静态变量的存储是放在一块的，初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域。</li>
+<li>释放时间：程序结束释放</li>
+</ul></li>
+<li><p>常量区：</p>
+<ul>
+<li>存放内容：函数中的&quot;adgfdf&quot;这样的字符串存放在常量区</li>
+<li>释放时间：程序结束释放</li>
+</ul></li>
+<li><p>代码区：</p>
+<ul>
+<li>存放内容：存放二进制代码</li>
+<li>释放时间：程序被删除时</li>
+</ul></li>
+</ul>
+
+<p><strong>注意!!!!!</strong></p>
+
+<blockquote>
+<p>C语言 在所有函数体外定义的是全局量，加了static修饰符后不管在哪里都存放在全局区（静态区），在所有函数体外定义的static变量表示在该文件中有效，不能extern到别的文件用，在函数体内定义的static表示只在该函数体内有效。</p>
+</blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iPad 横屏启动 界面错乱]]></title>
+    <link href="http://kaelinda.top/15786557014564.html"/>
+    <updated>2020-01-10T19:28:21+08:00</updated>
+    <id>http://kaelinda.top/15786557014564.html</id>
+    <content type="html"><![CDATA[
+<blockquote>
+<p>现象：iPad 开启屏幕旋转，横屏启动APP，某些特殊情况下，APP会变成横屏APP。恭喜你，中奖了，这时候即使你ViewController的控制屏幕旋转的三个代理方法都只支持竖屏，你的APP也可能是错乱的。</p>
+</blockquote>
+
+<ul>
+<li>神奇的解决方案：
+<ul>
+<li><code>mainScreen</code>添加一个window，<code>makeKeyAndVisible</code></li>
+<li>然后<code>resignKeyWindow</code></li>
+</ul></li>
+</ul>
+
+<pre><code class="language-text">- (void)showMagicWindow{
+    UIWindow *aawindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+       aawindow.backgroundColor = [UIColor clearColor];
+       aawindow.windowLevel = UIWindowLevelAlert;
+       [aawindow makeKeyAndVisible];
+    [aawindow resignKeyWindow];
+       aawindow.hidden = YES;
+       aawindow = nil;
+}
+</code></pre>
+
+<p>哪位大神能解释下？</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS 之 自动打包 fastlane + fir + pgy 【进阶使用】]]></title>
+    <link href="http://kaelinda.top/15725720549251.html"/>
+    <updated>2019-11-01T09:34:14+08:00</updated>
+    <id>http://kaelinda.top/15725720549251.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">安装 fastlane</h2>
+
+<p><a href="https://www.jianshu.com/p/88b9a3e378db">fastlane 安装使用指南</a></p>
+
+<h2 id="toc_1">fastlane 配置项目</h2>
+
+<ul>
+<li>cd 到项目根目录下</li>
+<li><p><code>fastlane init</code></p></li>
+<li><p><a href="https://docs.fastlane.tools/advanced/actions/">fastlane action</a></p></li>
+<li><p><a href="https://docs.fastlane.tools/plugins/using-plugins/#fastlane-plugins">fastlane plugin</a></p></li>
+<li><p>gym 请参考：<a href="https://docs.fastlane.tools/actions/gym/">gym官方文档</a></p></li>
+</ul>
+
+<p><strong>有一点比较坑：每个项目都需要为fastlane配置下环境,关联开发账户</strong></p>
+
+<h2 id="toc_2">安装打包平台命令工具</h2>
+
+<ul>
+<li>安装firim</li>
+</ul>
+
+<pre><code class="language-bash">fastlane add_plugin versioning
+fastlane add_plugin firim
+</code></pre>
+
+<p><code>versioning</code> 需要输入电脑密码，以获取<code>sudo</code>权限.</p>
+
+<p>firim 相关参数可参考：<a href="https://github.com/whlsxl/firim/blob/master/lib/firim/options.rb">firim 源码说明</a></p>
+
+<ul>
+<li>安装蒲公英</li>
+</ul>
+
+<p><a href="http://www.pgyer.com/doc/view/fastlane">蒲公英官方文档说明</a><br/>
+<a href="https://github.com/shishirui/fastlane-plugin-pgyer">蒲公英插件API说明</a></p>
+
+<pre><code class="language-bash">fastlane add_plugin pgyer
+</code></pre>
+
+<p>需要输入 y,以确认安装.</p>
+
+<ul>
+<li><p>Pluginfile</p>
+<p>此时 fastlane/Pluginfile 文件内应该是这样子的：</p>
+<pre><code class="language-bash">gem &#39;fastlane-plugin-pgyer&#39;
+gem &#39;fastlane-plugin-versioning&#39;<br/>
+gem &#39;fastlane-plugin-firim&#39;
+</code></pre></li>
+<li><p>fastlane action</p></li>
+</ul>
+
+<p>定义一个 Action 叫 <code>PY_release</code>:</p>
+
+<pre><code class="language-text">lane :PY_release do |options|
+    gym(
+      clean:true, #打包前clean项目
+      silent:true,
+      export_method: &quot;development&quot;, #导出方式
+      scheme:&quot;LXPeiyou&quot;, #scheme
+      configuration: options[:configuration],#环境
+      output_directory:&quot;./AppOutput&quot;,#ipa的存放目录
+      output_name:&quot;********&quot;#输出ipa的文件名为当前的build号
+      )
+    
+    # 自己的fir账号
+    # firim(firim_api_token:&#39;*****&#39;, app_changelog:options[:update_info])
+    
+    #蒲公英的配置 替换为自己的api_key和user_key
+    # pgyer(api_key: &quot;******&quot;, user_key: &quot;******&quot;,update_description: options[:update_info])
+  end
+</code></pre>
+
+<p><strong>外部调用</strong><br/>
+执行Action 并传参：</p>
+
+<pre><code class="language-bash">fastlane PY_release configuration:$configuration update_info:$update_info
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ios 之 自动打包 脚本 【bash 版本】]]></title>
+    <link href="http://kaelinda.top/15726850744151.html"/>
+    <updated>2019-11-02T16:57:54+08:00</updated>
+    <id>http://kaelinda.top/15726850744151.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">配置打包信息</h2>
+
+<pre><code class="language-bash"># 工程名称
+kProjectName=&quot;ipa.xcodeproj&quot;
+
+# workspace 名称 如果使用了cocopods等可能需要用工作空间方式打包
+# workspaceName=“ipa.workspace”
+
+# scheme名称
+kSchemeName=&quot;ipa&quot;
+
+# target 这里scheme只对应了一个target运行；如果有多个target需要指定target
+kTargetName=&quot;ipa&quot;
+
+# APP环境配置 Configuration
+kConfiguration=&quot;Release&quot;
+
+# archive导出路径
+kArchivePath=&quot;./ipaOutput/${kSchemeName}.xcarchive&quot;
+
+# ipa导出路径
+kExport_ipa_Path=&quot;./ipaOutput/${kSchemeName}&quot;
+
+# 不同的打包方式这个导出文件不同 [这个文件很重要，他决定了你的包是否能够正常导出] 
+# 用Xcode自带的archive方式导出ipa的时候，这个文件会随之导出
+kExportOptionsPlist=&quot;./ipaOutput/ExportOptions.plist&quot;
+
+kAppChangelog=&quot;Tips:我是版本更新信息&quot;
+</code></pre>
+
+<h2 id="toc_1">打包 &amp;&amp; 导出</h2>
+
+<pre><code class="language-bash"># clean
+xcodebuild  clean -configuration &quot;$configuration&quot; -alltargets
+
+# archive project
+xcodebuild archive -project &quot;$kProjectName&quot; -scheme &quot;$kSchemeName&quot; -configuration &quot;$kConfiguration&quot; -archivePath &quot;$kArchivePath&quot;
+
+# archive workspace
+# #xcodebuild  archive  -workspace &quot;$workspaceName&quot; -scheme &quot;$scheme&quot; -configuration  &quot;$kConfiguration&quot;  -archivePath &quot;$kArchivePath&quot;  
+
+# 导出ipa
+xcodebuild -exportArchive -archivePath &quot;$kArchivePath&quot; -exportOptionsPlist &quot;$kExportOptionsPlist&quot; -exportPath &quot;$kExport_ipa_Path&quot;
+</code></pre>
+
+<h2 id="toc_2">上传ipa到分发平台</h2>
+
+<pre><code class="language-bash"># --------------&gt; 检测IPA存在否
+ipa_path=&quot;${kExport_ipa_Path}/${kSchemeName}.ipa&quot;
+
+if [ -f &quot;$ipa_path&quot; ]
+    then
+        echo &quot;------------ipa存在😁......&quot;
+    else
+        echo &quot;------------ipa不存在😭......&quot;
+        exit 1
+fi
+</code></pre>
+
+<h3 id="toc_3">上传到fir</h3>
+
+<pre><code class="language-bash"># --------- firm 上传配置
+
+echo &quot;请选择登录账户名：\n 1）kael 自己的fir账户（默认） \n 2）公司的fir账户&quot;
+
+read fir_token
+
+if [[ $fir_token == 2 ]]; then
+  #公司账号
+  fir_token=&quot;*********&quot;
+else
+  # 自己的账号
+  fir_token=&quot;*********&quot;
+fi
+
+fir publish ${ipa_path} -T $fir_token -c $kAppChangelog
+</code></pre>
+
+<h3 id="toc_4">上传到pgy</h3>
+
+<pre><code class="language-bash"># -------- pgy 上传
+
+echo &quot;------------准备发布蒲公英------------&quot;
+#&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;蒲公英账号信息配置
+#蒲公英账号
+pgy_API_Key=&quot;*********&quot;
+pgy_User_Key=&quot;*********&quot;
+
+
+# ------&gt; 蒲公英发布
+curl -F &quot;file=@$ipa_path&quot; \
+-F &quot;uKey=$pgy_User_Key&quot; \
+-F &quot;_api_key=$pgy_API_Key&quot; \
+-F &quot;updateDescription=$kAppChangelog&quot; \
+https://www.pgyer.com/apiv1/app/upload
+</code></pre>
+
+<h2 id="toc_5">脚本</h2>
+
+<pre><code class="language-bash">#!/bin/sh
+
+# 工程名称
+kProjectName=&quot;ipa.xcodeproj&quot;
+
+# workspace 名称 如果使用了cocopods等可能需要用工作空间方式打包
+# workspaceName=“ipa.workspace”
+
+# scheme名称
+kSchemeName=&quot;ipa&quot;
+
+# target 这里scheme只对应了一个target运行；如果有多个target需要指定target
+kTargetName=&quot;ipa&quot;
+
+# APP环境配置
+kConfiguration=&quot;Release&quot;
+
+# archive导出路径
+kArchivePath=&quot;./ipaOutput/${kSchemeName}.xcarchive&quot;
+
+# ipa导出路径
+kExport_ipa_Path=&quot;./ipaOutput/${kSchemeName}&quot;
+
+# 不同的打包方式这个导出文件不同
+kExportOptionsPlist=&quot;./ipaOutput/ExportOptions.plist&quot;
+
+kAppChangelog=&quot;Tips:我是版本更新信息&quot;
+
+
+# ------------------&gt; 打包区
+# clean
+xcodebuild  clean -configuration &quot;$configuration&quot; -alltargets
+
+# archive project
+xcodebuild archive -project &quot;$kProjectName&quot; -scheme &quot;$kSchemeName&quot; -configuration &quot;$kConfiguration&quot; -archivePath &quot;$kArchivePath&quot;
+
+# archive workspace
+# #xcodebuild  archive  -workspace &quot;$workspaceName&quot; -scheme &quot;$scheme&quot; -configuration  &quot;$kConfiguration&quot;  -archivePath &quot;$kArchivePath&quot;  
+
+# 导出ipa
+xcodebuild -exportArchive -archivePath &quot;$kArchivePath&quot; -exportOptionsPlist &quot;$kExportOptionsPlist&quot; -exportPath &quot;$kExport_ipa_Path&quot;
+
+
+# --------------&gt; 检测IPA存在否
+ipa_path=&quot;${kExport_ipa_Path}/${kSchemeName}.ipa&quot;
+
+if [ -f &quot;$ipa_path&quot; ]
+    then
+        echo &quot;------------ipa存在😁......&quot;
+    else
+        echo &quot;------------ipa不存在😭......&quot;
+        exit 1
+fi
+
+# --------- firm 上传配置
+
+echo &quot;请选择登录账户名：\n 1）kael 自己的fir账户（默认） \n 2）公司的fir账户&quot;
+
+read fir_token
+
+if [[ $fir_token == 2 ]]; then
+  #公司账号
+  fir_token=&quot;*********&quot;
+else
+  # 自己的账号
+  fir_token=&quot;*********&quot;
+fi
+
+fir publish ${ipa_path} -T $fir_token -c $kAppChangelog
+
+# -------- pgy 上传
+
+echo &quot;------------准备发布蒲公英------------&quot;
+#&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;蒲公英账号信息配置
+#蒲公英账号
+pgy_API_Key=&quot;*********&quot;
+pgy_User_Key=&quot;*********&quot;
+
+
+# ------&gt; 蒲公英发布
+curl -F &quot;file=@$ipa_path&quot; \
+-F &quot;uKey=$pgy_User_Key&quot; \
+-F &quot;_api_key=$pgy_API_Key&quot; \
+-F &quot;updateDescription=$kAppChangelog&quot; \
+https://www.pgyer.com/apiv1/app/upload
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SwiftUI 第一天]]></title>
+    <link href="http://kaelinda.top/15748600468386.html"/>
+    <updated>2019-11-27T21:07:26+08:00</updated>
+    <id>http://kaelinda.top/15748600468386.html</id>
+    <content type="html"><![CDATA[
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[OC中枚举写法  以及 字符串枚举探索]]></title>
+    <link href="http://kaelinda.top/15523077857608.html"/>
+    <updated>2019-03-11T20:36:25+08:00</updated>
+    <id>http://kaelinda.top/15523077857608.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">常见枚举写法</h2>
+
+<h3 id="toc_1">C语言模式的枚举写法：enum</h3>
+
+<pre><code class="language-text">typedef enum{
+    KLTypeRed = 1,
+    KLTypeGreen = 2,
+    KLTypeOrange = 3,
+} KLType;
+</code></pre>
+
+<h3 id="toc_2">普通【整型】枚举写法 ：NS_ENUM</h3>
+
+<pre><code class="language-text">typedef NS_ENUM(NSUInteger, KLType) {
+    KLTypeRed = 1,
+    KLTypeGreen = 2,
+    KLTypeOrange = 3,
+};
+</code></pre>
+
+<h3 id="toc_3">位移枚举 ：NS_OPTIONS</h3>
+
+<pre><code class="language-text">typedef NS_OPTIONS(NSUInteger, KLType) {
+    KLTypeRed = 1 &lt;&lt; 0,
+    KLTypeGreen = 1 &lt;&lt; 1,
+    KLTypeOrange = 1 &lt;&lt; 2,
+};
+
+</code></pre>
+
+<span id="more"></span><!-- more -->
+
+<h2 id="toc_4">字符串类型枚举实现方式探索</h2>
+
+<h3 id="toc_5">基于普通枚举，定义C方法实现</h3>
+
+<pre><code class="language-text">// 先定义一个常见的枚举
+typedef NS_ENUM(NSUInteger, KLType) {
+    KLTypeRed = 1,
+    KLTypeGreen = 2,
+    KLTypeOrange = 3,
+};
+// 定义一个C方法，C方法就是通过枚举值匹配字符串
+NSString *KLTypeString(KLType status) {
+    switch (status) {
+        case KLTypeRed:
+            return @&quot;红色&quot;;
+        case KLTypeGreen:
+            return @&quot;绿色&quot;;
+        case KLTypeOrange:
+            return @&quot;橘色&quot;;
+        default:
+            return @&quot;&quot;;
+    }
+}
+</code></pre>
+
+<h3 id="toc_6">基于普通枚举，定义C数组，设置 枚举值为 index</h3>
+
+<pre><code class="language-text">// 先定义一个常见的枚举
+typedef NS_ENUM(NSUInteger, KLType) {
+    KLTypeRed = 1,
+    KLTypeGreen = 2,
+    KLTypeOrange = 3,
+};
+// 这个是 Map NSString * 类型的数组
+NSString *KLTypeStringMap[] = {
+    [KLTypeRed] = @&quot;红色&quot;,
+    [KLTypeGreen] = @&quot;绿色&quot;,
+    [KLTypeOrange] = @&quot;橘色&quot;
+};
+
+
+// 使用：
+KLTypeStringMap[KLTypeRed];// 枚举值
+</code></pre>
+
+<h3 id="toc_7">日常做法 宏定义</h3>
+
+<pre><code class="language-text">#define  KLTypeStringRed  @&quot;红色&quot;;
+#define  KLTypeStringGreen  @&quot;绿色&quot;;
+#define  KLTypeStringOrange  @&quot;橘色&quot;;
+</code></pre>
+
+<blockquote>
+<p>上面几种方式都能实现  枚举值 到 字符串的转换，但是有一个缺点： <code>KLTypeStringMap</code> 和 <code>KLTypeString</code> 不能像枚举类型一样直接作为一个类型 限定 传参类型。</p>
+</blockquote>
+
+<hr/>
+
+<h3 id="toc_8">定义一种新的数据类型</h3>
+
+<pre><code class="language-text">// 定义一个新的类型 是 NSSting * 类型 类型名字叫 KLTypeStr
+typedef NSString *KLTypeStr NS_STRING_ENUM;
+
+static KLTypeStr const KLTypeStringRed = @&quot;红色&quot;;
+static KLTypeStr const KLTypeStringGreen = @&quot;绿色&quot;;
+static KLTypeStr const KLTypeStringOrange = @&quot;橘色&quot;;
+</code></pre>
+
+<h3 id="toc_9">Apple官方的做法</h3>
+
+<pre><code class="language-text">.h 文件中 -------------
+typedef NSString *KLTypeStr NS_STRING_ENUM;
+
+FOUNDATION_EXPORT KLTypeStr const KLTypeStringRed;
+FOUNDATION_EXPORT KLTypeStr const KLTypeStringGreen;
+FOUNDATION_EXPORT KLTypeStr const KLTypeStringOrange;
+
+.m 文件中 --------------
+NSString * const KLTypeStringRed = @&quot;红色&quot;;
+NSString * const KLTypeStringGreen = @&quot;绿色&quot;;
+NSString * const KLTypeStringOrange = @&quot;橘色&quot;; 
+
+</code></pre>
+
+<blockquote>
+<p>比较的时候 <code>StringEnum1 == StringEnum2</code> 直接比较的是内存地址，效率会更高。<br/>
+相比会产生过多二进制文件的宏定义方式,假如宏定义比较多,建议用FOUNDATION_EXPORT。</p>
+</blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Xcode 11 Xib `_UITextLayoutView` 崩溃]]></title>
+    <link href="http://kaelinda.top/15729429393060.html"/>
+    <updated>2019-11-05T16:35:39+08:00</updated>
+    <id>http://kaelinda.top/15729429393060.html</id>
+    <content type="html"><![CDATA[
+<p>崩溃信息如下：</p>
+
+<pre><code class="language-text">*** Terminating app due to uncaught exception 
+&#39;NSInvalidUnarchiveOperationException&#39;, 
+reason: &#39;Could not instantiate class named _UITextLayoutView because no class named _UITextLayoutView was found; 
+the class needs to be defined in source code or linked in from a library (ensure the class is part of the correct target)&#39;
+</code></pre>
+
+<p>解决方案：</p>
+
+<h2 id="toc_0">解决方案 一</h2>
+
+<p>xib的部分视图改用硬核手写，以避坑。</p>
+
+<h2 id="toc_1">解决方案 二</h2>
+
+<p><a href="https://developer.apple.com/download/more">下载其他版本Xcode 传送门</a></p>
+
+<h2 id="toc_2">解决方案 三</h2>
+
+<p>OC 黑魔法 <code>Runtime</code>。</p>
+
+<ul>
+<li><p>创建 文件 <code>UITextViewWorkaround</code></p></li>
+<li><p>UITextViewWorkaround.h</p></li>
+</ul>
+
+<pre><code class="language-text">#import &lt;Foundation/Foundation.h&gt;
+
+@interface UITextViewWorkaround : NSObject
++ (void)executeWorkaround; 
+@end
+
+</code></pre>
+
+<ul>
+<li>UITextViewWorkaround.m</li>
+</ul>
+
+<pre><code class="language-text">#import &quot;UITextViewWorkaround.h&quot;
+#import  &lt;objc/runtime.h&gt;
+
+
+
+@implementation UITextViewWorkaround
+
++ (void)executeWorkaround {
+    if (@available(iOS 13.2, *)) {
+
+    }
+    else {
+        const char *className = &quot;_UITextLayoutView&quot;;
+        Class cls = objc_getClass(className);
+        if (cls == nil) {
+            cls = objc_allocateClassPair([UIView class], className, 0);
+            objc_registerClassPair(cls);
+#if DEBUG
+            printf(&quot;added %s dynamically\n&quot;, className);
+#endif
+        }
+    }
+}
+
+@end
+</code></pre>
+
+<ul>
+<li>使用该静态方法</li>
+</ul>
+
+<pre><code class="language-text">#import &quot;UITextViewWorkaround.h&quot;
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+
+    [UITextViewWorkaround executeWorkaround];
+    return yes;
+}
+</code></pre>
+
+<ul>
+<li>swift 版本请客观收下：</li>
+</ul>
+
+<pre><code class="language-text">import UIKit
+
+@objc
+class UITextViewWorkaround : NSObject {
+
+    static func executeWorkaround() {
+        if #available(iOS 13.2, *) {
+        } else {
+            let className = &quot;_UITextLayoutView&quot;
+            let theClass = objc_getClass(className)
+            if theClass == nil {
+                let classPair: AnyClass? = objc_allocateClassPair(UIView.self, className, 0)
+                objc_registerClassPair(classPair!)
+            }
+        }
+    }
+
+}
+</code></pre>
+
+<p><a href="https://stackoverflow.com/questions/58657087/after-upgrading-to-xcode-11-2-from-xcode-11-1-app-crashes-due-to-uitextlayoutv">参考</a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[【进阶】iOS自定义ViewController转场动画]]></title>
+    <link href="http://kaelinda.top/15565436191697.html"/>
+    <updated>2019-04-29T21:13:39+08:00</updated>
+    <id>http://kaelinda.top/15565436191697.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">遵守协议 <code>&lt;UIViewControllerAnimatedTransitioning&gt;</code>的动画转场管理对象</h2>
+
+<ul>
+<li>API</li>
+</ul>
+
+<pre><code class="language-text">// 自定义动画时长
+- (NSTimeInterval)transitionDuration:(id&lt;UIViewControllerContextTransitioning&gt;)transitionContext{
+    return 0.4;
+}
+// 自定义动画过程
+- (void)animateTransition:(id&lt;UIViewControllerContextTransitioning&gt;)transitionContext{
+}
+</code></pre>
+
+<ul>
+<li>实现</li>
+</ul>
+
+<pre><code class="language-text">- (NSTimeInterval)transitionDuration:(nullable id &lt;UIViewControllerContextTransitioning&gt;)transitionContext{
+    return 0.3;
+}
+//所有的过渡动画事务都在这个方法里面完成
+- (void)animateTransition:(id &lt;UIViewControllerContextTransitioning&gt;)transitionContext{
+
+ //取出转场前后的视图控制器
+  UIViewController * fromVC = (UIViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+  UIViewController * toVC = (UIViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+
+ //取出转场前后视图控制器上的视图view
+    UIView * toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+    UIView * fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+
+ //这里有个重要的概念containerView，要做转场动画的视图就必须要加入containerView上才能进行，可以理解containerView管理着所有做转场动画的视图
+    UIView *containerView = [transitionContext containerView];
+
+  //如果加入了手势交互转场，就需要根据手势交互动作是否完成/取消来做操作，完成标记YES，取消标记NO，必须标记，否则系统认为还处于动画过程中，会出现无法交互之类的bug
+   [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+     if ([transitionContext transitionWasCancelled]) { 
+    //如果取消转场
+          }else{
+   //完成转场
+     }
+}
+</code></pre>
+
+<h2 id="toc_1">继承父类<code>UIPercentDrivenInteractiveTransition</code>的交互动画管理对象</h2>
+
+<ul>
+<li>API</li>
+</ul>
+
+<pre><code class="language-text">//必要调用实现的系统方法
+//手势过程中，通过updateInteractiveTransition设置转场过程动画进行的百分比，然后系统会根据百分比自动布局动画控件，不用我们控制了
+ [self updateInteractiveTransition:percentComplete];
+//完成转场操作
+ [self finishInteractiveTransition];
+//取消转场操作
+ [self cancelInteractiveTransition];
+</code></pre>
+
+<h2 id="toc_2">遵守<code>&lt;UIViewControllerTransitioningDelegate&gt;</code>的视图控制器转场动画管理对象</h2>
+
+<pre><code class="language-text">-(id&lt;UIViewControllerAnimatedTransitioning&gt;)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+    return self.pushAnimator;
+}
+
+-(id&lt;UIViewControllerAnimatedTransitioning&gt;)animationControllerForDismissedController:(UIViewController *)dismissed{
+    return self.popAnimator;
+}
+
+#pragma mark ------- 手势交互添加
+
+- (nullable id &lt;UIViewControllerInteractiveTransitioning&gt;)interactionControllerForPresentation:(id &lt;UIViewControllerAnimatedTransitioning&gt;)animator{
+    
+    return nil;//返回继承父类`UIPercentDrivenInteractiveTransition`的交互动画管理对象
+}
+
+- (nullable id &lt;UIViewControllerInteractiveTransitioning&gt;)interactionControllerForDismissal:(id &lt;UIViewControllerAnimatedTransitioning&gt;)animator{
+        return nil;//返回继承父类`UIPercentDrivenInteractiveTransition`的交互动画管理对象
+}
+</code></pre>
+
+<h2 id="toc_3">使用步骤</h2>
+
+<ul>
+<li><p>设置代理</p>
+<ul>
+<li><p>push</p>
+<p><code>self.navigationController.delegate = self.animatedTransition;</code></p></li>
+<li><p>present</p>
+<p><code>toViewController.transitioningDelegate = self.browserAnimation;</code></p></li>
+</ul></li>
+<li><p>分别设置 push POP 是哪个动画对象</p>
+<pre><code class="language-text">-(id&lt;UIViewControllerAnimatedTransitioning&gt;)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+    return self.pushAnimator;<br/>
+}<br/>
+-(id&lt;UIViewControllerAnimatedTransitioning&gt;)animationControllerForDismissedController:(UIViewController *)dismissed{<br/>
+    return self.popAnimator;<br/>
+}<br/>
+- (nullable id &lt;UIViewControllerInteractiveTransitioning&gt;)interactionControllerForPresentation:(id &lt;UIViewControllerAnimatedTransitioning&gt;)animator{<br/>
+    return nil;<br/>
+}<br/>
+- (nullable id &lt;UIViewControllerInteractiveTransitioning&gt;)interactionControllerForDismissal:(id &lt;UIViewControllerAnimatedTransitioning&gt;)animator{<br/>
+        return nil;<br/>
+}<br/>
+// ---------- push 还可以这么去分配动画对象<br/>
+-(id&lt;UIViewControllerAnimatedTransitioning&gt;)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{<br/>
+if (operation == UINavigationControllerOperationPush) {<br/>
+    return self.pushAniamtor;<br/>
+}else if (operation == UINavigationControllerOperationPop){<br/>
+    return self.popAnimator;<br/>
+}<br/>
+return nil;<br/>
+}
+</code></pre></li>
+<li><p>动画对象内 设置 动画时长 和 动画实现</p>
+<pre><code class="language-text">- (NSTimeInterval)transitionDuration:(id&lt;UIViewControllerContextTransitioning&gt;)transitionContext{
+return 0.4;<br/>
+}<br/>
+- (void)animateTransition:(id&lt;UIViewControllerContextTransitioning&gt;)transitionContext{<br/>
+}
+</code></pre></li>
+</ul>
+
+<h2 id="toc_4">坑点</h2>
+
+<ul>
+<li>    <code>.modalPresentationStyle = UIModalPresentationCustom;</code>modalPresentationStyle这个属性会影响present出来的VC的横竖屏（横屏变竖屏）</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS 之 源码阅读 【Aspects】]]></title>
+    <link href="http://kaelinda.top/15562035528015.html"/>
+    <updated>2019-04-25T22:45:52+08:00</updated>
+    <id>http://kaelinda.top/15562035528015.html</id>
+    <content type="html"><![CDATA[
+<p><strong>关键词</strong></p>
+
+<ul>
+<li>Runtime</li>
+<li>AOP(面向协议编程)</li>
+<li>Hook</li>
+</ul>
+
+<h2 id="toc_0">基本用法</h2>
+
+<pre><code class="language-text">[KLBaseViewController aspect_hookSelector:@selector(logSomethings) withOptions:AspectPositionAfter usingBlock:^(id&lt;AspectInfo&gt; aspectInfo)
+     {
+         NSLog(@&quot;%@ 对象的viewDidLoad调用了&quot;,aspectInfo.instance);
+         
+         [self doSomethings:aspectInfo.instance];
+     } error:NULL];
+</code></pre>
+
+<h2 id="toc_1">主要API</h2>
+
+<pre><code class="language-text">#pragma mark - Public Aspects API
++ (id&lt;AspectToken&gt;)aspect_hookSelector:(SEL)selector
+                           withOptions:(AspectOptions)options
+                            usingBlock:(id)block
+                                 error:(NSError **)error {
+    return aspect_add((id)self, selector, options, block, error);
+}
+
+/// @return A token which allows to later deregister the aspect.
+- (id&lt;AspectToken&gt;)aspect_hookSelector:(SEL)selector
+                           withOptions:(AspectOptions)options
+                            usingBlock:(id)block
+                                 error:(NSError **)error {
+    return aspect_add(self, selector, options, block, error);
+}
+</code></pre>
+
+<h2 id="toc_2">源码解析</h2>
+
+<h3 id="toc_3">AspectOptions</h3>
+
+<pre><code class="language-text">typedef NS_OPTIONS(NSUInteger, AspectOptions) {
+    AspectPositionAfter   = 0,            /// hook的方法执行之后执行
+    AspectPositionInstead = 1,            /// 完全替代之前的方法
+    AspectPositionBefore  = 2,            /// hook的方法执行之前执行
+    AspectOptionAutomaticRemoval = 1 &lt;&lt; 3 /// 执行之后移除
+};
+</code></pre>
+
+<h3 id="toc_4">AspectToken</h3>
+
+<pre><code class="language-text">@protocol AspectToken &lt;NSObject&gt;
+
+- (BOOL)remove;
+
+@end
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS 之 APP安全]]></title>
+    <link href="http://kaelinda.top/15659429705338.html"/>
+    <updated>2019-08-16T16:09:30+08:00</updated>
+    <id>http://kaelinda.top/15659429705338.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">检测设备是否越狱</h2>
+
+<pre><code class="language-text">+ (BOOL)isJailBreak {
+    if ([[NSFileManager defaultManager] fileExistsAtPath:@&quot;/Applications/Cydia.app&quot;]){
+        return YES;
+    }
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:@&quot;/Library/MobileSubstrate/MobileSubstrate.dylib&quot;]){
+        return YES;
+    }
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:@&quot;/bin/bash&quot;]){
+        return YES;
+    }
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:@&quot;/usr/sbin/sshd&quot;]){
+        return YES;
+    }
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:@&quot;/etc/apt&quot;]){
+        return YES;
+    }
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@&quot;cydia://&quot;]]) {
+        return YES;
+    }
+    return NO;
+}
+</code></pre>
+
+<h2 id="toc_1">检测设备网络环境是否开启代理</h2>
+
+<pre><code class="language-text">NSDictionary *proxySettings = (__bridge NSDictionary *)(CFNetworkCopySystemProxySettings());
+NSArray *proxies = (__bridge NSArray *)(CFNetworkCopyProxiesForURL((__bridge CFURLRef _Nonnull)([NSURL URLWithString:@&quot;https://www.baidu.com&quot;]), (__bridge CFDictionaryRef _Nonnull)(proxySettings)));
+
+NSLog(@&quot;\n%@&quot;,proxies);
+NSDictionary *settings = proxies[0];
+NSLog(@&quot;%@&quot;,[settings objectForKey:(NSString *)kCFProxyHostNameKey]);
+NSLog(@&quot;%@&quot;,[settings objectForKey:(NSString *)kCFProxyPortNumberKey]);
+NSLog(@&quot;%@&quot;,[settings objectForKey:(NSString *)kCFProxyTypeKey]);
+    if ([[settings objectForKey:(NSString *)kCFProxyTypeKey] isEqualToString:@&quot;kCFProxyTypeNone&quot;])
+    {
+        NSLog(@&quot;kael 没代理&quot;);
+    }
+                                                                                                     else
+    {
+        NSLog(@&quot;kael 设置了代理&quot;);
+    }
+</code></pre>
+
+<h2 id="toc_2">APP 禁止动态调试</h2>
+
+<pre><code class="language-text">#import &lt;UIKit/UIKit.h&gt; 
+#import &quot;AppDelegate.h&quot;  
+#import &lt;dlfcn.h&gt;
+
+typedef int (*ptrace_ptr_t)(int _request, pid_t _pid, caddr_t _addr, int _data);
+#if !defined(PT_DENY_ATTACH)
+#define PT_DENY_ATTACH 31
+#endif  // !defined(PT_DENY_ATTACH)
+
+void disable_gdb() {
+  void* handle = dlopen(0, RTLD_GLOBAL | RTLD_NOW);
+  ptrace_ptr_t ptrace_ptr = dlsym(handle, &quot;ptrace&quot;);
+  ptrace_ptr(PT_DENY_ATTACH, 0, 0, 0);
+  dlclose(handle);
+}
+
+int main(int argc, char * argv[]) {
+#ifndef DEBUG
+    disable_gdb();
+#endif
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
+}
+</code></pre>
+
+<p>如果你在Xcode调试环境下，去掉#ifndef DEBUG #endif这句话，你会发现，Xcode无法调试该应用；因为动态的加载了ptrace，然后给传输的宏是PT_DENY_ATTACH 拒绝附加进程</p>
+
+<h2 id="toc_3">代码混淆 脚本</h2>
+
+<p><a href="https://zfj1128.blog.csdn.net/article/details/95482006">代码混淆相关 参考文章</a></p>
+
+<pre><code class="language-text">TABLENAME=symbols
+SYMBOL_DB_FILE=&quot;$PROJECT_DIR/CodeObfuscation/symbols&quot;
+STRING_SYMBOL_FILE=&quot;$PROJECT_DIR/CodeObfuscation/func.list&quot;
+HEAD_FILE=&quot;$PROJECT_DIR/CodeObfuscation/codeObfuscation.h&quot;
+export LC_CTYPE=C
+
+#维护数据库方便日后作排重
+createTable()
+{
+echo &quot;create table $TABLENAME(src text, des text);&quot; | sqlite3 $SYMBOL_DB_FILE
+}
+
+insertValue()
+{
+echo &quot;insert into $TABLENAME values(&#39;$1&#39; ,&#39;$2&#39;);&quot; | sqlite3 $SYMBOL_DB_FILE
+}
+
+query()
+{
+echo &quot;select * from $TABLENAME where src=&#39;$1&#39;;&quot; | sqlite3 $SYMBOL_DB_FILE
+}
+
+ramdomString()
+{
+openssl rand -base64 64 | tr -cd &#39;a-zA-Z&#39; |head -c 16
+}
+
+rm -f $SYMBOL_DB_FILE
+rm -f $HEAD_FILE
+createTable
+
+touch $HEAD_FILE
+echo &#39;#ifndef Demo_codeObfuscation_h
+#define Demo_codeObfuscation_h&#39; &gt;&gt; $HEAD_FILE
+echo &quot;//confuse string at `date`&quot; &gt;&gt; $HEAD_FILE
+cat &quot;$STRING_SYMBOL_FILE&quot; | while read -ra line; do
+if [[ ! -z &quot;$line&quot; ]]; then
+ramdom=`ramdomString`
+echo $line $ramdom
+insertValue $line $ramdom
+echo &quot;#define $line $ramdom&quot; &gt;&gt; $HEAD_FILE
+fi
+done
+echo &quot;#endif&quot; &gt;&gt; $HEAD_FILE
+
+
+sqlite3 $SYMBOL_DB_FILE .dump
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS13适配注意事项]]></title>
+    <link href="http://kaelinda.top/15680242190062.html"/>
+    <updated>2019-09-09T18:16:59+08:00</updated>
+    <id>http://kaelinda.top/15680242190062.html</id>
+    <content type="html"><![CDATA[
+<p>技术参考：</p>
+
+<p><a href="https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/">apple login</a></p>
+
+<p><a href="https://www.jianshu.com/p/46cd57b98b0d">IOS13适配-详细</a></p>
+
+<p><a href="https://www.jianshu.com/p/373a8fb3b345">iOS 13 适配(持续更新中)</a></p>
+
+<p><a href="https://www.jianshu.com/p/4654f8f6e16e">iOS13适配</a></p>
+
+<p><a href="https://juejin.im/post/5d745f8af265da03b5746fa0">掘金 iOS 13适配01</a></p>
+
+<p><a href="https://juejin.im/post/5d00af64e51d455d88219ee2#heading-8">掘金  适配 iOS13</a></p>
+
+<p><a href="https://github.com/ChenYilong/iOS13AdaptationTips/issues?q=is%3Aissue+is%3Aopen+label%3Anote">iOS 13 更新tips</a></p>
+
+<p><a href="https://medium.com/@hacknicity/view-controller-presentation-changes-in-ios-13-ac8c901ebc4e">View Controller Presentation Changes in iOS 13</a></p>
+
+<h2 id="toc_0">1. Apple Login （2020年4月份）</h2>
+
+<p><a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs-assets.developer.apple.com%2Fpublished%2F80ac09c84c%2FAddingTheSignInWithAppleFlowToYourApp.zip">附上官方Demo：下载地址</a></p>
+
+<h2 id="toc_1">2. Dark Mode</h2>
+
+<h3 id="toc_2">2.1 暗黑模式 状态判断 &amp;&amp; 切换监听</h3>
+
+<ul>
+<li>判断模式状态</li>
+</ul>
+
+<pre><code class="language-text">if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+    // 暗黑模式
+}
+else {
+    // 正常模式
+}
+</code></pre>
+
+<ul>
+<li>监听模式切换</li>
+</ul>
+
+<pre><code class="language-text">// 注意:参数为变化前的traitCollection
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection;
+
+// 判断两个UITraitCollection对象是否不同
+- (BOOL)hasDifferentColorAppearanceComparedToTraitCollection:(UITraitCollection *)traitCollection;
+</code></pre>
+
+<h3 id="toc_3">2.2 禁用暗黑模式</h3>
+
+<ul>
+<li><p>info.plist 内APP级别禁用暗黑模式</p>
+<p>Key: <code>User Interface Style</code><br/>
+value: <code>Light</code></p></li>
+<li><p>widow级别的禁用暗黑模式</p>
+<pre><code class="language-text">if (@available(iOS 13.0, *)) {
+    [UIApplication sharedApplication].keyWindow.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;<br/>
+}
+</code></pre></li>
+<li><p>ViewController级别禁用暗黑模式</p>
+<p>想全局禁用需要在 baseVC内全局禁用</p>
+<pre><code class="language-text">#if defined(__IPHONE_13_0) &amp;&amp; __IPHONE_OS_VERSION_MAX_ALLOWED &gt;= __IPHONE_13_0
+- (UIUserInterfaceStyle)overrideUserInterfaceStyle{<br/>
+    return UIUserInterfaceStyleLight;<br/>
+}<br/>
+#endif
+</code></pre></li>
+<li><p>view级别禁用暗黑模式</p>
+<pre><code class="language-text">view.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+</code></pre></li>
+</ul>
+
+<h3 id="toc_4">2.3 适配暗黑模式颜色</h3>
+
+<p><a href="https://www.jianshu.com/p/7925bd51d2d6">参考这里 ：iOS开发如何适配暗黑模式（Dark Mode）</a></p>
+
+<pre><code class="language-text">+ (UIColor *)colorWithDynamicProvider:(UIColor * (^)(UITraitCollection *))dynamicProvider API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);
+- (UIColor *)initWithDynamicProvider:(UIColor * (^)(UITraitCollection *))dynamicProvider API_AVAILABLE(ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);
+</code></pre>
+
+<pre><code class="language-text">[UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull trait) {
+    if (trait.userInterfaceStyle == UIUserInterfaceStyleDark) {
+        return UIColorRGB(0x000000);
+    } else {
+        return UIColorRGB(0xFFFFFF);
+    }
+ }];
+</code></pre>
+
+<h2 id="toc_5">3. present 半屏问题</h2>
+
+<p><code>modalPresentationStyle</code>属性默认不是<code>UIModalPresentationFullScreen</code>了，需要根据需求手动设置。</p>
+
+<pre><code class="language-text">LXNavigationViewController *nav = [[LXNavigationViewController alloc] initWithRootViewController:loginViewController];
+nav.modalPresentationStyle = UIModalPresentationFullScreen;
+[self presentViewController:nav animated:YES completion:nil];
+
+</code></pre>
+
+<ul>
+<li><p>全局hook <code>presentViewController</code>方法</p>
+<pre><code class="language-text">+ (void)hoookPresentFuc{
+    [UIViewController aspect_hookSelector:@selector(presentViewController:animated:completion:) withOptions:AspectPositionBefore usingBlock:^(id&lt;AspectInfo&gt; aspectInfo){<br/>
+        UIViewController *presentingVC =  (UIViewController *)aspectInfo.arguments.firstObject;<br/>
+        presentingVC.modalPresentationStyle = UIModalPresentationFullScreen;<br/>
+    } error:NULL];<br/>
+}
+</code></pre></li>
+</ul>
+
+<h2 id="toc_6">4. UITextField</h2>
+
+<ul>
+<li>支付输入密码有问题</li>
+</ul>
+
+<h3 id="toc_7">UITextField 的私有属性 _placeholderLabel 被禁止访问了</h3>
+
+<ul>
+<li><code>_placeholderLabel.textColor</code> 私有属性被禁止访问</li>
+</ul>
+
+<pre><code class="language-text">[self.textField setValue:self.placeholderColor forKeyPath:@&quot;_placeholderLabel.textColor&quot;];
+</code></pre>
+
+<p>崩溃信息：</p>
+
+<pre><code class="language-text">&#39;Access to UITextField&#39;s _placeholderLabel ivar is prohibited. 
+This is an application bug&#39; 
+</code></pre>
+
+<ul>
+<li>解决方案</li>
+</ul>
+
+<pre><code class="language-text">UITextField有个attributedPlaceholder的属性，我们可以自定义这个富文本来达到我们需要的结果。
+
+NSMutableAttributedString *placeholderString = [[NSMutableAttributedString alloc] initWithString:placeholder attributes:@{NSForegroundColorAttributeName : self.placeholderColor}];
+_textField.attributedPlaceholder = placeholderString;
+</code></pre>
+
+<ul>
+<li>项目适配代码</li>
+</ul>
+
+<pre><code class="language-text">if (@available(iOS 13.0, *)) {
+    if (textField.attributedText.length &gt; 0) {
+        color = textField.attributedText.color;
+    }
+}else{
+    color = [textField valueForKeyPath:@&quot;_placeholderLabel.textColor&quot;];
+}
+</code></pre>
+
+<p>iOS 13 通过 KVC 方式修改私有属性，有 Crash 风险，谨慎使用！并不是所有KVC都会Crash，要尝试！</p>
+
+<h2 id="toc_8">5. UITextView 同上</h2>
+
+<h2 id="toc_9">6. navigationBar 使用<code>UINavigation+SXFixSpace</code></h2>
+
+<pre><code class="language-text">if ([NSStringFromClass(subview.class) containsString:@&quot;ContentView&quot;]) {
+    // 结构调整后 在这里return掉
+    if (@available(iOS 13.0, *)) {
+        if ([NSStringFromClass(subview.class) containsString:@&quot;_UINavigationBarContentView&quot;]) {
+            return;
+        }
+    }
+
+    //可修正iOS11之后的偏移
+    subview.layoutMargins = UIEdgeInsetsMake(0, space, 0, space);break;
+}
+</code></pre>
+
+<p>同时，下面的属性也已经被禁止访问了：</p>
+
+<ul>
+<li><p><code>[barBgView valueForKey:@&quot;_shadowView&quot;];</code></p></li>
+<li><p><code>[barBgView valueForKey:@&quot;_backgroundEffectView&quot;];</code></p></li>
+</ul>
+
+<h2 id="toc_10">7. statusBar</h2>
+
+<ul>
+<li><p><code>UIStatusBarStyleDefault</code>枚举值代表含义有变化</p>
+<pre><code class="language-text">typedef NS_ENUM(NSInteger, UIStatusBarStyle) {
+UIStatusBarStyleDefault                                  = 0, // 根据用户交互样式自动选择状态条样式<br/>
+UIStatusBarStyleLightContent     API_AVAILABLE(ios(7.0)) = 1, // Light content, for use on dark backgrounds<br/>
+UIStatusBarStyleDarkContent     API_AVAILABLE(ios(13.0)) = 3, // Dark content, for use on light backgrounds<br/>
+UIStatusBarStyleBlackTranslucent NS_ENUM_DEPRECATED_IOS(2_0, 7_0, &quot;Use UIStatusBarStyleLightContent&quot;) = 1,<br/>
+UIStatusBarStyleBlackOpaque      NS_ENUM_DEPRECATED_IOS(2_0, 7_0, &quot;Use UIStatusBarStyleLightContent&quot;) = 2,<br/>
+} API_UNAVAILABLE(tvos);
+</code></pre></li>
+<li><p>定制状态条的样式 使用apple 推荐的这个系统方法</p></li>
+</ul>
+
+<pre><code class="language-text">// ios 13.0 之后，这个方法已经失效了
+// [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    if (@available(iOS 13.0, *)){
+        return UIStatusBarStyleDarkContent;
+    }
+    return UIStatusBarStyleDefault;
+}
+</code></pre>
+
+<p><strong>或者 ------&gt;&gt;：</strong></p>
+
+<p><code>UIStatusBarStyleDefault</code> 替换为</p>
+
+<pre><code class="language-text">(@available(iOS 13.0, *) ? UIStatusBarStyleDarkContent : UIStatusBarStyleDefault)
+</code></pre>
+
+<p>如果你还是使用的Xcode 10 为了走过编译器这一步，可以使用预编译命令，这么写：</p>
+
+<pre><code class="language-text">#if defined(__IPHONE_13_0) &amp;&amp; __IPHONE_OS_VERSION_MAX_ALLOWED &gt;= __IPHONE_13_0
+    if (@available(iOS 13.0, *)) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDarkContent];
+    }else{
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    }
+#else
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+#endif
+</code></pre>
+
+<h2 id="toc_11">8. UITabbar</h2>
+
+<ul>
+<li>横线<br/>
+UITabbar 层次发生改变，无法通过设置 shadowImage去掉上面的线；</li>
+<li>红点<br/>
+如果之前有通过TabBar上图片位置来设置红点位置，在iOS13上会发现显示位置都在最左边去了。遍历UITabBarButton的subViews发现只有在TabBar选中状态下才能取到UITabBarSwappableImageView，解决办法是修改为通过UITabBarButton的位置来设置红点的frame</li>
+</ul>
+
+<h2 id="toc_12">9. UISearchBar</h2>
+
+<ul>
+<li>UISearchBar的私有属性<code>UISearchBarBackground</code>，禁止访问和remove</li>
+</ul>
+
+<pre><code class="language-text">if ([subview isKindOfClass:NSClassFromString(@&quot;UISearchBarBackground&quot;)]) {
+    if (@available(iOS 13.0, *)) {
+        subview.backgroundColor = [UIColor lightGrayColor];
+        // subview.layer.contents = nil;
+    }else{
+        [subview removeFromSuperview];
+    }
+}
+
+</code></pre>
+
+<h2 id="toc_13">10. 增加一直使用蓝牙的权限申请</h2>
+
+<p><code>info.plist</code>文件下<br/>
+Key: <code>NSBluetoothAlwaysUsageDescription</code><br/>
+Value: <code>我们要一直使用您的蓝牙，具体做什么别问我</code></p>
+
+<h2 id="toc_14">11. 推送 获取deviceToken</h2>
+
+<pre><code class="language-text">#include &lt;arpa/inet.h&gt;
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    if (![deviceToken isKindOfClass:[NSData class]]) return;
+    const unsigned *tokenBytes = [deviceToken bytes];
+    NSString *hexToken = [NSString stringWithFormat:@&quot;%08x%08x%08x%08x%08x%08x%08x%08x&quot;,
+                          ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
+                          ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
+                          ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
+    NSLog(@&quot;deviceToken:%@&quot;,hexToken);
+}
+</code></pre>
+
+<h2 id="toc_15">12. CNCopyCurrentNetworkInfo</h2>
+
+<pre><code class="language-text"> An app that fails to meet any of the above requirements receives the following return value:
+
+- An app linked against iOS 12 or earlier receives a dictionary with pseudo-values. In this case, the SSID is Wi-Fi (or WLAN in the China region), and the BSSID is 00:00:00:00:00:00.
+- An app linked against iOS 13 or later receives NULL.
+- 
+</code></pre>
+
+<p>iOS13 以后只有开启了 Access WiFi Information capability，才能获取到 SSID 和 BSSID</p>
+
+<p><a href="https://link.juejin.im/?target=https%3A%2F%2Fdeveloper.apple.com%2Fdocumentation%2Fsystemconfiguration%2F1614126-cncopycurrentnetworkinfo%3Flanguage%3Docc">参考：CNCopyCurrentNetworkInfo</a></p>
+
+<h2 id="toc_16">13. APP 启动速度优化 导致frame获取失败</h2>
+
+<p>App启动过程中，部分View可能无法实时获取到frame。</p>
+
+<h2 id="toc_17">14. WKWebView 中测量页面内容高度的方式变更</h2>
+
+<p>iOS 13以前 document.body.scrollHeight iOS 13中 document.documentElement.scrollHeight 两者相差55 应该是浏览器定义高度变了</p>
+
+<h2 id="toc_18">15. fishhook 导致的Crash</h2>
+
+<p><a href="https://github.com/facebook/fishhook/issues">github fishhook</a></p>
+
+<h2 id="toc_19">16. MPMoviePlayerController 已经被弃用</h2>
+
+<pre><code class="language-text">&#39;MPMoviePlayerController is no longer available. Use AVPlayerViewController in AVKit.&#39; 
+</code></pre>
+
+<h2 id="toc_20">17. LaunchImage 即将消失</h2>
+
+<p>从 iOS 8 的时候，苹果就引入了 LaunchScreen，我们可以设置 LaunchScreen来作为启动页。当然，现在你还可以使用LaunchImage来设置启动图。不过使用LaunchImage的话，要求我们必须提供各种屏幕尺寸的启动图，来适配各种设备，随着苹果设备尺寸越来越多，这种方式显然不够 Flexible。而使用 LaunchScreen的话，情况会变的很简单， LaunchScreen是支持AutoLayout+SizeClass的，所以适配各种屏幕都不在话下。<br/>
+注意啦⚠️，从2020年4月开始，所有使⽤ iOS13 SDK 的 App 将必须提供 LaunchScreen，LaunchImage即将退出历史舞台。</p>
+
+<h2 id="toc_21">18. window层级变化</h2>
+
+<p>遍历视图获取 keywindow 的方式会失效。<br/>
+新增了 screenWindow  自定义视图和 keywindow之间新增iOS 13系统的特有图层。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Viewcontroller顶部白条]]></title>
+    <link href="http://kaelinda.top/15658640474935.html"/>
+    <updated>2019-08-15T18:14:07+08:00</updated>
+    <id>http://kaelinda.top/15658640474935.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">顶部白条 20pt左右</h2>
+
+<pre><code class="language-text">self.automaticallyAdjustsScrollViewInsets = NO;
+self.edgesForExtendedLayout = UIRectEdgeNone;
+if (@available(iOS 11.0, *)) {
+    UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+}
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[UIVisualEffectView iOS8以后的毛玻璃效果实现]]></title>
+    <link href="http://kaelinda.top/15640609790414.html"/>
+    <updated>2019-07-25T21:22:59+08:00</updated>
+    <id>http://kaelinda.top/15640609790414.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">先看一下简单的使用</h2>
+
+<pre><code class="language-text">
+// 创建一个特效对象
+UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+
+// 创建一个毛玻璃视图
+UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+blurView.clipsToBounds = YES;
+blurView.layer.borderColor = [[UIColor blackColor] colorWithAlphaComponent:0.4f].CGColor;
+blurView.layer.borderWidth = 1.0;
+blurView.layer.cornerRadius = 6.0;
+
+// label
+UILabel *label = [[UILabel alloc] init];
+label.textColor = [UIColor colorWithWhite:0.4f alpha:1.0f];
+
+// add the label to effect view
+[blurView.contentView addSubview:label];
+</code></pre>
+
+]]></content>
+  </entry>
+  
+</feed>
