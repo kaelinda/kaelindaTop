@@ -4,14 +4,13 @@
   <title><![CDATA[kaelinda]]></title>
   <link href="http://kaelinda.top/atom.xml" rel="self"/>
   <link href="http://kaelinda.top/"/>
-  <updated>2021-10-08T14:01:28+08:00</updated>
+  <updated>2021-10-08T14:25:06+08:00</updated>
   <id>http://kaelinda.top/</id>
   <author>
     <name><![CDATA[]]></name>
     
   </author>
-  <generator uri="http://www.coderforart.com/">CoderForArt</generator>
-
+  <generator uri="http://www.mweb.im/">MWeb</generator>
   
   <entry>
     <title type="html"><![CDATA[LeetCode【算法】宝石与石头]]></title>
@@ -19,7 +18,6 @@
     <updated>2021-10-08T11:13:12+08:00</updated>
     <id>http://kaelinda.top/16336627926129.html</id>
     <content type="html"><![CDATA[
-<p>kael 改动</p>
 <blockquote>
 <p>给定字符串J 代表石头中宝石的类型，和字符串 S代表你拥有的石头。 S 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。</p>
 </blockquote>
