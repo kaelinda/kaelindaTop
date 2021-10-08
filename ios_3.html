@@ -1,979 +1,1538 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	iOS - kaelinda
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="kaelinda" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="https://ws1.sinaimg.cn/large/006tNc79ly1fmpk9088gsj30sg0sgn33.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">kaelinda</a></h1>
+					<p class="subtitle">倘若我心中的山水，你眼中能看到，我便一步一莲花祈祷</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">最近更新</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">归档目录</a></li>
+						
+						  <li id="ios.css"><a target="_self" href="ios.html">iOS</a></li>
+						
+						  <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
+						
+						  <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
+						
+						  <li id="js.css"><a target="_self" href="js.html">JS</a></li>
+						
+						  <li id="shell.css"><a target="_self" href="shell.html">shell</a></li>
+						
+						  <li id="py.css"><a target="_self" href="py.html">Python</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/Kaelzzs" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:47:45+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336612655403.html" itemprop="url">
+		WKWebView性能优化分析</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<p><a href="https://juejin.im/post/5da4363ef265da5bb065e357#heading-1">iOS WKWebView的基本使用</a>
+<a href="https://juejin.im/post/5eba5f626fb9a0433d7637aa">WKWebView完美网络请求拦截</a>
+<a href="https://juejin.im/post/5e6b4109f265da576429a4b7#heading-22">WKWebview使用二三事</a>
+<a href="https://zhuanlan.zhihu.com/p/58681116">史上最全的WKWebView问题优化指南</a>
+<a href="https://tech.meituan.com/2017/06/09/webviewperf.html">美团 WebView性能、体验分析与优化</a>
+<a href="https://www.jianshu.com/p/030aadc6a10a">WKWebView 的性能优化</a>
+<a href="https://www.jianshu.com/p/7092536b91cb">WKWebview的坑和优化</a>
+<a href="https://blog.cnbang.net/tech/3477/">移动 H5 首屏秒开优化方案探讨</a></p>
+<h1><a id="wkwebview%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKWebView 加载流程</h1>
+<p>要想优化Web就需要了解其加载流程，并针对每个流程进行优化：</p>
+<ol>
+<li>初始化 webview</li>
+<li>请求页面 、下载数据</li>
+<li>解析HTML</li>
+<li>请求 js/css 资源</li>
+<li>dom 渲染</li>
+<li>解析执行  JS 脚本</li>
+<li>JS 请求数据</li>
+<li>解析渲染</li>
+<li>下载渲染图片等资源</li>
+</ol>
+<h2><a id="%E5%88%9D%E5%A7%8B%E5%8C%96webview" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>初始化 webview</h2>
+<p>APP启动后，UIWebView 和 WKWebView的浏览器内核并不会自动初始化，而是当你首次调用WKWebView/UIWebView 相关页面或者功能时才进行 类似于<code>懒加载</code>的初始化过程。这个过程只能Native来优化。</p>
+<blockquote>
+<p>市面上表较多的两种优化方案如下：</p>
+</blockquote>
+<h3><a id="%E6%96%B9%E6%A1%88%E4%B8%80%E9%A2%84%E5%88%9D%E5%A7%8B%E5%8C%96wkwebviewuiwebview" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>方案一 预初始化 WKWebView/UIWebView</h3>
+<p>APP启动后 预先初始化一个暂时用不到的WebView，牺牲性能 换取首次加载WebView时间。
+这里需要注意的是，一个成熟的APP 在启动时都会进行各种初始化和预配置操作，所以 webview的预初始化需要根据业务，找一个合适的时机。</p>
+<h3><a id="%E6%96%B9%E6%A1%88%E4%BA%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%90%86%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>方案二 客户端代理数据请求</h3>
+<p>自定义 NSURLProtocol子类，拦截webview内的网络请求，让Native 开启子线程去代理这个过程。因为webview内的网络操作是一个单线程操作。这样就能节省一部分时间了。</p>
+
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:47:03+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336612231246.html" itemprop="url">
+		WKWebView从入门到放弃 (二 OC&JS交互)</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<h1><a id="oc%E8%B0%83%E7%94%A8js" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>OC调用JS</h1>
+<h2><a id="%E6%9C%AA%E7%BA%A6%E5%AE%9A%E5%A5%BD%E7%9A%84%E6%96%B9%E6%B3%95%E5%BE%80js%E4%B8%8A%E4%B8%8B%E6%96%87%E6%B3%A8%E5%85%A5js%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BB%A5%E5%A4%87oc%E8%B0%83%E7%94%A8" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>未约定好的方法 往JS上下文注入JS方法，以备OC调用</h2>
+<pre><code class="language-plain_text">/// 往HTML 中 注入 JS代码字符串 源代码
+/// @param scriptString script内容
+- (void)insertScriptWithString:(NSString *)scriptSctring{
+    //用于进行JavaScript注入
+    WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:scriptSctring injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+    [self.webConfig.userContentController addUserScript:wkUScript];
+}
+</code></pre>
+<h2><a id="%E5%B7%B2%E7%BB%8F%E7%BA%A6%E5%AE%9A%E5%A5%BD%E6%96%B9%E6%B3%95%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>已经约定好方法直接调用</h2>
+<p>WKWebView 调用JS 方法比较单一：</p>
+<pre><code class="language-plain_text">/// OC 调用 JS 代码
+/// @param script 脚本 [NSString stringWithFormat:@&quot;changeColor('%@')&quot;, @&quot;Js参数&quot;];
+/// @param completionHandler 回调
+- (void)OCHandleJSWithScriptString:(NSString *)script completionHandler:(void (^ _Nullable)(_Nullable id, NSError * _Nullable error))completionHandler{
+    /// OC 调 JS
+    [_webView evaluateJavaScript:script completionHandler:completionHandler];
     
-  iOS - kaelinda
-  
-  </title>
-  
-  
-  <link href="atom.xml" rel="alternate" title="kaelinda" type="application/atom+xml">
-    <link rel="stylesheet" href="asset/css/foundation.min.css" />
-    <link rel="stylesheet" href="asset/css/docs.css" />
-    <script src="asset/js/vendor/modernizr.js"></script>
-    <script src="asset/js/vendor/jquery.js"></script>
-  <script src="asset/highlightjs/highlight.pack.js"></script>
-  <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script>hljs.initHighlightingOnLoad();</script>
-<script type="text/javascript">
-  function before_search(){
-    var searchVal = 'site:kaelinda.top ' + document.getElementById('search_input').value;
-    document.getElementById('search_q').value = searchVal;
-    return true;
-  }
-</script>
-  </head>
-  <body class="antialiased hide-extras">
+}
+</code></pre>
+<p>UIWebView 使用下面的方法  OC 调用 JS</p>
+<pre><code class="language-plain_text">JSContext *context = [self.webView valueForKeyPath:@&quot;documentView.webView.mainFrame.javaScriptContext&quot;];
+NSString *textJS = @&quot;showAlert('这里是JS中alert弹出的message')&quot;;
+[context evaluateScript:textJS];
+</code></pre>
+<h1><a id="js%E8%B0%83%E7%94%A8-oc" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>JS 调用OC</h1>
+<h2><a id="wkusercontentcontroller" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKUserContentController</h2>
+<h3><a id="%E5%BC%80%E5%90%AFjs%E4%BA%A4%E4%BA%92%E5%BC%80%E5%85%B3%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>开启 JS交互开关 设置代理</h3>
+<p>设置代理 遵守协议 <code>&lt;WKScriptMessageHandler&gt;</code></p>
+<pre><code class="language-plain_text">// 直接设置config对象中的preferences属性
+_webConfig.preferences.javaScriptEnabled = YES;//打开js交互
+
+//或者 单独设置自定义的 WKPreferences对象
+_webPreference.javaScriptEnabled = YES;
+
+// 设置交互代理
+_webConfig.userContentController = self.webUserContentController;
+</code></pre>
+<h3><a id="%E8%A7%82%E5%AF%9Fjs%E8%B0%83%E7%94%A8oc%E6%96%B9%E6%B3%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>观察JS调用OC方法</h3>
+<pre><code class="language-plain_text">//注册一个name为jsToOcNoPrams的js方法
+[_webUserContentController addScriptMessageHandler:self  name:@&quot;jsToOcNoPrams&quot;];
+[_webUserContentController addScriptMessageHandler:self  name:@&quot;jsToOcWithPrams&quot;];
+</code></pre>
+<h3><a id="%E6%8E%A5%E6%94%B6%E5%9B%9E%E8%B0%83" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>接收回调</h3>
+<pre><code class="language-plain_text">#pragma mark ------- 交互的 delegate
+/// 通过接收JS传出消息的name进行捕捉的回调方法  js调OC
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
+    NSLog(@&quot;name:%@\\\\n body:%@\\\\n frameInfo:%@\\\\n&quot;,message.name,message.body,message.frameInfo);
     
-    <div class="marketing off-canvas-wrap" data-offcanvas>
-      <div class="inner-wrap">
+}
+</code></pre>
+<h3><a id="%E7%A7%BB%E9%99%A4%E6%B3%A8%E5%86%8C" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>移除注册</h3>
+<p><strong>界面退出、销毁时需要一处下方法的注册！！</strong></p>
+<pre><code class="language-plain_text">-(void)removeAllScriptMsgHandle{
+    WKUserContentController *controller = self.webView.configuration.userContentController;
+    [controller removeScriptMessageHandlerForName:@&quot;jsToOcNoPrams&quot;];
+    [controller removeScriptMessageHandlerForName:@&quot;jsToOcWithPrams&quot;];
+}
+</code></pre>
+<h2><a id="scheme%E6%96%B9%E5%BC%8F%E4%BA%A4%E4%BA%92" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>scheme方式交互</h2>
+<h3><a id="%E9%81%B5%E5%AE%88%E5%8D%8F%E8%AE%AE%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>遵守协议 &amp; 设置代理</h3>
+<p>遵守协议 ：<code>&lt;WKNavigationDelegate&gt;</code></p>
+<pre><code class="language-plain_text">// 设置代理
+ _webView.navigationDelegate = self;
+</code></pre>
+<h3><a id="%E6%8D%95%E8%8E%B7scheme" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>捕获Scheme</h3>
+<pre><code class="language-plain_text">// 根据WebView对于即将跳转的HTTP请求头信息和相关信息来决定是否跳转
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    NSLog(@&quot;发送跳转请求：%@&quot;,urlStr);
+    // 根据自定义的scheme进行拦截
+    if ([urlStr hasPrefix:schemeHeader]) {
+        [ControllerUtils showViewWithURL:urlStr];
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+}
+</code></pre>
+<h2><a id="%E5%90%8C%E5%B1%8F%E6%B8%B2%E6%9F%93%E5%BE%85%E5%AE%8C%E5%96%84" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>同屏渲染 待完善</h2>
 
 
-<nav class="top-bar docs-bar hide-for-small" data-topbar>
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:46:44+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336612041737.html" itemprop="url">
+		WKWebView从入门到放弃 之 【疑难杂症】篇</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:46:28+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336611886661.html" itemprop="url">
+		WKWebView从入门到放弃 之 【性能优化】</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<p><a href="https://juejin.im/post/5da4363ef265da5bb065e357#heading-1">iOS WKWebView的基本使用</a>
+<a href="https://juejin.im/post/5eba5f626fb9a0433d7637aa">WKWebView完美网络请求拦截</a>
+<a href="https://juejin.im/post/5e6b4109f265da576429a4b7#heading-22">WKWebview使用二三事</a>
+<a href="https://zhuanlan.zhihu.com/p/58681116">史上最全的WKWebView问题优化指南</a>
+<a href="https://tech.meituan.com/2017/06/09/webviewperf.html">美团 WebView性能、体验分析与优化</a>
+<a href="https://www.jianshu.com/p/030aadc6a10a">WKWebView 的性能优化</a>
+<a href="https://www.jianshu.com/p/7092536b91cb">WKWebview的坑和优化</a>
+<a href="https://blog.cnbang.net/tech/3477/">移动 H5 首屏秒开优化方案探讨</a></p>
+<h1><a id="wkwebview%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKWebView 加载流程</h1>
+<p>要想优化Web就需要了解其加载流程，并针对每个流程进行优化：</p>
+<ol>
+<li>初始化 webview</li>
+<li>请求页面 、下载数据</li>
+<li>解析HTML</li>
+<li>请求 js/css 资源</li>
+<li>dom 渲染</li>
+<li>解析执行  JS 脚本</li>
+<li>JS 请求数据</li>
+<li>解析渲染</li>
+<li>下载渲染图片等资源</li>
+</ol>
+<h2><a id="%E5%88%9D%E5%A7%8B%E5%8C%96webview" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>初始化 webview</h2>
+<p>APP启动后，UIWebView 和 WKWebView的浏览器内核并不会自动初始化，而是当你首次调用WKWebView/UIWebView 相关页面或者功能时才进行 类似于<code>懒加载</code>的初始化过程。这个过程只能Native来优化。</p>
+<blockquote>
+<p>市面上表较多的两种优化方案如下：</p>
+</blockquote>
+<h3><a id="%E6%96%B9%E6%A1%88%E4%B8%80%E9%A2%84%E5%88%9D%E5%A7%8B%E5%8C%96wkwebviewuiwebview" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>方案一 预初始化 WKWebView/UIWebView</h3>
+<p>APP启动后 预先初始化一个暂时用不到的WebView，牺牲性能 换取首次加载WebView时间。
+这里需要注意的是，一个成熟的APP 在启动时都会进行各种初始化和预配置操作，所以 webview的预初始化需要根据业务，找一个合适的时机。</p>
+<h3><a id="%E6%96%B9%E6%A1%88%E4%BA%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%90%86%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>方案二 客户端代理数据请求</h3>
+<p>自定义 NSURLProtocol子类，拦截webview内的网络请求，让Native 开启子线程去代理这个过程。因为webview内的网络操作是一个单线程操作。这样就能节省一部分时间了。</p>
 
 
-  <section class="top-bar-section">
-  <div class="row">
-      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
-        <ul id="main-menu" class="left">
-        
-        <li id=""><a target="_self" href="index.html">最近更新</a></li>
-        
-        <li id=""><a target="_self" href="archives.html">归档目录</a></li>
-        
-        <li id="ios.css"><a target="_self" href="ios.html">iOS</a></li>
-        
-        <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
-        
-        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
-        
-        <li id="js.css"><a target="_self" href="js.html">JS</a></li>
-        
-        <li id="shell.css"><a target="_self" href="shell.html">shell</a></li>
-        
-        <li id="coding.css"><a target="_self" href="coding.html">编程</a></li>
-        
-        <li id="live.css"><a target="_self" href="live.html">随笔</a></li>
-        
-        <li id="app.css"><a target="_blank" href="app.html">APP推荐</a></li>
-        
-        </ul>
+			
+			
+		</div>
 
-        <ul class="right" id="search-wrap">
-          <li>
-<form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
-    <input type="hidden" id="search_q" name="q" value="" />
-    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
-</form>
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:43:32+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336610129581.html" itemprop="url">
+		MacOS 安装CocoaPods/Fastlane/Homebrew/Rvm/Ruby/Gem</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<p>当前最新macOS系统版本是Catalina 10.16，本人有幸更新 MacOS 11.0 Beta版本尝鲜....结果被坑的体无完肤！！！</p>
+<p>更新系统后，链接公司内部局域网的VPN软件不能使用了，自动打包工具 fastlane 不能用了，</p>
+<h1><a id="%E5%AE%89%E8%A3%85ruby" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装Ruby</h1>
+<p>我们安装各种环境的时候 经常会报各种各样的错误，大都是因为电脑的大环境没安装好。</p>
+<h2><a id="%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8rvm" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装 使用 rvm</h2>
+<pre><code class="language-plain_text">// 安装rvm
+curl -L get.rvm.io | bash -s stable
+</code></pre>
+<p>rvm安装完成后，让环境变量和配置文件生效：</p>
+<pre><code class="language-plain_text">source ~/.bashrc
+source ~/.bash_profile
+source ~/.profile
+</code></pre>
+<p>查看rvm版本：</p>
+<pre><code class="language-plain_text">rvm -v
+</code></pre>
+<p>查看</p>
+<pre><code class="language-plain_text">rvm list known
+</code></pre>
+<p>结果如下：</p>
+<pre><code class="language-plain_text"># MRI Rubies
+[ruby-]1.8.6[-p420]
+[ruby-]1.8.7[-head] # security released on head
+[ruby-]1.9.1[-p431]
+[ruby-]1.9.2[-p330]
+[ruby-]1.9.3[-p551]
+[ruby-]2.0.0[-p648]
+[ruby-]2.1[.10]
+[ruby-]2.2[.10]
+[ruby-]2.3[.8]
+[ruby-]2.4[.9]
+[ruby-]2.5[.7]
+[ruby-]2.6[.5]
+[ruby-]2.7[.0]
+ruby-head
+</code></pre>
+<h2><a id="%E9%87%8D%E7%82%B9%E6%93%8D%E4%BD%9C%EF%BC%81%EF%BC%81" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>重点操作！！</h2>
+<p><strong>XXXXXXX为电脑账户名：<code>source /Users/XXXXXX/.rvm/scripts/rvm</code></strong></p>
+<pre><code class="language-plain_text">rvm install
+</code></pre>
+<ul>
+<li>使用rvm安装<code>rvm install 2.6.5</code>这里的版本是你查到的适合自己的ruby版本，这里你也可以直接安装最新版本 <code>rvm install ruby-head</code></li>
+</ul>
+<pre><code class="language-plain_text">rvm use ruby-2.6
+</code></pre>
+<ul>
+<li>使用自己已安装的ruby版本<code>rvm use ruby-2.6</code> （这里的ruby-2.6 是  <code>ruby -v</code> 查出来的）</li>
+</ul>
+<h1><a id="%E5%AE%89%E8%A3%85gem%E7%8E%AF%E5%A2%83" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装Gem环境</h1>
+<h2><a id="gem%E6%BA%90%E9%95%9C%E5%83%8F" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gem源 &amp; 镜像</h2>
+<ul>
+<li>国外镜像源 <code>http://rubygems.org/</code></li>
+<li><del>国内淘宝镜像源 (已停止维护) <code>https://ruby.taobao.org/</code></del></li>
+<li><del>国内镜像 <code>https://gems.ruby-china.org/</code></del></li>
+<li>现在可以使用的国内镜像源 <code>http://gems.github.com</code></li>
+</ul>
+<h2><a id="%E6%9F%A5%E7%9C%8Bgem%E9%95%9C%E5%83%8F%E6%BA%90" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>查看Gem镜像源</h2>
+<pre><code class="language-plain_text">// 查看当前镜像源
+gem sources -l
+// 或者
+gem sources
+</code></pre>
+<h3><a id="%E6%B7%BB%E5%8A%A0%E9%95%9C%E5%83%8F%E6%BA%90" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>添加镜像源</h3>
+<pre><code class="language-plain_text">gem source --add XXX
+// 或者
+gem source -a XXX
+</code></pre>
+<h3><a id="%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F%E6%BA%90" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>删除镜像源</h3>
+<pre><code class="language-plain_text">gem sources --remove XXX
+// 或者
+gem sources -r XXX
+</code></pre>
+<h3><a id="%E6%9B%B4%E6%96%B0%E9%95%9C%E5%83%8F%E6%BA%90" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>更新镜像源</h3>
+<pre><code class="language-plain_text">gem sources --update
+gem soruces -u
+</code></pre>
+<h2><a id="gem%E6%93%8D%E4%BD%9C" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gem操作</h2>
+<p>添加新的gem源;
+remove掉 之前的gem源;
+更新源；
+(gem 的命令 是可以连续使用的)</p>
+<p><code>gem source -a http://gems.github.com/ -r http://rubygems.org/ -u</code></p>
+<p>也可以拆分：</p>
+<pre><code class="language-plain_text">gem source -a http://gems.github.com/
+gem sources -r http://rubygems.org/
+gem soources -u
+</code></pre>
+<h3><a id="%E5%AE%B6%E6%9F%A5%E4%B8%8Bgem%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>家查下Gem版本更新</h3>
+<pre><code class="language-plain_text">sudo gem update --system // 这个命令用于更新gem自身
+</code></pre>
+<p>===</p>
+<p>到此为止，安装开发工具的大环境就已经搭好了。
+<code>gem update</code> 更新所有gem安装过的安装包。</p>
+<p>然后 开启我们的新征程:</p>
+<h1><a id="xcode%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Xcode 命令行工具配置</h1>
+<h2><a id="%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装命令行工具</h2>
+<pre><code class="language-plain_text">xcode-select --install
+</code></pre>
+<p><a href="https://developer.apple.com/download/more/">Apple 官方下载命令行工具入口</a></p>
+<h2><a id="%E5%88%87%E6%8D%A2%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E7%89%88%E6%9C%AC" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>切换命令行工具版本</h2>
+<h3><a id="xcode-select%E5%91%BD%E4%BB%A4%E5%88%87%E6%8D%A2" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>xcode-select 命令切换</h3>
+<pre><code class="language-plain_text">sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+or
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+</code></pre>
+<h3><a id="xcode%E7%9B%B4%E6%8E%A5%E5%88%87%E6%8D%A2" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Xcode 直接切换</h3>
+<p>如果你安装了 多个版本的Xcode，那么你会经常用到这种切换方式：
+选中Xcode，CMD + ，---&gt; Locations ----&gt; Command Line Tool
+选择相对应版本即可。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/412206-c8da04353b7640c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Xcode-内部设置" /></p>
+<h1><a id="%E5%AE%89%E8%A3%85fastlane" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装Fastlane</h1>
+
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:41:00+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336608605945.html" itemprop="url">
+		AsyncTaskTrigger</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<p><a href="https://travis-ci.org/zuosong/AsyncTaskTrigger"><img src="https://img.shields.io/travis/zuosong/AsyncTaskTrigger.svg?style=flat" alt="CI Status" /></a>
+<a href="https://cocoapods.org/pods/AsyncTaskTrigger"><img src="https://img.shields.io/cocoapods/v/AsyncTaskTrigger.svg?style=flat" alt="Version" /></a>
+<a href="https://cocoapods.org/pods/AsyncTaskTrigger"><img src="https://img.shields.io/cocoapods/l/AsyncTaskTrigger.svg?style=flat" alt="License" /></a>
+<a href="https://cocoapods.org/pods/AsyncTaskTrigger"><img src="https://img.shields.io/cocoapods/p/AsyncTaskTrigger.svg?style=flat" alt="Platform" /></a>
+<a href="https://gitee.com/kaelinda/async-task-trigger/stargazers"><img src="https://gitee.com/kaelinda/async-task-trigger/badge/star.svg?theme=dark" alt="Star" /></a></p>
+<h2><a id="example" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h2>
+<p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.</p>
+<h2><a id="requirements" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+<h2><a id="installation" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+<p>AsyncTaskTrigger is available through <a href="https://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre><code class="language-ruby">pod 'AsyncTaskTrigger'
+</code></pre>
+<h2><a id="%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用方法</h2>
+<h3><a id="%E5%BC%82%E6%AD%A5%E4%B8%B2%E8%A1%8C%E4%BB%BB%E5%8A%A1" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>异步串行任务</h3>
+<pre><code class="language-plain_text">// ---------1、获取触发器单利
+AsyncTaskTrigger *trigger = [AsyncTaskTrigger shareTrigger];
+__weak typeof (&amp;*trigger)wtrigger = trigger;
+
+// 每一组任务 都需要有一个GroupKey
+NSString *groupKey = @&quot;serial_group_serial&quot;;
+
+// --------添加任务A
+[trigger addTaskAction:^{
+    // 开始执行任务A
+    [self actionBlockAWithComplet:^{
+        // 任务完成后 需要向指定 groupKey 对应的任务组 发送信号量；
+        [wtrigger sendSemaphoreToGroupKey:groupKey];
+        // 如果某些异步任务是通过代理的方式回调 可以在完成处这样标记下
+        // [[AsyncTaskTrigger shareTrigger]sendSemaphoreToGroupKey:groupKey];
+
+    }];
+} asyncType:LXTaskAsyncTypeSerial groupKey:groupKey completBlock:^{
+    // 本次任务完成后的回调
+}];
+
+// -----------添加任务B
+[trigger addTaskAction:^{
+    // 执行任务B
+    [self actionBlockBWithComplet:^{
+        [wtrigger sendSemaphoreToGroupKey:groupKey];
+    }];
+} asyncType:LXTaskAsyncTypeSerial groupKey:groupKey completBlock:nil];
+
+// Block回调发送信号量 另外一种方式
+[trigger addTaskHandlerAction:^(LXTaskActionBlock  _Nullable semaphoreHandle) {
+    [self actionBlockAWithComplet:^{
+        // 可以直接在这里调用这个Block即可
+        semaphoreHandle();
+    }];
+} asyncType:LXTaskAsyncTypeSerial groupKey:groupKey completBlock:nil];
+
+[trigger startTaskActionWithGroupKey:groupKey completBlock:^{
+    NSLog(@&quot;kael -- 所有的任务都完成了&quot;);
+}];
+</code></pre>
+<h3><a id="%E5%BC%82%E6%AD%A5%E5%B9%B6%E8%A1%8C%E4%BB%BB%E5%8A%A1" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>异步并行任务</h3>
+<p>异步任务只需要更改asyncType类型LXTaskAsyncTypeSerial --&gt; LXTaskAsyncTypeParallel</p>
+<pre><code class="language-plain_text">[trigger addTaskAction:^{
+    [self actionBlockAWithComplet:^{
+        [wtrigger sendSemaphoreToGroupKey:groupKey];
+    }];
+} asyncType:LXTaskAsyncTypeParallel groupKey:groupKey completBlock:nil];
+    
+[trigger addTaskAction:^{
+    [self actionBlockBWithComplet:^{
+        [wtrigger sendSemaphoreToGroupKey:groupKey];
+    }];
+} asyncType:LXTaskAsyncTypeParallel groupKey:groupKey completBlock:nil];
+
+[trigger addTaskHandlerAction:^(LXTaskActionBlock  _Nullable semaphoreHandle) {
+    [self actionBlockAWithComplet:^{
+        semaphoreHandle();
+    }];
+} asyncType:LXTaskAsyncTypeParallel groupKey:groupKey completBlock:nil];
+        
+[trigger startTaskActionWithGroupKey:groupKey completBlock:^{
+    NSLog(@&quot;kael -- 所有的任务都完成了&quot;);
+}];
+</code></pre>
+<h2><a id="author" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author</h2>
+<p>Kael, zhouzuosong_kael@<a href="mailto:163.com@163.com">163.com@163.com</a></p>
+<h2><a id="license" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+<p>AsyncTaskTrigger is available under the MIT license. See the LICENSE file for more info.</p>
+
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:38:38+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336607185259.html" itemprop="url">
+		iOS APP静态检测实践之 -- infer</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<p>[toc]</p>
+<h1><a id="infer%E7%AE%80%E4%BB%8B" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>infer简介</h1>
+<p><a href="https://www.jianshu.com/p/b6204ed62510">参考文章 ：https://www.jianshu.com/p/b6204ed62510</a></p>
+<p>Facebook 的 Infer 是一个静态分析工具。Infer 可以分析 Objective-C， Java 或者 C 代码，报告潜在的问题。任何人都可以使用 Infer 检测应用，这可以将那些严重的 bug 扼杀在发布之前，同时防止应用崩溃和性能低下。Infer 可检查 Android 和 Java 代码中的 NullPointException 和 资源泄露。除了以上，Infer 还可发现 iOS 和 C 代码中的内存泄露。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/1495953/1619595741169-9e1d1dd3-3477-4766-91a7-2ffbeee6242b.png?x-oss-process=image%2Fresize%2Cw_930" alt="Infer" /></p>
+<h1><a id="%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装</h1>
+<h2><a id="homebrew%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homebrew安装</h2>
+<h3><a id="%E5%AE%89%E8%A3%85homebrew" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装<code>Homebrew</code></h3>
+<pre><code class="language-plain_text">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+<h3><a id="%E4%BD%BF%E7%94%A8homebrew%E5%AE%89%E8%A3%85infer%E6%89%80%E9%9C%80%E7%8E%AF%E5%A2%83" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用Homebrew安装Infer所需环境</h3>
+<pre><code class="language-plain_text"># 安装环境
+brew install autoconf automake cmake opam pkg-config sqlite gmp mpfr
+brew cask install java
+</code></pre>
+<h3><a id="%E4%BD%BF%E7%94%A8homebrew%E5%AE%89%E8%A3%85-infer" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用Homebrew安装<code>infer</code></h3>
+<pre><code class="language-bash"># 安装Infer
+brew install infer
+</code></pre>
+<h2><a id="%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>源码安装</h2>
+<p>从<a href="https://link.jianshu.com/?t=https://github.com/facebook/infer/releases">infer release</a>页面获取最新版本infer-osx-vXX.tar.xz (以osx标识),然后执行下面命令来安装Infer.</p>
+<h1><a id="%E4%BD%BF%E7%94%A8infer%E5%88%86%E6%9E%90%E4%BB%A3%E7%A0%81" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用Infer分析代码</h1>
+<h2><a id="%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>准备工作</h2>
+<ul>
+<li>分析项目之前先把项目clean 一下</li>
+<li>连续两次使用Infer分析项目时，也需要先clean下项目 或者在命令中使用 <code>--reactive</code>命令</li>
+<li>分析单个文件的时候 不需要增量分析</li>
+<li></li>
+</ul>
+<h2><a id="%E4%BD%BF%E7%94%A8infer%E6%A3%80%E6%B5%8B%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用infer 检测单个文件</h2>
+<ul>
+<li>cd 指定文件<code>InferTest.m</code> 所在的目录</li>
+<li><code>infer -- clang -c InferTest.m</code></li>
+<li><code>No issues found</code>   代表没有问题</li>
+</ul>
+<h2><a id="%E4%BD%BF%E7%94%A8infer%E6%A3%80%E6%B5%8B%E6%95%B4%E4%B8%AA%E9%A1%B9%E7%9B%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用infer检测整个项目</h2>
+<h3><a id="infer%E5%88%86%E6%9E%90%E6%99%AE%E9%80%9A%E9%A1%B9%E7%9B%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Infer分析普通项目</h3>
+<pre><code class="language-plain_text">infer -- xcodebuild -project App.xcodeproj -target App -configuration Debug -sdk iphonesimulator
+</code></pre>
+<h3><a id="infer%E5%88%86%E6%9E%90%E5%B8%A6workspace%EF%BC%88cocoapods%EF%BC%89%E7%9A%84%E9%A1%B9%E7%9B%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Infer分析带Workspace（Cocoapods）的项目</h3>
+<pre><code class="language-plain_text">infer --  xcodebuild -workspace ./App.xcworkspace -configuration Debug -scheme KooApp
+</code></pre>
+<h4><a id="%E9%81%87%E5%88%B0%E8%AD%A6%E5%91%8A%E9%94%99%E8%AF%AF%E4%B8%8D%E4%B8%AD%E6%96%AD%E5%88%86%E6%9E%90keep-going" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>遇到警告错误不中断分析 <code>--keep-going</code></h4>
+<pre><code class="language-plain_text">infer --keep-going -- xcodebuild -project App.xcodeproj -target App -configuration Debug -sdk iphonesimulator
+</code></pre>
+<pre><code class="language-bash">#!/bin/bash
+
+kTargetName=&quot;LXCategory&quot;
+kProjectName=&quot;LXCategory.xcodeproj&quot;
+kConfigurationType=&quot;Debug&quot;
+kSDKName=&quot;iphonesimulator&quot;
+
+infer -- xcodebuild clean 
+
+INFER_ARGS=&quot;--skip-analysis-in-path^[\&quot;Third\&quot;]&quot; infer -- xcodebuild -target $kTargetName -configuration $kConfigurationType -sdk $kSDKName
+
+</code></pre>
+<h4><a id="%E5%BF%BD%E7%95%A5%E5%88%86%E6%9E%90%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>忽略分析指定文件</h4>
+<ul>
+<li>命令模式</li>
+</ul>
+<pre><code class="language-plain_text">INFER_ARGS=&quot;--skip-analysis-in-path^[\&quot;Third\&quot;]&quot; infer -- xcodebuild -target $kTargetName -configuration $kConfigurationType -sdk $kSDKName
+</code></pre>
+<ul>
+<li>配置文件模式</li>
+</ul>
+<p>在项目目录下增加这样一个.inferconfig的文件, 内容如图, 可以过滤掉Pods文件夹下的第三方库, skip-analysis-in-path是一个数组, 想要过滤其他文件, 只需要增加路径即可。</p>
+<p>文件内容：</p>
+<pre><code class="language-json">{
+  &quot;skip-analysis-in-path&quot;:[
+    &quot;test&quot;,
+    &quot;Third&quot;
+  ]
+}
+</code></pre>
+<h4><a id="%E6%8C%87%E5%AE%9A%E5%AF%BC%E5%87%BA%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>指定导出分析文件路径</h4>
+<p>infer 后面,<code>-- xcodebuild</code> 前面。 <code>-o OuptputPath</code> 能指定导出文件的路径。</p>
+<pre><code class="language-plain_text">infer --keep-going -o $kOuptputPath -- xcodebuild -project App.xcodeproj -target App -configuration Debug -sdk iphonesimulator
+
+</code></pre>
+<h4><a id="%E5%AF%BC%E5%87%BAhtml%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>导出html文件</h4>
+<p>这个需要在编译 或者 分析完之后执行此命令（指定导出分析文件路径后，需要在 修改的路径下使用才行。）</p>
+<pre><code class="language-plain_text">infer-explore --html
+</code></pre>
+<h4><a id="%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8D%E7%BC%96%E8%AF%91%EF%BC%89" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>静态分析（不编译）</h4>
+<pre><code class="language-plain_text">infer analyze
+</code></pre>
+<h3><a id="%E7%BC%96%E8%AF%91%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>编译遇到的问题</h3>
+<ul>
+<li>framework问题
+<img src="https://img-blog.csdnimg.cn/20201217200220312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2d1b3lvbmdtaW5nOTI1,size_16,color_FFFFFF,t_70" alt="framework 编译问题设置" /></li>
+</ul>
+<h2><a id="oclint" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>OCLint</h2>
+<p><a href="https://www.jianshu.com/p/6555048d6a17">参考文章：https://www.jianshu.com/p/6555048d6a17</a></p>
+
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:37:57+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336606772972.html" itemprop="url">
+		iOS APP静态检测实践之 -- OCLint</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<p>[toc]</p>
+<p><span id = "jumpID">跳转位置jumpID</span></p>
+<p><a href="OCLint%E6%8C%87%E4%BB%A4%E9%9B%86%E6%96%87%E6%A1%A3#jumpID">点我跳转</a></p>
+<blockquote>
+<p>参考文章</p>
+</blockquote>
+<p><a href="https://juejin.cn/post/6844904046281621512">iOS使用OCLint做静态代码分析</a>
+<a href="https://juejin.cn/post/6844903853775650830#heading-9">OCLint 实现 Code Review - 给你的代码提提质量</a></p>
+<h2><a id="%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装</h2>
+<ul>
+<li>安装xcpretty</li>
+</ul>
+<pre><code class="language-plain_text">sudo gem install xcpretty
+</code></pre>
+<ul>
+<li>
+<p>安装OCLint</p>
+<pre><code class="language-plain_text">brew tap oclint/formulae
+
+brew install oclint
+</code></pre>
 </li>
-          </ul>
-      </div></div>
-  </div>
-  </section>
-
-</nav>
-
-        <nav class="tab-bar show-for-small">
-  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
-    <span> &nbsp; kaelinda</span>
-  </a>
-</nav>
-
-<aside class="left-off-canvas-menu">
-      <ul class="off-canvas-list">
-        
-        <li><a target="_self" href="index.html">最近更新</a></li>
-        
-        <li><a target="_self" href="archives.html">归档目录</a></li>
-        
-        <li><a target="_self" href="ios.html">iOS</a></li>
-        
-        <li><a target="_self" href="swift.html">Swift</a></li>
-        
-        <li><a target="_self" href="reactnative.html">RN</a></li>
-        
-        <li><a target="_self" href="js.html">JS</a></li>
-        
-        <li><a target="_self" href="shell.html">shell</a></li>
-        
-        <li><a target="_self" href="coding.html">编程</a></li>
-        
-        <li><a target="_self" href="live.html">随笔</a></li>
-        
-        <li><a target="_blank" href="app.html">APP推荐</a></li>
-        
-
-    <li><label>Categories</label></li>
-
-        
-            <li><a href="reactnative.html">React-Native</a></li>
-        
-            <li><a href="ios.html">iOS</a></li>
-        
-            <li><a href="app.html">MacAPP</a></li>
-        
-            <li><a href="swift.html">Swift</a></li>
-        
-            <li><a href="js.html">JavaScript</a></li>
-        
-            <li><a href="vue.html">Vue</a></li>
-        
-            <li><a href="shell.html">shell</a></li>
-        
-            <li><a href="%E7%BD%91%E7%BB%9C.html">网络</a></li>
-         
-
-      </ul>
-    </aside>
-
-<a class="exit-off-canvas" href="#"></a>
-
-
-        <section id="main-content" role="main" class="scroll-container">
-        
-       
-
- <script type="text/javascript">
-	$(function(){
-		$('#menu_item_index').addClass('is_active');
-	});
-</script>
-<div class="row">
-	<div class="large-8 medium-8 columns">
-		<div class="markdown-body home-categories">
-		
-			<div class="article">
-                <a class="clearlink" href="15450161964215.html">
-                
-                  <h1>【精选】Mac 手动内存清理教程</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">一、查看内存占用情况</h2>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/412206-4734b7ee4a571010.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"/></p>
-
-<h2 id="toc_1">二、管理内存</h2>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/412206-fe84152bd070aca0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"/></p>
-
-<h3 id="toc_2">1、废纸篓</h3>
-
-<p>清理非废纸篓的道理我就不废话了吧。</p>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15450161964215.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/12/17</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15477923365213.html">
-                
-                  <h1>iOS 获取汉字【简体中文】笔画数</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">思路</h2>
-
-<ul>
-<li><p>汉字字典库匹配笔画数</p>
-<ul>
-<li>优点： 实现逻辑简单，字典库好扩展</li>
-<li>缺点： 内存消耗较大（不过也能承担）</li>
 </ul>
-<p><strong>思路：</strong> 这种实现思路是比较简单的，具体思路是将简体汉字所有字都穷举出来，然后分别匹配上指定的笔画数，当做一个大的数据库，每次都去查询一下。</p></li>
-<li><p>汉字GBK编码匹配笔画数</p>
+<h2><a id="%E5%8F%82%E6%95%B0%E4%BB%8B%E7%BB%8D" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>参数介绍</h2>
 <ul>
-<li>优点：相比字典库匹配，效率高，速度快</li>
-<li>缺点：添加编码库不好添加，不好扩展</li>
+<li>
+<p>-R &lt;路径&gt; ： 检测所用的规则的路径，默认路径$(/path/to/bin/oclint)/../lib/oclint/rules</p>
+</li>
+<li>
+<p>-disable-rule &lt;规则名&gt;： 让相对应的规则失效（OCLint 规则列表）。</p>
+</li>
+<li>
+<p>-rc &lt;参数&gt;=&lt;值&gt; ：修改阈值</p>
+</li>
+<li>
+<p>-report-type &lt;报告类型&gt;，有&quot;text&quot;、“html”、“json”、“pmd”、“xcode”几个类型</p>
+</li>
+<li>
+<p>-o &lt;路径&gt; 报告生成路径。</p>
+</li>
 </ul>
-<p><strong>思路：</strong> 这种实现方案是需要获取GBK编码分别对应的笔画数，放到指定数组（数据库）中，每次通过输入的汉字 转码为二进制，通过二进制的值 匹配数据库中的笔画数。</p>
-<p>-**************************<br/>
-废话少说，盘它！<br/>
--**************************</p></li>
-</ul>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15477923365213.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2019/1/18</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15468313301172.html">
-                
-                  <h1>内存区域</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">1、介绍下内存区域</h2>
-
+<h3><a id="oclint-json-compilation-database%E6%8C%87%E4%BB%A4" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>oclint-json-compilation-database 指令</h3>
 <ul>
-<li><p>栈(Stack)</p>
-<ul>
-<li>【特点】：先进先出</li>
-<li>【分配和释放】：编译器自动分配、自动释放；</li>
-<li>存放函数的参数值、局部变量，方法调用的实参也是保存在栈区的。</li>
-<li>栈是系统数据结构，对应线程/进程是唯一的</li>
-<li>优点是快速高效，缺点是有限制，数据不灵活</li>
-</ul></li>
-<li><p>堆(Heap)</p></li>
-<li><p>全局区(静态区)</p></li>
-<li><p>常量区/数据段</p></li>
-<li><p>代码区/代码段</p></li>
+<li>-i ：包含进某些文件</li>
+<li>-e ： 过滤掉某些文件</li>
 </ul>
-
-<p>【面试】 阿里p6面试题</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2019/1/7</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15261167596297.html">
-                
-                  <h1>OC 多线程之 GCD知识从基础到进阶 （1）</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">概念认知</h2>
-
-<p>基本概念：</p>
-
-<ul>
-<li><p>GCD 全称 (Grand Center Dispatch),翻译成通俗中文“牛B的中心调度机制”</p></li>
-<li><p>线程：执行任务调度的最小单位</p></li>
-<li><p>任务：就是一段代码，GCD中就是block中的内容。执行任务有两种方式：同步执行（sync）和异步执行（async）。两者的主要区别是：是否等待队列的任务执行结束，以及是否具备开启新线程的能力</p></li>
-<li><p>队列：用来存放任务的线性结构，采用 FIFO（先进先出）的原则。</p></li>
-</ul>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15261167596297.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/5/12</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15395963175730.html">
-                
-                  <h1>iOS 转场动画 全解析</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">转场代理(Transition Delegate)：</h2>
-
-<pre><code class="language-text">&lt;UINavigationControllerDelegate&gt; //UINavigationController 的 delegate 属性遵守该协议。
-&lt;UITabBarControllerDelegate&gt; //UITabBarController 的 delegate 属性遵守该协议。
-&lt;UIViewControllerTransitioningDelegate&gt; //UIViewController 的 transitioningDelegate 属性遵守该协议。
+<pre><code class="language-plain_text"># 排除Pods 里的文件
+oclint-json-compilation-database -e Pods 
+# 包含进Pods里的文件
+oclint-json-compilation-database -i Pods
 </code></pre>
-
-<h2 id="toc_1">动画控制器</h2>
-
-<p>负责添加视图以及执行动画；遵守<code>&lt;UIViewControllerAnimatedTransitioning&gt;</code>协议；</p>
-
-<h2 id="toc_2">交互控制</h2>
-
-<p>通过交互手段，通常是手势来驱动动画控制器实现的动画，使得用户能够控制整个过程；遵守<code>&lt;UIViewControllerInteractiveTransitioning&gt;</code>协议；系统已经打包好现成的类供我们使用。</p>
-
-<h2 id="toc_3">转场环境(Transition Context):</h2>
-
-<p>提供转场中需要的数据；遵守<code>&lt;UIViewControllerContextTransitioning&gt;</code>协议；由 UIKit 在转场开始前生成并提供给我们提交的动画控制器和交互控制器使用。</p>
-
-<h2 id="toc_4">转场协调器(Transition Coordinator)：</h2>
-
-<p>可在转场动画发生的同时并行执行其他的动画，其作用与其说协调不如说辅助，主要在 Modal 转场和交互转场取消时使用，其他时候很少用到；遵守<code>&lt;UIViewControllerTransitionCoordinator&gt;</code>协议；由 UIKit 在转场时生成，UIViewController 在 iOS 7 中新增了方法transitionCoordinator()返回一个遵守该协议的对象，且该方法只在该控制器处于转场过程中才返回一个此类对象，不参与转场时返回 nil。</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2018/10/15</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15359519661802.html">
-                
-                  <h1>iOS CALayer动画</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">keyPath</h2>
-
-<pre><code class="language-text">transform.scale = 比例轉換
-transform.scale.x = 宽的比例轉換
-transform.scale.y = 高的比例轉換
-transform.rotation.z = 平面圖的旋轉
-opacity = 透明度
-margin=边框间隔?
-zPosition = 平面图的位置
-backgroundColor = 背景色
-cornerRadius = layer的角度
-borderWidth = 边框宽度
-contents = 内容?
-bounds = 大小?
-contentsRect = 内容矩形
-frame = 位置
-hidden = 隐藏
-mask = 标记
-maskToBounds
-position = 位置
-shadowOffset = 阴影偏移?
-shadowColor = 阴影颜色
-shadowRadius = 阴影角度
+<p><a href="https://oclint-docs.readthedocs.io/en/v0.6/usage/oclint-json-compilation-database.html">OCLint 官方文档</a>
+<a href="https://www.dazhuanlan.com/2020/03/03/5e5d602b31b74/">参考文章1</a></p>
+<h3><a id="%E6%A3%80%E6%9F%A5%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>检查单个文件</h3>
+<pre><code class="language-plain_text">oclint [options] &lt;source&gt; -- [compiler flags]
+oclint sample.cpp -- -c
 </code></pre>
+<p>想要改变oclint 的行为，options参数 需要 在文件资源前面添加，比如 导出报告：<code>-html -o report.html</code>
+想要改变 编译行为，需要在 -- 后面添加参数</p>
+<pre><code class="language-plain_text">oclint -html -o report.html sample.cpp -- -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS -I/usr/include -I/usr/local/include -c
+</code></pre>
+<pre><code class="language-bash">kIsysroot=&quot;/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk&quot;
+kFilePath=&quot;LXCategory/AppDelegate.m&quot;
+# 编译文件
+clang -x objective-c -arch armv7 -std=gnu99 -fobjc-arc -O0 -isysroot $kIsysroot -g -I./Pods/Headers -c $kFilePath
+# 分析文件
+oclint -report-type=html -o=report.html $kFilePath -- -x objective-c -arch armv7 -std=gnu99 -fobjc-arc -O0  -isysroot $kIsysroot -g -I ./Pods/Headers -c
+</code></pre>
+<h3><a id="%E6%A3%80%E6%9F%A5%E6%95%B4%E4%B8%AAios%E9%A1%B9%E7%9B%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>检查整个iOS项目</h3>
+<h4><a id="%E7%BC%96%E8%AF%91%E5%AF%BC%E5%87%BA" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>编译导出</h4>
+<ul>
+<li>编译之前先 clean一下，然后再build</li>
+<li>导出日志文件 <code>xcodebuild.log</code></li>
+<li>xcpretty导出json文件</li>
+</ul>
+<pre><code class="language-plain_text">xcodebuild clean build -project $kProjectName -target $kTargetName -configuration $kConfigurationType -sdk $kSDKName | tee xcodebuild.log | xcpretty --report json-compilation-database 
+</code></pre>
+<blockquote>
+<p>workspace项目 可以参考xcodebuild的使用方法:
+<code>xcodebuild  archive  -workspace &quot;$workspaceName&quot; -scheme &quot;$scheme&quot; -configuration  &quot;$kConfiguration&quot;</code></p>
+</blockquote>
+<h4><a id="%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>分析项目</h4>
+<ul>
+<li>命令添加分析规则</li>
+</ul>
+<pre><code class="language-plain_text">oclint-json-compilation-database -e LXCategory/Third -e  LXCategory/test -- \
+-report-type html -o ./AppOutput/oclint-out/oclint_report.html \
+-max-priority-1=100000 \
+-max-priority-2=100000 -max-priority-3=100000 \
+-disable-rule=InvertedLogic \
+-disable-rule=CollapsibleIfStatements \
+-disable-rule=UnusedMethodParameter \
+-disable-rule=LongVariableName \
+-disable-rule=ShortVariableName \
+-disable-rule=UselessParentheses \
+-disable-rule=IvarAssignmentOutsideAccessorsOrInit \
+</code></pre>
+<ul>
+<li>配置文件添加分析规则</li>
+</ul>
+<blockquote>
+<ol>
+<li>我们需要在项目根目录下创建一个名为<code>.oclint</code>的配置文件</li>
+<li>在配置文件中添加规则</li>
+<li>添加忽略文件等...</li>
+</ol>
+</blockquote>
+<p><strong>命令如下：</strong></p>
+<pre><code class="language-plain_text">oclint-json-compilation-database -e LXCategory/Third -e LXCategory/test
+</code></pre>
+<p><strong>.oclint配置文件内容如下：</strong></p>
+<pre><code class="language-plain_text">rule-configurations:
+  - key: CYCLOMATIC_COMPLEXITY # Cyclomatic complexity of a method 10
+    value: 30
+  - key: LONG_LINE
+    value: 110
+  - key: NCSS_METHOD # Number of non-commenting source statements of a method 30
+    value: 50
+  - key: LONG_VARIABLE_NAME
+    value: 40
+  - key: NESTED_BLOCK_DEPTH
+    value: 6
+  - key: MINIMUM_CASES_IN_SWITCH
+    value: 2
+  - key: SHORT_VARIABLE_NAME
+    value: 1
+  - key: TOO_MANY_METHODS
+    value: 50
+  - key: LONG_METHOD
+    value: 100
+disable-rules:
+  - RedundantLocalVariable 
+  - SHORT_VARIABLE_NAME 
+  - LongVariableName
+  - UnnecessaryElseStatement 
+  - RedundantNilCheck 
+  - RedundantIfStatement
+  - InvertedLogic
+  - AssignIvarOutsideAccessors
+  - UseObjectSubscripting
+  - BitwiseOperatorInConditional
+  - PreferEarlyExit
+  - UnusedMethodParameter
 
-<h2 id="toc_1">CALayer</h2>
+max-priority-1: 1000
+max-priority-2: 1000
+max-priority-3: 1000
+enable-clang-static-analyzer: false
 
-<h2 id="toc_2">CoreAnimation</h2>
+output: AppOutput/oclint-out/oclint_report.html
+report-type: html
+</code></pre>
+<ul>
+<li>个人Demo项目脚本如下</li>
+</ul>
+<pre><code class="language-bash">kTargetName=&quot;LXCategory&quot;
+kProjectName=&quot;LXCategory.xcodeproj&quot;
+kConfigurationType=&quot;Debug&quot;
+kSDKName=&quot;iphonesimulator&quot;
+kOuptputPath=&quot;AppOutput/oclint-out&quot;
 
-<h2 id="toc_3">CAAnimation</h2>
+# html 报告导出路径
+kHTML_Report_Name=&quot;oclint_report.html&quot;
+# 分析结果json文件名
+kJSON_Data_Name=&quot;compile_commands.json&quot;
 
-<h3 id="toc_4">基本属性说明</h3>
+# 清理、编译 -- 格式化导出json 1------------------
+xcodebuild clean build -project $kProjectName -target $kTargetName -configuration $kConfigurationType -sdk $kSDKName | tee xcodebuild.log | xcpretty --report json-compilation-database 
 
+echo &quot;准备复制json文件 到目录:${kOuptputPath}...&quot;
+# 必须要复制到项目根目录下 才能分析成功
+cp &quot;build/reports/compilation_db.json&quot; $kJSON_Data_Name
+cp &quot;build/reports/compilation_db.json&quot; &quot;${kOuptputPath}/${kJSON_Data_Name}&quot;
+
+echo &quot;复制完毕...&quot;
+
+echo &quot;准备进入导出文件目录: AppOutput/oclint-out  ...&quot;
+
+# 分析项目 2--------------------------------
+# 方案一：
+# 如果过不在命令里配置规则，就默认读取规则里的规则 配置文件里无法配置忽略文件😂
+# oclint-json-compilation-database -e LXCategory/Third -e LXCategory/test
+
+# 方案二：
+# 命令里设置参数 读取命令里的规则
+oclint-json-compilation-database -e LXCategory/Third -e  LXCategory/test -- \
+-report-type html -o AppOutput/oclint-out/oclint_report.html \
+-max-priority-1=100000 \
+-max-priority-2=100000 -max-priority-3=100000 \
+-disable-rule=InvertedLogic \
+-disable-rule=CollapsibleIfStatements \
+-disable-rule=UnusedMethodParameter \
+-disable-rule=LongVariableName \
+-disable-rule=ShortVariableName \
+-disable-rule=UselessParentheses \
+-disable-rule=IvarAssignmentOutsideAccessorsOrInit \
+
+# 处理报告文件 3--------------------------
+echo &quot;准备打开 报告文件:😁&quot;
+pwd
+sleep 2.0
+# 打开 HTML 格式的报告文件
+open &quot;${kOuptputPath}/${kHTML_Report_Name}&quot;
+# 删除项目根目录下的json分析文件
+rm $kJSON_Data_Name
+</code></pre>
+<h2><a id="%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>注意事项</h2>
+<ul>
+<li>忽略文件</li>
+</ul>
+<p>忽略文件配置  <code>-e Pods -e Pods</code>,这个只能在命令中设置，配置文件中配置不了。</p>
+<ul>
+<li>检查文件</li>
+</ul>
+<p>忽略文件配置  <code>-i Pods -i Pods</code>，这个只能在命令中设置，配置文件中配置不了。</p>
+<ul>
+<li>配置文件</li>
+</ul>
+<p>配置文件的设置，会和命令设置 有冲突，二者选其一。</p>
+
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:37:29+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336606490623.html" itemprop="url">
+		OCLint指令集文档</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<p>[toc]</p>
+<p><span id = "jump">跳转位置</span></p>
+<h2><a id="oclint%E6%8C%87%E4%BB%A4%E9%9B%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>oclint指令集</h2>
+<p>基本使用：<code>oclint [options] &lt;source0&gt; [... &lt;sourceN&gt;]</code></p>
+<pre><code class="language-plain_text">oclint [oclint options] &lt;source0&gt; [... &lt;sourceN&gt;] -- [compiler options]
+</code></pre>
+<p>想要改变oclint 的行为，options参数 需要 在文件资源前面添加，比如 导出报告：<code>-html -o report.html</code>
+想要改变 编译行为，需要在 -- 后面添加参数.</p>
+<p>以我的项目为例：</p>
+<pre><code class="language-bash">kIsysroot=&quot;/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk&quot;
+kFilePath=&quot;LXCategory/AppDelegate.m&quot;
+# 编译文件
+clang -x objective-c -arch armv7 -std=gnu99 -fobjc-arc -O0 -isysroot $kIsysroot -g -I./Pods/Headers -c $kFilePath
+# 分析文件
+oclint -report-type=html -o=report.html $kFilePath -- -x objective-c -arch armv7 -std=gnu99 -fobjc-arc -O0  -isysroot $kIsysroot -g -I ./Pods/Headers -c
+</code></pre>
+<p><img src="https://cdn.nlark.com/yuque/0/2021/png/1495953/1619527468738-5d8a1a3d-b620-4813-ab9c-6d017d67b338.png?x-oss-process=image%2Fresize%2Cw_2062" alt="编译报告" /></p>
+<blockquote>
+<p>参数说明:</p>
+</blockquote>
 <table>
 <thead>
 <tr>
-<th>属性</th>
-<th>说明</th>
+<th>参数</th>
+<th>使用说明</th>
+<th style="text-align: left">备注</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td>duration</td>
-<td>动画持续时间</td>
+<td>-R=<directory></td>
+<td>添加指定的规则加载路径</td>
+<td style="text-align: left">默认是项目根目录</td>
 </tr>
 <tr>
-<td>repeatCount</td>
-<td>重复次数，无限循环可以设置INFINITY(HUGE_VALF)或者MAXFLOAT</td>
+<td>-fatal-assembler-warnings</td>
+<td>将警告视为错误</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>repeatDuration</td>
-<td>重复时间</td>
+<td>-help</td>
+<td></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>removeOnCompletion</td>
-<td>默认为YES，代表动画执行完毕，从Layer上移除，图形会恢复到动画执行之前的状态。如果想要保持动画最终状态，那就设置为NO，并且fillMode = kCAFillModeForwards；</td>
+<td>-max-priority-1=<threshold></td>
+<td>第一优先级错误最大个数</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>fillMode</td>
-<td>当前视图在非active时段的状态比如 动画开始前 动画结束后</td>
+<td>-max-priority-2=<threshold></td>
+<td></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>beginTime</td>
-<td>可以用来延迟动画开始时间，让多个动画顺序执行</td>
+<td>-max-priority-3=<threshold></td>
+<td></td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>timingFuction</td>
-<td>速度控制函数，控制动画运行的节奏</td>
+<td>-o=<path></td>
+<td>报告文件导出路径</td>
+<td style="text-align: left"></td>
 </tr>
 <tr>
-<td>deleget</td>
-<td>代理</td>
+<td>-p=<string></td>
+<td>build路径</td>
+<td style="text-align: left"></td>
+</tr>
+<tr>
+<td>-rc=<paramemter>=<value></td>
+<td>覆盖默认的行为规则</td>
+<td style="text-align: left"></td>
+</tr>
+<tr>
+<td>-stats</td>
+<td>启用程序的统计输出</td>
+<td style="text-align: left"></td>
+</tr>
+<tr>
+<td>-text</td>
+<td>纯文本报告类型输出</td>
+<td style="text-align: left"></td>
+</tr>
+<tr>
+<td>-html</td>
+<td>HTML格式类型报告输出</td>
+<td style="text-align: left"></td>
+</tr>
+<tr>
+<td>-version</td>
+<td>oclint版本信息</td>
+<td style="text-align: left"></td>
+</tr>
+<tr>
+<td>-p <build-path></td>
+<td>用于读取编译命令数据库</td>
+<td style="text-align: left"></td>
+</tr>
+<tr>
+<td><source0></td>
+<td>待分析的资源文件</td>
+<td style="text-align: left"></td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="toc_5">fillMode 说明</h3>
-
+<h3><a id="%E8%A7%84%E5%88%99%E5%8A%A0%E8%BD%BD%E9%80%89%E9%A1%B9" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>规则加载选项</h3>
 <ul>
-<li><p><code>kCAFillModeRemoved</code> 这个是默认值，也就是说当动画开始前和动画结束后，动画对layer都没有影响，动画结束后，layer会恢复到之前的状态</p></li>
-<li><p><code>kCAFillModeForwards</code> 当动画结束后，layer会一直保持着动画最后的状态</p></li>
-<li><p><code>kCAFillModeBackwards</code> 在动画开始前，只需要将动画加入了一个layer，layer便立即进入动画的初始状态并等待动画开始。</p></li>
-<li><p><code>kCAFillModeBoth</code> 这个其实就是上面两个的合成.动画加入后开始之前，layer便处于动画初始状态，动画结束后layer保持动画最后的状态</p></li>
+<li>-R <directory> :通过-R参数可以修改规则加载路径。可以从多个路径中加载多个规则。默认从 <code>$(/path/to/bin/oclint)/../lib/oclint/rules</code> 加载规则。</li>
+<li>-rc <paramemter>=<value> ： 某些规则具有确定是否发出违规行为的阈值。这些阈值可以通过带有 <code>-rc key=value</code> 的兼职对进行更改。</li>
 </ul>
-
-<h3 id="toc_6">动画的暂停 和 恢复</h3>
-
-<pre><code class="language-text">#pragma - mark 暂停CALayer的动画
--(void)pauseLayer:(CALayer*)layer
-{
-    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
-
-    // 让CALayer的时间停止走动
-      layer.speed = 0.0;
-    // 让CALayer的时间停留在pausedTime这个时刻
-    layer.timeOffset = pausedTime;
-}
-
-#pragma - mark 恢复CALayer的动画
--(void)resumeLayer:(CALayer*)layer
-{
-    CFTimeInterval pausedTime = layer.timeOffset;
-    // 1. 让CALayer的时间继续行走
-      layer.speed = 1.0;
-    // 2. 取消上次记录的停留时刻
-      layer.timeOffset = 0.0;
-    // 3. 取消上次设置的时间
-      layer.beginTime = 0.0;
-    // 4. 计算暂停的时间(这里也可以用CACurrentMediaTime()-pausedTime)
-    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
-    // 5. 设置相对于父坐标系的开始时间(往后退timeSincePause)
-      layer.beginTime = timeSincePause;
-}
+<h3><a id="%E7%BC%96%E8%AF%91%E9%80%89%E9%A1%B9" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>编译选项</h3>
+<p>例如你平时编译一个文件：</p>
+<pre><code class="language-plain_text">clang -x objective-c -arch armv7 -std=gnu99 -fobjc-arc -O0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk -g -I./Pods/Headers -c RPActivityIndicatorManager.m
 </code></pre>
-
-<h2 id="toc_7">CABasicAnimation</h2>
-
-<h2 id="toc_8">CAKeyframeAnimation 关键帧动画</h2>
-
-<h2 id="toc_9">CAAnimationGroup 动画组</h2>
-
-<h2 id="toc_10">贝塞尔曲线</h2>
-
-<h2 id="toc_11">弹性动画 CASpringAnimation</h2>
-
-<pre><code class="language-text">CASpringAnimation *springAnimation = [CASpringAnimation animationWithKeyPath:@&quot;transform.scale&quot;];
-springAnimation.damping = 7;// 阻尼系数(学过物理的都知道)
-springAnimation.stiffness = 100;// 刚度系数（形变后产生弹力的大小的系数。刚度系数越大，弹力越大）
-springAnimation.mass = 1;// 惯性系数 代表物体质量
-springAnimation.initialVelocity = 2.0;// 初始速度 0 初始速度与运动方向一致 负数，初始速度与运动方向不一致
-springAnimation.fromValue = @0;// 初始动画改变属性的值
-springAnimation.toValue = @1;// 最终动画改变属性的值
-springAnimation.duration = 2.0;// 动画时长「敲黑板，划重点！这个很重要」
-[self.layer addAnimation:springAnimation forKey:@&quot;springScale&quot;];
+<p>当你分析这个代码时的OCLint命令将是：</p>
+<pre><code class="language-plain_text">oclint [oclint options] RPActivityIndicatorManager.m -- -x objective-c -arch armv7 -std=gnu99 -fobjc-arc -O0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk -g -I./Pods/Headers -c
 </code></pre>
-
-<h2 id="toc_12">特殊的Layer实现特殊动画</h2>
-
-<h3 id="toc_13">CATransition</h3>
-
-<h3 id="toc_14">CAReplicatorLayer</h3>
-
-<h3 id="toc_15">CAEmitterLayer 粒子引擎</h3>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2018/9/3</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15374957318613.html">
-                
-                  <h1>iOS开发之 【奇巧淫技篇】</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">调试</h2>
-
 <ul>
-<li><a href="http://www.cocoachina.com/ios/20170609/19482.html">Xcode 9 以后可以无线调试</a></li>
+<li>-p : 重定向build路径。这个路径内需要包含名为compile_commands.json的文件。如果未指定构建路径，则将尝试通过第一个输入文件的所有父路径搜索compile_commands.json。</li>
 </ul>
-
-<h2 id="toc_1">Charlse篇</h2>
-
+<h3><a id="%E6%A3%80%E6%9F%A5%E5%88%86%E6%9E%90%E9%80%89%E9%A1%B9" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>检查分析选项</h3>
+<h3><a id="%E5%AF%BC%E5%87%BA%E6%8A%A5%E5%91%8A%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>导出报告相关参数</h3>
 <ul>
-<li><a href="https://blog.csdn.net/lea__dongyang/article/details/73294751">Charles抓包HTTPS网络请求</a></li>
-<li><a href="https://www.cnblogs.com/dsxniubility/p/4621314.html">Charlse截取网络请求，搭建自己的数据服务</a></li>
+<li>
+<p>-o <path> ： 指定导出文件的路径和文件名</p>
+</li>
+<li>
+<p>-text : 导出纯文本报告</p>
+</li>
+<li>
+<p>-html : 导出HTML 格式报告</p>
+<p><code>-report-type=html -o=./oclint_report.html</code></p>
+</li>
 </ul>
-
-<h2 id="toc_2">iOS 系统NavigationBar StatusBar</h2>
-
+<h3><a id="%E9%80%80%E5%87%BA%E7%8A%B6%E6%80%81%E9%80%89%E9%A1%B9" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>退出状态选项</h3>
 <ul>
-<li><p><a href="https://note.altair21.org/2016/12/22/iOS%E4%B8%AD%E9%9A%90%E8%97%8FStatus%20Bar%E8%80%8C%E4%B8%8D%E6%94%B9%E5%8F%98Navigation%20Bar%E9%AB%98%E5%BA%A6%E7%9A%84%E5%81%9A%E6%B3%95/">显示隐藏 statusBar 不改变NavigationBar高度</a></p>
-<pre><code class="language-text">// 隐藏 状态条
-[UIApplication sharedApplication].keyWindow.windowLevel = UIWindowLevelStatusBar + 1;<br/>
-// 显示 状态条<br/>
-[UIApplication sharedApplication].keyWindow.windowLevel = UIWindowLevelNormal;
-</code></pre></li>
+<li><code>-max-priority-1 &lt;threshold&gt;</code>
+一级违例最大数量</li>
+<li><code>-max-priority-2 &lt;threshold&gt;</code>
+二级违例最大数量</li>
+<li><code>-max-priority-3 &lt;threshold&gt;</code>
+三级违例最大数量</li>
 </ul>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2018/9/21</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15329136223185.html">
-                
-                  <h1>iOS 奇怪问题搜集栈</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">更改值的问题</h2>
-
-<h3 id="toc_1">问题1</h3>
-
-<blockquote>
-<p><strong>问题描述</strong>：某个类中用一个属性，或者成员变量去标记某个功能的开关，可当修改该属性时，setter方法里面值改过来了，但是使用的地方取值判断的时候，却是未修改时的值。</p>
-</blockquote>
-
-<ul>
-<li>原因1：block引用了基本类型，引用之前__block可解决</li>
-<li>原因2：可能是某各类持有当前对象未释放，然后又重新创建了新对象导致。解决方法：要么先释放再创建，要不重用旧的对象，不去重新创建。</li>
-<li>原因3：多处同时修改这个值，导致值被覆盖。</li>
-<li>原因4：低级错误！那很有可能是，还没传值的时候，先get这个值去使用，后传入的这个值！！！！！(有人经常犯这个错)</li>
-</ul>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15329136223185.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/7/30</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15344051783893.html">
-                
-                  <h1>iOS Category 和 Extention 的本质区别【面试必备】</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p><a href="https://blog.csdn.net/lwq718691587/article/details/60964392">感谢这位博主的博客:由category为什么不能添加属性所想到的</a></p>
-
-<h2 id="toc_0">为什么category 不能添加属性，而Extention能添加？</h2>
-
-<p>这个问题从几个方面来解释下：</p>
-
-<ul>
-<li><p>什么是OC中的属性？</p>
-<p>属性，是某个对象持有的特性。一般（注意这里的一般）都是在编译期编译的时候，对象持有的属性会决定对象的内存布局，编译期过后，在运行期，一般很少更改这个布局，因为运行期更改已经定好的布局，不仅会带来一系列的内存问题，而且内存开销会很大。</p>
-<p><strong>打个比方</strong>:就像是买房摇号有几千人排队呢，你后来的去插队，那么就会导致后面的人的位置发生变化，并且还会激起民愤！</p></li>
-<li><p>作用时期</p>
-<p>Extension 是在编译期决议（起作用）<br/>
-Category 是在 运行期决议（起作用）</p></li>
-<li><p>作用原理</p>
-<p>Extention是类的一部分，能决定类的内存布局，跟对象的生命周期一致，对象生成Extention添加的属性有效，对象释放，属性释放；<br/>
-Category并不是真正的类，他的作用是动态的给类添加方法，不改变类的内存布局。</p></li>
-</ul>
-
-<h3 id="toc_1">那么，现在再来看这个问题，是不是很好解释了呢</h3>
-
-<blockquote>
-<p>因为Extention是在编译期期决议，那么他就能决定类对象的内存布局，就能正常的给类添加属性。<br/>
-而Category是在运行期决议的，动态的更改类，如果添加了属性，那就会更改内存布局；而内存布局是在编译期就定好了的，运行期更改内存布局会引发不必要的内存风险并且会有很大的内存开销。所以，苹果为了避免这种情况，禁止类别动态添加属性更改内存布局。</p>
-</blockquote>
-
-<h3 id="toc_2">但是，为什么 runtime 动态添加属性呢？</h3>
-
-<p>那是因为 runtime关联的属性，并不是在真正的属性的位置添加的，而是在 AssociationsManager 管理的一个静态区内存 AssociationsHashMap 来存储关联对象的。所有用runtime 动态关联的属性都存在这个全局的map里面。map的key就是关联的对象的内存地址，而这个map的value又是另外一个AssociationsHashMap，里面保存了关联对象的键值对。</p>
-
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fucjrrjsgvj312w0suq5z.jpg" alt="内存示意图"/></p>
-
-<h3 id="toc_3">那如何销毁RunTime关联的属性呢？</h3>
-
-<p>runtime的销毁对象函数objc_destructInstance里面会判断这个对象有没有关联对象，如果有，会调用_object_remove_assocations做关联对象的清理工作。</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2018/8/16</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15130871696781.html">
-                
-                  <h1>Effective Objective-c 2.0 学习笔记</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>编写高质量iOS与OS X代码的52个有效方法</p>
-
-<h1 id="toc_0">第一章 熟悉Objective-C</h1>
-
-<h2 id="toc_1">第1条 了解Objective-C语言的起源</h2>
-
+<p>OCLint返回以下四个退出代码之一:</p>
 <ol>
-<li>笔记：</li>
-<li>OC是动态语言，使用<code>消息结构</code>(messaging structure),而非<code>函数调用</code>(function calling)。OC由消息语言的鼻祖smalltalk演化而来。</li>
-<li>区别：消息结构的语言，其运行时执行的代码由运行环境决定；函数调用的语言，则由编译器决定。</li>
-<li>OC中对象所占内存总是分配在<code>堆空间</code>(heap space)而不会在<code>栈空间</code>(stack)上</li>
-<li><p>OC中不带*的变量，有可能会使用<code>栈空间</code>，比如CGRect 结构体</p>
-<pre><code class="language-text">struct CGRect{
-    CGPoint point;<br/>
-    CGSize size;<br/>
-};
-</code></pre>
-<p>因为创建对象需要额外开销（分配&amp;释放堆内存），从效率上，结构体性能更好。</p></li>
-<li><p>要点</p></li>
-<li><p>Objective-c为C语言天减了面向对象特性，是其超集。Objective-C是使用动态绑定的消息结构，也就是说，在运行时才会检查对象类型。接收这一消息后，究竟该执行何种代码实现，有运行期环境决定而非编译器。</p></li>
-<li><p>理解C语言的核心概念有助于写好Objective-C程序，尤其是掌握内存模型与指针。</p></li>
+<li>
+<ul>
+<li>SUCCESS</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>RULE_NOT_FOUND</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>ERROR_WHILE_PROCESSING</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>VIOLATIONS_EXCEED_THRESHOLD</li>
+</ul>
+</li>
 </ol>
+<h2><a id="oclint-json-compilation-database%E6%8C%87%E4%BB%A4%E9%9B%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>oclint-json-compilation-database 指令集</h2>
+<pre><code class="language-bash"># 使用方法
+oclint-json-compilation-database [&lt;filter0&gt; ... &lt;filterN&gt;] -- [oclint options]
+
+# 使用实例
+oclint-json-compilation-database -e LXCategory/Third -i  LXCategory/test -- \
+-report-type html -o ./AppOutput/oclint-out/oclint_report.html \
+-max-priority-1=100000 \
+-max-priority-2=100000 -max-priority-3=100000 \
+-disable-rule=InvertedLogic \
+-disable-rule=CollapsibleIfStatements \
+-disable-rule=UnusedMethodParameter \
+-disable-rule=LongVariableName \
+-disable-rule=ShortVariableName \
+-disable-rule=UselessParentheses \
+-disable-rule=IvarAssignmentOutsideAccessorsOrInit \
+</code></pre>
+<ul>
+<li>-i INCLUDES, -include INCLUDES, –include INCLUDES
+Extract files matching pattern from compile_commands.json or prior matching result</li>
+<li>-e EXCLUDES, -exclude EXCLUDES, –exclude EXCLUDES
+Remove files matching pattern from compile_commands.json or prior matching result</li>
+<li>-v show invocation command with arguments</li>
+</ul>
+<h2><a id="oclint-xcodebuild%E6%8C%87%E4%BB%A4%E9%9B%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>oclint-xcodebuild 指令集</h2>
+<blockquote>
+<p>该指令集已经不维护 使用xcpretty代替</p>
+</blockquote>
 
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15130871696781.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2017/12/12</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+			
+			
+		</div>
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-              
-
-
-			<div class="row">
-			  <div class="large-6 columns">
-			  <p class="text-left" style="padding-top:25px;">
-			   <a href="ios_2.html">&laquo; Prev Page</a>  
-			  </p>
-			  </div>
-			  <div class="large-6 columns">
-			<p class="text-right" style="padding-top:25px;">
-			 <a href="ios_4.html">&raquo; Next Page</a> 
-			</p>
-			  </div>
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:36:53+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
 			</div>
 		</div>
-	</div><!-- large 8 -->
-
- <div class="large-4 medium-4 columns">
-  <div class="hide-for-small">
-    <div id="sidebar" class="sidebar">
-          <div id="site-info" class="site-info">
-            
-                <div class="site-a-logo"><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fmpk9088gsj30sg0sgn33.jpg" /></div>
-            
-                <h1>kaelinda</h1>
-                <div class="site-des">倘若我心中的山水，你眼中能看到，我便一步一莲花祈祷</div>
-                <div class="social">
-
-
-
-
+		<h1 class="title" itemprop="name"><a href="16336606132150.html" itemprop="url">
+		ios14 Widget桌面小组件踩过的坑</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<h1><a id="%E6%89%BE%E4%B8%8D%E5%88%B0%E7%B1%BBconfigurationintent" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>找不到类 ConfigurationIntent</h1>
+<p>可能是你的项目默认带前缀，比如前缀是<code>KL</code>,那在创建<code>ConfigrationIntent</code>的时候也默认给带了前缀<code>KLConfigurationIntent</code></p>
+<h1><a id="%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99configurationintentresponse%E7%9B%B8%E5%85%B3%E7%9A%84%E9%94%99%E8%AF%AF" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>编译报错 ConfigurationIntentResponse 相关的错误</h1>
+<p><code>Showing All Messages : _OBJC_METACLASS_$_ConfigurationIntentResponse in ConfigurationIntent.o</code></p>
+<p>View --&gt; Do</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grdgurg0txj317c0eejub.jpg" alt="修改位置" /></p>
+<h1><a id="%E6%95%B0%E6%8D%AE%E5%85%B1%E4%BA%AB%E6%8A%A5%E9%94%99" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>数据共享报错</h1>
+<p><code>[User Defaults] Couldn't read values in CFPrefsPlistSource *******</code></p>
+<p>主工程的Group  共享  和 子Target读取的Group不是同一个。
+但是我的报错却是因为 主工程有四个环境，只在Release环境下支持了共享 Debug模式下没支持，添加以下即可 「+capability」方式添加Group。</p>
 
 
+			
+			
+		</div>
 
+	</article>
+  
 
-<a target="_blank" class="twitter" target="_blank" href="https://twitter.com/KaelLVLinda" title="Twitter">Twitter</a>
-<a target="_blank" class="github" target="_blank" href="https://github.com/kaelinda" title="GitHub">GitHub</a>
-<a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
-  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
-                
-              	 </div>
-          	</div>
+</div>
+<nav id="pagenavi">
+	 <a class="prev" href="ios_2.html">Prev</a>  
+	 <a class="next" href="ios_4.html">Next</a> 
+	<div class="center"><a href="archives.html">Blog Archives</a></div>
 
-             
+</nav>
 
-              <div id="site-categories" class="side-item ">
-                <div class="side-header">
-                  <h2>Categories</h2>
-                </div>
-                <div class="side-content">
-
-      	<p class="cat-list">
-        
-            <a href="reactnative.html"><strong>React-Native</strong></a>
-        
-            <a href="ios.html"><strong>iOS</strong></a>
-        
-            <a href="app.html"><strong>MacAPP</strong></a>
-        
-            <a href="swift.html"><strong>Swift</strong></a>
-        
-            <a href="js.html"><strong>JavaScript</strong></a>
-        
-            <a href="vue.html"><strong>Vue</strong></a>
-        
-            <a href="shell.html"><strong>shell</strong></a>
-        
-            <a href="%E7%BD%91%E7%BB%9C.html"><strong>网络</strong></a>
-         
-        </p>
-
-
-                </div>
-              </div>
-
-              <div id="site-categories" class="side-item">
-                <div class="side-header">
-                  <h2>Recent Posts</h2>
-                </div>
-                <div class="side-content">
-                <ul class="posts-list">
-	      
-		      
-			      <li class="post">
-			        <a href="15820796939326.html">事件传递 && 响应链</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15813277247140.html">搭建SSR</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15821643064568.html">编译 && 链接</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15808664810026.html">RunLoop攻坚</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15783926794655.html">ios 之 自动打包 一键打包脚本 【bash优化版本】</a>
-			      </li>
-		     
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		   
-		  		</ul>
-                </div>
-              </div>
-        </div><!-- sidebar -->
-      </div><!-- hide for small -->
-</div><!-- large 4 -->
-
-</div><!-- row -->
-
- <div class="page-bottom clearfix">
-  <div class="row">
-   <p class="copyright">Copyright &copy; 2015
-Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
-Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
-  </div>
 </div>
 
-        </section>
-      </div>
-    </div>
 
+
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+figure{margin: 1em 0;padding: 0;}
+  figcaption{text-align:center;}
+
+/* PrismJS 1.14.0
+https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+javascript */
+/**
+ * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
+ * @author Tim  Shedor
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  position: relative;
+  margin: .5em 0;
+  overflow: visible;
+  padding: 0;
+}
+pre[class*="language-"]>code {
+  position: relative;
+  border-left: 10px solid #358ccb;
+  box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+  background-color: #fdfdfd;
+  background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+  background-size: 3em 3em;
+  background-origin: content-box;
+  background-attachment: local;
+}
+
+code[class*="language"] {
+  max-height: inherit;
+  height: inherit;
+  padding: 0 1em;
+  display: block;
+  overflow: auto;
+}
+
+/* Margin bottom to accomodate shadow */
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background-color: #fdfdfd;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  position: relative;
+  padding: .2em;
+  border-radius: 0.3em;
+  color: #c92c2c;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline;
+  white-space: normal;
+}
+
+pre[class*="language-"]:before,
+pre[class*="language-"]:after {
+  content: '';
+  z-index: -2;
+  display: block;
+  position: absolute;
+  bottom: 0.75em;
+  left: 0.18em;
+  width: 40%;
+  height: 20%;
+  max-height: 13em;
+  box-shadow: 0px 13px 8px #979797;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+:not(pre) > code[class*="language-"]:after,
+pre[class*="language-"]:after {
+  right: 0.75em;
+  left: auto;
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #7D8B99;
+}
+
+.token.punctuation {
+  color: #5F6364;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #c92c2c;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.function,
+.token.builtin,
+.token.inserted {
+  color: #2f9c0a;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword,
+.token.class-name {
+  color: #1990b8;
+}
+
+.token.regex,
+.token.important {
+  color: #e90;
+}
+
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.token.important {
+  font-weight: normal;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+  pre[class*="language-"]:before,
+  pre[class*="language-"]:after {
+    bottom: 14px;
+    box-shadow: none;
+  }
+
+}
+
+/* Plugin styles */
+.token.tab:not(:empty):before,
+.token.cr:before,
+.token.lf:before {
+  color: #e0d7d1;
+}
+
+/* Plugin styles: Line Numbers */
+pre[class*="language-"].line-numbers.line-numbers {
+  padding-left: 0;
+}
+
+pre[class*="language-"].line-numbers.line-numbers code {
+  padding-left: 3.8em;
+}
+
+pre[class*="language-"].line-numbers.line-numbers .line-numbers-rows {
+  left: 0;
+}
+
+/* Plugin styles: Line Highlight */
+pre[class*="language-"][data-line] {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+pre[data-line] code {
+  position: relative;
+  padding-left: 4em;
+}
+pre .line-highlight {
+  margin-top: 0;
+}
+
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+    .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+    }
+
+        .line-numbers-rows > span:before {
+            content: counter(linenumber);
+            color: #999;
+            display: block;
+            padding-right: 0.8em;
+            text-align: right;
+        }
+
+</style>
   
     
 
-    <script src="asset/js/foundation.min.js"></script>
-    <script>
-      $(document).foundation();
-      function fixSidebarHeight(){
-        var w1 = $('.markdown-body').height();
-          var w2 = $('#sidebar').height();
-          if (w1 > w2) { $('#sidebar').height(w1); };
-      }
-      $(function(){
-        fixSidebarHeight();
-      })
-      $(window).load(function(){
-          fixSidebarHeight();
-      });
-     
-    </script>
 
-    
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
-
-
-  </body>
+</body>
 </html>

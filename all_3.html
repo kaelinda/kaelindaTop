@@ -1,829 +1,1549 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-    
-  kaelinda
-  
-  </title>
-  
-  
-  <link href="atom.xml" rel="alternate" title="kaelinda" type="application/atom+xml">
-    <link rel="stylesheet" href="asset/css/foundation.min.css" />
-    <link rel="stylesheet" href="asset/css/docs.css" />
-    <script src="asset/js/vendor/modernizr.js"></script>
-    <script src="asset/js/vendor/jquery.js"></script>
-  <script src="asset/highlightjs/highlight.pack.js"></script>
-  <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script>hljs.initHighlightingOnLoad();</script>
-<script type="text/javascript">
-  function before_search(){
-    var searchVal = 'site:kaelinda.top ' + document.getElementById('search_input').value;
-    document.getElementById('search_q').value = searchVal;
-    return true;
-  }
-</script>
-  </head>
-  <body class="antialiased hide-extras">
-    
-    <div class="marketing off-canvas-wrap" data-offcanvas>
-      <div class="inner-wrap">
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	kaelinda
+  	
+	</title>
 
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<nav class="top-bar docs-bar hide-for-small" data-topbar>
+	<link href="atom.xml" rel="alternate" title="kaelinda" type="application/atom+xml">
 
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	
 
-  <section class="top-bar-section">
-  <div class="row">
-      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
-        <ul id="main-menu" class="left">
-        
-        <li id=""><a target="_self" href="index.html">最近更新</a></li>
-        
-        <li id=""><a target="_self" href="archives.html">归档目录</a></li>
-        
-        <li id="ios.css"><a target="_self" href="ios.html">iOS</a></li>
-        
-        <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
-        
-        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
-        
-        <li id="js.css"><a target="_self" href="js.html">JS</a></li>
-        
-        <li id="shell.css"><a target="_self" href="shell.html">shell</a></li>
-        
-        <li id="coding.css"><a target="_self" href="coding.html">编程</a></li>
-        
-        <li id="live.css"><a target="_self" href="live.html">随笔</a></li>
-        
-        <li id="app.css"><a target="_blank" href="app.html">APP推荐</a></li>
-        
-        </ul>
-
-        <ul class="right" id="search-wrap">
-          <li>
-<form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
-    <input type="hidden" id="search_q" name="q" value="" />
-    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
-</form>
-</li>
-          </ul>
-      </div></div>
-  </div>
-  </section>
-
-</nav>
-
-        <nav class="tab-bar show-for-small">
-  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
-    <span> &nbsp; kaelinda</span>
-  </a>
-</nav>
-
-<aside class="left-off-canvas-menu">
-      <ul class="off-canvas-list">
-        
-        <li><a target="_self" href="index.html">最近更新</a></li>
-        
-        <li><a target="_self" href="archives.html">归档目录</a></li>
-        
-        <li><a target="_self" href="ios.html">iOS</a></li>
-        
-        <li><a target="_self" href="swift.html">Swift</a></li>
-        
-        <li><a target="_self" href="reactnative.html">RN</a></li>
-        
-        <li><a target="_self" href="js.html">JS</a></li>
-        
-        <li><a target="_self" href="shell.html">shell</a></li>
-        
-        <li><a target="_self" href="coding.html">编程</a></li>
-        
-        <li><a target="_self" href="live.html">随笔</a></li>
-        
-        <li><a target="_blank" href="app.html">APP推荐</a></li>
-        
-
-    <li><label>Categories</label></li>
-
-        
-            <li><a href="reactnative.html">React-Native</a></li>
-        
-            <li><a href="ios.html">iOS</a></li>
-        
-            <li><a href="app.html">MacAPP</a></li>
-        
-            <li><a href="swift.html">Swift</a></li>
-        
-            <li><a href="js.html">JavaScript</a></li>
-        
-            <li><a href="vue.html">Vue</a></li>
-        
-            <li><a href="shell.html">shell</a></li>
-        
-            <li><a href="%E7%BD%91%E7%BB%9C.html">网络</a></li>
-         
-
-      </ul>
-    </aside>
-
-<a class="exit-off-canvas" href="#"></a>
-
-
-        <section id="main-content" role="main" class="scroll-container">
-        
-       
-
- <script type="text/javascript">
-	$(function(){
-		$('#menu_item_index').addClass('is_active');
-	});
-</script>
-<div class="row">
-	<div class="large-8 medium-8 columns">
-		<div class="markdown-body home-categories">
-		
-			<div class="article">
-                <a class="clearlink" href="15422507660830.html">
-                
-                  <h1>使用Masonry，布局UIScrollViewView</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p><code>UIScrollView</code>比较特殊，frame布局时我们需要设置<code>contentSize</code>属性</p>
-
-<ol>
-<li><p>初始化ScrollView并添加到父视图 并 进行约束</p>
-<pre><code class="language-text">// ------ 初始化ScrollView
-UIScrollView *scrollView = UIScrollView.new;<br/>
-self.scrollView = scrollView;<br/>
-scrollView.backgroundColor = [UIColor grayColor];<br/>
-// ------ 添加到父视图<br/>
-[self addSubview:scrollView];<br/>
-// ------ 对ScrollView进行约束<br/>
-[self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {<br/>
-    make.edges.equalTo(self);<br/>
-}];
-</code></pre></li>
-<li><p>初始化ContentView 并进行约束</p>
-<pre><code class="language-text">UIView* contentView = UIView.new;
-// 添加contentView 到ScrollView上<br/>
-[self.scrollView addSubview:contentView];<br/>
-// 约束contentView<br/>
-[contentView makeConstraints:^(MASConstraintMaker *make) {<br/>
-    make.edges.equalTo(self.scrollView);<br/>
-    make.width.equalTo(self.scrollView);<br/>
-}];
-</code></pre></li>
-<li><p>添加子视图到contentView上 并再次对contentView进行约束</p>
-<pre><code class="language-text">UIView *lastView;
-CGFloat height = 25;<br/>
-for (int i = 0; i &lt; 10; i++) {<br/>
-    UIView *view = UIView.new;<br/>
-    view.backgroundColor = [self randomColor];<br/>
-    // 注意！！！ 这里是添加视图到 contentView上<br/>
-    [contentView addSubview:view];<br/>
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];<br/>
-    [view addGestureRecognizer:singleTap];<br/>
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {<br/>
-        make.top.equalTo(lastView ? lastView.bottom : @0);<br/>
-        make.left.equalTo(@0);<br/>
-        make.width.equalTo(contentView.width);<br/>
-        make.height.equalTo(@(height));<br/>
-    }];<br/>
-    height += 25;<br/>
-    lastView = view;<br/>
-}<br/>
-// ------&gt;&gt;&gt;&gt;&gt;&gt;: 这里 很关键！！！！<br/>
-[contentView makeConstraints:^(MASConstraintMaker *make) {<br/>
-    make.bottom.equalTo(lastView.bottom);<br/>
-}];
-</code></pre></li>
-</ol>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15422507660830.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/11/15</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15522686353535.html">
-                
-                  <h1>iOS 动画全解 (1)</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">iOS动画&quot;概述&quot;（瞎说一通）</h2>
-
-<p>Apple 为开发者提供的视图动画框架有如下几种：</p>
-
-<ul>
-<li><code>UIKit</code>：高级别框架,允许程序员创建视图,窗口,按钮,和其他 UI 相关的控件。它也将低层的 API 组合到一个 易于使用的高级别 API 中。</li>
-<li><code>Quartz 2D</code>：运行内部的用于 iOS 画图的主引擎;UIKit 使用了 Quarz。 重点在画图。</li>
-<li><p><code>Core Graphics</code>(核心图层)：加载图片，绘制图片等的框架重点在图形图片的渲染。</p></li>
-<li><p><code>Core Animation</code>：iOS上的最基础的，应用最广泛的动画框架。（加载到CALayer上的动画）<br/>
-<code>Core Animation</code> 其实是一个令人误解的命名。你可能认为它只是用来做动画的，但实际上它是从一个叫做<code>Layer Kit</code>这么一个不怎么和动画有关的名字演变而来，所以做动画这只是<code>Core Animation</code>特性的冰山一角。 <code>Core Animation</code>是一个复合引擎，它的职责就是尽可能快地组合屏幕上不同的可视内容，这个内容是被分解成独立的图层，存储在一个叫做图层树的体系之中。于是这个树形成了<code>UIKit</code>以及在iOS应用程序当中你所能在屏幕上 看见的一切的基础。</p></li>
-</ul>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15522686353535.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2019/3/11</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15402889434646.html">
-                
-                  <h1>Swift中类（Class）和 结构体（Struct）</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">分析</h2>
-
-<p>共同点：</p>
-
-<ul>
-<li>定义属性用于存储值</li>
-<li>定义方法用于提供功能</li>
-<li>定义下标操作使得可以通过下标语法来访问实例所包含的值</li>
-<li>定义构造器用于生成初始化值</li>
-<li>通过扩展以增加默认实现的功能</li>
-<li>实现协议以提供某种标准功能</li>
-</ul>
-
-<p>与结构体相比，类还有如下的附加功能：</p>
-
-<ul>
-<li>继承允许一个类继承另一个类的特征</li>
-<li>类型转换允许在运行时检查和解释一个类实例的类型</li>
-<li>析构器允许一个类实例释放任何其所被分配的资源</li>
-<li>引用计数允许对一个类的多次引用（对象引用）结构体总是通过被复制的方式在代码中传递，不使用引用计数。</li>
-</ul>
-
-<h2 id="toc_1">逐一对比</h2>
-
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15402889434646.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/10/23</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='swift.html'>Swift</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15501356584731.html">
-                
-                  <h1>UITableView顶部空白的几种解决办法</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<ul>
-<li>一、iOS7在Controller中增加了<code>automaticallyAdjustsScrollViewInsets</code>这个属性，当设置为YES时（默认YES），如果视图里面存在唯一一个UIScrollView或其子类View，那么它会自动设置相应的内边距，这样可以让scroll占据整个视图，又不会让导航栏遮盖。但是这个属性在iOS11之后被遗弃了，新增了一个<code>contentInsetAdjustmentBehavior</code>属性：
-<code>
-if (@available(iOS 11.0, *)) {        <br/>
-    self.tableview.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;    <br/>
-}else {<br/>
-    self.automaticallyAdjustsScrollViewInsets = NO;<br/>
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
-</code></li>
-</ul>
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
 
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15501356584731.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2019/2/14</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+				 	<div class="profilepic">
+						<img src="https://ws1.sinaimg.cn/large/006tNc79ly1fmpk9088gsj30sg0sgn33.jpg" style="width:160px;">
+					</div>
+            	
+					
+					<h1><a href="index.html">kaelinda</a></h1>
+					<p class="subtitle">倘若我心中的山水，你眼中能看到，我便一步一莲花祈祷</p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="_self" href="index.html">最近更新</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">归档目录</a></li>
+						
+						  <li id="ios.css"><a target="_self" href="ios.html">iOS</a></li>
+						
+						  <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
+						
+						  <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
+						
+						  <li id="js.css"><a target="_self" href="js.html">JS</a></li>
+						
+						  <li id="shell.css"><a target="_self" href="shell.html">shell</a></li>
+						
+						  <li id="py.css"><a target="_self" href="py.html">Python</a></li>
+						
+						</ul>
+					</nav>
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15397592871272.html">
-                
-                  <h1>iOS 竖屏NavigationController present 到只支持横屏的界面 版本解析</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">各版本对比</h2>
-
-<ul>
-<li><p>iOS9 和 iOS10 差别就是返回时 导航会有自己动画<br/>
-<img src="https://ws1.sinaimg.cn/large/006tNbRwly1fwb87gvzoxg30890gob2f.gif" alt="iOS9"/> <img src="https://ws4.sinaimg.cn/large/006tNbRwly1fwb88tdp6hg30860gnx6t.gif" alt="iOS10"/> </p></li>
-<li><p>iOS11 和 iOS12 两者没什么区别， 但是跟之前版本变化很大 会有 20像素的导航条空白区域（真机上的现象是，vc.view上移20像素（iPhone X系列可能会是44像素非常明显））<br/>
-<img src="https://ws1.sinaimg.cn/large/006tNbRwly1fwb89abhgbg30890gnnpk.gif" alt="iOS11"/> <img src="https://ws1.sinaimg.cn/large/006tNbRwly1fwb8d01n7pg30840goe87.gif" alt="iOS12"/></p></li>
-</ul>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2018/10/17</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15450161964215.html">
-                
-                  <h1>【精选】Mac 手动内存清理教程</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">一、查看内存占用情况</h2>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/412206-4734b7ee4a571010.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"/></p>
-
-<h2 id="toc_1">二、管理内存</h2>
-
-<p><img src="http://upload-images.jianshu.io/upload_images/412206-fe84152bd070aca0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"/></p>
-
-<h3 id="toc_2">1、废纸篓</h3>
-
-<p>清理非废纸篓的道理我就不废话了吧。</p>
+					<nav id="sub-nav">
+						<div class="social">
 
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15450161964215.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/12/17</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15477923365213.html">
-                
-                  <h1>iOS 获取汉字【简体中文】笔画数</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">思路</h2>
-
-<ul>
-<li><p>汉字字典库匹配笔画数</p>
-<ul>
-<li>优点： 实现逻辑简单，字典库好扩展</li>
-<li>缺点： 内存消耗较大（不过也能承担）</li>
-</ul>
-<p><strong>思路：</strong> 这种实现思路是比较简单的，具体思路是将简体汉字所有字都穷举出来，然后分别匹配上指定的笔画数，当做一个大的数据库，每次都去查询一下。</p></li>
-<li><p>汉字GBK编码匹配笔画数</p>
-<ul>
-<li>优点：相比字典库匹配，效率高，速度快</li>
-<li>缺点：添加编码库不好添加，不好扩展</li>
-</ul>
-<p><strong>思路：</strong> 这种实现方案是需要获取GBK编码分别对应的笔画数，放到指定数组（数据库）中，每次通过输入的汉字 转码为二进制，通过二进制的值 匹配数据库中的笔画数。</p>
-<p>-**************************<br/>
-废话少说，盘它！<br/>
--**************************</p></li>
-</ul>
 
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15477923365213.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2019/1/18</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15468313301172.html">
-                
-                  <h1>内存区域</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">1、介绍下内存区域</h2>
-
-<ul>
-<li><p>栈(Stack)</p>
-<ul>
-<li>【特点】：先进先出</li>
-<li>【分配和释放】：编译器自动分配、自动释放；</li>
-<li>存放函数的参数值、局部变量，方法调用的实参也是保存在栈区的。</li>
-<li>栈是系统数据结构，对应线程/进程是唯一的</li>
-<li>优点是快速高效，缺点是有限制，数据不灵活</li>
-</ul></li>
-<li><p>堆(Heap)</p></li>
-<li><p>全局区(静态区)</p></li>
-<li><p>常量区/数据段</p></li>
-<li><p>代码区/代码段</p></li>
-</ul>
-
-<p>【面试】 阿里p6面试题</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2019/1/7</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15261167596297.html">
-                
-                  <h1>OC 多线程之 GCD知识从基础到进阶 （1）</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2 id="toc_0">概念认知</h2>
-
-<p>基本概念：</p>
-
-<ul>
-<li><p>GCD 全称 (Grand Center Dispatch),翻译成通俗中文“牛B的中心调度机制”</p></li>
-<li><p>线程：执行任务调度的最小单位</p></li>
-<li><p>任务：就是一段代码，GCD中就是block中的内容。执行任务有两种方式：同步执行（sync）和异步执行（async）。两者的主要区别是：是否等待队列的任务执行结束，以及是否具备开启新线程的能力</p></li>
-<li><p>队列：用来存放任务的线性结构，采用 FIFO（先进先出）的原则。</p></li>
-</ul>
 
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15261167596297.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/5/12</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15409691048860.html">
-                
-                  <h1>【Swift笔记】引用计数</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<ul>
-<li>和OC一样，Swift也是用ARC,也会有循环引用导致内存泄露</li>
-<li>吧如果属性是可选类型，只能用weak修饰符避免循环引用。所引用对象被回收后改属性会被自动置为nil</li>
-<li>如果属性不是可选类型，只能用无主引用（unowned）。所引用对象被回收后属性不会被置为nil，此时访问会导致运行时错误。类似OC中的unsafe_unretained修饰符</li>
-</ul>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2018/10/31</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='swift.html'>Swift</a></span>
-          				   
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-              
 
 
-			<div class="row">
-			  <div class="large-6 columns">
-			  <p class="text-left" style="padding-top:25px;">
-			   <a href="all_2.html">&laquo; Prev Page</a>  
-			  </p>
-			  </div>
-			  <div class="large-6 columns">
-			<p class="text-right" style="padding-top:25px;">
-			 <a href="all_4.html">&raquo; Next Page</a> 
-			</p>
-			  </div>
+
+
+<a target="_blank" class="github" target="_blank" href="https://github.com/Kaelzzs" title="GitHub">GitHub</a>
+<a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:51:39+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
 			</div>
 		</div>
-	</div><!-- large 8 -->
-
- <div class="large-4 medium-4 columns">
-  <div class="hide-for-small">
-    <div id="sidebar" class="sidebar">
-          <div id="site-info" class="site-info">
-            
-                <div class="site-a-logo"><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fmpk9088gsj30sg0sgn33.jpg" /></div>
-            
-                <h1>kaelinda</h1>
-                <div class="site-des">倘若我心中的山水，你眼中能看到，我便一步一莲花祈祷</div>
-                <div class="social">
-
-
-
-
-
-
-
-
-<a target="_blank" class="twitter" target="_blank" href="https://twitter.com/KaelLVLinda" title="Twitter">Twitter</a>
-<a target="_blank" class="github" target="_blank" href="https://github.com/kaelinda" title="GitHub">GitHub</a>
-<a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
-  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
-                
-              	 </div>
-          	</div>
-
-             
-
-              <div id="site-categories" class="side-item ">
-                <div class="side-header">
-                  <h2>Categories</h2>
-                </div>
-                <div class="side-content">
-
-      	<p class="cat-list">
+		<h1 class="title" itemprop="name"><a href="16336614997940.html" itemprop="url">
+		WKWebView从入门到放弃 (一 入门)</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<h1><a id="wkwebview%E5%88%9D%E5%A7%8B%E5%8C%96" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKWebView 初始化</h1>
+<h2><a id="%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%AF%BC%E5%85%A5%E5%A4%B4%E6%96%87%E4%BB%B6%E5%A3%B0%E6%98%8Ewebview%E5%B1%9E%E6%80%A7" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第一步：导入头文件 声明webview属性</h2>
+<pre><code class="language-plain_text">// 导入头文件
+#import &lt;WebKit/WebKit.h&gt;
+// 声明webView属性
+@property (nonatomic, strong) WKWebView *webView;
+</code></pre>
+<h2><a id="%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%88%9D%E5%A7%8B%E5%8C%96webview" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第二步 ： 初始化webView</h2>
+<p>webview初始化位置**【尽量提前】**，如果过项目需要，甚至可以在APP启动后的某个特殊时机，预初始化一个全局webView。这样能够提前让项目初始化web内核，以减少初次进入webView的等待时间。 牺牲一定的性能，换取web启动时间，根据需求决定，我这里是放到了ViewController的ViewDidload方法中了。</p>
+<pre><code class="language-plain_text">// 使用webconfig方式初始化webView
+_webView = [[WKWebView alloc] initWithFrame:frame configuration:self.webConfig];
+ // UI代理 主要是 alert 等弹窗的代理；
+ // 这里你可以设置一个专门的NSObject类遵守WKUIDelegate协议来处理回调方法 设置： _webView.UIDelegate = self.uiDelegater;
+ _webView.UIDelegate = self;
+ // 导航代理 同理 可设置一个代理类处理 导航跳转问题 继承 WKNavigationDelegate 协议 
+ _webView.navigationDelegate = self;
+ // 是否允许手势左滑返回上一级, 类似导航控制的左滑返回
+ _webView.allowsBackForwardNavigationGestures = YES;
+_webView.backgroundColor = [UIColor clearColor];
+// scrollView 滚动速度 UIScrollViewDecelerationRateFast：快速 UIScrollViewDecelerationRateNormal:正常速度
+_webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
+//_webView.customUserAgent = @&quot;userAgent&quot;;// 自定义请求 userAgent
+//_webView.allowsLinkPreview = YES;// 默认 不支持按压预览
+    
+//添加监测网页加载进度的观察者
+ [_webView addObserver:self forKeyPath:@&quot;estimatedProgress&quot; options:NSKeyValueObservingOptionNew context:@&quot;LXWKWebViewController&quot;];
+//添加监测网页标题title的观察者
+ [_webView addObserver:self forKeyPath:@&quot;title&quot; options:NSKeyValueObservingOptionNew context:nil];
+</code></pre>
+<p><strong>另外还有初始化方法：</strong></p>
+<pre><code class="language-plain_text">// 通过制定URL初始化webView 太过固定
+ - (instancetype)initWithURL:(NSURL *)URL;
+ 
+ // 可定制webView的 网络策略 和 超时时间 缺点同上
+ - (instancetype)initWithURL:(NSURL *)URL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval NS_DESIGNATED_INITIALIZER;
+</code></pre>
+<h2><a id="%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%8A%A0%E8%BD%BD%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第三步：加载网络请求</h2>
+<p>加载网页地址，如果需要记得在info.plist文件中提前开启ATS， NSAllowsArbitraryLoads --&gt; YES，允许http的网页请求。</p>
+<h3><a id="webrequest%E8%AF%B7%E6%B1%82%E6%97%B6%E6%9C%BA" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>webRequest请求时机</h3>
+<p>某些机型中 loadRequest 方法  放在viewDidload方法中去执行，会出现webView白屏现象，所以我这边放到了viewwillappear方法中。这里要记得判断是否是初次viewwillappear，避免网页频繁刷新。</p>
+<pre><code class="language-plain_text">if (self.url &amp;&amp; !_request){
+    //忽略本地缓存
+    _request = [NSURLRequest requestWithURL:self.url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60];
+    [self.webView loadRequest:_request];
+}
+</code></pre>
+<h3><a id="webrequest%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>webRequest请求参数</h3>
+<ul>
+<li>需要注意的属性时 <code>NSURLRequestCachePolicy</code>：</li>
+</ul>
+<pre><code class="language-plain_text">typedef NS_ENUM(NSUInteger, NSURLRequestCachePolicy)
+{
+    NSURLRequestUseProtocolCachePolicy = 0,// 默认 启用网页缓存，APP重启后会清空缓存
+    NSURLRequestReloadIgnoringLocalCacheData = 1,// 忽略本地缓存，每次都用最新的网络数据
+    NSURLRequestReloadIgnoringLocalAndRemoteCacheData = 4,// 不仅忽略本地缓存，同时也忽略代理服务器或其他中间介质目前已有的、协议允许的缓存
+    NSURLRequestReloadIgnoringCacheData = NSURLRequestReloadIgnoringLocalCacheData,// 同上
+    NSURLRequestReturnCacheDataElseLoad = 2,// 无论缓存是否过期，先使用本地缓存数据。如果缓存中没有请求所对应的数据，那么从原始地址加载数据
+    NSURLRequestReturnCacheDataDontLoad = 3,// 无论缓存是否过期，先使用本地缓存数据。如果缓存中没有请求所对应的数据，那么放弃从原始地址加载数据，请求视为失败（即：“离线”模式）。
+    NSURLRequestReloadRevalidatingCacheData = 5,// 从原始地址确认缓存数据的合法性后，缓存数据就可以使用，否则从原始地址加载。
+};
+</code></pre>
+<ul>
+<li>超时时间不需要多说 一般最多 15-30s为宜</li>
+</ul>
+<h1><a id="%E7%BD%91%E9%A1%B5%E5%81%8F%E5%A5%BD%E8%AE%BE%E7%BD%AEwkwebviewconfiguration" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>网页偏好设置:WKWebViewConfiguration</h1>
+<h2><a id="%E4%B8%8A%E4%BB%A3%E7%A0%81getter-function" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>上代码 Getter Function</h2>
+<pre><code class="language-plain_text">- (WKWebViewConfiguration *)webConfig{
+    if (!_webConfig) {
+        _webConfig = [[WKWebViewConfiguration alloc]init];
+        _webConfig.preferences.javaScriptEnabled = YES;//打开js交互
         
-            <a href="reactnative.html"><strong>React-Native</strong></a>
+        // 是使用h5的视频播放器在线播放, 还是使用原生播放器全屏播放
+        _webConfig.allowsInlineMediaPlayback = YES;
+        //设置视频是否需要用户手动播放  设置为NO则会允许自动播放
+        _webConfig.requiresUserActionForMediaPlayback = YES;
+        //设置是否允许画中画技术 在特定设备上有效
+        _webConfig.allowsPictureInPictureMediaPlayback = YES;
+        //设置请求的User-Agent信息中应用程序名称 iOS9后可用
+        _webConfig.applicationNameForUserAgent = @&quot;ChinaDailyForiPad&quot;;
+        // 设置 preferences 主要是 网页浏览属性 支持js 交互什么的
+        _webConfig.preferences = self.webPreference;
+        // OC JS交互的方法
+        _webConfig.userContentController = self.webUserContentController;
+        // 识别h5中的邮箱电话识别
+        if (@available(iOS 10.0, *)) {
+            _webConfig.dataDetectorTypes = UIDataDetectorTypeAll;
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    return _webConfig;
+}
+
+- (WKWebViewConfiguration *)webConfig{
+    if (!_webConfig) {
+        _webConfig = [[WKWebViewConfiguration alloc]init];        
+        // 是使用h5的视频播放器在线播放, 还是使用原生播放器全屏播放
+        _webConfig.allowsInlineMediaPlayback = YES;
+        //设置视频是否需要用户手动播放  设置为NO则会允许自动播放
+        _webConfig.requiresUserActionForMediaPlayback = YES;
+        //设置是否允许画中画技术 在特定设备上有效
+        _webConfig.allowsPictureInPictureMediaPlayback = YES;
+        //设置请求的User-Agent信息中应用程序名称 iOS9后可用
+        _webConfig.applicationNameForUserAgent = @&quot;ChinaDailyForiPad&quot;;
+        // 设置 preferences 主要是 网页浏览属性 支持js 交互什么的
+        _webConfig.preferences = self.webPreference;
+        // OC JS交互的方法
+        _webConfig.userContentController = self.webUserContentController;
+        // 识别h5中的邮箱电话识别
+        if (@available(iOS 10.0, *)) {
+            _webConfig.dataDetectorTypes = UIDataDetectorTypeAll;
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    return _webConfig;
+}
+- (WKPreferences *)webPreference{
+    if (!_webPreference) {
+        // 创建设置对象
+        _webPreference = [[WKPreferences alloc]init];
+        //最小字体大小 当将javaScriptEnabled属性设置为NO时，可以看到明显的效果
+        _webPreference.minimumFontSize = 10;
+        //设置是否支持javaScript 默认是支持的
+        _webPreference.javaScriptEnabled = YES;
+        // 在iOS上默认为NO，表示是否允许不经过用户交互由javaScript自动打开窗口
+        _webPreference.javaScriptCanOpenWindowsAutomatically = YES;
+        if (@available(iOS 13.0, *)) {// 恶意软件警告
+            _webPreference.fraudulentWebsiteWarningEnabled = YES;
+        }
+    }
+    return _webPreference;
+}
+- (WKUserContentController *)webUserContentController{
+    if (!_webUserContentController) {
+        _webUserContentController = [[WKUserContentController alloc] init];
+    }
+    return _webUserContentController;
+}
+</code></pre>
+<h2><a id="wkwebviewconfiguration%E7%BB%93%E6%9E%84" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKWebViewConfiguration 结构</h2>
+<p>首先看一下这个类的结构</p>
+<ul>
+<li><code>WKWebViewConfiguration</code>：这个类专门用来配置WKWebView
+<ul>
+<li><code>WKPreference</code>:这个类用来进行相关webView【偏好设置】</li>
+<li><code>WKProcessPool</code>:用来配置进程池，与网页视图的资源共享有关</li>
+<li><code>WKUserContentController</code>:主要用来做native与JavaScript的交互管理
+<ul>
+<li><code>WKUserScript</code>:用于进行JavaScript注入</li>
+<li><code>WKScriptMessageHandler</code>:用来处理JavaScript回调native的方法</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a id="wknavigationdelegate" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKNavigationDelegate</h2>
+<h3><a id="%E7%BD%91%E9%A1%B5%E7%8A%B6%E6%80%81%E5%9B%9E%E8%B0%83" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>网页状态回调</h3>
+<pre><code class="language-plain_text">#pragma mark - **************** WKNavigationDelegate
+// 页面开始加载时调用
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {}
+// 页面加载失败时调用
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {}
+// 当内容开始返回时调用
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {}
+// 页面加载完成之后调用
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {}
+//提交发生错误时调用
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {}
+// 接收到服务器跳转请求即服务重定向时之后调用
+- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation {}
+</code></pre>
+<h3><a id="wknavigationaction%E7%BD%91%E9%A1%B5%E6%B4%BB%E5%8A%A8%E5%9B%9E%E8%B0%83" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKNavigationAction 网页活动回调</h3>
+<pre><code class="language-plain_text">// 根据WebView对于即将跳转的HTTP请求头信息和相关信息来决定是否跳转
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    NSString *urlStr = navigationAction.request.URL.absoluteString;
+    urlStr = [urlStr stringByRemovingPercentEncoding];
+    // 处理 H5 重定向问题
+    NSString *supportDomain = @&quot;www.***.com&quot;;
+
+    WKFrameInfo *frameInfo = navigationAction.targetFrame;
+    if (![frameInfo isMainFrame] &amp;&amp; [urlStr containsString:supportDomain]) {
+        [webView loadRequest:navigationAction.request];
+        self.url = navigationAction.request.URL;
+    }
+    // 自定义规则 拦截内部跳转
+    if ([urlStr hasPrefix:schemeHeader]) {
+        [ControllerUtils showViewWithURL:urlStr];
         
-            <a href="ios.html"><strong>iOS</strong></a>
-        
-            <a href="app.html"><strong>MacAPP</strong></a>
-        
-            <a href="swift.html"><strong>Swift</strong></a>
-        
-            <a href="js.html"><strong>JavaScript</strong></a>
-        
-            <a href="vue.html"><strong>Vue</strong></a>
-        
-            <a href="shell.html"><strong>shell</strong></a>
-        
-            <a href="%E7%BD%91%E7%BB%9C.html"><strong>网络</strong></a>
-         
-        </p>
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+    // 微信跳转
+    if ([urlStr hasPrefix:@&quot;weixin://&quot;]) {
+        if ([[UIApplication sharedApplication] canOpenURL:navigationAction.request.URL]) {
+            [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
+        }
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+    NSLog(@&quot;发送跳转请求：%@&quot;,urlStr);
+    // 允许跳转
+    decisionHandler(WKNavigationActionPolicyAllow);
+}
+// 根据客户端受到的服务器响应头以及response相关信息来决定是否可以跳转
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
+    NSString * urlStr = navigationResponse.response.URL.absoluteString;
+    urlStr=[urlStr stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];//个人情况，url里面会加入中文
+    NSLog(@&quot;当前跳转地址：%@&quot;,urlStr);
+    //允许跳转
+    decisionHandler(WKNavigationResponsePolicyAllow);
+    //不允许跳转
+    //decisionHandler(WKNavigationResponsePolicyCancel);
+}
+
+/// 需要响应身份验证时调用 同样在block中需要传入用户身份凭证  ios 10.3 下 崩溃
+- (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler{
+    // 判断服务器采用的验证方法
+    if (challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust) {
+         // 如果没有错误的情况下 创建一个凭证，并使用证书
+        if (challenge.previousFailureCount == 0) {
+            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+            completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
+        }else {
+        // 验证失败，取消本次验证
+            completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
+        }
+    }else {
+        completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
+
+    }
+}
+
+//进程被终止时调用
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{
+//    [webView reload];
+}
+</code></pre>
+<h2><a id="wkuidelegate-ui%E4%BB%A3%E7%90%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKUIDelegate UI代理</h2>
+<pre><code class="language-plain_text">#pragma mark - **************** WKUIDelegate
+/**
+ *  web界面中有弹出警告框时调用
+ *
+ *  @param webView           实现该代理的webview
+ *  @param message           警告框中的内容
+ *  @param completionHandler 警告框消失调用
+ */
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
+
+    // 为避免 scheme 跳转界面后 alert弹出弹窗 崩溃问题，做一个兼容（VC A,模态跳转到B后，不能再由A模态跳转B了）
+    if (![[self appKeyWindowTopVC] isKindOfClass:[self.vcDelegate class]]) {
+        completionHandler();
+        return;
+    }
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@&quot;&quot; message:message?:@&quot;&quot; preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:([UIAlertAction actionWithTitle:@&quot;确定&quot; style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler();
+    }])];
+    [self.vcDelegate presentViewController:alertController animated:YES completion:nil];
+
+}
+// ------------- 确认框
+//JavaScript调用confirm方法后回调的方法 confirm是js中的确定框，需要在block中把用户选择的情况传递进去
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
+    // 同上
+    if (![[self appKeyWindowTopVC] isKindOfClass:[self.vcDelegate class]]) {
+        completionHandler(NO);
+        return;
+    }
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@&quot;&quot; message:message?:@&quot;&quot; preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:([UIAlertAction actionWithTitle:@&quot;取消&quot; style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(NO);
+    }])];
+    [alertController addAction:([UIAlertAction actionWithTitle:@&quot;确定&quot; style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(YES);
+    }])];
+    [self.vcDelegate presentViewController:alertController animated:YES completion:nil];
+}
+
+// ------- 输入框
+//JavaScript调用prompt方法后回调的方法 prompt是js中的输入框 需要在block中把用户输入的信息传入
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler{
+    // 同上
+    if (![[self appKeyWindowTopVC] isKindOfClass:[self.vcDelegate class]]) {
+        completionHandler(@&quot;&quot;);
+        return;
+    }
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:prompt message:@&quot;&quot; preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.text = defaultText;
+    }];
+    [alertController addAction:([UIAlertAction actionWithTitle:@&quot;OK&quot; style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(alertController.textFields[0].text?:@&quot;&quot;);
+    }])];
+    [self.vcDelegate presentViewController:alertController animated:YES completion:nil];
+}
 
 
-                </div>
-              </div>
+// 页面弹出窗口 _blank 处理
+- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+    if (!navigationAction.targetFrame.isMainFrame) {
+        [webView loadRequest:navigationAction.request];
+    }
+    return nil;
+}
 
-              <div id="site-categories" class="side-item">
-                <div class="side-header">
-                  <h2>Recent Posts</h2>
-                </div>
-                <div class="side-content">
-                <ul class="posts-list">
-	      
-		      
-			      <li class="post">
-			        <a href="15820796939326.html">事件传递 && 响应链</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15813277247140.html">搭建SSR</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15821643064568.html">编译 && 链接</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15808664810026.html">RunLoop攻坚</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="15783926794655.html">ios 之 自动打包 一键打包脚本 【bash优化版本】</a>
-			      </li>
-		     
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		   
-		  		</ul>
-                </div>
-              </div>
-        </div><!-- sidebar -->
-      </div><!-- hide for small -->
-</div><!-- large 4 -->
+#pragma mark - **************** tool
+- (UIViewController *)appKeyWindowTopVC{
+    UITabBarController *rootVC = (UITabBarController*)[(AppDelegate *)[UIApplication sharedApplication].delegate window].rootViewController;
+    UIViewController *presentedVC = rootVC;
+    while (presentedVC.presentedViewController) {
+        presentedVC = presentedVC.presentedViewController;
+    }
+    return presentedVC;
+}
+</code></pre>
+<p>到这里,WKWebView基本上就可以使用了。</p>
 
-</div><!-- row -->
 
- <div class="page-bottom clearfix">
-  <div class="row">
-   <p class="copyright">Copyright &copy; 2015
-Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
-Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
-  </div>
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:50:29+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336614293958.html" itemprop="url">
+		WKWebview加载速度优化</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<h1><a id="%E9%AB%98%E5%BA%A6%E8%AE%A1%E7%AE%97%E9%97%AE%E9%A2%98%E4%BC%98%E5%8C%96" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>高度计算问题优化</h1>
+<p><a href="https://xibhe.com/2018/02/03/WKWebView-disabuse/index.html">使用WKWebView进行性能调优</a>
+<a href="https://tech.meituan.com/2017/06/09/webviewperf.html">WebView性能、体验分析与优化--美团出品</a>
+<a href="https://juejin.im/post/5a37d039518825256362c6ce">iOS使用NSURLProtocol来Hook拦截WKWebview请求并回放的一种姿(ti)势(wei)</a></p>
+<h2><a id="%E8%A2%AB%E6%94%BE%E5%BC%83%E7%9A%84%E6%96%B9%E6%B3%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>被放弃的方法</h2>
+<pre><code class="language-plain_text">- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
+    /**计算高度*/
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
+
+        [_webView evaluateJavaScript:@&quot;document.documentElement.offsetHeight&quot; completionHandler:^(id_Nullable result, NSError *_Nullable error) {
+            //获取webView高度
+            CGRect frame = _webView.frame;
+            frame.size.height = [result doubleValue] + 50;
+            _webView.frame = frame;
+            _scrollViewHeight = 220 + _webView.height;
+            _scrollView.contentSize = CGSizeMake(kScreenWidth, _scrollViewHeight);
+        }];
+
+    });
+}
+</code></pre>
+<h2><a id="%E8%BE%83%E5%BF%AB%E7%9A%84%E6%96%B9%E6%B3%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>较快的方法</h2>
+<h3><a id="%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E6%B7%BB%E5%8A%A0%E8%A7%82%E5%AF%9F%E8%80%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第一步：添加观察者</h3>
+<pre><code class="language-plain_text">[_webView.scrollViewaddObserver:selfforKeyPath:@&quot;contentSize&quot;options:NSKeyValueObservingOptionNewcontext:nil];
+</code></pre>
+<h3><a id="%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E8%A7%82%E5%AF%9F%E8%80%85%E7%9B%91%E5%90%ACwebview%E7%9A%84contentsize%E5%8F%98%E5%8C%96" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第二步：观察者监听webView的contentSize变化</h3>
+<pre><code class="language-plain_text">- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPathisEqualToString:@&quot;contentSize&quot;]) {
+        dispatch_async(dispatch_get_global_queue(0,0), ^{
+           [_webViewevaluateJavaScript:@&quot;document.documentElement.offsetHeight&quot;completionHandler:^(id_Nullable result, NSError * _Nullable error) {
+                CGRect frame =_webView.frame;
+                frame.size.height = [resultdoubleValue] + 50;
+                _webView.frame = frame;
+                _scrollViewHeight =220 + _webView.height;
+                _scrollView.contentSize =CGSizeMake(kScreenWidth,_scrollViewHeight);
+            }];
+        });
+    }
+}
+</code></pre>
+<h3><a id="%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E7%A7%BB%E9%99%A4%E8%A7%82%E5%AF%9F%E8%80%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第三步：移除观察者</h3>
+<pre><code class="language-plain_text">- (void)dealloc{
+    [_webView.scrollViewremoveObserver:selfforKeyPath:@&quot;contentSize&quot;];
+}
+</code></pre>
+
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:49:13+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336613531680.html" itemprop="url">
+		CocoaPods 仓库制作</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<p><a href="https://www.jianshu.com/p/e191ea44d1ea">可参考 https://www.jianshu.com/p/e191ea44d1ea</a></p>
+<h1><a id="%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84pod%E5%BA%93%E7%9A%84%E7%B4%A2%E5%BC%95%E5%BA%93" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>创建自己的Pod库的索引库</h1>
+<h2><a id="%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9Agithub%E6%88%96%E8%80%85-coding-giteen%E4%B8%8A%E5%88%9B%E5%BB%BA%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%EF%BC%88%E7%A9%BA%E4%BB%93%E5%BA%93%EF%BC%89" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第一步：GitHub 或者 coding Giteen 上创建私有仓库 （空仓库）</h2>
+<p>1
+<a href="https://gitee.com/kaelinda/KLRepos.git">https://gitee.com/kaelinda/KLRepos.git</a></p>
+<pre><code class="language-plain_text">pod repo add [私有Pod源仓库名字] [私有Pod源的repo地址]
+pod repo add LCRepos https://gitee.com/kaelinda/KLRepos.git
+</code></pre>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ge3kh58lfpj31hm0k6106.jpg" alt="理解示意图" /></p>
+<ul>
+<li>repos文件是cocoapods的第三方库的索引</li>
+<li>master是主分支索引</li>
+<li>KLRepos是我们自己创建的索引仓库</li>
+</ul>
+<h2><a id="%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E9%A1%B9%E7%9B%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第二步：创建本地仓库项目</h2>
+<pre><code class="language-plain_text">pod lib create KLAModule
+.
+.
+经历过一堆的问号????， 根据自己项目情况选择
+.
+.
+cd KLAModule
+pod setup
+</code></pre>
+<h2><a id="%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%85%B3%E8%81%94%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%92%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第三步：关联本地仓库 和 远程仓库</h2>
+<ul>
+<li>Git全局配置：</li>
+</ul>
+<pre><code class="language-plain_text">git config --global user.name &quot;你的用户名&quot;
+git config --global user.email &quot;你的个人邮箱&quot;
+</code></pre>
+<ul>
+<li>创建 &amp; 推送仓库</li>
+</ul>
+<pre><code class="language-plain_text">// * 创建 git 仓库:
+mkdir KLMiddleware
+cd KLMiddleware
+git init
+git commit -m &quot;first commit&quot;
+git remote add origin https://gitee.com/kaelinda/KLMiddleware.git
+git push -u origin master
+
+// * 已有仓库?
+cd existing_git_repo
+git remote add origin https://gitee.com/kaelinda/KLMiddleware.git
+git push -u origin master
+</code></pre>
+<ul>
+<li>把创建好的第三方库 push 到私有Pod索引库：</li>
+</ul>
+<pre><code class="language-plain_text">pod repo push LXRepos LXBaseCategory.podspec --allow-warnings --verbose
+</code></pre>
+
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:48:41+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336613214567.html" itemprop="url">
+		infer使用</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<h2><a id="%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装</h2>
+<p><strong>1.安装brew</strong></p>
+<pre><code class="language-js">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+<p><strong>2.安装infer</strong></p>
+<pre><code class="language-js">brew install infer
+</code></pre>
+<h2><a id="%E5%88%86%E6%9E%90%E5%91%BD%E4%BB%A4" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>分析命令</h2>
+<p><strong>1.分析单个文件</strong></p>
+<ul>
+<li>cd InferTest.m 所在的目录</li>
+<li>infer -- clang -c InferTest.m</li>
+<li>No issues found   代表没有问题</li>
+</ul>
+<p><strong>2.分析整个项目</strong></p>
+<ul>
+<li>cd 到项目所在的目录 (KooApp)为工程名称</li>
+</ul>
+<pre><code class="language-js">infer -- xcodebuild -target KooApp -configuration Debug -sdk iphonesimulator
+</code></pre>
+<p><strong>3.分析带cocoapods的整个项目</strong></p>
+<ul>
+<li>cd 到项目所在目录</li>
+<li>KooApp代表项目名或者scheme名</li>
+</ul>
+<pre><code class="language-js">infer --  xcodebuild -workspace ./KooApp.xcworkspace -configuration Debug -scheme KooApp
+</code></pre>
+<ul>
+<li>忽略过滤文件  （in-path后面跟的是一个忽略文件或者文件夹的路径数组。(clang也可以去掉)）</li>
+</ul>
+<pre><code class="language-js">INFER_ARGS=&quot;--skip-clang-analysis-in-path^[\&quot;Pods\&quot;]&quot; infer -- xcodebuild -workspace ./KooApp.xcworkspace -configuration Debug -scheme KooApp
+</code></pre>
+<p>注意：如果infer分析编译报错，忽略错误继续分析</p>
+<pre><code class="language-js">infer --keep-going
+</code></pre>
+<p><strong>4.工程清理命令</strong>
+注意：有时候发现编译分析结果不全，此时可以先清理一下，然后再编译</p>
+<pre><code class="language-js">xcodebuild -target KooApp -configuration Debug -sdk iphonesimulator clean
+</code></pre>
+<p><strong>5.cocoapods的项目清理命令</strong></p>
+<pre><code class="language-js">xcodebuild -workspace ./KooApp.xcworkspace -configuration Debug -scheme KooApp clean
+</code></pre>
+<p><img src="media/15604798122070/15621404742524.jpg" alt="" style="width:1384px;" /></p>
+<h2><a id="%E9%97%AE%E9%A2%98%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>问题分类总结</h2>
+<p>1.<code>DIRECT_ATOMIC_PROPERTY_ACCESS</code></p>
+<p>在代码中使用了使用了一个atomic的成员变量，infer建议我们将atomic修改为nonatomic。由于OC中，属性会被默认设置为atomic属性，我们需要显示将属性声明为nonatomic。</p>
+<p>2.<code>ASSIGN_POINTER_WARNING</code></p>
+<p>由于在mrc时代，没有weak指针，所以一些view的属性声明是_、unsafe__unretain__的形式，在arc中，这个属性被判断为assign，需要将其修改为weak或者strong</p>
+<p>3.<code>NULL_DEREFERENCE</code></p>
+<p>空指针</p>
+<p>4.<code>IVAR_NOT_NULL_CHECKED</code></p>
+<p>在代码中调用block，运行代码时，没有做判空处理。即需要改动为，
+if(block){block()}</p>
+<p>5.<code>BAD_POINTER_COMPARISON</code></p>
+<p>Implicitly checking whether NSNumber pointer is nil。没有判断一个  NSNumber类型的对象是不是空？此处应该是误报。</p>
+<p>6.<code>TAINTED_VALUE_REACHING_SENSITIVE_FUNCTION</code></p>
+<p>代码中使用了cookie的value。可以理解为误报</p>
+<p>7.<code>PARAMETER_NOT_NULL_CHECKED</code></p>
+<p>传参时没有判断是否为null，加一次判断就可以了</p>
+<p>8.<code>STRONG_DELEGATE_WARNING</code></p>
+<p>将一个delegate属性设置为strong的类型。</p>
+<p>9.<code>PREMATURE_NIL_TERMINATION_ARGUMENT</code></p>
+<p>没有判断是否为空</p>
+<p>10.<code>REGISTERED_OBSERVER_BEING_DEALLOCATED</code></p>
+<p>创建一个对象后，监听了某些通知，但是没有在dealloc中释放该通知。项目中出现这种问题的类，基本都是单例，不会被销毁。</p>
+<p>11.<code>MEMORY_LEAK</code></p>
+<p>内存泄露。项目代码全面启动了ARC进行内存管理，在OC层没有扫描出内存泄露。目前扫描出的内存泄露问题都是使用了malloc或者ralloc等c语言内存申请函数，在函数提前return前没有及时free。</p>
+<h2><a id="%E6%A3%80%E6%B5%8B%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>检测可能会遇到的问题</h2>
+<p>1.分析某一个文件报错（fatal error: 'UIKit/UIKit.h' file not found）
+解决方案：
+在命令中加</p>
+<pre><code class="language-js">-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk
+</code></pre>
+<p>举例：</p>
+<pre><code class="language-js">infer -- clang -c -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk Hellow.m
+</code></pre>
+<p>2.分析带ARC特有的修饰(如weak或者__weak)或者其他的情况(命令行中加-fobjc-arc)</p>
+<pre><code class="language-js">infer -- clang -c -fobjc-arc InferTest.m
+</code></pre>
+<p>3.如果infer分析编译报错，忽略错误继续分析</p>
+<pre><code class="language-js">infer --keep-going
+</code></pre>
+<p>4.有时候发现编译分析结果不全，此时可以先清理一下，然后再编译：</p>
+<blockquote>
+<p>工程清理命令</p>
+</blockquote>
+<pre><code class="language-js">xcodebuild -target InferTest -configuration Debug -sdk iphonesimulator clean
+</code></pre>
+<blockquote>
+<p>或者带cocoapods的项目清理命令</p>
+</blockquote>
+<pre><code class="language-js">xcodebuild -workspace ./InferTest.xcworkspace -configuration Debug -scheme InferTest clean
+</code></pre>
+<p>然后再运行Infer分析的命令</p>
+<h2><a id="%E8%BF%87%E6%BB%A4%E6%8E%89%E6%88%91%E4%BB%AC%E5%BC%95%E5%85%A5%E7%9A%84%E7%AC%AC%E4%B8%89%E5%BA%93%E7%AD%89%E4%B8%8D%E6%83%B3%E5%81%9A%E5%88%86%E6%9E%90%E7%9A%84%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>过滤掉我们引入的第三库等不想做分析的文件</h2>
+<ul>
+<li>方法一：
+而当我们在项目中使用了很多第三方的时候，其实我们只想让Infer分析我们的代码，而不想分析第三方的代码，不然分析报告中会有很多第三方的issue，看着混乱，这时我们可以用命令行过滤掉关于不想分析的文件。比如用到cocoapods的项目，我们想过滤掉Pods引入的第三方库，命令行如下：</li>
+</ul>
+<pre><code class="language-js">INFER_ARGS=&quot;--skip-clang-analysis-in-path^[\&quot;Pods\&quot;]&quot; infer -- xcodebuild -workspace ./KooApp.xcworkspace -configuration Debug -scheme KooApp
+</code></pre>
+<p>注：in-path后面跟的是一个忽略文件或者文件夹的路径数组。 （clang可能会去掉）</p>
+<ul>
+<li>方法二：
+在项目的根目录创建一个.inferconfig类型的配置文件  skip-analysis-in-path是一个数组, 想要过滤其他文件, 只需要增加路径即可。</li>
+</ul>
+<p><img src="media/15604798122070/15623183298914.png" alt="111" /></p>
+<h2><a id="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>参考资料</h2>
+<ul>
+<li><a href="https://www.jianshu.com/p/53ad11e6f0c5">https://www.jianshu.com/p/53ad11e6f0c5</a></li>
+<li><a href="https://www.jianshu.com/p/4667e36aadea">https://www.jianshu.com/p/4667e36aadea</a></li>
+</ul>
+
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:47:45+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336612655403.html" itemprop="url">
+		WKWebView性能优化分析</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<p><a href="https://juejin.im/post/5da4363ef265da5bb065e357#heading-1">iOS WKWebView的基本使用</a>
+<a href="https://juejin.im/post/5eba5f626fb9a0433d7637aa">WKWebView完美网络请求拦截</a>
+<a href="https://juejin.im/post/5e6b4109f265da576429a4b7#heading-22">WKWebview使用二三事</a>
+<a href="https://zhuanlan.zhihu.com/p/58681116">史上最全的WKWebView问题优化指南</a>
+<a href="https://tech.meituan.com/2017/06/09/webviewperf.html">美团 WebView性能、体验分析与优化</a>
+<a href="https://www.jianshu.com/p/030aadc6a10a">WKWebView 的性能优化</a>
+<a href="https://www.jianshu.com/p/7092536b91cb">WKWebview的坑和优化</a>
+<a href="https://blog.cnbang.net/tech/3477/">移动 H5 首屏秒开优化方案探讨</a></p>
+<h1><a id="wkwebview%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKWebView 加载流程</h1>
+<p>要想优化Web就需要了解其加载流程，并针对每个流程进行优化：</p>
+<ol>
+<li>初始化 webview</li>
+<li>请求页面 、下载数据</li>
+<li>解析HTML</li>
+<li>请求 js/css 资源</li>
+<li>dom 渲染</li>
+<li>解析执行  JS 脚本</li>
+<li>JS 请求数据</li>
+<li>解析渲染</li>
+<li>下载渲染图片等资源</li>
+</ol>
+<h2><a id="%E5%88%9D%E5%A7%8B%E5%8C%96webview" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>初始化 webview</h2>
+<p>APP启动后，UIWebView 和 WKWebView的浏览器内核并不会自动初始化，而是当你首次调用WKWebView/UIWebView 相关页面或者功能时才进行 类似于<code>懒加载</code>的初始化过程。这个过程只能Native来优化。</p>
+<blockquote>
+<p>市面上表较多的两种优化方案如下：</p>
+</blockquote>
+<h3><a id="%E6%96%B9%E6%A1%88%E4%B8%80%E9%A2%84%E5%88%9D%E5%A7%8B%E5%8C%96wkwebviewuiwebview" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>方案一 预初始化 WKWebView/UIWebView</h3>
+<p>APP启动后 预先初始化一个暂时用不到的WebView，牺牲性能 换取首次加载WebView时间。
+这里需要注意的是，一个成熟的APP 在启动时都会进行各种初始化和预配置操作，所以 webview的预初始化需要根据业务，找一个合适的时机。</p>
+<h3><a id="%E6%96%B9%E6%A1%88%E4%BA%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%90%86%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>方案二 客户端代理数据请求</h3>
+<p>自定义 NSURLProtocol子类，拦截webview内的网络请求，让Native 开启子线程去代理这个过程。因为webview内的网络操作是一个单线程操作。这样就能节省一部分时间了。</p>
+
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:47:03+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336612231246.html" itemprop="url">
+		WKWebView从入门到放弃 (二 OC&JS交互)</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<h1><a id="oc%E8%B0%83%E7%94%A8js" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>OC调用JS</h1>
+<h2><a id="%E6%9C%AA%E7%BA%A6%E5%AE%9A%E5%A5%BD%E7%9A%84%E6%96%B9%E6%B3%95%E5%BE%80js%E4%B8%8A%E4%B8%8B%E6%96%87%E6%B3%A8%E5%85%A5js%E6%96%B9%E6%B3%95%EF%BC%8C%E4%BB%A5%E5%A4%87oc%E8%B0%83%E7%94%A8" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>未约定好的方法 往JS上下文注入JS方法，以备OC调用</h2>
+<pre><code class="language-plain_text">/// 往HTML 中 注入 JS代码字符串 源代码
+/// @param scriptString script内容
+- (void)insertScriptWithString:(NSString *)scriptSctring{
+    //用于进行JavaScript注入
+    WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:scriptSctring injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+    [self.webConfig.userContentController addUserScript:wkUScript];
+}
+</code></pre>
+<h2><a id="%E5%B7%B2%E7%BB%8F%E7%BA%A6%E5%AE%9A%E5%A5%BD%E6%96%B9%E6%B3%95%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>已经约定好方法直接调用</h2>
+<p>WKWebView 调用JS 方法比较单一：</p>
+<pre><code class="language-plain_text">/// OC 调用 JS 代码
+/// @param script 脚本 [NSString stringWithFormat:@&quot;changeColor('%@')&quot;, @&quot;Js参数&quot;];
+/// @param completionHandler 回调
+- (void)OCHandleJSWithScriptString:(NSString *)script completionHandler:(void (^ _Nullable)(_Nullable id, NSError * _Nullable error))completionHandler{
+    /// OC 调 JS
+    [_webView evaluateJavaScript:script completionHandler:completionHandler];
+    
+}
+</code></pre>
+<p>UIWebView 使用下面的方法  OC 调用 JS</p>
+<pre><code class="language-plain_text">JSContext *context = [self.webView valueForKeyPath:@&quot;documentView.webView.mainFrame.javaScriptContext&quot;];
+NSString *textJS = @&quot;showAlert('这里是JS中alert弹出的message')&quot;;
+[context evaluateScript:textJS];
+</code></pre>
+<h1><a id="js%E8%B0%83%E7%94%A8-oc" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>JS 调用OC</h1>
+<h2><a id="wkusercontentcontroller" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKUserContentController</h2>
+<h3><a id="%E5%BC%80%E5%90%AFjs%E4%BA%A4%E4%BA%92%E5%BC%80%E5%85%B3%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>开启 JS交互开关 设置代理</h3>
+<p>设置代理 遵守协议 <code>&lt;WKScriptMessageHandler&gt;</code></p>
+<pre><code class="language-plain_text">// 直接设置config对象中的preferences属性
+_webConfig.preferences.javaScriptEnabled = YES;//打开js交互
+
+//或者 单独设置自定义的 WKPreferences对象
+_webPreference.javaScriptEnabled = YES;
+
+// 设置交互代理
+_webConfig.userContentController = self.webUserContentController;
+</code></pre>
+<h3><a id="%E8%A7%82%E5%AF%9Fjs%E8%B0%83%E7%94%A8oc%E6%96%B9%E6%B3%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>观察JS调用OC方法</h3>
+<pre><code class="language-plain_text">//注册一个name为jsToOcNoPrams的js方法
+[_webUserContentController addScriptMessageHandler:self  name:@&quot;jsToOcNoPrams&quot;];
+[_webUserContentController addScriptMessageHandler:self  name:@&quot;jsToOcWithPrams&quot;];
+</code></pre>
+<h3><a id="%E6%8E%A5%E6%94%B6%E5%9B%9E%E8%B0%83" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>接收回调</h3>
+<pre><code class="language-plain_text">#pragma mark ------- 交互的 delegate
+/// 通过接收JS传出消息的name进行捕捉的回调方法  js调OC
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
+    NSLog(@&quot;name:%@\\\\n body:%@\\\\n frameInfo:%@\\\\n&quot;,message.name,message.body,message.frameInfo);
+    
+}
+</code></pre>
+<h3><a id="%E7%A7%BB%E9%99%A4%E6%B3%A8%E5%86%8C" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>移除注册</h3>
+<p><strong>界面退出、销毁时需要一处下方法的注册！！</strong></p>
+<pre><code class="language-plain_text">-(void)removeAllScriptMsgHandle{
+    WKUserContentController *controller = self.webView.configuration.userContentController;
+    [controller removeScriptMessageHandlerForName:@&quot;jsToOcNoPrams&quot;];
+    [controller removeScriptMessageHandlerForName:@&quot;jsToOcWithPrams&quot;];
+}
+</code></pre>
+<h2><a id="scheme%E6%96%B9%E5%BC%8F%E4%BA%A4%E4%BA%92" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>scheme方式交互</h2>
+<h3><a id="%E9%81%B5%E5%AE%88%E5%8D%8F%E8%AE%AE%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>遵守协议 &amp; 设置代理</h3>
+<p>遵守协议 ：<code>&lt;WKNavigationDelegate&gt;</code></p>
+<pre><code class="language-plain_text">// 设置代理
+ _webView.navigationDelegate = self;
+</code></pre>
+<h3><a id="%E6%8D%95%E8%8E%B7scheme" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>捕获Scheme</h3>
+<pre><code class="language-plain_text">// 根据WebView对于即将跳转的HTTP请求头信息和相关信息来决定是否跳转
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    NSLog(@&quot;发送跳转请求：%@&quot;,urlStr);
+    // 根据自定义的scheme进行拦截
+    if ([urlStr hasPrefix:schemeHeader]) {
+        [ControllerUtils showViewWithURL:urlStr];
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+}
+</code></pre>
+<h2><a id="%E5%90%8C%E5%B1%8F%E6%B8%B2%E6%9F%93%E5%BE%85%E5%AE%8C%E5%96%84" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>同屏渲染 待完善</h2>
+
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:46:44+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336612041737.html" itemprop="url">
+		WKWebView从入门到放弃 之 【疑难杂症】篇</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:46:28+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336611886661.html" itemprop="url">
+		WKWebView从入门到放弃 之 【性能优化】</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<p><a href="https://juejin.im/post/5da4363ef265da5bb065e357#heading-1">iOS WKWebView的基本使用</a>
+<a href="https://juejin.im/post/5eba5f626fb9a0433d7637aa">WKWebView完美网络请求拦截</a>
+<a href="https://juejin.im/post/5e6b4109f265da576429a4b7#heading-22">WKWebview使用二三事</a>
+<a href="https://zhuanlan.zhihu.com/p/58681116">史上最全的WKWebView问题优化指南</a>
+<a href="https://tech.meituan.com/2017/06/09/webviewperf.html">美团 WebView性能、体验分析与优化</a>
+<a href="https://www.jianshu.com/p/030aadc6a10a">WKWebView 的性能优化</a>
+<a href="https://www.jianshu.com/p/7092536b91cb">WKWebview的坑和优化</a>
+<a href="https://blog.cnbang.net/tech/3477/">移动 H5 首屏秒开优化方案探讨</a></p>
+<h1><a id="wkwebview%E5%8A%A0%E8%BD%BD%E6%B5%81%E7%A8%8B" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKWebView 加载流程</h1>
+<p>要想优化Web就需要了解其加载流程，并针对每个流程进行优化：</p>
+<ol>
+<li>初始化 webview</li>
+<li>请求页面 、下载数据</li>
+<li>解析HTML</li>
+<li>请求 js/css 资源</li>
+<li>dom 渲染</li>
+<li>解析执行  JS 脚本</li>
+<li>JS 请求数据</li>
+<li>解析渲染</li>
+<li>下载渲染图片等资源</li>
+</ol>
+<h2><a id="%E5%88%9D%E5%A7%8B%E5%8C%96webview" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>初始化 webview</h2>
+<p>APP启动后，UIWebView 和 WKWebView的浏览器内核并不会自动初始化，而是当你首次调用WKWebView/UIWebView 相关页面或者功能时才进行 类似于<code>懒加载</code>的初始化过程。这个过程只能Native来优化。</p>
+<blockquote>
+<p>市面上表较多的两种优化方案如下：</p>
+</blockquote>
+<h3><a id="%E6%96%B9%E6%A1%88%E4%B8%80%E9%A2%84%E5%88%9D%E5%A7%8B%E5%8C%96wkwebviewuiwebview" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>方案一 预初始化 WKWebView/UIWebView</h3>
+<p>APP启动后 预先初始化一个暂时用不到的WebView，牺牲性能 换取首次加载WebView时间。
+这里需要注意的是，一个成熟的APP 在启动时都会进行各种初始化和预配置操作，所以 webview的预初始化需要根据业务，找一个合适的时机。</p>
+<h3><a id="%E6%96%B9%E6%A1%88%E4%BA%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BB%A3%E7%90%86%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>方案二 客户端代理数据请求</h3>
+<p>自定义 NSURLProtocol子类，拦截webview内的网络请求，让Native 开启子线程去代理这个过程。因为webview内的网络操作是一个单线程操作。这样就能节省一部分时间了。</p>
+
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:43:32+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336610129581.html" itemprop="url">
+		MacOS 安装CocoaPods/Fastlane/Homebrew/Rvm/Ruby/Gem</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<p>当前最新macOS系统版本是Catalina 10.16，本人有幸更新 MacOS 11.0 Beta版本尝鲜....结果被坑的体无完肤！！！</p>
+<p>更新系统后，链接公司内部局域网的VPN软件不能使用了，自动打包工具 fastlane 不能用了，</p>
+<h1><a id="%E5%AE%89%E8%A3%85ruby" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装Ruby</h1>
+<p>我们安装各种环境的时候 经常会报各种各样的错误，大都是因为电脑的大环境没安装好。</p>
+<h2><a id="%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8rvm" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装 使用 rvm</h2>
+<pre><code class="language-plain_text">// 安装rvm
+curl -L get.rvm.io | bash -s stable
+</code></pre>
+<p>rvm安装完成后，让环境变量和配置文件生效：</p>
+<pre><code class="language-plain_text">source ~/.bashrc
+source ~/.bash_profile
+source ~/.profile
+</code></pre>
+<p>查看rvm版本：</p>
+<pre><code class="language-plain_text">rvm -v
+</code></pre>
+<p>查看</p>
+<pre><code class="language-plain_text">rvm list known
+</code></pre>
+<p>结果如下：</p>
+<pre><code class="language-plain_text"># MRI Rubies
+[ruby-]1.8.6[-p420]
+[ruby-]1.8.7[-head] # security released on head
+[ruby-]1.9.1[-p431]
+[ruby-]1.9.2[-p330]
+[ruby-]1.9.3[-p551]
+[ruby-]2.0.0[-p648]
+[ruby-]2.1[.10]
+[ruby-]2.2[.10]
+[ruby-]2.3[.8]
+[ruby-]2.4[.9]
+[ruby-]2.5[.7]
+[ruby-]2.6[.5]
+[ruby-]2.7[.0]
+ruby-head
+</code></pre>
+<h2><a id="%E9%87%8D%E7%82%B9%E6%93%8D%E4%BD%9C%EF%BC%81%EF%BC%81" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>重点操作！！</h2>
+<p><strong>XXXXXXX为电脑账户名：<code>source /Users/XXXXXX/.rvm/scripts/rvm</code></strong></p>
+<pre><code class="language-plain_text">rvm install
+</code></pre>
+<ul>
+<li>使用rvm安装<code>rvm install 2.6.5</code>这里的版本是你查到的适合自己的ruby版本，这里你也可以直接安装最新版本 <code>rvm install ruby-head</code></li>
+</ul>
+<pre><code class="language-plain_text">rvm use ruby-2.6
+</code></pre>
+<ul>
+<li>使用自己已安装的ruby版本<code>rvm use ruby-2.6</code> （这里的ruby-2.6 是  <code>ruby -v</code> 查出来的）</li>
+</ul>
+<h1><a id="%E5%AE%89%E8%A3%85gem%E7%8E%AF%E5%A2%83" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装Gem环境</h1>
+<h2><a id="gem%E6%BA%90%E9%95%9C%E5%83%8F" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gem源 &amp; 镜像</h2>
+<ul>
+<li>国外镜像源 <code>http://rubygems.org/</code></li>
+<li><del>国内淘宝镜像源 (已停止维护) <code>https://ruby.taobao.org/</code></del></li>
+<li><del>国内镜像 <code>https://gems.ruby-china.org/</code></del></li>
+<li>现在可以使用的国内镜像源 <code>http://gems.github.com</code></li>
+</ul>
+<h2><a id="%E6%9F%A5%E7%9C%8Bgem%E9%95%9C%E5%83%8F%E6%BA%90" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>查看Gem镜像源</h2>
+<pre><code class="language-plain_text">// 查看当前镜像源
+gem sources -l
+// 或者
+gem sources
+</code></pre>
+<h3><a id="%E6%B7%BB%E5%8A%A0%E9%95%9C%E5%83%8F%E6%BA%90" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>添加镜像源</h3>
+<pre><code class="language-plain_text">gem source --add XXX
+// 或者
+gem source -a XXX
+</code></pre>
+<h3><a id="%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F%E6%BA%90" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>删除镜像源</h3>
+<pre><code class="language-plain_text">gem sources --remove XXX
+// 或者
+gem sources -r XXX
+</code></pre>
+<h3><a id="%E6%9B%B4%E6%96%B0%E9%95%9C%E5%83%8F%E6%BA%90" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>更新镜像源</h3>
+<pre><code class="language-plain_text">gem sources --update
+gem soruces -u
+</code></pre>
+<h2><a id="gem%E6%93%8D%E4%BD%9C" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gem操作</h2>
+<p>添加新的gem源;
+remove掉 之前的gem源;
+更新源；
+(gem 的命令 是可以连续使用的)</p>
+<p><code>gem source -a http://gems.github.com/ -r http://rubygems.org/ -u</code></p>
+<p>也可以拆分：</p>
+<pre><code class="language-plain_text">gem source -a http://gems.github.com/
+gem sources -r http://rubygems.org/
+gem soources -u
+</code></pre>
+<h3><a id="%E5%AE%B6%E6%9F%A5%E4%B8%8Bgem%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>家查下Gem版本更新</h3>
+<pre><code class="language-plain_text">sudo gem update --system // 这个命令用于更新gem自身
+</code></pre>
+<p>===</p>
+<p>到此为止，安装开发工具的大环境就已经搭好了。
+<code>gem update</code> 更新所有gem安装过的安装包。</p>
+<p>然后 开启我们的新征程:</p>
+<h1><a id="xcode%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Xcode 命令行工具配置</h1>
+<h2><a id="%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装命令行工具</h2>
+<pre><code class="language-plain_text">xcode-select --install
+</code></pre>
+<p><a href="https://developer.apple.com/download/more/">Apple 官方下载命令行工具入口</a></p>
+<h2><a id="%E5%88%87%E6%8D%A2%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E7%89%88%E6%9C%AC" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>切换命令行工具版本</h2>
+<h3><a id="xcode-select%E5%91%BD%E4%BB%A4%E5%88%87%E6%8D%A2" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>xcode-select 命令切换</h3>
+<pre><code class="language-plain_text">sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+or
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+</code></pre>
+<h3><a id="xcode%E7%9B%B4%E6%8E%A5%E5%88%87%E6%8D%A2" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Xcode 直接切换</h3>
+<p>如果你安装了 多个版本的Xcode，那么你会经常用到这种切换方式：
+选中Xcode，CMD + ，---&gt; Locations ----&gt; Command Line Tool
+选择相对应版本即可。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/412206-c8da04353b7640c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Xcode-内部设置" /></p>
+<h1><a id="%E5%AE%89%E8%A3%85fastlane" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装Fastlane</h1>
+
+
+			
+			
+		</div>
+
+	</article>
+ 
+	<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+		<div class="meta">
+			<div class="date">
+				<time datetime="2021-10-08T10:41:00+08:00" itemprop="datePublished">2021/10/8</time>
+			</div>
+			<div class="tags">posted in 
+			
+			    <a class='category' href='ios.html'>iOS</a>&nbsp;
+			 
+			</div>
+		</div>
+		<h1 class="title" itemprop="name"><a href="16336608605945.html" itemprop="url">
+		AsyncTaskTrigger</a></h1>
+		<div class="entry-content" itemprop="articleBody">
+			
+			<p><a href="https://travis-ci.org/zuosong/AsyncTaskTrigger"><img src="https://img.shields.io/travis/zuosong/AsyncTaskTrigger.svg?style=flat" alt="CI Status" /></a>
+<a href="https://cocoapods.org/pods/AsyncTaskTrigger"><img src="https://img.shields.io/cocoapods/v/AsyncTaskTrigger.svg?style=flat" alt="Version" /></a>
+<a href="https://cocoapods.org/pods/AsyncTaskTrigger"><img src="https://img.shields.io/cocoapods/l/AsyncTaskTrigger.svg?style=flat" alt="License" /></a>
+<a href="https://cocoapods.org/pods/AsyncTaskTrigger"><img src="https://img.shields.io/cocoapods/p/AsyncTaskTrigger.svg?style=flat" alt="Platform" /></a>
+<a href="https://gitee.com/kaelinda/async-task-trigger/stargazers"><img src="https://gitee.com/kaelinda/async-task-trigger/badge/star.svg?theme=dark" alt="Star" /></a></p>
+<h2><a id="example" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h2>
+<p>To run the example project, clone the repo, and run <code>pod install</code> from the Example directory first.</p>
+<h2><a id="requirements" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+<h2><a id="installation" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+<p>AsyncTaskTrigger is available through <a href="https://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your Podfile:</p>
+<pre><code class="language-ruby">pod 'AsyncTaskTrigger'
+</code></pre>
+<h2><a id="%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用方法</h2>
+<h3><a id="%E5%BC%82%E6%AD%A5%E4%B8%B2%E8%A1%8C%E4%BB%BB%E5%8A%A1" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>异步串行任务</h3>
+<pre><code class="language-plain_text">// ---------1、获取触发器单利
+AsyncTaskTrigger *trigger = [AsyncTaskTrigger shareTrigger];
+__weak typeof (&amp;*trigger)wtrigger = trigger;
+
+// 每一组任务 都需要有一个GroupKey
+NSString *groupKey = @&quot;serial_group_serial&quot;;
+
+// --------添加任务A
+[trigger addTaskAction:^{
+    // 开始执行任务A
+    [self actionBlockAWithComplet:^{
+        // 任务完成后 需要向指定 groupKey 对应的任务组 发送信号量；
+        [wtrigger sendSemaphoreToGroupKey:groupKey];
+        // 如果某些异步任务是通过代理的方式回调 可以在完成处这样标记下
+        // [[AsyncTaskTrigger shareTrigger]sendSemaphoreToGroupKey:groupKey];
+
+    }];
+} asyncType:LXTaskAsyncTypeSerial groupKey:groupKey completBlock:^{
+    // 本次任务完成后的回调
+}];
+
+// -----------添加任务B
+[trigger addTaskAction:^{
+    // 执行任务B
+    [self actionBlockBWithComplet:^{
+        [wtrigger sendSemaphoreToGroupKey:groupKey];
+    }];
+} asyncType:LXTaskAsyncTypeSerial groupKey:groupKey completBlock:nil];
+
+// Block回调发送信号量 另外一种方式
+[trigger addTaskHandlerAction:^(LXTaskActionBlock  _Nullable semaphoreHandle) {
+    [self actionBlockAWithComplet:^{
+        // 可以直接在这里调用这个Block即可
+        semaphoreHandle();
+    }];
+} asyncType:LXTaskAsyncTypeSerial groupKey:groupKey completBlock:nil];
+
+[trigger startTaskActionWithGroupKey:groupKey completBlock:^{
+    NSLog(@&quot;kael -- 所有的任务都完成了&quot;);
+}];
+</code></pre>
+<h3><a id="%E5%BC%82%E6%AD%A5%E5%B9%B6%E8%A1%8C%E4%BB%BB%E5%8A%A1" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>异步并行任务</h3>
+<p>异步任务只需要更改asyncType类型LXTaskAsyncTypeSerial --&gt; LXTaskAsyncTypeParallel</p>
+<pre><code class="language-plain_text">[trigger addTaskAction:^{
+    [self actionBlockAWithComplet:^{
+        [wtrigger sendSemaphoreToGroupKey:groupKey];
+    }];
+} asyncType:LXTaskAsyncTypeParallel groupKey:groupKey completBlock:nil];
+    
+[trigger addTaskAction:^{
+    [self actionBlockBWithComplet:^{
+        [wtrigger sendSemaphoreToGroupKey:groupKey];
+    }];
+} asyncType:LXTaskAsyncTypeParallel groupKey:groupKey completBlock:nil];
+
+[trigger addTaskHandlerAction:^(LXTaskActionBlock  _Nullable semaphoreHandle) {
+    [self actionBlockAWithComplet:^{
+        semaphoreHandle();
+    }];
+} asyncType:LXTaskAsyncTypeParallel groupKey:groupKey completBlock:nil];
+        
+[trigger startTaskActionWithGroupKey:groupKey completBlock:^{
+    NSLog(@&quot;kael -- 所有的任务都完成了&quot;);
+}];
+</code></pre>
+<h2><a id="author" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author</h2>
+<p>Kael, zhouzuosong_kael@<a href="mailto:163.com@163.com">163.com@163.com</a></p>
+<h2><a id="license" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+<p>AsyncTaskTrigger is available under the MIT license. See the LICENSE file for more info.</p>
+
+
+			
+			
+		</div>
+
+	</article>
+  
+
+</div>
+<nav id="pagenavi">
+	 <a class="prev" href="all_2.html">Prev</a>  
+	 <a class="next" href="all_4.html">Next</a> 
+	<div class="center"><a href="archives.html">Blog Archives</a></div>
+
+</nav>
+
 </div>
 
-        </section>
-      </div>
-    </div>
 
+
+        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+figure{margin: 1em 0;padding: 0;}
+  figcaption{text-align:center;}
+
+/* PrismJS 1.14.0
+https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+javascript */
+/**
+ * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
+ * @author Tim  Shedor
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  position: relative;
+  margin: .5em 0;
+  overflow: visible;
+  padding: 0;
+}
+pre[class*="language-"]>code {
+  position: relative;
+  border-left: 10px solid #358ccb;
+  box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+  background-color: #fdfdfd;
+  background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+  background-size: 3em 3em;
+  background-origin: content-box;
+  background-attachment: local;
+}
+
+code[class*="language"] {
+  max-height: inherit;
+  height: inherit;
+  padding: 0 1em;
+  display: block;
+  overflow: auto;
+}
+
+/* Margin bottom to accomodate shadow */
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background-color: #fdfdfd;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  position: relative;
+  padding: .2em;
+  border-radius: 0.3em;
+  color: #c92c2c;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline;
+  white-space: normal;
+}
+
+pre[class*="language-"]:before,
+pre[class*="language-"]:after {
+  content: '';
+  z-index: -2;
+  display: block;
+  position: absolute;
+  bottom: 0.75em;
+  left: 0.18em;
+  width: 40%;
+  height: 20%;
+  max-height: 13em;
+  box-shadow: 0px 13px 8px #979797;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+:not(pre) > code[class*="language-"]:after,
+pre[class*="language-"]:after {
+  right: 0.75em;
+  left: auto;
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #7D8B99;
+}
+
+.token.punctuation {
+  color: #5F6364;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #c92c2c;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.function,
+.token.builtin,
+.token.inserted {
+  color: #2f9c0a;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword,
+.token.class-name {
+  color: #1990b8;
+}
+
+.token.regex,
+.token.important {
+  color: #e90;
+}
+
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.token.important {
+  font-weight: normal;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+  pre[class*="language-"]:before,
+  pre[class*="language-"]:after {
+    bottom: 14px;
+    box-shadow: none;
+  }
+
+}
+
+/* Plugin styles */
+.token.tab:not(:empty):before,
+.token.cr:before,
+.token.lf:before {
+  color: #e0d7d1;
+}
+
+/* Plugin styles: Line Numbers */
+pre[class*="language-"].line-numbers.line-numbers {
+  padding-left: 0;
+}
+
+pre[class*="language-"].line-numbers.line-numbers code {
+  padding-left: 3.8em;
+}
+
+pre[class*="language-"].line-numbers.line-numbers .line-numbers-rows {
+  left: 0;
+}
+
+/* Plugin styles: Line Highlight */
+pre[class*="language-"][data-line] {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+pre[data-line] code {
+  position: relative;
+  padding-left: 4em;
+}
+pre .line-highlight {
+  margin-top: 0;
+}
+
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+    .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+    }
+
+        .line-numbers-rows > span:before {
+            content: counter(linenumber);
+            color: #999;
+            display: block;
+            padding-right: 0.8em;
+            text-align: right;
+        }
+
+</style>
   
     
 
-    <script src="asset/js/foundation.min.js"></script>
-    <script>
-      $(document).foundation();
-      function fixSidebarHeight(){
-        var w1 = $('.markdown-body').height();
-          var w2 = $('#sidebar').height();
-          if (w1 > w2) { $('#sidebar').height(w1); };
-      }
-      $(function(){
-        fixSidebarHeight();
-      })
-      $(window).load(function(){
-          fixSidebarHeight();
-      });
-     
-    </script>
 
-    
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
-
-
-  </body>
+</body>
 </html>
