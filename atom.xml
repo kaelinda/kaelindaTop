@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[kaelinda]]></title>
+  <title><![CDATA[Kaelinda]]></title>
   <link href="http://kaelinda.top/atom.xml" rel="self"/>
   <link href="http://kaelinda.top/"/>
-  <updated>2021-10-09T14:01:17+08:00</updated>
+  <updated>2021-10-09T15:12:36+08:00</updated>
   <id>http://kaelinda.top/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -16,9 +16,11 @@
   <entry>
     <title type="html"><![CDATA[iOS OpenURL方式吊起APP]]></title>
     <link href="http://kaelinda.top/16337448805296.html"/>
+    
     <updated>2021-10-09T10:01:20+08:00</updated>
     <id>http://kaelinda.top/16337448805296.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <p>[toc]</p>
 <h1><a id="%E8%83%8C%E6%99%AF%E6%8F%8F%E8%BF%B0" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>背景描述</h1>
 <p>假如我们有两个项目，一个是我们的主项目<code>MainProject</code>，要通过系统提供的API <code>OpenURL：</code>方式吊起另外的项目<code>OtherProject</code>。</p>
@@ -153,9 +155,11 @@
   <entry>
     <title type="html"><![CDATA[iOS 打开别的APP的两种Native方法]]></title>
     <link href="http://kaelinda.top/16336873755362.html"/>
+    
     <updated>2021-10-08T18:02:55+08:00</updated>
     <id>http://kaelinda.top/16336873755362.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h1><a id="open-url" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Open URL</h1>
 <h2><a id="%E5%88%A4%E6%96%AD%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>判断安装</h2>
 <pre><code class="language-objc">/// 是否能打开指定scheme的APP
@@ -272,9 +276,11 @@
   <entry>
     <title type="html"><![CDATA[Alfred 修改内置Terminal为Iterm2]]></title>
     <link href="http://kaelinda.top/16336595298050.html"/>
+    
     <updated>2021-10-08T10:18:49+08:00</updated>
     <id>http://kaelinda.top/16336595298050.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <p><figure><img src="https://b3logfile.com/file/2019/09/image-cb8282c6.png?imageView2/2/interlace/1/format/webp" alt="" /></figure></p>
 <pre><code class="language-plain_text">
 -- This is v0.6 of the custom script for AlfredApp for iTerm 2.9+
@@ -335,9 +341,11 @@ end alfred_script
   <entry>
     <title type="html"><![CDATA[Python环境安装]]></title>
     <link href="http://kaelinda.top/16325811812741.html"/>
+    
     <updated>2021-09-25T22:46:21+08:00</updated>
     <id>http://kaelinda.top/16325811812741.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="pip%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>pip安装</h2>
 <pre><code class="language-shell">sudo python -m ensurepip --upgrade
 </code></pre>
@@ -350,9 +358,11 @@ end alfred_script
   <entry>
     <title type="html"><![CDATA[【Swift笔记】引用计数]]></title>
     <link href="http://kaelinda.top/15409691048860.html"/>
+    
     <updated>2018-10-31T14:58:24+08:00</updated>
     <id>http://kaelinda.top/15409691048860.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <ul>
 <li>和OC一样，Swift也是用ARC,也会有循环引用导致内存泄露</li>
 <li>吧如果属性是可选类型，只能用weak修饰符避免循环引用。所引用对象被回收后改属性会被自动置为nil</li>
@@ -365,9 +375,11 @@ end alfred_script
   <entry>
     <title type="html"><![CDATA[Swift中类（Class）和 结构体（Struct）]]></title>
     <link href="http://kaelinda.top/15402889434646.html"/>
+    
     <updated>2018-10-23T18:02:23+08:00</updated>
     <id>http://kaelinda.top/15402889434646.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="%E5%88%86%E6%9E%90" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>分析</h2>
 <p>共同点：</p>
 <ul>
@@ -758,9 +770,11 @@ if let p = man01 as? Man{
   <entry>
     <title type="html"><![CDATA[网络是怎样连接的]]></title>
     <link href="http://kaelinda.top/15341646765442.html"/>
+    
     <updated>2018-08-13T20:51:16+08:00</updated>
     <id>http://kaelinda.top/15341646765442.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="%E7%94%9F%E6%88%90http%E8%AF%B7%E6%B1%82%E4%BF%A1%E6%81%AF" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>生成HTTP请求信息</h2>
 <p>URL种类：<code>http:</code> <code>ftp:</code> <code>file:</code> <code>mailto:</code> <code>news:</code></p>
 <p>URL组成：协议 + 用户名(可省略) + 密码(省略) + 服务器域名 + 端口号(可省略) + 文件路径名</p>
@@ -805,9 +819,11 @@ if let p = man01 as? Man{
   <entry>
     <title type="html"><![CDATA[Alfred workflow 教程]]></title>
     <link href="http://kaelinda.top/15282021908171.html"/>
+    
     <updated>2018-06-05T20:36:30+08:00</updated>
     <id>http://kaelinda.top/15282021908171.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="%E7%AE%80%E4%BB%8B" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>简介</h2>
 <blockquote>
 <p>新创建一个空白的workflow
@@ -1005,9 +1021,11 @@ these represent the text you see in Alfred’s results when using the keyword.</
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能（8）]]></title>
     <link href="http://kaelinda.top/15232599795686.html"/>
+    
     <updated>2018-04-09T15:46:19+08:00</updated>
     <id>http://kaelinda.top/15232599795686.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="shell%E7%BB%88%E7%AB%AF%E6%89%93%E5%8D%B0" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>shell 终端打印</h2>
 <pre><code class="language-plain_text">```
 printf &quot;%-5s %-10s %-4s \n&quot; NO Name Mark
@@ -1036,9 +1054,11 @@ NO    Name       Mark
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能（7）]]></title>
     <link href="http://kaelinda.top/15226648731246.html"/>
+    
     <updated>2018-04-02T18:27:53+08:00</updated>
     <id>http://kaelinda.top/15226648731246.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E5%AF%BC%E5%85%A5%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>文件包含 导入文件</h2>
 <p>测试文件  test1.sh</p>
 <pre><code class="language-plain_text">#!/bin/bash
@@ -1115,9 +1135,11 @@ $ ./test2.sh
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能（6）]]></title>
     <link href="http://kaelinda.top/15226603064743.html"/>
+    
     <updated>2018-04-02T17:11:46+08:00</updated>
     <id>http://kaelinda.top/15226603064743.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="test" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>test</h2>
 <h3><a id="test%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>test文件</h3>
 <pre><code class="language-plain_text">if test -e ./test.sh
@@ -1300,9 +1322,11 @@ done
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能（5）]]></title>
     <link href="http://kaelinda.top/15224936933861.html"/>
+    
     <updated>2018-03-31T18:54:53+08:00</updated>
     <id>http://kaelinda.top/15224936933861.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="shell-echo%E5%91%BD%E4%BB%A4" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Shell echo命令</h2>
 <h3><a id="%E6%89%93%E5%8D%B0%E5%AD%97%E7%AC%A6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>打印字符</h3>
 <pre><code class="language-plain_text">// 下面两行代码效果一致
@@ -1354,9 +1378,11 @@ echo &quot;\npassword is $password&quot;
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能（4）]]></title>
     <link href="http://kaelinda.top/15224613481161.html"/>
+    
     <updated>2018-03-31T09:55:48+08:00</updated>
     <id>http://kaelinda.top/15224613481161.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="shell%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>shell基本运算符</h2>
 <p>基本使用：</p>
 <pre><code class="language-plain_text">#!/bin/bash
@@ -1563,9 +1589,11 @@ fi
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能  (3)]]></title>
     <link href="http://kaelinda.top/15223750607281.html"/>
+    
     <updated>2018-03-30T09:57:40+08:00</updated>
     <id>http://kaelinda.top/15223750607281.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="shell%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>shell参数传递</h2>
 <p>我们可以在脚本执行时，向脚本传递参数</p>
 <pre><code class="language-plain_text">// 终端运行 脚本，并传入参数
@@ -1663,9 +1691,11 @@ $@是作为一个数组返回 =&gt; 0 1 2
   <entry>
     <title type="html"><![CDATA[每天学习一个shell技能 （1）]]></title>
     <link href="http://kaelinda.top/15223028228569.html"/>
+    
     <updated>2018-03-29T13:53:42+08:00</updated>
     <id>http://kaelinda.top/15223028228569.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="%E5%87%86%E5%A4%87" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>准备</h2>
 <p>bash 环境位置</p>
 <pre><code class="language-plain_text">#!/bin/bash
@@ -1786,9 +1816,11 @@ echo `expr index &quot;$string&quot; is`  # 输出 8
   <entry>
     <title type="html"><![CDATA[每天学习一个shell 技能 （2）]]></title>
     <link href="http://kaelinda.top/15223210751913.html"/>
+    
     <updated>2018-03-29T18:57:55+08:00</updated>
     <id>http://kaelinda.top/15223210751913.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="shell%E6%95%B0%E7%BB%84" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Shell 数组</h2>
 <h3><a id="%E5%AE%9A%E4%B9%89%E6%95%B0%E7%BB%84" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>定义数组</h3>
 <pre><code class="language-bash">array_name=(value1 value2 value3)
@@ -1846,9 +1878,11 @@ item_length=${#array_name[n]}
   <entry>
     <title type="html"><![CDATA[从零开始学习使用 vuex]]></title>
     <link href="http://kaelinda.top/15168925544178.html"/>
+    
     <updated>2018-01-25T23:02:34+08:00</updated>
     <id>http://kaelinda.top/15168925544178.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <blockquote>
 <p>本文是建立在，对vuex理论有一定理解的基础上写的。
 因为官方文档的写法是 针对 有一定的vue开发经验 和 JavaScript 有一定理解的开发者看的，对于小白级别的我来说，理解起来有一定困难。所以，唯一想我一向的小白想尽快上手vuex....</p>
@@ -2178,9 +2212,11 @@ const actions = {
   <entry>
     <title type="html"><![CDATA[react-native-splash-screen 给安卓项目添加启动图]]></title>
     <link href="http://kaelinda.top/15151216159291.html"/>
+    
     <updated>2018-01-05T11:06:55+08:00</updated>
     <id>http://kaelinda.top/15151216159291.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="react-native-splash-screen%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>react-native-splash-screen 基本配置</h2>
 <ul>
 <li>安装插件：<code>npm install react-native-splash-screen --save</code></li>
@@ -2292,9 +2328,11 @@ SplashScreen.hide();
   <entry>
     <title type="html"><![CDATA[Rect-Native 之 Promise 深入浅出从入门到精通]]></title>
     <link href="http://kaelinda.top/15139057022845.html"/>
+    
     <updated>2017-12-22T09:21:42+08:00</updated>
     <id>http://kaelinda.top/15139057022845.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="%E6%A6%82%E5%BF%B5%E7%90%86%E8%A7%A3" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>概念理解</h2>
 <p><figure><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fhp9dw6vxpj307406ewek.jpg" alt="icon" title="React icon" /><figcaption>icon<figcaption></figure></p>
 <blockquote>
@@ -2673,9 +2711,11 @@ new Promise(resolve =&gt; resolve('foo'))
   <entry>
     <title type="html"><![CDATA[ES6 笔记（Array）]]></title>
     <link href="http://kaelinda.top/15137645005542.html"/>
+    
     <updated>2017-12-20T18:08:20+08:00</updated>
     <id>http://kaelinda.top/15137645005542.html</id>
     <content type="html"><![CDATA[
+    <img src="" />
 <h2><a id="array" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>array</h2>
 <ol>
 <li>
