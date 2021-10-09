@@ -1,1767 +1,798 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+
+
     <title>
+      
+    iOS - kaelinda
     
-  iOS - kaelinda
-  
-  </title>
-  
-  
-  <link href="atom.xml" rel="alternate" title="kaelinda" type="application/atom+xml">
-    <link rel="stylesheet" href="asset/css/foundation.min.css" />
-    <link rel="stylesheet" href="asset/css/docs.css" />
-    <script src="asset/js/vendor/modernizr.js"></script>
-    <script src="asset/js/vendor/jquery.js"></script>
- 
-<script type="text/javascript">
-  function before_search(){
-    var searchVal = 'site:kaelinda.top ' + document.getElementById('search_input').value;
-    document.getElementById('search_q').value = searchVal;
-    return true;
-  }
-</script>
+    </title>
+
+
+  <link href="asset/css/style.css" rel="stylesheet" > 
+  <link href="asset/js/xcode.min.css" rel="stylesheet">
+  <script src="asset/js/headroom.js"></script>
+
+  <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="asset/css/font-awesome.css">
+ -->
+
+  <!-- <script src="asset/highlightjs/highlight.pack.js"></script> -->
+  <!-- <link href="asset/highlightjs/styles/solarized_light.css" media="screen, projection" rel="stylesheet" type="text/css"> -->
+  <!-- <script>hljs.initHighlightingOnLoad();</script> -->
+
+
   </head>
-  <body class="antialiased hide-extras">
+
+  <!-- 主体开始 -->
+  <!-- <body class="" gtools_scp_screen_capture_injected="true"> -->
+  <!-- 上面为主页白底色版本 -->
     
-    <div class="marketing off-canvas-wrap" data-offcanvas>
-      <div class="inner-wrap">
+<body class="bg-grey" gtools_scp_screen_capture_injected="true" data-feedly-mini="yes">
+<!-- 上面是主页灰底色版本 -->
 
+<!--[if lt IE 8]>
+<div class="browsehappy" role="dialog">
+    当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank">升级你的浏览器</a>。
+</div>
+<![endif]-->
+<!-- 头部位置 -->
 
-<nav class="top-bar docs-bar hide-for-small" data-topbar>
+<header id="header" class="header bg-white headroom">
+  <div class="navbar-container"> 
+    <a href="index.html" class="navbar-logo"><img src="asset/img/K-logo.png"> </a>
+    <div class="navbar-menu"> 
 
+        
+        <a href="index.html">最近更新</a>
+        
+        <a href="archives.html">归档目录</a>
+        
+        <a href="ios.html">iOS</a>
+        
+        <a href="swift.html">Swift</a>
+        
+        <a href="reactnative.html">RN</a>
+        
+        <a href="js.html">JS</a>
+        
+        <a href="shell.html">shell</a>
+        
+        <a href="py.html">Python</a>
+        
+        
+    </div> 
+    <!-- 搜索框体 -->
+    <!--  <div class="navbar-search" onclick="">
+        <span class="icon-search"></span>
+        <form id="search" method="post" action="/" role="search">
+          <span class="search-box">
+            <input type="text" id="input" class="input" name="s" required="true" placeholder="Search..." maxlength="30" autocomplete="off">
+          </span>
+        </form>
+    </div> -->
 
-  <section class="top-bar-section">
-  <div class="row">
-      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
-        <ul id="main-menu" class="left">
-        
-        <li id=""><a target="_self" href="index.html">最近更新</a></li>
-        
-        <li id=""><a target="_self" href="archives.html">归档目录</a></li>
-        
-        <li id="ios.css"><a target="_self" href="ios.html">iOS</a></li>
-        
-        <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
-        
-        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
-        
-        <li id="js.css"><a target="_self" href="js.html">JS</a></li>
-        
-        <li id="shell.css"><a target="_self" href="shell.html">shell</a></li>
-        
-        <li id="py.css"><a target="_self" href="py.html">Python</a></li>
-        
-        </ul>
-
-        <ul class="right" id="search-wrap">
+    <div class="navbar-mobile-menu" onclick=""> 
+      <span class="icon-menu cross"><span class="middle"></span></span> 
+        <ul> 
+          
           <li>
-<form target="_blank" onsubmit="return before_search();" action="https://google.com/search" method="get">
-    <input type="hidden" id="search_q" name="q" value="" />
-    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
-</form>
-</li>
-          </ul>
-      </div></div>
-  </div>
-  </section>
-
-</nav>
-
-        <nav class="tab-bar show-for-small">
-  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
-    <span> &nbsp; kaelinda</span>
-  </a>
-</nav>
-
-<aside class="left-off-canvas-menu">
-      <ul class="off-canvas-list">
-        
-        <li><a target="_self" href="index.html">最近更新</a></li>
-        
-        <li><a target="_self" href="archives.html">归档目录</a></li>
-        
-        <li><a target="_self" href="ios.html">iOS</a></li>
-        
-        <li><a target="_self" href="swift.html">Swift</a></li>
-        
-        <li><a target="_self" href="reactnative.html">RN</a></li>
-        
-        <li><a target="_self" href="js.html">JS</a></li>
-        
-        <li><a target="_self" href="shell.html">shell</a></li>
-        
-        <li><a target="_self" href="py.html">Python</a></li>
-        
-
-    <li><label>Categories</label></li>
-
-        
-            <li><a href="reactnative.html">React-Native</a></li>
-        
-            <li><a href="ios.html">iOS</a></li>
-        
-            <li><a href="app.html">MacAPP</a></li>
-        
-            <li><a href="swift.html">Swift</a></li>
-        
-            <li><a href="js.html">JavaScript</a></li>
-        
-            <li><a href="vue.html">Vue</a></li>
-        
-            <li><a href="shell.html">shell</a></li>
-        
-            <li><a href="net.html">网络</a></li>
-        
-            <li><a href="py.html">Python</a></li>
-         
-
-      </ul>
-    </aside>
-
-<a class="exit-off-canvas" href="#"></a>
+          <a href="index.html">最近更新</a>
+          </li>
+          
+          <li>
+          <a href="archives.html">归档目录</a>
+          </li>
+          
+          <li>
+          <a href="ios.html">iOS</a>
+          </li>
+          
+          <li>
+          <a href="swift.html">Swift</a>
+          </li>
+          
+          <li>
+          <a href="reactnative.html">RN</a>
+          </li>
+          
+          <li>
+          <a href="js.html">JS</a>
+          </li>
+          
+          <li>
+          <a href="shell.html">shell</a>
+          </li>
+          
+          <li>
+          <a href="py.html">Python</a>
+          </li>
+          
+        </ul> 
+    </div> 
+  </div> 
+</header>
+<!-- 头部结束 -->  <!-- 这里是category的开始 -->
+<div class="main-content index-page clearfix">
+    <div class="post-lists">
+        <div class="post-lists-body">
+			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336618881036.html"> 
+							<div class="item-desc"> 
+								<p>
+现象：iPad 开启屏幕旋转，横屏启动APP，某些特殊情况下，APP会变成横屏APP。恭喜你，中奖了，这时候即使你ViewController的控制屏幕旋转的三个代理方法都只支持竖屏，你的APP也可能是错乱的。
 
 
-        <section id="main-content" role="main" class="scroll-container">
-        
-       
+神奇的解决方案：
 
- <script type="text/javascript">
-	$(function(){
-		$('#menu_item_index').addClass('is_active');
-	});
-</script>
-<div class="row">
-	<div class="large-8 medium-8 columns">
-		<div class="markdown-body home-categories">
-		
-			<div class="article">
-                <a class="clearlink" href="16336618031940.html">
-                
-                  <h1>RunLoop攻坚</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2><a id="%E4%BB%80%E4%B9%88%E6%98%AFrunloop" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>什么是RunLoop</h2>
-<p>顾名思义，RunLoop就是一个保证程序或者线程持续运行的循环。</p>
-<h2><a id="runloop%E4%BD%9C%E7%94%A8" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>runloop 作用</h2>
-<ul>
-<li><strong>保持程序持续运行</strong>。</li>
-<li><strong>处理各种事件</strong> ：触摸事件、定时器时间、selector事件、网络请求等</li>
-<li><strong>节省CPU资源，提高程序性能</strong>：该干活儿时干活儿，该休息时休息</li>
-</ul>
-<p><strong>每一个线程，只对应唯一一个Runloop</strong>
-iOS开发中，UIApplicationMain 函数启动了主线程的 <code>主RunLoop</code>，保证程序的主线程的运行状态，这样UI就不会卡顿。主线程中的runloop是系统主动开启的，开发者手动开启的子线程内的runloop如果不手动开启，子线程执行完就结束了，线程就销毁了。所以，要想手动开启的主线程执行完任务后不被销毁，就需要手动启动<code>RunLoop</code>.</p>
-<pre><code class="language-c">int main(int argc, char * argv[]) {
-    @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-    }
-}
-</code></pre>
-<h2><a id="runloop%E7%9A%84%E4%BA%94%E4%B8%AA%E6%A8%A1%E5%BC%8F" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>RunLoop的五个模式</h2>
-<ul>
-<li><code>kCFRunLoopDefaultMode</code>：APP默认的模式，通常主线程就是在这个模式下运行</li>
-<li><code>UITrackingRunLoopMode</code>: 界面跟踪模式，用于scrollView跟踪触摸滚动，保证滚动时候 不受其他线程影响</li>
-<li><code>kCFRunLoopCommonModes</code> : 占位用的mode，不是一个真正的mode</li>
-<li><code>NSRunLoopCommonModes</code>: 相当于 <code>NSDefaultRunLoopMode</code> + <code>UITrackingRunLoopMode</code></li>
-<li><code>UIInitializationRunLoopMode</code>: 刚启动APP时，进入的第一个mode启动完后不再使用</li>
-<li><code>GSEventReceiveRunLoopMode</code>:接受系统事件的内部mode，通常用不到</li>
-</ul>
-<p><strong>模式使用总结：</strong></p>
-<blockquote>
-<ol>
-<li>一个RunLoop包含多个mode，每个mode包含若干source0、source1、observer、timer</li>
-<li>RunLoop 只能选择一个mode作为currentRunLoop的mode。</li>
-<li>如果想要切换mode，需要先退出当前mode，再重新选择一个mode进入</li>
-<li>不同组的Source、timer、observer 互不影响</li>
-<li>如果Mode里面没有任何的source、timer、observer， RunLoop会立马退出，</li>
-</ol>
-</blockquote>
-<h2><a id="runloop%E5%AF%B9%E8%B1%A1" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>RunLoop 对象</h2>
-<blockquote>
-<p>iOS开发中有两套API来访问和使用RunLoop</p>
-</blockquote>
-<ul>
-<li><strong>&lt; Foundation &gt;</strong>：<code>NSRunLoop</code></li>
-<li><strong>&lt; Core Foundation &gt;</strong>：<code>CFRunLoopRef</code></li>
-</ul>
-<p>NSRunLoop 和 CFRunLoopRef 都代表RunLoop对象。
-NSRunLoop 是基于CFRunLoopRef的一层OC封装。</p>
-<h2><a id="%E8%8E%B7%E5%8F%96runloop%E7%9A%84-api%E4%BD%BF%E7%94%A8%EF%BC%9A" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>获取RunLoop 的 API 使用：</h2>
-<pre><code class="language-c">Foundation
-[NSRunLoop currentRunLoop]; // 获得当前线程的RunLoop对象
-[NSRunLoop mainRunLoop]; // 获得主线程的RunLoop对象
+mainScreen添加一个window，makeKeyAndVisible
+然后resignKeyWindow
 
-Core Foundation
-CFRunLoopGetCurrent(); // 获得当前线程的RunLoop对象
-CFRunLoopGetMain(); // 获得主线程的RunLoop对象
-</code></pre>
-<h2><a id="runloop%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>RunLoop 和 线程之间的关系</h2>
-<ul>
-<li>每个线程都有对应一个唯一的RunLoop对象</li>
-<li>RunLoop保存在一个全局键值对里，线程作为key,RunLoop作为value</li>
-<li>主线程的RunLoop系统创建并启动好了，子线程的RunLoop需要手动创建</li>
-<li>RunLoop在第一次获取时创建，在线程结束时销毁</li>
-<li>线程创建时候，并没有RunLoop对象，所以，执行完代码线程就销毁了。第一次获取线程对象时候创建RunLoop对象，这时候才会循环等待，保证线程不结束，不被销毁。</li>
-<li>RunLoop会在线程结束时销毁</li>
-</ul>
-<h2><a id="runloop%E6%BA%90%E7%A0%81" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>RunLoop源码</h2>
-<h3><a id="runloop%E7%BB%93%E6%9E%84%E4%BD%93" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>RunLoop 结构体</h3>
-<pre><code class="language-objc">struct __CFRunLoop {
-    CFRuntimeBase _base;
-    pthread_mutex_t _lock;          /* locked for accessing mode list */
-    __CFPort _wakeUpPort;           // used for CFRunLoopWakeUp 
-    Boolean _unused;
-    volatile _per_run_data *_perRunData;              // reset for runs of the run loop
-    pthread_t _pthread;
-    uint32_t _winthread;
-    CFMutableSetRef _commonModes;
-    CFMutableSetRef _commonModeItems;
-    CFRunLoopModeRef _currentMode;
-    CFMutableSetRef _modes;
-    struct _block_item *_blocks_head;
-    struct _block_item *_blocks_tail;
-    CFAbsoluteTime _runTime;
-    CFAbsoluteTime _sleepTime;
-    CFTypeRef _counterpart;
-};
-</code></pre>
-<h3><a id="runloop%E5%86%85%E9%83%A8%E5%AE%9E%E7%8E%B0%E6%BA%90%E7%A0%81" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>runloop 内部实现源码</h3>
-<pre><code class="language-c">// 拿到当前Runloop 调用_CFRunLoopGet0
-CFRunLoopRef CFRunLoopGetCurrent(void) {
-    CHECK_FOR_FORK();
-    CFRunLoopRef rl = (CFRunLoopRef)_CFGetTSD(__CFTSDKeyRunLoop);
-    if (rl) return rl;
-    return _CFRunLoopGet0(pthread_self());
-}
 
-// 查看_CFRunLoopGet0方法内部
-CF_EXPORT CFRunLoopRef _CFRunLoopGet0(pthread_t t) {
-    if (pthread_equal(t, kNilPthreadT)) {
-    t = pthread_main_thread_np();
-    }
-    __CFLock(&amp;loopsLock);
-    if (!__CFRunLoops) {
-        __CFUnlock(&amp;loopsLock);
-    CFMutableDictionaryRef dict = CFDictionaryCreateMutable(kCFAllocatorSystemDefault, 0, NULL, &amp;kCFTypeDictionaryValueCallBacks);
-    // 根据传入的主线程获取主线程对应的RunLoop
-    CFRunLoopRef mainLoop = __CFRunLoopCreate(pthread_main_thread_np());
-    // 保存主线程 将主线程-key和RunLoop-Value保存到字典中
-    CFDictionarySetValue(dict, pthreadPointer(pthread_main_thread_np()), mainLoop);
-    if (!OSAtomicCompareAndSwapPtrBarrier(NULL, dict, (void * volatile *)&amp;__CFRunLoops)) {
-        CFRelease(dict);
-    }
-    CFRelease(mainLoop);
-        __CFLock(&amp;loopsLock);
-    }
-    
-    // 从字典里面拿，将线程作为key从字典里获取一个loop
-    CFRunLoopRef loop = (CFRunLoopRef)CFDictionaryGetValue(__CFRunLoops, pthreadPointer(t));
-    __CFUnlock(&amp;loopsLock);
-    
-    // 如果loop为空，则创建一个新的loop，所以runloop会在第一次获取的时候创建
-    if (!loop) {  
-    CFRunLoopRef newLoop = __CFRunLoopCreate(t);
-        __CFLock(&amp;loopsLock);
-    loop = (CFRunLoopRef)CFDictionaryGetValue(__CFRunLoops, pthreadPointer(t));
-    
-    // 创建好之后，以线程为key runloop为value，一对一存储在键值对中，下次获取的时候，则直接返回字典内的runloop
-    if (!loop) { 
-        CFDictionarySetValue(__CFRunLoops, pthreadPointer(t), newLoop);
-        loop = newLoop;
-    }
-        // don't release run loops inside the loopsLock, because CFRunLoopDeallocate may end up taking it
-        __CFUnlock(&amp;loopsLock);
-    CFRelease(newLoop);
-    }
-    if (pthread_equal(t, pthread_self())) {
-        _CFSetTSD(__CFTSDKeyRunLoop, (void *)loop, NULL);
-        if (0 == _CFGetTSD(__CFTSDKeyRunLoopCntr)) {
-            _CFSetTSD(__CFTSDKeyRunLoopCntr, (void *)(PTHREAD_DESTRUCTOR_ITERATIONS-1), (void (*)(void *))__CFFinalizeRunLoop);
-        }
-    }
-    return loop;
-}
-</code></pre>
-<h3><a id="runloop%E4%B8%AD%E7%9A%84%E4%BA%94%E4%B8%AA%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>RunLoop 中的五个类</h3>
-<ul>
-<li>CFRunLoopRef</li>
-<li>CFRunLoopModeRef</li>
-<li>CFRunLoopSourceRef</li>
-<li>CFRunLoopTimerRef</li>
-<li>CFRunLoopObserverRef</li>
-</ul>
-<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbnw55ovroj30bc04v74q.jpg" alt="CFRunLoopRef" /></p>
-<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbnwqpdabdj30dw054t99.jpg" alt="CFRunLoopModeRef" /></p>
-<h3><a id="cfrunloopactivity" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>CFRunLoopActivity</h3>
-<pre><code class="language-c">/* Run Loop Observer Activities */
-typedef CF_OPTIONS(CFOptionFlags, CFRunLoopActivity) {
-    kCFRunLoopEntry = (1UL &lt;&lt; 0),           // 即将进入RunLoop
-    kCFRunLoopBeforeTimers = (1UL &lt;&lt; 1),    // 即将处理Timer
-    kCFRunLoopBeforeSources = (1UL &lt;&lt; 2),   // 即将处理source
-    kCFRunLoopBeforeWaiting = (1UL &lt;&lt; 5),   // 即将进入休眠
-    kCFRunLoopAfterWaiting = (1UL &lt;&lt; 6),    // 唤醒后
-    kCFRunLoopExit = (1UL &lt;&lt; 7),            // 即将推出RunLoop
-    kCFRunLoopAllActivities = 0x0FFFFFFFU   
-};
-</code></pre>
-<h3><a id="%E7%9B%91%E5%90%ACrunloop%E7%9A%84%E6%89%80%E6%9C%89%E7%8A%B6%E6%80%81" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>监听RunLoop的所有状态</h3>
-<pre><code class="language-c">CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
-        switch (activity) {
-            case kCFRunLoopEntry:
-            {// 刚进入RunLoop
-            }
-                break;
-            case kCFRunLoopBeforeTimers:
-            {// 即将处理timer
-            }
-                break;
-            case kCFRunLoopBeforeSources:
-            {// 即将处理source
-            }
-                break;
-            case kCFRunLoopBeforeWaiting:
-            {// 即将进入休眠
-            }
-                break;
-            case kCFRunLoopAfterWaiting:
-            {// 唤醒后
-            }
-                break;
-            case kCFRunLoopExit:
-            {// 即将退出RunLoop
-            }
-                break;
-            default:
-                break;
-        }
-    });
 
-CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopCommonModes);
+- (void)showMagicWindow{
+    UIWindow *aawindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+       a</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
 
-CFRelease(observer);
-</code></pre>
-<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc2mtkcfafj30xc0pon2x.jpg" alt="" /></p>
-<h3><a id="runloop%E8%BF%90%E8%A1%8C%E9%80%BB%E8%BE%91" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>RunLoop运行逻辑</h3>
-<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc2msdkn6xj30pa0jutb3.jpg" alt="" /></p>
-<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbnw30rmhij30zk0igqan.jpg" alt="RunLoop运行逻辑" /></p>
-<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbnz5lvpqtj319s0mqagn.jpg" alt="" /></p>
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336618881036.html">iPad 横屏启动 界面错乱</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336618777988.html"> 
+							<div class="item-desc"> 
+								<p>curl 'https://oapi.dingtalk.com/robot/send?access_token=8c022fd6586126b80994e1b551ce31ab6ee56ed045c47c51c8ab0192c723cb1e' \
+   -H 'Content-Type: application/json' \
+   -d '{
+			&quot;msgtype&quot;: &quot;text&quot;,
+			&quot;text&quot;: {
+             &quot;content&quot;: &quot;高考iOS最新安装包 ipa--https</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336618777988.html">钉钉机器人</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336617489720.html">
-                
-                  <h1>事件传递 && 响应链</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc1i90sum6j31h80u0aui.jpg" alt="事件传递 &amp;&amp; 响应链" />
-1</p>
-<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc1idyxvcej30v80u0k0y.jpg" alt="hitText:event:方法实现逻辑" /></p>
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336618031940.html"> 
+							<div class="item-desc"> 
+								<p>什么是RunLoop
+顾名思义，RunLoop就是一个保证程序或者线程持续运行的循环。
+runloop 作用
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
+保持程序持续运行。
+处理各种事件 ：触摸事件、定时器时间、selector事件、网络请求等
+节省CPU资源，提高程序性能：该干活儿时干活儿，该休息时休息
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+每一个线程，只对应唯一一个Runloop
+iOS开发中，UIApplicationMain 函数启动了主线程的 主RunLoop，保证程序的主线程的运行状态，这样UI就不会卡顿。主线程中的runloop是系统主动开启的，开发者手动开启的子线程内的runloop如果不手动开启，子线程执行完就结束了，线程就销毁了。所以，要想手动开启的</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336617279730.html">
-                
-                  <h1>编译 && 链接</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>iOS开发中编译链接过程：</p>
-<ul>
-<li>预处理 （Prepressing）</li>
-<li>静态语法检测 生成AST(Analyze Static)</li>
-<li>编译 （Compilation）</li>
-<li>汇编 （Assembly）</li>
-<li>链接 （Linking）</li>
-</ul>
-<p>写好代码后， LLVM 会预处理代码，比如把宏嵌入到对应的位置；
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336618031940.html">RunLoop攻坚</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336617489720.html"> 
+							<div class="item-desc"> 
+								<p>事件传递 &amp;&amp; 响应链
+1
+hitText:event:方法实现逻辑
+</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336617489720.html">事件传递 && 响应链</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336617279730.html"> 
+							<div class="item-desc"> 
+								<p>iOS开发中编译链接过程：
+
+预处理 （Prepressing）
+静态语法检测 生成AST(Analyze Static)
+编译 （Compilation）
+汇编 （Assembly）
+链接 （Linking）
+
+写好代码后， LLVM 会预处理代码，比如把宏嵌入到对应的位置；
 预处理完成后， LLVM 会对代码进行词法分析和语法分析，生成 AST , AST 是抽象语法树，结构上比代码更精简，遍历起来更快，所以使用 AST 能够快速的进行静态检查，同时还能更快地生成生成 IR (中间表示)
-最后 AST 会生成 IR, IR 是一种更近机器码的语言区别在于和平台无关，通过 IR 可以生成多分适合不同平台的机器码。对于iOS系统，IR 生成的可执行文件就是 Mach-O.</p>
-<p>预处理  ------ 静态语法检测 ------ AST抽象语法树 ------ IR -----</p>
-<h2><a id="%E9%93%BE%E6%8E%A5%E5%99%A8" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>链接器</h2>
-<p>链接器最主要的作用，就是将符号绑定到地址上。</p>
-<h2><a id="%E7%BC%96%E8%AF%91%E5%99%A8" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>编译器</h2>
-<p>为什么 iOS代码快？</p>
-<p>iOS 编写的代码是先使用编译器把代码编译成机器码（OC --&gt; C/C++ --&gt; 机器码），然后直接在 CPU 上执行机器码的。</p>
-<p>Python 编写的代码，是程序在CPU运行时，用解释器获取源码 直接生成指令，中间不会产生另一种代码。</p>
+最后 AST 会生成 IR, IR 是一种更近机器码的语言区别在于和平台无关，通过 IR 可以生成多分</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336617279730.html">编译 && 链接</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336617111534.html"> 
+							<div class="item-desc"> 
+								<p>zsh: /usr/local/bin/pod: bad interpreter: /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby: no such file or directory
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336617111534.html">
-                
-                  <h1>zsh: /usr/local/bin/pod: bad interpreter: /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby: no such file or directory</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<pre><code class="language-plain_text">zsh: /usr/local/bin/pod: bad interpreter: /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby: no such file or directory
-</code></pre>
-<p>这是Mac升级系统导致，当你的Mac系统升级为macOS Catalina 的时候，别忘记更新cocoapods</p>
-<pre><code class="language-plain_text">sudo gem update --system
+这是Mac升级系统导致，当你的Mac系统升级为macOS Catalina 的时候，别忘记更新cocoapods
+sudo gem update --system
 sudo gem install cocoapods -n/usr/local/bin
-</code></pre>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
+</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336617111534.html">zsh: /usr/local/bin/pod: bad interpreter: /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby: no such file or directory</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336616900153.html">
-                
-                  <h1>技术好文收藏</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<ul>
-<li><a href="https://www.jianshu.com/p/693683967718">fishhook原理</a></li>
-</ul>
-<h2><a id="%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>代码检测</h2>
-<ul>
-<li><a href="https://blog.csdn.net/hdwhappy/article/details/61924772">OCLint 如何自定义规则</a></li>
-<li></li>
-</ul>
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336616900153.html"> 
+							<div class="item-desc"> 
+								<p>
+fishhook原理
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
+代码检测
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+OCLint 如何自定义规则
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336616337266.html">
-                
-                  <h1>Runtime</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2><a id="%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>数据结构</h2>
-<h3><a id="objc-object" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>objc_object</h3>
-<p>id ==》 objc_object 结构体</p>
-<ul>
-<li>继承自 objc_class</li>
-<li>isa指针指向 objc_class</li>
-<li>实例对象的isa指针指向类对象；类对象isa指针 指向元类</li>
-</ul>
-<p><strong>结构作用</strong></p>
-<ul>
-<li>isa_t</li>
-<li>isa相关操作</li>
-<li>弱引用相关</li>
-<li>关联对象相关</li>
-<li>内存管理相关</li>
-</ul>
-<h3><a id="objc-class" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>objc_class</h3>
-<p>Class ==  objc_class
-objc_class 继承自 objc_object</p>
-<ul>
-<li><strong>superClass</strong> superClass 指向一个 Class</li>
-<li><strong>cache_t</strong> 方法缓存 cache bucket list 里面存的是 key：IMP</li>
-<li><strong>class_data_bits_t</strong> bits 类的变量/属性/方法</li>
-</ul>
-<h3><a id="isa%E6%8C%87%E9%92%88" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>isa指针</h3>
-<p>共用体 isa_t</p>
-<ol>
-<li>指针型isa:isa的值代表Class的地址</li>
-<li>非指针型isa:isa的值的部分代表Class的地址</li>
-</ol>
-<p>实例对象  ---&gt;&gt; 类对象Class
-类对象 --&gt;&gt; 元类</p>
-<h3><a id="cache-t" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>cache_t</h3>
-<ul>
-<li>快速查询方法查询</li>
-<li>可增量扩展的哈希结构</li>
-<li>局部性原理的最佳应用</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Bucket_t</th>
-<th>Bucket_t</th>
-<th>Bucket_t</th>
-<th>Bucket_t</th>
-</tr>
-</thead>
-</table>
-<ul>
-<li>bucket_t: key : IMP</li>
-</ul>
-<h3><a id="class-data-bits-t" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>class_data_bits_t</h3>
-<p>class_data_bits_t  是 class_rw_t
-class_rw_t  类的属性  协议 read-write
-class_ro_t read-only 只读信息</p>
-<h3><a id="class-rw-rt" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>class_rw_rt</h3>
-<ul>
-<li>class_ro_t
-<ul>
-<li>name 类名</li>
-<li>ivars 成员变量 一维数组 里面是  method_t 只读</li>
-<li>propertyes 属性 一维数组 只读</li>
-<li>protocols 协议 一维数组 只读</li>
-<li>methodList 一维数组 只读</li>
-</ul>
-</li>
-<li>protocols  list_array_tt 二维数组 可写</li>
-<li>propertyes list_array_tt 二维数组 可写</li>
-<li>methods list_array_tt 二维数组 里面是  method_t 可写</li>
-</ul>
-<p>函数四要素：</p>
-<ul>
-<li>函数名称</li>
-<li>函数返回值</li>
-<li>函数参数</li>
-<li>函数体</li>
-</ul>
-<h4><a id="method-t" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>method_t</h4>
-<ul>
-<li>SEL  name 函数名</li>
-<li>const char* types  传参 和 返回值</li>
-<li>IMP imp 函数体</li>
-</ul>
-<p><a href="https://www.jianshu.com/p/bcd36ba92550">Types encodings 请参考</a></p>
-<p>const char* types</p>
-<table>
-<thead>
-<tr>
-<th>返回值</th>
-<th>参数1</th>
-<th>参数2</th>
-<th>参数n</th>
-</tr>
-</thead>
-</table>
-<p>-(void)aMethod; &lt;===&gt; v@:</p>
-<table>
-<thead>
-<tr>
-<th>V</th>
-<th>@</th>
-<th>:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>void</td>
-<td>id(消息接收者 self)</td>
-<td>SEL</td>
-</tr>
-</tbody>
-</table>
-<h3><a id="%E6%95%B4%E4%BD%93%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>整体数据结构</h3>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gdc1nnwccoj313y0n4afh.jpg" alt="整体数据结构" /></p>
-<h2><a id="%E5%AF%B9%E8%B1%A1%E7%B1%BB%E5%AF%B9%E8%B1%A1%E5%85%83%E7%B1%BB" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>对象 类对象 元类</h2>
-<ul>
-<li>
-<p>类对象 ： 存储实例方法列表等信息</p>
-</li>
-<li>
-<p>元类对象 ： 存储类方法列表等信息</p>
-</li>
-</ul>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
+</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336616900153.html">技术好文收藏</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336614997940.html">
-                
-                  <h1>WKWebView从入门到放弃 (一 入门)</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h1><a id="wkwebview%E5%88%9D%E5%A7%8B%E5%8C%96" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKWebView 初始化</h1>
-<h2><a id="%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%AF%BC%E5%85%A5%E5%A4%B4%E6%96%87%E4%BB%B6%E5%A3%B0%E6%98%8Ewebview%E5%B1%9E%E6%80%A7" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第一步：导入头文件 声明webview属性</h2>
-<pre><code class="language-plain_text">// 导入头文件
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336616337266.html"> 
+							<div class="item-desc"> 
+								<p>数据结构
+objc_object
+id ==》 objc_object 结构体
+
+继承自 objc_class
+isa指针指向 objc_class
+实例对象的isa指针指向类对象；类对象isa指针 指向元类
+
+结构作用
+
+isa_t
+isa相关操作
+弱引用相关
+关联对象相关
+内存管理相关
+
+objc_class
+Class ==  objc_class
+objc_class 继承自 objc_object
+
+superClass superClass 指向一个 Class
+cache_t 方法缓存 cache bucket list 里面存的是 key：IMP
+class_data_bits</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336616337266.html">Runtime</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336614997940.html"> 
+							<div class="item-desc"> 
+								<p>WKWebView 初始化
+第一步：导入头文件 声明webview属性
+// 导入头文件
 #import &lt;WebKit/WebKit.h&gt;
 // 声明webView属性
 @property (nonatomic, strong) WKWebView *webView;
-</code></pre>
-<h2><a id="%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%88%9D%E5%A7%8B%E5%8C%96webview" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第二步 ： 初始化webView</h2>
-<p>webview初始化位置**【尽量提前】**，如果过项目需要，甚至可以在APP启动后的某个特殊时机，预初始化一个全局webView。这样能够提前让项目初始化web内核，以减少初次进入webView的等待时间。 牺牲一定的性能，换取web启动时间，根据需求决定，我这里是放到了ViewController的ViewDidload方法中了。</p>
-<pre><code class="language-plain_text">// 使用webconfig方式初始化webView
-_webView = [[WKWebView alloc] initWithFrame:frame configuration:self.webConfig];
- // UI代理 主要是 alert 等弹窗的代理；
- // 这里你可以设置一个专门的NSObject类遵守WKUIDelegate协议来处理回调方法 设置： _webView.UIDelegate = self.uiDelegater;
- _webView.UIDelegate = self;
- // 导航代理 同理 可设置一个代理类处理 导航跳转问题 继承 WKNavigationDelegate 协议 
- _webView.navigationDelegate = self;
- // 是否允许手势左滑返回上一级, 类似导航控制的左滑返回
- _webView.allowsBackForwardNavigationGestures = YES;
-_webView.backgroundColor = [UIColor clearColor];
-// scrollView 滚动速度 UIScrollViewDecelerationRateFast：快速 UIScrollViewDecelerationRateNormal:正常速度
-_webView.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
-//_webView.customUserAgent = @&quot;userAgent&quot;;// 自定义请求 userAgent
-//_webView.allowsLinkPreview = YES;// 默认 不支持按压预览
-    
-//添加监测网页加载进度的观察者
- [_webView addObserver:self forKeyPath:@&quot;estimatedProgress&quot; options:NSKeyValueObservingOptionNew context:@&quot;LXWKWebViewController&quot;];
-//添加监测网页标题title的观察者
- [_webView addObserver:self forKeyPath:@&quot;title&quot; options:NSKeyValueObservingOptionNew context:nil];
-</code></pre>
-<p><strong>另外还有初始化方法：</strong></p>
-<pre><code class="language-plain_text">// 通过制定URL初始化webView 太过固定
- - (instancetype)initWithURL:(NSURL *)URL;
- 
- // 可定制webView的 网络策略 和 超时时间 缺点同上
- - (instancetype)initWithURL:(NSURL *)URL cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval NS_DESIGNATED_INITIALIZER;
-</code></pre>
-<h2><a id="%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%8A%A0%E8%BD%BD%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第三步：加载网络请求</h2>
-<p>加载网页地址，如果需要记得在info.plist文件中提前开启ATS， NSAllowsArbitraryLoads --&gt; YES，允许http的网页请求。</p>
-<h3><a id="webrequest%E8%AF%B7%E6%B1%82%E6%97%B6%E6%9C%BA" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>webRequest请求时机</h3>
-<p>某些机型中 loadRequest 方法  放在viewDidload方法中去执行，会出现webView白屏现象，所以我这边放到了viewwillappear方法中。这里要记得判断是否是初次viewwillappear，避免网页频繁刷新。</p>
-<pre><code class="language-plain_text">if (self.url &amp;&amp; !_request){
-    //忽略本地缓存
-    _request = [NSURLRequest requestWithURL:self.url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60];
-    [self.webView loadRequest:_request];
-}
-</code></pre>
-<h3><a id="webrequest%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>webRequest请求参数</h3>
-<ul>
-<li>需要注意的属性时 <code>NSURLRequestCachePolicy</code>：</li>
-</ul>
-<pre><code class="language-plain_text">typedef NS_ENUM(NSUInteger, NSURLRequestCachePolicy)
-{
-    NSURLRequestUseProtocolCachePolicy = 0,// 默认 启用网页缓存，APP重启后会清空缓存
-    NSURLRequestReloadIgnoringLocalCacheData = 1,// 忽略本地缓存，每次都用最新的网络数据
-    NSURLRequestReloadIgnoringLocalAndRemoteCacheData = 4,// 不仅忽略本地缓存，同时也忽略代理服务器或其他中间介质目前已有的、协议允许的缓存
-    NSURLRequestReloadIgnoringCacheData = NSURLRequestReloadIgnoringLocalCacheData,// 同上
-    NSURLRequestReturnCacheDataElseLoad = 2,// 无论缓存是否过期，先使用本地缓存数据。如果缓存中没有请求所对应的数据，那么从原始地址加载数据
-    NSURLRequestReturnCacheDataDontLoad = 3,// 无论缓存是否过期，先使用本地缓存数据。如果缓存中没有请求所对应的数据，那么放弃从原始地址加载数据，请求视为失败（即：“离线”模式）。
-    NSURLRequestReloadRevalidatingCacheData = 5,// 从原始地址确认缓存数据的合法性后，缓存数据就可以使用，否则从原始地址加载。
-};
-</code></pre>
-<ul>
-<li>超时时间不需要多说 一般最多 15-30s为宜</li>
-</ul>
-<h1><a id="%E7%BD%91%E9%A1%B5%E5%81%8F%E5%A5%BD%E8%AE%BE%E7%BD%AEwkwebviewconfiguration" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>网页偏好设置:WKWebViewConfiguration</h1>
-<h2><a id="%E4%B8%8A%E4%BB%A3%E7%A0%81getter-function" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>上代码 Getter Function</h2>
-<pre><code class="language-plain_text">- (WKWebViewConfiguration *)webConfig{
-    if (!_webConfig) {
-        _webConfig = [[WKWebViewConfiguration alloc]init];
-        _webConfig.preferences.javaScriptEnabled = YES;//打开js交互
-        
-        // 是使用h5的视频播放器在线播放, 还是使用原生播放器全屏播放
-        _webConfig.allowsInlineMediaPlayback = YES;
-        //设置视频是否需要用户手动播放  设置为NO则会允许自动播放
-        _webConfig.requiresUserActionForMediaPlayback = YES;
-        //设置是否允许画中画技术 在特定设备上有效
-        _webConfig.allowsPictureInPictureMediaPlayback = YES;
-        //设置请求的User-Agent信息中应用程序名称 iOS9后可用
-        _webConfig.applicationNameForUserAgent = @&quot;ChinaDailyForiPad&quot;;
-        // 设置 preferences 主要是 网页浏览属性 支持js 交互什么的
-        _webConfig.preferences = self.webPreference;
-        // OC JS交互的方法
-        _webConfig.userContentController = self.webUserContentController;
-        // 识别h5中的邮箱电话识别
-        if (@available(iOS 10.0, *)) {
-            _webConfig.dataDetectorTypes = UIDataDetectorTypeAll;
-        } else {
-            // Fallback on earlier versions
-        }
-    }
-    return _webConfig;
-}
 
-- (WKWebViewConfiguration *)webConfig{
-    if (!_webConfig) {
-        _webConfig = [[WKWebViewConfiguration alloc]init];        
-        // 是使用h5的视频播放器在线播放, 还是使用原生播放器全屏播放
-        _webConfig.allowsInlineMediaPlayback = YES;
-        //设置视频是否需要用户手动播放  设置为NO则会允许自动播放
-        _webConfig.requiresUserActionForMediaPlayback = YES;
-        //设置是否允许画中画技术 在特定设备上有效
-        _webConfig.allowsPictureInPictureMediaPlayback = YES;
-        //设置请求的User-Agent信息中应用程序名称 iOS9后可用
-        _webConfig.applicationNameForUserAgent = @&quot;ChinaDailyForiPad&quot;;
-        // 设置 preferences 主要是 网页浏览属性 支持js 交互什么的
-        _webConfig.preferences = self.webPreference;
-        // OC JS交互的方法
-        _webConfig.userContentController = self.webUserContentController;
-        // 识别h5中的邮箱电话识别
-        if (@available(iOS 10.0, *)) {
-            _webConfig.dataDetectorTypes = UIDataDetectorTypeAll;
-        } else {
-            // Fallback on earlier versions
-        }
-    }
-    return _webConfig;
-}
-- (WKPreferences *)webPreference{
-    if (!_webPreference) {
-        // 创建设置对象
-        _webPreference = [[WKPreferences alloc]init];
-        //最小字体大小 当将javaScriptEnabled属性设置为NO时，可以看到明显的效果
-        _webPreference.minimumFontSize = 10;
-        //设置是否支持javaScript 默认是支持的
-        _webPreference.javaScriptEnabled = YES;
-        // 在iOS上默认为NO，表示是否允许不经过用户交互由javaScript自动打开窗口
-        _webPreference.javaScriptCanOpenWindowsAutomatically = YES;
-        if (@available(iOS 13.0, *)) {// 恶意软件警告
-            _webPreference.fraudulentWebsiteWarningEnabled = YES;
-        }
-    }
-    return _webPreference;
-}
-- (WKUserContentController *)webUserContentController{
-    if (!_webUserContentController) {
-        _webUserContentController = [[WKUserContentController alloc] init];
-    }
-    return _webUserContentController;
-}
-</code></pre>
-<h2><a id="wkwebviewconfiguration%E7%BB%93%E6%9E%84" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKWebViewConfiguration 结构</h2>
-<p>首先看一下这个类的结构</p>
-<ul>
-<li><code>WKWebViewConfiguration</code>：这个类专门用来配置WKWebView
-<ul>
-<li><code>WKPreference</code>:这个类用来进行相关webView【偏好设置】</li>
-<li><code>WKProcessPool</code>:用来配置进程池，与网页视图的资源共享有关</li>
-<li><code>WKUserContentController</code>:主要用来做native与JavaScript的交互管理
-<ul>
-<li><code>WKUserScript</code>:用于进行JavaScript注入</li>
-<li><code>WKScriptMessageHandler</code>:用来处理JavaScript回调native的方法</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2><a id="wknavigationdelegate" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKNavigationDelegate</h2>
-<h3><a id="%E7%BD%91%E9%A1%B5%E7%8A%B6%E6%80%81%E5%9B%9E%E8%B0%83" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>网页状态回调</h3>
-<pre><code class="language-plain_text">#pragma mark - **************** WKNavigationDelegate
-// 页面开始加载时调用
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {}
-// 页面加载失败时调用
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error {}
-// 当内容开始返回时调用
-- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {}
-// 页面加载完成之后调用
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {}
-//提交发生错误时调用
-- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {}
-// 接收到服务器跳转请求即服务重定向时之后调用
-- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation {}
-</code></pre>
-<h3><a id="wknavigationaction%E7%BD%91%E9%A1%B5%E6%B4%BB%E5%8A%A8%E5%9B%9E%E8%B0%83" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKNavigationAction 网页活动回调</h3>
-<pre><code class="language-plain_text">// 根据WebView对于即将跳转的HTTP请求头信息和相关信息来决定是否跳转
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    NSString *urlStr = navigationAction.request.URL.absoluteString;
-    urlStr = [urlStr stringByRemovingPercentEncoding];
-    // 处理 H5 重定向问题
-    NSString *supportDomain = @&quot;www.***.com&quot;;
+第二步 ： 初始化webView
+webview初始化位置**【尽量提前】**，如果过项目需要，甚至可以在APP启动后的某个特殊时机，预初始化一个全局webView。这样能够提前让项目初始化web内核，以减少初次进入webView的等待时间。 牺牲一定的性能，换取web启动时间，根据需求决定，我这里是放到了Vie</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
 
-    WKFrameInfo *frameInfo = navigationAction.targetFrame;
-    if (![frameInfo isMainFrame] &amp;&amp; [urlStr containsString:supportDomain]) {
-        [webView loadRequest:navigationAction.request];
-        self.url = navigationAction.request.URL;
-    }
-    // 自定义规则 拦截内部跳转
-    if ([urlStr hasPrefix:schemeHeader]) {
-        [ControllerUtils showViewWithURL:urlStr];
-        
-        decisionHandler(WKNavigationActionPolicyCancel);
-        return;
-    }
-    // 微信跳转
-    if ([urlStr hasPrefix:@&quot;weixin://&quot;]) {
-        if ([[UIApplication sharedApplication] canOpenURL:navigationAction.request.URL]) {
-            [[UIApplication sharedApplication] openURL:navigationAction.request.URL];
-        }
-        decisionHandler(WKNavigationActionPolicyCancel);
-        return;
-    }
-    NSLog(@&quot;发送跳转请求：%@&quot;,urlStr);
-    // 允许跳转
-    decisionHandler(WKNavigationActionPolicyAllow);
-}
-// 根据客户端受到的服务器响应头以及response相关信息来决定是否可以跳转
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
-    NSString * urlStr = navigationResponse.response.URL.absoluteString;
-    urlStr=[urlStr stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];//个人情况，url里面会加入中文
-    NSLog(@&quot;当前跳转地址：%@&quot;,urlStr);
-    //允许跳转
-    decisionHandler(WKNavigationResponsePolicyAllow);
-    //不允许跳转
-    //decisionHandler(WKNavigationResponsePolicyCancel);
-}
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336614997940.html">WKWebView从入门到放弃 (一 入门)</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
 
-/// 需要响应身份验证时调用 同样在block中需要传入用户身份凭证  ios 10.3 下 崩溃
-- (void)webView:(WKWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler{
-    // 判断服务器采用的验证方法
-    if (challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust) {
-         // 如果没有错误的情况下 创建一个凭证，并使用证书
-        if (challenge.previousFailureCount == 0) {
-            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
-            completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
-        }else {
-        // 验证失败，取消本次验证
-            completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
-        }
-    }else {
-        completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
-
-    }
-}
-
-//进程被终止时调用
-- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{
-//    [webView reload];
-}
-</code></pre>
-<h2><a id="wkuidelegate-ui%E4%BB%A3%E7%90%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>WKUIDelegate UI代理</h2>
-<pre><code class="language-plain_text">#pragma mark - **************** WKUIDelegate
-/**
- *  web界面中有弹出警告框时调用
- *
- *  @param webView           实现该代理的webview
- *  @param message           警告框中的内容
- *  @param completionHandler 警告框消失调用
- */
-- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
-
-    // 为避免 scheme 跳转界面后 alert弹出弹窗 崩溃问题，做一个兼容（VC A,模态跳转到B后，不能再由A模态跳转B了）
-    if (![[self appKeyWindowTopVC] isKindOfClass:[self.vcDelegate class]]) {
-        completionHandler();
-        return;
-    }
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@&quot;&quot; message:message?:@&quot;&quot; preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:([UIAlertAction actionWithTitle:@&quot;确定&quot; style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        completionHandler();
-    }])];
-    [self.vcDelegate presentViewController:alertController animated:YES completion:nil];
-
-}
-// ------------- 确认框
-//JavaScript调用confirm方法后回调的方法 confirm是js中的确定框，需要在block中把用户选择的情况传递进去
-- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler{
-    // 同上
-    if (![[self appKeyWindowTopVC] isKindOfClass:[self.vcDelegate class]]) {
-        completionHandler(NO);
-        return;
-    }
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@&quot;&quot; message:message?:@&quot;&quot; preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:([UIAlertAction actionWithTitle:@&quot;取消&quot; style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        completionHandler(NO);
-    }])];
-    [alertController addAction:([UIAlertAction actionWithTitle:@&quot;确定&quot; style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        completionHandler(YES);
-    }])];
-    [self.vcDelegate presentViewController:alertController animated:YES completion:nil];
-}
-
-// ------- 输入框
-//JavaScript调用prompt方法后回调的方法 prompt是js中的输入框 需要在block中把用户输入的信息传入
-- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler{
-    // 同上
-    if (![[self appKeyWindowTopVC] isKindOfClass:[self.vcDelegate class]]) {
-        completionHandler(@&quot;&quot;);
-        return;
-    }
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:prompt message:@&quot;&quot; preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        textField.text = defaultText;
-    }];
-    [alertController addAction:([UIAlertAction actionWithTitle:@&quot;OK&quot; style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        completionHandler(alertController.textFields[0].text?:@&quot;&quot;);
-    }])];
-    [self.vcDelegate presentViewController:alertController animated:YES completion:nil];
-}
-
-
-// 页面弹出窗口 _blank 处理
-- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
-    if (!navigationAction.targetFrame.isMainFrame) {
-        [webView loadRequest:navigationAction.request];
-    }
-    return nil;
-}
-
-#pragma mark - **************** tool
-- (UIViewController *)appKeyWindowTopVC{
-    UITabBarController *rootVC = (UITabBarController*)[(AppDelegate *)[UIApplication sharedApplication].delegate window].rootViewController;
-    UIViewController *presentedVC = rootVC;
-    while (presentedVC.presentedViewController) {
-        presentedVC = presentedVC.presentedViewController;
-    }
-    return presentedVC;
-}
-</code></pre>
-<p>到这里,WKWebView基本上就可以使用了。</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336614293958.html">
-                
-                  <h1>WKWebview加载速度优化</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h1><a id="%E9%AB%98%E5%BA%A6%E8%AE%A1%E7%AE%97%E9%97%AE%E9%A2%98%E4%BC%98%E5%8C%96" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>高度计算问题优化</h1>
-<p><a href="https://xibhe.com/2018/02/03/WKWebView-disabuse/index.html">使用WKWebView进行性能调优</a>
-<a href="https://tech.meituan.com/2017/06/09/webviewperf.html">WebView性能、体验分析与优化--美团出品</a>
-<a href="https://juejin.im/post/5a37d039518825256362c6ce">iOS使用NSURLProtocol来Hook拦截WKWebview请求并回放的一种姿(ti)势(wei)</a></p>
-<h2><a id="%E8%A2%AB%E6%94%BE%E5%BC%83%E7%9A%84%E6%96%B9%E6%B3%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>被放弃的方法</h2>
-<pre><code class="language-plain_text">- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336614293958.html"> 
+							<div class="item-desc"> 
+								<p>高度计算问题优化
+使用WKWebView进行性能调优
+WebView性能、体验分析与优化--美团出品
+iOS使用NSURLProtocol来Hook拦截WKWebview请求并回放的一种姿(ti)势(wei)
+被放弃的方法
+- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
     /**计算高度*/
     dispatch_async(dispatch_get_global_queue(0,0), ^{
 
-        [_webView evaluateJavaScript:@&quot;document.documentElement.offsetHeight&quot; completionHandler:^(id_Nullable result, NSError *_Nullable error) {
-            //获取webView高度
-            CGRect frame = _webView.frame;
-            frame.size.height = [result doubleValue] + 50;
-            _webView.frame = frame;
-            _scrollViewHeight = 220 + _webView.height;
-            _scrollView.contentSize = CGSizeMake(kScreenWidth, _scrollViewHeight);
-        }];
+        [_webVie</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
 
-    });
-}
-</code></pre>
-<h2><a id="%E8%BE%83%E5%BF%AB%E7%9A%84%E6%96%B9%E6%B3%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>较快的方法</h2>
-<h3><a id="%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E6%B7%BB%E5%8A%A0%E8%A7%82%E5%AF%9F%E8%80%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第一步：添加观察者</h3>
-<pre><code class="language-plain_text">[_webView.scrollViewaddObserver:selfforKeyPath:@&quot;contentSize&quot;options:NSKeyValueObservingOptionNewcontext:nil];
-</code></pre>
-<h3><a id="%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E8%A7%82%E5%AF%9F%E8%80%85%E7%9B%91%E5%90%ACwebview%E7%9A%84contentsize%E5%8F%98%E5%8C%96" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第二步：观察者监听webView的contentSize变化</h3>
-<pre><code class="language-plain_text">- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([keyPathisEqualToString:@&quot;contentSize&quot;]) {
-        dispatch_async(dispatch_get_global_queue(0,0), ^{
-           [_webViewevaluateJavaScript:@&quot;document.documentElement.offsetHeight&quot;completionHandler:^(id_Nullable result, NSError * _Nullable error) {
-                CGRect frame =_webView.frame;
-                frame.size.height = [resultdoubleValue] + 50;
-                _webView.frame = frame;
-                _scrollViewHeight =220 + _webView.height;
-                _scrollView.contentSize =CGSizeMake(kScreenWidth,_scrollViewHeight);
-            }];
-        });
-    }
-}
-</code></pre>
-<h3><a id="%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E7%A7%BB%E9%99%A4%E8%A7%82%E5%AF%9F%E8%80%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第三步：移除观察者</h3>
-<pre><code class="language-plain_text">- (void)dealloc{
-    [_webView.scrollViewremoveObserver:selfforKeyPath:@&quot;contentSize&quot;];
-}
-</code></pre>
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336614293958.html">WKWebview加载速度优化</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336613531680.html">
-                
-                  <h1>CocoaPods 仓库制作</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p><a href="https://www.jianshu.com/p/e191ea44d1ea">可参考 https://www.jianshu.com/p/e191ea44d1ea</a></p>
-<h1><a id="%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84pod%E5%BA%93%E7%9A%84%E7%B4%A2%E5%BC%95%E5%BA%93" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>创建自己的Pod库的索引库</h1>
-<h2><a id="%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9Agithub%E6%88%96%E8%80%85-coding-giteen%E4%B8%8A%E5%88%9B%E5%BB%BA%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%EF%BC%88%E7%A9%BA%E4%BB%93%E5%BA%93%EF%BC%89" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第一步：GitHub 或者 coding Giteen 上创建私有仓库 （空仓库）</h2>
-<p>1
-<a href="https://gitee.com/kaelinda/KLRepos.git">https://gitee.com/kaelinda/KLRepos.git</a></p>
-<pre><code class="language-plain_text">pod repo add [私有Pod源仓库名字] [私有Pod源的repo地址]
-pod repo add LCRepos https://gitee.com/kaelinda/KLRepos.git
-</code></pre>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ge3kh58lfpj31hm0k6106.jpg" alt="理解示意图" /></p>
-<ul>
-<li>repos文件是cocoapods的第三方库的索引</li>
-<li>master是主分支索引</li>
-<li>KLRepos是我们自己创建的索引仓库</li>
-</ul>
-<h2><a id="%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E9%A1%B9%E7%9B%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第二步：创建本地仓库项目</h2>
-<pre><code class="language-plain_text">pod lib create KLAModule
-.
-.
-经历过一堆的问号????， 根据自己项目情况选择
-.
-.
-cd KLAModule
-pod setup
-</code></pre>
-<h2><a id="%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%85%B3%E8%81%94%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%92%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>第三步：关联本地仓库 和 远程仓库</h2>
-<ul>
-<li>Git全局配置：</li>
-</ul>
-<pre><code class="language-plain_text">git config --global user.name &quot;你的用户名&quot;
-git config --global user.email &quot;你的个人邮箱&quot;
-</code></pre>
-<ul>
-<li>创建 &amp; 推送仓库</li>
-</ul>
-<pre><code class="language-plain_text">// * 创建 git 仓库:
-mkdir KLMiddleware
-cd KLMiddleware
-git init
-git commit -m &quot;first commit&quot;
-git remote add origin https://gitee.com/kaelinda/KLMiddleware.git
-git push -u origin master
-
-// * 已有仓库?
-cd existing_git_repo
-git remote add origin https://gitee.com/kaelinda/KLMiddleware.git
-git push -u origin master
-</code></pre>
-<ul>
-<li>把创建好的第三方库 push 到私有Pod索引库：</li>
-</ul>
-<pre><code class="language-plain_text">pod repo push LXRepos LXBaseCategory.podspec --allow-warnings --verbose
-</code></pre>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336613214567.html">
-                
-                  <h1>infer使用</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2><a id="%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装</h2>
-<p><strong>1.安装brew</strong></p>
-<pre><code class="language-js">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-</code></pre>
-<p><strong>2.安装infer</strong></p>
-<pre><code class="language-js">brew install infer
-</code></pre>
-<h2><a id="%E5%88%86%E6%9E%90%E5%91%BD%E4%BB%A4" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>分析命令</h2>
-<p><strong>1.分析单个文件</strong></p>
-<ul>
-<li>cd InferTest.m 所在的目录</li>
-<li>infer -- clang -c InferTest.m</li>
-<li>No issues found   代表没有问题</li>
-</ul>
-<p><strong>2.分析整个项目</strong></p>
-<ul>
-<li>cd 到项目所在的目录 (KooApp)为工程名称</li>
-</ul>
-<pre><code class="language-js">infer -- xcodebuild -target KooApp -configuration Debug -sdk iphonesimulator
-</code></pre>
-<p><strong>3.分析带cocoapods的整个项目</strong></p>
-<ul>
-<li>cd 到项目所在目录</li>
-<li>KooApp代表项目名或者scheme名</li>
-</ul>
-<pre><code class="language-js">infer --  xcodebuild -workspace ./KooApp.xcworkspace -configuration Debug -scheme KooApp
-</code></pre>
-<ul>
-<li>忽略过滤文件  （in-path后面跟的是一个忽略文件或者文件夹的路径数组。(clang也可以去掉)）</li>
-</ul>
-<pre><code class="language-js">INFER_ARGS=&quot;--skip-clang-analysis-in-path^[\&quot;Pods\&quot;]&quot; infer -- xcodebuild -workspace ./KooApp.xcworkspace -configuration Debug -scheme KooApp
-</code></pre>
-<p>注意：如果infer分析编译报错，忽略错误继续分析</p>
-<pre><code class="language-js">infer --keep-going
-</code></pre>
-<p><strong>4.工程清理命令</strong>
-注意：有时候发现编译分析结果不全，此时可以先清理一下，然后再编译</p>
-<pre><code class="language-js">xcodebuild -target KooApp -configuration Debug -sdk iphonesimulator clean
-</code></pre>
-<p><strong>5.cocoapods的项目清理命令</strong></p>
-<pre><code class="language-js">xcodebuild -workspace ./KooApp.xcworkspace -configuration Debug -scheme KooApp clean
-</code></pre>
-<p><img src="media/15604798122070/15621404742524.jpg" alt="" style="width:1384px;" /></p>
-<h2><a id="%E9%97%AE%E9%A2%98%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>问题分类总结</h2>
-<p>1.<code>DIRECT_ATOMIC_PROPERTY_ACCESS</code></p>
-<p>在代码中使用了使用了一个atomic的成员变量，infer建议我们将atomic修改为nonatomic。由于OC中，属性会被默认设置为atomic属性，我们需要显示将属性声明为nonatomic。</p>
-<p>2.<code>ASSIGN_POINTER_WARNING</code></p>
-<p>由于在mrc时代，没有weak指针，所以一些view的属性声明是_、unsafe__unretain__的形式，在arc中，这个属性被判断为assign，需要将其修改为weak或者strong</p>
-<p>3.<code>NULL_DEREFERENCE</code></p>
-<p>空指针</p>
-<p>4.<code>IVAR_NOT_NULL_CHECKED</code></p>
-<p>在代码中调用block，运行代码时，没有做判空处理。即需要改动为，
-if(block){block()}</p>
-<p>5.<code>BAD_POINTER_COMPARISON</code></p>
-<p>Implicitly checking whether NSNumber pointer is nil。没有判断一个  NSNumber类型的对象是不是空？此处应该是误报。</p>
-<p>6.<code>TAINTED_VALUE_REACHING_SENSITIVE_FUNCTION</code></p>
-<p>代码中使用了cookie的value。可以理解为误报</p>
-<p>7.<code>PARAMETER_NOT_NULL_CHECKED</code></p>
-<p>传参时没有判断是否为null，加一次判断就可以了</p>
-<p>8.<code>STRONG_DELEGATE_WARNING</code></p>
-<p>将一个delegate属性设置为strong的类型。</p>
-<p>9.<code>PREMATURE_NIL_TERMINATION_ARGUMENT</code></p>
-<p>没有判断是否为空</p>
-<p>10.<code>REGISTERED_OBSERVER_BEING_DEALLOCATED</code></p>
-<p>创建一个对象后，监听了某些通知，但是没有在dealloc中释放该通知。项目中出现这种问题的类，基本都是单例，不会被销毁。</p>
-<p>11.<code>MEMORY_LEAK</code></p>
-<p>内存泄露。项目代码全面启动了ARC进行内存管理，在OC层没有扫描出内存泄露。目前扫描出的内存泄露问题都是使用了malloc或者ralloc等c语言内存申请函数，在函数提前return前没有及时free。</p>
-<h2><a id="%E6%A3%80%E6%B5%8B%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>检测可能会遇到的问题</h2>
-<p>1.分析某一个文件报错（fatal error: 'UIKit/UIKit.h' file not found）
-解决方案：
-在命令中加</p>
-<pre><code class="language-js">-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk
-</code></pre>
-<p>举例：</p>
-<pre><code class="language-js">infer -- clang -c -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk Hellow.m
-</code></pre>
-<p>2.分析带ARC特有的修饰(如weak或者__weak)或者其他的情况(命令行中加-fobjc-arc)</p>
-<pre><code class="language-js">infer -- clang -c -fobjc-arc InferTest.m
-</code></pre>
-<p>3.如果infer分析编译报错，忽略错误继续分析</p>
-<pre><code class="language-js">infer --keep-going
-</code></pre>
-<p>4.有时候发现编译分析结果不全，此时可以先清理一下，然后再编译：</p>
-<blockquote>
-<p>工程清理命令</p>
-</blockquote>
-<pre><code class="language-js">xcodebuild -target InferTest -configuration Debug -sdk iphonesimulator clean
-</code></pre>
-<blockquote>
-<p>或者带cocoapods的项目清理命令</p>
-</blockquote>
-<pre><code class="language-js">xcodebuild -workspace ./InferTest.xcworkspace -configuration Debug -scheme InferTest clean
-</code></pre>
-<p>然后再运行Infer分析的命令</p>
-<h2><a id="%E8%BF%87%E6%BB%A4%E6%8E%89%E6%88%91%E4%BB%AC%E5%BC%95%E5%85%A5%E7%9A%84%E7%AC%AC%E4%B8%89%E5%BA%93%E7%AD%89%E4%B8%8D%E6%83%B3%E5%81%9A%E5%88%86%E6%9E%90%E7%9A%84%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>过滤掉我们引入的第三库等不想做分析的文件</h2>
-<ul>
-<li>方法一：
-而当我们在项目中使用了很多第三方的时候，其实我们只想让Infer分析我们的代码，而不想分析第三方的代码，不然分析报告中会有很多第三方的issue，看着混乱，这时我们可以用命令行过滤掉关于不想分析的文件。比如用到cocoapods的项目，我们想过滤掉Pods引入的第三方库，命令行如下：</li>
-</ul>
-<pre><code class="language-js">INFER_ARGS=&quot;--skip-clang-analysis-in-path^[\&quot;Pods\&quot;]&quot; infer -- xcodebuild -workspace ./KooApp.xcworkspace -configuration Debug -scheme KooApp
-</code></pre>
-<p>注：in-path后面跟的是一个忽略文件或者文件夹的路径数组。 （clang可能会去掉）</p>
-<ul>
-<li>方法二：
-在项目的根目录创建一个.inferconfig类型的配置文件  skip-analysis-in-path是一个数组, 想要过滤其他文件, 只需要增加路径即可。</li>
-</ul>
-<p><img src="media/15604798122070/15623183298914.png" alt="111" /></p>
-<h2><a id="%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>参考资料</h2>
-<ul>
-<li><a href="https://www.jianshu.com/p/53ad11e6f0c5">https://www.jianshu.com/p/53ad11e6f0c5</a></li>
-<li><a href="https://www.jianshu.com/p/4667e36aadea">https://www.jianshu.com/p/4667e36aadea</a></li>
-</ul>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-              
-
-
-			<div class="row">
-			  <div class="large-6 columns">
-			  <p class="text-left" style="padding-top:25px;">
-			   <a href="ios_1.html">&laquo; Prev Page</a>  
-			  </p>
-			  </div>
-			  <div class="large-6 columns">
-			<p class="text-right" style="padding-top:25px;">
-			 <a href="ios_3.html">&raquo; Next Page</a> 
-			</p>
-			  </div>
-			</div>
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			 
 		</div>
-	</div><!-- large 8 -->
-
- <div class="large-4 medium-4 columns">
-  <div class="hide-for-small">
-    <div id="sidebar" class="sidebar">
-          <div id="site-info" class="site-info">
+	</div>
+<!-- 底部导航条 -->
+	<nav class="lists-navigator clearfix" style="clear: all;">
+            <ol class="page-navigator">
             
-                <div class="site-a-logo"><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fmpk9088gsj30sg0sgn33.jpg" /></div>
+            	<li class=""><a href="ios_1.html"><span aria-hidden="true">&larr;</span> 上一页</a></li>
             
-                <h1>kaelinda</h1>
-                <div class="site-des">倘若我心中的山水，你眼中能看到，我便一步一莲花祈祷</div>
-                <div class="social">
 
+				<li class=""><a href="archives.html">归档</a></li>
 
-
-
-
-
-
-
-
-<a target="_blank" class="github" target="_blank" href="https://github.com/Kaelzzs" title="GitHub">GitHub</a>
-<a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
-  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
-                
-              	 </div>
-          	</div>
-
+			
+			<li class=""><a href="ios_3.html">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+			
+            </ol>
+     </nav>
+</div>
+</div>  <footer id="footer" class="footer" style="background-color: #030501;color: #FFFFFE;">
+  <div class="footer-meta">
+    <div class="footer-container">
+      <!-- 版权说明 -->
+      <div class="meta-item meta-copyright">
+        <div class="meta-copyright-info">
+          <h2 class="meta-title">INFO</h2>
+          <div class="info-text">  
+              <p>Copyright &copy; 2017 <br>
+              <span class="credit">Powered by 
+              <a target="_blank" href="http://zh.mweb.im/">MWeb</a> 
+              </span>
+              <p>Theme Design by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
+              <p>Migrating to Mweb by <a href="http://metaidea.cn">idken</a></p>
+              </p> 
+          </div>                  
+        </div>
+      </div>  
+      <!-- Categories -->
+      <div class="meta-item meta-comments">
+          <h2 class="meta-title">CATEGORIES</h2>  
              
+            
+            <li>
+            <a href="ios.html">iOS&nbsp;(81)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            <li>
+            <a href="swift.html">Swift&nbsp;(3)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            <li>
+            <a href="app.html">MacAPP&nbsp;(3)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            <li>
+            <a href="reactnative.html">React-Native&nbsp;(4)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+      </div>
+      <!-- 最新文章 -->
+      <div class="meta-item meta-comments">
+          <h2 class="meta-title">RECENT POSTS</h2>
 
-              <div id="site-categories" class="side-item ">
-                <div class="side-header">
-                  <h2>Categories</h2>
-                </div>
-                <div class="side-content">
+          
+          
+         <li>
+           <a href="16337448805296.html">iOS OpenURL方式吊起APP</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16336873755362.html">iOS 打开别的APP的两种Native方法</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16336595298050.html">Alfred 修改内置Terminal为Iterm2</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16325811812741.html">Python环境安装</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="15409691048860.html">【Swift笔记】引用计数</a><br>
+         </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+           
 
-      	<p class="cat-list">
-        
-            <a href="reactnative.html"><strong>React-Native</strong></a>
-        
-            <a href="ios.html"><strong>iOS</strong></a>
-        
-            <a href="app.html"><strong>MacAPP</strong></a>
-        
-            <a href="swift.html"><strong>Swift</strong></a>
-        
-            <a href="js.html"><strong>JavaScript</strong></a>
-        
-            <a href="vue.html"><strong>Vue</strong></a>
-        
-            <a href="shell.html"><strong>shell</strong></a>
-        
-            <a href="net.html"><strong>网络</strong></a>
-        
-            <a href="py.html"><strong>Python</strong></a>
-         
-        </p>
-
-
-                </div>
-              </div>
-
-              <div id="site-categories" class="side-item">
-                <div class="side-header">
-                  <h2>Recent Posts</h2>
-                </div>
-                <div class="side-content">
-                <ul class="posts-list">
-	      
-		      
-			      <li class="post">
-			        <a href="16336627926129.html">LeetCode【算法】宝石与石头</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="16336627738081.html">2019-03-29 17:03:53 下午</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="16336627597679.html">Nginx 安装 与配置</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="16336627471864.html">nginx</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="16336627158241.html">UITableView 嵌套tableView吸顶 手势冲突问题解决方案以及优化（一 解决）</a>
-			      </li>
-		     
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		   
-		  		</ul>
-                </div>
-              </div>
-        </div><!-- sidebar -->
-      </div><!-- hide for small -->
-</div><!-- large 4 -->
-
-</div><!-- row -->
-
- <div class="page-bottom clearfix">
-  <div class="row">
-   <p class="copyright">Copyright &copy; 2015
-Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
-Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+      </div>
   </div>
 </div>
+</footer>
 
-        </section>
-      </div>
-    </div>
+<!--评论变量判断 -->
+      
+<!-- 评论end -->
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
 
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style type="text/css">
-figure{margin: 0;padding: 0;}
-figcaption{text-align:center;}
-
-/* PrismJS 1.14.0
- http://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-    color: black;
-    background: none;
-    text-shadow: 0 1px white;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
-    
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-    text-shadow: none;
-    background:#b3d4fc;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-    text-shadow: none;
-    background: #b3d4fc;
-}
-
-@media print {
-    code[class*="language-"],
-    pre[class*="language-"] {
-        text-shadow: none;
-    }
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-    padding: 1em;
-    margin: .5em 0;
-    overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-    background: #F7F7F7;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-    padding: .1em;
-    border-radius: .3em;
-    white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-    color: slategray;
-}
-
-.token.punctuation {
-    color: #999;
-}
-
-.namespace {
-    opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-    color: #905;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-    color: #690;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-    color: #9a6e3a;
-    background: hsla(0, 0%, 100%, .5);
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-    color: #07a;
-}
-
-.token.function,
-.token.class-name {
-    color: #DD4A68;
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-    color: #e90;
-}
-
-.token.important,
-.token.bold {
-    font-weight: bold;
-}
-.token.italic {
-    font-style: italic;
-}
-
-.token.entity {
-    cursor: help;
-}
-
-
-pre[class*="language-"].line-numbers {
-    position: relative;
-    padding-left: 3.8em;
-    counter-reset: linenumber;
-}
-
-pre[class*="language-"].line-numbers > code {
-    position: relative;
-    white-space: inherit;
-}
-
-.line-numbers .line-numbers-rows {
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    font-size: 100%;
-    left: -3.8em;
-    width: 3em; /* works for line-numbers below 1000 lines */
-    letter-spacing: -1px;
-    border-right: 1px solid #999;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-}
-
-    .line-numbers-rows > span {
-        pointer-events: none;
-        display: block;
-        counter-increment: linenumber;
-    }
-
-        .line-numbers-rows > span:before {
-            content: counter(linenumber);
-            color: #999;
-            display: block;
-            padding-right: 0.8em;
-            text-align: right;
-        }
-
-</style>
-
-  
-    
-
-    <script src="asset/js/foundation.min.js"></script>
-    <script>
-      $(document).foundation();
-      function fixSidebarHeight(){
-        var w1 = $('.markdown-body').height();
-          var w2 = $('#sidebar').height();
-          if (w1 > w2) { $('#sidebar').height(w1); };
-      }
-      $(function(){
-        fixSidebarHeight();
-      })
-      $(window).load(function(){
-          fixSidebarHeight();
-      });
-     
-    </script>
-
-
-
-  </body>
+</body>
 </html>

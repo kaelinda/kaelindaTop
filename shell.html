@@ -1,152 +1,139 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+
+
     <title>
+      
+    shell - kaelinda
     
-  shell - kaelinda
-  
-  </title>
-  
-  
-  <link href="atom.xml" rel="alternate" title="kaelinda" type="application/atom+xml">
-    <link rel="stylesheet" href="asset/css/foundation.min.css" />
-    <link rel="stylesheet" href="asset/css/docs.css" />
-    <script src="asset/js/vendor/modernizr.js"></script>
-    <script src="asset/js/vendor/jquery.js"></script>
- 
-<script type="text/javascript">
-  function before_search(){
-    var searchVal = 'site:kaelinda.top ' + document.getElementById('search_input').value;
-    document.getElementById('search_q').value = searchVal;
-    return true;
-  }
-</script>
+    </title>
+
+
+  <link href="asset/css/style.css" rel="stylesheet" > 
+  <link href="asset/js/xcode.min.css" rel="stylesheet">
+  <script src="asset/js/headroom.js"></script>
+
+  <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="asset/css/font-awesome.css">
+ -->
+
+  <!-- <script src="asset/highlightjs/highlight.pack.js"></script> -->
+  <!-- <link href="asset/highlightjs/styles/solarized_light.css" media="screen, projection" rel="stylesheet" type="text/css"> -->
+  <!-- <script>hljs.initHighlightingOnLoad();</script> -->
+
+
   </head>
-  <body class="antialiased hide-extras">
+
+  <!-- 主体开始 -->
+  <!-- <body class="" gtools_scp_screen_capture_injected="true"> -->
+  <!-- 上面为主页白底色版本 -->
     
-    <div class="marketing off-canvas-wrap" data-offcanvas>
-      <div class="inner-wrap">
+<body class="bg-grey" gtools_scp_screen_capture_injected="true" data-feedly-mini="yes">
+<!-- 上面是主页灰底色版本 -->
 
+<!--[if lt IE 8]>
+<div class="browsehappy" role="dialog">
+    当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank">升级你的浏览器</a>。
+</div>
+<![endif]-->
+<!-- 头部位置 -->
 
-<nav class="top-bar docs-bar hide-for-small" data-topbar>
+<header id="header" class="header bg-white headroom">
+  <div class="navbar-container"> 
+    <a href="index.html" class="navbar-logo"><img src="asset/img/K-logo.png"> </a>
+    <div class="navbar-menu"> 
 
+        
+        <a href="index.html">最近更新</a>
+        
+        <a href="archives.html">归档目录</a>
+        
+        <a href="ios.html">iOS</a>
+        
+        <a href="swift.html">Swift</a>
+        
+        <a href="reactnative.html">RN</a>
+        
+        <a href="js.html">JS</a>
+        
+        <a href="shell.html">shell</a>
+        
+        <a href="py.html">Python</a>
+        
+        
+    </div> 
+    <!-- 搜索框体 -->
+    <!--  <div class="navbar-search" onclick="">
+        <span class="icon-search"></span>
+        <form id="search" method="post" action="/" role="search">
+          <span class="search-box">
+            <input type="text" id="input" class="input" name="s" required="true" placeholder="Search..." maxlength="30" autocomplete="off">
+          </span>
+        </form>
+    </div> -->
 
-  <section class="top-bar-section">
-  <div class="row">
-      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
-        <ul id="main-menu" class="left">
-        
-        <li id=""><a target="_self" href="index.html">最近更新</a></li>
-        
-        <li id=""><a target="_self" href="archives.html">归档目录</a></li>
-        
-        <li id="ios.css"><a target="_self" href="ios.html">iOS</a></li>
-        
-        <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
-        
-        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
-        
-        <li id="js.css"><a target="_self" href="js.html">JS</a></li>
-        
-        <li id="shell.css"><a target="_self" href="shell.html">shell</a></li>
-        
-        <li id="py.css"><a target="_self" href="py.html">Python</a></li>
-        
-        </ul>
-
-        <ul class="right" id="search-wrap">
+    <div class="navbar-mobile-menu" onclick=""> 
+      <span class="icon-menu cross"><span class="middle"></span></span> 
+        <ul> 
+          
           <li>
-<form target="_blank" onsubmit="return before_search();" action="https://google.com/search" method="get">
-    <input type="hidden" id="search_q" name="q" value="" />
-    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
-</form>
-</li>
-          </ul>
-      </div></div>
-  </div>
-  </section>
-
-</nav>
-
-        <nav class="tab-bar show-for-small">
-  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
-    <span> &nbsp; kaelinda</span>
-  </a>
-</nav>
-
-<aside class="left-off-canvas-menu">
-      <ul class="off-canvas-list">
-        
-        <li><a target="_self" href="index.html">最近更新</a></li>
-        
-        <li><a target="_self" href="archives.html">归档目录</a></li>
-        
-        <li><a target="_self" href="ios.html">iOS</a></li>
-        
-        <li><a target="_self" href="swift.html">Swift</a></li>
-        
-        <li><a target="_self" href="reactnative.html">RN</a></li>
-        
-        <li><a target="_self" href="js.html">JS</a></li>
-        
-        <li><a target="_self" href="shell.html">shell</a></li>
-        
-        <li><a target="_self" href="py.html">Python</a></li>
-        
-
-    <li><label>Categories</label></li>
-
-        
-            <li><a href="reactnative.html">React-Native</a></li>
-        
-            <li><a href="ios.html">iOS</a></li>
-        
-            <li><a href="app.html">MacAPP</a></li>
-        
-            <li><a href="swift.html">Swift</a></li>
-        
-            <li><a href="js.html">JavaScript</a></li>
-        
-            <li><a href="vue.html">Vue</a></li>
-        
-            <li><a href="shell.html">shell</a></li>
-        
-            <li><a href="net.html">网络</a></li>
-        
-            <li><a href="py.html">Python</a></li>
-         
-
-      </ul>
-    </aside>
-
-<a class="exit-off-canvas" href="#"></a>
-
-
-        <section id="main-content" role="main" class="scroll-container">
-        
-       
-
- <script type="text/javascript">
-	$(function(){
-		$('#menu_item_index').addClass('is_active');
-	});
-</script>
-<div class="row">
-	<div class="large-8 medium-8 columns">
-		<div class="markdown-body home-categories">
-		
-			<div class="article">
-                <a class="clearlink" href="15232599795686.html">
-                
-                  <h1>每天学习一个shell技能（8）</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2><a id="shell%E7%BB%88%E7%AB%AF%E6%89%93%E5%8D%B0" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>shell 终端打印</h2>
-<pre><code class="language-plain_text">```
+          <a href="index.html">最近更新</a>
+          </li>
+          
+          <li>
+          <a href="archives.html">归档目录</a>
+          </li>
+          
+          <li>
+          <a href="ios.html">iOS</a>
+          </li>
+          
+          <li>
+          <a href="swift.html">Swift</a>
+          </li>
+          
+          <li>
+          <a href="reactnative.html">RN</a>
+          </li>
+          
+          <li>
+          <a href="js.html">JS</a>
+          </li>
+          
+          <li>
+          <a href="shell.html">shell</a>
+          </li>
+          
+          <li>
+          <a href="py.html">Python</a>
+          </li>
+          
+        </ul> 
+    </div> 
+  </div> 
+</header>
+<!-- 头部结束 -->  <!-- 这里是category的开始 -->
+<div class="main-content index-page clearfix">
+    <div class="post-lists">
+        <div class="post-lists-body">
+			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="15232599795686.html"> 
+							<div class="item-desc"> 
+								<p>shell 终端打印
+```
 printf &quot;%-5s %-10s %-4s \n&quot; NO Name Mark
 printf &quot;%-5s %-10s %-4s \n&quot; 1 kael 100
 printf &quot;%-5s %-10s %-4s \n&quot; 2 linda 99
@@ -156,60 +143,56 @@ printf &quot;%-5s %-10s %-4s \n&quot; 3 rouse 98
 NO    Name       Mark 
 1     kael       100  
 2     linda      99   
-3     rouse      98  
-```
-</code></pre>
-<blockquote>
-<p>printf 行尾 默认自带换行 \n</p>
-</blockquote>
-<ul>
-<li>%-5s : 左对齐，宽度为5的字符串替换；默认右对齐</li>
-<li>%-4.2f:指定保留2位小数</li>
-</ul>
+3     rou</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2018/4/9</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
-          				   
-                    
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="15232599795686.html">每天学习一个shell技能（8）</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15226648731246.html">
-                
-                  <h1>每天学习一个shell技能（7）</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2><a id="%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E5%AF%BC%E5%85%A5%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>文件包含 导入文件</h2>
-<p>测试文件  test1.sh</p>
-<pre><code class="language-plain_text">#!/bin/bash
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='shell.html'>shell</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="15226648731246.html"> 
+							<div class="item-desc"> 
+								<p>文件包含 导入文件
+测试文件  test1.sh
+#!/bin/bash
 # author:菜鸟教程
 # url:www.runoob.com
 
 url=&quot;http://www.runoob.com&quot;
-</code></pre>
-<p>测试文件 test2.sh</p>
-<pre><code class="language-plain_text">#!/bin/bash
+
+测试文件 test2.sh
+#!/bin/bash
 # author:菜鸟教程
 # url:www.runoob.com
 
@@ -220,193 +203,250 @@ url=&quot;http://www.runoob.com&quot;
 # source ./test1.sh
 
 echo &quot;菜鸟教程官网地址：$url&quot;
-</code></pre>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15226648731246.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/4/2</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
-          				   
-                    
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+$ chmod +x test2.sh 
+</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15226603064743.html">
-                
-                  <h1>每天学习一个shell技能（6）</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2><a id="test" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>test</h2>
-<h3><a id="test%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>test文件</h3>
-<pre><code class="language-plain_text">if test -e ./test.sh
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="15226648731246.html">每天学习一个shell技能（7）</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='shell.html'>shell</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="15226603064743.html"> 
+							<div class="item-desc"> 
+								<p>test
+test文件
+if test -e ./test.sh
 then
     echo '文件已存在!'
 else
     echo '文件不存在!'
 fi
-</code></pre>
-<ul>
-<li>-e fileName ： 如果文件存在则为真</li>
-<li>-r  fileName : 如果文件存在且可读则为真</li>
-<li>-w fileName : 如果文件存在且可写则为真</li>
-<li>-x fileName : 如果文件存在且可执行则为真</li>
-<li>-s fileName: 文件存在且至少有一个字符</li>
-<li>-d fileName : 文件存在且为目录</li>
-<li>-f fileName: 文件存在且为文件</li>
-<li>-c fileName:文件存在，且为字符型特殊文件</li>
-<li>-b fileName: 如果文件存在且为块特殊文件则为真</li>
-</ul>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15226603064743.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/4/2</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
-          				   
-                    
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+-e fileName ： 如果文件存在则为真
+-r  fileName : 如果文件存在且可读则为真
+-w fileName : 如果文件存在且可写则为真
+-x fileName : 如果文件存在且可执行则为真
+-s fileName: 文件存在且至少有一个字符
+-d fileName : 文件存在且为目录
+-f fileName: 文件存在且为文件
+-c fileName:文件存在，且为字符型特殊文件
+-b fileName</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15224936933861.html">
-                
-                  <h1>每天学习一个shell技能（5）</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2><a id="shell-echo%E5%91%BD%E4%BB%A4" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Shell echo命令</h2>
-<h3><a id="%E6%89%93%E5%8D%B0%E5%AD%97%E7%AC%A6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>打印字符</h3>
-<pre><code class="language-plain_text">// 下面两行代码效果一致
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="15226603064743.html">每天学习一个shell技能（6）</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='shell.html'>shell</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="15224936933861.html"> 
+							<div class="item-desc"> 
+								<p>Shell echo命令
+打印字符
+// 下面两行代码效果一致
 echo &quot;It is a test&quot;
 echo It is a test
-</code></pre>
-<h3><a id="%E6%89%93%E5%8D%B0%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>打印转义字符</h3>
-<pre><code class="language-plain_text">echo &quot;\&quot;It is a test\&quot;&quot;
+
+打印转义字符
+echo &quot;\&quot;It is a test\&quot;&quot;
 // 引号也可以省略
 echo \&quot;It is a test\&quot;
-</code></pre>
-<p>打印结果：</p>
-<pre><code class="language-plain_text">&quot;It is a test&quot;
+
+打印结果：
+&quot;It is a test&quot;
 
 &quot;It is a test&quot;
-</code></pre>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15224936933861.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/3/31</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
-          				   
-                    
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+打印 隐藏 换行
+// 显示换行
+echo -e &quot;OK! \n&quot; # -e 开启转义
+echo &quot;</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15224613481161.html">
-                
-                  <h1>每天学习一个shell技能（4）</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2><a id="shell%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E7%AC%A6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>shell基本运算符</h2>
-<p>基本使用：</p>
-<pre><code class="language-plain_text">#!/bin/bash
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="15224936933861.html">每天学习一个shell技能（5）</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='shell.html'>shell</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="15224613481161.html"> 
+							<div class="item-desc"> 
+								<p>shell基本运算符
+基本使用：
+#!/bin/bash
 
 val=`expr 2 + 2`
 echo &quot;两数之和为 : $val&quot;
-</code></pre>
-<ul>
-<li>表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样</li>
-<li>完整的表达式要被 ` ` 包含，注意这个字符不是常用的单引号，在 Esc 键下边</li>
-</ul>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15224613481161.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/3/31</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
-          				   
-                    
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+表达式和运算符之间要有空格，例如 2+2 是不对的，必须写成 2 + 2，这与我们熟悉的大多数编程语言不一样
+完整的表达式要被 ` ` 包含，注意这个字符不是常用的单引号，在 Esc 键下边
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15223750607281.html">
-                
-                  <h1>每天学习一个shell技能  (3)</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2><a id="shell%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>shell参数传递</h2>
-<p>我们可以在脚本执行时，向脚本传递参数</p>
-<pre><code class="language-plain_text">// 终端运行 脚本，并传入参数
+
+算术运算符
+
+
+
+运算符
+说明
+举例
+
+
+
+
++
+加法
+`expr $a + $b` 结果为 30。
+
+
+-
+减法
+`expr $a - $b` 结果为 -10。
+
+
+*
+乘法
+`expr $a * $b` 结果为  200。
+
+
+/
+除法
+`e</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="15224613481161.html">每天学习一个shell技能（4）</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='shell.html'>shell</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="15223750607281.html"> 
+							<div class="item-desc"> 
+								<p>shell参数传递
+我们可以在脚本执行时，向脚本传递参数
+// 终端运行 脚本，并传入参数
 sh testBash.sh 0 1 2
 
 echo &quot;Shell 传递参数实例！&quot;
@@ -414,88 +454,154 @@ echo &quot;Shell 传递参数实例！&quot;
 echo &quot;\$0 =&gt; $0&quot;
 
 echo &quot;\$1 =&gt; $1&quot;
-</code></pre>
-<p>打印结果：</p>
-<pre><code class="language-plain_text">Shell 传递参数实例！
+
+打印结果：
+Shell 传递参数实例！
 $0 =&gt; testBash.sh
 $1 =&gt; 0
-</code></pre>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15223750607281.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/3/30</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
-          				   
-                    
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15223028228569.html">
-                
-                  <h1>每天学习一个shell技能 （1）</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2><a id="%E5%87%86%E5%A4%87" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>准备</h2>
-<p>bash 环境位置</p>
-<pre><code class="language-plain_text">#!/bin/bash
-</code></pre>
-<p><code>#!</code> 一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell</p>
 
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15223028228569.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/3/29</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
-          				   
-                    
 
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
+参数处理
+参数说明
 
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15223210751913.html">
-                
-                  <h1>每天学习一个shell 技能 （2）</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2><a id="shell%E6%95%B0%E7%BB%84" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Shell 数组</h2>
-<h3><a id="%E5%AE%9A%E4%B9%89%E6%95%B0%E7%BB%84" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>定义数组</h3>
-<pre><code class="language-bash">array_name=(value1 value2 value3)
+
+
+
+$#
+传递到脚本的参数个数
+
+
+$*
+以一个单字符串显示所有向脚本传递的参数
+
+
+$$
+脚本运行的当前进程ID号
+
+
+$!
+后台运行的</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="15223750607281.html">每天学习一个shell技能  (3)</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='shell.html'>shell</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="15223028228569.html"> 
+							<div class="item-desc"> 
+								<p>准备
+bash 环境位置
+#!/bin/bash
+
+#! 一个约定的标记，它告诉系统这个脚本需要什么解释器来执行，即使用哪一种 Shell
+
+运行shell
+
+
+作为可执行程序
+chmod +x ./mybash.sh
+./mybash.sh
+
+
+
+作为解释器参数
+
+
+/bin/bash test.sh
+/bin/php test.php
+// 如果这样运行，文件内的第一行就可以不需要指定 解释器信息了
+
+pwd
+
+
+命令简介
+pwd ：打印当前目录 ，命令以 绝对路径 的形式显示用户的  当前工作目录
+
+
+用法
+pwd    [-LP]
+
+
+变量
+定义变量
+
+定义变量时 不需要制定 $ 符号</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="15223028228569.html">每天学习一个shell技能 （1）</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='shell.html'>shell</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="15223210751913.html"> 
+							<div class="item-desc"> 
+								<p>Shell 数组
+定义数组
+array_name=(value1 value2 value3)
 
 array_name2=(
 value1
@@ -505,427 +611,232 @@ value3
 
 // 单独定义某个分量的值
 array_name(0)=value0
-</code></pre>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                   <a href="15223210751913.html">Read more</a>&nbsp;&nbsp; 
-                    <span class="date">2018/3/29</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='shell.html'>shell</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-              
 
 
-			<div class="row">
-			  <div class="large-6 columns">
-			  <p class="text-left" style="padding-top:25px;">
-			   
-			  </p>
-			  </div>
-			  <div class="large-6 columns">
-			<p class="text-right" style="padding-top:25px;">
-			
-			</p>
-			  </div>
-			</div>
+读取数组
+// 读取单个元素
+value0=${array_name[0]}
+
+//使用@符号可以获取数组中的所有元素
+echo ${array_name(@)}
+
+
+获取数组的长度
+// 获取元素个数
+length=${#array_name[@]}
+
+//或者
+length=${#array_name[*]}
+
+// 获取的单个元素的长度
+ite</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="15223210751913.html">每天学习一个shell 技能 （2）</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='shell.html'>shell</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			 
 		</div>
-	</div><!-- large 8 -->
-
- <div class="large-4 medium-4 columns">
-  <div class="hide-for-small">
-    <div id="sidebar" class="sidebar">
-          <div id="site-info" class="site-info">
+	</div>
+<!-- 底部导航条 -->
+	<nav class="lists-navigator clearfix" style="clear: all;">
+            <ol class="page-navigator">
             
-                <div class="site-a-logo"><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fmpk9088gsj30sg0sgn33.jpg" /></div>
+            	<li class="  disabled "><a href="#index"><span aria-hidden="true">&larr;</span> 上一页</a></li>
             
-                <h1>kaelinda</h1>
-                <div class="site-des">倘若我心中的山水，你眼中能看到，我便一步一莲花祈祷</div>
-                <div class="social">
 
+				<li class=""><a href="archives.html">归档</a></li>
 
-
-
-
-
-
-
-
-<a target="_blank" class="github" target="_blank" href="https://github.com/Kaelzzs" title="GitHub">GitHub</a>
-<a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
-  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
-                
-              	 </div>
-          	</div>
-
+			
+            	<li class=" disabled "><a href="#index">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+            
+            </ol>
+     </nav>
+</div>
+</div>  <footer id="footer" class="footer" style="background-color: #030501;color: #FFFFFE;">
+  <div class="footer-meta">
+    <div class="footer-container">
+      <!-- 版权说明 -->
+      <div class="meta-item meta-copyright">
+        <div class="meta-copyright-info">
+          <h2 class="meta-title">INFO</h2>
+          <div class="info-text">  
+              <p>Copyright &copy; 2017 <br>
+              <span class="credit">Powered by 
+              <a target="_blank" href="http://zh.mweb.im/">MWeb</a> 
+              </span>
+              <p>Theme Design by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
+              <p>Migrating to Mweb by <a href="http://metaidea.cn">idken</a></p>
+              </p> 
+          </div>                  
+        </div>
+      </div>  
+      <!-- Categories -->
+      <div class="meta-item meta-comments">
+          <h2 class="meta-title">CATEGORIES</h2>  
              
+            
+            <li>
+            <a href="ios.html">iOS&nbsp;(81)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            <li>
+            <a href="swift.html">Swift&nbsp;(3)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            <li>
+            <a href="app.html">MacAPP&nbsp;(3)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            <li>
+            <a href="reactnative.html">React-Native&nbsp;(4)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+      </div>
+      <!-- 最新文章 -->
+      <div class="meta-item meta-comments">
+          <h2 class="meta-title">RECENT POSTS</h2>
 
-              <div id="site-categories" class="side-item ">
-                <div class="side-header">
-                  <h2>Categories</h2>
-                </div>
-                <div class="side-content">
+          
+          
+         <li>
+           <a href="16337448805296.html">iOS OpenURL方式吊起APP</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16336873755362.html">iOS 打开别的APP的两种Native方法</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16336595298050.html">Alfred 修改内置Terminal为Iterm2</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16325811812741.html">Python环境安装</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="15409691048860.html">【Swift笔记】引用计数</a><br>
+         </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+           
 
-      	<p class="cat-list">
-        
-            <a href="reactnative.html"><strong>React-Native</strong></a>
-        
-            <a href="ios.html"><strong>iOS</strong></a>
-        
-            <a href="app.html"><strong>MacAPP</strong></a>
-        
-            <a href="swift.html"><strong>Swift</strong></a>
-        
-            <a href="js.html"><strong>JavaScript</strong></a>
-        
-            <a href="vue.html"><strong>Vue</strong></a>
-        
-            <a href="shell.html"><strong>shell</strong></a>
-        
-            <a href="net.html"><strong>网络</strong></a>
-        
-            <a href="py.html"><strong>Python</strong></a>
-         
-        </p>
-
-
-                </div>
-              </div>
-
-              <div id="site-categories" class="side-item">
-                <div class="side-header">
-                  <h2>Recent Posts</h2>
-                </div>
-                <div class="side-content">
-                <ul class="posts-list">
-	      
-		      
-			      <li class="post">
-			        <a href="16336627926129.html">LeetCode【算法】宝石与石头</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="16336627738081.html">2019-03-29 17:03:53 下午</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="16336627597679.html">Nginx 安装 与配置</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="16336627471864.html">nginx</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="16336627158241.html">UITableView 嵌套tableView吸顶 手势冲突问题解决方案以及优化（一 解决）</a>
-			      </li>
-		     
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		   
-		  		</ul>
-                </div>
-              </div>
-        </div><!-- sidebar -->
-      </div><!-- hide for small -->
-</div><!-- large 4 -->
-
-</div><!-- row -->
-
- <div class="page-bottom clearfix">
-  <div class="row">
-   <p class="copyright">Copyright &copy; 2015
-Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
-Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+      </div>
   </div>
 </div>
+</footer>
 
-        </section>
-      </div>
-    </div>
+<!--评论变量判断 -->
+      
+<!-- 评论end -->
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
 
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style type="text/css">
-figure{margin: 0;padding: 0;}
-figcaption{text-align:center;}
-
-/* PrismJS 1.14.0
- http://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-    color: black;
-    background: none;
-    text-shadow: 0 1px white;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
-    
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-    text-shadow: none;
-    background:#b3d4fc;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-    text-shadow: none;
-    background: #b3d4fc;
-}
-
-@media print {
-    code[class*="language-"],
-    pre[class*="language-"] {
-        text-shadow: none;
-    }
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-    padding: 1em;
-    margin: .5em 0;
-    overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-    background: #F7F7F7;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-    padding: .1em;
-    border-radius: .3em;
-    white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-    color: slategray;
-}
-
-.token.punctuation {
-    color: #999;
-}
-
-.namespace {
-    opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-    color: #905;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-    color: #690;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-    color: #9a6e3a;
-    background: hsla(0, 0%, 100%, .5);
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-    color: #07a;
-}
-
-.token.function,
-.token.class-name {
-    color: #DD4A68;
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-    color: #e90;
-}
-
-.token.important,
-.token.bold {
-    font-weight: bold;
-}
-.token.italic {
-    font-style: italic;
-}
-
-.token.entity {
-    cursor: help;
-}
-
-
-pre[class*="language-"].line-numbers {
-    position: relative;
-    padding-left: 3.8em;
-    counter-reset: linenumber;
-}
-
-pre[class*="language-"].line-numbers > code {
-    position: relative;
-    white-space: inherit;
-}
-
-.line-numbers .line-numbers-rows {
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    font-size: 100%;
-    left: -3.8em;
-    width: 3em; /* works for line-numbers below 1000 lines */
-    letter-spacing: -1px;
-    border-right: 1px solid #999;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-}
-
-    .line-numbers-rows > span {
-        pointer-events: none;
-        display: block;
-        counter-increment: linenumber;
-    }
-
-        .line-numbers-rows > span:before {
-            content: counter(linenumber);
-            color: #999;
-            display: block;
-            padding-right: 0.8em;
-            text-align: right;
-        }
-
-</style>
-
-  
-    
-
-    <script src="asset/js/foundation.min.js"></script>
-    <script>
-      $(document).foundation();
-      function fixSidebarHeight(){
-        var w1 = $('.markdown-body').height();
-          var w2 = $('#sidebar').height();
-          if (w1 > w2) { $('#sidebar').height(w1); };
-      }
-      $(function(){
-        fixSidebarHeight();
-      })
-      $(window).load(function(){
-          fixSidebarHeight();
-      });
-     
-    </script>
-
-
-
-  </body>
+</body>
 </html>

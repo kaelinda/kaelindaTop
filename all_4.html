@@ -1,1477 +1,811 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+
+
     <title>
+      
+    kaelinda
     
-  kaelinda
-  
-  </title>
-  
-  
-  <link href="atom.xml" rel="alternate" title="kaelinda" type="application/atom+xml">
-    <link rel="stylesheet" href="asset/css/foundation.min.css" />
-    <link rel="stylesheet" href="asset/css/docs.css" />
-    <script src="asset/js/vendor/modernizr.js"></script>
-    <script src="asset/js/vendor/jquery.js"></script>
- 
-<script type="text/javascript">
-  function before_search(){
-    var searchVal = 'site:kaelinda.top ' + document.getElementById('search_input').value;
-    document.getElementById('search_q').value = searchVal;
-    return true;
-  }
-</script>
+    </title>
+
+
+  <link href="asset/css/style.css" rel="stylesheet" > 
+  <link href="asset/js/xcode.min.css" rel="stylesheet">
+  <script src="asset/js/headroom.js"></script>
+
+  <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="asset/css/font-awesome.css">
+ -->
+
+  <!-- <script src="asset/highlightjs/highlight.pack.js"></script> -->
+  <!-- <link href="asset/highlightjs/styles/solarized_light.css" media="screen, projection" rel="stylesheet" type="text/css"> -->
+  <!-- <script>hljs.initHighlightingOnLoad();</script> -->
+
+
   </head>
-  <body class="antialiased hide-extras">
+
+  <!-- 主体开始 -->
+  <!-- <body class="" gtools_scp_screen_capture_injected="true"> -->
+  <!-- 上面为主页白底色版本 -->
     
-    <div class="marketing off-canvas-wrap" data-offcanvas>
-      <div class="inner-wrap">
+<body class="bg-grey" gtools_scp_screen_capture_injected="true" data-feedly-mini="yes">
+<!-- 上面是主页灰底色版本 -->
 
+<!--[if lt IE 8]>
+<div class="browsehappy" role="dialog">
+    当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank">升级你的浏览器</a>。
+</div>
+<![endif]-->
+<!-- 头部位置 -->
 
-<nav class="top-bar docs-bar hide-for-small" data-topbar>
+<header id="header" class="header bg-white headroom">
+  <div class="navbar-container"> 
+    <a href="index.html" class="navbar-logo"><img src="asset/img/K-logo.png"> </a>
+    <div class="navbar-menu"> 
 
+        
+        <a href="index.html">最近更新</a>
+        
+        <a href="archives.html">归档目录</a>
+        
+        <a href="ios.html">iOS</a>
+        
+        <a href="swift.html">Swift</a>
+        
+        <a href="reactnative.html">RN</a>
+        
+        <a href="js.html">JS</a>
+        
+        <a href="shell.html">shell</a>
+        
+        <a href="py.html">Python</a>
+        
+        
+    </div> 
+    <!-- 搜索框体 -->
+    <!--  <div class="navbar-search" onclick="">
+        <span class="icon-search"></span>
+        <form id="search" method="post" action="/" role="search">
+          <span class="search-box">
+            <input type="text" id="input" class="input" name="s" required="true" placeholder="Search..." maxlength="30" autocomplete="off">
+          </span>
+        </form>
+    </div> -->
 
-  <section class="top-bar-section">
-  <div class="row">
-      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
-        <ul id="main-menu" class="left">
-        
-        <li id=""><a target="_self" href="index.html">最近更新</a></li>
-        
-        <li id=""><a target="_self" href="archives.html">归档目录</a></li>
-        
-        <li id="ios.css"><a target="_self" href="ios.html">iOS</a></li>
-        
-        <li id="swift.css"><a target="_self" href="swift.html">Swift</a></li>
-        
-        <li id="reactnative.css"><a target="_self" href="reactnative.html">RN</a></li>
-        
-        <li id="js.css"><a target="_self" href="js.html">JS</a></li>
-        
-        <li id="shell.css"><a target="_self" href="shell.html">shell</a></li>
-        
-        <li id="py.css"><a target="_self" href="py.html">Python</a></li>
-        
-        </ul>
-
-        <ul class="right" id="search-wrap">
+    <div class="navbar-mobile-menu" onclick=""> 
+      <span class="icon-menu cross"><span class="middle"></span></span> 
+        <ul> 
+          
           <li>
-<form target="_blank" onsubmit="return before_search();" action="https://google.com/search" method="get">
-    <input type="hidden" id="search_q" name="q" value="" />
-    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
-</form>
-</li>
-          </ul>
-      </div></div>
-  </div>
-  </section>
-
-</nav>
-
-        <nav class="tab-bar show-for-small">
-  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
-    <span> &nbsp; kaelinda</span>
-  </a>
-</nav>
-
-<aside class="left-off-canvas-menu">
-      <ul class="off-canvas-list">
-        
-        <li><a target="_self" href="index.html">最近更新</a></li>
-        
-        <li><a target="_self" href="archives.html">归档目录</a></li>
-        
-        <li><a target="_self" href="ios.html">iOS</a></li>
-        
-        <li><a target="_self" href="swift.html">Swift</a></li>
-        
-        <li><a target="_self" href="reactnative.html">RN</a></li>
-        
-        <li><a target="_self" href="js.html">JS</a></li>
-        
-        <li><a target="_self" href="shell.html">shell</a></li>
-        
-        <li><a target="_self" href="py.html">Python</a></li>
-        
-
-    <li><label>Categories</label></li>
-
-        
-            <li><a href="reactnative.html">React-Native</a></li>
-        
-            <li><a href="ios.html">iOS</a></li>
-        
-            <li><a href="app.html">MacAPP</a></li>
-        
-            <li><a href="swift.html">Swift</a></li>
-        
-            <li><a href="js.html">JavaScript</a></li>
-        
-            <li><a href="vue.html">Vue</a></li>
-        
-            <li><a href="shell.html">shell</a></li>
-        
-            <li><a href="net.html">网络</a></li>
-        
-            <li><a href="py.html">Python</a></li>
-         
-
-      </ul>
-    </aside>
-
-<a class="exit-off-canvas" href="#"></a>
+          <a href="index.html">最近更新</a>
+          </li>
+          
+          <li>
+          <a href="archives.html">归档目录</a>
+          </li>
+          
+          <li>
+          <a href="ios.html">iOS</a>
+          </li>
+          
+          <li>
+          <a href="swift.html">Swift</a>
+          </li>
+          
+          <li>
+          <a href="reactnative.html">RN</a>
+          </li>
+          
+          <li>
+          <a href="js.html">JS</a>
+          </li>
+          
+          <li>
+          <a href="shell.html">shell</a>
+          </li>
+          
+          <li>
+          <a href="py.html">Python</a>
+          </li>
+          
+        </ul> 
+    </div> 
+  </div> 
+</header>
+<!-- 头部结束 -->  <!-- 这里是category的开始 -->
+<div class="main-content index-page clearfix">
+    <div class="post-lists">
+        <div class="post-lists-body">
+			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336621877205.html"> 
+							<div class="item-desc"> 
+								<p>安装 fastlane
+fastlane 安装使用指南
+fastlane 配置项目
 
 
-        <section id="main-content" role="main" class="scroll-container">
-        
-       
-
- <script type="text/javascript">
-	$(function(){
-		$('#menu_item_index').addClass('is_active');
-	});
-</script>
-<div class="row">
-	<div class="large-8 medium-8 columns">
-		<div class="markdown-body home-categories">
-		
-			<div class="article">
-                <a class="clearlink" href="16336607185259.html">
-                
-                  <h1>iOS APP静态检测实践之 -- infer</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>[toc]</p>
-<h1><a id="infer%E7%AE%80%E4%BB%8B" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>infer简介</h1>
-<p><a href="https://www.jianshu.com/p/b6204ed62510">参考文章 ：https://www.jianshu.com/p/b6204ed62510</a></p>
-<p>Facebook 的 Infer 是一个静态分析工具。Infer 可以分析 Objective-C， Java 或者 C 代码，报告潜在的问题。任何人都可以使用 Infer 检测应用，这可以将那些严重的 bug 扼杀在发布之前，同时防止应用崩溃和性能低下。Infer 可检查 Android 和 Java 代码中的 NullPointException 和 资源泄露。除了以上，Infer 还可发现 iOS 和 C 代码中的内存泄露。</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2021/png/1495953/1619595741169-9e1d1dd3-3477-4766-91a7-2ffbeee6242b.png?x-oss-process=image%2Fresize%2Cw_930" alt="Infer" /></p>
-<h1><a id="%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装</h1>
-<h2><a id="homebrew%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homebrew安装</h2>
-<h3><a id="%E5%AE%89%E8%A3%85homebrew" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装<code>Homebrew</code></h3>
-<pre><code class="language-plain_text">/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
-</code></pre>
-<h3><a id="%E4%BD%BF%E7%94%A8homebrew%E5%AE%89%E8%A3%85infer%E6%89%80%E9%9C%80%E7%8E%AF%E5%A2%83" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用Homebrew安装Infer所需环境</h3>
-<pre><code class="language-plain_text"># 安装环境
-brew install autoconf automake cmake opam pkg-config sqlite gmp mpfr
-brew cask install java
-</code></pre>
-<h3><a id="%E4%BD%BF%E7%94%A8homebrew%E5%AE%89%E8%A3%85-infer" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用Homebrew安装<code>infer</code></h3>
-<pre><code class="language-bash"># 安装Infer
-brew install infer
-</code></pre>
-<h2><a id="%E6%BA%90%E7%A0%81%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>源码安装</h2>
-<p>从<a href="https://link.jianshu.com/?t=https://github.com/facebook/infer/releases">infer release</a>页面获取最新版本infer-osx-vXX.tar.xz (以osx标识),然后执行下面命令来安装Infer.</p>
-<h1><a id="%E4%BD%BF%E7%94%A8infer%E5%88%86%E6%9E%90%E4%BB%A3%E7%A0%81" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用Infer分析代码</h1>
-<h2><a id="%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>准备工作</h2>
-<ul>
-<li>分析项目之前先把项目clean 一下</li>
-<li>连续两次使用Infer分析项目时，也需要先clean下项目 或者在命令中使用 <code>--reactive</code>命令</li>
-<li>分析单个文件的时候 不需要增量分析</li>
-<li></li>
-</ul>
-<h2><a id="%E4%BD%BF%E7%94%A8infer%E6%A3%80%E6%B5%8B%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用infer 检测单个文件</h2>
-<ul>
-<li>cd 指定文件<code>InferTest.m</code> 所在的目录</li>
-<li><code>infer -- clang -c InferTest.m</code></li>
-<li><code>No issues found</code>   代表没有问题</li>
-</ul>
-<h2><a id="%E4%BD%BF%E7%94%A8infer%E6%A3%80%E6%B5%8B%E6%95%B4%E4%B8%AA%E9%A1%B9%E7%9B%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用infer检测整个项目</h2>
-<h3><a id="infer%E5%88%86%E6%9E%90%E6%99%AE%E9%80%9A%E9%A1%B9%E7%9B%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Infer分析普通项目</h3>
-<pre><code class="language-plain_text">infer -- xcodebuild -project App.xcodeproj -target App -configuration Debug -sdk iphonesimulator
-</code></pre>
-<h3><a id="infer%E5%88%86%E6%9E%90%E5%B8%A6workspace%EF%BC%88cocoapods%EF%BC%89%E7%9A%84%E9%A1%B9%E7%9B%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Infer分析带Workspace（Cocoapods）的项目</h3>
-<pre><code class="language-plain_text">infer --  xcodebuild -workspace ./App.xcworkspace -configuration Debug -scheme KooApp
-</code></pre>
-<h4><a id="%E9%81%87%E5%88%B0%E8%AD%A6%E5%91%8A%E9%94%99%E8%AF%AF%E4%B8%8D%E4%B8%AD%E6%96%AD%E5%88%86%E6%9E%90keep-going" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>遇到警告错误不中断分析 <code>--keep-going</code></h4>
-<pre><code class="language-plain_text">infer --keep-going -- xcodebuild -project App.xcodeproj -target App -configuration Debug -sdk iphonesimulator
-</code></pre>
-<pre><code class="language-bash">#!/bin/bash
-
-kTargetName=&quot;LXCategory&quot;
-kProjectName=&quot;LXCategory.xcodeproj&quot;
-kConfigurationType=&quot;Debug&quot;
-kSDKName=&quot;iphonesimulator&quot;
-
-infer -- xcodebuild clean 
-
-INFER_ARGS=&quot;--skip-analysis-in-path^[\&quot;Third\&quot;]&quot; infer -- xcodebuild -target $kTargetName -configuration $kConfigurationType -sdk $kSDKName
-
-</code></pre>
-<h4><a id="%E5%BF%BD%E7%95%A5%E5%88%86%E6%9E%90%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>忽略分析指定文件</h4>
-<ul>
-<li>命令模式</li>
-</ul>
-<pre><code class="language-plain_text">INFER_ARGS=&quot;--skip-analysis-in-path^[\&quot;Third\&quot;]&quot; infer -- xcodebuild -target $kTargetName -configuration $kConfigurationType -sdk $kSDKName
-</code></pre>
-<ul>
-<li>配置文件模式</li>
-</ul>
-<p>在项目目录下增加这样一个.inferconfig的文件, 内容如图, 可以过滤掉Pods文件夹下的第三方库, skip-analysis-in-path是一个数组, 想要过滤其他文件, 只需要增加路径即可。</p>
-<p>文件内容：</p>
-<pre><code class="language-json">{
-  &quot;skip-analysis-in-path&quot;:[
-    &quot;test&quot;,
-    &quot;Third&quot;
-  ]
-}
-</code></pre>
-<h4><a id="%E6%8C%87%E5%AE%9A%E5%AF%BC%E5%87%BA%E5%88%86%E6%9E%90%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>指定导出分析文件路径</h4>
-<p>infer 后面,<code>-- xcodebuild</code> 前面。 <code>-o OuptputPath</code> 能指定导出文件的路径。</p>
-<pre><code class="language-plain_text">infer --keep-going -o $kOuptputPath -- xcodebuild -project App.xcodeproj -target App -configuration Debug -sdk iphonesimulator
-
-</code></pre>
-<h4><a id="%E5%AF%BC%E5%87%BAhtml%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>导出html文件</h4>
-<p>这个需要在编译 或者 分析完之后执行此命令（指定导出分析文件路径后，需要在 修改的路径下使用才行。）</p>
-<pre><code class="language-plain_text">infer-explore --html
-</code></pre>
-<h4><a id="%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%8D%E7%BC%96%E8%AF%91%EF%BC%89" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>静态分析（不编译）</h4>
-<pre><code class="language-plain_text">infer analyze
-</code></pre>
-<h3><a id="%E7%BC%96%E8%AF%91%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>编译遇到的问题</h3>
-<ul>
-<li>framework问题
-<img src="https://img-blog.csdnimg.cn/20201217200220312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2d1b3lvbmdtaW5nOTI1,size_16,color_FFFFFF,t_70" alt="framework 编译问题设置" /></li>
-</ul>
-<h2><a id="oclint" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>OCLint</h2>
-<p><a href="https://www.jianshu.com/p/6555048d6a17">参考文章：https://www.jianshu.com/p/6555048d6a17</a></p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336606772972.html">
-                
-                  <h1>iOS APP静态检测实践之 -- OCLint</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>[toc]</p>
-<p><span id = "jumpID">跳转位置jumpID</span></p>
-<p><a href="OCLint%E6%8C%87%E4%BB%A4%E9%9B%86%E6%96%87%E6%A1%A3#jumpID">点我跳转</a></p>
-<blockquote>
-<p>参考文章</p>
-</blockquote>
-<p><a href="https://juejin.cn/post/6844904046281621512">iOS使用OCLint做静态代码分析</a>
-<a href="https://juejin.cn/post/6844903853775650830#heading-9">OCLint 实现 Code Review - 给你的代码提提质量</a></p>
-<h2><a id="%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>安装</h2>
-<ul>
-<li>安装xcpretty</li>
-</ul>
-<pre><code class="language-plain_text">sudo gem install xcpretty
-</code></pre>
-<ul>
-<li>
-<p>安装OCLint</p>
-<pre><code class="language-plain_text">brew tap oclint/formulae
-
-brew install oclint
-</code></pre>
-</li>
-</ul>
-<h2><a id="%E5%8F%82%E6%95%B0%E4%BB%8B%E7%BB%8D" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>参数介绍</h2>
-<ul>
-<li>
-<p>-R &lt;路径&gt; ： 检测所用的规则的路径，默认路径$(/path/to/bin/oclint)/../lib/oclint/rules</p>
-</li>
-<li>
-<p>-disable-rule &lt;规则名&gt;： 让相对应的规则失效（OCLint 规则列表）。</p>
-</li>
-<li>
-<p>-rc &lt;参数&gt;=&lt;值&gt; ：修改阈值</p>
-</li>
-<li>
-<p>-report-type &lt;报告类型&gt;，有&quot;text&quot;、“html”、“json”、“pmd”、“xcode”几个类型</p>
-</li>
-<li>
-<p>-o &lt;路径&gt; 报告生成路径。</p>
-</li>
-</ul>
-<h3><a id="oclint-json-compilation-database%E6%8C%87%E4%BB%A4" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>oclint-json-compilation-database 指令</h3>
-<ul>
-<li>-i ：包含进某些文件</li>
-<li>-e ： 过滤掉某些文件</li>
-</ul>
-<pre><code class="language-plain_text"># 排除Pods 里的文件
-oclint-json-compilation-database -e Pods 
-# 包含进Pods里的文件
-oclint-json-compilation-database -i Pods
-</code></pre>
-<p><a href="https://oclint-docs.readthedocs.io/en/v0.6/usage/oclint-json-compilation-database.html">OCLint 官方文档</a>
-<a href="https://www.dazhuanlan.com/2020/03/03/5e5d602b31b74/">参考文章1</a></p>
-<h3><a id="%E6%A3%80%E6%9F%A5%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>检查单个文件</h3>
-<pre><code class="language-plain_text">oclint [options] &lt;source&gt; -- [compiler flags]
-oclint sample.cpp -- -c
-</code></pre>
-<p>想要改变oclint 的行为，options参数 需要 在文件资源前面添加，比如 导出报告：<code>-html -o report.html</code>
-想要改变 编译行为，需要在 -- 后面添加参数</p>
-<pre><code class="language-plain_text">oclint -html -o report.html sample.cpp -- -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS -I/usr/include -I/usr/local/include -c
-</code></pre>
-<pre><code class="language-bash">kIsysroot=&quot;/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk&quot;
-kFilePath=&quot;LXCategory/AppDelegate.m&quot;
-# 编译文件
-clang -x objective-c -arch armv7 -std=gnu99 -fobjc-arc -O0 -isysroot $kIsysroot -g -I./Pods/Headers -c $kFilePath
-# 分析文件
-oclint -report-type=html -o=report.html $kFilePath -- -x objective-c -arch armv7 -std=gnu99 -fobjc-arc -O0  -isysroot $kIsysroot -g -I ./Pods/Headers -c
-</code></pre>
-<h3><a id="%E6%A3%80%E6%9F%A5%E6%95%B4%E4%B8%AAios%E9%A1%B9%E7%9B%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>检查整个iOS项目</h3>
-<h4><a id="%E7%BC%96%E8%AF%91%E5%AF%BC%E5%87%BA" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>编译导出</h4>
-<ul>
-<li>编译之前先 clean一下，然后再build</li>
-<li>导出日志文件 <code>xcodebuild.log</code></li>
-<li>xcpretty导出json文件</li>
-</ul>
-<pre><code class="language-plain_text">xcodebuild clean build -project $kProjectName -target $kTargetName -configuration $kConfigurationType -sdk $kSDKName | tee xcodebuild.log | xcpretty --report json-compilation-database 
-</code></pre>
-<blockquote>
-<p>workspace项目 可以参考xcodebuild的使用方法:
-<code>xcodebuild  archive  -workspace &quot;$workspaceName&quot; -scheme &quot;$scheme&quot; -configuration  &quot;$kConfiguration&quot;</code></p>
-</blockquote>
-<h4><a id="%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>分析项目</h4>
-<ul>
-<li>命令添加分析规则</li>
-</ul>
-<pre><code class="language-plain_text">oclint-json-compilation-database -e LXCategory/Third -e  LXCategory/test -- \
--report-type html -o ./AppOutput/oclint-out/oclint_report.html \
--max-priority-1=100000 \
--max-priority-2=100000 -max-priority-3=100000 \
--disable-rule=InvertedLogic \
--disable-rule=CollapsibleIfStatements \
--disable-rule=UnusedMethodParameter \
--disable-rule=LongVariableName \
--disable-rule=ShortVariableName \
--disable-rule=UselessParentheses \
--disable-rule=IvarAssignmentOutsideAccessorsOrInit \
-</code></pre>
-<ul>
-<li>配置文件添加分析规则</li>
-</ul>
-<blockquote>
-<ol>
-<li>我们需要在项目根目录下创建一个名为<code>.oclint</code>的配置文件</li>
-<li>在配置文件中添加规则</li>
-<li>添加忽略文件等...</li>
-</ol>
-</blockquote>
-<p><strong>命令如下：</strong></p>
-<pre><code class="language-plain_text">oclint-json-compilation-database -e LXCategory/Third -e LXCategory/test
-</code></pre>
-<p><strong>.oclint配置文件内容如下：</strong></p>
-<pre><code class="language-plain_text">rule-configurations:
-  - key: CYCLOMATIC_COMPLEXITY # Cyclomatic complexity of a method 10
-    value: 30
-  - key: LONG_LINE
-    value: 110
-  - key: NCSS_METHOD # Number of non-commenting source statements of a method 30
-    value: 50
-  - key: LONG_VARIABLE_NAME
-    value: 40
-  - key: NESTED_BLOCK_DEPTH
-    value: 6
-  - key: MINIMUM_CASES_IN_SWITCH
-    value: 2
-  - key: SHORT_VARIABLE_NAME
-    value: 1
-  - key: TOO_MANY_METHODS
-    value: 50
-  - key: LONG_METHOD
-    value: 100
-disable-rules:
-  - RedundantLocalVariable 
-  - SHORT_VARIABLE_NAME 
-  - LongVariableName
-  - UnnecessaryElseStatement 
-  - RedundantNilCheck 
-  - RedundantIfStatement
-  - InvertedLogic
-  - AssignIvarOutsideAccessors
-  - UseObjectSubscripting
-  - BitwiseOperatorInConditional
-  - PreferEarlyExit
-  - UnusedMethodParameter
-
-max-priority-1: 1000
-max-priority-2: 1000
-max-priority-3: 1000
-enable-clang-static-analyzer: false
-
-output: AppOutput/oclint-out/oclint_report.html
-report-type: html
-</code></pre>
-<ul>
-<li>个人Demo项目脚本如下</li>
-</ul>
-<pre><code class="language-bash">kTargetName=&quot;LXCategory&quot;
-kProjectName=&quot;LXCategory.xcodeproj&quot;
-kConfigurationType=&quot;Debug&quot;
-kSDKName=&quot;iphonesimulator&quot;
-kOuptputPath=&quot;AppOutput/oclint-out&quot;
-
-# html 报告导出路径
-kHTML_Report_Name=&quot;oclint_report.html&quot;
-# 分析结果json文件名
-kJSON_Data_Name=&quot;compile_commands.json&quot;
-
-# 清理、编译 -- 格式化导出json 1------------------
-xcodebuild clean build -project $kProjectName -target $kTargetName -configuration $kConfigurationType -sdk $kSDKName | tee xcodebuild.log | xcpretty --report json-compilation-database 
-
-echo &quot;准备复制json文件 到目录:${kOuptputPath}...&quot;
-# 必须要复制到项目根目录下 才能分析成功
-cp &quot;build/reports/compilation_db.json&quot; $kJSON_Data_Name
-cp &quot;build/reports/compilation_db.json&quot; &quot;${kOuptputPath}/${kJSON_Data_Name}&quot;
-
-echo &quot;复制完毕...&quot;
-
-echo &quot;准备进入导出文件目录: AppOutput/oclint-out  ...&quot;
-
-# 分析项目 2--------------------------------
-# 方案一：
-# 如果过不在命令里配置规则，就默认读取规则里的规则 配置文件里无法配置忽略文件😂
-# oclint-json-compilation-database -e LXCategory/Third -e LXCategory/test
-
-# 方案二：
-# 命令里设置参数 读取命令里的规则
-oclint-json-compilation-database -e LXCategory/Third -e  LXCategory/test -- \
--report-type html -o AppOutput/oclint-out/oclint_report.html \
--max-priority-1=100000 \
--max-priority-2=100000 -max-priority-3=100000 \
--disable-rule=InvertedLogic \
--disable-rule=CollapsibleIfStatements \
--disable-rule=UnusedMethodParameter \
--disable-rule=LongVariableName \
--disable-rule=ShortVariableName \
--disable-rule=UselessParentheses \
--disable-rule=IvarAssignmentOutsideAccessorsOrInit \
-
-# 处理报告文件 3--------------------------
-echo &quot;准备打开 报告文件:😁&quot;
-pwd
-sleep 2.0
-# 打开 HTML 格式的报告文件
-open &quot;${kOuptputPath}/${kHTML_Report_Name}&quot;
-# 删除项目根目录下的json分析文件
-rm $kJSON_Data_Name
-</code></pre>
-<h2><a id="%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>注意事项</h2>
-<ul>
-<li>忽略文件</li>
-</ul>
-<p>忽略文件配置  <code>-e Pods -e Pods</code>,这个只能在命令中设置，配置文件中配置不了。</p>
-<ul>
-<li>检查文件</li>
-</ul>
-<p>忽略文件配置  <code>-i Pods -i Pods</code>，这个只能在命令中设置，配置文件中配置不了。</p>
-<ul>
-<li>配置文件</li>
-</ul>
-<p>配置文件的设置，会和命令设置 有冲突，二者选其一。</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336606490623.html">
-                
-                  <h1>OCLint指令集文档</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>[toc]</p>
-<p><span id = "jump">跳转位置</span></p>
-<h2><a id="oclint%E6%8C%87%E4%BB%A4%E9%9B%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>oclint指令集</h2>
-<p>基本使用：<code>oclint [options] &lt;source0&gt; [... &lt;sourceN&gt;]</code></p>
-<pre><code class="language-plain_text">oclint [oclint options] &lt;source0&gt; [... &lt;sourceN&gt;] -- [compiler options]
-</code></pre>
-<p>想要改变oclint 的行为，options参数 需要 在文件资源前面添加，比如 导出报告：<code>-html -o report.html</code>
-想要改变 编译行为，需要在 -- 后面添加参数.</p>
-<p>以我的项目为例：</p>
-<pre><code class="language-bash">kIsysroot=&quot;/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk&quot;
-kFilePath=&quot;LXCategory/AppDelegate.m&quot;
-# 编译文件
-clang -x objective-c -arch armv7 -std=gnu99 -fobjc-arc -O0 -isysroot $kIsysroot -g -I./Pods/Headers -c $kFilePath
-# 分析文件
-oclint -report-type=html -o=report.html $kFilePath -- -x objective-c -arch armv7 -std=gnu99 -fobjc-arc -O0  -isysroot $kIsysroot -g -I ./Pods/Headers -c
-</code></pre>
-<p><img src="https://cdn.nlark.com/yuque/0/2021/png/1495953/1619527468738-5d8a1a3d-b620-4813-ab9c-6d017d67b338.png?x-oss-process=image%2Fresize%2Cw_2062" alt="编译报告" /></p>
-<blockquote>
-<p>参数说明:</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>使用说明</th>
-<th style="text-align: left">备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-R=<directory></td>
-<td>添加指定的规则加载路径</td>
-<td style="text-align: left">默认是项目根目录</td>
-</tr>
-<tr>
-<td>-fatal-assembler-warnings</td>
-<td>将警告视为错误</td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td>-help</td>
-<td></td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td>-max-priority-1=<threshold></td>
-<td>第一优先级错误最大个数</td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td>-max-priority-2=<threshold></td>
-<td></td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td>-max-priority-3=<threshold></td>
-<td></td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td>-o=<path></td>
-<td>报告文件导出路径</td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td>-p=<string></td>
-<td>build路径</td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td>-rc=<paramemter>=<value></td>
-<td>覆盖默认的行为规则</td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td>-stats</td>
-<td>启用程序的统计输出</td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td>-text</td>
-<td>纯文本报告类型输出</td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td>-html</td>
-<td>HTML格式类型报告输出</td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td>-version</td>
-<td>oclint版本信息</td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td>-p <build-path></td>
-<td>用于读取编译命令数据库</td>
-<td style="text-align: left"></td>
-</tr>
-<tr>
-<td><source0></td>
-<td>待分析的资源文件</td>
-<td style="text-align: left"></td>
-</tr>
-</tbody>
-</table>
-<h3><a id="%E8%A7%84%E5%88%99%E5%8A%A0%E8%BD%BD%E9%80%89%E9%A1%B9" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>规则加载选项</h3>
-<ul>
-<li>-R <directory> :通过-R参数可以修改规则加载路径。可以从多个路径中加载多个规则。默认从 <code>$(/path/to/bin/oclint)/../lib/oclint/rules</code> 加载规则。</li>
-<li>-rc <paramemter>=<value> ： 某些规则具有确定是否发出违规行为的阈值。这些阈值可以通过带有 <code>-rc key=value</code> 的兼职对进行更改。</li>
-</ul>
-<h3><a id="%E7%BC%96%E8%AF%91%E9%80%89%E9%A1%B9" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>编译选项</h3>
-<p>例如你平时编译一个文件：</p>
-<pre><code class="language-plain_text">clang -x objective-c -arch armv7 -std=gnu99 -fobjc-arc -O0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk -g -I./Pods/Headers -c RPActivityIndicatorManager.m
-</code></pre>
-<p>当你分析这个代码时的OCLint命令将是：</p>
-<pre><code class="language-plain_text">oclint [oclint options] RPActivityIndicatorManager.m -- -x objective-c -arch armv7 -std=gnu99 -fobjc-arc -O0 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.4.sdk -g -I./Pods/Headers -c
-</code></pre>
-<ul>
-<li>-p : 重定向build路径。这个路径内需要包含名为compile_commands.json的文件。如果未指定构建路径，则将尝试通过第一个输入文件的所有父路径搜索compile_commands.json。</li>
-</ul>
-<h3><a id="%E6%A3%80%E6%9F%A5%E5%88%86%E6%9E%90%E9%80%89%E9%A1%B9" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>检查分析选项</h3>
-<h3><a id="%E5%AF%BC%E5%87%BA%E6%8A%A5%E5%91%8A%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>导出报告相关参数</h3>
-<ul>
-<li>
-<p>-o <path> ： 指定导出文件的路径和文件名</p>
-</li>
-<li>
-<p>-text : 导出纯文本报告</p>
-</li>
-<li>
-<p>-html : 导出HTML 格式报告</p>
-<p><code>-report-type=html -o=./oclint_report.html</code></p>
-</li>
-</ul>
-<h3><a id="%E9%80%80%E5%87%BA%E7%8A%B6%E6%80%81%E9%80%89%E9%A1%B9" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>退出状态选项</h3>
-<ul>
-<li><code>-max-priority-1 &lt;threshold&gt;</code>
-一级违例最大数量</li>
-<li><code>-max-priority-2 &lt;threshold&gt;</code>
-二级违例最大数量</li>
-<li><code>-max-priority-3 &lt;threshold&gt;</code>
-三级违例最大数量</li>
-</ul>
-<p>OCLint返回以下四个退出代码之一:</p>
-<ol>
-<li>
-<ul>
-<li>SUCCESS</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>RULE_NOT_FOUND</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>ERROR_WHILE_PROCESSING</li>
-</ul>
-</li>
-<li>
-<ul>
-<li>VIOLATIONS_EXCEED_THRESHOLD</li>
-</ul>
-</li>
-</ol>
-<h2><a id="oclint-json-compilation-database%E6%8C%87%E4%BB%A4%E9%9B%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>oclint-json-compilation-database 指令集</h2>
-<pre><code class="language-bash"># 使用方法
-oclint-json-compilation-database [&lt;filter0&gt; ... &lt;filterN&gt;] -- [oclint options]
-
-# 使用实例
-oclint-json-compilation-database -e LXCategory/Third -i  LXCategory/test -- \
--report-type html -o ./AppOutput/oclint-out/oclint_report.html \
--max-priority-1=100000 \
--max-priority-2=100000 -max-priority-3=100000 \
--disable-rule=InvertedLogic \
--disable-rule=CollapsibleIfStatements \
--disable-rule=UnusedMethodParameter \
--disable-rule=LongVariableName \
--disable-rule=ShortVariableName \
--disable-rule=UselessParentheses \
--disable-rule=IvarAssignmentOutsideAccessorsOrInit \
-</code></pre>
-<ul>
-<li>-i INCLUDES, -include INCLUDES, –include INCLUDES
-Extract files matching pattern from compile_commands.json or prior matching result</li>
-<li>-e EXCLUDES, -exclude EXCLUDES, –exclude EXCLUDES
-Remove files matching pattern from compile_commands.json or prior matching result</li>
-<li>-v show invocation command with arguments</li>
-</ul>
-<h2><a id="oclint-xcodebuild%E6%8C%87%E4%BB%A4%E9%9B%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>oclint-xcodebuild 指令集</h2>
-<blockquote>
-<p>该指令集已经不维护 使用xcpretty代替</p>
-</blockquote>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336606132150.html">
-                
-                  <h1>ios14 Widget桌面小组件踩过的坑</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h1><a id="%E6%89%BE%E4%B8%8D%E5%88%B0%E7%B1%BBconfigurationintent" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>找不到类 ConfigurationIntent</h1>
-<p>可能是你的项目默认带前缀，比如前缀是<code>KL</code>,那在创建<code>ConfigrationIntent</code>的时候也默认给带了前缀<code>KLConfigurationIntent</code></p>
-<h1><a id="%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99configurationintentresponse%E7%9B%B8%E5%85%B3%E7%9A%84%E9%94%99%E8%AF%AF" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>编译报错 ConfigurationIntentResponse 相关的错误</h1>
-<p><code>Showing All Messages : _OBJC_METACLASS_$_ConfigurationIntentResponse in ConfigurationIntent.o</code></p>
-<p>View --&gt; Do</p>
-<p><img src="https://tva1.sinaimg.cn/large/008i3skNly1grdgurg0txj317c0eejub.jpg" alt="修改位置" /></p>
-<h1><a id="%E6%95%B0%E6%8D%AE%E5%85%B1%E4%BA%AB%E6%8A%A5%E9%94%99" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>数据共享报错</h1>
-<p><code>[User Defaults] Couldn't read values in CFPrefsPlistSource *******</code></p>
-<p>主工程的Group  共享  和 子Target读取的Group不是同一个。
-但是我的报错却是因为 主工程有四个环境，只在Release环境下支持了共享 Debug模式下没支持，添加以下即可 「+capability」方式添加Group。</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16336595298050.html">
-                
-                  <h1>Alfred 修改内置Terminal为Iterm2</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p><img src="https://b3logfile.com/file/2019/09/image-cb8282c6.png?imageView2/2/interlace/1/format/webp" alt="" /></p>
-<pre><code class="language-plain_text">
--- This is v0.6 of the custom script for AlfredApp for iTerm 2.9+
--- Please see https://github.com/stuartcryan/custom-iterm-applescripts-for-alfred/
--- for the latest changes.
-
--- Please note, if you store the iTerm binary in any other location than the Applications Folder
--- please ensure you update the two locations below (in the format of : rather than / for folder dividers)
--- this gets around issues with AppleScript not handling things well if you have two iTerm binaries on your system... which can happen :D
-
-on alfred_script(q)
-	if application &quot;iTerm2&quot; is running or application &quot;iTerm&quot; is running then
-		run script &quot;
-			on run {q}
-				tell application \&quot;:Applications:iTerm.app\&quot;
-					activate
-					try
-						select first window
-						set onlywindow to true
-					on error
-						create window with default profile
-						select first window
-						set onlywindow to true
-					end try
-					tell the first window
-						if onlywindow is false then
-							create tab with default profile
-						end if
-						tell current session to write text q
-					end tell
-				end tell
-			end run
-		&quot; with parameters {q}
-	else
-		run script &quot;
-			on run {q}
-				tell application \&quot;:Applications:iTerm.app\&quot;
-					activate
-					try
-						select first window
-					on error
-						create window with default profile
-						select first window
-					end try
-					tell the first window
-						tell current session to write text q
-					end tell
-				end tell
-			end run
-		&quot; with parameters {q}
-	end if
-end alfred_script
-</code></pre>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/10/8</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='app.html'>MacAPP</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16325811812741.html">
-                
-                  <h1>Python环境安装</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<h2><a id="pip%E5%AE%89%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>pip安装</h2>
-<pre><code class="language-shell">sudo python -m ensurepip --upgrade
-</code></pre>
-<h2><a id="mac%E4%B8%8B%E5%A4%9A%E4%B8%AApython%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mac下多个Python版本管理</h2>
-<p><a href="https://www.jianshu.com/p/3261976c10c2">参考文章</a></p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/9/25</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='py.html'>Python</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16322770901249.html">
-                
-                  <h1>数组排序之 NSOrderedAscending 和 NSOrderedDescending</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/9/22</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16319608270660.html">
-                
-                  <h1>NSScanner 详解</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>废话少说，先上代码：</p>
-<pre><code class="language-plain_text">/// 是否是纯数字
-- (BOOL)isPureInt:(NSString *)string{
-    NSScanner* scan = [NSScanner scannerWithString:string];
-    
-    int val;
-    
-    return [scan scanInt:&amp;val] &amp;&amp; [scan isAtEnd];
-}
-</code></pre>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/9/18</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="16319600874800.html">
-                
-                  <h1>NSURL参数拼接之NSURLComponents</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>废话少说，先上代码：</p>
-<pre><code class="language-objc">NSDictionary *queryDic = @{@&quot;key1&quot;:@&quot;value1&quot;,@&quot;key2&quot;:@&quot;value2&quot;,@&quot;key3&quot;:@&quot;value3&quot;};
-    NSMutableArray *queryItems = [NSMutableArray array];
-    
-[queryDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-    NSURLQueryItem *item = [[NSURLQueryItem alloc] initWithName:key value:obj];
-    [queryItems addObject:item];
-}];
-    
-NSURLComponents *components = [NSURLComponents componentsWithString:@&quot;http://www.baidu.com&quot;];
-components.queryItems = queryItems;
-    
-NSLog(@&quot;absoluteString:%@\nabsoluteURL:%@\nURL:%@&quot;,components.URL.absoluteString,components.URL.absoluteURL,components.URL);
-</code></pre>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2021/9/18</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-			<div class="article">
-                <a class="clearlink" href="15488351784332.html">
-                
-                  <h1>Objective-C中的字符串类型枚举 探索</h1>
-                  <div class="a-content">
-                      
-                      <div class="a-content-text">
-                        
-                        	<p>实际开发中的iOSer会发现，有些情况我们需要字符串类型的枚举值。但是OC偏偏没有提供这种类型。Swift语言或者Java这些语言都有，于是我就有些不甘心了。经过一番探索，尝试了以下几种情况。</p>
-
-                        
-                      </div>
-                  </div>
-                </a>
-                <div class="read-more clearfix">
-                  <div class="more-left left">
-                  
-                    <span class="date">2019/1/30</span>
-                    <span>posted in&nbsp;</span> 
-          				  
-          					    <span class="posted-in"><a href='ios.html'>iOS</a></span>
-          				   
-                    
-
-                  </div>
-                  <div class="more-right right">
-                  <span class="comments">
-                      
-
-                       
-                  </span>
-                  </div>
-                </div>
-              </div><!-- article -->
-        
-              
+cd 到项目根目录下
 
 
-			<div class="row">
-			  <div class="large-6 columns">
-			  <p class="text-left" style="padding-top:25px;">
-			   <a href="all_3.html">&laquo; Prev Page</a>  
-			  </p>
-			  </div>
-			  <div class="large-6 columns">
-			<p class="text-right" style="padding-top:25px;">
-			 <a href="all_5.html">&raquo; Next Page</a> 
-			</p>
-			  </div>
-			</div>
+fastlane init
+
+
+fastlane action
+
+
+fastlane plugin
+
+
+gym 请参考：gym官方文档
+
+
+有一点比较坑：每个项目都需要为fastlane配置下环境,关联开发账户
+安装打包平台命令工具
+
+安装firim
+
+fastlane add_plugin versioning
+fastlane add_plugin firim
+
+versioning 需要输入电脑密码，以获取sudo权限.
+firim 相关参数可参考：firim 源码说明
+
+安</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336621877205.html">iOS 之 自动打包 fastlane + fir + pgy 【进阶使用】</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336621451455.html"> 
+							<div class="item-desc"> 
+								<p>配置打包信息
+# 工程名称
+kProjectName=&quot;ipa.xcodeproj&quot;
+
+# workspace 名称 如果使用了cocopods等可能需要用工作空间方式打包
+# workspaceName=“ipa.workspace”
+
+# scheme名称
+kSchemeName=&quot;ipa&quot;
+
+# target 这里scheme只对应了一个target运行；如果有多个target需要指定target
+kTargetName=&quot;ipa&quot;
+
+# APP环境配置 Configuration
+kConfiguration=&quot;Re</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336621451455.html">ios 之 自动打包 脚本 【bash 版本】</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336621349772.html"> 
+							<div class="item-desc"> 
+								<p>崩溃信息如下：
+*** Terminating app due to uncaught exception 
+'NSInvalidUnarchiveOperationException', 
+reason: 'Could not instantiate class named _UITextLayoutView because no class named _UITextLayoutView was found; 
+the class needs to be defined in source code or linked in from a library (ensure the class</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336621349772.html">Xcode 11 Xib `_UITextLayoutView` 崩溃</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336619273999.html"> 
+							<div class="item-desc"> 
+								<p>选择打包scheme
+# 选择打包环境
+function selectedScheme() {
+  #statements
+  echo &quot;请选择打包对象: \n 1) GaoKao(**高考) \n 2) Zhongkao(**中考)&quot;
+  read app_scheme
+
+  if [[ $app_scheme == 1 ]]; then
+    echo &quot;您选择的是：GaoKao(**高考)&quot;
+    app_scheme=&quot;GaoKao&quot;
+  elif [[ $app_scheme == 2 ]]; then
+    ech</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336619273999.html">ios 之 自动打包 一键打包脚本 【bash优化版本】</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336618881036.html"> 
+							<div class="item-desc"> 
+								<p>
+现象：iPad 开启屏幕旋转，横屏启动APP，某些特殊情况下，APP会变成横屏APP。恭喜你，中奖了，这时候即使你ViewController的控制屏幕旋转的三个代理方法都只支持竖屏，你的APP也可能是错乱的。
+
+
+神奇的解决方案：
+
+mainScreen添加一个window，makeKeyAndVisible
+然后resignKeyWindow
+
+
+
+- (void)showMagicWindow{
+    UIWindow *aawindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+       a</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336618881036.html">iPad 横屏启动 界面错乱</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336618777988.html"> 
+							<div class="item-desc"> 
+								<p>curl 'https://oapi.dingtalk.com/robot/send?access_token=8c022fd6586126b80994e1b551ce31ab6ee56ed045c47c51c8ab0192c723cb1e' \
+   -H 'Content-Type: application/json' \
+   -d '{
+			&quot;msgtype&quot;: &quot;text&quot;,
+			&quot;text&quot;: {
+             &quot;content&quot;: &quot;高考iOS最新安装包 ipa--https</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336618777988.html">钉钉机器人</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336618031940.html"> 
+							<div class="item-desc"> 
+								<p>什么是RunLoop
+顾名思义，RunLoop就是一个保证程序或者线程持续运行的循环。
+runloop 作用
+
+保持程序持续运行。
+处理各种事件 ：触摸事件、定时器时间、selector事件、网络请求等
+节省CPU资源，提高程序性能：该干活儿时干活儿，该休息时休息
+
+每一个线程，只对应唯一一个Runloop
+iOS开发中，UIApplicationMain 函数启动了主线程的 主RunLoop，保证程序的主线程的运行状态，这样UI就不会卡顿。主线程中的runloop是系统主动开启的，开发者手动开启的子线程内的runloop如果不手动开启，子线程执行完就结束了，线程就销毁了。所以，要想手动开启的</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336618031940.html">RunLoop攻坚</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336617489720.html"> 
+							<div class="item-desc"> 
+								<p>事件传递 &amp;&amp; 响应链
+1
+hitText:event:方法实现逻辑
+</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336617489720.html">事件传递 && 响应链</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336617279730.html"> 
+							<div class="item-desc"> 
+								<p>iOS开发中编译链接过程：
+
+预处理 （Prepressing）
+静态语法检测 生成AST(Analyze Static)
+编译 （Compilation）
+汇编 （Assembly）
+链接 （Linking）
+
+写好代码后， LLVM 会预处理代码，比如把宏嵌入到对应的位置；
+预处理完成后， LLVM 会对代码进行词法分析和语法分析，生成 AST , AST 是抽象语法树，结构上比代码更精简，遍历起来更快，所以使用 AST 能够快速的进行静态检查，同时还能更快地生成生成 IR (中间表示)
+最后 AST 会生成 IR, IR 是一种更近机器码的语言区别在于和平台无关，通过 IR 可以生成多分</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336617279730.html">编译 && 链接</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			
+				<div class="post-list-item">
+					<div class="post-list-item-container">
+ <!-- 自定post背景图 -->
+					 
+                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
+						
+						</div> 
+						<a href="16336617111534.html"> 
+							<div class="item-desc"> 
+								<p>zsh: /usr/local/bin/pod: bad interpreter: /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby: no such file or directory
+
+这是Mac升级系统导致，当你的Mac系统升级为macOS Catalina 的时候，别忘记更新cocoapods
+sudo gem update --system
+sudo gem install cocoapods -n/usr/local/bin
+
+</p> 
+							</div> 
+						</a> 
+<!-- 自定义Post颜色 -->
+				
+						<div class="item-slant reverse-slant bg-deepgrey"></div>
+						
+
+						<div class="item-slant"></div>
+		 				<div class="item-label">
+	  						<div class="item-title">
+	  							<a href="16336617111534.html">zsh: /usr/local/bin/pod: bad interpreter: /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby: no such file or directory</a>
+	  						</div>
+		   					<div class="item-meta clearfix"> 
+<!-- 自定义Icon -->
+								
+		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
+		   						</div> 
+								
+
+		   						<div class="item-meta-cat">
+	  							
+			    			<a class='category' href='ios.html'>iOS</a>
+								
+		   						</div> 
+		   					</div> 
+		   					
+		   				</div> 
+   					</div>
+ 				</div>
+ 			 
 		</div>
-	</div><!-- large 8 -->
-
- <div class="large-4 medium-4 columns">
-  <div class="hide-for-small">
-    <div id="sidebar" class="sidebar">
-          <div id="site-info" class="site-info">
+	</div>
+<!-- 底部导航条 -->
+	<nav class="lists-navigator clearfix" style="clear: all;">
+            <ol class="page-navigator">
             
-                <div class="site-a-logo"><img src="https://ws1.sinaimg.cn/large/006tNc79ly1fmpk9088gsj30sg0sgn33.jpg" /></div>
+            	<li class=""><a href="all_3.html"><span aria-hidden="true">&larr;</span> 上一页</a></li>
             
-                <h1>kaelinda</h1>
-                <div class="site-des">倘若我心中的山水，你眼中能看到，我便一步一莲花祈祷</div>
-                <div class="social">
 
+				<li class=""><a href="archives.html">归档</a></li>
 
-
-
-
-
-
-
-
-<a target="_blank" class="github" target="_blank" href="https://github.com/Kaelzzs" title="GitHub">GitHub</a>
-<a target="_blank" class="email" href="mailto:zhouzuosong_kael@163.com" title="Email">Email</a>
-  <a target="_blank" class="rss" href="atom.xml" title="RSS">RSS</a>
-                
-              	 </div>
-          	</div>
-
+			
+			<li class=""><a href="all_5.html">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+			
+            </ol>
+     </nav>
+</div>
+</div>  <footer id="footer" class="footer" style="background-color: #030501;color: #FFFFFE;">
+  <div class="footer-meta">
+    <div class="footer-container">
+      <!-- 版权说明 -->
+      <div class="meta-item meta-copyright">
+        <div class="meta-copyright-info">
+          <h2 class="meta-title">INFO</h2>
+          <div class="info-text">  
+              <p>Copyright &copy; 2017 <br>
+              <span class="credit">Powered by 
+              <a target="_blank" href="http://zh.mweb.im/">MWeb</a> 
+              </span>
+              <p>Theme Design by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
+              <p>Migrating to Mweb by <a href="http://metaidea.cn">idken</a></p>
+              </p> 
+          </div>                  
+        </div>
+      </div>  
+      <!-- Categories -->
+      <div class="meta-item meta-comments">
+          <h2 class="meta-title">CATEGORIES</h2>  
              
+            
+            <li>
+            <a href="ios.html">iOS&nbsp;(81)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            <li>
+            <a href="swift.html">Swift&nbsp;(3)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            <li>
+            <a href="app.html">MacAPP&nbsp;(3)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            <li>
+            <a href="reactnative.html">React-Native&nbsp;(4)</a>
+            <p>
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+            
+            </p>
+            </li>
+            
+             
+      </div>
+      <!-- 最新文章 -->
+      <div class="meta-item meta-comments">
+          <h2 class="meta-title">RECENT POSTS</h2>
 
-              <div id="site-categories" class="side-item ">
-                <div class="side-header">
-                  <h2>Categories</h2>
-                </div>
-                <div class="side-content">
+          
+          
+         <li>
+           <a href="16337448805296.html">iOS OpenURL方式吊起APP</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16336873755362.html">iOS 打开别的APP的两种Native方法</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16336595298050.html">Alfred 修改内置Terminal为Iterm2</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="16325811812741.html">Python环境安装</a><br>
+         </li>
+          
+          
+          
+         <li>
+           <a href="15409691048860.html">【Swift笔记】引用计数</a><br>
+         </li>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+           
 
-      	<p class="cat-list">
-        
-            <a href="reactnative.html"><strong>React-Native</strong></a>
-        
-            <a href="ios.html"><strong>iOS</strong></a>
-        
-            <a href="app.html"><strong>MacAPP</strong></a>
-        
-            <a href="swift.html"><strong>Swift</strong></a>
-        
-            <a href="js.html"><strong>JavaScript</strong></a>
-        
-            <a href="vue.html"><strong>Vue</strong></a>
-        
-            <a href="shell.html"><strong>shell</strong></a>
-        
-            <a href="net.html"><strong>网络</strong></a>
-        
-            <a href="py.html"><strong>Python</strong></a>
-         
-        </p>
-
-
-                </div>
-              </div>
-
-              <div id="site-categories" class="side-item">
-                <div class="side-header">
-                  <h2>Recent Posts</h2>
-                </div>
-                <div class="side-content">
-                <ul class="posts-list">
-	      
-		      
-			      <li class="post">
-			        <a href="16336627926129.html">LeetCode【算法】宝石与石头</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="16336627738081.html">2019-03-29 17:03:53 下午</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="16336627597679.html">Nginx 安装 与配置</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="16336627471864.html">nginx</a>
-			      </li>
-		     
-		  
-		      
-			      <li class="post">
-			        <a href="16336627158241.html">UITableView 嵌套tableView吸顶 手势冲突问题解决方案以及优化（一 解决）</a>
-			      </li>
-		     
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		  
-		      
-		   
-		  		</ul>
-                </div>
-              </div>
-        </div><!-- sidebar -->
-      </div><!-- hide for small -->
-</div><!-- large 4 -->
-
-</div><!-- row -->
-
- <div class="page-bottom clearfix">
-  <div class="row">
-   <p class="copyright">Copyright &copy; 2015
-Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
-Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+      </div>
   </div>
 </div>
+</footer>
 
-        </section>
-      </div>
-    </div>
+<!--评论变量判断 -->
+      
+<!-- 评论end -->
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
 
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style type="text/css">
-figure{margin: 0;padding: 0;}
-figcaption{text-align:center;}
-
-/* PrismJS 1.14.0
- http://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
-/**
- * prism.js default theme for JavaScript, CSS and HTML
- * Based on dabblet (http://dabblet.com)
- * @author Lea Verou
- */
-
-code[class*="language-"],
-pre[class*="language-"] {
-    color: black;
-    background: none;
-    text-shadow: 0 1px white;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    word-wrap: normal;
-    line-height: 1.5;
-    
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-}
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-    text-shadow: none;
-    background:#b3d4fc;
-}
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-    text-shadow: none;
-    background: #b3d4fc;
-}
-
-@media print {
-    code[class*="language-"],
-    pre[class*="language-"] {
-        text-shadow: none;
-    }
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-    padding: 1em;
-    margin: .5em 0;
-    overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-    background: #F7F7F7;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-    padding: .1em;
-    border-radius: .3em;
-    white-space: normal;
-}
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-    color: slategray;
-}
-
-.token.punctuation {
-    color: #999;
-}
-
-.namespace {
-    opacity: .7;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-    color: #905;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-    color: #690;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-    color: #9a6e3a;
-    background: hsla(0, 0%, 100%, .5);
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-    color: #07a;
-}
-
-.token.function,
-.token.class-name {
-    color: #DD4A68;
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-    color: #e90;
-}
-
-.token.important,
-.token.bold {
-    font-weight: bold;
-}
-.token.italic {
-    font-style: italic;
-}
-
-.token.entity {
-    cursor: help;
-}
-
-
-pre[class*="language-"].line-numbers {
-    position: relative;
-    padding-left: 3.8em;
-    counter-reset: linenumber;
-}
-
-pre[class*="language-"].line-numbers > code {
-    position: relative;
-    white-space: inherit;
-}
-
-.line-numbers .line-numbers-rows {
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    font-size: 100%;
-    left: -3.8em;
-    width: 3em; /* works for line-numbers below 1000 lines */
-    letter-spacing: -1px;
-    border-right: 1px solid #999;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-}
-
-    .line-numbers-rows > span {
-        pointer-events: none;
-        display: block;
-        counter-increment: linenumber;
-    }
-
-        .line-numbers-rows > span:before {
-            content: counter(linenumber);
-            color: #999;
-            display: block;
-            padding-right: 0.8em;
-            text-align: right;
-        }
-
-</style>
-
-  
-    
-
-    <script src="asset/js/foundation.min.js"></script>
-    <script>
-      $(document).foundation();
-      function fixSidebarHeight(){
-        var w1 = $('.markdown-body').height();
-          var w2 = $('#sidebar').height();
-          if (w1 > w2) { $('#sidebar').height(w1); };
-      }
-      $(function(){
-        fixSidebarHeight();
-      })
-      $(window).load(function(){
-          fixSidebarHeight();
-      });
-     
-    </script>
-
-
-
-  </body>
+</body>
 </html>
