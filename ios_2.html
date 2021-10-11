@@ -1,798 +1,418 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="zh-cn">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="Cache-Control" content="no-transform"/>
-
-
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1" />
     <title>
+        
+      iOS - Kaelinda
       
-    iOS - Kaelinda
-    
     </title>
-
-
-  <link href="asset/css/style.css" rel="stylesheet" > 
-  <link href="asset/js/xcode.min.css" rel="stylesheet">
-  <script src="asset/js/headroom.js"></script>
-
-  <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="asset/css/font-awesome.css">
- -->
-
-  <!-- <script src="asset/highlightjs/highlight.pack.js"></script> -->
-  <!-- <link href="asset/highlightjs/styles/solarized_light.css" media="screen, projection" rel="stylesheet" type="text/css"> -->
-  <!-- <script>hljs.initHighlightingOnLoad();</script> -->
-
-
-  </head>
-
-  <!-- 主体开始 -->
-  <!-- <body class="" gtools_scp_screen_capture_injected="true"> -->
-  <!-- 上面为主页白底色版本 -->
+    <meta name="keywords" content="Kaelinda" />
     
-<body class="bg-grey" gtools_scp_screen_capture_injected="true" data-feedly-mini="yes">
-<!-- 上面是主页灰底色版本 -->
+    
+    
+    <link href="atom.xml" rel="alternate" title="Kaelinda" type="application/atom+xml">
+    <script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!--Global site tag (gtag.js) - Google Analytics>
 
-<!--[if lt IE 8]>
-<div class="browsehappy" role="dialog">
-    当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank">升级你的浏览器</a>。
-</div>
-<![endif]-->
-<!-- 头部位置 -->
-
-<header id="header" class="header bg-white headroom">
-  <div class="navbar-container"> 
-    <a href="index.html" class="navbar-logo"><img src="asset/img/K-logo.png"> </a>
-    <div class="navbar-menu"> 
-
-        
-        <a href="index.html">最近更新</a>
-        
-        <a href="archives.html">归档目录</a>
-        
-        <a href="ios.html">iOS</a>
-        
-        <a href="swift.html">Swift</a>
-        
-        <a href="reactnative.html">RN</a>
-        
-        <a href="js.html">JS</a>
-        
-        <a href="shell.html">shell</a>
-        
-        <a href="py.html">Python</a>
-        
-        
-    </div> 
-    <!-- 搜索框体 -->
-    <!--  <div class="navbar-search" onclick="">
-        <span class="icon-search"></span>
-        <form id="search" method="post" action="/" role="search">
-          <span class="search-box">
-            <input type="text" id="input" class="input" name="s" required="true" placeholder="Search..." maxlength="30" autocomplete="off">
-          </span>
-        </form>
-    </div> -->
-
-    <div class="navbar-mobile-menu" onclick=""> 
-      <span class="icon-menu cross"><span class="middle"></span></span> 
-        <ul> 
-          
-          <li>
-          <a href="index.html">最近更新</a>
-          </li>
-          
-          <li>
-          <a href="archives.html">归档目录</a>
-          </li>
-          
-          <li>
-          <a href="ios.html">iOS</a>
-          </li>
-          
-          <li>
-          <a href="swift.html">Swift</a>
-          </li>
-          
-          <li>
-          <a href="reactnative.html">RN</a>
-          </li>
-          
-          <li>
-          <a href="js.html">JS</a>
-          </li>
-          
-          <li>
-          <a href="shell.html">shell</a>
-          </li>
-          
-          <li>
-          <a href="py.html">Python</a>
-          </li>
-          
-        </ul> 
-    </div> 
-  </div> 
-</header>
-<!-- 头部结束 -->  <!-- 这里是category的开始 -->
-<div class="main-content index-page clearfix">
-    <div class="post-lists">
-        <div class="post-lists-body">
-			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="16336618881036.html"> 
-							<div class="item-desc"> 
-								<p>
-现象：iPad 开启屏幕旋转，横屏启动APP，某些特殊情况下，APP会变成横屏APP。恭喜你，中奖了，这时候即使你ViewController的控制屏幕旋转的三个代理方法都只支持竖屏，你的APP也可能是错乱的。
-
-
-神奇的解决方案：
-
-mainScreen添加一个window，makeKeyAndVisible
-然后resignKeyWindow
-
-
-
-- (void)showMagicWindow{
-    UIWindow *aawindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-       a</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16336618881036.html">iPad 横屏启动 界面错乱</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='ios.html'>iOS</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="16336618777988.html"> 
-							<div class="item-desc"> 
-								<p>curl 'https://oapi.dingtalk.com/robot/send?access_token=8c022fd6586126b80994e1b551ce31ab6ee56ed045c47c51c8ab0192c723cb1e' \
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="asset/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <script src="asset/colorscheme.js"></script>
+    <div class="container">
+      <div class="head">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="blogname">Kaelinda</div>
+            <nav>
+              
+                <div class="item"><a target="_self" href="index.html">最近更新</a></div>
+              
+                <div class="item"><a target="_self" href="archives.html">归档目录</a></div>
+              
+                <div class="item"><a target="_self" href="ios.html">iOS</a></div>
+              
+                <div class="item"><a target="_self" href="swift.html">Swift</a></div>
+              
+                <div class="item"><a target="_self" href="reactnative.html">RN</a></div>
+              
+                <div class="item"><a target="_self" href="js.html">JS</a></div>
+              
+                <div class="item"><a target="_self" href="shell.html">shell</a></div>
+              
+                <div class="item"><a target="_self" href="py.html">Python</a></div>
+              
+            </nav>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div> <div class="container" id="category">
+  
+    
+      <div class="article huge">
+        <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+        <div class="row content">
+          <div class="col-md-2"></div>
+          <div class="col-md-10 main">
+            <div class="row">
+              <div class="col-md-10 post">
+                <div class="headline"><a href="16336618777988.html">钉钉机器人</a></div>
+                <div class="subtitle">钉钉机器人</div>
+                <div class="meta"><span class="time">$[timeformat('2021-10-08T10:57:57+08:00')]</span></div>
+                <div class="body">
+                    <pre><code class="language-plain_text">curl 'https://oapi.dingtalk.com/robot/send?access_token=8c022fd6586126b80994e1b551ce31ab6ee56ed045c47c51c8ab0192c723cb1e' \
    -H 'Content-Type: application/json' \
    -d '{
 			&quot;msgtype&quot;: &quot;text&quot;,
 			&quot;text&quot;: {
-             &quot;content&quot;: &quot;高考iOS最新安装包 ipa--https</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16336618777988.html">钉钉机器人</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='ios.html'>iOS</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="16336618031940.html"> 
-							<div class="item-desc"> 
-								<p>什么是RunLoop
-顾名思义，RunLoop就是一个保证程序或者线程持续运行的循环。
-runloop 作用
-
-保持程序持续运行。
-处理各种事件 ：触摸事件、定时器时间、selector事件、网络请求等
-节省CPU资源，提高程序性能：该干活儿时干活儿，该休息时休息
-
-每一个线程，只对应唯一一个Runloop
-iOS开发中，UIApplicationMain 函数启动了主线程的 主RunLoop，保证程序的主线程的运行状态，这样UI就不会卡顿。主线程中的runloop是系统主动开启的，开发者手动开启的子线程内的runloop如果不手动开启，子线程执行完就结束了，线程就销毁了。所以，要想手动开启的</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16336618031940.html">RunLoop攻坚</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='ios.html'>iOS</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="16336617489720.html"> 
-							<div class="item-desc"> 
-								<p>事件传递 &amp;&amp; 响应链
-1
-hitText:event:方法实现逻辑
-</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16336617489720.html">事件传递 && 响应链</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='ios.html'>iOS</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="16336617279730.html"> 
-							<div class="item-desc"> 
-								<p>iOS开发中编译链接过程：
-
-预处理 （Prepressing）
-静态语法检测 生成AST(Analyze Static)
-编译 （Compilation）
-汇编 （Assembly）
-链接 （Linking）
-
-写好代码后， LLVM 会预处理代码，比如把宏嵌入到对应的位置；
-预处理完成后， LLVM 会对代码进行词法分析和语法分析，生成 AST , AST 是抽象语法树，结构上比代码更精简，遍历起来更快，所以使用 AST 能够快速的进行静态检查，同时还能更快地生成生成 IR (中间表示)
-最后 AST 会生成 IR, IR 是一种更近机器码的语言区别在于和平台无关，通过 IR 可以生成多分</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16336617279730.html">编译 && 链接</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='ios.html'>iOS</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="16336617111534.html"> 
-							<div class="item-desc"> 
-								<p>zsh: /usr/local/bin/pod: bad interpreter: /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby: no such file or directory
-
-这是Mac升级系统导致，当你的Mac系统升级为macOS Catalina 的时候，别忘记更新cocoapods
-sudo gem update --system
-sudo gem install cocoapods -n/usr/local/bin
-
-</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16336617111534.html">zsh: /usr/local/bin/pod: bad interpreter: /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/bin/ruby: no such file or directory</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='ios.html'>iOS</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="16336616900153.html"> 
-							<div class="item-desc"> 
-								<p>
-fishhook原理
-
-代码检测
-
-OCLint 如何自定义规则
+             &quot;content&quot;: &quot;高考iOS最新安装包 ipa--https://fir.im/lgk&quot;
+        },
+			&quot;at&quot;: {
+        	&quot;atMobiles&quot;: [
+                &quot;15718808963&quot;,
+                &quot;13241411941&quot;,
+                &quot;13466778405&quot;,
+                &quot;13716307872&quot;
+        ],
+        &quot;isAtAll&quot;: false
+		}
+      }'
+</code></pre>
+<p>参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数类型</th>
+<th>必须</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msgtype</td>
+<td>String</td>
+<td>是</td>
+<td>消息类型，此时固定为：text</td>
+</tr>
+<tr>
+<td>content</td>
+<td>String</td>
+<td>是</td>
+<td>消息内容</td>
+</tr>
+<tr>
+<td>atMobiles</td>
+<td>Array</td>
+<td>否</td>
+<td>被@人的手机号(在content里添加@人的手机号)</td>
+</tr>
+<tr>
+<td>isAtAll</td>
+<td>bool</td>
+<td>否</td>
+<td>@所有人时：true，否则为：false</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">#!/bin/sh
 
 
-</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
+# -----------------&gt; 基本信息配置区
+# 工程名称
+kProjectName=&quot;ipa.xcodeproj&quot;
+# scheme名称
+kSchemeName=&quot;ipa&quot;
+# target 这里scheme只对应了一个target运行；如果有多个target需要制定target
+kTargetName=&quot;ipa&quot;
+# APP环境配置
+kConfiguration=&quot;Release&quot;
+# archive导出路径
+kArchivePath=&quot;./ipaOutput/${kSchemeName}.xcarchive&quot;
+# ipa导出路径
+kExport_ipa_Path=&quot;./ipaOutput/${kSchemeName}&quot;
+# 不同的打包方式这个导出文件不同
+kExportOptionsPlist=&quot;./ipaOutput/ExportOptions.plist&quot;
 
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16336616900153.html">技术好文收藏</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
+kAppChangelog=&quot;kael-我是版本更新信息&quot;
 
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='ios.html'>iOS</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="16336616337266.html"> 
-							<div class="item-desc"> 
-								<p>数据结构
-objc_object
-id ==》 objc_object 结构体
+# ------------------&gt; 打包区
+# clean
+xcodebuild  clean -configuration &quot;$configuration&quot; -alltargets
 
-继承自 objc_class
-isa指针指向 objc_class
-实例对象的isa指针指向类对象；类对象isa指针 指向元类
+# archive project
+xcodebuild archive -project &quot;$kProjectName&quot; -scheme &quot;$kSchemeName&quot; -configuration &quot;$kConfiguration&quot; -archivePath &quot;$kArchivePath&quot;
 
-结构作用
+# archive workspace
+# #xcodebuild  archive  -workspace &quot;$workspaceName&quot; -scheme &quot;$scheme&quot; -configuration  &quot;$kConfiguration&quot;  -archivePath &quot;$kArchivePath&quot;  
 
-isa_t
-isa相关操作
-弱引用相关
-关联对象相关
-内存管理相关
+# 导出ipa
+xcodebuild -exportArchive -archivePath &quot;$kArchivePath&quot; -exportOptionsPlist &quot;$kExportOptionsPlist&quot; -exportPath &quot;$kExport_ipa_Path&quot;
 
-objc_class
-Class ==  objc_class
-objc_class 继承自 objc_object
+# --------------&gt; 检测IPA存在否
+ipa_path=&quot;${kExport_ipa_Path}/${kSchemeName}.ipa&quot;
 
-superClass superClass 指向一个 Class
-cache_t 方法缓存 cache bucket list 里面存的是 key：IMP
-class_data_bits</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
+if [ -f &quot;$ipa_path&quot; ]
+	then
+		echo &quot;------------ipa存在😁......&quot;
+	else
+		echo &quot;------------ipa不存在😭......&quot;
+		exit 1
+fi
 
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16336616337266.html">Runtime</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
+# --------- firm 上传配置
 
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='ios.html'>iOS</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="16336614997940.html"> 
-							<div class="item-desc"> 
-								<p>WKWebView 初始化
-第一步：导入头文件 声明webview属性
-// 导入头文件
-#import &lt;WebKit/WebKit.h&gt;
-// 声明webView属性
-@property (nonatomic, strong) WKWebView *webView;
+echo &quot;请选择登录账户名：\n 1）kael 自己的fir账户（默认） \n 2）公司的fir账户&quot;
 
-第二步 ： 初始化webView
-webview初始化位置**【尽量提前】**，如果过项目需要，甚至可以在APP启动后的某个特殊时机，预初始化一个全局webView。这样能够提前让项目初始化web内核，以减少初次进入webView的等待时间。 牺牲一定的性能，换取web启动时间，根据需求决定，我这里是放到了Vie</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
+read fir_token
 
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16336614997940.html">WKWebView从入门到放弃 (一 入门)</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
+if [[ $fir_token == 2 ]]; then
+  #公司账号
+  fir_token=&quot;bab4a513ef576e49dceb3abe9e9b028a&quot;
+else
+  # 自己的账号
+  fir_token=&quot;b3bb54eca50a2545d0a6044cb19a616a&quot;
+fi
+# 钉钉机器人🤖
+DD_access_token=&quot;8c022fd6586126b80994e1b551ce31ab6ee56ed045c47c51c8ab0192c723cb1e&quot;
 
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='ios.html'>iOS</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="16336614293958.html"> 
-							<div class="item-desc"> 
-								<p>高度计算问题优化
-使用WKWebView进行性能调优
-WebView性能、体验分析与优化--美团出品
-iOS使用NSURLProtocol来Hook拦截WKWebview请求并回放的一种姿(ti)势(wei)
-被放弃的方法
-- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
-    /**计算高度*/
-    dispatch_async(dispatch_get_global_queue(0,0), ^{
+fir publish ${ipa_path} -T $fir_token -c $kAppChangelog -D $DD_access_token
 
-        [_webVie</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
+# -------- pgy 上传
 
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="16336614293958.html">WKWebview加载速度优化</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
+echo &quot;------------准备发布蒲公英------------&quot;
+#&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;蒲公英
+#蒲公英账号
+pgy_API_Key=&quot;ed34bd49e37a2a2943918d18b1489a71&quot;
+pgy_User_Key=&quot;878381aa4356d997c1c4c7bb27649807&quot;
 
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='ios.html'>iOS</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			 
-		</div>
-	</div>
-<!-- 底部导航条 -->
-	<nav class="lists-navigator clearfix" style="clear: all;">
-            <ol class="page-navigator">
-            
-            	<li class=""><a href="ios_1.html"><span aria-hidden="true">&larr;</span> 上一页</a></li>
-            
 
-				<li class=""><a href="archives.html">归档</a></li>
+#蒲公英发布
+curl -F &quot;file=@$ipa_path&quot; \
+-F &quot;uKey=$pgy_User_Key&quot; \
+-F &quot;_api_key=$pgy_API_Key&quot; \
+-F &quot;updateDescription=$kAppChangelog&quot; \
+https://www.pgyer.com/apiv1/app/upload
 
-			
-			<li class=""><a href="ios_3.html">下一页 <span aria-hidden="true">&rarr;</span></a></li>
-			
-            </ol>
-     </nav>
-</div>
-</div>  <footer id="footer" class="footer" style="background-color: #030501;color: #FFFFFE;">
-  <div class="footer-meta">
-    <div class="footer-container">
-      <!-- 版权说明 -->
-      <div class="meta-item meta-copyright">
-        <div class="meta-copyright-info">
-          <h2 class="meta-title">INFO</h2>
-          <div class="info-text">  
-              <p>Copyright &copy; 2017 <br>
-              <span class="credit">Powered by 
-              <a target="_blank" href="http://zh.mweb.im/">MWeb</a> 
-              </span>
-              <p>Theme Design by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
-              <p>Migrating to Mweb by <a href="http://metaidea.cn">idken</a></p>
-              </p> 
-          </div>                  
+
+#钉钉群通知相关人员
+curl 'https://oapi.dingtalk.com/robot/send?access_token=8c022fd6586126b80994e1b551ce31ab6ee56ed045c47c51c8ab0192c723cb1e' \
+   -H 'Content-Type: application/json' \
+   -d '{
+            &quot;msgtype&quot;: &quot;text&quot;,
+            &quot;text&quot;: {
+             &quot;content&quot;: &quot;高考iOS最新安装包 ipa&quot;
+        },
+            &quot;at&quot;: {
+            &quot;atMobiles&quot;: [
+                &quot;15718808963&quot;,
+                &quot;13241411941&quot;,
+                &quot;13466778405&quot;,
+                &quot;13716307872&quot;
+        ],
+        &quot;isAtAll&quot;: false
+        }
+      }'
+
+</code></pre>
+
+                </div>
+                <div class="bottom">
+                  <a href="16336618777988.html" class="continue float-right">
+                    继续阅读
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>  
-      <!-- Categories -->
-      <div class="meta-item meta-comments">
-          <h2 class="meta-title">CATEGORIES</h2>  
-             
-            
-            <li>
-            <a href="ios.html">iOS&nbsp;(81)</a>
-            <p>
-            
-            </p>
-            </li>
-            
-             
-            
-            <li>
-            <a href="swift.html">Swift&nbsp;(3)</a>
-            <p>
-            
-            </p>
-            </li>
-            
-             
-            
-            <li>
-            <a href="app.html">MacAPP&nbsp;(3)</a>
-            <p>
-            
-            </p>
-            </li>
-            
-             
-            
-            <li>
-            <a href="reactnative.html">React-Native&nbsp;(4)</a>
-            <p>
-            
-            </p>
-            </li>
-            
-             
-            
-            </p>
-            </li>
-            
-             
-            
-            </p>
-            </li>
-            
-             
-            
-            </p>
-            </li>
-            
-             
-            
-            </p>
-            </li>
-            
-             
-            
-            </p>
-            </li>
-            
-             
       </div>
-      <!-- 最新文章 -->
-      <div class="meta-item meta-comments">
-          <h2 class="meta-title">RECENT POSTS</h2>
-
-          
-          
-         <li>
-           <a href="16337448805296.html">iOS OpenURL方式吊起APP</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16336873755362.html">iOS 打开别的APP的两种Native方法</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16336595298050.html">Alfred 修改内置Terminal为Iterm2</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16325811812741.html">Python环境安装</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="15409691048860.html">【Swift笔记】引用计数</a><br>
-         </li>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-           
-
-      </div>
+      <div class="otherposts row">
+    
+  
+    
+        <div class="col-md-6">
+          <a href="16336618031940.html" class="item">
+            <div class="article normal">
+              <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+              <div class="articleinfo">
+                <div class="headline">iOS底层 之 RunLoop攻坚</div>
+                <div class="subtitle">iOS底层 之 RunLoop攻坚</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+  
+    
+        <div class="col-md-6">
+          <a href="16336617489720.html" class="item">
+            <div class="article normal">
+              <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+              <div class="articleinfo">
+                <div class="headline">事件传递 && 响应链</div>
+                <div class="subtitle">事件传递 && 响应链</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+  
+    
+        <div class="col-md-6">
+          <a href="16336617279730.html" class="item">
+            <div class="article normal">
+              <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+              <div class="articleinfo">
+                <div class="headline">编译 && 链接</div>
+                <div class="subtitle">编译 && 链接</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+  
+    
+        <div class="col-md-6">
+          <a href="16336617111534.html" class="item">
+            <div class="article normal">
+              <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+              <div class="articleinfo">
+                <div class="headline">Mac升级系统后cocoapods报错</div>
+                <div class="subtitle">Mac升级系统后cocoapods报错</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+  
+    
+        <div class="col-md-6">
+          <a href="16336616900153.html" class="item">
+            <div class="article normal">
+              <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+              <div class="articleinfo">
+                <div class="headline">宝藏好文收藏</div>
+                <div class="subtitle">技术好文收藏</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+  
+    
+        <div class="col-md-6">
+          <a href="16336616337266.html" class="item">
+            <div class="article normal">
+              <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+              <div class="articleinfo">
+                <div class="headline">Runtime</div>
+                <div class="subtitle">Runtime相关基础知识</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+  
+    
+        <div class="col-md-6">
+          <a href="16336614997940.html" class="item">
+            <div class="article normal">
+              <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+              <div class="articleinfo">
+                <div class="headline">WKWebView从入门到放弃 (一 入门)</div>
+                <div class="subtitle">WKWebView从入门到放弃 (一 入门)</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+  
+    
+        <div class="col-md-6">
+          <a href="16336614293958.html" class="item">
+            <div class="article normal">
+              <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+              <div class="articleinfo">
+                <div class="headline">WKWebview加载速度优化</div>
+                <div class="subtitle">WKWebview加载速度优化</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+  
+    
+        <div class="col-md-6">
+          <a href="16336613531680.html" class="item">
+            <div class="article normal">
+              <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+              <div class="articleinfo">
+                <div class="headline">CocoaPods 仓库制作</div>
+                <div class="subtitle">CocoaPods 仓库制作</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+   
   </div>
-</div>
-</footer>
-
-<!--评论变量判断 -->
-      
-<!-- 评论end -->
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
-<!--Global site tag (gtag.js) - Google Analytics>
+  <div class="pagenavi">
+    <div class="item"><a href="ios_1.html">更新文章</a></div>
+    <div class="item"> · </div>
+    <div class="item"><a href="ios_3.html">旧有文章</a></div>
+  </div>
+ </div>
+ <script>
+   let category = new Vue({
+    el: '#category',
+    data: {},
+    methods: {
+      indexOddandEven(index) {
+        return index%2 ? 'odd' : 'even';
+      },
+      timeformat(raw) {
+        return moment(raw).format("YYYY 年 MM 月 DD 日");
+      }
+    },
+    delimiters: ['$[', ']']
+  })
+ </script>
+      <div class="container">
+      <hr>
+      <div class="footer" id="footer">
+        <div class="slogan">倘若我心中的山水，你眼中能看到，我便一步一莲花祈祷</div>
+        <div class="meta">
+          <p></p>
+          <p>「Kaelinda」使用 <a href="https://zh.mweb.im/" target="_blank">MWeb</a> 和 <a href="https://github.com/Astrian/reflect-white-mweb-theme" target="_blank">Reflect White</a> 搭建。</p>
+          <p class='colorScheme'>色彩模式：<span id='colorSchemeLight' onclick="changeColorScheme('light');">明亮</span> &middot; <span id='colorSchemeDark' onclick="changeColorScheme('dark')">黑暗</span> &middot; <span id='colorSchemeSystem' onclick="changeColorScheme('system')">跟随系统</span></p>
+        </div>
+      </div>
+      <script>
+        let footer = new Vue({
+          el: '#footer',
+          data: {
+            message: 'hello'
+          },
+          delimiters: ['$[', ']']
+        })
+      </script>
+    </div>
+  </div>
 </body>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style></style>
+<script>
+  changeColorScheme()
+</script>
 </html>

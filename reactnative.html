@@ -1,537 +1,206 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="zh-cn">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="Cache-Control" content="no-transform"/>
-
-
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1" />
     <title>
+        
+      React-Native - Kaelinda
       
-    React-Native - Kaelinda
-    
     </title>
-
-
-  <link href="asset/css/style.css" rel="stylesheet" > 
-  <link href="asset/js/xcode.min.css" rel="stylesheet">
-  <script src="asset/js/headroom.js"></script>
-
-  <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="asset/css/font-awesome.css">
- -->
-
-  <!-- <script src="asset/highlightjs/highlight.pack.js"></script> -->
-  <!-- <link href="asset/highlightjs/styles/solarized_light.css" media="screen, projection" rel="stylesheet" type="text/css"> -->
-  <!-- <script>hljs.initHighlightingOnLoad();</script> -->
-
-
-  </head>
-
-  <!-- 主体开始 -->
-  <!-- <body class="" gtools_scp_screen_capture_injected="true"> -->
-  <!-- 上面为主页白底色版本 -->
+    <meta name="keywords" content="Kaelinda" />
     
-<body class="bg-grey" gtools_scp_screen_capture_injected="true" data-feedly-mini="yes">
-<!-- 上面是主页灰底色版本 -->
+    
+    
+    <link href="atom.xml" rel="alternate" title="Kaelinda" type="application/atom+xml">
+    <script src="https://cdn.bootcss.com/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!--Global site tag (gtag.js) - Google Analytics>
 
-<!--[if lt IE 8]>
-<div class="browsehappy" role="dialog">
-    当前网页 <strong>不支持</strong> 你正在使用的浏览器. 为了正常的访问, 请 <a href="http://browsehappy.com/" target="_blank">升级你的浏览器</a>。
-</div>
-<![endif]-->
-<!-- 头部位置 -->
-
-<header id="header" class="header bg-white headroom">
-  <div class="navbar-container"> 
-    <a href="index.html" class="navbar-logo"><img src="asset/img/K-logo.png"> </a>
-    <div class="navbar-menu"> 
-
-        
-        <a href="index.html">最近更新</a>
-        
-        <a href="archives.html">归档目录</a>
-        
-        <a href="ios.html">iOS</a>
-        
-        <a href="swift.html">Swift</a>
-        
-        <a href="reactnative.html">RN</a>
-        
-        <a href="js.html">JS</a>
-        
-        <a href="shell.html">shell</a>
-        
-        <a href="py.html">Python</a>
-        
-        
-    </div> 
-    <!-- 搜索框体 -->
-    <!--  <div class="navbar-search" onclick="">
-        <span class="icon-search"></span>
-        <form id="search" method="post" action="/" role="search">
-          <span class="search-box">
-            <input type="text" id="input" class="input" name="s" required="true" placeholder="Search..." maxlength="30" autocomplete="off">
-          </span>
-        </form>
-    </div> -->
-
-    <div class="navbar-mobile-menu" onclick=""> 
-      <span class="icon-menu cross"><span class="middle"></span></span> 
-        <ul> 
-          
-          <li>
-          <a href="index.html">最近更新</a>
-          </li>
-          
-          <li>
-          <a href="archives.html">归档目录</a>
-          </li>
-          
-          <li>
-          <a href="ios.html">iOS</a>
-          </li>
-          
-          <li>
-          <a href="swift.html">Swift</a>
-          </li>
-          
-          <li>
-          <a href="reactnative.html">RN</a>
-          </li>
-          
-          <li>
-          <a href="js.html">JS</a>
-          </li>
-          
-          <li>
-          <a href="shell.html">shell</a>
-          </li>
-          
-          <li>
-          <a href="py.html">Python</a>
-          </li>
-          
-        </ul> 
-    </div> 
-  </div> 
-</header>
-<!-- 头部结束 -->  <!-- 这里是category的开始 -->
-<div class="main-content index-page clearfix">
-    <div class="post-lists">
-        <div class="post-lists-body">
-			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="15151216159291.html"> 
-							<div class="item-desc"> 
-								<p>react-native-splash-screen 基本配置
-
-安装插件：npm install react-native-splash-screen --save
-关联项目：react-native link react-native-splash-screen or rnpm link react-native-splash-screen
-
-
-link 之后，安卓项目中会自动添加头文件 以及部分代码，为保证项目顺利运行，还请确认下面代码是否已经完善。
-
-
-
-确保 android/settings.gradle文件夹已经有下面代码
-
-
-
-include ':react-native-spl</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="15151216159291.html">react-native-splash-screen 给安卓项目添加启动图</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='reactnative.html'>React-Native</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="15139057022845.html"> 
-							<div class="item-desc"> 
-								<p>概念理解
-icon
-
-所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。
-
-
-Promise 状态
-
-Pending 进行中
-Resolved 已完成 又称Fulfilled
-Rejected 已失败
-
-Promise 特点
-
-对象的状态不受外部因素影响。Promise对象代表的是一个异步操作，只有异步操作的结果能决定Promise的状态，任何其他操作都不能决定其状态。
-一旦Promise有了结果状态就不会再变。Pending==&gt;Resolved,或者Pending=</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="15139057022845.html">Rect-Native 之 Promise 深入浅出从入门到精通</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='reactnative.html'>React-Native</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="15115315701641.html"> 
-							<div class="item-desc"> 
-								<p>课程介绍
-
-Flux/reFlux/Redux
-简单/单一状态树
-
-
-
-react 和 redux 数据流的关系
-
-
-JS、CSS、HTML
-
-
-JSX
-
-
-webpack 构建
-
-
-数据流
-
-MVC 状态复杂之后，action会触发事件 并且不可预测
-flux: state Tree will send data to view,but view can't send data to state-tree.
-Redux :  state 是包含在store中的
-
-
-安装
-npm install react
-npm install redux react-redux --save
-
-快速开始（</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="15115315701641.html">React Native 集成 Redux</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='reactnative.html'>React-Native</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			
-				<div class="post-list-item">
-					<div class="post-list-item-container">
- <!-- 自定post背景图 -->
-					 
-                         	<div class="item-thumb bg-deepgrey" style="background-image:url(https://feng-bbs-att-1255531212.image.myqcloud.com/2021/09/22/103719eo4ej11r589x5fl7.jpg?imageMogr2/format/jpg/interlace/0/quality/100);">
-						
-						</div> 
-						<a href="14948260667614.html"> 
-							<div class="item-desc"> 
-								<p>属性
-
-ItemSeparatorComponent  {highlighted,leadingItem,leandingSection,section,trailingItem}
-返回一个行与行之间的分割组件，不会出现在第一行之前和最后一行之后。
-
-highlighted 当前行（分割线上面👆的Item）是否是高亮状态
-leadingItem 当前行分配到的数据源
-leandingSection 目前我也没搞明白啥意思 这里是undefined
-section 当前段分配到的数据源
-trailingItem 尾段数据
-
-
-ListEmptyCompone  没有接收参数
-渲染一个cell为</p> 
-							</div> 
-						</a> 
-<!-- 自定义Post颜色 -->
-				
-						<div class="item-slant reverse-slant bg-deepgrey"></div>
-						
-
-						<div class="item-slant"></div>
-		 				<div class="item-label">
-	  						<div class="item-title">
-	  							<a href="14948260667614.html">SectionListView</a>
-	  						</div>
-		   					<div class="item-meta clearfix"> 
-<!-- 自定义Icon -->
-								
-		   						<div class="item-meta-ico bg-ico-note" style="background: url(asset/img/bg-ico.png) no-repeat;background-size: 40px auto;">
-		   						</div> 
-								
-
-		   						<div class="item-meta-cat">
-	  							
-			    			<a class='category' href='reactnative.html'>React-Native</a>
-								
-		   						</div> 
-		   					</div> 
-		   					
-		   				</div> 
-   					</div>
- 				</div>
- 			 
-		</div>
-	</div>
-<!-- 底部导航条 -->
-	<nav class="lists-navigator clearfix" style="clear: all;">
-            <ol class="page-navigator">
-            
-            	<li class="  disabled "><a href="#index"><span aria-hidden="true">&larr;</span> 上一页</a></li>
-            
-
-				<li class=""><a href="archives.html">归档</a></li>
-
-			
-            	<li class=" disabled "><a href="#index">下一页 <span aria-hidden="true">&rarr;</span></a></li>
-            
-            </ol>
-     </nav>
-</div>
-</div>  <footer id="footer" class="footer" style="background-color: #030501;color: #FFFFFE;">
-  <div class="footer-meta">
-    <div class="footer-container">
-      <!-- 版权说明 -->
-      <div class="meta-item meta-copyright">
-        <div class="meta-copyright-info">
-          <h2 class="meta-title">INFO</h2>
-          <div class="info-text">  
-              <p>Copyright &copy; 2017 <br>
-              <span class="credit">Powered by 
-              <a target="_blank" href="http://zh.mweb.im/">MWeb</a> 
-              </span>
-              <p>Theme Design by <a href="https://www.linpx.com/" target="_blank">Chakhsu</a></p>
-              <p>Migrating to Mweb by <a href="http://metaidea.cn">idken</a></p>
-              </p> 
-          </div>                  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="asset/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <script src="asset/colorscheme.js"></script>
+    <div class="container">
+      <div class="head">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="blogname">Kaelinda</div>
+            <nav>
+              
+                <div class="item"><a target="_self" href="index.html">最近更新</a></div>
+              
+                <div class="item"><a target="_self" href="archives.html">归档目录</a></div>
+              
+                <div class="item"><a target="_self" href="ios.html">iOS</a></div>
+              
+                <div class="item"><a target="_self" href="swift.html">Swift</a></div>
+              
+                <div class="item"><a target="_self" href="reactnative.html">RN</a></div>
+              
+                <div class="item"><a target="_self" href="js.html">JS</a></div>
+              
+                <div class="item"><a target="_self" href="shell.html">shell</a></div>
+              
+                <div class="item"><a target="_self" href="py.html">Python</a></div>
+              
+            </nav>
+          </div>
         </div>
-      </div>  
-      <!-- Categories -->
-      <div class="meta-item meta-comments">
-          <h2 class="meta-title">CATEGORIES</h2>  
-             
-            
-            <li>
-            <a href="ios.html">iOS&nbsp;(81)</a>
-            <p>
-            
-            </p>
-            </li>
-            
-             
-            
-            <li>
-            <a href="swift.html">Swift&nbsp;(3)</a>
-            <p>
-            
-            </p>
-            </li>
-            
-             
-            
-            <li>
-            <a href="app.html">MacAPP&nbsp;(3)</a>
-            <p>
-            
-            </p>
-            </li>
-            
-             
-            
-            <li>
-            <a href="reactnative.html">React-Native&nbsp;(4)</a>
-            <p>
-            
-            </p>
-            </li>
-            
-             
-            
-            </p>
-            </li>
-            
-             
-            
-            </p>
-            </li>
-            
-             
-            
-            </p>
-            </li>
-            
-             
-            
-            </p>
-            </li>
-            
-             
-            
-            </p>
-            </li>
-            
-             
       </div>
-      <!-- 最新文章 -->
-      <div class="meta-item meta-comments">
-          <h2 class="meta-title">RECENT POSTS</h2>
+      <hr>
+    </div> <div class="container" id="category">
+  
+    
+      <div class="article huge">
+        <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+        <div class="row content">
+          <div class="col-md-2"></div>
+          <div class="col-md-10 main">
+            <div class="row">
+              <div class="col-md-10 post">
+                <div class="headline"><a href="15151216159291.html">给安卓项目添加启动图</a></div>
+                <div class="subtitle">给安卓项目添加启动图</div>
+                <div class="meta"><span class="time">$[timeformat('2018-01-05T11:06:55+08:00')]</span></div>
+                <div class="body">
+                    <h1><a id="react-native-splash-screen" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>react-native-splash-screen</h1>
+<p>给安卓项目添加启动图</p>
+<h2><a id="react-native-splash-screen%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>react-native-splash-screen 基本配置</h2>
+<ul>
+<li>安装插件：<code>npm install react-native-splash-screen --save</code></li>
+<li>关联项目：<code>react-native link react-native-splash-screen</code> or <code>rnpm link react-native-splash-screen</code></li>
+</ul>
+<blockquote>
+<p>link 之后，安卓项目中会自动添加头文件 以及部分代码，为保证项目顺利运行，还请确认下面代码是否已经完善。</p>
+</blockquote>
+<ul>
+<li>
+<p>确保 <code>android/settings.gradle</code>文件夹已经有下面代码</p>
+<pre><code class="language-JavaScript"></code></pre>
+</li>
+</ul>
+<p>include ':react-native-splash-screen'<br />
+project(':react-native-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-splash-screen/android')</p>
+<pre><code class="language-plain_text">* android/app/build.gradle 文件中 添加依赖 `react-native-splash-screen`
 
-          
-          
-         <li>
-           <a href="16337448805296.html">iOS OpenURL方式吊起APP</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16336873755362.html">iOS 打开别的APP的两种Native方法</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16336595298050.html">Alfred 修改内置Terminal为Iterm2</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="16325811812741.html">Python环境安装</a><br>
-         </li>
-          
-          
-          
-         <li>
-           <a href="15409691048860.html">【Swift笔记】引用计数</a><br>
-         </li>
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-           
+    ```
+...
+dependencies {
+    ...
+    compile project(':react-native-splash-screen')
+}
+</code></pre>
 
+                </div>
+                <div class="bottom">
+                  <a href="15151216159291.html" class="continue float-right">
+                    继续阅读
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="otherposts row">
+    
+  
+    
+        <div class="col-md-6">
+          <a href="15139057022845.html" class="item">
+            <div class="article normal">
+              <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+              <div class="articleinfo">
+                <div class="headline">Rect-Native 之 Promise 深入浅出从入门到精通</div>
+                <div class="subtitle">Rect-Native 中针对 Promise的理解和探索</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+  
+    
+        <div class="col-md-6">
+          <a href="15115315701641.html" class="item">
+            <div class="article normal">
+              <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+              <div class="articleinfo">
+                <div class="headline">React Native 集成 Redux</div>
+                <div class="subtitle">React Native 集成 Redux</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+  
+    
+        <div class="col-md-6">
+          <a href="14948260667614.html" class="item">
+            <div class="article normal">
+              <div class="featureimg" style="background-image: url('asset/defaultfeaimg.jpg')"></div>
+              <div class="articleinfo">
+                <div class="headline">SectionListView</div>
+                <div class="subtitle">RN中SectionListView组件的使用说明</div>
+              </div>
+            </div>
+          </a>
+        </div>
+    
+   
   </div>
-</div>
-</footer>
-
-<!--评论变量判断 -->
-      
-<!-- 评论end -->
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({TeX: { equationNumbers: { autoNumber: "AMS" } }});</script>
-<!--Global site tag (gtag.js) - Google Analytics>
+  <div class="pagenavi">
+    <div class="item">已是最新一页</div>
+    <div class="item"> · </div>
+    <div class="item">已是最旧一页</div>
+  </div>
+ </div>
+ <script>
+   let category = new Vue({
+    el: '#category',
+    data: {},
+    methods: {
+      indexOddandEven(index) {
+        return index%2 ? 'odd' : 'even';
+      },
+      timeformat(raw) {
+        return moment(raw).format("YYYY 年 MM 月 DD 日");
+      }
+    },
+    delimiters: ['$[', ']']
+  })
+ </script>
+      <div class="container">
+      <hr>
+      <div class="footer" id="footer">
+        <div class="slogan">倘若我心中的山水，你眼中能看到，我便一步一莲花祈祷</div>
+        <div class="meta">
+          <p></p>
+          <p>「Kaelinda」使用 <a href="https://zh.mweb.im/" target="_blank">MWeb</a> 和 <a href="https://github.com/Astrian/reflect-white-mweb-theme" target="_blank">Reflect White</a> 搭建。</p>
+          <p class='colorScheme'>色彩模式：<span id='colorSchemeLight' onclick="changeColorScheme('light');">明亮</span> &middot; <span id='colorSchemeDark' onclick="changeColorScheme('dark')">黑暗</span> &middot; <span id='colorSchemeSystem' onclick="changeColorScheme('system')">跟随系统</span></p>
+        </div>
+      </div>
+      <script>
+        let footer = new Vue({
+          el: '#footer',
+          data: {
+            message: 'hello'
+          },
+          delimiters: ['$[', ']']
+        })
+      </script>
+    </div>
+  </div>
 </body>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style></style>
+<script>
+  changeColorScheme()
+</script>
 </html>
